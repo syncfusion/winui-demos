@@ -8,6 +8,7 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 * [How to run the demos](#how-to-run-the-demos)
 * [Controls Catalog](#controls-catalog)
 * [Documentation](#documentation)
+* [License](#license)
 * [Support and Feedback](#support-and-feedback)
 
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
@@ -39,10 +40,10 @@ To run the demos,
     </tr>
     <tr>
         <td>
-            <p>Data Grid</p>
+            <a href="datagrid">Data Grid</a>
         </td>
         <td>
-            <p>Tree Grid</p>
+            <a href="treegrid">Tree Grid</a>
         </td>
         <td></td>
     </tr>
@@ -53,13 +54,13 @@ To run the demos,
     </tr>
     <tr>
         <td>
-            <p>Charts</p>
+            <a href="chart">Charts</a>
         </td>
         <td>
-            <p>Radial Gauge</p>
+            <a href="radialgauge">Radial Gauge</a>
         </td>
         <td>
-            <p>Barcode</p>
+            <a href="barcode">Barcode</a>
         </td>
     </tr>
     <tr>
@@ -69,10 +70,10 @@ To run the demos,
     </tr>
     <tr>
         <td>
-            <p>Tree View</p>
+            <a href="treeview">Tree View</a>
         </td>
         <td>
-            <p>Badge</p>
+            <a href="notification">Badge</a>
         </td>
         <td></td>
     </tr>
@@ -83,18 +84,18 @@ To run the demos,
     </tr>
     <tr>
         <td>
-            <p>Color Picker</p>
+            <a href="editor">Color Picker</a>
         </td>
         <td>
-            <p>Dropdown Color Picker</p>
+            <a href="editor">Dropdown Color Picker</a>
         </td>
         <td>
-            <p>Color Palette</p>
+            <a href="editor">Color Palette</a>
         </td>
     </tr>
     <tr>
         <td>
-            <p>Dropdown Color Palette</p>
+            <a href="editor">Dropdown Color Palette</a>
         </td>
         <td></td>
         <td></td>
@@ -106,10 +107,14 @@ To run the demos,
 * [Syncfusion User Guide](https://help.syncfusion.com/winui/overview)
 * [API Reference](https://help.syncfusion.com/cr/winui)
 
+## <a name="license"></a>License ##
+
+Syncfusion has no liability for any damage or consequence that may arise by the use or viewing of the samples. The samples are for demonstrative purposes and if you choose to use or access the samples you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, accessing or otherwise viewing the samples. By accessing, viewing, or otherwise seeing the samples you acknowledge and agree Syncfusion’s samples will not allow you to seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize or otherwise do anything with Syncfusion’s samples.
+
 ## <a name="support-and-feedback"></a>Support and Feedback ##
 
 * For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident?utm_source=github&utm_medium=listing) or post the queries through the [community forums](https://www.syncfusion.com/forums?utm_source=github&utm_medium=listing).
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2020 Syncfusion, Inc. Updated on 2020-10-09 at precisely 18:05:32 EST.</p>
+<p>Copyright © 2001-2020 Syncfusion, Inc. Updated on 2020-10-09 at precisely 07:02:00 EST.</p>
