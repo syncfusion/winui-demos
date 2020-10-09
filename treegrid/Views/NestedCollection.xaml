@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="TreeGrid.NestedCollection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:coreconverter="using:Syncfusion.UI.Xaml.Core.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:TreeGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.TreeGrid"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:PersonViewModel />
+    </Page.DataContext>
+    <Page.Resources>
+        <local:Commands x:Key="command" />
+        <coreconverter:StringFormatConverter x:Key="stringFormatConverter" />
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="This sample showcases how to bind the Nested Collection data by specifying ChildPropertyName in Tree Grid.">
+                <common:DemoLayout.Example>
+                    <syncfusion:SfTreeGrid
+                        Name="sfTreeGrid"
+                        Height="500"
+                        Margin="5"
+                        VerticalAlignment="Top"
+                        AllowResizingColumns="True"
+                        AllowResizingHiddenColumns="True"
+                        AutoExpandMode="RootNodesExpanded"
+                        AutoGenerateColumns="False"
+                        ChildPropertyName="Children"
+                        ColumnWidthMode="AutoLastColumnFill"
+                        ExpanderColumn="FirstName"
+                        ItemsSource="{Binding Persons}">
+                        <syncfusion:SfTreeGrid.Columns>
+                            <syncfusion:TreeGridTextColumn HeaderText="First Name" MappingName="FirstName" />
+                            <syncfusion:TreeGridTextColumn HeaderText="Employee Id" MappingName="EmployeeID" />
+                            <syncfusion:TreeGridTextColumn HeaderText="Last Name" MappingName="LastName" />
+                            <syncfusion:TreeGridTextColumn
+                                DisplayBinding="{Binding Path=DOJ, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}"
+                                HeaderText="Date of Birth"
+                                MappingName="DOJ" />
+                            <syncfusion:TreeGridTextColumn HeaderText="Salary" MappingName="Salary" />
+                            <syncfusion:TreeGridTextColumn HeaderText="City" MappingName="City" />
+                            <syncfusion:TreeGridTextColumn HeaderText="Contact Number" MappingName="ContactNumber" />
+                        </syncfusion:SfTreeGrid.Columns>
+                    </syncfusion:SfTreeGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel
+                        x:Name="stkPanel"
+                        Grid.Column="0"
+                        Margin="5"
+                        Orientation="Vertical">
+                        <TextBlock
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Text="Options" />
+                        <Button
+                            Margin="10,5,5,5"
+                            Command="{Binding ExpandCommand, Source={StaticResource command}}"
+                            CommandParameter="{Binding ElementName=sfTreeGrid}"
+                            Content="Expand All Nodes" />
+                        <Button
+                            Margin="10,5,5,5"
+                            Command="{Binding CollapseCommand, Source={StaticResource command}}"
+                            CommandParameter="{Binding ElementName=sfTreeGrid}"
+                            Content="Collapse All Nodes" />
+
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+     &lt;syncfusion:SfTreeGrid  Margin=&quot;5&quot; Name=&quot;sfTreeGrid&quot;
+     AllowResizingColumns=&quot;True&quot;
+     AllowResizingHiddenColumns=&quot;True&quot;
+     AutoExpandMode=&quot;RootNodesExpanded&quot;
+     AutoGenerateColumns=&quot;True&quot;
+     ChildPropertyName=&quot;Children&quot;
+     ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+     ExpanderColumn=&quot;FirstName&quot;
+     ItemsSource=&quot;{Binding Persons}&quot;/&gt;   
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

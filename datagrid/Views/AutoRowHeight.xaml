@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="DataGrid.AutoRowHeight"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+     xmlns:common="using:syncfusion.demoscommon.winui"
+     xmlns:coreconverter="using:Syncfusion.UI.Xaml.Core.Converters"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:PersonViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+    <coreconverter:StringFormatConverter x:Key="stringFormatConverter" />
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid provides support to auto-fit the height of the rows to improve the readability of the content.">
+                <common:DemoLayout.Example>
+                    <syncfusion:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="500"
+                        VerticalAlignment="Top"
+                        ColumnWidthMode="Star"
+                        AllowEditing="True"                        
+                        AllowResizingColumns="True"
+                        AutoGenerateColumns="False"
+                        ItemsSource="{Binding Persons}"
+                        QueryRowHeight="sfDataGrid_QueryRowHeight"
+                        SelectionMode="Multiple">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTextColumn HeaderText="Employee&#10;Name"   MappingName="EmployeeName" TextWrapping="Wrap"/>
+                            <syncfusion:GridTextColumn HeaderText="Designation" MappingName="Designation" TextWrapping="Wrap"/>
+                            <syncfusion:GridTextColumn HeaderText="Location" MappingName="Location" TextWrapping="Wrap"/>
+                            <syncfusion:GridTextColumn HeaderText="Address" MappingName="Address" TextWrapping="Wrap" Width="100"/>                          
+                            <syncfusion:GridTextColumn HeaderText="Mail" MappingName="Mail" TextWrapping="Wrap"/>
+                            <syncfusion:GridTextColumn
+                                DisplayBinding="{Binding Path=Salary, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                HeaderText="Salary"
+                                TextAlignment="Right" TextWrapping="Wrap"/>
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve"> 
+    &lt;syncfusion:SfDataGrid
+    x:Name=&quot;sfDataGrid&quot;
+    Height=&quot;500&quot;
+    VerticalAlignment=&quot;Top&quot;
+    ColumnWidthMode=&quot;Star&quot;
+    AllowEditing=&quot;True&quot;                        
+    AllowResizingColumns=&quot;True&quot;
+    AutoGenerateColumns=&quot;True&quot;
+    ItemsSource=&quot;{Binding Persons}&quot;
+    QueryRowHeight=&quot;sfDataGrid_QueryRowHeight&quot;
+    SelectionMode=&quot;Multiple&quot;/&gt; 
+                     </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.CSharp>
+                    <x:String xml:space="preserve"> 
+     //C# code behind
+                        
+    GridRowSizingOptions gridRowResizingOptions = new GridRowSizingOptions();
+    double height = double.NaN;
+    
+    private void sfDataGrid_QueryRowHeight(object sender, QueryRowHeightEventArgs e)
+    {
+        if (this.sfDataGrid.GridColumnSizer.GetAutoRowHeight(e.RowIndex, gridRowResizingOptions, out height))
+        {
+            if (height > this.sfDataGrid.RowHeight)
+            {
+                e.Height = height;
+                e.Handled = true;
+            }
+        }
+    }
+                        </x:String>
+                </common:DemoLayout.CSharp>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

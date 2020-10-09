@@ -1,0 +1,64 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis AxisLineWidth="0.08"
+                          AxisLineWidthUnit="Factor"
+                          RadiusFactor="0.85"
+                          MinorTicksPerInterval="4"
+                          ShowFirstLabel="False"
+                          Maximum="12"
+                          Interval="1"
+                          StartAngle="270"
+                          EndAngle="270">
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:MarkerPointer x:Name="firstMarker"
+                                     Value="2"
+                                     ValueChanged="firstMarker_ValueChanged"
+                                     ValueChanging="firstMarker_ValueChanging"
+                                     IsInteractive="True"
+                                     BorderBrush="#FFFFCD60"
+                                     BorderWidth="5"
+                                     Background="#D83B01"
+                                     MarkerType="Circle"
+                                     MarkerHeight="30"
+                                     MarkerWidth="30">
+                </gauge:MarkerPointer>
+                <gauge:MarkerPointer x:Name="secondMarker"
+                                     Value="8"
+                                     ValueChanged="secondMarker_ValueChanged"
+                                     ValueChanging="secondMarker_ValueChanging"
+                                     IsInteractive="True"
+                                     BorderBrush="#FFFFCD60"
+                                     BorderWidth="5"
+                                     Background="#D83B01"
+                                     MarkerType="Circle"
+                                     MarkerHeight="30"
+                                     MarkerWidth="30">
+                </gauge:MarkerPointer>
+            </gauge:RadialAxis.Pointers>
+
+            <gauge:RadialAxis.Ranges>
+                <gauge:GaugeRange x:Name="range"
+                                  WidthUnit="Factor"
+                                  StartWidth="0.08"
+                                  EndWidth="0.08"
+                                  StartValue="2"
+                                  EndValue="8">
+                </gauge:GaugeRange>
+            </gauge:RadialAxis.Ranges>
+
+            <gauge:RadialAxis.Annotations>
+                <gauge:GaugeAnnotation x:Name="annotation">
+                    <gauge:GaugeAnnotation.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding AnnotationString}"
+                                       FontSize="25"
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF00A8B5" />
+                        </StackPanel>
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+            </gauge:RadialAxis.Annotations>
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

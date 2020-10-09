@@ -112,4 +112,4 @@ To run the demos,
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2020 Syncfusion, Inc. Updated on 2020-10-09 at precisely 07:02:00 EST.</p>
+<p>Copyright © 2001-2020 Syncfusion, Inc. Updated on 2020-10-09 at precisely 18:05:32 EST.</p>

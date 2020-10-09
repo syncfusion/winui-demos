@@ -1,0 +1,83 @@
+﻿<gauge:SfRadialGauge>
+        <gauge:SfRadialGauge.Axes>
+            <gauge:RadialAxis Interval="10"
+                              Minimum="-50"
+                              Maximum="150"
+                              ShowAxisLine="True"
+                              TickLengthUnit="Factor"
+                              MajorTickLength="0.265"
+                              MinorTickLength="0.13"
+                              MinorTicksPerInterval="9"
+                              AxisLineWidthUnit="Factor"
+                              AxisLineWidth="0.265"
+                              TickOffset="0">
+                <gauge:RadialAxis.Ranges>
+                    <gauge:GaugeRange StartValue="-50"
+                                      EndValue="0"
+                                      Background="#2290c7"
+                                      StartWidth="0.265"
+                                      Opacity="0.75"
+                                      EndWidth="0.265"
+                                      WidthUnit="Factor" />
+                    <gauge:GaugeRange StartValue="0"
+                                      EndValue="10"
+                                      Background="#22c3c7"
+                                      ... />
+                    <gauge:GaugeRange StartValue="10"
+                                      EndValue="30"
+                                      Background="#7bc722"
+                                      ... />
+                    <gauge:GaugeRange StartValue="30"
+                                      EndValue="40"
+                                      Background="#eec222"
+                                      ... />
+                    <gauge:GaugeRange StartValue="40"
+                                      EndValue="150"
+                                      Background="#ee4f22"
+                                      ... />
+                </gauge:RadialAxis.Ranges>
+
+                <gauge:RadialAxis.Pointers>
+                    <gauge:NeedlePointer Value="22.5"
+                                         NeedleFill="#F8B195"
+                                         NeedleLength="0.6"
+                                         NeedleStartWidth="1"
+                                         NeedleEndWidth="16"
+                                         KnobFill="White"
+                                         KnobStroke="#F8B195"
+                                         KnobStrokeThickness="0.05"
+                                         KnobRadius="0.08"
+                                         TailFill="#F8B195"
+                                         TailLength="0.2"
+                                         TailWidth="16" />
+                </gauge:RadialAxis.Pointers>
+
+                <gauge:RadialAxis.Annotations>
+                    <gauge:GaugeAnnotation PositionFactor="0.8"
+                                           DirectionValue="90">
+                        <gauge:GaugeAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="22.5"
+                                               FontWeight="Bold"
+                                               FontSize="20" />
+                                </Grid>
+                            </DataTemplate>
+                        </gauge:GaugeAnnotation.ContentTemplate>
+                    </gauge:GaugeAnnotation>
+                    <gauge:GaugeAnnotation PositionFactor="0.4"
+                                           DirectionValue="90">
+                        <gauge:GaugeAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="Temp.°C"
+                                               Foreground="#F8B195"
+                                               FontSize="16" />
+                                </Grid>
+                            </DataTemplate>
+                        </gauge:GaugeAnnotation.ContentTemplate>
+                    </gauge:GaugeAnnotation>
+                </gauge:RadialAxis.Annotations>
+            </gauge:RadialAxis>
+        </gauge:SfRadialGauge.Axes>
+    </gauge:SfRadialGauge>

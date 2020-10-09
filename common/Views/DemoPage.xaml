@@ -1,0 +1,65 @@
+﻿<Page x:Class="syncfusion.demoscommon.winui.DemoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.demoscommon.winui"
+      xmlns:converters="using:Syncfusion.UI.Xaml.Core.Converters"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      NavigationCacheMode="Disabled">
+    <Page.Resources>
+        <converters:CollectionVisibilityConverter x:Key="collectionVisibilityConverter"/>
+    </Page.Resources>
+    <Grid x:Name="rootPanel"
+          Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="contentRoot"
+              Padding="24,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="demoColumn" />
+                <ColumnDefinition x:Name="rightMargin"
+                                  Width="20" />
+                <ColumnDefinition x:Name="infoColumn"
+                                  Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Frame x:Name="demoFrame"
+                   IsNavigationStackEnabled="False">
+            </Frame>
+            <Grid x:Name="infoPanel"
+                  Grid.Column="2"
+                  Width="280"
+                  Margin="0,0,24,24"
+                  Visibility="Collapsed">
+                <!--Visibility="{Binding DemoInfo.Documentation, Converter={StaticResource collectionVisibilityConverter}}">-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel x:Name="DocumentationPanel"
+                            Margin="0,0,0,40">
+                    <TextBlock x:Name="docHeader"
+                               Text="Documentation"
+                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <ItemsControl x:Name="DocsList"
+                                  Margin="0,12,0,0"
+                                  IsTabStop="False"
+                                  ItemsSource="{Binding DemoInfo.Documentation}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton NavigateUri="{Binding Uri}"
+                                                 ToolTipService.ToolTip="{Binding Uri}">
+                                    <TextBlock Text="{Binding Content}" />
+                                </HyperlinkButton>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
