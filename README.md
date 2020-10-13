@@ -1,6 +1,6 @@
 # Syncfusion WinUI Controls Demos (Beta)
 
-This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/orgs/syncfusion-demos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
+This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls).  This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/orgs/syncfusion-demos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
 
 This section guides you to use the Syncfusion WinUI demos in your applications.
 
