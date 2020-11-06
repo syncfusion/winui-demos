@@ -1,6 +1,0 @@
-﻿<syncfusion:SfColorPicker
-	BrushTypeOptions="SolidColorBrush"
-	ColorChannelInputOptions="$(ColorChannelInputOptions)"
-	ColorChannelOptions="$(ColorChannelOptions)"
-	ColorEditorsVisibilityMode="$(ColorEditorsVisibilityMode)"
-	IsHexInputVisible="$(IsHexInputVisible)"/>

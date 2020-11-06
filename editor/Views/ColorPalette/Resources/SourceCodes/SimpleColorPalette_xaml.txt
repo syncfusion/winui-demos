@@ -1,4 +1,0 @@
-﻿<syncfusion:SfColorPalette
-    ShowDefaultColorButton="$(ShowDefaultColorButton)"
-    ShowMoreColorsButton="$(ShowMoreColorsButton)"
-    ShowNoColorButton="$(ShowNoColorButton)"/>
