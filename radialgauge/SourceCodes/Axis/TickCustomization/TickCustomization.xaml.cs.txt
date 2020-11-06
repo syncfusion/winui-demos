@@ -1,0 +1,57 @@
+﻿<Grid>
+    <Grid.Resources>
+        <Style x:Key="AxisMajorTickStyle"
+               TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#999999"></Setter>
+            <Setter Property="StrokeThickness"
+                    Value="1"></Setter>
+            <Setter Property="StrokeDashArray"
+                    Value="2,1"></Setter>
+        </Style>
+
+        <Style x:Key="AxisMinorTickStyle"
+               TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#C4C4C4"></Setter>
+            ...
+            <Setter Property="StrokeDashArray"
+                    Value="2,1"></Setter>
+        </Style>
+    </Grid.Resources>
+    <gauge:SfRadialGauge>
+        <gauge:SfRadialGauge.Axes>
+            <gauge:RadialAxis ShowAxisLine="False"
+                              ShowLastLabel="False"
+                              LabelPosition="Outside"
+                              MinorTicksPerInterval="4"
+                              Interval="10"
+                              StartAngle="270"
+                              EndAngle="270"
+                              CanRotateLabels="True"
+                              MajorTickStyle="{StaticResource AxisMajorTickStyle}"
+                              MinorTickStyle="{StaticResource AxisMinorTickStyle}"
+                              TickLengthUnit="Factor"
+                              MajorTickLength="0.15"
+                              MinorTickLength="0.06">
+                <gauge:RadialAxis.Pointers>
+                    <gauge:NeedlePointer EnableAnimation="True"
+                                         Value="75"
+                                         NeedleFill="#FF494CA2"
+                                         NeedleLengthUnit="Factor"
+                                         NeedleLength="0.8"
+                                         NeedleStartWidth="1"
+                                         NeedleEndWidth="10"
+                                         TailWidth="10"
+                                         TailLength="30"
+                                         TailLengthUnit="Pixel"
+                                         TailFill="#FF494CA2"
+                                         KnobFill="#FF494CA2"
+                                         KnobRadius="10"
+                                         KnobSizeUnit="Pixel">
+                    </gauge:NeedlePointer>
+                </gauge:RadialAxis.Pointers>
+            </gauge:RadialAxis>
+        </gauge:SfRadialGauge.Axes>
+    </gauge:SfRadialGauge>
+</Grid>
