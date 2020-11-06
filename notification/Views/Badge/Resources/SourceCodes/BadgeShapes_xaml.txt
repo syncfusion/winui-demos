@@ -1,0 +1,12 @@
+﻿<syncfusion:BadgeContainer>
+    <syncfusion:BadgeContainer.Content>
+        <Button Content="Mail Box"/>
+    </syncfusion:BadgeContainer.Content>
+    <syncfusion:BadgeContainer.Badge>
+        <syncfusion:SfBadge
+            Content="$(Content)" 
+            Shape="$(Shape)" 
+            Fill="$(Fill)" 
+            AnimationType="$(AnimationType)"/>
+    </syncfusion:BadgeContainer.Badge>
+</syncfusion:BadgeContainer>

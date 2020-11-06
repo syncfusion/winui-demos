@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.VerticalChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases Vertical chart which is like normal chart except that the axis and series area are rotated to 90 degree.">
+
+                <common:DemoLayout.Example>
+                    <Grid
+                    x:Name="grid"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                        <chart:SfChart x:Name="Chart" AreaBorderThickness="0" Height="420">
+                            <chart:SfChart.Header>
+                                <TextBlock
+                                 Margin="0,0,0,13"
+                                FontFamily="Segoe UI"
+                                FontSize="18"
+                                Text="Seismograph Comparison Of Two Countries" />
+                            </chart:SfChart.Header>
+
+                            <chart:SfChart.DataContext>
+                                <local:MeasurementDetails />
+                            </chart:SfChart.DataContext>
+
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis
+                                x:Name="axis"
+                                FontFamily="Segoe UI"
+                                FontSize="14"
+                                Header="Time(sec)"
+                                LabelFormat="mm:ss"
+                                ShowGridLines="False" />
+                            </chart:SfChart.PrimaryAxis>
+
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis
+                                FontSize="14"
+                                Header="Velocity(m/s)"                              
+                                Maximum="15"
+                                Minimum="-15"
+                                ShowGridLines="False" />
+                            </chart:SfChart.SecondaryAxis>
+
+                            <chart:LineSeries
+                            x:Name="series1"
+                            Interior="#0BB4C2"
+                            IsTransposed="True"
+                            ItemsSource="{Binding}"
+                            Label="Indonesia"
+                            StrokeThickness="1"
+                            XBindingPath="Time"
+                            YBindingPath="Velocity1" />
+                        </chart:SfChart>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfChart x:Name=&quot;Chart&quot;&gt;   
+
+    &lt;chart:LineSeries 
+                        ItemsSource=&quot;{Binding}&quot; 
+                        XBindingPath=&quot;Time&quot;  
+                        YBindingPath=&quot;Velocity1&quot;  
+                        Label=&quot;Indonesia&quot;
+                        Interior=&quot;#0BB4C2&quot; 
+                        IsTransposed=&quot;True&quot;  
+                        StrokeThickness=&quot;1&quot; /&gt;
+    
+&lt;/chart:SfChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

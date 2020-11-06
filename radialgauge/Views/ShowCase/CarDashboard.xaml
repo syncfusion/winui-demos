@@ -1,0 +1,441 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.CarDashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.radialgaugedemos.winui.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+       xmlns:coreconverter="using:Syncfusion.UI.Xaml.Core.Converters"
+      xmlns:common="using:syncfusion.demoscommon.winui">
+
+    <common:DemoLayout HeaderText="This sample showcases the car dashboard view using the various radial gauge features."
+                       Margin="0,0,0,10">
+        <common:DemoLayout.Example>
+            <Grid Name="Layout">
+                <Grid.Resources>
+                    <coreconverter:FormatStringConverter x:Key="FormatStringConverter" />
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!--.. Speed  ..-->
+                    <Grid Grid.Column="0" >
+                        <Border>
+                            <gauge:SfRadialGauge x:Name="SpeedGauge">
+                                <gauge:SfRadialGauge.Axes>
+                                    <gauge:RadialAxis UseRangeColorForAxis="True"
+                                          AxisLineFill="#FFBBBBBB"
+                                          AxisLineWidth="4"
+                                          TickPosition="Center"
+                                          StartAngle="140"
+                                          MinorTicksPerInterval="0"
+                                          EndAngle="400"
+                                          Minimum="0"
+                                          Maximum="160"
+                                          Interval="20"
+                                          MajorTickLength="10">
+
+                                        <gauge:RadialAxis.MajorTickStyle>
+                                            <Style TargetType="Line">
+                                                <Setter Property="Stroke"
+                                            Value="#FFBBBBBB"></Setter>
+                                                <Setter Property="StrokeThickness"
+                                            Value="3"></Setter>
+                                            </Style>
+                                        </gauge:RadialAxis.MajorTickStyle>
+
+                                        <gauge:RadialAxis.Pointers>
+                                            <gauge:NeedlePointer x:Name="SpeedPointer"
+                                                     KnobSizeUnit="Pixel"
+                                                     KnobRadius="12.5"
+                                                     KnobFill="#FF719836"
+                                                     NeedleFill="#FF719836"
+                                                     NeedleStartWidth="3"
+                                                     NeedleEndWidth="3"
+                                                     NeedleLength="0.44"
+                                                     Value="{Binding Speed}"
+                                                     NeedleLengthUnit="Factor" />
+
+                                            <gauge:RangePointer 
+                                                    PointerWidth="0.15"
+                                                    WidthUnit="Factor"
+                                                    Background="#FF719836"
+                                                    OffsetUnit="Factor"
+                                                    Value="{Binding Speed}"
+                                                    PointerOffset="0.4" />
+                                        </gauge:RadialAxis.Pointers>
+
+                                        <gauge:RadialAxis.Ranges>
+                                            <gauge:GaugeRange StartValue="0"
+                                                  EndValue="100"
+                                                  StartWidth="4"
+                                                  EndWidth="4"
+                                                  Background="#FF719836" />
+                                        </gauge:RadialAxis.Ranges>
+
+                                        <gauge:RadialAxis.Annotations>
+                                            <gauge:GaugeAnnotation PositionFactor="0.6"
+                                                       DirectionValue="90">
+                                                <TextBlock Foreground="#FF8B8181"
+                                               FontSize="12"
+                                               Text="SPEED in MPH" />
+                                            </gauge:GaugeAnnotation>
+                                        </gauge:RadialAxis.Annotations>
+
+                                    </gauge:RadialAxis>
+                                </gauge:SfRadialGauge.Axes>
+                            </gauge:SfRadialGauge>
+                        </Border>
+                    </Grid>
+
+                    <!--.. RPM ..-->
+                    <Grid Grid.Column="1" >
+                        <gauge:SfRadialGauge x:Name="RpmGauge">
+                            <gauge:SfRadialGauge.Axes>
+                                <gauge:RadialAxis UseRangeColorForAxis="True"
+                                          AxisLineFill="#FFBBBBBB"
+                                          AxisLineWidth="4"
+                                          TickPosition="Center"
+                                          StartAngle="140"
+                                          MinorTicksPerInterval="0"
+                                          EndAngle="400"
+                                          Minimum="0"
+                                          Maximum="8"
+                                          Interval="1"
+                                          MajorTickLength="10">
+
+                                    <gauge:RadialAxis.MajorTickStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="Stroke"
+                                            Value="#FFBBBBBB"></Setter>
+                                            <Setter Property="StrokeThickness"
+                                            Value="3"></Setter>
+                                        </Style>
+                                    </gauge:RadialAxis.MajorTickStyle>
+
+                                    <gauge:RadialAxis.Pointers>
+                                        <gauge:NeedlePointer  x:Name="RpmPointer"
+                                                      KnobSizeUnit="Pixel"
+                                                      KnobRadius="12.5"
+                                                      KnobFill="#FF1B8FCF"
+                                                      NeedleStartWidth="3"
+                                                      NeedleEndWidth="3"
+                                                      NeedleFill="#FF1B8FCF"
+                                                      NeedleLengthUnit="Factor"
+                                                      Value="{Binding RPM}"
+                                                      NeedleLength="0.44" />
+
+                                        <gauge:RangePointer PointerWidth="0.15"
+                                                     WidthUnit="Factor"
+                                                     Background="#FF1B8FCF"
+                                                     OffsetUnit="Factor"
+                                                     Value="{Binding RPM}"
+                                                     PointerOffset="0.4" />
+                                    </gauge:RadialAxis.Pointers>
+
+                                    <gauge:RadialAxis.Ranges>
+                                        <gauge:GaugeRange StartValue="0"
+                                                  EndValue="5"
+                                                  StartWidth="4"
+                                                  EndWidth="4"
+                                                  Background="#FF1B8FCF" />
+                                    </gauge:RadialAxis.Ranges>
+
+                                    <gauge:RadialAxis.Annotations>
+                                        <gauge:GaugeAnnotation PositionFactor="0.6"
+                                                       DirectionValue="90">
+                                            <TextBlock Foreground="#FF8B8181"
+                                               FontSize="12"
+                                               Text="RPM" />
+                                        </gauge:GaugeAnnotation>
+                                    </gauge:RadialAxis.Annotations>
+                                </gauge:RadialAxis>
+                            </gauge:SfRadialGauge.Axes>
+                        </gauge:SfRadialGauge>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!--..  Temperature ..-->
+                    <Grid Grid.Column="0"
+                  Grid.Row="1" >
+                        <gauge:SfRadialGauge x:Name="TempGauge">
+                            <gauge:SfRadialGauge.Axes>
+                                <gauge:RadialAxis UseRangeColorForAxis="True"
+                                          RadiusFactor="0.8"
+                                          AxisLineFill="#FFBBBBBB"
+                                          AxisLineWidth="4"
+                                          TickPosition="Center"
+                                          StartAngle="175"
+                                          MinorTicksPerInterval="0"
+                                          EndAngle="365"
+                                          Interval="10"
+                                          Minimum="0"
+                                          Maximum="80"
+                                          MajorTickLength="10">
+
+                                    <gauge:RadialAxis.MajorTickStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="Stroke"
+                                            Value="#FFBBBBBB"></Setter>
+                                            <Setter Property="StrokeThickness"
+                                            Value="3"></Setter>
+                                        </Style>
+                                    </gauge:RadialAxis.MajorTickStyle>
+
+                                    <gauge:RadialAxis.Pointers>
+                                        <gauge:RangePointer x:Name="TempPointer"
+                                                    PointerWidth="0.15"
+                                                    WidthUnit="Factor"
+                                                    Background="#FFD74009"
+                                                    OffsetUnit="Factor"
+                                                    Value="{Binding Temperature}"
+                                                    PointerOffset="-0.2" />
+                                    </gauge:RadialAxis.Pointers>
+
+                                    <gauge:RadialAxis.Ranges>
+                                        <gauge:GaugeRange StartValue="0"
+                                                  EndValue="50"
+                                                  StartWidth="4"
+                                                  EndWidth="4"
+                                                  Background="#FFD74009" />
+                                    </gauge:RadialAxis.Ranges>
+                                    <gauge:RadialAxis.Annotations>
+                                        <gauge:GaugeAnnotation DirectionValue="90"
+                                                       PositionFactor="0.2">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0.2*" />
+                                                    <RowDefinition Height="0.2*" />
+                                                </Grid.RowDefinitions>
+
+                                                <Border Grid.Row="0"
+                                                CornerRadius="5"
+                                                BorderThickness="0.5"
+                                                BorderBrush="#FF8B8181"
+                                                Height="30"
+                                                Width="60"
+                                                VerticalAlignment="Top"
+                                                HorizontalAlignment="Center">
+
+                                                    <TextBlock x:Name="TempTextBlock"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="#FFD74009"
+                                                       FontSize="20"
+                                                       Text="{Binding Temperature,Converter={StaticResource FormatStringConverter}, ConverterParameter='0'}"
+                                                       FontFamily="SeguoeUI" />
+                                                </Border>
+
+                                                <TextBlock Grid.Row="1"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF8B8181"
+                                                   FontSize="12"
+                                                   Text="TEMPERATURE" />
+                                            </Grid>
+                                        </gauge:GaugeAnnotation>
+                                    </gauge:RadialAxis.Annotations>
+
+                                </gauge:RadialAxis>
+                            </gauge:SfRadialGauge.Axes>
+                        </gauge:SfRadialGauge>
+                    </Grid>
+
+                    <!--.. Fuel ..-->
+                    <Grid Grid.Column="1"
+                  Grid.Row="1"  >
+                        <gauge:SfRadialGauge x:Name="FuelGauge">
+
+                            <gauge:SfRadialGauge.Axes>
+                                <gauge:RadialAxis ShowLabels="False"
+                                          AxisLineFill="#FFBBBBBB"
+                                          LabelPosition="Inside"
+                                          AxisLineWidth="8"
+                                          TickPosition="Outside"
+                                          StartAngle="222"
+                                          MinorTicksPerInterval="0"
+                                          EndAngle="318"
+                                          Interval="25"
+                                          Minimum="0"
+                                          Maximum="100"
+                                          MajorTickLength="12">
+
+                                    <gauge:RadialAxis.MajorTickStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="Stroke"
+                                            Value="#FFBBBBBB"></Setter>
+                                            <Setter Property="StrokeThickness"
+                                            Value="3"></Setter>
+                                        </Style>
+                                    </gauge:RadialAxis.MajorTickStyle>
+
+                                    <gauge:RadialAxis.Pointers>
+                                        <gauge:RangePointer x:Name="FuelPointer2"
+                                                    PointerWidth="7"
+                                                    Value="100"
+                                                    Background="WhiteSmoke"
+                                                    OffsetUnit="Factor"
+                                                    PointerOffset="0.3" />
+
+                                        <gauge:RangePointer x:Name="FuelPointer1"
+                                                    PointerWidth="7"
+                                                    Background="#FFECA414"
+                                                    OffsetUnit="Factor"
+                                                    Value="{Binding Fuel}"
+                                                    PointerOffset="0.3" />
+                                    </gauge:RadialAxis.Pointers>
+                                    <gauge:RadialAxis.Annotations>
+                                        <gauge:GaugeAnnotation DirectionValue="90"
+                                                       PositionFactor="0.2">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0.5*" />
+                                                    <RowDefinition Height="0.5*" />
+                                                </Grid.RowDefinitions>
+
+                                                <Border CornerRadius="5"
+                                                BorderThickness="0.5"
+                                                BorderBrush="#FF8B8181"
+                                                Height="30"
+                                                Width="60"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Top">
+                                                    <TextBlock x:Name="FuelTextBlock"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="#FFECA414"
+                                                       FontSize="20"
+                                                       Text="{Binding Fuel, Converter={StaticResource FormatStringConverter}, ConverterParameter='0'}"
+                                                       FontFamily="SegoeUI" />
+                                                </Border>
+
+                                                <TextBlock Grid.Row="1"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF8B8181"
+                                                   FontSize="12"
+                                                   Text="FUEL" />
+                                            </Grid>
+                                        </gauge:GaugeAnnotation>
+
+                                        <gauge:GaugeAnnotation PositionFactor="1.1"
+                                                       DirectionValue="320">
+                                            <TextBlock Text="F"
+                                               Foreground="#FFBBBBBB"
+                                               FontSize="20" />
+                                        </gauge:GaugeAnnotation>
+
+                                        <gauge:GaugeAnnotation PositionFactor="1.1"
+                                                       DirectionValue="222">
+                                            <TextBlock Text="E"
+                                               Foreground="#FFBBBBBB"
+                                               FontSize="20" />
+                                        </gauge:GaugeAnnotation>
+                                    </gauge:RadialAxis.Annotations>
+                                </gauge:RadialAxis>
+                            </gauge:SfRadialGauge.Axes>
+                        </gauge:SfRadialGauge>
+                    </Grid>
+
+                    <!--.. Torque ..-->
+                    <Grid Grid.Column="2"
+                  Grid.Row="1"  >
+                        <gauge:SfRadialGauge x:Name="TorqueGauge" >
+
+                            <gauge:SfRadialGauge.Axes>
+                                <gauge:RadialAxis UseRangeColorForAxis="True"
+                                          AxisLineFill="#FFBBBBBB" x:Name="TorqueAxis"
+                                          AxisLineWidth="4"
+                                          TickPosition="Center"
+                                          StartAngle="180"
+                                          MinorTicksPerInterval="0"
+                                          EndAngle="360"
+                                          Interval="0.3"
+                                          Minimum="0.3"
+                                          Maximum="2.1001"
+                                          MajorTickLength="10"
+                                          LabelPrepared="RadialAxis_LabelPrepared">
+
+                                    <gauge:RadialAxis.MajorTickStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="Stroke"
+                                            Value="#FFBBBBBB"></Setter>
+                                            <Setter Property="StrokeThickness"
+                                            Value="3"></Setter>
+                                        </Style>
+                                    </gauge:RadialAxis.MajorTickStyle>
+
+                                    <gauge:RadialAxis.Pointers>
+                                        <gauge:RangePointer x:Name="TorquePointer"
+                                                    PointerWidth="0.15"
+                                                    WidthUnit="Factor"
+                                                    Background="#FF23B7C3"
+                                                    OffsetUnit="Factor"
+                                                    Value="{Binding Torque}"
+                                                    PointerOffset="0.5" />
+                                    </gauge:RadialAxis.Pointers>
+
+                                    <gauge:RadialAxis.Ranges>
+                                        <gauge:GaugeRange StartValue="0.3"
+                                                  EndValue="1.51"
+                                                  Background="#FF23B7C3"
+                                                  StartWidth="4"
+                                                  EndWidth="4" />
+                                    </gauge:RadialAxis.Ranges>
+                                    <gauge:RadialAxis.Annotations>
+                                        <gauge:GaugeAnnotation PositionFactor="0.2"
+                                                       DirectionValue="90">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0.5*" />
+                                                    <RowDefinition Height="0.5*" />
+                                                </Grid.RowDefinitions>
+
+                                                <Border CornerRadius="5"
+                                                BorderThickness="0.5"
+                                                BorderBrush="#FF8B8181"
+                                                Height="30"
+                                                Width="60"
+                                                HorizontalAlignment="Center">
+                                                    <TextBlock x:Name="TorqueTextBlock"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="#FF23B7C3"
+                                                       FontSize="20"
+                                                       Text="{Binding Torque}"
+                                                       FontFamily="SegoeUI" />
+                                                </Border>
+
+                                                <TextBlock Grid.Row="1"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF8B8181"
+                                                   FontSize="12"
+                                                   Text="TORQUE" />
+                                            </Grid>
+                                        </gauge:GaugeAnnotation>
+                                    </gauge:RadialAxis.Annotations>
+                                </gauge:RadialAxis>
+                            </gauge:SfRadialGauge.Axes>
+                        </gauge:SfRadialGauge>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </common:DemoLayout.Example>
+    </common:DemoLayout>
+</Page>

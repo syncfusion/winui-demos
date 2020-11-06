@@ -1,0 +1,88 @@
+﻿<Page x:Class="syncfusion.treeviewdemos.winui.PerformancePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:local="using:syncfusion.treeviewdemos.winui"
+      xmlns:syncfusion="using:Syncfusion.UI.Xaml.TreeView"
+      xmlns:expanderIndicator="using:Microsoft.UI.Xaml.Controls"
+      xmlns:converters="using:Syncfusion.UI.Xaml.Core.Converters"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      NavigationCacheMode="Disabled">
+
+    <Page.DataContext>
+        <local:PerformanceViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+        <common:DemoLayout>
+            <Grid Height="500">
+                <syncfusion:SfTreeView x:Name="treeView"
+                                       Padding="2"
+                                       Width="400"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       BorderBrush="LightGray"
+                                       BorderThickness="1"
+                                       ItemsSource="{Binding Items}"
+                                       LoadOnDemandCommand="{Binding TreeViewOnDemandCommand}"
+                                       Visibility="{Binding TreeViewVisibility, Mode=TwoWay}">
+                    <syncfusion:SfTreeView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center"
+                                       Text="{Binding Header}" />
+                        </DataTemplate>
+                    </syncfusion:SfTreeView.ItemTemplate>
+                </syncfusion:SfTreeView>
+
+                <expanderIndicator:ProgressRing x:Name="loadingIndicator"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                IsActive="{Binding IsBusy, Mode=TwoWay}"
+                                                Visibility="Visible">
+                </expanderIndicator:ProgressRing>
+
+                <Button x:Name="loadingButton"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        Command="{Binding ClickCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
+                        Visibility="Visible">
+                    <Grid>
+                        <TextBlock Margin="10,2"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"
+                                   Text="Generate 100K RootNodes" />
+                    </Grid>
+                </Button>
+            </Grid>
+            <common:DemoLayout.HeaderText>
+                Load and scroll performance with one million nodes.
+            </common:DemoLayout.HeaderText>
+            <common:DemoLayout.Xaml>
+                <x:String xml:space="preserve">
+&lt;syncfusion:SfTreeView ItemsSource="{Binding Items}"
+                       LoadOnDemandCommand="{Binding TreeViewOnDemandCommand}"
+                       Visibility="{Binding TreeViewVisibility, Mode=TwoWay}"
+                       BorderBrush="LightGray" 
+                       BorderThickness="1"&gt;                   
+      &lt;syncfusion:SfTreeView.ItemTemplate&gt;
+          &lt;DataTemplate&gt;
+              &lt;TextBlock VerticalAlignment="Center"
+                         Text="{Binding Header}"/&gt;
+          &lt;/DataTemplate&gt;
+      &lt;/syncfusion:SfTreeView.ItemTemplate&gt;                            
+&lt;/syncfusion:SfTreeView&gt;    
+</x:String>
+            </common:DemoLayout.Xaml>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

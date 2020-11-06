@@ -1,0 +1,52 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis Interval="10"
+                          StartAngle="0"
+                          EndAngle="360"
+                          ShowTicks="False"
+                          ShowLabels="False"
+                          AxisLineWidth="30">
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:RangePointer Value="73"
+                                    PointerWidth="30"
+                                    EnableAnimation="True"
+                                    CornerStyle="BothCurve">
+                    <gauge:RangePointer.GradientStops>
+                        <gauge:GaugeGradientStop Value="18"
+                                                 Color="#FFFCE38A">
+                        </gauge:GaugeGradientStop>
+                        <gauge:GaugeGradientStop Value="55"
+                                                 Color="#FFF38181">
+                        </gauge:GaugeGradientStop>
+                    </gauge:RangePointer.GradientStops>
+                </gauge:RangePointer>
+            </gauge:RadialAxis.Pointers>
+
+            <gauge:RadialAxis.Annotations>
+                <gauge:GaugeAnnotation>
+                    <gauge:GaugeAnnotation.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Image Source="/Images/sun.png"
+                                       Height="50"
+                                       Width="60" />
+                                <TextBlock Text="73°F"
+                                           Grid.Row="1"
+                                           FontSize="25"
+                                           FontWeight="SemiBold"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left" />
+                            </Grid>
+                        </DataTemplate>
+                    </gauge:GaugeAnnotation.ContentTemplate>
+                </gauge:GaugeAnnotation>
+            </gauge:RadialAxis.Annotations>
+
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

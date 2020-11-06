@@ -1,0 +1,13 @@
+﻿<syncfusion:SfDropDownColorPalette/>
+
+<!-- Custom Template -->
+<syncfusion:SfDropDownColorPalette>
+    <syncfusion:SfDropDownColorPalette.ContentTemplate>
+        <DataTemplate>
+            <StackPanel>
+                <Path Data="{StaticResource paint}"/>
+                <Rectangle Fill="{Binding}"/>
+            </StackPanel>
+        </DataTemplate>
+    </syncfusion:SfDropDownColorPalette.ContentTemplate>
+</syncfusion:SfDropDownColorPalette>
