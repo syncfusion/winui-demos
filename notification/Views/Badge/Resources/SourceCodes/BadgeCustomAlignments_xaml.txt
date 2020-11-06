@@ -1,0 +1,14 @@
+﻿<syncfusion:BadgeContainer>
+    <syncfusion:BadgeContainer.Content>
+        <PersonPicture/>
+    </syncfusion:BadgeContainer.Content>
+    <syncfusion:BadgeContainer.Badge>
+        <syncfusion:SfBadge 
+            HorizontalCustomAlignment="$(HorizontalCustomAlignment)" 
+            VerticalCustomAlignment="$(VerticalCustomAlignment)" 
+            HorizontalCustomAnchor="$(HorizontalCustomAnchor)" 
+            VerticalCustomAnchor="$(VerticalCustomAnchor)">
+            <Ellipse Fill="LimeGreen"/>
+        </syncfusion:SfBadge>
+    </syncfusion:BadgeContainer.Badge>
+</syncfusion:BadgeContainer>

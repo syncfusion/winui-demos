@@ -1,0 +1,10 @@
+﻿<syncfusion:SfColorPalette>
+    <syncfusion:SfColorPalette.StandardColors>
+        <syncfusion:StandardPaletteModel
+            ShowHeader="$(ShowStandardColorsHeader)"
+            ShowColors="$(ShowStandardColors)"
+            ShowColorShades="$(ShowStandardColorsShades)"
+            Header="$(StandardColorsHeader)"
+            ColorShadesSpacing="$(StandardColorsShadesSpacing)" />
+    </syncfusion:SfColorPalette.StandardColors>
+</syncfusion:SfColorPalette>

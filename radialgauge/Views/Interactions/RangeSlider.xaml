@@ -1,0 +1,70 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.RangeSlider"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.radialgaugedemos.winui.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:coreconverters="using:Syncfusion.UI.Xaml.Core.Converters">
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample shows the radial slider using the range pointer along with the drag interaction support."
+                           XamlSource="syncfusion.radialgaugedemos.winui/sourcecodes\interactions\rangeslider\rangeslider.xaml.cs.txt">
+            <common:DemoLayout.Example>
+                <Grid>
+                    <Grid.Resources>
+                        <coreconverters:StringFormatConverter x:Name="StringFormatConverter" />
+                    </Grid.Resources>
+                    <gauge:SfRadialGauge>
+                        <gauge:SfRadialGauge.Axes>
+                            <gauge:RadialAxis ShowTicks="False"
+                                              ShowLabels="False"
+                                              AxisLineWidthUnit="Factor"
+                                              AxisLineWidth="0.2">
+
+                                <gauge:RadialAxis.Pointers>
+                                    <gauge:RangePointer x:Name="rangePointer"
+                                                        IsInteractive="True"
+                                                        Value="60"
+                                                        WidthUnit="Factor"
+                                                        PointerWidth="0.2"
+                                                        ValueChanging="rangePointer_ValueChanging"
+                                                        ValueChanged="rangePointer_ValueChanged" />
+                                    <gauge:MarkerPointer x:Name="markerPointer"
+                                                         IsHitTestVisible="False"
+                                                         Value="58.5"
+                                                         MarkerType="Circle"
+                                                         MarkerHeight="8"
+                                                         MarkerWidth="8"
+                                                         Background="White" />
+                                </gauge:RadialAxis.Pointers>
+
+                                <gauge:RadialAxis.Annotations>
+                                    <gauge:GaugeAnnotation>
+                                        <gauge:GaugeAnnotation.ContentTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Foreground="#107C10"
+                                                               FontWeight="Bold"
+                                                               FontSize="20"
+                                                               Text="{Binding ElementName=rangePointer,
+                                                                              Path=Value,
+                                                                              Mode=OneWay,
+                                                                              Converter={StaticResource StringFormatConverter},
+                                                                              ConverterParameter='{}{0:0}%'}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </gauge:GaugeAnnotation.ContentTemplate>
+                                    </gauge:GaugeAnnotation>
+                                </gauge:RadialAxis.Annotations>
+                            </gauge:RadialAxis>
+                        </gauge:SfRadialGauge.Axes>
+                    </gauge:SfRadialGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

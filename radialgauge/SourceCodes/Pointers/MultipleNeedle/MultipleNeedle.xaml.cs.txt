@@ -1,0 +1,56 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis ShowAxisLine="False"
+                          RadiusFactor="0.5"
+                          StartAngle="270"
+                          EndAngle="270"
+                          Maximum="60"
+                          ShowFirstLabel="False"
+                          Interval="5"
+                          MinorTicksPerInterval="5"
+                          FontSize="10"
+                          TickLengthUnit="Factor"
+                          MinorTickLength="0.03"
+                          MajorTickLength="0.1">
+        </gauge:RadialAxis>
+        <gauge:RadialAxis AxisLineWidthUnit="Factor"
+                          AxisLineWidth="0.06"
+                          AxisLineFill="#FFFFCD60"
+                          StartAngle="270"
+                          EndAngle="270"
+                          Maximum="12"
+                          LabelPrepared="mainAxis_LabelPrepared"
+                          ShowFirstLabel="False"
+                          Interval="1"
+                          MinorTicksPerInterval="5"
+                          TickLengthUnit="Factor"
+                          MinorTickLength="0.05"
+                          MajorTickLength="0.1">
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:NeedlePointer Value="8"
+                                     NeedleLength="0.35"
+                                     NeedleFill="#FFF67280"
+                                     NeedleLengthUnit="Factor"
+                                     NeedleStartWidth="1"
+                                     NeedleEndWidth="10"
+                                     EnableAnimation="True"
+                                     KnobRadius="0">
+                </gauge:NeedlePointer>
+                <gauge:NeedlePointer Value="3"
+                                     NeedleLength="0.85"
+                                     NeedleFill="#FFF67280"
+                                     NeedleLengthUnit="Factor"
+                                     NeedleStartWidth="1"
+                                     NeedleEndWidth="10"
+                                     EnableAnimation="True"
+                                     KnobStroke="#FFF67280"
+                                     KnobStrokeThickness="0.015"
+                                     KnobFill="White"
+                                     KnobSizeUnit="Factor"
+                                     KnobRadius="0.05">
+                </gauge:NeedlePointer>
+            </gauge:RadialAxis.Pointers>
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>
