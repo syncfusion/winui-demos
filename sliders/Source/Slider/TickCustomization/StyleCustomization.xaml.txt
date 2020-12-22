@@ -1,0 +1,24 @@
+﻿<slider:SfSlider Value="$(tickStyleValueSubstitute)"
+                 ShowTicks="True"
+                 ShowLabels="True">
+    <slider:SfSlider.MajorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="Red" />
+            <Setter Property="StrokeThickness"
+                    Value="1.5" />
+            <Setter Property="StrokeDashArray"
+                    Value="1,1" />
+        </Style>
+    </slider:SfSlider.MajorTickStyle>
+    <slider:SfSlider.MinorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="Green" />
+            <Setter Property="StrokeThickness"
+                    Value="1.5" />
+            <Setter Property="StrokeDashArray"
+                    Value="1,1" />
+        </Style>
+    </slider:SfSlider.MinorTickStyle>
+</slider:SfSlider>

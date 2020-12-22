@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="DataGrid.Grouping"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:coreconverter="using:Syncfusion.UI.Xaml.Core.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.DataGrid"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:EmployeeViewModel />
+    </Page.DataContext>
+    <Page.Resources>
+        <coreconverter:StringFormatConverter x:Key="stringFormatConverter" />
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid allows you to group the data by one or more columns by dragging the required column to intuitive group drop area at top of the data grid.">
+                <common:DemoLayout.Example>
+                    <syncfusion:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="500"
+                        Margin="5"
+                        VerticalAlignment="Top"
+                        AllowFrozenGroupHeaders="{Binding ElementName=aFC_ChkBox, Path=IsChecked, Mode=TwoWay}"
+                        AllowGrouping="True"
+                        AllowResizingColumns="True"
+                        AutoExpandGroups="True"
+                        AutoGenerateColumns="False"
+                        ColumnWidthMode="AutoLastColumnFill"
+                        IsGroupDropAreaExpanded="True"
+                        ItemsSource="{Binding Employees}"
+                        NavigationMode="Row"
+                        ShowColumnWhenGrouped="True"
+                        ShowGroupDropArea="True">
+
+                        <syncfusion:SfDataGrid.GroupColumnDescriptions>
+                            <syncfusion:GroupColumnDescription ColumnName="Title" />
+                        </syncfusion:SfDataGrid.GroupColumnDescriptions>
+
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridCheckBoxColumn HeaderText="Availability" MappingName="EmployeeStatus" AllowEditing="True" />
+                            <syncfusion:GridTextColumn HeaderText="Employee ID" MappingName="EmployeeID" TextAlignment="Right"/>
+                            <syncfusion:GridTextColumn
+                                AllowGrouping="{Binding ElementName=name_ChkBx, Path=IsChecked, Mode=TwoWay}"
+                                HeaderText="Employee Name"
+                                MappingName="Name" />
+                            <syncfusion:GridTextColumn MappingName="Gender" />
+                            <syncfusion:GridTextColumn
+                                DisplayBinding="{Binding HireDate, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}"
+                                HeaderText="Hire Date"
+                                TextAlignment="Right" />
+                            <syncfusion:GridTextColumn HeaderText="Designation" MappingName="Title" />
+                            <syncfusion:GridTextColumn HeaderText="Marital Status" MappingName="MaritalStatus" />
+                            <syncfusion:GridTextColumn
+                                DisplayBinding="{Binding Salary, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                MappingName="Salary"
+                                TextAlignment="Right" />
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                        <CheckBox
+                            x:Name="aFC_ChkBox"
+                            Margin="16,5,5,5"
+                            Content="AllowFrozenGroupHeaders"
+                            IsChecked="True" />
+                        <CheckBox
+                            x:Name="name_ChkBx"
+                            Margin="16,5,5,5"
+                            Content="AllowGrouping &#10;for Employee Name&#10;Column"
+                            IsChecked="True" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+     &lt;syncfusion:SfDataGrid x:Name=&quot;sfDataGrid&quot; 
+                               AllowFrozenGroupHeaders=&quot;$(AllowFrozenGroupHeaders)&quot;  
+                               Margin=&quot;5&quot;        
+                               AllowGrouping=&quot;True&quot;
+                               AllowResizingColumns=&quot;True&quot;
+                               AutoExpandGroups=&quot;True&quot;
+                               AutoGenerateColumns=&quot;True&quot;
+                               ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                               IsGroupDropAreaExpanded=&quot;True&quot;
+                               ItemsSource=&quot;{Binding Employees}&quot;
+                               NavigationMode=&quot;Row&quot;
+                               ShowColumnWhenGrouped=&quot;True&quot;
+                               ShowGroupDropArea=&quot;True&quot;/&gt;
+             &lt;syncfusion:SfDataGrid.GroupColumnDescriptions&gt;
+                 &lt;syncfusion:GroupColumnDescription ColumnName=&quot;Title&quot;&gt;
+             &lt;/syncfusion:SfDataGrid.GroupColumnDescriptions&gt;
+     &lt;/syncfusion:SfDataGrid &gt; 
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="AllowFrozenGroupHeaders"
+                        SubstitutionValue="{x:Bind sfDataGrid.AllowFrozenGroupHeaders, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

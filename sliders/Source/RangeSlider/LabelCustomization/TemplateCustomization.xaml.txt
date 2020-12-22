@@ -1,0 +1,14 @@
+﻿<slider:SfRangeSlider RangeStart="$(labelTemplateRangeStartSubstitute)"
+                      RangeEnd="$(labelTemplateRangeEndSubstitute)"
+                      ShowLabels="True"
+                      LabelOffset="15">
+    <slider:SfRangeSlider.LabelTemplate>
+        <DataTemplate>
+            <Grid CornerRadius="5"
+                  Background="{ThemeResource SystemBaseLowColor}">
+                <TextBlock Text="{Binding Text}"
+                           Margin="6" />
+            </Grid>
+        </DataTemplate>
+    </slider:SfRangeSlider.LabelTemplate>
+</slider:SfRangeSlider>

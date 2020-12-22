@@ -1,0 +1,7 @@
+﻿<syncfusion:SfCalendarDatePicker
+    EditMode="$(EditMode)"
+    TodayHighlightMode="$(TodayHighlightMode)"
+    SelectionHighlightMode="$(SelectionHighlightMode)"
+    PlaceHolderText="$(PlaceHolderText)"
+    FirstDayOfWeek="$(FirstDayOfWeek)"
+    NumberOfWeeksInView="$(NumberOfWeeksInView)"/>

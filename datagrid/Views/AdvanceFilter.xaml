@@ -1,0 +1,206 @@
+﻿<Page
+    x:Class="DataGrid.AdvanceFilter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:coreconverter="using:Syncfusion.UI.Xaml.Core.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.DataGrid"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:EmployeeViewModel x:Key="employeeViewModel" />
+        <coreconverter:StringFormatConverter x:Key="stringFormatConverter" />
+        <Style x:Key="advancedfiltercontrolstyleforEmployeeID" TargetType="syncfusion:AdvancedFilterControl">
+            <Setter Property="CanGenerateUniqueItems" Value="False" />
+        </Style>
+        <Style x:Key="popupstyleforEmployeeID" TargetType="syncfusion:GridFilterControl">
+            <Setter Property="FilterMode" Value="Both" />
+            <Setter Property="AdvancedFilterStyle" Value="{StaticResource advancedfiltercontrolstyleforEmployeeID}" />
+        </Style>
+        <Style x:Key="popupstyleforHireDate" TargetType="syncfusion:GridFilterControl">
+            <Setter Property="FilterMode" Value="CheckboxFilter" />
+        </Style>
+        <Style x:Key="popupstyleforDesignation" TargetType="syncfusion:GridFilterControl">
+            <Setter Property="FilterMode" Value="AdvancedFilter" />
+        </Style>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource employeeViewModel}">
+        <ScrollViewer
+            HorizontalScrollBarVisibility="Auto"
+            HorizontalScrollMode="Auto"
+            VerticalScrollBarVisibility="Auto"
+            VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid provides support to filter the columns like Excel inspired UI.">
+                <common:DemoLayout.Example>
+                    <syncfusion:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="500"
+                        Margin="10,10,10,10"
+                        VerticalAlignment="Top"
+                        AllowFiltering="{Binding IsChecked, ElementName=ckbAllowFilters}"
+                        AutoGenerateColumns="False"
+                        ColumnWidthMode="AutoLastColumnFill"
+                        ItemsSource="{Binding Employees}"
+                        LiveDataUpdateMode="AllowDataShaping"
+                        NavigationMode="Row">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTextColumn x:Name="employeeIDColumn"
+                                AllowBlankFilters="{Binding ElementName=ckbAllowBlankFiltersEmployeeID, Path=IsChecked}"
+                                AllowFiltering="{Binding ElementName=ckbAllowFilterEmployeeID, Path=IsChecked}"
+                                FilterPopupStyle="{StaticResource popupstyleforEmployeeID}"
+                                TextAlignment="Right"
+                                HeaderText="Employee ID"
+                                ImmediateUpdateColumnFilter="{Binding ElementName=ckbImmediateUpdateColumnFilterEmployeeID, Path=IsChecked}"
+                                MappingName="EmployeeID" />
+                            <syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="Name" />
+                            <syncfusion:GridTextColumn x:Name="birthDateColumn"
+                                AllowBlankFilters="{Binding ElementName=ckbAllowBlankFiltersBirthDate, Path=IsChecked}"
+                                AllowFiltering="{Binding ElementName=ckbAllowFilterBirthDate, Path=IsChecked}"
+                                DisplayBinding="{Binding Path=BirthDate, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}"
+                                HeaderText="Birth Date"
+                                ImmediateUpdateColumnFilter="{Binding ElementName=ckbImmediateUpdateColumnFilterBirthDate, Path=IsChecked}"
+                                TextAlignment="Right" />
+                            <syncfusion:GridTextColumn
+                                DisplayBinding="{Binding Path=HireDate, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}"
+                                FilterPopupStyle="{StaticResource popupstyleforHireDate}"
+                                HeaderText="Hire Date"
+                                TextAlignment="Right" />
+                            <syncfusion:GridTextColumn DisplayBinding="{Binding Salary, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}" TextAlignment="Right" />
+                            <syncfusion:GridTextColumn
+                                Width="250"
+                                FilterPopupStyle="{StaticResource popupstyleforDesignation}"
+                                HeaderText="Designation"
+                                MappingName="Title" />
+                            <syncfusion:GridTextColumn
+                                Width="250"
+                                HeaderText="Marital Status"
+                                MappingName="MaritalStatus" />
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel  Orientation="Vertical">
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                            <CheckBox
+                                x:Name="ckbAllowFilters"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="True" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Employee ID Column" />
+                            <CheckBox
+                                x:Name="ckbAllowFilterEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="{Binding Path=CanAllowFiltering, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbImmediateUpdateColumnFilterEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="ImmediateUpdateColumnFilter"
+                                IsChecked="{Binding Path=CanImmediateUpdateColumnFilter, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbAllowBlankFiltersEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="AllowBlankFilters"
+                                IsChecked="{Binding Path=CanAllowBlankFilters, Source={StaticResource employeeViewModel}}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Birth Date Column" />
+                            <CheckBox
+                                x:Name="ckbAllowFilterBirthDate"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="{Binding Path=CanAllowFiltering, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbImmediateUpdateColumnFilterBirthDate"
+                                Margin="16,5,5,5"
+                                Content="ImmediateUpdateColumnFilter"
+                                IsChecked="{Binding Path=CanImmediateUpdateColumnFilter, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbAllowBlankFiltersBirthDate"
+                                Margin="16,5,5,5"
+                                Content="AllowBlankFilters"
+                                IsChecked="{Binding Path=CanAllowBlankFilters, Source={StaticResource employeeViewModel}}" />
+                        </StackPanel>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+   &lt;Page.Resources&gt;                    
+    &lt;Style x:Key=&quot;advancedfiltercontrolstyleforEmployeeID&quot; TargetType=&quot;syncfusion:AdvancedFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;CanGenerateUniqueItems&quot; Value=&quot;False&quot; /&gt;
+     &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforEmployeeID&quot; TargetType=&quot;syncfusion:GridFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;Both&quot; /&gt;
+         &lt;Setter Property=&quot;AdvancedFilterStyle&quot; Value=&quot;{StaticResource advancedfiltercontrolstyleforEmployeeID}&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforHireDate&quot; TargetType=&quot;syncfusion:GridFilterControl&quot;&gt;
+        &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;CheckboxFilter&quot; /&gt;
+     &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforDesignation&quot; TargetType=&quot;syncfusion:GridFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;AdvancedFilter&quot; /&gt;
+    &lt;/Style&gt;  
+    &lt;/Page.Resources&gt;    
+    &lt;syncfusion:SfDataGrid x:Name=&quot;sfDataGrid&quot; 
+                              Margin=&quot;10,13,10,15&quot;
+                              AllowFiltering=&quot;$(AllowFiltering)&quot;
+                              ItemsSource=&quot;{Binding Employees}&quot;
+                              AutoGenerateColumns=&quot;False&quot;
+                              ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                              LiveDataUpdateMode=&quot;AllowDataShaping&quot;
+                              NavigationMode=&quot;Row&quot;&gt;
+        &lt;syncfusion:SfDataGrid.Columns&gt;
+           &lt;syncfusion:GridTextColumn AllowBlankFilters=&quot;$(EmployeeIDColumnAllowBlankFilters)&quot;     
+                                               AllowFiltering=&quot;$(EmployeeIDColumnAllowFiltering)&quot;
+                                               FilterPopupStyle=&quot;{StaticResource popupstyleforEmployeeID}&quot;
+                                               HeaderText=&quot;Employee ID&quot;
+                                               ImmediateUpdateColumnFilter=&quot;$(EmployeeIDColumnImmediateUpdateColumnFilter)&quot;
+                                               MappingName=&quot;EmployeeID&quot;  /&gt;
+            &lt;syncfusion:GridTextColumn HeaderText=&quot;Employee Name&quot; MappingName=&quot;Name&quot; /&gt;
+            &lt;syncfusion:GridTextColumn HeaderText=&quot;Birth Date&quot; AllowBlankFilters=&quot;$(BirthDateColumnAllowBlankFilters)&quot;
+                                               AllowFiltering=&quot;$(BirthDateColumnAllowFiltering)&quot;
+                                               DisplayBinding=&quot;{Binding Path=BirthDate, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}&quot;
+                                               ImmediateUpdateColumnFilter=&quot;$(BirthDateColumnImmediateUpdateColumnFilter)&quot;
+                                               TextAlignment=&quot;Right&quot;/&gt;
+            &lt;syncfusion:GridTextColumn DisplayBinding=&quot;{Binding Path=HireDate, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:dd/MM/yyyy\}}&quot;
+                                               FilterPopupStyle=&quot;{StaticResource popupstyleforHireDate}&quot;
+                                               TextAlignment=&quot;Right&quot; /&gt;
+            &lt;syncfusion:GridTextColumn DisplayBinding=&quot;{Binding Salary, Converter={StaticResource stringFormatConverter},ConverterParameter='{}{0:C}'}&quot; TextAlignment=&quot;Right&quot; /&gt;
+            &lt;syncfusion:GridTextColumn HeaderText=&quot;Designation&quot; MappingName=&quot;Title&quot; Width=&quot;250&quot; 
+                                                FilterPopupStyle=&quot;{StaticResource popupstyleforDesignation}&quot; /&gt;    
+        &lt;/syncfusion:SfDataGrid.Columns&gt;
+    &lt;/syncfusion:SfDataGrid&gt; 
+                </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="AllowFiltering"
+                        SubstitutionValue="{x:Bind sfDataGrid.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnAllowFiltering"
+                        SubstitutionValue="{x:Bind employeeIDColumn.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnAllowBlankFilters"
+                        SubstitutionValue="{x:Bind employeeIDColumn.AllowBlankFilters, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnImmediateUpdateColumnFilter"
+                        SubstitutionValue="{x:Bind employeeIDColumn.ImmediateUpdateColumnFilter, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnAllowFiltering"
+                        SubstitutionValue="{x:Bind birthDateColumn.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnAllowBlankFilters"
+                        SubstitutionValue="{x:Bind birthDateColumn.AllowBlankFilters, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnImmediateUpdateColumnFilter"
+                        SubstitutionValue="{x:Bind birthDateColumn.ImmediateUpdateColumnFilter, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

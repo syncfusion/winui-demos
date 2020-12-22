@@ -1,0 +1,90 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.DefaultView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.radialgaugedemos.winui.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:coreextension="using:Syncfusion.UI.Xaml.Core.Extensions">
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample shows the basic axis view of the radial gauge control."
+                           XamlSource="syncfusion.radialgaugedemos.winui/sourcecodes\axis\defaultview\defaultview.xaml.cs.txt">
+            <common:DemoLayout.Example>
+                <Grid>
+                    <gauge:SfRadialGauge>
+                        <gauge:SfRadialGauge.Axes>
+                            <gauge:RadialAxis x:Name="radialAxis"
+                                              Interval="10"
+                                              FontSize="14"
+                                              Minimum="-60"
+                                              Maximum="60"
+                                              RadiusFactor="0.85">
+
+                                <gauge:RadialAxis.Pointers>
+                                    <gauge:NeedlePointer EnableAnimation="True"
+                                                         NeedleLengthUnit="Factor"
+                                                         NeedleLength="0.7"
+                                                         Value="9.94"
+                                                         NeedleStartWidth="2"
+                                                         NeedleEndWidth="10"
+                                                         KnobRadius="0.05"
+                                                         KnobSizeUnit="Factor"
+                                                         TailLength="0.1"
+                                                         TailWidth="10">
+                                    </gauge:NeedlePointer>
+                                </gauge:RadialAxis.Pointers>
+                            </gauge:RadialAxis>
+                        </gauge:SfRadialGauge.Axes>
+                    </gauge:SfRadialGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+
+            <common:DemoLayout.Options>
+                <Grid Width="200">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Slider x:Name="axisLineWidthSlider"
+                            Header="AxisLineWidth"
+                            Minimum="0"
+                            Maximum="30"
+                            StepFrequency="1"
+                            Value="{Binding ElementName=radialAxis, Path=AxisLineWidth, Mode=TwoWay}" />
+
+                    <Slider x:Name="majorTickLengthSlider"
+                            Header="MajorTickLength"
+                            Grid.Row="1"
+                            Minimum="0"
+                            Maximum="20"
+                            StepFrequency="1"
+                            Value="{Binding ElementName=radialAxis, Path=MajorTickLength, Mode=TwoWay}" />
+
+                    <Slider x:Name="minorTickLengthSlider"
+                            Header="MinorTickLength"
+                            Grid.Row="2"
+                            Minimum="0"
+                            Maximum="20"
+                            StepFrequency="1"
+                            Value="{Binding ElementName=radialAxis, Path=MinorTickLength, Mode=TwoWay}" />
+
+                </Grid>
+            </common:DemoLayout.Options>
+
+            <common:DemoLayout.Substitutions>
+                <common:DemoLayoutSubstitution Key="axisLineWidth"
+                                               SubstitutionValue="{x:Bind axisLineWidthSlider.Value, Mode=OneWay}" />
+                <common:DemoLayoutSubstitution Key="majorTickLength"
+                                               SubstitutionValue="{x:Bind majorTickLengthSlider.Value, Mode=OneWay}" />
+                <common:DemoLayoutSubstitution Key="minorTickLength"
+                                               SubstitutionValue="{x:Bind minorTickLengthSlider.Value, Mode=OneWay}" />
+            </common:DemoLayout.Substitutions>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

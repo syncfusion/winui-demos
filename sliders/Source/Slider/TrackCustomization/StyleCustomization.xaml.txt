@@ -1,0 +1,31 @@
+﻿<slider:SfSlider Value="$(trackStyleValueSubstitute)"
+                 Width="500"
+                 Minimum="-20"
+                 Maximum="20"
+                 Interval="10"
+                 ActiveTrackHeight="8"
+                 InactiveTrackHeight="5"
+                 ShowLabels="True"
+                 ShowTicks="True"
+                 MinorTicksPerInterval="0">
+    <slider:SfSlider.ActiveTrackStyle>
+        <Style TargetType="Rectangle">
+            <Setter Property="RadiusX"
+                    Value="5" />
+            <Setter Property="RadiusY"
+                    Value="5" />
+        </Style>
+    </slider:SfSlider.ActiveTrackStyle>
+    <slider:SfSlider.InactiveTrackStyle>
+        <Style TargetType="Rectangle">
+            <Setter Property="RadiusX"
+                    Value="2.5" />
+            <Setter Property="RadiusY"
+                    Value="2.5" />
+        </Style>
+    </slider:SfSlider.InactiveTrackStyle>
+
+    <slider:SfSlider.ThumbStyle>
+        ...
+    </slider:SfSlider.ThumbStyle>
+</slider:SfSlider>

@@ -1,0 +1,23 @@
+﻿<syncfusion:SfDatePicker ShowDropDownHeader="True" 
+                         ShowColumnHeaders="False">
+	<syncfusion:SfDatePicker.DropDownHeaderTemplate>
+		<DataTemplate>
+                <StackPanel>
+                   <TextBlock
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="{ThemeResource SystemBaseHighColor}"
+                       Text="Choose a Travel Date" />
+                   <Path
+                       Width="32"
+                       Height="32"
+                       Margin="5,5,5,10"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Data="{StaticResource train}"
+                       Fill="{ThemeResource SystemBaseHighColor}"
+                       Stretch="Uniform" />
+               </StackPanel>
+           </DataTemplate>
+	</syncfusion:SfDatePicker.DropDownHeaderTemplate>
+</syncfusion:SfDatePicker>

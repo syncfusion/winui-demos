@@ -1,0 +1,7 @@
+﻿<syncfusion:SfDatePicker>
+	<syncfusion:SfDatePicker.ItemContainerStyle>
+		<Style TargetType="syncfusion:SpinnerItem">
+			<Setter Property="FontWeight" Value="Bold"/>
+		</Style>
+	</syncfusion:SfDatePicker.ItemContainerStyle>
+</syncfusion:SfDatePicker>

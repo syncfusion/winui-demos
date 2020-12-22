@@ -1,0 +1,1 @@
+﻿<syncfusion:SfDatePicker BlackoutDates="{Binding BlackoutDates}"/>

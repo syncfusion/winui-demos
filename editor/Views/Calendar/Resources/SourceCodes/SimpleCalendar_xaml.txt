@@ -1,0 +1,6 @@
+﻿<syncfusion:SfCalendar
+    SelectionMode="$(SelectionMode)"
+    TodayHighlightMode="$(TodayHighlightMode)"
+    SelectionHighlightMode="$(SelectionHighlightMode)"
+    FirstDayOfWeek="$(FirstDayOfWeek)"
+    NumberOfWeeksInView="$(NumberOfWeeksInView)"/>

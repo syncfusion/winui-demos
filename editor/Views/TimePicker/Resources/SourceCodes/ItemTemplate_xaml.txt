@@ -1,0 +1,7 @@
+﻿<syncfusion:SfTimePicker>
+	<syncfusion:SfTimePicker.ItemTemplate>
+		<DataTemplate>
+			<TextBlock Text="{Binding DisplayText}" FontStyle="Italic"/>
+		</DataTemplate>
+	</syncfusion:SfTimePicker.ItemTemplate>
+</syncfusion:SfTimePicker>

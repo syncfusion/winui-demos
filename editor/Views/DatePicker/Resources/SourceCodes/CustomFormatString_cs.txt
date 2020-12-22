@@ -1,0 +1,7 @@
+﻿private void OnDateFieldPrepared(object sender, Syncfusion.UI.Xaml.Editors.DateTimeFieldPreparedEventArgs e)
+{
+    if (e.Column != null && e.Column.Field == Syncfusion.UI.Xaml.Editors.DateTimeField.Day)
+    {
+       e.Column.Format = "ddd dd";
+    }        
+}

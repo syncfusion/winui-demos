@@ -1,0 +1,202 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.StackingLineChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:StackingLineChartViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorModel x:Key="CustomColor">
+                <chart:ChartColorModel.CustomBrushes>
+                    <SolidColorBrush Color="#99DE4A" />
+                    <SolidColorBrush Color="#A4C5F4" />
+                    <SolidColorBrush Color="#F783C1" />
+                    <SolidColorBrush Color="#FBEC7E" />
+                    <SolidColorBrush Color="#7EDBDD" />
+                    <SolidColorBrush Color="#D3A0F8" />
+                    <SolidColorBrush Color="#FFCA61" />
+                    <SolidColorBrush Color="#FEB9FC" />
+                    <SolidColorBrush Color="#7EE0FC" />
+                    <SolidColorBrush Color="#ECF875" />
+                </chart:ChartColorModel.CustomBrushes>
+            </chart:ChartColorModel>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample showcases line chart which is similar to regular line charts except that the Y-values stack on top of each other in the order of the series specified.">
+                <common:DemoLayout.Example>
+                    <chart:SfChart
+                        x:Name="chart"
+                        Header="Monthly expense of a family"
+                        Height="420"
+                        Palette="Custom"
+                        ColorModel="{StaticResource CustomColor}"
+                        HorizontalAlignment="Center"
+                        AreaBorderThickness="0">
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowGridLines="False" />
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis Minimum="0"
+                                Header="Expenses"
+                                Interval="20"
+                                LabelFormat="$0"
+                                Maximum="200"/>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Bottom"/>
+                        </chart:SfChart.Legend>
+
+                        <chart:StackedLineSeries
+                EnableAnimation="True"
+                ItemsSource="{Binding MonthlyExpense}"
+                Label="Daughter"
+                ShowTooltip="True"
+                XBindingPath="Name"
+                YBindingPath="Daughter">
+                            <chart:StackedLineSeries.DataMarker>
+                                <chart:ChartDataMarker MarkerType="Ellipse" MarkerHeight="13" MarkerWidth="13" MarkerStroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" UseSeriesPalette="True" ShowLabel="False"  ShowMarker="True">
+                                </chart:ChartDataMarker>
+                            </chart:StackedLineSeries.DataMarker>
+                        </chart:StackedLineSeries>
+
+                        <chart:StackedLineSeries
+                EnableAnimation="True"
+                ItemsSource="{Binding MonthlyExpense}"
+                ShowTooltip="True"
+                Label="Son"
+                XBindingPath="Name"
+                YBindingPath="Son">
+                            <chart:StackedLineSeries.DataMarker>
+                                <chart:ChartDataMarker MarkerType="Ellipse" MarkerHeight="13" MarkerWidth="13" MarkerStroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" UseSeriesPalette="True" ShowLabel="False"  ShowMarker="True">
+                                </chart:ChartDataMarker>
+                            </chart:StackedLineSeries.DataMarker>
+                        </chart:StackedLineSeries>
+
+                        <chart:StackedLineSeries
+                EnableAnimation="True"
+                ItemsSource="{Binding MonthlyExpense}"
+                ShowTooltip="True"
+                Label="Mother"
+                XBindingPath="Name"
+                YBindingPath="Mother">
+                            <chart:StackedLineSeries.DataMarker>
+                                <chart:ChartDataMarker MarkerType="Ellipse" MarkerHeight="13" MarkerWidth="13" MarkerStroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" UseSeriesPalette="True" ShowLabel="False"  ShowMarker="True">
+                                </chart:ChartDataMarker>
+                            </chart:StackedLineSeries.DataMarker>
+                        </chart:StackedLineSeries>
+
+                        <chart:StackedLineSeries
+                EnableAnimation="True"
+                ItemsSource="{Binding MonthlyExpense}"
+                ShowTooltip="True"
+                Label="Father"
+                XBindingPath="Name"
+                YBindingPath="Father">
+                            <chart:StackedLineSeries.DataMarker>
+                                <chart:ChartDataMarker MarkerType="Ellipse" MarkerHeight="13" MarkerWidth="13" MarkerStroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" UseSeriesPalette="True" ShowLabel="False"  ShowMarker="True">
+                                </chart:ChartDataMarker>
+                            </chart:StackedLineSeries.DataMarker>
+                        </chart:StackedLineSeries>
+                    </chart:SfChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfChart x:Name=&quot;Chart&quot; Palette=&quot;Custom&quot; ColorModel=&quot;{StaticResource CustomColor}&quot;&gt;
+
+        &lt;chart:StackedLineSeries
+                        EnableAnimation=&quot;True&quot;
+                        ItemsSource=&quot;{Binding MonthlyExpense}&quot;
+                        Label=&quot;Daughter&quot;
+                        ShowTooltip=&quot;True&quot;
+                        XBindingPath=&quot;Name&quot;
+                        YBindingPath=&quot;Daughter&quot;>
+                &lt;chart:StackedLineSeries.DataMarker&gt;
+                        &lt;chart:ChartDataMarker MarkerType=&quot;Ellipse&quot; 
+                        MarkerHeight=&quot;13&quot; 
+                        MarkerWidth=&quot;13&quot; 
+                        MarkerStroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+                        ShowLabel=&quot;False&quot;  
+                        ShowMarker=&quot;True&quot;&gt;
+                        &lt;/chart:ChartDataMarker&gt;
+                &lt;/chart:StackedLineSeries.DataMarker&gt;
+        &lt;/chart:StackedLineSeries&gt;
+
+        &lt;chart:StackedLineSeries
+                        EnableAnimation=&quot;True&quot;
+                        ItemsSource=&quot;{Binding MonthlyExpense}&quot;
+                        ShowTooltip=&quot;True&quot;
+                        Label=&quot;Son&quot;
+                        XBindingPath=&quot;Name&quot;
+                        YBindingPath=&quot;Son&quot;&gt;
+                &lt;chart:StackedLineSeries.DataMarker&gt;
+                         &lt;chart:ChartDataMarker MarkerType=&quot;Ellipse&quot; 
+                         MarkerHeight=&quot;13&quot; 
+                         MarkerWidth=&quot;13&quot; 
+                         MarkerStroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+                         ShowLabel=&quot;False&quot;  
+                         ShowMarker=&quot;True&quot;&gt;
+                         &lt;/chart:ChartDataMarker&gt;
+                &lt;/chart:StackedLineSeries.DataMarker&gt;
+        &lt;/chart:StackedLineSeries&gt;
+
+        &lt;chart:StackedLineSeries
+                         EnableAnimation=&quot;True&quot;
+                         ItemsSource=&quot;{Binding MonthlyExpense}&quot;
+                         ShowTooltip=&quot;True&quot;
+                         Label=&quot;Mother&quot;
+                         XBindingPath=&quot;Name&quot;
+                         YBindingPath=&quot;Mother&quot;&gt;
+                &lt;chart:StackedLineSeries.DataMarker&gt;
+                         &lt;chart:ChartDataMarker 
+                         MarkerType=&quot;Ellipse&quot; 
+                         MarkerHeight=&quot;13&quot; 
+                         MarkerWidth=&quot;13&quot; 
+                         MarkerStroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+                         ShowLabel=&quot;False&quot;  
+                         ShowMarker=&quot;True&quot;&gt;
+                        &lt;/chart:ChartDataMarker&gt;
+                &lt;/chart:StackedLineSeries.DataMarker&gt;
+        &lt;/chart:StackedLineSeries&gt;
+
+        &lt;chart:StackedLineSeries
+                         EnableAnimation=&quot;True&quot;
+                         ItemsSource=&quot;{Binding MonthlyExpense}&quot;
+                         ShowTooltip=&quot;True&quot;
+                         Label=&quot;Father&quot;
+                         XBindingPath=&quot;Name&quot;
+                         YBindingPath=&quot;Father&quot;&gt;
+                &lt;chart:StackedLineSeries.DataMarker&gt;
+                         &lt;chart:ChartDataMarker 
+                         MarkerType=&quot;Ellipse&quot; 
+                         MarkerHeight=&quot;13&quot;
+                         MarkerWidth=&quot;13&quot; 
+                         MarkerStroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+                         ShowLabel=&quot;False&quot;  
+                         ShowMarker=&quot;True&quot;&gt;
+                         &lt;/chart:ChartDataMarker&gt;
+                &lt;/chart:StackedLineSeries.DataMarker&gt;
+        &lt;/chart:StackedLineSeries&gt;
+                        
+&lt;/chart:SfChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

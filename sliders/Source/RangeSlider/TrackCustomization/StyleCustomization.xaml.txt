@@ -1,0 +1,22 @@
+﻿<slider:SfRangeSlider RangeStart="$(trackStyleRangeStartSubstitute)"
+                      RangeEnd="$(trackStyleRangeEndSubstitute)"
+                      ActiveTrackHeight="10"
+                      InactiveTrackHeight="5"
+                      Minimum="-50"
+                      Maximum="50"
+                      Interval="25"
+                      ShowLabels="True">
+
+    <slider:SfRangeSlider.InactiveTrackStyle>
+        <Style TargetType="Rectangle">
+            <Setter Property="RadiusX"
+                    Value="2.5" />
+            <Setter Property="RadiusY"
+                    Value="2.5" />
+        </Style>
+    </slider:SfRangeSlider.InactiveTrackStyle>
+
+    <slider:SfRangeSlider.ThumbStyle>
+        ...
+    </slider:SfRangeSlider.ThumbStyle>
+</slider:SfRangeSlider>
