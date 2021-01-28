@@ -1,0 +1,239 @@
+﻿<Page x:Class="syncfusion.sliderdemos.winui.Views.RangeSlider.TickCustomization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:slider="using:Syncfusion.UI.Xaml.Sliders">
+
+    <ScrollViewer>
+        <StackPanel>
+            <common:DemoLayout HeaderText="Major and minor tick length customization">
+                <common:DemoLayout.Example>
+                    <slider:SfRangeSlider x:Name="tickSizeRangeSlider"
+                                          Width="500"
+                                          RangeStart="30"
+                                          RangeEnd="70"
+                                          ShowTicks="True"
+                                          ShowLabels="True" />
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfRangeSlider RangeStart="$(rangeStartSubstitute)"
+                      RangeEnd="$(rangeEndSubstitute)"
+                      ShowTicks="$(showTickSubstitute)"
+                      MajorTickLength="$(majorTickLengthSubstitute)"
+                      MinorTickLength="$(minorTickLengthSubstitute)"
+                      ShowLabels="True" /&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Content="ShowTicks"
+                                  IsChecked="{Binding ElementName=tickSizeRangeSlider, Path=ShowTicks, Mode=TwoWay}" />
+                        <Slider Header="MajorTickLength"
+                                Grid.Row="1"
+                                Minimum="0"
+                                Maximum="50"
+                                Value="{Binding ElementName=tickSizeRangeSlider, Path=MajorTickLength, Mode=TwoWay}" />
+                        <Slider Header="MinorTickLength"
+                                Grid.Row="2"
+                                Minimum="0"
+                                Maximum="50"
+                                Value="{Binding ElementName=tickSizeRangeSlider, Path=MinorTickLength, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="rangeStartSubstitute"
+                                                   SubstitutionValue="{x:Bind tickSizeRangeSlider.RangeStart, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="rangeEndSubstitute"
+                                                   SubstitutionValue="{x:Bind tickSizeRangeSlider.RangeEnd, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="showTickSubstitute"
+                                                   SubstitutionValue="{x:Bind tickSizeRangeSlider.ShowTicks, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="majorTickLengthSubstitute"
+                                                   SubstitutionValue="{x:Bind tickSizeRangeSlider.MajorTickLength, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="minorTickLengthSubstitute"
+                                                   SubstitutionValue="{x:Bind tickSizeRangeSlider.MinorTickLength, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Style customization of major and minor ticks"
+                               XamlSource="syncfusion.sliderdemos.winui/source\rangeslider\tickcustomization\stylecustomization.xaml.txt">
+                <common:DemoLayout.Example>
+                    <slider:SfRangeSlider x:Name="tickStyleRangeSlider"
+                                          Width="500"
+                                          RangeStart="30"
+                                          RangeEnd="70"
+                                          ShowTicks="True"
+                                          ShowLabels="True">
+                        <slider:SfRangeSlider.MajorTickStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke"
+                                        Value="Red" />
+                                <Setter Property="StrokeThickness"
+                                        Value="1.5" />
+                                <Setter Property="StrokeDashArray"
+                                        Value="1,1" />
+                            </Style>
+                        </slider:SfRangeSlider.MajorTickStyle>
+                        <slider:SfRangeSlider.MinorTickStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke"
+                                        Value="Green" />
+                                <Setter Property="StrokeThickness"
+                                        Value="1.5" />
+                                <Setter Property="StrokeDashArray"
+                                        Value="1,1" />
+                            </Style>
+                        </slider:SfRangeSlider.MinorTickStyle>
+                    </slider:SfRangeSlider>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="tickStyleRangeStartSubstitute"
+                                                   SubstitutionValue="{x:Bind tickStyleRangeSlider.RangeStart, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="tickStyleRangeEndSubstitute"
+                                                   SubstitutionValue="{x:Bind tickStyleRangeSlider.RangeEnd, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Active and inactive major, minor ticks"
+                               XamlSource="syncfusion.sliderdemos.winui/source\rangeslider\tickcustomization\activestylecustomization.xaml.txt">
+                <common:DemoLayout.Example>
+                    <slider:SfRangeSlider x:Name="activeTickRangeSlider"
+                                          Width="500"
+                                          RangeStart="30"
+                                          RangeEnd="70"
+                                          ShowTicks="True"
+                                          Interval="5">
+
+                        <slider:SfRangeSlider.ActiveMajorTickStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke"
+                                        Value="{ThemeResource SystemAccentColor}" />
+                                <Setter Property="StrokeThickness"
+                                        Value="1.5" />
+                            </Style>
+                        </slider:SfRangeSlider.ActiveMajorTickStyle>
+
+                        <slider:SfRangeSlider.ActiveMinorTickStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke"
+                                        Value="{ThemeResource SystemAccentColor}" />
+                            </Style>
+                        </slider:SfRangeSlider.ActiveMinorTickStyle>
+                    </slider:SfRangeSlider>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="activeTickRangeStartSubstitute"
+                                                   SubstitutionValue="{x:Bind activeTickRangeSlider.RangeStart, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="activeTickRangeEndSubstitute"
+                                                   SubstitutionValue="{x:Bind activeTickRangeSlider.RangeEnd, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Tick offset customization">
+                <common:DemoLayout.Resources>
+                    <Style x:Key="ActiveTickStyle"
+                           TargetType="Line">
+                        <Setter Property="Stroke"
+                                Value="#7135df" />
+                    </Style>
+                </common:DemoLayout.Resources>
+
+                <common:DemoLayout.Example>
+                    <slider:SfRangeSlider x:Name="tickOffsetRangeSlider"
+                                          Width="500"
+                                          RangeStart="30"
+                                          RangeEnd="70"
+                                          ShowTicks="True"
+                                          TickOffset="15"
+                                          Interval="5"
+                                          ActiveTrackFill="#7A42E1"
+                                          ActiveTrackHoverFill="#8a5ae4"
+                                          ActiveTrackPressedFill="#7135df"
+                                          InactiveTrackFill="#667A42E1"
+                                          InactiveTrackHoverFill="#668a5ae4"
+                                          InactiveTrackPressedFill="#667135df"
+                                          ThumbOverlayFill="#7A42E1"
+                                          ThumbBackground="#7A42E1"
+                                          ThumbHoverBackground="#8a5ae4"
+                                          ThumbPressedBackground="#7135df"
+                                          ActiveMajorTickStyle="{StaticResource ActiveTickStyle}"
+                                          ActiveMinorTickStyle="{StaticResource ActiveTickStyle}"
+                                          ActiveTrackHeight="5"
+                                          InactiveTrackHeight="5">
+                        
+                        <slider:SfRangeSlider.ThumbStyle>
+                            <Style TargetType="Thumb">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Thumb">
+                                            <Rectangle Fill="{TemplateBinding Background}"
+                                                       RadiusX="5"
+                                                       RadiusY="5" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </slider:SfRangeSlider.ThumbStyle>
+
+                        <slider:SfRangeSlider.ToolTipStyle>
+                            <Style TargetType="slider:SliderToolTip">
+                                <Setter Property="Background"
+                                        Value="#7135df" />
+                                <Setter Property="Foreground"
+                                        Value="White" />
+                            </Style>
+                        </slider:SfRangeSlider.ToolTipStyle>
+                    </slider:SfRangeSlider>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfRangeSlider RangeStart="$(tickOffsetRangeStartSubstitute)"
+                      RangeEnd="$(tickOffsetRangeEndSubstitute)"
+                      TickOffset="$(tickOffsetSubstitute)"
+                      ...&gt;
+                      ...
+&lt;/slider:SfRangeSlider&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Slider Header="TickOffset"
+                                Minimum="0"
+                                Maximum="50"
+                                Value="{Binding ElementName=tickOffsetRangeSlider, Path=TickOffset, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="tickOffsetRangeStartSubstitute"
+                                                   SubstitutionValue="{x:Bind tickOffsetRangeSlider.RangeStart, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="tickOffsetRangeEndSubstitute"
+                                                   SubstitutionValue="{x:Bind tickOffsetRangeSlider.RangeEnd, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="tickOffsetSubstitute"
+                                                   SubstitutionValue="{x:Bind tickOffsetRangeSlider.TickOffset, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

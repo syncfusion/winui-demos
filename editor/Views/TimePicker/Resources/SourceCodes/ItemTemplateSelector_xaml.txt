@@ -1,0 +1,11 @@
+﻿<local:TimeItemTemplateSelector x:Key="selector"/>
+
+<DataTemplate x:Key="alarmTemplate">
+    <Grid>
+        <TextBlock Text="{Binding DisplayText}"/>
+        <Path Data="{StaticResource alarm}"/>
+    </Grid>
+</DataTemplate>
+...
+
+<syncfusion:SfTimePicker ItemTemplateSelector="{StaticResource selector}"/>

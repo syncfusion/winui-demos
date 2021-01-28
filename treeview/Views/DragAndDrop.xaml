@@ -1,0 +1,113 @@
+﻿<Page x:Class="syncfusion.treeviewdemos.winui.DragAndDrop_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:local="using:syncfusion.treeviewdemos.winui"
+      xmlns:syncfusion="using:Syncfusion.UI.Xaml.TreeView" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" 
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      NavigationCacheMode="Disabled">
+
+    <Page.DataContext>
+        <local:DragAndDropViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <DataTemplate x:Key="SfTreeView_ItemTemplate">
+            <Grid>
+                <TextBlock 
+                    VerticalAlignment="Center"
+                    Text="{Binding Header}" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+        <common:DemoLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--  SfTreeView 1  -->
+                <syncfusion:SfTreeView
+                        Name="treeView1"
+                        Height="500" VerticalAlignment="Top"
+                        CanDrag="True" Margin="0,0,20,0"
+                        AllowDrop="True" 
+                        AutoExpandMode="AllNodes"
+                        BorderBrush="LightGray"
+                        BorderThickness="1"
+                        ChildPropertyName="Childs"
+                        FullRowSelect="True"
+                        ItemTemplate="{StaticResource SfTreeView_ItemTemplate}"
+                        ItemsSource="{Binding Items}" />
+
+                <!--  SfTreeView 2  -->
+                <syncfusion:SfTreeView
+                        Name="treeView2"
+                        Grid.Column="1" 
+                        Height="500" VerticalAlignment="Top"
+                        CanDrag="True"
+                        AllowDrop="True"
+                        AutoExpandMode="AllNodes"
+                        BorderBrush="LightGray"
+                        BorderThickness="1"
+                        ChildPropertyName="Childs"
+                        FullRowSelect="True"
+                        ItemTemplate="{StaticResource SfTreeView_ItemTemplate}"
+                        ItemsSource="{Binding Collections}" />
+            </Grid>
+            <common:DemoLayout.HeaderText>
+                Drag and drop nodes between two TreeView.
+            </common:DemoLayout.HeaderText>
+            <common:DemoLayout.Xaml>
+                <x:String xml:space="preserve">                                                             
+&lt;Page.Resources&gt;
+    &lt;DataTemplate x:Key="SfTreeView_ItemTemplate"&gt;
+        &lt;Grid&gt;
+            &lt;TextBlock
+                  VerticalAlignment="Center"
+                  Text="{Binding Header}"/&gt;
+        &lt;/Grid&gt;
+    &lt;/DataTemplate&gt;
+&lt;/Page.Resources&gt;          
+                    
+&lt;syncfusion:SfTreeView                  
+   Name="treeView1"
+   VerticalAlignment="Top"
+   Height="500" 
+   Margin="0,0,20,0"
+   CanDrag="True" 
+   AllowDrop="True" 
+   AutoExpandMode="AllNodes"
+   BorderBrush="LightGray"
+   BorderThickness="1"
+   ChildPropertyName="Childs"
+   FullRowSelect="True"
+   ItemTemplate="{StaticResource SfTreeView_ItemTemplate}"
+   ItemsSource="{Binding Items}"/&gt;                        
+                    
+&lt;syncfusion:SfTreeView
+   Name="treeView2"
+   Grid.Column="1" 
+   VerticalAlignment="Top"
+   Height="500" 
+   CanDrag="True"
+   AllowDrop="True"
+   AutoExpandMode="AllNodes"
+   BorderBrush="LightGray"
+   BorderThickness="1"
+   ChildPropertyName="Childs"
+   FullRowSelect="True"
+   ItemTemplate="{StaticResource SfTreeView_ItemTemplate}"
+   ItemsSource="{Binding Collections}"/&gt;
+</x:String>
+            </common:DemoLayout.Xaml>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

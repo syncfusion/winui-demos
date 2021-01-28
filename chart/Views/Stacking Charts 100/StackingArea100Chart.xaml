@@ -1,0 +1,126 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.StackingArea100Chart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:StackingAreaChartViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorModel x:Key="CustomColor">
+                <chart:ChartColorModel.CustomBrushes>
+                    <SolidColorBrush Color="#99DE4A" />
+                    <SolidColorBrush Color="#A4C5F4" />
+                    <SolidColorBrush Color="#F783C1" />
+                    <SolidColorBrush Color="#FBEC7E" />
+                    <SolidColorBrush Color="#7EDBDD" />
+                    <SolidColorBrush Color="#D3A0F8" />
+                    <SolidColorBrush Color="#FFCA61" />
+                    <SolidColorBrush Color="#FEB9FC" />
+                    <SolidColorBrush Color="#7EE0FC" />
+                    <SolidColorBrush Color="#ECF875" />
+                </chart:ChartColorModel.CustomBrushes>
+            </chart:ChartColorModel>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample showcases 100% area chart which is similar to regular area charts except that the Y-values stack on top of each other in the order of the series specified.">
+                <common:DemoLayout.Example>
+                    <chart:SfChart
+                        x:Name="Chart"
+                        Header="Road Accident Statistics(2009)"
+                        Height="420"
+                        Palette="Custom"
+                        ColorModel="{StaticResource CustomColor}"
+                        HorizontalAlignment="Center"
+                        AreaBorderThickness="0">
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis LabelFormat="MMM" LabelPlacement="BetweenTicks" ShowGridLines="False" Header="Month" />
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis
+                                Minimum="0"
+                                Header="Death Counts (Thousands)"/>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Bottom"/>
+                        </chart:SfChart.Legend>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Bus"
+                ShowTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Bus">
+                        </chart:StackedArea100Series>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Car"
+                ShowTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Car">
+                        </chart:StackedArea100Series>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Truck"
+                ShowTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Truck">
+                        </chart:StackedArea100Series>
+                    </chart:SfChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfChart x:Name=&quot;Chart&quot; Palette=&quot;Custom&quot; ColorModel=&quot;{StaticResource CustomColor}&quot;&gt;
+
+        &lt;chart:StackedArea100Series
+                EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Bus&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Bus&quot;&gt;
+        &lt;/chart:StackedArea100Series&gt;
+                        
+        &lt;chart:StackedArea100Series
+                EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Car&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Car&quot;&gt;
+        &lt;/chart:StackedArea100Series&gt;
+                        
+        &lt;chart:StackedArea100Series
+                EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Truck&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Truck&quot;&gt;
+        &lt;/chart:StackedArea100Series&gt;
+                        
+&lt;/chart:SfChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

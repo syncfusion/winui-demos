@@ -1,0 +1,159 @@
+﻿<syncfusion:SfRibbon x:Name="ribbon"
+                        BackstageMenuButtonContent="File">
+    <syncfusion:SfRibbon.Tabs>
+        <syncfusion:RibbonTab Header="Home">
+            <syncfusion:RibbonGroup Header="Clipboard"
+                                    LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+                <syncfusion:RibbonSplitButton x:Name="pasteButton"
+                                                Icon="Paste"
+                                                Content="Paste"
+                                                SizeMode="Large"
+                                                Command="{x:Bind ButtonCommand}"
+                                                CommandParameter="{Binding ElementName=pasteButton}">
+                    <syncfusion:RibbonSplitButton.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Paste" />
+                            <MenuFlyoutItem Text="Paste Special" />
+                            <MenuFlyoutItem Text="Set Default Paste" />
+                        </MenuFlyout>
+                    </syncfusion:RibbonSplitButton.Flyout>
+                </syncfusion:RibbonSplitButton>
+                <syncfusion:RibbonButton x:Name="cutButton"
+                                            Icon="Cut"
+                                            Content="Cut"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=cutButton}" />
+                <syncfusion:RibbonButton x:Name="copyButton"
+                                            Icon="Copy"
+                                            Content="Copy"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=copyButton}" />
+                <syncfusion:RibbonButton x:Name="formatPainterButton"
+                                            Content="Format Painter"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=formatPainterButton}">
+                    <syncfusion:RibbonButton.Icon>
+                        <FontIcon Glyph="&#xF0E3;" />
+                    </syncfusion:RibbonButton.Icon>
+                </syncfusion:RibbonButton>
+            </syncfusion:RibbonGroup>
+            <syncfusion:RibbonGroup Header="File"
+                                    LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+                <syncfusion:RibbonDropDownButton x:Name="newFileButton"
+                                                    Content="New File"
+                                                    SizeMode="Large"
+                                                    Command="{x:Bind ButtonCommand}"
+                                                    CommandParameter="{Binding ElementName=newFileButton}">
+                    <syncfusion:RibbonDropDownButton.Icon>
+                        <FontIcon Glyph="&#xE7C3;" />
+                    </syncfusion:RibbonDropDownButton.Icon>
+                    <syncfusion:RibbonDropDownButton.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Empty File" />
+                            <MenuFlyoutItem Text="Template File" />
+                        </MenuFlyout>
+                    </syncfusion:RibbonDropDownButton.Flyout>
+                </syncfusion:RibbonDropDownButton>
+                <syncfusion:RibbonButton x:Name="openButton"
+                                            Content="Open"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=openButton}">
+                    <syncfusion:RibbonButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets"
+                                    Glyph="&#xED25;" />
+                    </syncfusion:RibbonButton.Icon>
+                </syncfusion:RibbonButton>
+                <syncfusion:RibbonButton x:Name="shareButton"
+                                            Icon="Share"
+                                            Content="Share"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=shareButton}" />
+                <syncfusion:RibbonButton x:Name="printButton"
+                                            Icon="Print"
+                                            Content="Print"
+                                            SizeMode="Normal"
+                                            Command="{x:Bind ButtonCommand}"
+                                            CommandParameter="{Binding ElementName=printButton}" />
+                                </syncfusion:RibbonGroup>
+			<syncfusion:RibbonGroup Header="Font"
+							 LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+				...
+			</syncfusion:RibbonGroup>
+			<syncfusion:RibbonGroup Header="Editing"
+							 ShowLauncherButton="False">
+				...
+			</syncfusion:RibbonGroup>
+			<syncfusion:RibbonGroup Header="Paragraph"
+							 ShowLauncherButton="False">
+				...
+			</syncfusion:RibbonGroup>
+			<syncfusion:RibbonGroup Header="Voice"
+							 ShowLauncherButton="False">
+				...
+			</syncfusion:RibbonGroup>
+		</syncfusion:RibbonTab>
+		<syncfusion:RibbonTab Header="Insert">
+			...
+		</syncfusion:RibbonTab>
+		<syncfusion:RibbonTab Header="View">
+			...
+		</syncfusion:RibbonTab>
+	</syncfusion:SfRibbon.Tabs>
+	<syncfusion:SfRibbon.Backstage>
+		<syncfusion:RibbonBackstage Target="{Binding ElementName=rootGrid}">
+			<syncfusion:BackstageView BackButtonClick="Backstage_BackButtonClick">
+				<syncfusion:BackstageView.Items>
+					<syncfusion:BackstageViewItem Header="New"
+										   Icon="NewFolder"
+										   ItemType="Tab">
+						<local:Sample1 />
+					</syncfusion:BackstageViewItem>
+					<syncfusion:BackstageViewItem Header="Open"
+										   Icon="OpenWith"
+										   ItemType="Tab">
+						<local:Sample2 />
+					</syncfusion:BackstageViewItem>
+					<syncfusion:BackstageViewItem Header="Separator"
+										   ItemType="Separator" />
+					<syncfusion:BackstageViewItem Header="Info"
+										   ItemType="Tab">
+						<local:Sample1 />
+					</syncfusion:BackstageViewItem>
+					<syncfusion:BackstageViewItem Command="{x:Bind SaveCommand}"
+										   Header="Save"
+										   ItemType="Button" />
+					<syncfusion:BackstageViewItem Command="{x:Bind CloseButtonCommand}"
+										   Header="Close"
+										   ItemType="Button" />
+				</syncfusion:BackstageView.Items>
+				<syncfusion:BackstageView.FooterItems>
+					<syncfusion:BackstageViewItem ItemType="Separator" />
+					<syncfusion:BackstageViewItem Header="Account"
+										   ItemType="Tab">
+						<local:Sample2 />
+					</syncfusion:BackstageViewItem>
+					<syncfusion:BackstageViewItem Header="FeedBack"
+										   ItemType="Tab">
+						<local:Sample1 />
+					</syncfusion:BackstageViewItem>
+					<syncfusion:BackstageViewItem Command="{x:Bind OptionCommand}"
+										   Header="Option"
+										   ItemType="Button" />
+				</syncfusion:BackstageView.FooterItems>
+			</syncfusion:BackstageView>
+		</syncfusion:RibbonBackstage>
+	</syncfusion:SfRibbon.Backstage>
+	<syncfusion:SfRibbon.RightPane>
+		<StackPanel Orientation="Horizontal">
+			<syncfusion:RibbonButton Icon="Undo"
+							  Content="Undo" />
+			<syncfusion:RibbonButton Icon="Redo"
+							  Content="Redo" />
+		</StackPanel>
+	</syncfusion:SfRibbon.RightPane>
+</syncfusion:SfRibbon>

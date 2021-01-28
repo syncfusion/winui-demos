@@ -1,0 +1,31 @@
+﻿<slider:SfSlider Value="$(divisorColorValueSubstitute)"
+                 ShowDivisors="True"
+                 DivisorHeight="10"
+                 DivisorWidth="10"
+                 DivisorStroke="#339990"
+                 DivisorStrokeThickness="2"
+                 ActiveTrackFill="#339990"
+                 ActiveTrackHoverFill="#38a99e"
+                 ActiveTrackPressedFill="#2c837a"
+                 InactiveTrackFill="#66339990"
+                 InactiveTrackHoverFill="#6638a99e"
+                 InactiveTrackPressedFill="#662c837a"
+                 ThumbBackground="#339990"
+                 ThumbHoverBackground="#38a99e"
+                 ThumbPressedBackground="#2c837a"
+                 ThumbOverlayFill="#2c837a"
+                 Interval="20"
+                 StepFrequency="20">
+
+    <slider:SfSlider.DivisorFill>
+        <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
+    </slider:SfSlider.DivisorFill>
+
+    <slider:SfSlider.ThumbStyle>
+        ...
+    </slider:SfSlider.ThumbStyle>
+
+    <slider:SfSlider.ToolTipStyle>
+        ...
+    </slider:SfSlider.ToolTipStyle>
+</slider:SfSlider>

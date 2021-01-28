@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.Performance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorModel x:Key="CustomColor">
+                <chart:ChartColorModel.CustomBrushes>
+                    <SolidColorBrush Color="#99DE4A" />
+                    <SolidColorBrush Color="#A4C5F4" />
+                    <SolidColorBrush Color="#F783C1" />
+                    <SolidColorBrush Color="#FBEC7E" />
+                    <SolidColorBrush Color="#7EDBDD" />
+                    <SolidColorBrush Color="#D3A0F8" />
+                    <SolidColorBrush Color="#FFCA61" />
+                    <SolidColorBrush Color="#FEB9FC" />
+                    <SolidColorBrush Color="#7EE0FC" />
+                    <SolidColorBrush Color="#ECF875" />
+                </chart:ChartColorModel.CustomBrushes>
+            </chart:ChartColorModel>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <common:DemoLayout>
+            <common:DemoLayout.Example>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid.Resources>
+                        <DataTemplate x:Key="headerTemplate">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="14"
+                                Text="{Binding}" />
+                        </DataTemplate>
+                    </Grid.Resources>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <chart:SfChart
+                        x:Name="lineChart"
+                        Header="Performance of loading(100K Points)"
+                        VerticalAlignment="Center"
+                        AreaBorderThickness="0">
+
+                        <chart:SfChart.Behaviors>
+                            <chart:ChartZoomPanBehavior />
+                        </chart:SfChart.Behaviors>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis
+                                Header="Date"
+                                HeaderTemplate="{StaticResource headerTemplate}"
+                                LabelFormat="dd-MMM"
+                                ShowGridLines="False" />
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis
+                                Header="Value"
+                                HeaderTemplate="{StaticResource headerTemplate}"
+                                RangePadding="Round" />
+                        </chart:SfChart.SecondaryAxis>
+
+                        <!--<chart:FastLineBitmapSeries EnableAntiAliasing="False" XBindingPath="Date" YBindingPath="Value"/>-->
+                    </chart:SfChart>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </Grid>
+</Page>

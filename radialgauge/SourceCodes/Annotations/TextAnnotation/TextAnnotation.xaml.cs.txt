@@ -1,0 +1,64 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis StartAngle="0"
+                          EndAngle="360"
+                          ShowLabels="False"
+                          ShowTicks="False"
+                          AxisLineWidthUnit="Factor"
+                          AxisLineWidth="0.1">
+        </gauge:RadialAxis>
+
+        <gauge:RadialAxis StartAngle="170"
+                          EndAngle="170"
+                          ShowTicks="False"
+                          ShowAxisLine="False"
+                          Maximum="15"
+                          ShowLastLabel="False"
+                          FontWeight="SemiBold"
+                          OffsetUnit="Factor"
+                          LabelOffset="0.15"
+                          Interval="1"
+                          CanRotateLabels="True"
+                          LabelTemplate="{StaticResource LabelTemplate}">
+
+            <gauge:RadialAxis.Annotations>
+                <gauge:GaugeAnnotation PositionFactor="0.95"
+                                       DirectionUnit="AxisValue"
+                                       DirectionValue="0">
+                    <gauge:GaugeAnnotation.Content>
+                        <Image Source="/Images/shotput.png" />
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+
+                <gauge:GaugeAnnotation>
+                    <gauge:GaugeAnnotation.Content>
+                        ...
+                          <TextBlock Text="Distance" FontSize="20" />
+                        ...
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+            </gauge:RadialAxis.Annotations>
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:RangePointer Value="11.5"
+                                    WidthUnit="Factor"
+                                    PointerWidth="0.1"
+                                    EnableAnimation="True">
+                    <gauge:RangePointer.GradientStops>
+                        ...
+                    </gauge:RangePointer.GradientStops>
+                </gauge:RangePointer>
+
+                <gauge:MarkerPointer Value="11.5"
+                                     EnableAnimation="True"
+                                     MarkerType="Image"
+                                     MarkerOffset="4"
+                                     MarkerHeight="40"
+                                     MarkerWidth="40"
+                                     ImageSource="/Images/ball.png">
+                </gauge:MarkerPointer>
+            </gauge:RadialAxis.Pointers>
+
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

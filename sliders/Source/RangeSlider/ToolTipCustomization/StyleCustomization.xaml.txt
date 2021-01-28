@@ -1,0 +1,21 @@
+﻿<slider:SfRangeSlider RangeStart="$(styleCustomizationRangeStartSubstitute)"
+                      RangeEnd="$(styleCustomizationRangeEndSubstitute)"
+                      ActiveTrackFill="#2F6CEF"
+                      ActiveTrackHoverFill="#5084f1"
+                      ActiveTrackPressedFill="#1257eb"
+                      InactiveTrackFill="#662F6CEF"
+                      InactiveTrackHoverFill="#665084f1"
+                      InactiveTrackPressedFill="#661257eb"
+                      ThumbBackground="#2F6CEF"
+                      ThumbHoverBackground="#5084f1"
+                      ThumbPressedBackground="#1257eb"
+                      ThumbOverlayFill="#2F6CEF">
+    <slider:SfRangeSlider.ToolTipStyle>
+        <Style TargetType="slider:SliderToolTip">
+            <Setter Property="Background"
+                    Value="#1257eb" />
+            <Setter Property="Foreground"
+                    Value="White" />
+        </Style>
+    </slider:SfRangeSlider.ToolTipStyle>
+</slider:SfRangeSlider>

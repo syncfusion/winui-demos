@@ -1,0 +1,32 @@
+﻿<slider:SfRangeSlider RangeStart="$(activeDivisorTemplateRangeStartSubstitute)"
+                      RangeEnd="$(activeDivisorTemplateRangeEndSubstitute)"
+                      ShowDivisors="True"
+                      DivisorHeight="4"
+                      DivisorWidth="4"
+                      Interval="20"
+                      StepFrequency="20"
+                      ShowLabels="True"
+                      ...
+                      FontWeight="SemiBold"
+                      LabelOffset="10">
+
+    <slider:SfRangeSlider.ActiveDivisorTemplate>
+        <DataTemplate>
+            <Rectangle Height="8"
+                       Width="8"
+                       Fill="#e05405" />
+        </DataTemplate>
+    </slider:SfRangeSlider.ActiveDivisorTemplate>
+
+    <slider:SfRangeSlider.DivisorTemplate>
+        <DataTemplate>
+            <Rectangle Height="{Binding DivisorHeight}"
+                       Width="{Binding DivisorWidth}"
+                       Fill="#ef6a78" />
+        </DataTemplate>
+    </slider:SfRangeSlider.DivisorTemplate>
+
+    <slider:SfRangeSlider.ToolTipStyle>
+        ...
+    </slider:SfRangeSlider.ToolTipStyle>
+</slider:SfRangeSlider>

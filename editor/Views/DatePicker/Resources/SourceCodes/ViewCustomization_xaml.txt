@@ -1,0 +1,9 @@
+﻿<syncfusion:SfDatePicker
+	ShowDropDownButton="$(ShowDropDownButton)"
+	ShowDropDownHeader="$(ShowDropDownHeader)"
+	ShowColumnHeaders="$(ShowColumnHeaders)"
+	ShowSubmitButtons="$(ShowSubmitButtons)">
+	<syncfusion:SfDatePicker.DropDownHeader>
+		<TextBlock Text="Date Picker"/>
+	</syncfusion:SfDatePicker.DropDownHeader>
+</syncfusion:SfDatePicker>

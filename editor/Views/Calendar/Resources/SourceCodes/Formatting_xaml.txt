@@ -1,0 +1,5 @@
+﻿<syncfusion:SfCalendar
+    DateFormat="$(DateFormat)"
+    MonthFormat="$(MonthFormat)"
+    DayOfWeekFormat="$(DayOfWeekFormat)"
+    HeaderFormatInMonthView="$(HeaderFormatInMonthView)"/>

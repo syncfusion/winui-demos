@@ -1,0 +1,28 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis x:Name="radialAxis"
+                          AxisLineWidth="$(axisLineWidth)"
+                          MajorTickLength="$(majorTickLength)"
+                          MinorTickLength="$(minorTickLength)"
+                          Interval="10"
+                          FontSize="14"
+                          Minimum="-60"
+                          Maximum="60"
+                          RadiusFactor="0.85">
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:NeedlePointer EnableAnimation="True"
+                                     NeedleLengthUnit="Factor"
+                                     NeedleLength="0.7"
+                                     Value="9.94"
+                                     NeedleStartWidth="2"
+                                     NeedleEndWidth="10"
+                                     KnobRadius="0.05"
+                                     KnobSizeUnit="Factor"
+                                     TailLength="0.1"
+                                     TailWidth="10">
+                </gauge:NeedlePointer>
+            </gauge:RadialAxis.Pointers>
+        <gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

@@ -1,0 +1,5 @@
+﻿<syncfusion:SfDatePicker
+                        DateFieldItemPrepared="OnDateFieldItemPrepared"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+</syncfusion:SfDatePicker>

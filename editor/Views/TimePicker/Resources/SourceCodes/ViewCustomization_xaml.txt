@@ -1,0 +1,9 @@
+﻿<syncfusion:SfTimePicker
+	ShowDropDownButton="$(ShowDropDownButton)"
+	ShowDropDownHeader="$(ShowDropDownHeader)"
+	ShowColumnHeaders="$(ShowColumnHeaders)"
+	ShowSubmitButtons="$(ShowSubmitButtons)">
+    <syncfusion:SfTimePicker.DropDownHeader>
+		<TextBlock Text="Time Picker"/>
+	</syncfusion:SfTimePicker.DropDownHeader>
+</syncfusion:SfTimePicker>
