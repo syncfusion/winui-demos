@@ -1,3 +1,0 @@
-﻿<syncfusion:SfDatePicker
-	FormatString="$(FormatString)"
-	DropDownFormatString="$(DropDownFormatString)"/>

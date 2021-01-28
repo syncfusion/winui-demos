@@ -1,3 +1,0 @@
-﻿<syncfusion:SfCalendarDatePicker
-    CalendarIdentifier="$(CalendarIdentifier)"
-    Language="$(Language)"/>

@@ -1,2 +1,0 @@
-﻿<syncfusion:SfTimePicker
-	FormatString="$(FormatString)"/>

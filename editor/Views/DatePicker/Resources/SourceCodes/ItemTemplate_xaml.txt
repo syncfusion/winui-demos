@@ -1,7 +1,0 @@
-﻿<syncfusion:SfDatePicker>
-	<syncfusion:SfDatePicker.ItemTemplate>
-		<DataTemplate>
-			<TextBlock Text="{Binding DisplayText}" FontStyle="Italic"/>
-		</DataTemplate>
-	</syncfusion:SfDatePicker.ItemTemplate>
-</syncfusion:SfDatePicker>

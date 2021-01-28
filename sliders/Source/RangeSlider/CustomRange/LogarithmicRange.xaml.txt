@@ -1,7 +1,0 @@
-﻿<local:LogarithmicRangeSlider Minimum="1"
-                              Maximum="10000"
-                              RangeStart="$(rangeStartSubstitute)"
-                              RangeEnd="$(rangeEndSubstitute)"
-                              ShowLabels="True"
-                              ActiveTrackHeight="5"
-                              InactiveTrackHeight="5" />
