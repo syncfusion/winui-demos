@@ -1,6 +1,6 @@
 # Syncfusion WinUI Controls Demos (Beta)
 
-This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/orgs/syncfusion-demos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
+This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/users/syncfusiondemos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
 
 This section guides you to use the Syncfusion WinUI demos in your applications.
 
@@ -64,6 +64,13 @@ To run the demos,
         </td>
     </tr>
     <tr>
+        <td>
+            <a href="lineargauge">Linear Gauge</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
         <td colspan="3">
             <b>NAVIGATION & NOTIFICATION</b>
         </td>
@@ -74,6 +81,47 @@ To run the demos,
         </td>
         <td>
             <a href="notification">Badge</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <b>CALENDARS</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="calendar">Calendar</a>
+        </td>
+        <td>
+            <a href="calendar">Calendar Date Picker</a>
+        </td>
+        <td>
+            <a href="calendar">Calendar  Date Range Picker</a>
+        </td>
+    </tr>
+    <tr>
+    <td>
+        <a href="editor">Date Picker</a>
+    </td>
+    <td>
+        <a href="editor">Time Picker</a>
+    </td>
+    <td>
+        <a href="scheduler">Scheduler</a>
+    </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <b>INPUT CONTROLS</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="sliders">Slider</a>
+        </td>
+        <td>
+            <a href="sliders">Range Slider</a>
         </td>
         <td></td>
     </tr>
@@ -117,4 +165,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-04-05 at precisely 13:29:56 EST.</p>
+<p>Copyright © 2001-2020 Syncfusion, Inc. Updated on 2020-10-09 at precisely 07:02:00 EST.</p>
