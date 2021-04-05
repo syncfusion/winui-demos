@@ -1,3 +1,0 @@
-﻿<syncfusion:SfCalendar
-    CalendarIdentifier="$(CalendarIdentifier)"
-    Language="$(Language)"/>

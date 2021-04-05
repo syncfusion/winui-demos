@@ -1,7 +1,0 @@
-﻿<syncfusion:SfDropDownColorPicker>
-    <syncfusion:SfDropDownColorPicker.DropDownContentTemplate>
-        <DataTemplate>
-            <syncfusion:SfColorPicker BrushTypeOptions="Gradient"/>
-        </DataTemplate>
-    </syncfusion:SfDropDownColorPicker.DropDownContentTemplate>
-</syncfusion:SfDropDownColorPicker>
