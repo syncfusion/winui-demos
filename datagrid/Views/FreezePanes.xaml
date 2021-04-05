@@ -1,0 +1,218 @@
+﻿<Page
+    x:Class="DataGrid.FreezePanes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:SalesViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <core:StringFormatConverter x:Key="stringFormatConverter" />
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="The data grid provides support to freeze rows at top or bottom and columns at left or right side, similar to Excel.">
+                <common:DemoLayout.Example>
+                    <Grid Margin="5">
+                        <dataGrid:SfDataGrid
+                            x:Name="sfDataGrid"
+                            Margin="5"
+                            Height="500"
+                            AllowGrouping="True"
+                            AutoExpandGroups="True"
+                            AutoGenerateColumns="False"
+                            ColumnWidthMode="AutoLastColumnFill"
+                            FrozenFooterColumnCount="2"
+                            FrozenFooterRowsCount="1"
+                            FrozenColumnCount="1"
+                            FrozenRowsCount="2"
+                            GroupCaptionTextFormat="Sales details in {ColumnName} : {Key}"
+                            ItemsSource="{Binding YearlySales}"
+                            NavigationMode="Cell"
+                            ShowColumnWhenGrouped="True"
+                            ShowGroupDropArea="True"
+                            ShowRowHeader="True" >
+
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridTextColumn MappingName="Name" Width="160"/>
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS1, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="February"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS2, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="April"
+									Width="120"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS3, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="June"
+									Width="120"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS4, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="August"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS5, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="September"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=QS6, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="October"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn
+                                    DisplayBinding="{Binding Path=Total, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}"
+                                    HeaderText="Total Sales in Year"
+                                    Width="150"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridTextColumn MappingName="Year" TextAlignment="Right" />
+
+                            </dataGrid:SfDataGrid.Columns>
+
+                            <dataGrid:SfDataGrid.TableSummaryRows>
+                                <dataGrid:GridTableSummaryRow Position="Bottom" ShowSummaryInRow="False">
+                                    <dataGrid:GridTableSummaryRow.SummaryColumns>
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS1"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS1"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS2"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS2"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS3"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS3"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS4"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS4"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS5"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS5"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS6"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS6"
+                                            SummaryType="DoubleAggregate" />
+                                    </dataGrid:GridTableSummaryRow.SummaryColumns>
+                                </dataGrid:GridTableSummaryRow>
+                            </dataGrid:SfDataGrid.TableSummaryRows>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+                    &lt;dataGrid:SfDataGrid
+                            x:Name=&quot;sfDataGrid&quot;
+                            Margin=&quot;5&quot;
+                            Height=&quot;500&quot;
+                            AllowGrouping=&quot;True&quot;
+                            AutoExpandGroups=&quot;True&quot;
+                            AutoGenerateColumns=&quot;False&quot;
+                            ColumnWidthMode=&quot;None&quot;
+                            FooterColumnCount=&quot;2&quot;
+                            FooterRowsCount=&quot;1&quot;
+                            FrozenColumnCount=&quot;1&quot;
+                            FrozenRowsCount=&quot;2&quot;
+                            GroupCaptionTextFormat=&quot;Sales details in {ColumnName} : {Key}&quot;
+                            ItemsSource=&quot;{Binding YearlySales}&quot;
+                            NavigationMode=&quot;Cell&quot;
+                            ShowColumnWhenGrouped=&quot;True&quot;
+                            ShowGroupDropArea=&quot;True&quot;
+                            ShowRowHeader=&quot;True&quot; &gt;
+
+                            &lt;dataGrid:SfDataGrid.Columns&gt;
+                                &lt;dataGrid:GridTextColumn MappingName=&quot;Name&quot; Width=&quot;160&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS1, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;February&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS2, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;April&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS3, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;June&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS4, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;August&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS5, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;September&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=QS6, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;October&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn
+                                    DisplayBinding=&quot;{Binding Path=Total, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}&quot;
+                                    HeaderText=&quot;Total Sales in Year&quot;
+                                    TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;dataGrid:GridTextColumn MappingName=&quot;Year&quot; TextAlignment=&quot;Right&quot; /&gt;
+
+                            &lt;/dataGrid:SfDataGrid.Columns&gt;
+
+                            &lt;dataGrid:SfDataGrid.TableSummaryRows&gt;
+                                &lt;dataGrid:GridTableSummaryRow Position=&quot;Bottom&quot; ShowSummaryInRow=&quot;False&quot;&gt;
+                                    &lt;dataGrid:GridTableSummaryRow.SummaryColumns&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name=&quot;TQS1&quot;
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName=&quot;QS1&quot;
+                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name=&quot;TQS2&quot;
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName=&quot;QS2&quot;
+                                            SummaryType="DoubleAggregate" /&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name=&quot;TQS3&quot;
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName=&quot;QS3&quot;
+                                            SummaryType="DoubleAggregate" /&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name="TQS4"
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName=&quot;QS4&quot;
+                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name=&quot;TQS5&quot;
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName=&quot;QS5&quot;
+                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;
+                                        &lt;dataGrid:GridSummaryColumn
+                                            Name=&quot;TQS6&quot;
+                                            Format=&quot;'{Sum:c}'&quot;
+                                            MappingName="QS6"
+                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;
+                                    &lt;/dataGrid:GridTableSummaryRow.SummaryColumns&gt;
+                                &lt;/dataGrid:GridTableSummaryRow&gt;
+                            &lt;/dataGrid:SfDataGrid.TableSummaryRows&gt;
+                        &lt;/dataGrid:SfDataGrid&gt;                                                                    
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+
+</Page>

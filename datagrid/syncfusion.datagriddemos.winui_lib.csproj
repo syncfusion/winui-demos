@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+	<Import Project="..\syncfusion.common-uwp.props"/>
+	<Target Name="FixPriIndex" AfterTargets="GetPriIndexName" BeforeTargets="MarkupCompilePass1">
+		<PropertyGroup>
+			<PriIndexName>$(AssemblyName)</PriIndexName>
+		</PropertyGroup>
+	</Target>
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+		<ProjectGuid>{EEDBFC36-0B67-4BFB-8A92-7133F04B1AC4}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>syncfusion.datagriddemos.winui</RootNamespace>
+		<AssemblyName>syncfusion.datagriddemos.winui</AssemblyName>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+		<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<MinimumVisualStudioVersion>16</MinimumVisualStudioVersion>
+		<FileAlignment>512</FileAlignment>
+		<ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<IsWinUIAlpha Condition="'$(IsWinUIAlpha)' == ''">true</IsWinUIAlpha>
+		<WindowsKitsPath Condition="'$(IsWinUIAlpha)' == 'true'">WinUI-Alpha-Projects-Don-t-Use-SDK-Xaml-Tools</WindowsKitsPath>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Helpers\Converters.cs"/>
+		<Compile Include="Model\OrderInfo.cs"/>
+		<Compile Include="Model\Person.cs"/>
+		<Compile Include="Model\Employee.cs"/>
+		<Compile Include="Model\Sales.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="ViewModel\EmployeeViewModel.cs"/>
+		<Compile Include="ViewModel\OrderInfoViewModel.cs"/>
+		<Compile Include="ViewModel\PersonViewModel.cs"/>
+		<Compile Include="ViewModel\SalesViewModel.cs"/>
+		<Compile Include="Views\AdvanceFilter.xaml.cs">
+			<DependentUpon>AdvanceFilter.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ClipboardOperation.xaml.cs">
+			<DependentUpon>ClipboardOperation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ContextFlyout.xaml.cs">
+			<DependentUpon>ContextFlyout.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\CustomValidation.xaml.cs">
+			<DependentUpon>CustomValidation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\DataValidation.xaml.cs">
+			<DependentUpon>DataValidation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Editing.xaml.cs">
+			<DependentUpon>Editing.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FreezePanes.xaml.cs">
+			<DependentUpon>FreezePanes.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\GettingStarted.xaml.cs">
+			<DependentUpon>GettingStarted.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Grouping.xaml.cs">
+			<DependentUpon>Grouping.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\MasterDetailsView.xaml.cs">
+			<DependentUpon>MasterDetailsView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Printing.xaml.cs">
+			<DependentUpon>Printing.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Selection.xaml.cs">
+			<DependentUpon>Selection.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Serialization.xaml.cs">
+			<DependentUpon>Serialization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Sorting.xaml.cs">
+			<DependentUpon>Sorting.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\StackedHeader.xaml.cs">
+			<DependentUpon>StackedHeader.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Summaries.xaml.cs">
+			<DependentUpon>Summaries.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\UnboundRows.xaml.cs">
+			<DependentUpon>UnboundRows.xaml</DependentUpon>
+		</Compile>
+		<EmbeddedResource Include="Properties\Default.rd.xml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\AdvanceFilter.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ClipboardOperation.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\ContextFlyout.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\CustomValidation.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\DataValidation.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Editing.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\FreezePanes.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\GettingStarted.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Grouping.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\MasterDetailsView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Printing.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Selection.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Serialization.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Sorting.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\StackedHeader.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Summaries.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\UnboundRows.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Grid.WinUI" Version="19.1.0.54-beta"/>
+		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="19.1.0.54-beta"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\syncfusion.demoscommon.winui_lib.csproj">
+			<Project>{9d622272-0da8-41db-a0df-ab1f9ee88873}</Project>
+			<Name>syncfusion.demoscommon.winui_lib</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '$(MinimumVisualStudioVersion)' ">
+		<VisualStudioVersion>$(MinimumVisualStudioVersion)</VisualStudioVersion>
+	</PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets"/>
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,185 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.Trackball"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases Trackball behaviour.it enables you to track a data point closer to the touch position or touch contact point. It consists of only one vertical line moving along the Primary axis and the series. X-values are determined from the position of the vertical line in the axis and Y-values are determined from the tooltip.">
+                <common:DemoLayout.DataContext>
+                    <local:CommoditiesPrices />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Resources>
+                    <local:TrackConverter x:Key="track" />
+                    <DataTemplate x:Key="labelTemplate1">
+                        <Border
+                        Margin="12,0,-3,-4"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="0">
+                            <TextBlock
+                            FontSize="16"
+                            Foreground="Black"
+                            Text="{Binding ValueX}" />
+                        </Border>
+
+                    </DataTemplate>
+
+                    <Style x:Key="trackLine" TargetType="Line">
+                        <Setter Property="Stroke" Value="Gray" />
+                        <Setter Property="StrokeThickness" Value="2" />
+                    </Style>
+                    <Style TargetType="Syncfusion:ChartTrackballControl" x:Key="trackballStyle">
+                        <Setter Property="Stroke" Value="Transparent"></Setter>
+                        <Setter Property="StrokeThickness" Value="0"/>
+                    </Style>
+                </common:DemoLayout.Resources>
+                <common:DemoLayout.Example>
+                    <Syncfusion:SfChart
+                    x:Name="Chart" 
+                    Header="Average sales per person"
+                    Palette="Custom"
+                    Height="420"
+                    ColorModel="{StaticResource CustomColor}"    
+                    AreaBorderThickness="0">
+
+                    <Syncfusion:SfChart.Behaviors>
+                            <Syncfusion:ChartTrackballBehavior LineStyle="{StaticResource trackLine}" ChartTrackballStyle="{StaticResource trackballStyle}" UseSeriesPalette="True" />
+                    </Syncfusion:SfChart.Behaviors>
+                        
+                    <!--  Properties Origin and ShowAxisNextToOrigin are use to make chart like graph design  -->
+                    <Syncfusion:SfChart.PrimaryAxis>
+                        <Syncfusion:CategoryAxis
+                            ShowGridLines="False"
+                            ShowTrackballInfo="True"
+                            PlotOffset="20"
+                             />
+                        </Syncfusion:SfChart.PrimaryAxis>
+
+                        <Syncfusion:SfChart.SecondaryAxis>
+                            <Syncfusion:NumericalAxis
+                            Interval="10"
+                            Minimum="0"
+                            RangePadding="Additional"
+                            ShowTrackballInfo="True" />
+                        </Syncfusion:SfChart.SecondaryAxis>
+
+                        <Syncfusion:LineSeries
+                        EnableAnimation="True"                       
+                        ItemsSource="{Binding CommodityDetails}"
+                        XBindingPath="Date"
+                        YBindingPath="YValue2">
+                            <Syncfusion:LineSeries.DataMarker>
+                                <Syncfusion:ChartDataMarker
+                                MarkerHeight="13"
+                                MarkerType="Ellipse"
+                                MarkerWidth="13"
+                                ShowLabel="False" />
+                            </Syncfusion:LineSeries.DataMarker>
+                        </Syncfusion:LineSeries>
+
+                        <Syncfusion:LineSeries
+                        EnableAnimation="True"                      
+                        ItemsSource="{Binding CommodityDetails}"
+                        XBindingPath="Date"
+                        YBindingPath="YValue3">
+                            <Syncfusion:LineSeries.DataMarker>
+                                <Syncfusion:ChartDataMarker
+                                MarkerHeight="13"
+                                MarkerType="Ellipse"
+                                MarkerWidth="13"
+                                ShowLabel="False" />
+                            </Syncfusion:LineSeries.DataMarker>
+                        </Syncfusion:LineSeries>
+
+                        <Syncfusion:LineSeries
+                        EnableAnimation="True"                       
+                        ItemsSource="{Binding CommodityDetails}"
+                        XBindingPath="Date"
+                        YBindingPath="YValue1">
+                            <Syncfusion:LineSeries.DataMarker>
+                                <Syncfusion:ChartDataMarker
+                                MarkerHeight="13"
+                                MarkerType="Ellipse"
+                                MarkerWidth="13"
+                                ShowLabel="False" />
+                            </Syncfusion:LineSeries.DataMarker>
+                        </Syncfusion:LineSeries>
+
+                    </Syncfusion:SfChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;Syncfusion:SfChart x:Name=&quot;Chart&quot; Palette=&quot;Custom&quot; ColorModel=&quot;{StaticResource CustomColor}&quot; &gt;
+                        
+    &lt;chart:SfChart.Resources&gt;
+        &lt;Style x:Key=&quot;trackLine&quot; TargetType=&quot;Line&quot;&gt;
+            &lt;Setter Property=&quot;Stroke&quot; Value=&quot;Gray&quot; /&gt;
+            &lt;Setter Property=&quot;StrokeThickness&quot; Value=&quot;2&quot; /&gt;
+        &lt;/Style&gt;
+    &lt;/chart:SfChart.Resources&gt;
+                        
+    &lt;Syncfusion:SfChart.Behaviors&gt;
+        &lt;Syncfusion:ChartTrackballBehavior 
+                        LineStyle=&quot;{StaticResource trackLine}&quot; 
+                        UseSeriesPalette=&quot;True&quot; /&gt;
+    &lt;/Syncfusion:SfChart.Behaviors&gt;    
+
+     &lt;Syncfusion:LineSeries  
+                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;YValue2&quot; 
+                        EnableAnimation=&quot;True&quot;  &gt;
+                &lt;Syncfusion:LineSeries.DataMarker&gt;
+                    &lt;Syncfusion:ChartDataMarker 
+                        MarkerHeight=&quot;15&quot; 
+                        MarkerType=&quot;Ellipse&quot; 
+                        MarkerWidth=&quot;15&quot; 
+                        ShowLabel=&quot;False&quot; /&gt;
+                &lt;/Syncfusion:LineSeries.DataMarker&gt;
+    &lt;/Syncfusion:LineSeries&gt;
+
+    &lt;Syncfusion:LineSeries 
+                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
+                        XBindingPath=&quot;Date&quot;  
+                        EnableAnimation=&quot;True&quot; 
+                        YBindingPath=&quot;YValue3&quot;&gt;
+                &lt;Syncfusion:LineSeries.DataMarker&gt;
+                    &lt;Syncfusion:ChartDataMarker 
+                        MarkerHeight=&quot;15&quot; 
+                        MarkerType=&quot;Ellipse&quot; 
+                        MarkerWidth=&quot;15&quot; 
+                        ShowLabel=&quot;False&quot; /&gt;
+                &lt;/Syncfusion:LineSeries.DataMarker&gt;
+    &lt;/Syncfusion:LineSeries&gt;
+
+    &lt;Syncfusion:LineSeries  
+                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;YValue1&quot; 
+                        EnableAnimation=&quot;True&quot;&gt;
+                &lt;Syncfusion:LineSeries.DataMarker&gt;
+                    &lt;Syncfusion:ChartDataMarker 
+                        MarkerHeight=&quot;15&quot; 
+                        MarkerType=&quot;Ellipse&quot; 
+                        MarkerWidth=&quot;15&quot; 
+                        ShowLabel=&quot;False&quot; /&gt;
+                &lt;/Syncfusion:LineSeries.DataMarker&gt;
+    &lt;/Syncfusion:LineSeries&gt;
+
+&lt;/Syncfusion:SfChart&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

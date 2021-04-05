@@ -1,0 +1,13 @@
+﻿<slider:SfSlider Value="$(labelTemplateValueSubstitute)"
+                 ShowLabels="True"
+                 LabelOffset="15">
+    <slider:SfSlider.LabelTemplate>
+        <DataTemplate>
+            <Grid CornerRadius="5"
+                  Background="{ThemeResource SystemBaseLowColor}">
+                <TextBlock Text="{Binding Text}"
+                           Margin="6" />
+            </Grid>
+        </DataTemplate>
+    </slider:SfSlider.LabelTemplate>
+</slider:SfSlider>

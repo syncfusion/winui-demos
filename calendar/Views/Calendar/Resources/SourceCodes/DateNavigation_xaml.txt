@@ -1,0 +1,7 @@
+﻿<calendar:SfCalendar
+    MinDate="$(MinDate)"
+    MaxDate="$(MaxDate)"
+    MinDisplayMode="$(MinDisplayMode)"
+    MaxDisplayMode="$(MaxDisplayMode)"
+    DisplayMode="$(DisplayMode)"
+    NavigationDirection="$(NavigationDirection)"/>
