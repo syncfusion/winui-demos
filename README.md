@@ -18,16 +18,26 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 
 ## <a name="how-to-run-the-demos"></a>How to run the demos ##
 
-To run the demos, 
+Samplebrowser can run on eihter UWP or Desktop enviroments. To run the demos,
+
+### WinUI UWP
+
  * Clone or download this repository.
  * Open `syncfusion.samplebrowser.winui.sln` file present under **samplebrowser** folder in Visual Studio.
  * Restore nugets for all the demo projects.
  * Set `syncfusion.samplebrowser.winui` as start up project and run.
 
-   **Notes:** While downloading the zip file, follow below steps
-   * Before you unzip the archive, right-click it, select **Properties**, and then select **Unblock**.
-   * Be sure to unzip the entire archive, and not just individual demos. The demos all depend on the common folder in the archive.
-   * If you unzip individual demos, they will not build due to references to other portions of the ZIP file that were not unzipped. You must unzip the entire archive if you intend to build the samples.
+### WinUI Desktop
+
+ * Clone or download this repository.
+ * Open `syncfusion.samplebrowser.winui_net50.sln` file present under **samplebrowser** folder in Visual Studio.
+ * Restore nugets for all the demo projects.
+ * Set `syncfusion.samplebrowser.winui_net50 (Package).wapproj` as start up project and run.
+
+**Notes:** While downloading the zip file, follow below steps
+* Before you unzip the archive, right-click it, select **Properties**, and then select **Unblock**.
+* Be sure to unzip the entire archive, and not just individual demos. The demos all depend on the common folder in the archive.
+* If you unzip individual demos, they will not build due to references to other portions of the ZIP file that were not unzipped. You must unzip the entire archive if you intend to build the samples.
 
 
 ## <a name="controls-catalog"></a>Controls Catalog ## 
@@ -165,4 +175,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-04-05 at precisely 13:45:00 EST.</p>
+<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-04-28 at precisely 13:45:00 EST.</p>
