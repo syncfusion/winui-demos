@@ -1,2 +1,0 @@
-﻿<calendar:SfCalendar
-    BlackoutDates="{Binding BlockoutSpecificDates}"/>
