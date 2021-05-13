@@ -1,0 +1,224 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.CustomColumnSeries"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the customization of column series default template to any other shape using CustomTemplate property.">
+                <common:DemoLayout.Resources>
+                    <local:ColumnPointsConverter x:Key="ColumnPointsConverter" />
+                    <local:ColumnPointsConverter1 x:Key="ColumnPointsConverter1" />
+                    <local:ColumnPointsConverter1 x:Key="ColumnPointsConverter2" />
+
+                    <DataTemplate x:Key="columnTemplate1">
+                        <Canvas>
+                            <Path
+                            Canvas.Left="{Binding RectX}"
+                            Canvas.Top="{Binding RectY}"
+                            Width="{Binding Width}"
+                            Height="{Binding Height}"
+                            Data="M12.53,23.19603 L34.044998,23.19603 C40.935997,23.19603 46.573996,29.089028 46.573996,                                   36.363023 L46.573996,68.236008 C46.573996,70.725007 44.726995,72.737 42.370996,72.737 40.015997,                                   72.737 38.107996,70.725007 38.107996,68.236008 L38.107996,39.502022 35.910997,39.502022 35.910997,                                   119.46797 C35.910997,122.80297 33.325998,125.50597 30.171997,125.50597 27.020998,                                   125.50597 24.459998,122.80297 24.459999,119.46797 L24.459999,73.036004 22.119999,                                   73.036004 22.119999,119.46797 C22.119999,122.80297 19.558999,125.50597 16.404999,                                   125.50597 13.252,125.50597 10.666,122.80297 10.666,119.46797 L10.666,39.502022 8.4720006,                                   39.502022 8.4720006,68.236008 C8.4720001,70.725007 6.5610003,72.737 4.2060008,72.737 1.8530006,                                   72.737 9.5367432E-07,70.725007 0,68.236008 L0,36.363023 C9.5367432E-07,29.089028 5.6470003,                                   23.19603 12.53,23.19603 z M23.288998,0 C29.50099,0 34.541992,4.6090033 34.541992,                                   10.281969 34.541992,15.957987 29.50099,20.564 23.288998,20.564 17.076989,20.564 12.040992,                                   15.957987 12.040992,10.281969 12.040992,4.6090033 17.076989,0 23.288998,0 z"
+                            Stretch="Fill">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="{Binding Converter={StaticResource ColumnPointsConverter1}}" EndPoint="0,0.5">
+                                        <GradientStop Offset="0.5" Color="#FFD1D3D4" />
+                                        <GradientStop Offset="0.5" Color="#FF8BC34A" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </DataTemplate>
+
+                    <DataTemplate x:Key="columnTemplate2">
+                        <Canvas>
+                            <Path
+                            Canvas.Left="{Binding RectX}"
+                            Canvas.Top="{Binding RectY}"
+                            Width="{Binding Width}"
+                            Height="{Binding Height}"
+                            Data="M20.130818,23.056011 C20.197818,23.056011 20.233818,23.057012 20.233818,                                   23.057012 L35.345894,23.057012 C35.345894,23.057012 35.381895,23.056011 35.448895,                                   23.056011 36.460901,23.059011 44.644941,23.420011 47.568956,34.176008 L55.382996,                                   62.885004 C56.125,65.569002 54.721992,67.623003 52.503983,68.290003 50.280972,68.964998 48.009958,                                   67.782 47.422956,65.639002 L39.825918,37.647009 37.758907,37.647009 50.930973,86.107996 38.533911,                                   86.107996 38.522911,86.115999 38.522911,121.68599 C38.522911,124.39299 36.3239,126.65299 33.643887,                                   126.66699 31.277874,126.67499 28.784862,124.14399 28.784861,121.43499 L28.784861,                                   86.107996 26.796852,86.107996 26.796852,121.43499 C26.796851,124.14399 24.301839,                                   126.67499 21.935828,126.66699 19.252813,126.65299 17.053802,124.39299 17.053801,                                   121.68599 L17.053801,86.115999 17.042801,86.107996 4.6457386,86.107996 17.817806,                                   37.647009 15.747795,37.647009 8.1567554,65.639002 C7.5747538,67.782 5.2987423,68.964998 3.0807314,                                   68.290003 0.85771942,67.623003 -0.54528809,65.569002 0.20271683,62.885004 L8.0137558,                                   34.176008 C10.937771,23.420011 19.119812,23.059011 20.130818,23.056011 z M27.780004,0 C33.995018,                                   0 39.032007,4.6510019 39.032007,10.385013 39.032007,16.122013 33.995018,20.771002 27.780004,                                   20.771002 21.567004,20.771002 16.531007,16.122013 16.531008,10.385013 16.531007,                                   4.6510019 21.567004,0 27.780004,0 z"
+                            Stretch="Fill">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="{Binding Converter={StaticResource ColumnPointsConverter}}" EndPoint="0,0.5">
+                                        <GradientStop Offset="0.5" Color="#FFD1D3D4" />
+                                        <GradientStop Offset="0.5" Color="#FF8BC34A" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </DataTemplate>
+
+                    <DataTemplate x:Key="columnTemplate3">
+                        <Canvas>
+                            <Path
+                            Canvas.Left="{Binding RectX}"
+                            Canvas.Top="{Binding RectY}"
+                            Width="{Binding Width}"
+                            Height="{Binding Height}"
+                            Data="F1M518.6403,877.0342C516.4553,874.0162,511.8693,870.8002,504.8793,867.3842C499.6373,                                   864.8032,496.1723,862.8372,494.4843,861.4862C492.7963,860.1372,491.7833,858.8942,491.4463,                                   857.7632C491.1083,856.6312,490.9403,854.8542,490.9403,852.4312C490.9403,850.6442,491.2773,                                   849.3052,491.9533,848.4102C492.6273,847.5172,493.6403,847.0702,494.9913,847.0702C496.6593,                                   847.0702,497.3293,847.5562,497.7463,848.5292C498.1633,849.5032,498.0003,851.8162,498.0003,                                   855.4702L498.0003,860.0002L520.0003,860.0002L520.0003,855.1722C520.0003,851.2012,519.8263,                                   848.2822,519.4093,846.4152C518.9923,844.5492,517.8183,842.5232,515.8523,840.3392C513.8873,                                   838.1552,510.7233,836.3972,507.0503,835.0662C505.6043,834.5432,504.0003,834.1262,502.0003,                                   833.8092L502.0003,821.0002L488.0003,821.0002L488.0003,833.3792C485.0003,833.7512,482.3623,                                   834.4592,479.7753,835.5132C475.7843,837.1422,473.1313,839.4552,471.4633,842.4532C469.7953,                                   845.4522,469.0493,850.1082,469.0493,856.4232C469.0493,860.8712,469.8673,864.7132,471.4163,                                   867.9492C472.9653,871.1862,477.2963,874.7912,484.3653,878.7622C492.7843,883.4482,497.4613,                                   886.2672,498.3753,887.2212C499.2483,888.1742,499.6913,890.5372,499.6913,894.3092C499.6913,                                   897.0502,499.3563,898.8462,498.6813,899.7012C498.0053,900.5552,496.8153,900.9812,495.1083,                                   900.9812C493.5193,900.9812,492.3993,900.3462,491.8633,899.0752C491.3263,897.8052,491.0003,                                   895.0452,491.0003,890.7952L491.0003,886.0002L469.0003,886.0002L469.0003,889.6032C469.0003,                                   896.1962,470.2093,901.1212,471.8383,904.3772C473.4663,907.6342,476.3013,910.2152,480.6493,                                   912.1212C482.9103,913.1122,485.0003,913.8392,488.0003,914.3152L488.0003,926.0002L502.0003,                                   926.0002L502.0003,914.6142C505.0003,914.2022,508.2313,913.4412,510.6923,912.3302C514.6033,                                   910.5622,517.5703,908.0412,519.2383,904.7632C520.9063,901.4882,521.8283,896.6332,521.8283,                                   890.1992C521.8283,884.4412,520.8243,880.0532,518.6403,877.0342"
+                            Stretch="Fill">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="{Binding Converter={StaticResource ColumnPointsConverter2}}" EndPoint="0,0.5">
+                                        <GradientStop Offset="0.5" Color="#FFD1D3D4" />
+                                        <GradientStop Offset="0.5" Color="#FFFFC107" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </DataTemplate>
+
+                </common:DemoLayout.Resources>
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <chart:SfChart
+                        x:Name="Chart1"
+                        Header="Literacy rate in Nation"    
+                        Grid.Row="0"
+                        Margin="10,0,10,0">
+                            <chart:SfChart.DataContext>
+                                <local:ViewModelColumn />
+                            </chart:SfChart.DataContext>
+
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend
+                                Margin="0,-10,0,20"
+                                HorizontalAlignment="Right"
+                                ItemMargin="0,0,15,0"
+                                Position="Outside" />
+                            </chart:SfChart.Legend>
+
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis
+                                LabelPlacement="BetweenTicks"                              
+                                ShowGridLines="False"
+                                TickLineSize="8" />
+                            </chart:SfChart.PrimaryAxis>
+
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis
+                                Interval="20"
+                                Maximum="100"
+                                Minimum="0"
+                                PlotOffset="10"
+                                ShowGridLines="False" />
+                            </chart:SfChart.SecondaryAxis>
+
+                            <chart:ColumnSeries
+                            CustomTemplate="{StaticResource columnTemplate1}"
+                            Interior="#FF8BC34A"
+                            ItemsSource="{Binding}"
+                            Label="Educated"
+                            LegendIcon="Rectangle"
+                            SegmentSpacing="0.1"
+                            XBindingPath="Gadget"
+                            YBindingPath="Value1" />
+
+                            <chart:ColumnSeries
+                            CustomTemplate="{StaticResource columnTemplate2}"
+                            Interior="#FFD1D3D4"
+                            ItemsSource="{Binding}"
+                            Label="Uneducated"
+                            LegendIcon="Rectangle"
+                            XBindingPath="Gadget"
+                            YBindingPath="Value1" />
+                        </chart:SfChart>
+
+                        <chart:SfChart Margin="10,0,10,0"
+                        x:Name="Chart2"
+                        Header="Economic Growth - Year 2013"
+                        Grid.Row="1">
+
+                            <chart:SfChart.DataContext>
+                                <local:ViewModelColumn1 />
+                            </chart:SfChart.DataContext>
+
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend
+                                HorizontalAlignment="Right"
+                                Position="Outside" />
+                            </chart:SfChart.Legend>
+
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis
+                                LabelPlacement="BetweenTicks"                               
+                                ShowGridLines="False" />
+                            </chart:SfChart.PrimaryAxis>
+
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis
+                                Interval="10"
+                                Maximum="30"
+                                Minimum="0"
+                                PlotOffset="20"
+                                ShowGridLines="False" />
+                            </chart:SfChart.SecondaryAxis>
+
+                            <chart:ColumnSeries
+                            CustomTemplate="{StaticResource columnTemplate3}"
+                            Interior="#FFFFC107"
+                            ItemsSource="{Binding}"
+                            Label="Year 2013"
+                            LegendIcon="Rectangle"
+                            SegmentSpacing="0.6"
+                            XBindingPath="Gadget"
+                            YBindingPath="Value2" />
+
+                        </chart:SfChart>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfChart x:Name=&quot;Chart1&quot; Grid.Row=&quot;0&quot; Margin=&quot;10,0,10,0&quot;&gt;   
+
+    &lt;chart:ColumnSeries 
+                        ItemsSource=&quot;{Binding}&quot; 
+                        XBindingPath=&quot;Gadget&quot;  
+                        YBindingPath=&quot;Value1&quot; 
+                        Label=&quot;Educated&quot;
+                        Interior=&quot;#FF8BC34A&quot; 
+                        LegendIcon=&quot;Rectangle&quot; 
+                        SegmentSpacing=&quot;0.1&quot; 
+                        CustomTemplate=&quot;{StaticResource columnTemplate1}&quot; /&gt;
+ 
+    &lt;chart:ColumnSeries 
+                        ItemsSource=&quot;{Binding}&quot; 
+                        XBindingPath=&quot;Gadget&quot; 
+                        YBindingPath=&quot;Value1&quot;  
+                        Label=&quot;Uneducated&quot; 
+                        Interior=&quot;#FFD1D3D4&quot; 
+                        LegendIcon=&quot;Rectangle&quot; 
+                        CustomTemplate=&quot;{StaticResource columnTemplate2}&quot; /&gt;
+&lt;/chart:SfChart&gt;
+
+&lt;chart:SfChart Margin=&quot;10,0,10,0&quot; x:Name=&quot;Chart2&quot; Grid.Row=&quot;1&quot;&gt;
+    
+    &lt;chart:ColumnSeries 
+                        ItemsSource=&quot;{Binding}&quot;  
+                        XBindingPath=&quot;Gadget&quot;         
+                        YBindingPath=&quot;Value2&quot; 
+                        Label=&quot;Year 2013&quot; 
+                        Interior=&quot;#FFFFC107&quot; 
+                        LegendIcon=&quot;Rectangle&quot; 
+                        SegmentSpacing=&quot;0.6&quot; 
+                        CustomTemplate=&quot;{StaticResource columnTemplate3}&quot; /&gt;
+    
+&lt;/chart:SfChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

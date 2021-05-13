@@ -1,0 +1,5 @@
+﻿<editors:SfDatePicker
+	FormatString="$(FormatString)"
+	DropDownFormatString="$(DropDownFormatString)"
+	CalendarIdentifier="$(CalendarIdentifier)"
+	Language="$(Language)"/>

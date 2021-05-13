@@ -1,0 +1,65 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.Animation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.radialgaugedemos.winui.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui">
+
+    <Page.DataContext>
+        <local:AnimationDemoViewModel />
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample showcases various types of pointer easing animation"
+                           XamlSource="syncfusion.radialgaugedemos.winui/sourcecodes\animation\animationcustomization.xaml.cs.txt">
+            <common:DemoLayout.Example>
+                <gauge:SfRadialGauge x:Name="gauge">
+                    <gauge:SfRadialGauge.Axes>
+                        <gauge:RadialAxis ShowTicks="False">
+                            <gauge:RadialAxis.Pointers>
+                                <gauge:NeedlePointer x:Name="needlePointer"
+                                                     Value="60"
+                                                     EnableAnimation="True"
+                                                     NeedleLength="0.7"
+                                                     NeedleStartWidth="2"
+                                                     NeedleEndWidth="10"
+                                                     KnobRadius="0.05"
+                                                     TailLength="0.1"
+                                                     TailWidth="10">
+                                </gauge:NeedlePointer>
+                            </gauge:RadialAxis.Pointers>
+                        </gauge:RadialAxis>
+                    </gauge:SfRadialGauge.Axes>
+                </gauge:SfRadialGauge>
+            </common:DemoLayout.Example>
+
+            <common:DemoLayout.Options>
+                <Grid Width="200">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ComboBox x:Name="AnimationTypesComboBox"
+                              Grid.Row="0"
+                              ItemsSource="{Binding AnimationTypesItemsSource}"
+                              DisplayMemberPath="AnimationType"
+                              SelectedValuePath="EasingFunction"
+                              SelectedIndex="0"
+                              SelectionChanged="AnimationTypesComboBox_SelectionChanged"
+                              HorizontalAlignment="Stretch" />
+
+                </Grid>
+            </common:DemoLayout.Options>
+
+            <common:DemoLayout.Substitutions>
+                <common:DemoLayoutSubstitution Key="easingFunction"
+                                               SubstitutionValue="{x:Bind ((local:AnimationTypes)AnimationTypesComboBox.SelectedItem).SubstitutionString, Mode=OneWay}" />
+            </common:DemoLayout.Substitutions>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

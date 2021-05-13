@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.BubbleChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases bubble chart is represented by a circle. Consequently, bubble charts allow three-variable comparisons for easy visualization of complex interdependencies.">
+                <common:DemoLayout.Example>
+                    <chart:SfChart x:Name="Chart" Header="World Country Details" Height="420" HorizontalAlignment="Center" AreaBorderThickness="0">
+
+                        <chart:SfChart.DataContext>
+                            <local:BubbleChartViewModel />
+                        </chart:SfChart.DataContext>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:NumericalAxis ShowGridLines="False"  Header="Literacy Rate"  PlotOffset="35" />
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis Header="GDP Growth Rate" Minimum="0" RangePadding="Additional" />
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:BubbleSeries Palette="Custom" ColorModel="{StaticResource CustomColor}" x:Name="BubbleSeries" EnableAnimation="True" ItemsSource="{Binding BubbleData}" Label="Label"
+                        Size="Size" XBindingPath="Label"  YBindingPath="Value" ShowTooltip="True">
+                        </chart:BubbleSeries>
+                    </chart:SfChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+ &lt;chart:SfChart 
+       x:Name=&quot;Chart&quot; 
+       HorizontalAlignment=&quot;Center&quot;&gt;                       
+
+    &lt;chart:BubbleSeries 
+                        ItemsSource=&quot;{Binding BubbleData}&quot; 
+                        XBindingPath=&quot;Label&quot;  
+                        YBindingPath=&quot;Value&quot;
+                        Size=&quot;Size&quot; 
+                        EnableAnimation=&quot;True&quot; 
+                        Palette=&quot;Custom&quot;
+                        ColorModel=&quot;{StaticResource CustomColor}&quot;&gt;
+     &lt;/chart:BubbleSeries&gt;
+    
+&lt;/chart:SfChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

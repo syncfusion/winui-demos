@@ -1,0 +1,2 @@
+﻿<calendar:SfCalendarDateRangePicker
+    BlackoutDates="{Binding BlockoutSpecificDates}"/>

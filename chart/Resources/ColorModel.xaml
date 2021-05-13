@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts">
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="GridBackgroundColor" Color="{StaticResource SystemAltHighColor}"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="GridBackgroundColor" Color="Black"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="HighContrast">
+            <SolidColorBrush x:Key="GridBackgroundColor" Color="{ThemeResource SystemColorWindowColor}"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+    <chart:ChartColorModel x:Key="CustomColor">
+        <chart:ChartColorModel.CustomBrushes>
+            <SolidColorBrush Color="#0078DE" />
+            <SolidColorBrush Color="#00CC6A" />
+            <SolidColorBrush Color="#B146C2" />
+            <SolidColorBrush Color="#FFB900" />
+            <SolidColorBrush Color="#7A7574" />
+            <SolidColorBrush Color="#E2182F" />
+            <SolidColorBrush Color="#7200E6" />
+            <SolidColorBrush Color="#007F00" />
+            <SolidColorBrush Color="#E3236F" />
+            <SolidColorBrush Color="#FA9901" />
+        </chart:ChartColorModel.CustomBrushes>
+    </chart:ChartColorModel>
+    
+</ResourceDictionary>

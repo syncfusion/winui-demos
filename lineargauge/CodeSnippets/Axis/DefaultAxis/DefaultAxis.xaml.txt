@@ -1,0 +1,23 @@
+﻿...
+<gauge:LinearAxis Interval="10"
+                  MinorTicksPerInterval="4">
+
+    <gauge:LinearAxis.Ranges>
+        <gauge:LinearGaugeRange EndValue="40" />
+    </gauge:LinearAxis.Ranges>
+    
+    <gauge:LinearAxis.BarPointers>
+        <gauge:BarPointer Value="50"
+                          EnableAnimation="True" />
+    </gauge:LinearAxis.BarPointers>
+
+    <gauge:LinearAxis.MarkerPointers>
+        <gauge:ShapePointer Value="$(shapePointerValue)"
+                            ShapeType="Triangle"
+                            OffsetPoint="0,35"
+                            VerticalAnchor="Start"
+                            IsInteractive="True"
+                            EnableAnimation="True" />
+    </gauge:LinearAxis.MarkerPointers>
+</gauge:LinearAxis>
+...
