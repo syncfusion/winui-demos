@@ -1,0 +1,7 @@
+﻿<calendar:SfCalendarDatePicker
+    EditMode="$(EditMode)"
+    SelectionShape="$(SelectionShape)"
+    SelectionHighlightMode="$(SelectionHighlightMode)"
+    PlaceHolderText="$(CalendarPlaceHolderText)"
+    FirstDayOfWeek="$(FirstDayOfWeek)"
+    NumberOfWeeksInView="$(NumberOfWeeksInView)"/>

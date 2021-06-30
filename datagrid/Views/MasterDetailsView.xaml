@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="DataGrid.MasterDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:OrderInfoViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <core:StringFormatConverter x:Key="stringFormatConverter" />
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="The data grid displays hierarchical data in the form of nested tables using master-details view configuration.">
+                <common:DemoLayout.Example>
+                    <Grid Margin="5">
+                        <dataGrid:SfDataGrid 
+                            x:Name="sfDataGrid"
+                            Height="500"
+                            AutoGenerateColumns="False"
+                            HideEmptyGridViewDefinition="True"      
+                            ItemsSource="{Binding OrdersDetails}"
+                            ColumnWidthMode="Auto"
+                            AllowEditing="True"
+                            ShowGroupDropArea="True">
+                            <dataGrid:SfDataGrid.DetailsViewDefinition>
+                                <dataGrid:GridViewDefinition RelationalColumn="OrderDetails">
+                                    <dataGrid:GridViewDefinition.DataGrid>
+                                        <dataGrid:SfDataGrid 
+                                            x:Name="FirstDetailsViewGrid" 
+                                            AllowEditing="True"
+                                            AutoGenerateColumns="false">
+                                            <dataGrid:SfDataGrid.Columns>
+                                                <dataGrid:GridTextColumn HeaderText="Order ID" MappingName="OrderID" TextAlignment="Right"/>
+                                                <dataGrid:GridTextColumn HeaderText="Customer ID" MappingName="CustomerID" />
+                                                <dataGrid:GridTextColumn HeaderText="Product ID"   MappingName="ProductID"  TextAlignment="Right" />
+                                                <dataGrid:GridTextColumn MappingName="Quantity" TextAlignment="Right" />
+                                                <dataGrid:GridTextColumn MappingName="Discount"  TextAlignment="Right" />
+                                                <dataGrid:GridDateColumn MappingName="OrderDate"
+                                                                           HeaderText="Order Date" 
+                                                                           TextAlignment="Right" />
+                                            </dataGrid:SfDataGrid.Columns>
+                                        </dataGrid:SfDataGrid>
+                                    </dataGrid:GridViewDefinition.DataGrid>
+                                </dataGrid:GridViewDefinition>
+                            </dataGrid:SfDataGrid.DetailsViewDefinition>
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridTextColumn HeaderText="Order ID" MappingName="OrderID" TextAlignment="Right"/>
+                                <dataGrid:GridTextColumn HeaderText="Customer ID" MappingName="CustomerID" />
+                                <dataGrid:GridDateColumn 
+                                       HeaderText="Shipping Date"
+                                       MappingName="ShippedDate"
+                                       TextAlignment="Right" />
+                                <dataGrid:GridTextColumn HeaderText="Company Name"
+                                       MappingName="CompanyName"/>
+                                <dataGrid:GridTextColumn HeaderText="Ship City" MappingName="ShipCity" />
+                                <dataGrid:GridTextColumn HeaderText="Ship Country" MappingName="ShipAddress" />
+                                <dataGrid:GridTextColumn DisplayBinding="{Binding Freight, Converter={StaticResource stringFormatConverter}, ConverterParameter='{}{0:C}'}" 
+                                                           TextAlignment="Right" />
+                            </dataGrid:SfDataGrid.Columns>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+   &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;
+                             Height=&quot;500&quot;
+                             AutoGenerateColumns=&quot;True&quot;
+                             HideEmptyGridViewDefinition=&quot;True&quot;   
+                             ItemsSource=&quot;{Binding OrdersDetails}&quot;
+                             ColumnWidthMode=&quot;Auto&quot;
+                             AllowEditing=&quot;True&quot;
+                             ShowGroupDropArea=&quot;True&quot;&gt;
+        &lt;dataGrid:SfDataGrid.DetailsViewDefinition&gt;
+            &lt;dataGrid:GridViewDefinition RelationalColumn=&quot;OrderDetails&quot;&gt;
+                &lt;dataGrid:GridViewDefinition.DataGrid&gt;
+                    &lt;dataGrid:SfDataGrid 
+                        x:Name=&quot;FirstDetailsViewGrid&quot; 
+                        AutoGenerateColumns=&quot;True&quot;&gt;
+                    &lt;/dataGrid:SfDataGrid&gt;
+                &lt;/dataGrid:GridViewDefinition.DataGrid&gt;
+            &lt;/dataGrid:GridViewDefinition&gt;
+        &lt;/dataGrid:SfDataGrid.DetailsViewDefinition&gt; 
+   &lt;/dataGrid:SfDataGrid&gt;
+                </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>
