@@ -1,0 +1,72 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Resources>
+        <Style x:Key="MajorTickStyle"
+               TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#FF949494" />
+            <Setter Property="StrokeThickness"
+                    Value="2.3" />
+        </Style>
+        <Style x:Key="MinorTickStyle"
+               TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#FF616161" />
+            <Setter Property="StrokeThickness"
+                    Value="1.6" />
+        </Style>
+    </gauge:SfRadialGauge.Resources>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis ShowAxisLine="False"
+                          RadiusFactor="1"
+                          CanRotateLabels="True"
+                          TickOffset="0.32"
+                          OffsetUnit="Factor"
+                          LabelPrepared="RadialAxis_LabelPrepared"
+                          StartAngle="270"
+                          EndAngle="270"
+                          LabelOffset="0.45"
+                          Maximum="360"
+                          Minimum="0"
+                          Interval="30"
+                          MinorTicksPerInterval="4"
+                          Foreground="White"
+                          FontSize="11"
+                          MajorTickLength="0.087"
+                          MinorTickLength="0.058"
+                          TickLengthUnit="Factor"
+                          MajorTickStyle="{StaticResource MajorTickStyle}"
+                          MinorTickStyle="{StaticResource MinorTickStyle}">
+
+            <gauge:RadialAxis.BackgroundContent>
+                <Image Source="ms-appx:///Assets/RadialGauge/AxisBackground.png" />
+            </gauge:RadialAxis.BackgroundContent>              
+
+            <gauge:RadialAxis.Pointers>
+                <gauge:MarkerPointer Value="90"
+                                     Background="#FFDF5F2D"
+                                     EnableAnimation="True"
+                                     AnimationDuration="1200"
+                                     MarkerOffset="0.71"
+                                     OffsetUnit="Factor"
+                                     MarkerType="Triangle"
+                                     MarkerHeight="10"
+                                     MarkerWidth="15">
+                    <gauge:MarkerPointer.AnimationEasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </gauge:MarkerPointer.AnimationEasingFunction>
+                </gauge:MarkerPointer>
+            </gauge:RadialAxis.Pointers>
+
+            <gauge:RadialAxis.Annotations>
+                <gauge:GaugeAnnotation DirectionValue="270">
+                    <gauge:GaugeAnnotation.Content>
+                        <TextBlock Text="90"
+                                   Foreground="#FFDF5F2D"
+                                   FontWeight="SemiBold"
+                                   FontSize="22" />
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+            </gauge:RadialAxis.Annotations>
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

@@ -1,0 +1,11 @@
+﻿<slider:SfSlider Value="$(templateCustomizationSliderValueSubstitute)">
+    <slider:SfSlider.ToolTipTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Current Value : "
+                           Margin="0,0,5,0" />
+                <TextBlock Text="{Binding ToolTipText}" />
+            </StackPanel>
+        </DataTemplate>
+    </slider:SfSlider.ToolTipTemplate>
+</slider:SfSlider>

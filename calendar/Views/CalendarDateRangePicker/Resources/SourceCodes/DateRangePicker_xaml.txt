@@ -1,0 +1,6 @@
+﻿<calendar:SfCalendarDateRangePicker
+    ShowSubmitButtons="$(ShowSubmitButton)" 
+    MinDayCount="$(MinimumDayCount)"
+    MaxDayCount="$(MaximumDayCount)"
+    PlaceHolderText="$(PlaceHolderText)"
+    FirstDayOfWeek="$(FirstDayOfWeek)"/>

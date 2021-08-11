@@ -1,0 +1,38 @@
+﻿<!--Cell Styles RibbonGallery-->
+<ribbon:RibbonGroup Header="Cell Styles">
+    <ribbon:RibbonGallery ItemHeight="48"
+                          ItemWidth="100"
+                          MaxColumnCount="6"
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <ribbon:RibbonGallery.Items>
+            <ribbon:RibbonGalleryItem Content="Normal"
+                                      Foreground="Black"
+                                      GroupName="Good, Bad and Neutral" />
+            <ribbon:RibbonGalleryItem Background="#ffc7ce"
+                                      Content="Bad"
+                                      Foreground="#be0006" />
+            .......
+        </ribbon:RibbonGallery.Items>
+    </ribbon:RibbonGallery>
+
+    <!--Font Styles RibbonGallery ItemTemplate-->
+    <DataTemplate x:Name="RibbonGalleryItemTemplate"
+                  x:DataType="local:FontStyleInfo">
+        <StackPanel>
+            <TextBlock FontSize="{x:Bind FontSize}"
+                       FontStyle="{x:Bind FontStyle}"
+                       FontWeight="{x:Bind FontWeight}"
+                       Text="{x:Bind FontText}"
+                       TextTrimming="Clip" />
+            <TextBlock FontWeight="Light"
+                       Text="{x:Bind FontDescription}"
+                       TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+    </DataTemplate>
+
+    <!--Font Styles RibbonGallery-->
+    <ribbon:RibbonGallery ItemHeight="56"
+                          ItemTemplate="{StaticResource RibbonGalleryItemTemplate}"
+                          ItemsSource="{Binding FontStyleCollection}"
+                          MaxColumnCount="5"
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
