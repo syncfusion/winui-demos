@@ -1,5 +1,0 @@
-﻿<calendar:SfCalendar
-    DateFormat="$(CalendarDateFormat)"
-    MonthFormat="$(CalendarMonthFormat)"
-    DayOfWeekFormat="$(CalendarDayOfWeekFormat)"
-    MonthHeaderFormat="$(CalendarMonthHeaderFormat)"/>
