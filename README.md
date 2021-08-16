@@ -1,6 +1,6 @@
-# Syncfusion WinUI Controls Demos (Beta)
+# Syncfusion WinUI Desktop Controls Demos
 
-This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/users/syncfusiondemos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
+This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/users/syncfusion-demos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
 
 This section guides you to use the Syncfusion WinUI demos in your applications.
 
@@ -17,17 +17,6 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 * Requires Visual Studio 2019 (with update 16.7.2 or later) or Visual Studio 2019 Preview.
 
 ## <a name="how-to-run-the-demos"></a>How to run the demos ##
-
-Samplebrowser can run on eihter UWP or Desktop enviroments. To run the demos,
-
-### WinUI UWP
-
- * Clone or download this repository.
- * Open `syncfusion.samplebrowser.winui.sln` file present under **samplebrowser** folder in Visual Studio.
- * Restore nugets for all the demo projects.
- * Set `syncfusion.samplebrowser.winui` as start up project and run.
-
-### WinUI Desktop
 
  * Clone or download this repository.
  * Open `syncfusion.samplebrowser.winui_net50.sln` file present under **samplebrowser** folder in Visual Studio.
@@ -175,4 +164,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-08-11 at precisely 14:55:08 EST.</p> 
+<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-06-30 at precisely 12:39:56 EST.</p> 
