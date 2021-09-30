@@ -1,0 +1,82 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <local:ClockRadialAxis StartAngle="270"
+                               EndAngle="270"
+                               Minimum="0"
+                               Maximum="12"
+                               ShowFirstLabel="False"
+                               Interval="1"
+                               RadiusFactor="0.85"
+                               MinorTicksPerInterval="4"
+                               OffsetUnit="Factor"
+                               LabelOffset="0.15"
+                               TickOffset="0.03"
+                               TickLengthUnit="Factor"
+                               MinorTickLength="0.06"
+                               MajorTickLength="0.1"
+                               FontSize="14"
+                               AxisLineWidth="0.01"
+                               AxisLineWidthUnit="Factor">
+            <gauge:RadialAxis.Pointers>
+                <gauge:NeedlePointer NeedleLength="0.6"
+                                     NeedleStartWidth="2"
+                                     NeedleEndWidth="5"
+                                     Value="10"
+                                     NeedleFill="#355C7D"
+                                     KnobRadius="0">
+                </gauge:NeedlePointer>
+                <gauge:NeedlePointer NeedleLength="0.85"
+                                     NeedleStartWidth="1"
+                                     NeedleEndWidth="3"
+                                     NeedleFill="#355C7D"
+                                     Value="2"
+                                     KnobFill="#00A8B5"
+                                     KnobRadius="0.05" />
+                <gauge:NeedlePointer x:Name="secondsPointer"
+                                     EnableAnimation="True"
+                                     AnimationDuration="800"
+                                     NeedleLength="0.9"
+                                     NeedleStartWidth="2"
+                                     NeedleEndWidth="2"
+                                     NeedleFill="#00A8B5"
+                                     TailWidth="2"
+                                     TailLength="0.15"
+                                     TailFill="#00A8B5"
+                                     KnobFill="White"
+                                     KnobRadius="0.03">
+                    <gauge:NeedlePointer.AnimationEasingFunction>
+                        <BounceEase Bounciness="5"/>
+                    </gauge:NeedlePointer.AnimationEasingFunction>
+                </gauge:NeedlePointer>
+            </gauge:RadialAxis.Pointers>
+
+            <gauge:RadialAxis.Annotations>
+                <gauge:GaugeAnnotation x:Name="Annotation1"
+                                       DirectionUnit="AxisValue"
+                                       DirectionValue="9.5"
+                                       PositionFactor="0.4">
+                    <gauge:GaugeAnnotation.Content>
+                        <Grid Height="90" Width="90">
+                            <gauge:SfRadialGauge>
+                                ...
+                            </gauge:SfRadialGauge>
+                        </Grid>
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+
+                <gauge:GaugeAnnotation x:Name="Annotation2"
+                                       DirectionUnit="AxisValue"
+                                       DirectionValue="6"
+                                       PositionFactor="0.4">
+                    <gauge:GaugeAnnotation.Content>
+                        <Grid Height="90" Width="90">
+                            <gauge:SfRadialGauge>
+                                ...
+                            </gauge:SfRadialGauge>
+                        </Grid>
+                    </gauge:GaugeAnnotation.Content>
+                </gauge:GaugeAnnotation>
+            </gauge:RadialAxis.Annotations>
+        </local:ClockRadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

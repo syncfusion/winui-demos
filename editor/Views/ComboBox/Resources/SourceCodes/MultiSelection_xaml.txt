@@ -1,0 +1,4 @@
+﻿<editors:SfComboBox
+    SelectionMode="$(SelectionMode)"
+    DelimiterText="$(DelimiterText)"
+    ItemsSource="{Binding SocialMedias}"/>

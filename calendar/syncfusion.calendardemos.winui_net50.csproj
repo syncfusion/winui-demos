@@ -1,0 +1,195 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	<EnableDefaultPageItems>false</EnableDefaultPageItems>
+	<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+	<AssemblyName>syncfusion.calendardemos.winui</AssemblyName>
+    <RootNamespace>syncfusion.calendardemos.winui</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+     <Platforms>AnyCPU;x86;x64</Platforms>
+	  <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\**" />
+    <EmbeddedResource Remove="Assets\**" />
+    <EmbeddedResource Remove="Converters\**" />
+    <EmbeddedResource Remove="Properties\PublishProfiles\**" />
+    <EmbeddedResource Remove="syncfusion.calendardemos.winui_net50 %28Package%29\**" />
+    <EmbeddedResource Remove="Views\ColorPalette\**" />
+    <EmbeddedResource Remove="Views\ColorPicker\**" />
+    <EmbeddedResource Remove="Views\DatePicker\**" />
+    <EmbeddedResource Remove="Views\DropDownColorPalette\**" />
+    <EmbeddedResource Remove="Views\DropDownColorPicker\**" />
+    <EmbeddedResource Remove="Views\TimePicker\**" />
+    <None Remove="Assets\**" />
+    <None Remove="Converters\**" />
+    <None Remove="Properties\PublishProfiles\**" />
+    <None Remove="syncfusion.calendardemos.winui_net50 %28Package%29\**" />
+    <None Remove="Views\ColorPalette\**" />
+    <None Remove="Views\ColorPicker\**" />
+    <None Remove="Views\DatePicker\**" />
+    <None Remove="Views\DropDownColorPalette\**" />
+    <None Remove="Views\DropDownColorPicker\**" />
+    <None Remove="Views\TimePicker\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.calendardemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  
+    <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\DateFormatToDisplayFormatConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamplesConfiguration.cs" />
+    <Compile Include="ViewModel\CalendarViewModel.cs" />
+    <Compile Include="Views\CalendarDatePicker\CalendarDatePickerView.xaml.cs">
+      <DependentUpon>CalendarDatePickerView.xaml</DependentUpon>
+    </Compile>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+    <Compile Include="Views\CalendarDatePicker\Customization.xaml.cs">
+      <DependentUpon>Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml.cs">
+      <DependentUpon>CalendarDateRangePickerView.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\CalendarDateRangePicker\Customization.xaml.cs">
+      <DependentUpon>Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar\CalendarView.xaml.cs">
+      <DependentUpon>CalendarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar\StylesAndTemplates.xaml.cs">
+      <DependentUpon>StylesAndTemplates.xaml</DependentUpon>
+    </Compile>	
+    <Compile Include="Views\Calendar\Customization.xaml.cs">
+      <DependentUpon>Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar\Resources\CustomCalendarItemTemplateSelector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_cs.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\CalendarTypes_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\Navigation_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\Formatting_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\SimpleCalendarDatePicker_xaml.txt" />
+    <Content Include="Views\CalendarDatePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt" />
+	<Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_cs.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\CalendarTypes_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\Formatting_xaml.txt" />
+	<Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\RangeSelection_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\Navigation_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\Preset_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\DateRangePicker_xaml.txt" />
+    <Content Include="Views\CalendarDateRangePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\BlackoutDates_cs.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\BlackoutDates_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\WeekNumber_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\Formatting_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\DateNavigation_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_cs.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\SimpleCalendar_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\CalendarTypes_xaml.txt" />
+    <Content Include="Views\Calendar\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+   <Page Include="MainWindow.xaml" />
+    <Page Include="Views\CalendarDatePicker\CalendarDatePickerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CalendarDatePicker\Customization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\CalendarDateRangePicker\Customization.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Calendar\CalendarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Calendar\StylesAndTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>	
+    <Page Include="Views\Calendar\Customization.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VCRTForwarders.140" />
+    <PackageReference Include="Syncfusion.Editors.WinUI" Version="19.3.0.43" />
+    <PackageReference Include="Syncfusion.Calendar.WinUI" Version="19.3.0.43" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+   <ProjectReference Include="..\common\syncfusion.demoscommon.winui_lib_net50.csproj" />
+  </ItemGroup>
+</Project>

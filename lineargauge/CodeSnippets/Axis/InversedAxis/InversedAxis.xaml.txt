@@ -1,0 +1,18 @@
+﻿<gauge:SfLinearGauge IsInversed="True">
+    <gauge:SfLinearGauge.Axis>
+        <gauge:LinearAxis Interval="10"
+                          MinorTicksPerInterval="4">
+            <gauge:LinearAxis.BarPointers>
+                <gauge:BarPointer Value="{Binding ElementName=shapePointer, Path=Value, Mode=OneWay}"
+                                  EnableAnimation="True" />
+            </gauge:LinearAxis.BarPointers>
+            <gauge:LinearAxis.MarkerPointers>
+                <gauge:ShapePointer x:Name="shapePointer"
+                                    Value="$(isInversedAxisShapePointerValue)"
+                                    IsInteractive="True"
+                                    OffsetPoint="0,-14"
+                                    EnableAnimation="True" />
+            </gauge:LinearAxis.MarkerPointers>
+        </gauge:LinearAxis>
+    </gauge:SfLinearGauge.Axis>
+</gauge:SfLinearGauge>

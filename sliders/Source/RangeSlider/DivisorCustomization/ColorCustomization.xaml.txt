@@ -1,0 +1,34 @@
+﻿<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#8a5ae4</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#668a5ae4</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#8a5ae4</SolidColorBrush>
+
+<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#9b28ee</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#669b28ee</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#9b28ee</SolidColorBrush>
+...
+
+<slider:SfRangeSlider RangeStart="$(divisorColorRangeStartSubstitute)"
+                      RangeEnd="$(divisorColorRangeEndSubstitute)"
+                      ShowDivisors="True"
+                      DivisorHeight="10"
+                      DivisorWidth="10"
+                      Interval="20"
+                      StepFrequency="20"
+                      ShowLabels="True"
+                      ThumbBackground="#A542F0"
+                      DivisorStroke="#A542F0"
+                      DivisorStrokeThickness="2"
+                      ActiveTrackFill="#A542F0"
+                      InactiveTrackFill="#66A542F0"
+                      ThumbOverlayFill="#9b28ee"
+                      FontWeight="SemiBold"
+                      LabelOffset="10">
+
+    <slider:SfRangeSlider.ThumbStyle>
+        ...
+    </slider:SfRangeSlider.ThumbStyle>
+
+    <slider:SfRangeSlider.ToolTipStyle>
+        ...
+    </slider:SfRangeSlider.ToolTipStyle>
+</slider:SfRangeSlider>
