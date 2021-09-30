@@ -1,6 +1,0 @@
-﻿<editors:SfDatePicker
-	MinDate="$(MinDate)"
-	MaxDate="$(MaxDate)"
-	EditMode="$(EditMode)"
-	PlaceHolderText="$(PlaceHolderText)"
-	VisibleItemsCount="$(VisibleItemsCount)"/>

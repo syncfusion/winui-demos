@@ -1,6 +1,0 @@
-﻿<editors:SfTimePicker
-	MinTime="$(MinTime)"
-	MaxTime="$(MaxTime)"
-	EditMode="$(TimePickerEditMode)"
-	PlaceHolderText="$(TimePickerPlaceHolderText)"
-	VisibleItemsCount="$(TimePickerVisibleItemsCount)"/>

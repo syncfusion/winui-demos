@@ -1,6 +1,0 @@
-﻿<local:LogarithmicSlider Minimum="1"
-                         Maximum="10000"
-                         Value="$(logrithmicSliderValueSubstitute)"
-                         ShowLabels="True"
-                         ActiveTrackHeight="5"
-                         InactiveTrackHeight="5" />
