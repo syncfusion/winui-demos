@@ -1,0 +1,271 @@
+﻿<Page
+    x:Class="DataGrid.Summaries"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:enumextension="using:syncfusion.demoscommon.winui"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:data="using:Syncfusion.UI.Xaml.Data"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:SalesViewModel x:Key="salesViewModel" />
+        <Style x:Key="customCaptionSummaryCell" TargetType="dataGrid:GridCaptionSummaryCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style x:Key="normalgroupSummaryCell" TargetType="dataGrid:GridGroupSummaryCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style x:Key="groupSummaryCell" TargetType="dataGrid:GridGroupSummaryCell">
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style x:Key="normaltableSummaryCell" TargetType="dataGrid:GridTableSummaryCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style x:Key="tableSummaryCell" TargetType="dataGrid:GridTableSummaryCell">
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource salesViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid provides support to display the concise information about the data objects using summaries.">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <dataGrid:SfDataGrid
+                            x:Name="sfDataGrid"
+                            Height="500"
+                            Margin="5"
+                            VerticalAlignment="Top"
+                            AllowFrozenGroupHeaders="True"
+                            AutoExpandGroups="True"
+                            AutoGenerateColumns="False"
+                            CaptionSummaryCellStyle="{StaticResource customCaptionSummaryCell}"
+                            ColumnWidthMode="AutoLastColumnFill"
+                            ItemsSource="{Binding YearlySales}"
+                            SelectionMode="Extended"
+                            ShowColumnWhenGrouped="False"
+                            SummaryCalculationUnit="{Binding SelectedValue, Converter={enumextension:StringToEnumValueConverter IsInversed=True,Type=data:SummaryCalculationUnit},ElementName=summaryUnitComboBox}">
+
+                            <dataGrid:SfDataGrid.GroupColumnDescriptions>
+                                <dataGrid:GroupColumnDescription ColumnName="Year" />
+                            </dataGrid:SfDataGrid.GroupColumnDescriptions>
+
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridTextColumn MappingName="Name" Width="130" />
+                                <dataGrid:GridNumericColumn MappingName="QS1" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Sales in Quarter1" TextAlignment="Right" />
+                                <dataGrid:GridNumericColumn MappingName="QS2" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Sales in Quarter2" TextAlignment="Right" />
+                                <dataGrid:GridNumericColumn MappingName="QS3" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Sales in Quarter3" TextAlignment="Right" />
+                                <dataGrid:GridNumericColumn MappingName="QS4" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Sales in Quarter4" TextAlignment="Right" />
+                                <dataGrid:GridNumericColumn MappingName="Total" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Total Sales in Year" TextAlignment="Right" />
+                                <dataGrid:GridTextColumn MappingName="Year" />
+
+                            </dataGrid:SfDataGrid.Columns>
+
+                            <dataGrid:SfDataGrid.CaptionSummaryRow>
+                                <dataGrid:GridSummaryRow
+                                    Title="Sales in {ColumnName} : {Key}"
+                                    ShowSummaryInRow="False"
+                                    TitleColumnCount="1">
+                                    <dataGrid:GridSummaryRow.SummaryColumns>
+                                        <dataGrid:GridSummaryColumn
+                                            Name="SQS1"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS1"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="SQS2"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS2"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="SQS3"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS3"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="SQS4"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS4"
+                                            SummaryType="DoubleAggregate" />
+                                    </dataGrid:GridSummaryRow.SummaryColumns>
+                                </dataGrid:GridSummaryRow>
+                            </dataGrid:SfDataGrid.CaptionSummaryRow>
+
+                            <dataGrid:SfDataGrid.GroupSummaryRows>
+                                <dataGrid:GridSummaryRow Title="Total Sales in Year for {ProductCount} Products : {YearSales}" ShowSummaryInRow="True">
+                                    <dataGrid:GridSummaryRow.SummaryColumns>
+                                        <dataGrid:GridSummaryColumn
+                                            Name="YearSales"
+                                            Format="'{Sum:c}'"
+                                            MappingName="Total"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="ProductCount"
+                                            Format="'{Count:d}'"
+                                            MappingName="Name"
+                                            SummaryType="CountAggregate" />
+                                    </dataGrid:GridSummaryRow.SummaryColumns>
+                                </dataGrid:GridSummaryRow>
+                            </dataGrid:SfDataGrid.GroupSummaryRows>
+
+                            <dataGrid:SfDataGrid.TableSummaryRows>
+                                <dataGrid:GridTableSummaryRow
+                                    Title="Total Sales :"
+                                    Position="Top"
+                                    ShowSummaryInRow="False"
+                                    TitleColumnCount="1">
+                                    <dataGrid:GridTableSummaryRow.SummaryColumns>
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS1"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS1"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS2"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS2"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS3"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS3"
+                                            SummaryType="DoubleAggregate" />
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TQS4"
+                                            Format="'{Sum:c}'"
+                                            MappingName="QS4"
+                                            SummaryType="DoubleAggregate" />
+                                    </dataGrid:GridTableSummaryRow.SummaryColumns>
+                                </dataGrid:GridTableSummaryRow>
+                                <dataGrid:GridSummaryRow Title="Total Sales : {TotalSales}" ShowSummaryInRow="True">
+                                    <dataGrid:GridSummaryRow.SummaryColumns>
+                                        <dataGrid:GridSummaryColumn
+                                            Name="TotalSales"
+                                            Format="'{Sum:c}'"
+                                            MappingName="Total"
+                                            SummaryType="DoubleAggregate" />
+                                    </dataGrid:GridSummaryRow.SummaryColumns>
+                                </dataGrid:GridSummaryRow>
+                            </dataGrid:SfDataGrid.TableSummaryRows>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                        <ComboBox
+                            x:Name="summaryUnitComboBox"
+                            Margin="16,5,5,5"
+                            Header="SummaryCalculationUnit"
+                            HorizontalAlignment="Left"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=data:SummaryCalculationUnit}"
+                            SelectedIndex="0">                           
+                        </ComboBox>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+               &lt;Page.Resources&gt;
+                   &lt;Style TargetType=&quot;dataGrid:GridCaptionSummaryCell&quot; x:Key=&quot;customCaptionSummaryCell&quot; &gt;
+                       &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#FF2A2A2A&quot; /&gt;
+                       &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot; /&gt;
+                       &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot; /&gt;
+                  &lt;/Style&gt;
+                  &lt;Style x:Key=&quot;normalgroupSummaryCell&quot; TargetType=&quot;dataGrid:GridGroupSummaryCell&quot;&gt;
+                       &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#FF2A2A2A&quot; /&gt;
+                       &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot; /&gt;
+                      &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot; /&gt;
+                   &lt;/Style&gt;
+                   &lt;Style x:Key=&quot;groupSummaryCell&quot; TargetType=&quot;dataGrid:GridGroupSummaryCell&quot;&gt;
+                       &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#FF2A2A2A&quot; /&gt;
+                      &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot; /&gt;
+                   &lt;/Style&gt;
+                   &lt;Style x:Key=&quot;normaltableSummaryCell&quot; TargetType=&quot;dataGrid:GridTableSummaryCell&quot;&gt;
+                      &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#FF2A2A2A&quot; /&gt;
+                       &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot; /&gt;
+                       &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot; /&gt;
+                   &lt;/Style&gt;
+                  &lt;Style x:Key=&quot;tableSummaryCell&quot; TargetType=&quot;dataGrid:GridTableSummaryCell&quot;&gt;
+                       &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#FF2A2A2A&quot; /&gt;
+                      &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot; /&gt;
+                   &lt;/Style&gt;
+               &lt;/Page.Resources&gt;       
+               &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot; 
+                                         Margin=&quot;5&quot;  
+                                         Height=&quot;400&quot;
+                                         AllowFrozenGroupHeaders=&quot;True&quot;
+                                         AutoExpandGroups=&quot;True&quot;
+                                         AutoGenerateColumns=&quot;True&quot;
+                                         ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                                         SummaryCalculationUnit=&quot;$(SummaryCalculationUnit)&quot; 
+                                         CaptionSummaryCellStyle=&quot;{StaticResource customCaptionSummaryCell}&quot;
+                                         ItemsSource=&quot;{Binding YearlySales}&quot;
+                                         ShowColumnWhenGrouped=&quot;False&quot;
+                                         SelectionMode=&quot;Extended&quot;&gt;
+                  &lt;dataGrid:SfDataGrid.GroupColumnDescriptions&gt;
+                    &lt;dataGrid:GroupColumnDescription ColumnName=&quot;Year&quot; /&gt;
+                  &lt;/dataGrid:SfDataGrid.GroupColumnDescriptions&gt; 
+                  &lt;dataGrid:SfDataGrid.GroupSummaryRows&gt;
+                    &lt;dataGrid:GridSummaryRow Title=&quot;Total Sales in Year for {ProductCount} Products : {YearSales}&quot; ShowSummaryInRow=&quot;True&quot;&gt;
+                        &lt;dataGrid:GridSummaryRow.SummaryColumns&gt;
+                           &lt;dataGrid:GridSummaryColumn Name=&quot;YearSales&quot;
+                                                            Format=&quot;'{Sum:c}'&quot;
+                                                            MappingName=&quot;Total&quot;
+                                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;                                              
+                           &lt;dataGrid:GridSummaryColumn Name=&quot;ProductCount&quot;
+                                                            Format=&quot;'{Count:d}'&quot;
+                                                            MappingName=&quot;Name&quot;
+                                                            SummaryType=&quot;CountAggregate&quot; /&gt;                                              
+                        &lt;/dataGrid:GridSummaryRow.SummaryColumns&gt;
+                    &lt;/dataGrid:GridSummaryRow&gt;
+                  &lt;/dataGrid:SfDataGrid.GroupSummaryRows&gt;
+                
+                 &lt;dataGrid:SfDataGrid.TableSummaryRows&gt;
+                    &lt;dataGrid:GridTableSummaryRow Title=&quot;Total Sales :&quot; TitleColumnCount=&quot;1&quot; Position=&quot;Top&quot; ShowSummaryInRow=&quot;False&quot;&gt;
+                        &lt;dataGrid:GridTableSummaryRow.SummaryColumns&gt;
+                           &lt;dataGrid:GridSummaryColumn Name=&quot;TQS1&quot;
+                                                            Format=&quot;'{Sum:c}'&quot;
+                                                            MappingName=&quot;QS1&quot;
+                                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;
+                            &lt;dataGrid:GridSummaryColumn Name=&quot;TQS2&quot;
+                                                             Format=&quot;'{Sum:c}'&quot;
+                                                             MappingName=&quot;QS2&quot;
+                                                             SummaryType=&quot;DoubleAggregate&quot; /&gt;                                              
+                            &lt;dataGrid:GridSummaryColumn Name=&quot;TQS3&quot;
+                                                             Format=&quot;'{Sum:c}'&quot;
+                                                             MappingName=&quot;QS3&quot;
+                                                             SummaryType=&quot;DoubleAggregate&quot; /&gt; 
+                            &lt;dataGrid:GridSummaryColumn Name=&quot;TQS4&quot;
+                                                             Format=&quot;'{Sum:c}'&quot;
+                                                             MappingName=&quot;QS4&quot;
+                                                             SummaryType=&quot;DoubleAggregate&quot; /&gt; 
+                        &lt;/dataGrid:GridTableSummaryRow.SummaryColumns&gt;
+                    &lt;/dataGrid:GridTableSummaryRow&gt;
+                    &lt;dataGrid:GridSummaryRow Title=&quot;Total Sales : {TotalSales}&quot; ShowSummaryInRow=&quot;True&quot;&gt;
+                       &lt;dataGrid:GridSummaryRow.SummaryColumns&gt;
+                           &lt;dataGrid:GridSummaryColumn Name=&quot;TotalSales&quot;
+                                                            Format=&quot;'{Sum:c}'&quot;
+                                                            MappingName=&quot;Total&quot;
+                                                            SummaryType=&quot;DoubleAggregate&quot; /&gt;  
+                       &lt;/dataGrid:GridSummaryRow.SummaryColumns&gt;
+                    &lt;/dataGrid:GridSummaryRow&gt;
+                &lt;/dataGrid:SfDataGrid.TableSummaryRows&gt;
+               &lt;/dataGrid:SfDataGrid&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="SummaryCalculationUnit"
+                        SubstitutionValue="{x:Bind sfDataGrid.SummaryCalculationUnit, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

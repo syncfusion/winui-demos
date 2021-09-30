@@ -1,0 +1,28 @@
+﻿<slider:SfSlider Maximum="10"
+                 Value="$(textViewSliderValueSubstitute)"
+                 ThumbHeight="30"
+                 ThumbWidth="30"
+                 ShowToolTip="False" >
+    <slider:SfSlider.ThumbStyle>
+        <Style TargetType="Thumb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <Ellipse Height="{TemplateBinding Height}" 
+                                     Width="{TemplateBinding Width}"
+                                     Fill="{TemplateBinding Background}" />
+                            <TextBlock Text="{Binding Converter={StaticResource FormatStringConverter},
+                                                      ConverterParameter='N0'}"
+                                       FontSize="14"
+                                       Margin="0,0,0,2"
+                                       Foreground="White"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </slider:SfSlider.ThumbStyle>
+</slider:SfSlider>
