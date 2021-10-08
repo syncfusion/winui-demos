@@ -53,10 +53,10 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
     </tr>
     <tr>
         <td>
-            <a href="chart">Charts</a>
+            <a href="radialgauge">Radial Gauge</a>
         </td>
         <td>
-            <a href="radialgauge">Radial Gauge</a>
+            <a href="lineargauge">Linear Gauge</a>
         </td>
         <td>
             <a href="barcode">Barcode</a>
@@ -64,9 +64,22 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
     </tr>
     <tr>
         <td>
-            <a href="lineargauge">Linear Gauge</a>
+            <a href="chart">Cartesian Charts</a>
         </td>
-        <td></td>
+        <td>
+            <a href="chart">Circular Charts</a>
+        </td>
+        <td>
+            <a href="chart">Funnel Chart</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="chart">Polar Charts</a>
+        </td>
+        <td>
+            <a href="chart">Pyramid Charts</a>
+        </td>
         <td></td>
     </tr>
     <tr>
@@ -75,6 +88,9 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         </td>
     </tr>
     <tr>
+        <td>
+            <a href="ribbon">Ribbon</a>
+        </td>
         <td>
             <a href="treeview">Tree View</a>
         </td>
@@ -143,6 +159,17 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
     <tr>
         <td>
             <a href="editor">Dropdown Color Palette</a>
+        </td>
+        <td>
+            <a href="editor">ComboBox</a>
+        </td>
+		<td>
+            <a href="editor">NumberBox</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="editor">Segmented Control</a>
         </td>
         <td></td>
         <td></td>
