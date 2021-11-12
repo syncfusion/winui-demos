@@ -1,0 +1,48 @@
+﻿<Grid Height="350">
+    <Grid.Resources>
+        <coreconverters:StringFormatConverter x:Name="StringFormatConverter" />
+    </Grid.Resources>
+    <gauge:SfRadialGauge>
+        <gauge:SfRadialGauge.Axes>
+            <gauge:RadialAxis ShowTicks="False"
+                              ShowLabels="False"
+                              AxisLineWidthUnit="Factor"
+                              AxisLineWidth="0.2">
+
+                <gauge:RadialAxis.Pointers>
+                    <gauge:RangePointer x:Name="rangePoitner"
+                                        IsInteractive="True"
+                                        Value="60"
+                                        WidthUnit="Factor"
+                                        PointerWidth="0.2"
+                                        ValueChanging="rangePointer_ValueChanging"
+                                        ValueChanged="rangePointer_ValueChanged" />
+                    <gauge:MarkerPointer x:Name="markerPointer"
+                                         IsHitTestVisible="False"
+                                         Value="58.5"
+                                         MarkerType="Circle"
+                                         MarkerHeight="5"
+                                         MarkerWidth="5"
+                                         Background="White" />
+                </gauge:RadialAxis.Pointers>
+
+                <gauge:RadialAxis.Annotations>
+                    <gauge:GaugeAnnotation>
+                        <gauge:GaugeAnnotation.Content>
+                            <Grid>
+                                <TextBlock Foreground="#107C10"
+                                           FontWeight="Bold"
+                                           FontSize="20"
+                                           Text="{Binding ElementName=rangePoitner,
+                                                          Path=Value,
+                                                          Mode=OneWay,
+                                                          Converter={StaticResource StringFormatConverter},
+                                                          ConverterParameter='{}{0:0}%'}" />
+                            </Grid>
+                        </gauge:GaugeAnnotation.Content>
+                    </gauge:GaugeAnnotation>
+                </gauge:RadialAxis.Annotations>
+            </gauge:RadialAxis>
+        </gauge:SfRadialGauge.Axes>
+    </gauge:SfRadialGauge>
+</Grid>

@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="syncfusion.schedulerdemos.winui.TimelineViews"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:local="using:syncfusion.schedulerdemos.winui"
+    xmlns:scheduler="using:Syncfusion.UI.Xaml.Scheduler"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:GettingStartedViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the scheduler timeline day, timeline week, timeline workweek and timeline month views. It also showcases the capabilities of creating recurring appointments on daily, weekly, monthly, and yearly intervals in timeline day, timeline week, timeline workweek and timeline month views, creating the recurrence appointment with exception date and changed occurrence of recurring series appointments and the capabilities of highlighting specific regions in timeslot cells and restricting user interactions such as selection, appointment creations.">
+                <common:DemoLayout.Example>
+                    <Grid Height="480" VerticalAlignment="Top">
+                        <scheduler:SfScheduler x:Name="scheduler" 
+                                ItemsSource="{Binding TimelineEvents}"
+                                MinimumDate="{Binding MinDate}"
+                                MaximumDate="{Binding MaxDate}"
+                                ViewType="TimelineWeek"
+                                AllowedViewTypes="TimelineDay,TimelineWeek,TimelineWorkWeek,TimelineMonth" >
+                            <scheduler:SfScheduler.TimelineViewSettings>
+                                <scheduler:TimelineViewSettings />
+                            </scheduler:SfScheduler.TimelineViewSettings>
+                        </scheduler:SfScheduler>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+    &lt;scheduler:SfScheduler x:Name=&quot;scheduler&quot;
+                              ItemsSource=&quot;{Binding Appointments}&quot;
+                              ViewType=&quot;TimelineWeek&quot;/&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

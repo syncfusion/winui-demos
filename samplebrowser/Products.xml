@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SampleBrowser>
+<Assemblies QualifiedInfo="Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+				ConfigurationFile="SamplesConfiguration">
+	<Assembly Name="syncfusion.datagriddemos.winui" />
+	<Assembly Name="syncfusion.treegriddemos.winui" />
+	
+	<Assembly Name="syncfusion.chartdemos.winui" />
+	<Assembly Name="syncfusion.radialgaugedemos.winui" />
+	<Assembly Name="syncfusion.lineargaugedemos.winui" />
+	<Assembly Name="syncfusion.barcodedemos.winui" />
+
+	<Assembly Name="syncfusion.ribbondemos.winui" />
+	<Assembly Name="syncfusion.treeviewdemos.winui" />
+
+	<Assembly Name="syncfusion.schedulerdemos.winui" />
+    <Assembly Name="syncfusion.sliderdemos.winui" />
+	<Assembly Name="syncfusion.editordemos.winui" />
+	<Assembly Name="syncfusion.calendardemos.winui" />
+	<Assembly Name="syncfusion.notificationdemos.winui" />
+</Assemblies>
+</SampleBrowser>
