@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.FastBarChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:FastBarChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample showcases a special kind of bar series which uses writeable bitmap for rendering chart points. FastBarBitmapSeries allows to render a collection with large number of data points in fraction of milliseconds.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Height="420"
+                        Palette="Custom"
+                        ColorModel="{StaticResource CustomColor}"
+                        HorizontalAlignment="Center"
+                        Header="Stock Details">
+
+                        <chart:SfCartesianChart.PrimaryAxis>
+                            <chart:DateTimeAxis Header="Month" LabelFormat="MMM dd" ShowGridLines="False"/>
+                        </chart:SfCartesianChart.PrimaryAxis>
+
+                        <chart:SfCartesianChart.SecondaryAxis>
+                            <chart:NumericalAxis Header="Stock" Interval="5" Maximum="20" />
+                        </chart:SfCartesianChart.SecondaryAxis>
+
+                        <chart:FastBarBitmapSeries
+                            ItemsSource="{Binding Data}"
+                            ShowTooltip="True"
+                            XBindingPath="Date"
+                            YBindingPath="Price" />
+                        
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Palette=&quot;Custom&quot; ColorModel=&quot;{StaticResource CustomColor}&quot;&gt;   
+                        
+        &lt;chart:FastBarBitmapSeries
+                ItemsSource=&quot;{Binding Data}&quot;
+                ShowTooltip=&quot;True&quot;
+                XBindingPath=&quot;Date&quot;
+                YBindingPath=&quot;Price&quot; /&gt;
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

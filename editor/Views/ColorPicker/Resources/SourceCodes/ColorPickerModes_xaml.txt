@@ -1,0 +1,5 @@
+﻿<editors:SfColorPicker
+	BrushTypeOptions="$(BrushTypeOptions)"
+	ColorSpectrumComponents="$(ColorSpectrumComponents)"
+	ColorSpectrumShape="$(ColorSpectrumShape)"
+	AxisInputOption="$(AxisInputOption)"/>

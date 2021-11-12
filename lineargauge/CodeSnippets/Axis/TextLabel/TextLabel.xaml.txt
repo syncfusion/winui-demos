@@ -1,0 +1,61 @@
+﻿<gauge:SfLinearGauge.Axis>
+    <gauge:LinearAxis LabelOffset="12"
+                      Maximum="30"
+                      Interval="10"
+                      ShowTicks="False">
+
+        <gauge:LinearAxis.LabelTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Value,
+                                          Converter={StaticResource TextLabelConverter}}" />
+            </DataTemplate>
+        </gauge:LinearAxis.LabelTemplate>
+        
+        <gauge:LinearAxis.BarPointers>
+            <gauge:BarPointer Value="20"
+                              PointerSize="6"
+                              Background="#0cb69b">
+            </gauge:BarPointer>
+        </gauge:LinearAxis.BarPointers>
+        
+        <gauge:LinearAxis.MarkerPointers>
+            <gauge:ShapePointer Value="0">
+                <gauge:ShapePointer.ShapeTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Ellipse Height="24"
+                                     Width="24"
+                                     Fill="#0cb69b"/>
+                            <Path Data="M8 16C12.4183 16 16..."
+                                  Height="16"
+                                  Width="16"
+                                  Fill="White"
+                                  Stretch="Fill" />
+                        </Grid>
+                    </DataTemplate>
+                </gauge:ShapePointer.ShapeTemplate>
+            </gauge:ShapePointer>
+            <gauge:ShapePointer Value="10">
+                <gauge:ShapePointer.ShapeTemplate>
+                    ...
+                </gauge:ShapePointer.ShapeTemplate>
+            </gauge:ShapePointer>
+            <gauge:ShapePointer Value="20">
+                <gauge:ShapePointer.ShapeTemplate>
+                    ...
+                </gauge:ShapePointer.ShapeTemplate>
+            </gauge:ShapePointer>
+            <gauge:ShapePointer Value="30"
+                                ShapeType="Circle"
+                                ShapeHeight="24"
+                                ShapeWidth="24">
+                <gauge:ShapePointer.Fill>
+                    <SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" />
+                </gauge:ShapePointer.Fill>
+                <gauge:ShapePointer.Stroke>
+                    <SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" />
+                </gauge:ShapePointer.Stroke>
+            </gauge:ShapePointer>
+        </gauge:LinearAxis.MarkerPointers>
+    </gauge:LinearAxis>
+</gauge:SfLinearGauge.Axis>

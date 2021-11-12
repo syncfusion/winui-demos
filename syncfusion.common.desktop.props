@@ -1,0 +1,11 @@
+<Project>
+ <PropertyGroup>
+     <TargetPlatformMinRevision>17763</TargetPlatformMinRevision>
+	 <NoWarn>CA1416</NoWarn>
+ </PropertyGroup>
+ <ItemGroup>
+     <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.1"/>
+     <PackageReference Include="Syncfusion.Core.WinUI" Version="19.3.0.53" />
+     <PackageReference Include="Syncfusion.Notifications.WinUI" Version="19.3.0.53" />
+ </ItemGroup>
+</Project>

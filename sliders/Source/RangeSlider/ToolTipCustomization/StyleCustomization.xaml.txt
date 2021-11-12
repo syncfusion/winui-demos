@@ -1,0 +1,24 @@
+﻿<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#5084f1</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#665084f1</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#2F6CEF</SolidColorBrush>
+
+<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#1257eb</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#661257eb</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#1257eb</SolidColorBrush>
+...
+
+<slider:SfRangeSlider RangeStart="$(styleCustomizationRangeSliderRangeStartSubstitute)"
+                      RangeEnd="$(styleCustomizationRangeSliderRangeEndSubstitute)"
+                      ActiveTrackFill="#2F6CEF"
+                      InactiveTrackFill="#662F6CEF"
+                      ThumbBackground="#2F6CEF"
+                      ThumbOverlayFill="#2F6CEF">
+    <slider:SfRangeSlider.ToolTipStyle>
+        <Style TargetType="slider:SliderToolTip">
+            <Setter Property="Background"
+                    Value="#1257eb" />
+            <Setter Property="Foreground"
+                    Value="White" />
+        </Style>
+    </slider:SfRangeSlider.ToolTipStyle>
+</slider:SfRangeSlider>

@@ -1,0 +1,143 @@
+﻿<Page x:Class="syncfusion.sliderdemos.winui.Views.Slider.LabelCustomization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:slider="using:Syncfusion.UI.Xaml.Sliders">
+
+    <ScrollViewer>
+        <StackPanel>
+            <common:DemoLayout HeaderText="Foreground, FontSize, FontWeigth, FontFamily, FontStyle, LabelOffset customization">
+                <common:DemoLayout.Example>
+                    <slider:SfSlider x:Name="labelCustomizationSlider"
+                                     VerticalAlignment="Center"
+                                     Width="500"
+                                     Value="50"
+                                     ShowLabels="True"
+                                     LabelOffset="10"
+                                     Foreground="#AC32FB"
+                                     FontSize="12"
+                                     FontFamily="Comic Sans MS"
+                                     FontStyle="Oblique"
+                                     FontWeight="Medium" />
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Value="$(labelCustomizationSliderValueSubstitute)"
+                 ShowLabels="$(labelCustomizationSliderShowLabelsSubstitute)"
+                 LabelOffset="$(labelCustomizationSliderLabelOffsetSubstitute)"
+                 FontSize="12"
+                 Foreground="#AC32FB"
+                 FontFamily="Comic Sans MS"
+                 FontStyle="Oblique"
+                 FontWeight="Medium" /&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Content="ShowLabels"
+                                  IsChecked="{Binding ElementName=labelCustomizationSlider, Path=ShowLabels, Mode=TwoWay}" />
+                        <Slider Header="LabelOffset"
+                                Grid.Row="1"
+                                Maximum="50"
+                                Value="{Binding ElementName=labelCustomizationSlider, Path=LabelOffset, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="labelCustomizationSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind labelCustomizationSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="labelCustomizationSliderShowLabelsSubstitute"
+                                                   SubstitutionValue="{x:Bind labelCustomizationSlider.ShowLabels, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="labelCustomizationSliderLabelOffsetSubstitute"
+                                                   SubstitutionValue="{x:Bind labelCustomizationSlider.LabelOffset, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Customize the labels using the data template"
+                               XamlSource="syncfusion.sliderdemos.winui/source\slider\labelcustomization\templatecustomization.xaml.txt">
+                <common:DemoLayout.Example>
+                    <slider:SfSlider x:Name="labelTemplateSlider"
+                                     VerticalAlignment="Center"
+                                     Width="500"
+                                     Value="50"
+                                     ShowLabels="True"
+                                     LabelOffset="15">
+                        <slider:SfSlider.LabelTemplate>
+                            <DataTemplate>
+                                <Grid CornerRadius="5"
+                                      Background="{ThemeResource SystemBaseLowColor}">
+                                    <TextBlock Text="{Binding Text}"
+                                               Margin="6" />
+                                </Grid>
+                            </DataTemplate>
+                        </slider:SfSlider.LabelTemplate>
+                    </slider:SfSlider>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="labelTemplateSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind labelTemplateSlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Customized active and inactive labels"
+                               XamlSource="syncfusion.sliderdemos.winui/source\slider\labelcustomization\activetemplatecustomization.xaml.txt">
+                <common:DemoLayout.Resources>
+                    <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#bb5afc</SolidColorBrush>
+                    <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#66bb5afc</SolidColorBrush>
+                    <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#bb5afc</SolidColorBrush>
+
+                    <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#9204f0</SolidColorBrush>
+                    <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#669204f0</SolidColorBrush>
+                    <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#9204f0</SolidColorBrush>
+                </common:DemoLayout.Resources>
+                <common:DemoLayout.Example>
+                    <slider:SfSlider x:Name="activeLabelTemplateSlider"
+                                     VerticalAlignment="Center"
+                                     Width="500"
+                                     Value="50"
+                                     ShowLabels="True"
+                                     LabelOffset="10"
+                                     ActiveTrackFill="#AC32FB"
+                                     ThumbBackground="#AC32FB"
+                                     ThumbOverlayFill="#9204f0"
+                                     InactiveTrackFill="#66AC32FB">
+
+                        <slider:SfSlider.ActiveLabelTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}"
+                                           Foreground="#AC32FB" />
+                            </DataTemplate>
+                        </slider:SfSlider.ActiveLabelTemplate>
+
+                        <slider:SfSlider.ToolTipStyle>
+                            <Style TargetType="slider:SliderToolTip">
+                                <Setter Property="Background"
+                                        Value="#9204f0" />
+                                <Setter Property="Foreground"
+                                        Value="White" />
+                            </Style>
+                        </slider:SfSlider.ToolTipStyle>
+
+                    </slider:SfSlider>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="activeLabelTemplateSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind activeLabelTemplateSlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
