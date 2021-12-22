@@ -1,0 +1,151 @@
+﻿<Page x:Class="syncfusion.lineargaugedemos.winui.Views.StepsCounter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:coreconverters="using:Syncfusion.UI.Xaml.Core"
+      xmlns:local="using:syncfusion.lineargaugedemos.winui.Views">
+
+    <common:DemoLayout HeaderText="Steps counter using content pointer in linear gauge control."
+                       XamlSource="syncfusion.lineargaugedemos.winui/codesnippets\showcase\stepscounter\stepscounter.xaml.txt"
+                       CSharpSource="syncfusion.lineargaugedemos.winui/codesnippets\showcase\stepscounter\stepscounter.xaml.cs.txt">
+        <common:DemoLayout.Example>
+            <Grid VerticalAlignment="Center"
+                  Height="250">
+                <Grid.Resources>
+                    <local:StepsToCaloriesConverter x:Key="StepsToCaloriesConverter" />
+                    <local:StepsToKMConverter x:Key="StepsToKMConverter" />
+                    <coreconverters:FormatStringConverter x:Key="FormatStringConverter" />
+                </Grid.Resources>
+                <gauge:SfLinearGauge x:Name="gauge"
+                                     Width="550"
+                                     Height="200">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis Maximum="12000"
+                                          Interval="12000"
+                                          MinorTicksPerInterval="0"
+                                          AxisLineStrokeThickness="45">
+
+                            <gauge:LinearAxis.Ranges>
+                                <gauge:LinearGaugeRange x:Name="stepCountRange"
+                                                        EndValue="{Binding ElementName=stepCountShapePointer, Path=Value, Mode=OneWay}"
+                                                        RangePosition="Cross"
+                                                        StartWidth="32"
+                                                        EndWidth="32" />
+                            </gauge:LinearAxis.Ranges>
+
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:ShapePointer x:Name="stepCountShapePointer"
+                                                    Value="8456"
+                                                    IsInteractive="True"
+                                                    ShapeHeight="45"
+                                                    ShapeWidth="35"
+                                                    HorizontalAnchor="End"
+                                                    Fill="White"
+                                                    Stroke="White"
+                                                    OffsetPoint="-5,0"
+                                                    ValueChanging="stepCountShapePointer_ValueChanging">
+                                    <gauge:ShapePointer.ShapeTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical"
+                                                        Background="Transparent">
+                                                <Border Width="5"
+                                                        Height="5"
+                                                        Background="{Binding Fill}" />
+                                                <Border Width="5"
+                                                        Height="5"
+                                                        Margin="0,2,0,0"
+                                                        Background="{Binding Fill}" />
+                                                <Border Width="5"
+                                                        Height="5"
+                                                        Margin="0,2,0,0"
+                                                        Background="{Binding Fill}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </gauge:ShapePointer.ShapeTemplate>
+                                </gauge:ShapePointer>
+
+                                <gauge:ContentPointer IsHitTestVisible="False"
+                                                      Value="{Binding ElementName=stepCountShapePointer, Path=Value, Mode=OneWay}"
+                                                      VerticalAnchor="End"
+                                                      OffsetPoint="0,-23">
+                                    <gauge:ContentPointer.Content>
+                                        <Path Data="M41.8985 10.0861C41.8985 15.6565 37.3759 20.1722 31.7971 20.1722C26.2181 20.1722 21.6956 15.6565 21.6956 10.0861C21.6956 4.51575 26.2181 0 31.7971 0C37.3759 0 41.8985 4.51575 41.8985 10.0861ZM44.0872 71.1554L46.4467 97.9785C46.7136 101.013 44.4753 103.693 41.4376 103.976C38.3846 104.26 35.6801 102.016 35.4005 98.9675L33.2938 75.9912L14.8898 61.6219L18.3492 37.8574L13.9211 39.3773L8.80121 55.2664C6.44879 61.2075 -1.41333 58.0297 0.221863 52.6412L6.24353 33.9355C6.37518 33.5266 6.66077 33.1846 7.03998 32.9816L27.6204 21.9684C29.1678 21.4158 33.1066 22.2446 34.4262 24.5935C36.3635 27.7714 36.4912 29.3267 36.1997 32.3308L31.6333 60.2402L44.0872 71.1554ZM35.4304 49.7396L37.5335 37.3048L53.8769 50.0315C56.2781 51.9014 56.7065 55.3606 54.8339 57.7582C52.9509 60.1688 49.4615 60.5859 47.0618 58.6873L38.2899 51.7466L35.4304 49.7396ZM15.2275 65.905L25.0744 73.4241L16.4453 99.8877C15.486 102.83 12.3094 104.428 9.37012 103.448C6.49725 102.489 4.91473 99.4172 5.80444 96.5261L15.2275 65.905Z"
+                                              Height="40"
+                                              Width="20"
+                                              Stretch="Fill">
+                                            <Path.Fill>
+                                                <SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" />
+                                            </Path.Fill>
+                                        </Path>
+                                    </gauge:ContentPointer.Content>
+                                </gauge:ContentPointer>
+
+                                <gauge:ContentPointer IsHitTestVisible="False"
+                                                      Value="0"
+                                                      VerticalAnchor="End"
+                                                      OffsetPoint="0,-63">
+                                    <gauge:ContentPointer.Content>
+                                        <TextBlock Text="Sun, 7 February"
+                                                   FontSize="20" />
+                                    </gauge:ContentPointer.Content>
+                                </gauge:ContentPointer>
+
+                                <gauge:ContentPointer IsHitTestVisible="False"
+                                                      Value="6000"
+                                                      OffsetPoint="0,60">
+                                    <gauge:ContentPointer.Content>
+                                        <StackPanel Orientation="Vertical">
+                                            <StackPanel Orientation="Horizontal"
+                                                        HorizontalAlignment="Center">
+                                                <TextBlock Text="{Binding ElementName=stepCountShapePointer,
+                                                                          Path=Value,
+                                                                          Mode=OneWay,
+                                                                          Converter={StaticResource FormatStringConverter},
+                                                                          ConverterParameter='N0'}"
+                                                           Width="40" />
+                                                <TextBlock Margin="1,0,0,0"
+                                                           Text="Steps" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding ElementName=stepCountShapePointer,
+                                                                              Path=Value,
+                                                                              Mode=OneWay,
+                                                                              Converter={StaticResource StepsToKMConverter}}"
+                                                           Width="30"
+                                                           Margin="0,0,1,0" />
+                                                <TextBlock Text="km"
+                                                           Margin="0,0,10,0" />
+                                                <Border Height="10"
+                                                        Width="1"
+                                                        Background="Gray" />
+                                                <TextBlock Text="{Binding ElementName=stepCountShapePointer,
+                                                                              Path=Value,
+                                                                              Mode=OneWay,
+                                                                              Converter={StaticResource StepsToCaloriesConverter}}"
+                                                           Width="40"
+                                                           Margin="10,0,0,0" />
+                                                <TextBlock Text="kcal"
+                                                           Margin="0,0,10,0" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </gauge:ContentPointer.Content>
+                                </gauge:ContentPointer>
+                            </gauge:LinearAxis.MarkerPointers>
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+            </Grid>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="stepCountShapePointerValue"
+                                           SubstitutionValue="{x:Bind stepCountShapePointer.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+
+    </common:DemoLayout>
+</Page>

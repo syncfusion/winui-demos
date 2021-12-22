@@ -1,0 +1,33 @@
+﻿<slider:SfSlider VerticalAlignment="Center"
+                 Orientation="Vertical"
+                 Value="$(verticalScaleSliderValueSubstitute)"
+                 ShowTicks="$(verticalScaleSliderShowTicksSubstitute)"
+                 ShowLabels="$(verticalScaleSliderShowLabelsSubstitute)"
+                 IsInversed="$(verticalScaleSliderIsInversedSubstitute)"
+                 MinorTicksPerInterval="1"
+                 TickOffset="2">
+    
+    <slider:SfSlider.ActiveMajorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="{ThemeResource SystemAccentColor}" />
+            <Setter Property="StrokeThickness"
+                    Value="1.5" />
+        </Style>
+    </slider:SfSlider.ActiveMajorTickStyle>
+
+    <slider:SfSlider.ActiveMinorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="{ThemeResource SystemAccentColor}" />
+        </Style>
+    </slider:SfSlider.ActiveMinorTickStyle>
+
+    <slider:SfSlider.ActiveLabelTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding Text}"
+                       Foreground="{ThemeResource SystemAccentColor}" />
+        </DataTemplate>
+    </slider:SfSlider.ActiveLabelTemplate>
+    
+</slider:SfSlider>

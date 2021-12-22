@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="syncfusion.editordemos.winui.Views.AutoComplete.Filtering"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.editordemos.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:syncfusion.demoscommon.winui" 
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors" 
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:ListViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <core:StringVisibilityConverter x:Key="StringVisibilityConverter" />
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+
+            <common:DemoLayout 
+                HeaderText="The AutoComplete control supports standard filtering." 
+                XamlSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/StandardFiltering_xaml.txt">
+
+                <common:DemoLayout.Example>
+                    <editors:SfAutoComplete
+                        x:Name="FilterAutoComplete"
+                        Width="250"
+                        Margin="50"
+                        Header="Place of birth"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        PlaceholderText="Enter a country"
+                        ItemsSource="{Binding Countries}"/>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="TextSearchMode"
+                            ItemsSource="{common:EnumToStringValues Type=editors:AutoCompleteTextSearchMode}"
+                            SelectedItem="{Binding ElementName=FilterAutoComplete ,Path=TextSearchMode,Converter={common:StringToEnumValueConverter Type=editors:AutoCompleteTextSearchMode},Mode=TwoWay}"
+                           />
+
+                        <StackPanel MinHeight="60">
+                            <TextBlock Width="180"
+                                       Margin="5"
+                                       Visibility="{Binding ElementName=FilterAutoComplete, Path=SelectedItem, Converter={StaticResource StringVisibilityConverter}}"
+                                       Text="SelectedItem:"/>
+
+                            <TextBlock Width="180" DataContext="{Binding ElementName=FilterAutoComplete,Path=SelectedItem}"
+                                       Margin="5"
+                                       FontStyle="Italic"
+                                       Visibility="{Binding ElementName=FilterAutoComplete, Path=SelectedItem, Converter={StaticResource StringVisibilityConverter}}"
+                                       Text="{Binding ElementName=FilterAutoComplete,Path=SelectedItem}"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="TextSearchMode" SubstitutionValue="{x:Bind FilterAutoComplete.TextSearchMode, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+
+            </common:DemoLayout>
+
+            <common:DemoLayout 
+                HeaderText="This example demonstrates loading data asynchronously at runtime based on typed input in the AutoComplete control."
+                XamlSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/CustomAsyncFilter_xaml.txt"
+                CSharpSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/CustomAsyncFilter_cs.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfAutoComplete
+                            x:Name="asyncAutoComplete"
+                            Width="400"
+                            Margin="0,50" 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            TextSearchMode="Contains"
+                            SelectionMode="Multiple">
+                        <editors:SfAutoComplete.FilterBehavior>
+                            <local:CustomAsyncFilter/>
+                        </editors:SfAutoComplete.FilterBehavior>
+                    </editors:SfAutoComplete>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+
+            <common:DemoLayout 
+                HeaderText="The AutoComplete control supports custom filtering."  
+                CSharpSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/CustomFilter_cs.txt"
+                 XamlSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/CustomFilter_xaml.txt" >
+                <common:DemoLayout.Example>
+                    <editors:SfAutoComplete
+                        x:Name="CustomFilterAutoComplete"
+                        Width="250"
+                        Margin="-165,50,50,50"
+                        TextMemberPath="CityName"
+                        DisplayMemberPath="CityName"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Header="Type a country name"
+                        Description="e.g., USA, India, Canada, England"
+                        PlaceholderText="Enter a city"
+                        ItemsSource="{Binding Cities}">
+                        <editors:SfAutoComplete.FilterBehavior>
+                            <local:CustomFilter/>
+                        </editors:SfAutoComplete.FilterBehavior>
+                        <editors:SfAutoComplete.SearchBehavior>
+                            <local:CapitalCitySearchingBehavior/>
+                        </editors:SfAutoComplete.SearchBehavior>
+                    </editors:SfAutoComplete>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+
+        </StackPanel>
+
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,245 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>	
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	<EnableDefaultPageItems>false</EnableDefaultPageItems>
+	<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+	<AssemblyName>syncfusion.schedulerdemos.winui</AssemblyName>
+    <RootNamespace>syncfusion.schedulerdemos.winui</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+     <Platforms>AnyCPU;x86;x64</Platforms>
+	  <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+	  
+  </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+   <ItemGroup>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Scheduler\People_Circle1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Remove="Assets\Tiles\**" />
+    <Content Remove="syncfusion.schedulerdemos.winui_net50 %28Package%29\**" />
+    <EmbeddedResource Remove="Assets\Tiles\**" />
+    <EmbeddedResource Remove="Properties\PublishProfiles\**" />
+    <EmbeddedResource Remove="syncfusion.schedulerdemos.winui_net50 %28Package%29\**" />
+    <None Remove="Assets\Tiles\**" />
+    <None Remove="Properties\PublishProfiles\**" />
+    <None Remove="syncfusion.schedulerdemos.winui_net50 %28Package%29\**" />
+    <PRIResource Remove="syncfusion.schedulerdemos.winui_net50 %28Package%29\**" />
+	<None Remove="app.manifest" />
+    <None Remove="App.xaml" />
+    <None Remove="MainWindow.xaml" />
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.schedulerdemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+   <ItemGroup>  
+     <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>   
+	<Compile Include="Helper\AppointmentTemplateSelector.cs" />
+	<Compile Include="Helper\MonthCellTemplateSelector.cs" />
+	<Compile Include="Helper\SchedulerConverter.cs" />
+	<Compile Include="Helper\SchedulerViewTypeHelper.cs" />
+	<Compile Include="MainWindow.xaml.cs" />
+    <Compile Include="Model\Event.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamplesConfiguration.cs" />
+	<Compile Include="ViewModel\LoadOnDemandViewModel.cs" />
+    <Compile Include="ViewModel\SchedulerBindingViewModel.cs" />
+    <Compile Include="ViewModel\GettingStartedViewModel.cs" />
+	<Compile Include="Views\AppointmentCustomaization.xaml.cs">
+      <DependentUpon>AppointmentCustomaization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalendarIdentifier.xaml.cs">
+      <DependentUpon>CalendarIdentifier.xaml</DependentUpon>
+    </Compile>
+     <Compile Include="Views\DataBinding.xaml.cs">
+      <DependentUpon>DataBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DateWiseResourceGrouping.xaml.cs">
+      <DependentUpon>DateWiseResourceGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GettingStarted.xaml.cs">
+      <DependentUpon>GettingStarted.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HorizontalResourceGrouping.xaml.cs">
+      <DependentUpon>HorizontalResourceGrouping.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\LoadOnDemand.xaml.cs">
+      <DependentUpon>LoadOnDemand.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\MonthCellCustomization.xaml.cs">
+      <DependentUpon>MonthCellCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecurringAppointment.xaml.cs">
+      <DependentUpon>RecurringAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecursiveExceptionAppointment.xaml.cs">
+      <DependentUpon>RecursiveExceptionAppointment.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\SpecialTimeRegionCustomization.xaml.cs">
+      <DependentUpon>SpecialTimeRegionCustomization.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\TimelineResourceGrouping.xaml.cs">
+      <DependentUpon>TimelineResourceGrouping.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\TimelineViews.xaml.cs">
+      <DependentUpon>TimelineViews.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="Views\TimeslotCustomization.xaml.cs">
+      <DependentUpon>TimeslotCustomization.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+	<Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AppointmentCustomaization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalendarIdentifier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\DataBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\DateWiseResourceGrouping.xaml">
+      <SubType>Designer</SubType>
+	  <Generator>MSBuild:Compile</Generator>
+	</Page>
+    <Page Include="Views\GettingStarted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HorizontalResourceGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\LoadOnDemand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\MonthCellCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\RecurringAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecursiveExceptionAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\SpecialTimeRegionCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\TimelineResourceGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimelineViews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="Views\TimeslotCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VCRTForwarders.140" />
+    <PackageReference Include="Syncfusion.Editors.WinUI" Version="19.4.0.38" />
+    <PackageReference Include="Syncfusion.Scheduler.WinUI" Version="19.4.0.38" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+   <ProjectReference Include="..\common\syncfusion.demoscommon.winui_lib_net50.csproj" />
+  </ItemGroup>
+</Project>
