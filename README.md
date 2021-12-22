@@ -146,30 +146,55 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         </td>
     </tr>
     <tr>
-        <td>
-            <a href="editor">Color Picker</a>
+	    <td>
+            <a href="editor">AutoComplete</a>
+        </td>
+	    <td>
+            <a href="editor">ComboBox</a>
         </td>
         <td>
+            <a href="editor">Color Picker</a>
+        </td>   
+    </tr>
+    <tr>
+	    <td>
             <a href="editor">Dropdown Color Picker</a>
         </td>
         <td>
             <a href="editor">Color Palette</a>
         </td>
-    </tr>
-    <tr>
         <td>
             <a href="editor">Dropdown Color Palette</a>
         </td>
-        <td>
-            <a href="editor">ComboBox</a>
-        </td>
-		<td>
+    </tr>
+    <tr>
+	    <td>
             <a href="editor">NumberBox</a>
+        </td>
+        <td>
+            <a href="editor">Segmented Control</a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <b>FILE FORMATS</b>
         </td>
     </tr>
     <tr>
+	    <td>
+            <a href="xlsio">Excel</a>
+        </td>
+	    <td>
+            <a href="pdf">PDF</a>
+        </td>
         <td>
-            <a href="editor">Segmented Control</a>
+            <a href="docio">Word</a>
+        </td>   
+    </tr>
+    <tr>
+	    <td>
+            <a href="presentation">PowerPoint</a>
         </td>
         <td></td>
         <td></td>
@@ -191,4 +216,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-12-22 at precisely 10:26:26 EST.</p> 
+<p>Copyright © 2001-2021 Syncfusion, Inc. Updated on 2021-11-12 at precisely 16:11:02 EST.</p> 
