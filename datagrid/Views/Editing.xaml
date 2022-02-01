@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="DataGrid.EditingDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:enumextension="using:syncfusion.demoscommon.winui"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:grid="using:Syncfusion.UI.Xaml.Grids"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:EmployeeViewModel  x:Key="employeeViewModel"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource employeeViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid provides support to edit the cells with the built-in editors such as TextBox, ComboBox and DatePicker. Also, DataGrid provides options to trigger the edit mode by either with single or double tap.">
+                <common:DemoLayout.Example>
+                    <dataGrid:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="500"
+                        VerticalAlignment="Top"
+                        AllowEditing="{Binding ElementName=allowEdit, Path=IsChecked}"
+                        AutoGenerateColumns="False"
+                        ColumnWidthMode="AutoLastColumnFill"
+                        EditTrigger="{Binding SelectedValue, Converter={enumextension:StringToEnumValueConverter IsInversed=True,Type=grid:EditTrigger}, ElementName=editTriggerCombo}"
+                        ItemsSource="{Binding Employees}"
+                        LiveDataUpdateMode="AllowDataShaping"
+                        ShowRowHeader="True">
+                        <dataGrid:SfDataGrid.Columns>
+                            <dataGrid:GridCheckBoxColumn HeaderText="Availability" MappingName="EmployeeStatus" AllowEditing="True"/>
+                            <dataGrid:GridNumericColumn HeaderText="Employee ID" MappingName="EmployeeID" TextAlignment="Right" />
+                            <dataGrid:GridTextColumn HeaderText="Employee Name" MappingName="Name" />
+                            <dataGrid:GridTextColumn MappingName="Gender" />
+                            <dataGrid:GridDateColumn MappingName="HireDate"
+                                HeaderText="Hire Date"
+                                TextAlignment="Right" />
+                            <dataGrid:GridTimeColumn MappingName="CheckInTime" HeaderText="Check In Time" AllowNull="True" DisplayTimeFormat="HH:mm:ss" EditMode="Mask" PlaceholderText="Enter a Time" TextAlignment="Right"/>
+                            <dataGrid:GridComboBoxColumn HeaderText="Designation" Width="180" MappingName="Title" ItemsSource="{Binding TitleCollection, Source={StaticResource employeeViewModel}}" />
+                            <dataGrid:GridTextColumn HeaderText="Marital Status" MappingName="MaritalStatus" Width="130" />
+                            <dataGrid:GridNumericColumn MappingName="Salary" HeaderText="Salary" NumberFormatter="{Binding SystemCurrency,Source={StaticResource employeeViewModel}}" TextAlignment="Right"  Width="140"/>
+                        </dataGrid:SfDataGrid.Columns>
+                    </dataGrid:SfDataGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                        <CheckBox
+                            x:Name="allowEdit"
+                            Margin="16,5,5,5"
+                            Content="AllowEditing"
+                            IsChecked="True" />
+                        <ComboBox
+                            x:Name="editTriggerCombo"
+                            Width="130"
+                            Margin="16,5,5,5"
+                            Header="EditTrigger"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=grid:EditTrigger}"
+                            SelectedIndex="1">                           
+                        </ComboBox>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+     &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot; 
+                               Height=&quot;400&quot;    
+                               AllowEditing=&quot;$(AllowEditing)&quot;
+                               AutoGenerateColumns=&quot;False&quot;
+                               ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                               EditTrigger=&quot;$(EditTrigger)&quot;
+                               ItemsSource=&quot;{Binding Employees}&quot;    
+                               LiveDataUpdateMode=&quot;AllowDataShaping&quot;
+                               ShowRowHeader=&quot;True&quot;/&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="AllowEditing"
+                        SubstitutionValue="{x:Bind sfDataGrid.AllowEditing, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EditTrigger"
+                        SubstitutionValue="{x:Bind sfDataGrid.EditTrigger, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

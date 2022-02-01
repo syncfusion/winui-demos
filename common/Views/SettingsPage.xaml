@@ -1,0 +1,115 @@
+﻿<Page x:Class="syncfusion.demoscommon.winui.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.demoscommon.winui"
+      xmlns:syncfusion="using:Syncfusion.UI.Xaml.Notifications"
+      xmlns:converters="using:Syncfusion.UI.Xaml.Core"
+      NavigationCacheMode="Disabled">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style x:Key="TitleTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                <Setter Property="FontWeight" Value="SemiLight" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
+            </Style>
+        </Grid.Resources>
+        <ScrollViewer
+            x:Name="scrollViewer"
+            Padding="24,0,24,0"
+            IsTabStop="False"
+            UseSystemFocusVisuals="False"
+            VerticalScrollBarVisibility="Auto"
+            VerticalScrollMode="Auto">
+            <StackPanel>
+                <StackPanel x:Name="ThemeModeContainer"  HorizontalAlignment="Left">
+                    <TextBlock
+                    Style="{StaticResource TitleTextBlockStyle}"
+                    Margin="0,4,0,0"
+                    FontWeight="Normal"
+                    Text="Theme Mode" />
+                    <StackPanel x:Name="ThemePanel" Margin="0,10,0,0">
+                        <RadioButton Tag="Light" Checked="OnThemeRadioButtonChecked" Content="Light"  />
+                        <RadioButton Tag="Dark" Checked="OnThemeRadioButtonChecked" Content="Dark" />
+                        <RadioButton Tag="Default" Checked="OnThemeRadioButtonChecked" Content="Use system setting" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock
+                        Margin="0,40,0,0"
+                        x:Name="DocumentationTextBlock"
+                    Style="{StaticResource TitleTextBlockStyle}"
+                    FontWeight="Normal"
+                    Text="Documentation" />
+                    <RichTextBlock MaxWidth="840" Margin="0,10,0,0" IsTextSelectionEnabled="True">
+                        <Paragraph Margin="0,10,0,0">
+                            <Hyperlink NavigateUri="https://help.syncfusion.com/winui/overview">User Guide</Hyperlink>
+                        </Paragraph>
+                        <Paragraph Margin="0,10,0,0">
+                            <Hyperlink NavigateUri="https://help.syncfusion.com/cr/winui">API Reference</Hyperlink>
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock
+                        Margin="0,40,0,0"
+                    Style="{StaticResource TitleTextBlockStyle}"
+                    FontWeight="Normal"
+                    Text="Source Code" />
+                    <RichTextBlock MaxWidth="840" Margin="0,10,0,0" IsTextSelectionEnabled="True">
+                        <Paragraph Margin="0,10,0,0">
+                            <Hyperlink NavigateUri="https://github.com/syncfusion/winui-demos">View samples</Hyperlink>
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock
+                        Margin="0,40,0,0"
+                    Style="{StaticResource TitleTextBlockStyle}"
+                    FontWeight="Normal"
+                    Text="Support and Feedback" />
+
+                    <RichTextBlock MaxWidth="840" Margin="0,10,0,0" IsTextSelectionEnabled="True">
+                        <Paragraph Margin="0,10,0,0">
+                            For any other queries, reach our
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/support/directtrac/incidents/newincident">Syncfusion support team</Hyperlink> 
+                            or post the queries through the <Hyperlink NavigateUri="https://www.syncfusion.com/forums/winui">community forums</Hyperlink>
+                            and submit a feature request or a bug through our
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/feedback/winui">Feedback portal</Hyperlink>.
+                        </Paragraph>
+                        <Paragraph Margin="0,10,0,0"> 
+                            Contact our sales team at
+                            <Hyperlink NavigateUri="mailto:salessupport@syncfusion.com">mailto:salessupport@syncfusion.com</Hyperlink>.
+                        </Paragraph>
+                        <Paragraph Margin="0,10,0,0">
+                            Copyright © 2001-2022 Syncfusion, Inc. All rights reserved.
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock
+                        Margin="0,40,0,0"
+                    Style="{StaticResource TitleTextBlockStyle}"
+                    FontWeight="Normal"
+                    Text="About Syncfusion" />
+                    <RichTextBlock MaxWidth="840" Margin="0,10,0,0" IsTextSelectionEnabled="True">
+                        <Paragraph Margin="0,10,0,0">
+                            Founded in 2001 and headquartered in Research Triangle Park, N.C., Syncfusion has more than 20,000 customers and more than 1 million users, including large financial institutions, Fortune 500 companies, and global IT consultancies.
+                        </Paragraph>
+                        <Paragraph Margin="0,10,0,0">
+                            Today we provide 1,000+ controls and frameworks for web (<Hyperlink NavigateUri="https://www.syncfusion.com/aspnet-core-ui-controls">ASP.NET Core</Hyperlink>,
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/aspnet-mvc-ui-controls">ASP.NET MVC</Hyperlink>, <Hyperlink NavigateUri="https://www.syncfusion.com/jquery/aspnet-web-forms-ui-controls">ASP.NET WebForms</Hyperlink>,
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/javascript-ui-controls">JavaScript</Hyperlink>, <Hyperlink NavigateUri="https://www.syncfusion.com/angular-ui-components">Angular</Hyperlink>,
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/react-ui-components">React</Hyperlink>, <Hyperlink NavigateUri="https://www.syncfusion.com/vue-ui-components">Vue</Hyperlink>, and
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/blazor-components">Blazor</Hyperlink>, mobile (<Hyperlink NavigateUri="https://www.syncfusion.com/xamarin-ui-controls">Xamarin</Hyperlink>,
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/flutter-widgets">Flutter</Hyperlink>, <Hyperlink NavigateUri="https://www.syncfusion.com/uwp-ui-controls">UWP</Hyperlink>, and
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/javascript-ui-controls">JavaScript</Hyperlink>), and desktop development (<Hyperlink NavigateUri="https://www.syncfusion.com/winui-controls">WinUI</Hyperlink>,
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/winforms-ui-controls">WinForms</Hyperlink>, <Hyperlink NavigateUri="https://www.syncfusion.com/wpf-ui-controls">WPF</Hyperlink>, and
+                            <Hyperlink NavigateUri="https://www.syncfusion.com/uwp-ui-controls">UWP</Hyperlink>). 
+                            We provide ready-to deploy enterprise software for dashboards, reports, data integration, and big data processing. Many customers have saved millions in licensing fees by deploying our software.
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

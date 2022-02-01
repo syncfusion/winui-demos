@@ -1,0 +1,143 @@
+﻿<ribbon:SfRibbon x:Name="ribbon"
+                 AllowMinimize="True"
+                 ActiveLayoutMode="Normal"
+                 LayoutModeOptions="Normal,Simplified"
+                 ribbon:KeyTipService.EnableKeyTip="True"
+                 BackstageMenuButtonContent="File">
+    <ribbon:SfRibbon.Tabs>
+        <ribbon:RibbonTab  Header="Home" ribbon:KeyTipService.AccessText="H">
+            <ribbon:RibbonGroup Header="Clipboard"
+                    ribbon:KeyTipService.LauncherButtonAccessText="FO"
+                                    LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+                <ribbon:RibbonSplitButton Command="{Binding ButtonCommand}"
+                                              CommandParameter="Paste"
+                                              Content="Paste"
+                                              DisplayOptions="Normal,Simplified"
+                                              Icon="Paste"
+                                              ribbon:KeyTipService.AccessText ="V"
+                                              SizeMode="Large">
+                    <ribbon:RibbonSplitButton.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Command="{Binding ButtonCommand}"
+                                            CommandParameter="Paste -&gt;Paste Special"
+                                            Text="Paste Special" 
+                                            ribbon:KeyTipService.AccessText="S"/>
+                            <MenuFlyoutItem Command="{Binding ButtonCommand}"
+                                            CommandParameter="Paste -&gt; Set Default Paste"
+                                            Text="Set Default Paste" 
+                                            ribbon:KeyTipService.AccessText="A"/>
+                        </MenuFlyout>
+                    </ribbon:RibbonSplitButton.Flyout>
+                </ribbon:RibbonSplitButton>
+
+                <ribbon:RibbonButton  x:Name="cutButton" 
+                                         Command="{Binding ButtonCommand}"
+                                         CommandParameter="Undo"
+                                         Content="Cut"
+                                         DisplayOptions="Normal,Overflow"
+                                         Icon="Cut"
+                                         SizeMode="Normal"
+                                         ribbon:KeyTipService.AccessText="X"/>
+                <ribbon:RibbonButton Command="{Binding ButtonCommand}"
+                                         CommandParameter="Copy"
+                                         Content="Copy"
+                                         DisplayOptions="Normal,Overflow"
+                                         Icon="Copy"
+                                         SizeMode="Normal" 
+                                         ribbon:KeyTipService.AccessText="C"/>
+                <ribbon:RibbonButton Command="{Binding ButtonCommand}"
+                                         CommandParameter="Format Painter"
+                                         Content="Format Painter"
+                                         DisplayOptions="Normal,Simplified"
+                                         SizeMode="Normal"
+                                         ribbon:KeyTipService.AccessText="FP">
+                    <ribbon:RibbonButton.Icon>
+                        <FontIcon Glyph="&#xF0E3;" />
+                    </ribbon:RibbonButton.Icon>
+                </ribbon:RibbonButton>
+            </ribbon:RibbonGroup>        
+           ......
+
+            <ribbon:RibbonGroup Header="Styles">
+                <ribbon:RibbonGallery x:Name="ribbonGallery"
+                          ItemHeight="56"
+                          ribbon:KeyTipService.AccessText="L"
+                          ItemTemplate="{StaticResource RibbonGalleryItemTemplate}"
+                          ItemsSource="{Binding FontStyles}"
+                          MaxColumnCount="5"
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+            </ribbon:RibbonGroup>
+            .....
+        </ribbon:RibbonTab>
+        <ribbon:RibbonTab Header="Insert" ribbon:KeyTipService.AccessText="N">
+             .....
+        </ribbon:RibbonTab>
+        <ribbon:RibbonTab Header="View" 
+                  ribbon:KeyTipService.AccessText="W">
+            ....
+        </ribbon:RibbonTab>
+    </ribbon:SfRibbon.Tabs>
+    <ribbon:SfRibbon.Backstage>
+        <ribbon:RibbonBackstage Target="{Binding ElementName=rootGrid}"
+                        ribbon:KeyTipService.AccessText="F">
+            <ribbon:BackstageView>
+                <ribbon:BackstageView.Items>
+                    <ribbon:BackstageViewTabItem Header="New"
+                                         ribbon:KeyTipService.AccessText="N"
+                                         Icon="NewFolder">
+                        <local:Sample1 />
+                    </ribbon:BackstageViewTabItem>
+                    <ribbon:BackstageViewTabItem Header="Open"
+                                        ribbon:KeyTipService.AccessText="O"
+                                        Icon="OpenWith">
+                        <local:Sample2 />
+                    </ribbon:BackstageViewTabItem>
+                    <ribbon:BackstageViewItemSeparator />
+                    <ribbon:BackstageViewTabItem Header="Info"
+                                         ribbon:KeyTipService.AccessText="I">
+                        <local:Sample1 />
+                    </ribbon:BackstageViewTabItem>
+                    <ribbon:BackstageViewButtonItem Header="Save"
+                                            Command="{Binding SaveCommand}"
+                                            CommandParameter="{Binding ElementName=ribbon}" 
+                                            ribbon:KeyTipService.AccessText="S"/>
+                    <ribbon:BackstageViewButtonItem Header="Close"
+                                            Command="{Binding CloseButtonCommand}" 
+                                            CommandParameter="{Binding ElementName=ribbon}" 
+                                            ribbon:KeyTipService.AccessText="C"/>
+                </ribbon:BackstageView.Items>
+                <ribbon:BackstageView.FooterItems>
+                    <ribbon:BackstageViewItemSeparator />
+                    <ribbon:BackstageViewTabItem Header="Account"
+                                         ribbon:KeyTipService.AccessText="D">
+                        <local:Sample2 />
+                    </ribbon:BackstageViewTabItem>
+                    <ribbon:BackstageViewTabItem Header="FeedBack"
+                                         ribbon:KeyTipService.AccessText="K">
+                        <local:Sample1 />
+                    </ribbon:BackstageViewTabItem>
+                    <ribbon:BackstageViewButtonItem Header="Option"
+                                            ribbon:KeyTipService.AccessText="T"
+                                            Command="{Binding OptionCommand}"
+                                            CommandParameter="{Binding ElementName=ribbon}" />
+                </ribbon:BackstageView.FooterItems>
+            </ribbon:BackstageView>
+        </ribbon:RibbonBackstage>
+    </ribbon:SfRibbon.Backstage>
+    <ribbon:SfRibbon.RightPane>
+        <StackPanel Orientation="Horizontal">
+            <ribbon:RibbonButton x:Name="undoButton"
+                                     Command="{Binding ButtonCommand}"
+                                     CommandParameter="Undo"
+                                     Content="Undo"
+                                     Icon="Undo" 
+                                     ribbon:KeyTipService.AccessText="UD"/>
+            <ribbon:RibbonButton x:Name="redoButton"
+                                     Command="{Binding ButtonCommand}"
+                                     CommandParameter="Redo"
+                                     Content="Redo"
+                                     Icon="Redo" 
+                                     ribbon:KeyTipService.AccessText="RD"/>
+        </StackPanel>
+    </ribbon:SfRibbon.RightPane>
+</ribbon:SfRibbon>

@@ -1,0 +1,92 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.BackgroundContent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui">
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample showcases a compass using a radial gauge control with background image, a marker pointer to incidate the direction and annotations to indicate the angle value."
+                           XamlSource="syncfusion.radialgaugedemos.winui/sourcecodes\axis\BackgroundContent\BackgroundContent.xaml.cs.txt"
+                           CSharpSource="syncfusion.radialgaugedemos.winui/sourcecodes\axis\BackgroundContent\BackgroundContent.cs.txt">
+            <common:DemoLayout.Example>
+                <gauge:SfRadialGauge x:Name="gauge">
+                    <gauge:SfRadialGauge.Resources>
+                        <Style x:Key="MajorTickStyle"
+                               TargetType="Line">
+                            <Setter Property="Stroke"
+                                    Value="#FF949494" />
+                            <Setter Property="StrokeThickness"
+                                    Value="2.3" />
+                        </Style>
+                        <Style x:Key="MinorTickStyle"
+                               TargetType="Line">
+                            <Setter Property="Stroke"
+                                    Value="#FF616161" />
+                            <Setter Property="StrokeThickness"
+                                    Value="1.6" />
+                        </Style>
+                    </gauge:SfRadialGauge.Resources>
+                    <gauge:SfRadialGauge.Axes>
+                        <gauge:RadialAxis x:Name="axis"
+                                          ShowAxisLine="False"
+                                          RadiusFactor="1"
+                                          CanRotateLabels="True"
+                                          TickOffset="0.32"
+                                          OffsetUnit="Factor"
+                                          LabelPrepared="RadialAxis_LabelPrepared"
+                                          StartAngle="270"
+                                          EndAngle="270"
+                                          LabelOffset="0.45"
+                                          Maximum="360"
+                                          Minimum="0"
+                                          Interval="30"
+                                          MinorTicksPerInterval="4"
+                                          Foreground="White"
+                                          FontSize="11"
+                                          MajorTickLength="0.087"
+                                          MinorTickLength="0.058"
+                                          TickLengthUnit="Factor"
+                                          MajorTickStyle="{StaticResource MajorTickStyle}"
+                                          MinorTickStyle="{StaticResource MinorTickStyle}">
+                            
+                            <gauge:RadialAxis.BackgroundContent>
+                                <Image  Source="{common:ImagePathExtension ImagePath=syncfusion.radialgaugedemos.winui/Assets/RadialGauge/AxisBackground.png}"/>
+                            </gauge:RadialAxis.BackgroundContent>
+
+                            <gauge:RadialAxis.Pointers>
+                                <gauge:MarkerPointer Value="90"
+                                                     Background="#FFDF5F2D"
+                                                     EnableAnimation="True"
+                                                     AnimationDuration="1200"
+                                                     MarkerOffset="0.71"
+                                                     OffsetUnit="Factor"
+                                                     MarkerType="Triangle"
+                                                     MarkerHeight="10"
+                                                     MarkerWidth="15">
+                                    <gauge:MarkerPointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseIn" />
+                                    </gauge:MarkerPointer.AnimationEasingFunction>
+                                </gauge:MarkerPointer>
+                            </gauge:RadialAxis.Pointers>
+
+                            <gauge:RadialAxis.Annotations>
+                                <gauge:GaugeAnnotation DirectionValue="270">
+                                    <gauge:GaugeAnnotation.Content>
+                                        <TextBlock Text="90"
+                                                   Foreground="#FFDF5F2D"
+                                                   FontWeight="SemiBold"
+                                                   FontSize="22" />
+                                    </gauge:GaugeAnnotation.Content>
+                                </gauge:GaugeAnnotation>
+                            </gauge:RadialAxis.Annotations>
+                        </gauge:RadialAxis>
+                    </gauge:SfRadialGauge.Axes>
+                </gauge:SfRadialGauge>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>
