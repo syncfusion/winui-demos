@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "syncfusion.datagriddemos.winui_net50": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

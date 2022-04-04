@@ -1,0 +1,133 @@
+﻿<Page x:Class="syncfusion.lineargaugedemos.winui.Views.ContentPointer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:coreconverters="using:Syncfusion.UI.Xaml.Core">
+
+    <StackPanel>
+        <StackPanel.Resources>
+            <coreconverters:FormatStringConverter x:Key="FormatStringConverter" />
+        </StackPanel.Resources>
+
+        <common:DemoLayout HeaderText="This sample shows the capabilities of custom view pointer in linear gauge control."
+                           XamlSource="syncfusion.lineargaugedemos.winui/codesnippets\pointers\contentpointer\contentpointer.xaml.txt">
+            <common:DemoLayout.Example>
+                <Grid VerticalAlignment="Center"
+                      Height="250">
+                    <Grid.Resources>
+                        <coreconverters:StringFormatConverter x:Key="StringFormatConverter" />
+                        <Style x:Key="AxisTickStyle"
+                               TargetType="Line">
+                            <Setter Property="Stroke"
+                                    Value="#FF00A8B5"></Setter>
+                        </Style>
+                    </Grid.Resources>
+
+                    <gauge:SfLinearGauge x:Name="gauge"
+                                         Width="550">
+                        <gauge:SfLinearGauge.Axis>
+                            <gauge:LinearAxis Maximum="80"
+                                              Interval="20"
+                                              MajorTickStyle="{StaticResource AxisTickStyle}"
+                                              MinorTicksPerInterval="0"
+                                              AxisLineStrokeThickness="1"
+                                              AxisLineStroke="#FF00A8B5">
+
+                                <gauge:LinearAxis.LabelTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Text, 
+                                                       Converter={StaticResource StringFormatConverter},
+                                                       ConverterParameter='{}{0}°c'}"
+                                                   Foreground="#FF00A8B5" />
+                                    </DataTemplate>
+                                </gauge:LinearAxis.LabelTemplate>
+
+                                <gauge:LinearAxis.Ranges>
+                                    <gauge:LinearGaugeRange EndValue="80"
+                                                            RangePosition="Outside"
+                                                            StartWidth="30"
+                                                            EndWidth="30">
+                                        <gauge:LinearGaugeRange.GradientStops>
+                                            <gauge:GaugeGradientStop Value="20"
+                                                                     Color="LightGreen" />
+                                            <gauge:GaugeGradientStop Value="40"
+                                                                     Color="Orange" />
+                                            <gauge:GaugeGradientStop Value="80"
+                                                                     Color="Red" />
+                                        </gauge:LinearGaugeRange.GradientStops>
+                                    </gauge:LinearGaugeRange>
+                                </gauge:LinearAxis.Ranges>
+
+                                <gauge:LinearAxis.MarkerPointers>
+                                    <gauge:ShapePointer x:Name="shapePointer1"
+                                                        Value="56"
+                                                        OffsetPoint="0,-40"
+                                                        IsInteractive="True"
+                                                        EnableAnimation="True">
+                                        <gauge:ShapePointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:ShapePointer.AnimationEasingFunction>
+                                    </gauge:ShapePointer>
+
+                                    <gauge:ContentPointer Value="12.5"
+                                                          OffsetPoint="0,-15">
+                                        <gauge:ContentPointer.Content>
+                                            <TextBlock Text="Low"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="Black" />
+                                        </gauge:ContentPointer.Content>
+                                    </gauge:ContentPointer>
+                                    <gauge:ContentPointer Value="40"
+                                                          OffsetPoint="0,-15">
+                                        <gauge:ContentPointer.Content>
+                                            <TextBlock Text="Moderate"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="Black" />
+                                        </gauge:ContentPointer.Content>
+                                    </gauge:ContentPointer>
+                                    <gauge:ContentPointer Value="70"
+                                                          OffsetPoint="0,-15">
+                                        <gauge:ContentPointer.Content>
+                                            <TextBlock Text="High"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="Black" />
+                                        </gauge:ContentPointer.Content>
+                                    </gauge:ContentPointer>
+
+                                    <gauge:ContentPointer Value="{Binding ElementName=shapePointer1, Path=Value, Mode=OneWay}"
+                                                          OffsetPoint="0,-60"
+                                                          EnableAnimation="True">
+                                        <gauge:ContentPointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:ContentPointer.AnimationEasingFunction>
+                                        <gauge:ContentPointer.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding ElementName=shapePointer1,
+                                                                          Path=Value,
+                                                                          Converter={StaticResource FormatStringConverter},
+                                                                          ConverterParameter='N2'}"
+                                                           FontWeight="SemiBold" />
+                                                <TextBlock Text="°c"
+                                                           FontWeight="SemiBold" />
+                                            </StackPanel>
+                                        </gauge:ContentPointer.Content>
+                                    </gauge:ContentPointer>
+                                </gauge:LinearAxis.MarkerPointers>
+                            </gauge:LinearAxis>
+                        </gauge:SfLinearGauge.Axis>
+                    </gauge:SfLinearGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+
+            <common:DemoLayout.Substitutions>
+                <common:DemoLayoutSubstitution Key="shapePointerSubstitution"
+                                               SubstitutionValue="{x:Bind shapePointer1.Value, Mode=OneWay}" />
+            </common:DemoLayout.Substitutions>
+        </common:DemoLayout>
+    </StackPanel>
+</Page>

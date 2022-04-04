@@ -1,0 +1,28 @@
+﻿//Creates a new instance of the PowerPoint Presentation file.
+using IPresentation presentation = Presentation.Create();
+//Creates slides with chart.
+//Adds a blank slide to the presentation.
+ISlide slide1 = presentation.Slides.Add(SlideLayoutType.Blank);
+//Adds a chart to the slide with position and size.
+IPresentationChart chart = slide1.Shapes.AddChart(1.93 * 72, 0.31 * 72, 9.48 * 72, 6.89 * 72);
+
+//Sets the data for chart– RowIndex, columnIndex and data.
+chart.ChartData.SetValue(1, 1, "Crescent City, CA");
+chart.ChartData.SetValue(3, 2, "Precipitation,in.");
+chart.ChartData.SetValue(3, 3, "Temperature,deg.F");
+chart.ChartData.SetValue(4, 1, "Jan");
+chart.ChartData.SetValue(4, 2, 10.9);
+chart.ChartData.SetValue(4, 3, 47.5);
+//Sets the data range of chart series – start row, start column, end row, end column.
+chart.DataRange = chart.ChartData[3, 1, 15, 3];
+//Sets the chart title and axis title.
+chart.ChartTitle = "Crescent City, CA";
+chart.PrimaryValueAxis.Title = "Precipitation,in.";
+chart.PrimaryValueAxis.TitleArea.TextRotationAngle = 90;
+chart.PrimaryValueAxis.MaximumValue = 14.0;
+chart.PrimaryValueAxis.NumberFormat = "0.0";
+
+using MemoryStream ms = new MemoryStream();           
+//Saves the presentation to the memory stream.
+presentation.Save(ms);                        
+    

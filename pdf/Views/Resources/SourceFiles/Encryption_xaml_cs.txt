@@ -1,0 +1,30 @@
+//Get the template PDF file stream from assembly.
+Stream documentStream = GetPdfStream("Input.pdf");
+//Load the PDF document from stream.
+PdfLoadedDocument document = new PdfLoadedDocument(documentStream);
+
+//Get the document security.
+PdfSecurity security = document.Security;
+
+//use 256 bits key in AES mode with Revision 6.
+security.KeySize = PdfEncryptionKeySize.Key256BitRevision6;
+security.Algorithm = PdfEncryptionAlgorithm.AES;
+
+//Set the user and owner password.
+security.OwnerPassword = "syncfusion";
+security.UserPassword = "password@123";
+
+//Set the permission flags for the file. 
+security.Permissions = PdfPermissionsFlags.Print | PdfPermissionsFlags.FullQualityPrint;
+
+//Creating the stream object.
+using (MemoryStream stream = new MemoryStream())
+{
+    //Save and close the document.
+    document.Save(stream);
+    document.Close(true);
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save("Encryption.pdf", stream);
+}

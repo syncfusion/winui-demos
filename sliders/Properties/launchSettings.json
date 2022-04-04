@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "syncfusion.sliderdemos.winui_net50": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

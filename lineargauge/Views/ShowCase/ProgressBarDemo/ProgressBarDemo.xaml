@@ -1,0 +1,50 @@
+﻿<Page x:Class="syncfusion.lineargaugedemos.winui.Views.ProgressBarDemo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui">
+
+    <StackPanel>
+        <common:DemoLayout HeaderText="This demo demonstrate how to display progress bar using bar pointer and its child support."
+                           XamlSource="syncfusion.lineargaugedemos.winui/codesnippets\showcase\progressbardemo\progressbardemo.xaml.txt">
+            <common:DemoLayout.Example>
+                <Grid VerticalAlignment="Center"
+                      Height="250">
+                    <gauge:SfLinearGauge x:Name="gauge"
+                                         Width="550">
+                        <gauge:SfLinearGauge.Axis>
+                            <gauge:LinearAxis ShowLabels="False"
+                                              ShowTicks="False"
+                                              CornerStyle="BothCurve"
+                                              AxisLineStrokeThickness="30">
+
+                                <gauge:LinearAxis.BarPointers>
+                                    <gauge:BarPointer Value="41.47"
+                                                      PointerSize="30"
+                                                      Background="#683ab7"
+                                                      CornerStyle="BothCurve"
+                                                      EnableAnimation="True">
+                                        <gauge:BarPointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:BarPointer.AnimationEasingFunction>
+                                        <gauge:BarPointer.Child>
+                                            <TextBlock Text="41.47%"
+                                                       Foreground="White"
+                                                       Margin="15,0,0,0"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left" />
+                                        </gauge:BarPointer.Child>
+                                    </gauge:BarPointer>
+                                </gauge:LinearAxis.BarPointers>
+                            </gauge:LinearAxis>
+                        </gauge:SfLinearGauge.Axis>
+                    </gauge:SfLinearGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </StackPanel>
+</Page>

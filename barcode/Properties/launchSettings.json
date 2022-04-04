@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "syncfusion.barcodedemos.winui_net50": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

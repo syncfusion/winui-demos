@@ -1,0 +1,197 @@
+﻿<Page
+    x:Class="syncfusion.calendardemos.winui.Views.Calendar.CalendarView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.calendardemos.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:enumextension="using:syncfusion.demoscommon.winui"
+    xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:CalendarViewModel x:Name="viewModel"/>
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel x:Name="calendarViewPanel">
+            <common:DemoLayout 
+                HeaderText="A simple Calendar control."
+                XamlSource="syncfusion.calendardemos.winui/Views/Calendar/Resources/SourceCodes/SimpleCalendar_xaml.txt">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendar
+                        x:Name="calendar1"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="SelectionMode"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarSelectionMode},ElementName=calendar1,Path=SelectionMode, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarSelectionMode}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="SelectionShape"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:SelectionShape}, ElementName=calendar1,Path=SelectionShape, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:SelectionShape}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="SelectionHighlightMode"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:SelectionHighlightMode}, ElementName=calendar1,Path=SelectionHighlightMode, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:SelectionHighlightMode}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="FirstDayOfWeek"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:FirstDayOfWeek}, ElementName=calendar1,Path=FirstDayOfWeek, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:FirstDayOfWeek}"/>
+                        <Slider
+                            Margin="5"
+                            Width="180"
+                            Header="NumberOfWeeksInView"
+                            Value="{Binding ElementName=calendar1, Path=NumberOfWeeksInView, Mode=TwoWay}"
+                            Minimum="1"
+                            Maximum="10"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="SelectionMode" 
+                        SubstitutionValue="{x:Bind calendar1.SelectionMode, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="SelectionShape" 
+                        SubstitutionValue="{x:Bind calendar1.SelectionShape, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="SelectionHighlightMode" 
+                        SubstitutionValue="{x:Bind calendar1.SelectionHighlightMode, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="FirstDayOfWeek" 
+                        SubstitutionValue="{x:Bind calendar1.FirstDayOfWeek, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="NumberOfWeeksInView" 
+                        SubstitutionValue="{x:Bind calendar1.NumberOfWeeksInView, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout 
+                HeaderText="Date and View Navigation."
+                XamlSource="syncfusion.calendardemos.winui/Views/Calendar/Resources/SourceCodes/DateNavigation_xaml.txt">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendar
+                        x:Name="calendar2"
+                        MinDisplayMode="{x:Bind viewModel.MinDisplayMode, Mode=TwoWay}"
+                        MaxDisplayMode="{x:Bind viewModel.MaxDisplayMode, Mode=TwoWay}"
+                        MinDate="{x:Bind viewModel.MinDate, Mode=TwoWay}"
+                        MaxDate="{x:Bind viewModel.MaxDate, Mode=TwoWay}"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock
+                            Margin="5, 5, 5, 2"
+                            Width="180"
+                            Text="MinimumDate"/>
+                        <calendar:SfCalendarDatePicker
+                            Margin="5, 0, 5, 5"
+                            Width="180"
+                            AllowNull="False"
+                            SelectedDate="{x:Bind viewModel.MinDate, Mode=TwoWay}"/>
+                        <TextBlock
+                            Margin="5, 5, 5, 2"
+                            Width="180"
+                            Text="MaximumDate"/>
+                        <calendar:SfCalendarDatePicker
+                            Margin="5, 0, 5, 5"
+                            Width="180"
+                            AllowNull="False"
+                            SelectedDate="{x:Bind viewModel.MaxDate, Mode=TwoWay}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="MinDisplayMode"
+                            SelectedItem="{Binding MinDisplayMode, Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="MaxDisplayMode"
+                            SelectedItem="{Binding MaxDisplayMode, Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="DisplayMode"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, ElementName=calendar2, Path=DisplayMode, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="NavigationDirection"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=Orientation}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=Orientation}, ElementName=calendar2, Path=NavigationDirection, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="CalendarMinDate" 
+                        SubstitutionValue="{x:Bind calendar2.MinDate, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="CalendarMaxDate" 
+                        SubstitutionValue="{x:Bind calendar2.MaxDate, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="CalendarMinDisplayMode" 
+                        SubstitutionValue="{x:Bind calendar2.MinDisplayMode, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="CalendarMaxDisplayMode" 
+                        SubstitutionValue="{x:Bind calendar2.MaxDisplayMode, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="DisplayMode" 
+                        SubstitutionValue="{x:Bind calendar2.DisplayMode, Mode=OneWay}"/> 
+                    <common:DemoLayoutSubstitution
+                        Key="NavigationDirection" 
+                        SubstitutionValue="{x:Bind calendar2.NavigationDirection, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout 
+                HeaderText="Different types of Calendar."
+                XamlSource="syncfusion.calendardemos.winui/Views/Calendar/Resources/SourceCodes/CalendarTypes_xaml.txt">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendar
+                        x:Name="calendar3"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="CalendarIdentifier"
+                            ItemsSource="{Binding Items}"
+                            SelectedItem="{Binding ElementName=calendar3, Path=CalendarIdentifier, Mode=TwoWay}"/>
+                        <ComboBox
+                            x:Name="languages"
+                            Margin="5"
+                            Width="180"
+                            Header="Languages"
+                            DisplayMemberPath="Name"
+                            SelectedValuePath="Code"
+                            ItemsSource="{Binding Languages}"
+                            SelectedIndex="0"
+                            SelectionChanged="languages_SelectionChanged"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="CalendarIdentifier" 
+                        SubstitutionValue="{x:Bind calendar3.CalendarIdentifier, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="Language" 
+                        SubstitutionValue="{x:Bind calendar3.Language, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+    
+</Page>

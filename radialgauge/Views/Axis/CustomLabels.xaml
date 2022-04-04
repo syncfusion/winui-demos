@@ -1,0 +1,81 @@
+﻿<Page x:Class="syncfusion.radialgaugedemos.winui.Views.CustomLabels"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:syncfusion.radialgaugedemos.winui.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:syncfusion.demoscommon.winui">
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample shows the custom label capabilities of the radial gauge using the LabelPrepared event."
+                           XamlSource="syncfusion.radialgaugedemos.winui/sourcecodes\axis\customlabels\customlabels.xaml.cs.txt"
+                           CSharpSource="syncfusion.radialgaugedemos.winui/sourcecodes\axis\customlabels\customlabels.cs.txt">
+            <common:DemoLayout.Example>
+                <Grid>
+                    <gauge:SfRadialGauge x:Name="gauge">
+                        <gauge:SfRadialGauge.Axes>
+                            <gauge:RadialAxis x:Name="radialAxis"
+                                              Minimum="0"
+                                              Maximum="80"
+                                              StartAngle="270"
+                                              EndAngle="270"
+                                              AxisLineWidthUnit="Factor"
+                                              AxisLineWidth="0.1"
+                                              Interval="10"
+                                              CanRotateLabels="True"
+                                              MinorTicksPerInterval="0"
+                                              LabelPrepared="RadialAxis_LabelPrepared">
+                                <gauge:RadialAxis.Pointers>
+                                    <gauge:NeedlePointer Value="70"
+                                                         NeedleLength="0.55"
+                                                         NeedleLengthUnit="Factor"
+                                                         NeedleEndWidth="30"
+                                                         KnobRadius="0">
+                                        <gauge:NeedlePointer.NeedleFill>
+                                            <LinearGradientBrush StartPoint="0,0.5"
+                                                                 EndPoint="1,0.5">
+                                                <GradientStop Color="#FFFF5362"
+                                                              Offset="0" />
+                                                <GradientStop Color="#FFFF5362"
+                                                              Offset="0.5" />
+                                                <GradientStop Color="#FFE20A22"
+                                                              Offset="0.5" />
+                                                <GradientStop Color="#FFE20A22"
+                                                              Offset="1" />
+                                            </LinearGradientBrush>
+                                        </gauge:NeedlePointer.NeedleFill>
+                                    </gauge:NeedlePointer>
+
+                                    <gauge:NeedlePointer Value="30"
+                                                         NeedleLength="0.55"
+                                                         NeedleLengthUnit="Factor"
+                                                         NeedleEndWidth="30"
+                                                         KnobSizeUnit="Factor"
+                                                         KnobRadius="0.092"
+                                                         KnobFill="White">
+                                        <gauge:NeedlePointer.NeedleFill>
+                                            <LinearGradientBrush StartPoint="0,0.5"
+                                                                 EndPoint="1,0.5">
+                                                <GradientStop Color="#FFC6C3C3"
+                                                              Offset="0" />
+                                                <GradientStop Color="#FFC6C3C3"
+                                                              Offset="0.5" />
+                                                <GradientStop Color="#FF7A7A7A"
+                                                              Offset="0.5" />
+                                                <GradientStop Color="#FF7A7A7A"
+                                                              Offset="1" />
+                                            </LinearGradientBrush>
+                                        </gauge:NeedlePointer.NeedleFill>
+                                    </gauge:NeedlePointer>
+                                </gauge:RadialAxis.Pointers>
+                            </gauge:RadialAxis>
+                        </gauge:SfRadialGauge.Axes>
+                    </gauge:SfRadialGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

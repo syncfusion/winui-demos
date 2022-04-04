@@ -1,0 +1,218 @@
+﻿<Page
+    x:Class="syncfusion.editordemos.winui.Views.TimePicker.TimePickerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:enumextension="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.editordemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:FormatToStringConverter x:Key="formartToStringConverter" />
+    </Page.Resources>
+
+    <Page.DataContext>
+        <local:TimePickerViewModel x:Name="viewModel" />
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel x:Name="timePickerViewPanel">
+            <common:DemoLayout HeaderText="A simple Time Picker control." XamlSource="syncfusion.editordemos.winui/Views/TimePicker/Resources/SourceCodes/SimpleTimePicker_xaml.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfTimePicker
+                        x:Name="timePicker1"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        MaxTime="{x:Bind viewModel.MaxTime, Mode=TwoWay}"
+                        MinTime="{x:Bind viewModel.MinTime, Mode=TwoWay}"
+                        VisibleItemsCount="{Binding VisibleItemsCount}" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <editors:SfTimePicker
+                            x:Name="MinimumTimePicker"
+                            Width="180"
+                            Margin="5"
+                            AllowNull ="False"
+                            Header="MinimumTime"
+                            SelectedTime="{x:Bind viewModel.MinTime, Mode=TwoWay}" />
+                        <editors:SfTimePicker
+                            x:Name="MaximumTimePicker"
+                            Width="180"
+                            Margin="5"
+                            AllowNull ="False"
+                            Header="MaximumTime"
+                            SelectedTime="{x:Bind viewModel.MaxTime, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="EditMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:DateTimeEditMode}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:DateTimeEditMode}, ElementName=timePicker1, Path=EditMode, Mode=TwoWay}" />
+                        <TextBox
+                            Width="180"
+                            Margin="5"
+                            Header="PlaceholderText"
+                            Text="{Binding ElementName=timePicker1, Path=PlaceholderText, Mode=TwoWay}" />
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="VisibleItemsCount"
+                            Maximum="10"
+                            Minimum="1"
+                            Value="{Binding VisibleItemsCount, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="MinTime" SubstitutionValue="{x:Bind timePicker1.MinTime, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MaxTime" SubstitutionValue="{x:Bind timePicker1.MaxTime, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="TimePickerEditMode" SubstitutionValue="{x:Bind timePicker1.EditMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="TimePickerPlaceholderText" SubstitutionValue="{x:Bind timePicker1.PlaceholderText, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="TimePickerVisibleItemsCount" SubstitutionValue="{x:Bind timePicker1.VisibleItemsCount, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Time Formatting." XamlSource="syncfusion.editordemos.winui/Views/TimePicker/Resources/SourceCodes/TimeFormatting_xaml.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfTimePicker
+                        x:Name="timePicker2"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        DisplayTimeFormat="{Binding FormatString, Mode=TwoWay}" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Header="FormatString"
+                            Width="180"
+                            Margin="5"
+                            SelectedItem="{Binding FormatString, Mode=TwoWay, Converter={StaticResource formartToStringConverter}}">
+                            <ComboBoxItem Content="LongTimePattern" IsSelected="True" Tag="h:mm:ss tt" />
+                            <ComboBoxItem Content="ShortTimePattern" Tag="h:mm tt" />
+                            <ComboBoxItem
+                                Content="TwentyFourHourTimelinePattern"
+                                Tag="HH:mm:ss" />
+                        </ComboBox>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="ClockIdentifier"
+                            ItemsSource="{Binding Items}"
+                            SelectedItem="{Binding ElementName=timePicker2, Path=ClockIdentifier, Mode=TwoWay}"/>
+                        <ComboBox
+                            x:Name="languages"
+                            Margin="5"
+                            Width="180"
+                            Header="Languages"
+                            DisplayMemberPath="Name"
+                            SelectedValuePath="Code"
+                            ItemsSource="{Binding Languages}"
+                            SelectedIndex="0"
+                            SelectionChanged="languages_SelectionChanged"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="FormatString" SubstitutionValue="{x:Bind timePicker2.DisplayTimeFormat, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ClockIdentifier" SubstitutionValue="{x:Bind timePicker2.ClockIdentifier, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="Language" SubstitutionValue="{x:Bind timePicker2.Language, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Item Customization." XamlSource="syncfusion.editordemos.winui/Views/TimePicker/Resources/SourceCodes/ItemCustomization_xaml.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfTimePicker
+                        x:Name="timePicker3"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="MinimumItemWidth"
+                            Maximum="100"
+                            Minimum="0"
+                            Value="{Binding ElementName=timePicker3, Path=MinItemWidth, Mode=TwoWay}" />
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="MaximumItemWidth"
+                            Maximum="300"
+                            Minimum="100"
+                            Value="{Binding ElementName=timePicker3, Path=MaxItemWidth, Mode=TwoWay}" />
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="ItemWidth"
+                            Maximum="200"
+                            Minimum="50"
+                            Value="{Binding ElementName=timePicker3, Path=ItemWidth, Mode=TwoWay}" />
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="ItemHeight"
+                            Maximum="80"
+                            Minimum="20"
+                            Value="{Binding ElementName=timePicker3, Path=ItemHeight, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="MinItemWidth" SubstitutionValue="{x:Bind timePicker3.MinItemWidth, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MaxItemWidth" SubstitutionValue="{x:Bind timePicker3.MaxItemWidth, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ItemWidth" SubstitutionValue="{x:Bind timePicker3.ItemWidth, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ItemHeight" SubstitutionValue="{x:Bind timePicker3.ItemHeight, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="View Customization." XamlSource="syncfusion.editordemos.winui/Views/TimePicker/Resources/SourceCodes/ViewCustomization_xaml.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfTimePicker
+                        x:Name="timePicker4"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        ShowDropDownHeader="True">
+                        <editors:SfTimePicker.DropDownHeader>
+                            <TextBlock Text="Select a time" />
+                        </editors:SfTimePicker.DropDownHeader>
+                    </editors:SfTimePicker>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <CheckBox
+                            Width="180"
+                            Margin="5"
+                            Content="ShowDropDownButton"
+                            IsChecked="{Binding ElementName=timePicker4, Path=ShowDropDownButton, Mode=TwoWay}" />
+                        <CheckBox
+                            Width="180"
+                            Margin="5"
+                            Content="ShowDropDownHeader"
+                            IsChecked="{Binding ElementName=timePicker4, Path=ShowDropDownHeader, Mode=TwoWay}" />
+                        <CheckBox
+                            Width="180"
+                            Margin="5"
+                            Content="ShowColumnHeaders"
+                            IsChecked="{Binding ElementName=timePicker4, Path=ShowColumnHeaders, Mode=TwoWay}" />
+                        <CheckBox
+                            Width="180"
+                            Margin="5"
+                            Content="ShowSubmitButtons"
+                            IsChecked="{Binding ElementName=timePicker4, Path=ShowSubmitButtons, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="ShowDropDownButton" SubstitutionValue="{x:Bind timePicker4.ShowDropDownButton, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ShowDropDownHeader" SubstitutionValue="{x:Bind timePicker4.ShowDropDownHeader, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ShowColumnHeaders" SubstitutionValue="{x:Bind timePicker4.ShowColumnHeaders, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="ShowSubmitButtons" SubstitutionValue="{x:Bind timePicker4.ShowSubmitButtons, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

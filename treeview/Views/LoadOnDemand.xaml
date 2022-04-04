@@ -1,0 +1,62 @@
+﻿<Page x:Class="syncfusion.treeviewdemos.winui.LoadOnDemandPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:treeView="using:Syncfusion.UI.Xaml.TreeView"
+      xmlns:local="using:syncfusion.treeviewdemos.winui"
+      mc:Ignorable="d"
+      Background="Transparent"
+      NavigationCacheMode="Disabled">
+
+    <Page.DataContext>
+        <local:LoadOnDemandViewModel />
+    </Page.DataContext>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+        <StackPanel>
+            <common:DemoLayout>
+                <StackPanel Orientation="Horizontal">
+                    <treeView:SfTreeView x:Name="treeView"
+                                           Width="400"
+                                           Height="500"
+                                           BorderBrush="LightGray"
+                                           BorderThickness="1"
+                                           ExpandActionTrigger="Node"
+                                           IsAnimationEnabled="True"
+                                           LoadOnDemandCommand="{Binding TreeViewOnDemandCommand}"
+                                           ItemsSource="{Binding Menu}">
+                        <treeView:SfTreeView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock VerticalAlignment="Center"
+                                           Text="{Binding ItemName}" />
+                            </DataTemplate>
+                        </treeView:SfTreeView.ItemTemplate>
+                    </treeView:SfTreeView>
+                </StackPanel>
+                <common:DemoLayout.HeaderText>
+                    Dynamic on demand loading of child items while expanding.
+                </common:DemoLayout.HeaderText>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;treeView:SfTreeView ExpandActionTrigger="Node"
+                       LoadOnDemandCommand="{Binding TreeViewOnDemandCommand}"
+                       ItemsSource="{Binding Menu}"
+                       IsAnimationEnabled="True"
+                       BorderBrush="LightGray"
+                       BorderThickness="1"&gt;
+      &lt;treeView:SfTreeView.ItemTemplate&gt;
+          &lt;DataTemplate&gt;
+              &lt;TextBlock VerticalAlignment="Center"
+                         Text="{Binding ItemName}"/&gt;
+          &lt;/DataTemplate&gt;
+      &lt;/treeView:SfTreeView.ItemTemplate&gt;                            
+&lt;/treeView:SfTreeView&gt;  
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

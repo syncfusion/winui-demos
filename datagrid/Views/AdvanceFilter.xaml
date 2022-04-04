@@ -1,0 +1,203 @@
+﻿<Page
+    x:Class="DataGrid.AdvanceFilter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:EmployeeViewModel x:Key="employeeViewModel" />
+        <Style x:Key="advancedfiltercontrolstyleforEmployeeID" TargetType="dataGrid:AdvancedFilterControl">
+            <Setter Property="CanGenerateUniqueItems" Value="False" />
+        </Style>
+        <Style x:Key="popupstyleforEmployeeID" TargetType="dataGrid:GridFilterControl">
+            <Setter Property="FilterMode" Value="Both" />
+            <Setter Property="AdvancedFilterStyle" Value="{StaticResource advancedfiltercontrolstyleforEmployeeID}" />
+        </Style>
+        <Style x:Key="popupstyleforHireDate" TargetType="dataGrid:GridFilterControl">
+            <Setter Property="FilterMode" Value="CheckboxFilter" />
+        </Style>
+        <Style x:Key="popupstyleforDesignation" TargetType="dataGrid:GridFilterControl">
+            <Setter Property="FilterMode" Value="AdvancedFilter" />
+        </Style>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource employeeViewModel}">
+        <ScrollViewer
+            VerticalScrollBarVisibility="Auto"
+            VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="Data Grid provides support to filter the columns like Excel inspired UI.">
+                <common:DemoLayout.Example>
+                    <dataGrid:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="500"
+                        Width="Auto"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        AllowFiltering="{Binding IsChecked, ElementName=ckbAllowFilters}"
+                        AutoGenerateColumns="False"
+                        ColumnWidthMode="Auto"
+                        ItemsSource="{Binding Employees}"
+                        LiveDataUpdateMode="AllowDataShaping"
+                        NavigationMode="Row">
+                        <dataGrid:SfDataGrid.Columns>
+                            <dataGrid:GridNumericColumn x:Name="employeeIDColumn"
+                                AllowBlankFilters="{Binding ElementName=ckbAllowBlankFiltersEmployeeID, Path=IsChecked}"
+                                AllowFiltering="{Binding ElementName=ckbAllowFilterEmployeeID, Path=IsChecked}"
+                                FilterPopupStyle="{StaticResource popupstyleforEmployeeID}"
+                                TextAlignment="Right"
+                                HeaderText="Employee ID"
+                                ImmediateUpdateColumnFilter="{Binding ElementName=ckbImmediateUpdateColumnFilterEmployeeID, Path=IsChecked}"
+                                MappingName="EmployeeID" />
+                            <dataGrid:GridTextColumn HeaderText="Employee Name" MappingName="Name" />
+                            <dataGrid:GridTextColumn MappingName="Gender" />
+                            <dataGrid:GridDateColumn x:Name="birthDateColumn" MappingName="BirthDate"
+                                AllowBlankFilters="{Binding ElementName=ckbAllowBlankFiltersBirthDate, Path=IsChecked}"
+                                AllowFiltering="{Binding ElementName=ckbAllowFilterBirthDate, Path=IsChecked}"
+                                HeaderText="Birth Date"
+                                ImmediateUpdateColumnFilter="{Binding ElementName=ckbImmediateUpdateColumnFilterBirthDate, Path=IsChecked}"
+                                TextAlignment="Right" />
+                            <dataGrid:GridDateColumn MappingName="HireDate"
+                                FilterPopupStyle="{StaticResource popupstyleforHireDate}"
+                                HeaderText="Hire Date"
+                                TextAlignment="Right" />
+                            <dataGrid:GridNumericColumn MappingName="Salary" HeaderText="Salary" NumberFormatter="{Binding SystemCurrency,Source={StaticResource employeeViewModel}}" TextAlignment="Right" />
+                            <dataGrid:GridTextColumn
+                                FilterPopupStyle="{StaticResource popupstyleforDesignation}"
+                                HeaderText="Designation"
+                                MappingName="Title" />
+                            <dataGrid:GridTextColumn
+                                HeaderText="Marital Status"
+                                MappingName="MaritalStatus" />
+                            <dataGrid:GridTextColumn MappingName="Location" HeaderText="Location" />
+                        </dataGrid:SfDataGrid.Columns>
+                    </dataGrid:SfDataGrid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel  Orientation="Vertical">
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                            <CheckBox
+                                x:Name="ckbAllowFilters"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="True" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Employee ID Column" />
+                            <CheckBox
+                                x:Name="ckbAllowFilterEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="{Binding Path=CanAllowFiltering, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbImmediateUpdateColumnFilterEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="ImmediateUpdateColumnFilter"
+                                IsChecked="{Binding Path=CanImmediateUpdateColumnFilter, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbAllowBlankFiltersEmployeeID"
+                                Margin="16,5,5,5"
+                                Content="AllowBlankFilters"
+                                IsChecked="{Binding Path=CanAllowBlankFilters, Source={StaticResource employeeViewModel}}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Birth Date Column" />
+                            <CheckBox
+                                x:Name="ckbAllowFilterBirthDate"
+                                Margin="16,5,5,5"
+                                Content="AllowFilter"
+                                IsChecked="{Binding Path=CanAllowFiltering, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbImmediateUpdateColumnFilterBirthDate"
+                                Margin="16,5,5,5"
+                                Content="ImmediateUpdateColumnFilter"
+                                IsChecked="{Binding Path=CanImmediateUpdateColumnFilter, Source={StaticResource employeeViewModel}}" />
+                            <CheckBox
+                                x:Name="ckbAllowBlankFiltersBirthDate"
+                                Margin="16,5,5,5"
+                                Content="AllowBlankFilters"
+                                IsChecked="{Binding Path=CanAllowBlankFilters, Source={StaticResource employeeViewModel}}" />
+                        </StackPanel>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+   &lt;Page.Resources&gt;                    
+    &lt;Style x:Key=&quot;advancedfiltercontrolstyleforEmployeeID&quot; TargetType=&quot;dataGrid:AdvancedFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;CanGenerateUniqueItems&quot; Value=&quot;False&quot; /&gt;
+     &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforEmployeeID&quot; TargetType=&quot;dataGrid:GridFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;Both&quot; /&gt;
+         &lt;Setter Property=&quot;AdvancedFilterStyle&quot; Value=&quot;{StaticResource advancedfiltercontrolstyleforEmployeeID}&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforHireDate&quot; TargetType=&quot;dataGrid:GridFilterControl&quot;&gt;
+        &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;CheckboxFilter&quot; /&gt;
+     &lt;/Style&gt;
+    &lt;Style x:Key=&quot;popupstyleforDesignation&quot; TargetType=&quot;dataGrid:GridFilterControl&quot;&gt;
+         &lt;Setter Property=&quot;FilterMode&quot; Value=&quot;AdvancedFilter&quot; /&gt;
+    &lt;/Style&gt;  
+    &lt;/Page.Resources&gt;    
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot; 
+                              Height=&quot;500&quot;
+                              Width=&quot;Auto&quot;
+                              HorizontalAlignment=&quot;Left&quot;
+                              AllowFiltering=&quot;$(AdvanceAllowFiltering)&quot;
+                              ItemsSource=&quot;{Binding Employees}&quot;
+                              AutoGenerateColumns=&quot;False&quot;
+                              ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                              LiveDataUpdateMode=&quot;AllowDataShaping&quot;
+                              NavigationMode=&quot;Row&quot;&gt;
+        &lt;dataGrid:SfDataGrid.Columns&gt;
+           &lt;dataGrid:GridNumericColumn AllowBlankFilters=&quot;$(EmployeeIDColumnAllowBlankFilters)&quot;     
+                                               AllowFiltering=&quot;$(EmployeeIDColumnAllowFiltering)&quot;
+                                               FilterPopupStyle=&quot;{StaticResource popupstyleforEmployeeID}&quot;
+                                               HeaderText=&quot;Employee ID&quot;
+                                               ImmediateUpdateColumnFilter=&quot;$(EmployeeIDColumnImmediateUpdateColumnFilter)&quot;
+                                               MappingName=&quot;EmployeeID&quot;  /&gt;
+            &lt;dataGrid:GridTextColumn HeaderText=&quot;Employee Name&quot; MappingName=&quot;Name&quot; /&gt;
+            &lt;dataGrid:GridDateColumn MappingName=&quot;BirthDate&quot; HeaderText=&quot;Birth Date&quot; AllowBlankFilters=&quot;$(BirthDateColumnAllowBlankFilters)&quot;
+                                               AllowFiltering=&quot;$(BirthDateColumnAllowFiltering)&quot;
+                                               ImmediateUpdateColumnFilter=&quot;$(BirthDateColumnImmediateUpdateColumnFilter)&quot;
+                                               TextAlignment=&quot;Right&quot;/&gt;
+            &lt;dataGrid:GridDateColumn MappingName=&quot;HireDate&quot; HeaderText=&quot;Hire Date&quot;
+                                               FilterPopupStyle=&quot;{StaticResource popupstyleforHireDate}&quot;
+                                               TextAlignment=&quot;Right&quot; /&gt;
+            &lt;dataGrid:GridNumericColumn MappingName=&quot;Salary&quot; NumberFormatter=&quot;{Binding SystemCurrency, ,Source={StaticResource employeeViewModel}}&quot; TextAlignment=&quot;Right&quot; /&gt;
+            &lt;dataGrid:GridTextColumn HeaderText=&quot;Designation&quot; MappingName=&quot;Title&quot; Width=&quot;250&quot; 
+                                                FilterPopupStyle=&quot;{StaticResource popupstyleforDesignation}&quot; /&gt;    
+        &lt;/dataGrid:SfDataGrid.Columns&gt;
+    &lt;/dataGrid:SfDataGrid&gt; 
+                </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="AdvanceAllowFiltering"
+                        SubstitutionValue="{x:Bind sfDataGrid.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnAllowFiltering"
+                        SubstitutionValue="{x:Bind employeeIDColumn.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnAllowBlankFilters"
+                        SubstitutionValue="{x:Bind employeeIDColumn.AllowBlankFilters, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EmployeeIDColumnImmediateUpdateColumnFilter"
+                        SubstitutionValue="{x:Bind employeeIDColumn.ImmediateUpdateColumnFilter, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnAllowFiltering"
+                        SubstitutionValue="{x:Bind birthDateColumn.AllowFiltering, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnAllowBlankFilters"
+                        SubstitutionValue="{x:Bind birthDateColumn.AllowBlankFilters, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="BirthDateColumnImmediateUpdateColumnFilter"
+                        SubstitutionValue="{x:Bind birthDateColumn.ImmediateUpdateColumnFilter, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>
