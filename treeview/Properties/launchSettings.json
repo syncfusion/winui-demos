@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.treeviewdemos.winui_net50": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

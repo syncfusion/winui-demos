@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.notificationdemos.winui_net60": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
