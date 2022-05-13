@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.PieChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases pie chart which is ideal for the display of proportionate values expressed in either percentage or fractional formats.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="Internet usage in World" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+
+                        <chart:SfCircularChart.DataContext>
+                            <local:PieChartViewModel />
+                        </chart:SfCircularChart.DataContext>
+                        
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend ItemMargin="2" BorderThickness="1" DockPosition ="Right" Header="Country Details" />
+                        </chart:SfCircularChart.Legend>
+
+                        <chart:SfCircularChart.Series>
+                            <chart:PieSeries x:Name="pieSeries" CircularCoefficient="0.7"
+                        EnableAnimation="True" ShowDataLabels="True" GroupMode="Value" GroupTo="1000"
+                        ItemsSource="{Binding Data}" XBindingPath="Country"
+                        YBindingPath="Count" Palette="Custom" ColorModel="{StaticResource CustomColor}">
+                                <chart:PieSeries.DataLabelSettings>
+                                    <chart:CircularDataLabelSettings ConnectorType="Line" Position="OutsideExtended"
+                                                                   ShowConnectorLine="True" />
+                                </chart:PieSeries.DataLabelSettings>
+                            </chart:PieSeries>
+                        </chart:SfCircularChart.Series>
+                    </chart:SfCircularChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;&gt;
+
+    &lt;chart:SfCircularChart.Legend&gt;
+        &lt;chart:ChartLegend 
+                        ItemMargin=&quot;2&quot; 
+                        BorderThickness=&quot;1&quot; 
+                        DockPosition =&quot;Right&quot; /&gt;
+        &lt;/chart:SfCircularChart.Legend&gt;
+    
+        &lt;chart:PieSeries 
+                        ItemsSource=&quot;{Binding Data}&quot; 
+                        XBindingPath=&quot;Country&quot; 
+                        YBindingPath=&quot;Count&quot; 
+                        CircularCoefficient=&quot;0.7&quot; 
+                        Palette=&quot;Custom&quot; 
+                        ColorModel=&quot;{StaticResource CustomColor}&quot;
+                        EnableAnimation=&quot;True&quot; 
+                        ShowDataLabels=&quot;True&quot;
+                        GroupMode=&quot;Value&quot; 
+                        GroupTo=&quot;1000&quot; &gt;
+            &lt;chart:PieSeries.DataLabelSettings&gt;
+                &lt;chart:CircularDataLabelSettings 
+                        ShowConnectorLine=&quot;True&quot; 
+                        ConnectorType=&quot;Line&quot; 
+                        Position=&quot;OutsideExtended&quot;/&gt;
+            &lt;/chart:PieSeries.DataLabelSettings&gt;
+    
+        &lt;/chart:PieSeries&gt;
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

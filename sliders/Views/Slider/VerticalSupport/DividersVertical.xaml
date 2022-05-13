@@ -1,0 +1,73 @@
+﻿<Page x:Class="syncfusion.sliderdemos.winui.Views.Slider.DividersVertical"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:common="using:syncfusion.demoscommon.winui"
+      xmlns:slider="using:Syncfusion.UI.Xaml.Sliders">
+
+    <common:DemoLayout HeaderText="This sample shows how to display the simple vertical slider along with dividers."
+                       XamlSource="syncfusion.sliderdemos.winui/source\slider\Verticalsupport\dividervertical.xaml.txt">
+        <common:DemoLayout.Resources>
+            <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#0075e3</SolidColorBrush>
+            <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#660075e3</SolidColorBrush>
+            <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#0075e3</SolidColorBrush>
+
+            <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#0075e3</SolidColorBrush>
+            <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#660075e3</SolidColorBrush>
+            <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#0075e3</SolidColorBrush>
+        </common:DemoLayout.Resources>
+        <common:DemoLayout.Example>
+            <slider:SfSlider x:Name="dividerVerticalSlider"
+                             Height="300"
+                             VerticalAlignment="Center"
+                             Orientation="Vertical"
+                             Value="50"
+                             Interval="10"
+                             StepFrequency="10"
+                             ShowDividers="True"
+                             DividerHeight="4"
+                             DividerWidth="10"
+                             ActiveTrackHeight="4"
+                             InactiveTrackHeight="4"
+                             ActiveTrackFill="#0075e3"
+                             InactiveTrackFill="#660075e3"
+                             ThumbOverlayFill="#0075e3"
+                             ThumbBackground="#0075e3"
+                             ToolTipFormat="N0">
+
+                <slider:SfSlider.ActiveDividerTemplate>
+                    <DataTemplate>
+                        <Rectangle Height="5"
+                                   Width="10"
+                                   Fill="#0075e3" />
+                    </DataTemplate>
+                </slider:SfSlider.ActiveDividerTemplate>
+
+                <slider:SfSlider.DividerTemplate>
+                    <DataTemplate>
+                        <Rectangle Height="{Binding DividerHeight}"
+                                   Width="{Binding DividerWidth}"
+                                   Fill="{ThemeResource ControlOnImageFillColorSecondary}" />
+                    </DataTemplate>
+                </slider:SfSlider.DividerTemplate>
+
+                <slider:SfSlider.ToolTipStyle>
+                    <Style TargetType="slider:SliderToolTip">
+                        <Setter Property="Background"
+                                Value="#0075e3" />
+                        <Setter Property="Foreground"
+                                Value="White" />
+                    </Style>
+                </slider:SfSlider.ToolTipStyle>
+            </slider:SfSlider>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="dividerVerticalSliderValueSubstitute"
+                                           SubstitutionValue="{x:Bind dividerVerticalSlider.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+    </common:DemoLayout>
+</Page>

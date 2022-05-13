@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "syncfusion.editordemos.winui_net50": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.AreaChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:AreaChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample showcases area chart which connects the y-points using straight lines and forms an area covered by the lines and x-axis. This area is then shaded with a specified color or gradient.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Height="420"
+                        Palette="Custom"
+                        ColorModel="{StaticResource CustomColor}"
+                        HorizontalAlignment="Center"
+                        Header="Server Performance">
+
+                        <chart:SfCartesianChart.PrimaryAxis>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowGridLines="False" />
+                        </chart:SfCartesianChart.PrimaryAxis>
+
+                        <chart:SfCartesianChart.SecondaryAxis>
+                            <chart:NumericalAxis
+                                Maximum="80"
+                                Minimum="0"
+                                ShowGridLines="True" />
+                        </chart:SfCartesianChart.SecondaryAxis>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend DockPosition="Bottom"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:AreaSeries 
+                            Opacity="0.3"
+                            EnableAnimation="True"
+                            ItemsSource="{Binding Performance}"
+                            Label="Automation"
+                            ShowTooltip="True"
+                            XBindingPath="Date"
+                            YBindingPath="Automation" />
+
+                        <chart:AreaSeries 
+                            Opacity="0.3"
+                            EnableAnimation="True"
+                            ItemsSource="{Binding Performance}"
+                            Label="Application"
+                            ShowTooltip="True"
+                            XBindingPath="Date"
+                            YBindingPath="Application" />
+
+                        <chart:AreaSeries 
+                            Opacity="0.3"
+                            EnableAnimation="True"
+                            ItemsSource="{Binding Performance}"
+                            Label="Web"
+                            ShowTooltip="True"
+                            XBindingPath="Date"
+                            YBindingPath="Web" />
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Palette=&quot;Custom&quot; ColorModel=&quot;{StaticResource CustomColor}&quot;&gt;   
+                        
+        &lt;chart:SfCartesianChart.Legend&gt;
+                    &lt;chart:ChartLegend DockPosition=&quot;Bottom&quot;&gt;
+                    &lt;/chart:ChartLegend&gt;
+        &lt;/chart:SfCartesianChart.Legend&gt;
+
+        &lt;chart:AreaSeries 
+                        ItemsSource=&quot;{Binding Performance}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;Automation&quot;
+                        Label=&quot;Automation&quot; 
+                        EnableAnimation=&quot;True&quot; 
+                        ShowTooltip=&quot;True&quot;&gt;
+
+        &lt;chart:AreaSeries   
+                        ItemsSource=&quot;{Binding Performance}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;Application&quot; 
+                        Label=&quot;Application&quot; 
+                        EnableAnimation=&quot;True&quot; 
+                        ShowTooltip=&quot;True&quot;&gt;
+
+        &lt;chart:AreaSeries 
+                        ItemsSource=&quot;{Binding Performance}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;Web&quot;
+                        Label=&quot;Web&quot; 
+                        EnableAnimation=&quot;True&quot; 
+                        ShowTooltip=&quot;True&quot;&gt;
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="syncfusion.chartdemos.winui.Views.MultipleDoughnutChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:syncfusion.demoscommon.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:syncfusion.chartdemos.winui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases multiple doughnuts. The doughnut chart is best suited for presenting data in proportions.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart  x:Name="Chart" Header="Most populated continents" chart:DoughnutSeries.DoughnutHoleSize="0.05" Height="420"
+                  >
+
+                        <chart:SfCircularChart.Resources>
+                            <local:PopulationLabelConverter1 x:Key="populationLabelConverter1" />
+                            <local:PopulationLabelConverter2 x:Key="populationLabelConverter2" />
+                            <local:PopulationLabelConverter3 x:Key="populationLabelConverter3" />
+
+                            <DataTemplate x:Key="populationLabelTemplate1">
+                                <TextBlock
+                                FontSize="10"
+                                HighContrastAdjustment="None"    
+                                Foreground="White"
+                                Text="{Binding Converter={StaticResource populationLabelConverter1}}" />
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="populationLabelTemplate2">
+                                <TextBlock
+                                FontSize="10"
+                                HighContrastAdjustment="None"
+                                Foreground="White"
+                                Text="{Binding Converter={StaticResource populationLabelConverter2}}" />
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="populationLabelTemplate3">
+                                <TextBlock
+                                FontSize="10"
+                                HighContrastAdjustment="None"    
+                                Foreground="White"
+                                Text="{Binding Converter={StaticResource populationLabelConverter3}}" />
+                            </DataTemplate>
+                        </chart:SfCircularChart.Resources>
+
+                        <chart:SfCircularChart.DataContext>
+                            <local:CircularChartViewModel x:Name="viewmodel"/>
+                        </chart:SfCircularChart.DataContext>
+
+                        <chart:DoughnutSeries
+                        x:Name="pieSeries1"
+                        DoughnutCoefficient="1"
+                        DoughnutSize="0.85"
+                        ItemsSource="{Binding Population}"
+                        Label="Continents"
+                        Stroke="White"
+                        ShowDataLabels="True"    
+                        XBindingPath="Continent"
+                        YBindingPath="PopulationinContinents">
+                            <chart:DoughnutSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings
+                                ContentTemplate="{StaticResource populationLabelTemplate1}"
+                                Context="DataLabelItem"
+                                UseSeriesPalette="True" />
+                            </chart:DoughnutSeries.DataLabelSettings>
+                        </chart:DoughnutSeries>
+
+                        <chart:DoughnutSeries
+                        x:Name="pieSeries2"
+                        DoughnutCoefficient="1"
+                        DoughnutSize="0.85"
+                        ItemsSource="{Binding Population}"
+                        Label="Countries"
+                        Stroke="White"
+                        ShowDataLabels="True"    
+                        XBindingPath="Countries"
+                        YBindingPath="PopulationinCountries">
+                            <chart:DoughnutSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings
+                                ContentTemplate="{StaticResource populationLabelTemplate2}"
+                                Context="DataLabelItem"
+                                UseSeriesPalette="True" />
+                            </chart:DoughnutSeries.DataLabelSettings>
+                        </chart:DoughnutSeries>
+
+                        <chart:DoughnutSeries
+                        x:Name="pieSeries3"
+                        DoughnutCoefficient="1"
+                        DoughnutSize="0.85"
+                        ItemsSource="{Binding Population}"
+                        Label="States"
+                        Stroke="White"
+                        ShowDataLabels="True"
+                        XBindingPath="States"
+                        YBindingPath="PopulationinStates">
+                            <chart:DoughnutSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings
+                                ContentTemplate="{StaticResource populationLabelTemplate3}"
+                                Context="DataLabelItem"
+                                UseSeriesPalette="True" />
+                            </chart:DoughnutSeries.DataLabelSettings>
+                        </chart:DoughnutSeries>
+
+
+                    </chart:SfCircularChart>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; chart:DoughnutSeries.DoughnutHoleSize=&quot;0.05&quot;&gt;
+
+    &lt;chart:DoughnutSeries 
+                        ItemsSource=&quot;{Binding Population}&quot; 
+                        XBindingPath=&quot;Continent&quot; 
+                        YBindingPath=&quot;PopulationinContinents&quot; 
+                        Label=&quot;Continents&quot;
+                        ShowDataLabels=&quot;True&quot; 
+                        DoughnutCoefficient=&quot;1&quot; 
+                        DoughnutSize=&quot;0.85&quot; 
+                        ColorModel=&quot;{Binding CustomBrush1}&quot; 
+                        Palette=&quot;Custom&quot; 
+                        Stroke=&quot;White&quot;&gt;
+        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+            &lt;chart:CircularDataLabelSettings 
+                        ContentTemplate=&quot;{StaticResource populationLabelTemplate1}&quot; 
+                        Context=&quot;DataLabelItem&quot;
+                        UseSeriesPalette=&quot;True&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+                        
+    &lt;/chart:DoughnutSeries&gt;
+    
+    &lt;chart:DoughnutSeries 
+                        ItemsSource=&quot;{Binding Population}&quot; 
+                        XBindingPath=&quot;Countries&quot;  
+                        YBindingPath=&quot;PopulationinCountries&quot;  
+                        Label=&quot;Countries&quot;
+                        ShowDataLabels=&quot;True&quot;
+                        DoughnutCoefficient=&quot;1&quot; 
+                        DoughnutSize=&quot;0.85&quot; 
+                        ColorModel=&quot;{Binding CustomBrush2}&quot;
+                        Palette=&quot;Custom&quot; 
+                        Stroke=&quot;White&quot;&gt;
+        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+            &lt;chart:CircularDataLabelSettings 
+                        Context=&quot;DataLabelItem&quot; 
+                        ContentTemplate=&quot;{StaticResource populationLabelTemplate2}&quot; 
+                        UseSeriesPalette=&quot;True&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+    &lt;/chart:DoughnutSeries&gt;
+    
+    &lt;chart:DoughnutSeries 
+                        ItemsSource=&quot;{Binding Population}&quot; 
+                        XBindingPath=&quot;States&quot; 
+                        YBindingPath=&quot;PopulationinStates&quot; 
+                        Label=&quot;States&quot;
+                        ShowDataLabels=&quot;True&quot;
+                        DoughnutCoefficient=&quot;1&quot; 
+                        DoughnutSize=&quot;0.85&quot; 
+                        ColorModel=&quot;{Binding CustomBrush3}&quot; 
+                        Palette=&quot;Custom&quot; 
+                        Stroke=&quot;White&quot;&gt;
+        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+            &lt;chart:CircularDataLabelSettings  
+                        Context=&quot;DataLabelItem&quot; 
+                        ContentTemplate=&quot;{StaticResource populationLabelTemplate3}&quot;
+                        UseSeriesPalette=&quot;True&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+    &lt;/chart:DoughnutSeries&gt;
+    
+&lt;/chart:SfCircularChart&gt;
+    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

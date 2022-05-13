@@ -1,0 +1,64 @@
+﻿<Page x:Class="syncfusion.ribbondemos.winui.Sample3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:core="using:Syncfusion.UI.Xaml.Core"
+      Background="Transparent"
+      mc:Ignorable="d"
+      Height="460">
+    <Page.Resources>
+        <core:StringVisibilityConverter x:Key="StringVisibilityConverter" />
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Margin="5">
+        <Grid.Resources>
+            <x:Double x:Key="TileHeight">250</x:Double>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="DestinationElement1"
+              Grid.Row="0"
+              Grid.Column="0"
+              Width="150"
+              MinHeight="{StaticResource TileHeight}"
+              Margin="5"
+              VerticalAlignment="Top"
+              Background="{ThemeResource SystemAccentColor}" />
+
+        <Grid Grid.Row="0"
+              Grid.Column="1"
+              MinHeight="{StaticResource TileHeight}"
+              Margin="5"
+              Background="DarkGray">
+            <StackPanel Orientation="Horizontal"
+                        Margin="40">
+                <TextBlock Text="Last triggered item : "
+                           Visibility="{Binding ElementName=statusText, Path=Text, Converter={StaticResource StringVisibilityConverter}}"
+                           FontWeight="Bold"
+                           FontSize="14" />
+                <TextBlock x:Name="statusText"
+                           Text="{Binding Status, Mode=TwoWay}"
+                           FontSize="14" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              MinHeight="{StaticResource TileHeight}"
+              Margin="5"
+              Background="Gray" />
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              MinHeight="{StaticResource TileHeight}"
+              Margin="5"
+              Background="LightGray" />
+    </Grid>
+</Page>

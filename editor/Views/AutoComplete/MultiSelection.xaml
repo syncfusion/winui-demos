@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="syncfusion.editordemos.winui.Views.AutoComplete.MultiSelection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:syncfusion.editordemos.winui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:syncfusion.demoscommon.winui" xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:ListViewModel/>
+    </Page.DataContext>
+    <ScrollViewer>
+
+        <!-- Set IsTabStop as true for StackPanel to resolve focus moving to top most control while clicking empty space -->
+        <!-- MSDN link - https://github.com/microsoft/microsoft-ui-xaml/issues/597 -->
+        <StackPanel IsTabStop="True">
+
+           <common:DemoLayout 
+                HeaderText="The AutoComplete control allows single and multiple selection. The required selection mode can easily be specified using the SelectionMode property." 
+                XamlSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/MultiSelection_xaml.txt">
+
+                <common:DemoLayout.Example>
+                    <editors:SfAutoComplete x:Name="MultiSelectionAutoComplete"
+                                                PlaceholderText="example@domain.com"
+                                                Width="600"
+                                                Margin="20,50,40,50"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                TextMemberPath="EmployeeName"
+                                                DisplayMemberPath="Mail" 
+                                                SelectionMode="Multiple"
+                                                ItemsSource="{Binding Persons}" 
+                                                InputSubmitted="MultiSelectionAutoComplete_TextSubmitted"/>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+
+           <common:DemoLayout 
+                HeaderText="The AutoComplete control supports customized tokens." 
+                 XamlSource="syncfusion.editordemos.winui/Views/AutoComplete/Resources/SourceCodes/MultiSelectionTokenTemplate_xaml.txt">
+                <common:DemoLayout.Example>
+                    <editors:SfAutoComplete
+                            x:Name="customAutoComplete"
+                            Width="400"
+                            Margin="50" Header="Enter countries"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            SelectionMode="Multiple" InputSubmitted="customAutoComplete_TextSubmitted"
+                            DisplayMemberPath="CountryName" TextMemberPath="CountryName"
+                            ItemsSource="{Binding  SelectionBoxCountryList}">
+                        <editors:SfAutoComplete.TokenItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image      
+                                            Grid.Column="0"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" 
+                                            Source="{Binding FlagImage}" 
+                                            Width="36" Height="20"
+                                            Stretch="Uniform"/>
+
+                                    <TextBlock 
+                                            Margin="8,0,0,0"
+                                            Grid.Column="1" 
+                                            TextAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center" 
+                                            Text="{Binding CountryName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </editors:SfAutoComplete.TokenItemTemplate>
+                    </editors:SfAutoComplete>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="TextSearchMode"
+                            ItemsSource="{common:EnumToStringValues Type=editors:AutoCompleteTextSearchMode}"
+                            SelectedItem="{Binding ElementName=customAutoComplete ,Path=TextSearchMode,Converter={common:StringToEnumValueConverter Type=editors:AutoCompleteTextSearchMode},Mode=TwoWay}"
+                           />
+                </common:DemoLayout.Options>
+            </common:DemoLayout>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</Page>
