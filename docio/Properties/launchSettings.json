@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.dociodemos.winui_net50": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

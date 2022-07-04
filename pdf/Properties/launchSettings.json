@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.pdfdemos.winui_net": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

@@ -1,6 +1,0 @@
-﻿<calendar:SfCalendarDatePicker
-    FormatString="$(FormatString)"
-    DayFormat="$(DayFormat)"
-    MonthFormat="$(MonthFormat)"
-    DayOfWeekFormat="$(DayOfWeekFormat)"
-    MonthHeaderFormat="$(MonthHeaderFormat)"/>

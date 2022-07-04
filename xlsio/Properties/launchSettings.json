@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.xlsiodemos.winui_net60": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

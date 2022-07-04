@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.ribbondemos.winui_net50": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

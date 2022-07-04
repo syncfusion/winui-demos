@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.schedulerdemos.winui_net50": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

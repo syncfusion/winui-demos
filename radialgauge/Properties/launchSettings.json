@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "syncfusion.radialgaugedemos.winui_net50": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
