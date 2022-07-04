@@ -1,0 +1,32 @@
+//Create a new PDF document.
+PdfDocument document = new PdfDocument();
+//Creates a new page
+PdfPage page = document.Pages.Add();
+//Sets the margins to the page.
+document.PageSettings.SetMargins(0);
+//Create new PDF font instance.
+PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 10f);
+//Create new PDF solid brush.
+PdfBrush brush = new PdfSolidBrush(Color.FromArgb(255, 0, 0, 0));
+
+//Creates a new Square annotation.
+PdfSquareAnnotation squareAnnotation = new PdfSquareAnnotation(new RectangleF(30, 300, 80, 80));
+squareAnnotation.Text = "SquareAnnotation";
+squareAnnotation.InnerColor = new PdfColor(Color.Red);
+squareAnnotation.Color = new PdfColor(Color.Yellow);
+page.Graphics.DrawString("Square Annotation", font, brush, new PointF(30, 280));
+page.Annotations.Add(squareAnnotation);
+
+//Creating the stream object.
+using (MemoryStream stream = new MemoryStream())
+{
+    string fileName = "Annotation.pdf";
+
+    //Save and close the document.
+    document.Save(stream);
+    document.Close(true);
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save(fileName, stream);
+}

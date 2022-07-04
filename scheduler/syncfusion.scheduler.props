@@ -1,0 +1,222 @@
+<Project>
+<ItemGroup>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle12.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle12.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle11.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle11.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle0.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle0.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle2.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle2.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle6.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle6.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle7.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle7.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle3.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle3.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+     <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle4.png">
+		 <Link>Scheduler\Assets\Scheduler\People_Circle4.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle9.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle9.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle8.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle8.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle10.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle10.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle5.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle5.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Scheduler\Assets\Scheduler\People_Circle1.png">
+		<Link>Scheduler\Assets\Scheduler\People_Circle1.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+ <ItemGroup>
+    <Compile Include="..\Scheduler\Helper\AppointmentTemplateSelector.cs">
+		<Link>Scheduler\Helper\AppointmentTemplateSelector.cs</Link>
+	</Compile>
+    <Compile Include="..\Scheduler\Helper\MonthCellTemplateSelector.cs">
+		<Link>Scheduler\Helper\MonthCellTemplateSelector.cs</Link>
+	</Compile>
+	<Compile Include="..\Scheduler\Helper\SchedulerConverter.cs">
+		<Link>Scheduler\Helper\SchedulerConverter.cs</Link>
+	</Compile>
+	<Compile Include="..\Scheduler\Helper\SchedulerViewTypeHelper.cs">
+		<Link>Scheduler\Helper\SchedulerViewTypeHelper.cs</Link>
+	</Compile>
+    <Compile Include="..\Scheduler\Model\Event.cs">
+		<Link>Scheduler\Model\Event.cs</Link>
+	</Compile>
+    <Compile Include="..\Scheduler\SamplesConfiguration.cs">
+		<Link>Scheduler\SamplesConfiguration.cs</Link>
+	</Compile>
+	<Compile Include="..\Scheduler\ViewModel\LoadOnDemandViewModel.cs">
+		<Link>Scheduler\ViewModel\LoadOnDemandViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Scheduler\ViewModel\SchedulerBindingViewModel.cs">
+		<Link>Scheduler\ViewModel\SchedulerBindingViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Scheduler\ViewModel\GettingStartedViewModel.cs">
+		<Link>Scheduler\ViewModel\GettingStartedViewModel.cs</Link>
+	</Compile>
+	<Compile Include="..\Scheduler\Views\AppointmentCustomaization.xaml.cs">
+		<Link>Scheduler\Views\AppointmentCustomaization.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\AppointmentCustomaization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\CalendarIdentifier.xaml.cs">
+		<Link>Scheduler\Views\CalendarIdentifier.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\CalendarIdentifier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\DataBinding.xaml.cs">
+		<Link>Scheduler\Views\DataBinding.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\DataBinding.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\DateWiseResourceGrouping.xaml.cs">
+		<Link>Scheduler\Views\DateWiseResourceGrouping.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\DateWiseResourceGrouping.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\DragAndDrop.xaml.cs">
+		<Link>Scheduler\Views\DragAndDrop.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\DragAndDrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\GettingStarted.xaml.cs">
+		<Link>Scheduler\Views\GettingStarted.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\GettingStarted.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\HorizontalResourceGrouping.xaml.cs">
+		<Link>Scheduler\Views\HorizontalResourceGrouping.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\HorizontalResourceGrouping.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\LoadOnDemand.xaml.cs">
+		<Link>Scheduler\Views\LoadOnDemand.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\LoadOnDemand.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\MonthCellCustomization.xaml.cs">
+		<Link>Scheduler\Views\MonthCellCustomization.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\MonthCellCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\RecurringAppointment.xaml.cs">
+		<Link>Scheduler\Views\RecurringAppointment.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\RecurringAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\RecursiveExceptionAppointment.xaml.cs">
+		<Link>Scheduler\Views\RecursiveExceptionAppointment.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\RecursiveExceptionAppointment.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\SpecialTimeRegionCustomization.xaml.cs">
+		<Link>Scheduler\Views\SpecialTimeRegionCustomization.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\SpecialTimeRegionCustomization.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\TimelineResourceGrouping.xaml.cs">
+		<Link>Scheduler\Views\TimelineResourceGrouping.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\TimelineResourceGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Scheduler\Views\TimelineViews.xaml.cs">
+		<Link>Scheduler\Views\TimelineViews.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\TimelineViews.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Scheduler\Views\TimeslotCustomization.xaml.cs">
+		<Link>Scheduler\Views\TimeslotCustomization.xaml.cs</Link>
+      <DependentUpon>..\Scheduler\Views\TimeslotCustomization.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\Scheduler\Views\AppointmentCustomaization.xaml">
+		<Link>Scheduler\Views\AppointmentCustomaization.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Scheduler\Views\CalendarIdentifier.xaml">
+		<Link>Scheduler\Views\CalendarIdentifier.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Scheduler\Views\DataBinding.xaml">
+		<Link>Scheduler\Views\DataBinding.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\DateWiseResourceGrouping.xaml">
+		<Link>Scheduler\Views\DateWiseResourceGrouping.xaml</Link>
+	  <SubType>Designer</SubType>
+	  <Generator>MSBuild:Compile</Generator>
+	</Page>
+	<Page Include="..\Scheduler\Views\DragAndDrop.xaml">
+		<Link>Scheduler\Views\DragAndDrop.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Scheduler\Views\GettingStarted.xaml">
+		<Link>Scheduler\Views\GettingStarted.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\HorizontalResourceGrouping.xaml">
+		<Link>Scheduler\Views\HorizontalResourceGrouping.xaml</Link>
+	   <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\LoadOnDemand.xaml">
+		<Link>Scheduler\Views\LoadOnDemand.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\MonthCellCustomization.xaml">
+		<Link>Scheduler\Views\MonthCellCustomization.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\RecurringAppointment.xaml">
+		<Link>Scheduler\Views\RecurringAppointment.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Scheduler\Views\RecursiveExceptionAppointment.xaml">
+		<Link>Scheduler\Views\RecursiveExceptionAppointment.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\SpecialTimeRegionCustomization.xaml">
+		<Link>Scheduler\Views\SpecialTimeRegionCustomization.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\TimelineResourceGrouping.xaml">
+		<Link>Scheduler\Views\TimelineResourceGrouping.xaml</Link>
+	   <SubType>Designer</SubType>
+	  <Generator>MSBuild:Compile</Generator>
+	</Page>
+    <Page Include="..\Scheduler\Views\TimelineViews.xaml">
+		<Link>Scheduler\Views\TimelineViews.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Scheduler\Views\TimeslotCustomization.xaml">
+		<Link>Scheduler\Views\TimeslotCustomization.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

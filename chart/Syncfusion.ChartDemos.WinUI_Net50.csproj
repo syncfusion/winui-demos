@@ -1,0 +1,451 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<AssemblyName>Syncfusion.ChartDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.ChartDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+		<None Remove="syncfusion.chartdemos.winui_TemporaryKey.pfx"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Converter\Converters.cs"/>
+		<Compile Include="Converter\ScatterAdornmentConverter.cs"/>
+		<Compile Include="Converter\ScatterAdornmentForegroundConverter.cs"/>
+		<Compile Include="Converter\ScatterAngleConverter.cs"/>
+		<Compile Include="Converter\ScatterInteriorConverter.cs"/>
+		<Compile Include="Converter\SplineValueConverter.cs"/>
+		<Compile Include="Model\AreaChartModel.cs"/>
+		<Compile Include="Model\BubbleChartModel.cs"/>
+		<Compile Include="Model\ColumnChartModel.cs"/>
+		<Compile Include="Model\Commodities.cs"/>
+		<Compile Include="Model\CurenncyDetailModel.cs"/>
+		<Compile Include="Model\CustomToolTipModel.cs"/>
+		<Compile Include="Model\DataValuesSpline.cs"/>
+		<Compile Include="Model\DoughnutChartModel.cs"/>
+		<Compile Include="Model\DoughnutChartPopulations.cs"/>
+		<Compile Include="Model\FunnelChartModel.cs"/>
+		<Compile Include="Model\LineChartModel.cs"/>
+		<Compile Include="Model\Model.cs"/>
+		<Compile Include="Model\PieChartModel.cs"/>
+		<Compile Include="Model\PolarChartModel.cs"/>
+		<Compile Include="Model\Population.cs"/>
+		<Compile Include="Model\PyramidChartModel.cs"/>
+		<Compile Include="Model\Sales.cs"/>
+		<Compile Include="Model\ScatterChartModel.cs"/>
+		<Compile Include="Model\ScatterDataValues.cs"/>
+		<Compile Include="Model\SemiPieAndDoughnutChartModel.cs"/>
+		<Compile Include="Model\SplineAreaChartModel.cs"/>
+		<Compile Include="Model\SplineChartModel.cs"/>
+		<Compile Include="Model\StackingAreaChartModel.cs"/>
+		<Compile Include="Model\StackingColumnChartModel.cs"/>
+		<Compile Include="Model\StackingGroupModel.cs"/>
+		<Compile Include="Model\StackingLineChartModel.cs"/>
+		<Compile Include="Model\FastColumnChartModel.cs"/>
+		<Compile Include="Model\FastLineChartModel.cs"/>
+		<Compile Include="Model\StepAreaChartModel.cs"/>
+		<Compile Include="Model\StepLineChartModel.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="ViewModel\AreaChartViewModel.cs"/>
+		<Compile Include="ViewModel\BubbleChartViewModel.cs"/>
+		<Compile Include="ViewModel\ColumnChartViewModel.cs"/>
+		<Compile Include="ViewModel\CommoditiesPrices.cs"/>
+		<Compile Include="ViewModel\CurrencyDataViewModel.cs"/>
+		<Compile Include="Resources\ColorModelResource.cs"/>
+		<Compile Include="ViewModel\CustomToolTipViewModel.cs"/>
+		<Compile Include="ViewModel\DoughnutChartViewModel.cs"/>
+		<Compile Include="ViewModel\FunnelChartViewModel.cs"/>
+		<Compile Include="ViewModel\LineChartViewModel.cs"/>
+		<Compile Include="ViewModel\PieChartViewModel.cs"/>
+		<Compile Include="ViewModel\PolarChartViewModel.cs"/>
+		<Compile Include="ViewModel\PyramidChartViewModel.cs"/>
+		<Compile Include="ViewModel\ScatterChartViewModel.cs"/>
+		<Compile Include="ViewModel\SeriesSelectionChartViewModel.cs"/>
+		<Compile Include="ViewModel\SplineAreaChartViewModel.cs"/>
+		<Compile Include="ViewModel\SplineChartViewModel.cs"/>
+		<Compile Include="ViewModel\StackingAreaChartViewModel.cs"/>
+		<Compile Include="ViewModel\StackingColumnChartViewModel.cs"/>
+		<Compile Include="ViewModel\StackingGroupViewModel.cs"/>
+		<Compile Include="ViewModel\StackingLineChartViewModel.cs"/>
+		<Compile Include="ViewModel\StepAreaChartViewModel.cs"/>
+		<Compile Include="ViewModel\StepLineChartViewModel.cs"/>
+		<Compile Include="ViewModel\FastColumnChartViewModel.cs"/>
+		<Compile Include="ViewModel\FastLineChartViewModel.cs"/>
+		<Compile Include="ViewModel\FastScatterChartViewModel.cs"/>
+		<Compile Include="ViewModel\ViewModel.cs"/>
+		<Compile Include="ViewModel\ViewModelScatter.cs"/>
+		<Compile Include="ViewModel\ViewModelSpline.cs"/>
+		<Compile Include="Views\Circular Charts\DoughnutChart.xaml.cs">
+			<DependentUpon>DoughnutChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Circular Charts\MultipleDoughnutChart.xaml.cs">
+			<DependentUpon>MultipleDoughnutChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Circular Charts\MultiplePieChart.xaml.cs">
+			<DependentUpon>MultiplePieChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Circular Charts\PieChart.xaml.cs">
+			<DependentUpon>PieChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Circular Charts\SemiDoughnutChart.xaml.cs">
+			<DependentUpon>SemiDoughnutChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Circular Charts\SemiPieChart.xaml.cs">
+			<DependentUpon>SemiPieChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\AreaChart.xaml.cs">
+			<DependentUpon>AreaChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\BubbleChart.xaml.cs">
+			<DependentUpon>BubbleChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\ColumnChart.xaml.cs">
+			<DependentUpon>ColumnChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\LineChart.xaml.cs">
+			<DependentUpon>LineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Funnel And Pyramid Charts\FunnelChart.xaml.cs">
+			<DependentUpon>FunnelChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Palettes\ColorPalettes.xaml.cs">
+			<DependentUpon>ColorPalettes.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\ScatterChart.xaml.cs">
+			<DependentUpon>ScatterChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Funnel And Pyramid Charts\PyramidChart.xaml.cs">
+			<DependentUpon>PyramidChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Polar And Radar Charts\PolarChart.xaml.cs">
+			<DependentUpon>PolarChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Polar And Radar Charts\RadarChart.xaml.cs">
+			<DependentUpon>RadarChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Series Template\CustomSplineSeries.xaml.cs">
+			<DependentUpon>CustomSplineSeries.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Series Template\CustomScatterSeries.xaml.cs">
+			<DependentUpon>CustomScatterSeries.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Chart Interactivity\SelectionBehavior.xaml.cs">
+			<DependentUpon>SelectionBehavior.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Chart Interactivity\Tooltip.xaml.cs">
+			<DependentUpon>Tooltip.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Chart Interactivity\Trackball.xaml.cs">
+			<DependentUpon>Trackball.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\SplineAreaChart.xaml.cs">
+			<DependentUpon>SplineAreaChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\SplineChart.xaml.cs">
+			<DependentUpon>SplineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\StepAreaChart.xaml.cs">
+			<DependentUpon>StepAreaChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Basic Charts\StepLineChart.xaml.cs">
+			<DependentUpon>StepLineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts\Grouping.xaml.cs">
+			<DependentUpon>Grouping.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts\StackingAreaChart.xaml.cs">
+			<DependentUpon>StackingAreaChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts\StackingColumnChart.xaml.cs">
+			<DependentUpon>StackingColumnChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts\StackingLineChart.xaml.cs">
+			<DependentUpon>StackingLineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts 100\StackingArea100Chart.xaml.cs">
+			<DependentUpon>StackingArea100Chart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts 100\StackingColumn100Chart.xaml.cs">
+			<DependentUpon>StackingColumn100Chart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Stacking Charts 100\StackingLine100Chart.xaml.cs">
+			<DependentUpon>StackingLine100Chart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Fast Charts\FastColumnChart.xaml.cs">
+			<DependentUpon>FastColumnChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Fast Charts\FastLineChart.xaml.cs">
+			<DependentUpon>FastLineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Fast Charts\FastScatterChart.xaml.cs">
+			<DependentUpon>FastScatterChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Fast Charts\FastStepLineChart.xaml.cs">
+			<DependentUpon>FastStepLineChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Vertical Chart\VerticalChart.xaml.cs">
+			<DependentUpon>VerticalChart.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Chart Interactivity\Crosshair.xaml.cs">
+			<DependentUpon>Crosshair.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Chart Interactivity\ZoomPanBehavior.xaml.cs">
+			<DependentUpon>ZoomPanBehavior.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Chart\audi.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\benz.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\bmw.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\jaguar.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\Rolls-Royce.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\skoda.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Chart\volvo.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml"/>
+		<Page Include="Views\Circular Charts\DoughnutChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Circular Charts\MultipleDoughnutChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Circular Charts\MultiplePieChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Circular Charts\PieChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Circular Charts\SemiDoughnutChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Circular Charts\SemiPieChart.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Basic Charts\AreaChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\BubbleChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\ColumnChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\LineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Funnel And Pyramid Charts\FunnelChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Palettes\ColorPalettes.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\ScatterChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Funnel And Pyramid Charts\PyramidChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Polar And Radar Charts\PolarChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Polar And Radar Charts\RadarChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Series Template\CustomSplineSeries.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Series Template\CustomScatterSeries.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Chart Interactivity\SelectionBehavior.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Chart Interactivity\Tooltip.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Chart Interactivity\Trackball.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\SplineAreaChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\SplineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\StepAreaChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Basic Charts\StepLineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts\Grouping.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts\StackingAreaChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts\StackingColumnChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts\StackingLineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts 100\StackingArea100Chart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts 100\StackingColumn100Chart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Stacking Charts 100\StackingLine100Chart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Vertical Chart\VerticalChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Chart Interactivity\Crosshair.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Chart Interactivity\ZoomPanBehavior.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Fast Charts\FastColumnChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Fast Charts\FastLineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Fast Charts\FastScatterChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Fast Charts\FastStepLineChart.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Resources\ColorModel.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Chart.WinUI" Version="20.2.0.36"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net50.csproj"/>
+	</ItemGroup>
+</Project>
