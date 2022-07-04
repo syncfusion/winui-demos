@@ -1,0 +1,117 @@
+﻿<Page
+    x:Class="TreeGrid.Selection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:grid="using:Syncfusion.UI.Xaml.Grids"
+    xmlns:local="using:TreeGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:treeGrid="using:Syncfusion.UI.Xaml.TreeGrid"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:EmployeeViewModel x:Key="employeeViewModel" />
+    </Page.Resources>
+    <Grid DataContext="{StaticResource employeeViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <StackPanel>
+                <common:DemoLayout x:Name="Example1" HeaderText="This sample showcases the row selection capability of the TreeGrid control. The control provides interactive support for selecting rows in different modes smoothly. Select a specific row or group of rows programmatically or by mouse and keyboard interactions with the SelectionMode property. This property provides options like single, multiple, extended, and none. ">
+                    <common:DemoLayout.Example>
+                        <treeGrid:SfTreeGrid
+                        x:Name="sfTreeGrid"
+                        Height="450"
+                        Width="Auto"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        AutoExpandMode="RootNodesExpanded"
+                        AutoGenerateColumns="False"
+                        ChildPropertyName="ReportsTo"
+                        ColumnWidthMode="Auto"
+                        ItemsSource="{Binding Employees}"
+                        LiveNodeUpdateMode="AllowDataShaping"
+                        NavigationMode="{Binding SelectedValue, Converter={enumextension:StringToEnumValueConverter IsInversed=True, Type=grid:NavigationMode}, Mode=TwoWay, ElementName=cmbnavigationMode}"
+                        ParentPropertyName="ID"
+                        SelectedIndex="0"
+                        SelectionMode="{Binding SelectedValue, Converter={enumextension:StringToEnumValueConverter IsInversed=True, Type=grid:GridSelectionMode}, Mode=TwoWay, ElementName=cmbSelectionMode}"
+                        SelfRelationRootValue="-1">
+
+                            <treeGrid:SfTreeGrid.Columns>
+                                <treeGrid:TreeGridTextColumn HeaderText="First Name" MappingName="FirstName" />
+                                <treeGrid:TreeGridTextColumn HeaderText="Last Name" MappingName="LastName" />
+                                <treeGrid:TreeGridNumericColumn
+                                HeaderText="Employee ID"
+                                MappingName="ID"
+                                TextAlignment="Right" />
+                                <treeGrid:TreeGridTextColumn MappingName="Title" />
+                                <treeGrid:TreeGridDateColumn
+                                HeaderText="Date of Joining"
+                                MappingName="DOJ"
+                                TextAlignment="Right" />
+                                <treeGrid:TreeGridNumericColumn NumberFormatter="{Binding SystemCurrency,Source={StaticResource employeeViewModel}}"  
+                                                           MappingName="Salary"
+                                                           TextAlignment="Right"/>
+                                <treeGrid:TreeGridNumericColumn HeaderText="Reports To" MappingName="ReportsTo" TextAlignment="Right"/>
+                            </treeGrid:SfTreeGrid.Columns>
+                        </treeGrid:SfTreeGrid>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Options>
+                        <StackPanel>
+                            <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Text="Options" />
+                            <ComboBox
+                            x:Name="cmbSelectionMode"
+                            Header="SelectionMode"
+                            Margin="16,5,5,5"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=grid:GridSelectionMode}"
+                            SelectedIndex="1">
+                            </ComboBox>
+                            <ComboBox
+                            x:Name="cmbnavigationMode"
+                            Margin="16,5,5,5"
+                            Header="NavigationMode"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=grid:NavigationMode}"
+                            SelectedIndex="1">
+                            </ComboBox>
+                        </StackPanel>
+                    </common:DemoLayout.Options>
+                    <common:DemoLayout.Xaml>
+                        <x:String xml:space="preserve">
+    &lt;treeGrid:SfTreeGrid Name=&quot;sfTreeGrid&quot;
+                              Width=&quot;Auto&quot;
+                              HorizontalAlignment=&quot;Left&quot;
+                              AutoExpandMode=&quot;RootNodesExpanded&quot;
+                              AutoGenerateColumns=&quot;False&quot;
+                              ChildPropertyName=&quot;ReportsTo&quot;
+                              SelfRelationRootValue=&quot;-1&quot;
+                              ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                              ItemsSource=&quot;{Binding Employees}&quot;
+                              LiveNodeUpdateMode=&quot;AllowDataShaping&quot;
+                              NavigationMode=&quot;$(NavigationMode)&quot;
+                              ParentPropertyName=&quot;ID&quot;
+                              SelectedIndex=&quot;0&quot;
+                              SelectionMode=&quot;$(SelectionMode)&quot; /&gt;
+                </x:String>
+                    </common:DemoLayout.Xaml>
+                    <common:DemoLayout.Substitutions>
+                        <common:DemoLayoutSubstitution
+                        Key="SelectionMode"
+                        SubstitutionValue="{x:Bind sfTreeGrid.SelectionMode, Mode=OneWay}" />
+                        <common:DemoLayoutSubstitution
+                        Key="NavigationMode"
+                        SubstitutionValue="{x:Bind sfTreeGrid.NavigationMode, Mode=OneWay}" />
+                    </common:DemoLayout.Substitutions>
+                </common:DemoLayout>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

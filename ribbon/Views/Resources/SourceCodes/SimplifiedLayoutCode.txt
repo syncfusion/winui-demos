@@ -1,0 +1,94 @@
+﻿ <ribbon:SfRibbon x:Name="simplifiedRibbon"
+                        AllowMinimize="True"
+                        ActiveLayoutMode="Simplified"
+                        LayoutModeOptions="Normal,Simplified"
+                        BackstageMenuButtonContent="File">
+       <ribbon:SfRibbon.Tabs>
+           <ribbon:RibbonTab Header="Home">
+               <ribbon:RibbonGroup Header="Clipboard"
+                                       LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+                   <ribbon:RibbonSplitButton Command="{Binding ButtonCommand}"
+                                                 CommandParameter="Paste"
+                                                 Content="Paste"
+                                                 DisplayOptions="Normal,Simplified"
+                                                 Icon="Paste"
+                                                 >
+                       <ribbon:RibbonSplitButton.Flyout>
+                         ...
+                       </ribbon:RibbonSplitButton.Flyout>
+                   </ribbon:RibbonSplitButton>
+                   <ribbon:RibbonButton Command="{Binding ButtonCommand}"
+                                            CommandParameter="Cut"
+                                            Content="Cut"
+                                            DisplayOptions="Normal,Overflow"
+                                            Icon="Cut"
+                                             />
+                   <ribbon:RibbonButton Command="{Binding ButtonCommand}"
+                                            CommandParameter="Copy"
+                                            Content="Copy"
+                                            DisplayOptions="Normal,Overflow"
+                                            Icon="Copy"
+                                             />
+                   <ribbon:RibbonButton Command="{Binding ButtonCommand}"
+                                            CommandParameter="Format Painter"
+                                            Content="Format Painter"
+                                            DisplayOptions="Normal,Simplified"
+                                            >
+                      ..
+                   </ribbon:RibbonButton>
+               </ribbon:RibbonGroup>
+               <ribbon:RibbonGroup Header="File"
+                                       LauncherButtonClick="RibbonGroup_LauncherButtonClick">
+                  ...
+               </ribbon:RibbonGroup>
+               <ribbon:RibbonGroup Header="Font"
+                                       LauncherButtonClick="RibbonGroup_LauncherButtonClick"
+                                       OverflowItemDisplayMode="GroupLevel">
+                   <ribbon:RibbonItemsHost DisplayOptions="Normal,Simplified"
+                                               MaxRowCount="2">
+                       <ribbon:RibbonItemHost DisplayOptions="Normal,Simplified">
+                           <ribbon:RibbonItemHost.ItemTemplate>
+                               <DataTemplate>
+                                   <ComboBox Width="200"
+                                             PlaceholderForeground="#A2A2A2"
+                                             PlaceholderText="Select Font">
+                                       <ComboBoxItem Content="Calibri"
+                                                     IsSelected="True" />
+                                       <ComboBoxItem Content="Arial" />
+                                       <ComboBoxItem Content="Segoe UI" />
+                                   </ComboBox>
+                               </DataTemplate>
+                           </ribbon:RibbonItemHost.ItemTemplate>
+                       </ribbon:RibbonItemHost>
+                       <ribbon:RibbonItemHost DisplayOptions="Normal,Overflow">
+                           <ribbon:RibbonItemHost.ItemTemplate>
+                               <DataTemplate>
+                                   <ComboBox x:Name="FontSizeComboBox"
+                                             Width="97">
+                                      ...
+                                   </ComboBox>
+                               </DataTemplate>
+                           </ribbon:RibbonItemHost.ItemTemplate>
+                       </ribbon:RibbonItemHost>
+                     ...
+               </ribbon:RibbonGroup>
+               <ribbon:RibbonGroup Header="Editing"
+                                       ShowLauncherButton="False">
+                  ....
+               </ribbon:RibbonGroup>
+               <ribbon:RibbonGroup Header="Paragraph"
+                                       ShowLauncherButton="False">
+                  .....
+               </ribbon:RibbonGroup>
+               <ribbon:RibbonGroup Header="Voice"
+                                       ShowLauncherButton="False">
+                  .....
+               </ribbon:RibbonGroup>
+           </ribbon:RibbonTab>
+           <ribbon:RibbonTab Header="Insert">
+              ....
+           </ribbon:RibbonTab>
+           <ribbon:RibbonTab Header="View">
+               ....
+           </ribbon:RibbonTab>
+   </ribbon:SfRibbon>

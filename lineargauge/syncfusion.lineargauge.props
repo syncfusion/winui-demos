@@ -1,0 +1,325 @@
+<Project>
+ <ItemGroup>
+	  <Compile Include="..\LinearGauge\SamplesConfiguration.cs">
+		  <Link>LinearGauge\SamplesConfiguration.cs</Link>
+	  </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\AxisCornerStyle\AxisCornerStyle.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\AxisCornerStyle\AxisCornerStyle.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\AxisCornerStyle\AxisCornerStyle.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\DefaultAxis\DefaultAxis.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\DefaultAxis\DefaultAxis.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\DefaultAxis\DefaultAxis.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\InversedAxis\InversedAxis.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\InversedAxis\InversedAxis.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\InversedAxis\InversedAxis.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\LabelCustomization\LabelCustomization.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\LabelCustomization\LabelCustomization.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\LabelCustomization\LabelCustomization.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\TextLabel\TextLabel.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\TextLabel\TextLabel.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\TextLabel\TextLabel.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\TickCustomization\TickCustomization.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\TickCustomization\TickCustomization.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\TickCustomization\TickCustomization.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Axis\VerticalAxis\VerticalAxis.xaml.cs">
+		    <Link>LinearGauge\Views\Axis\VerticalAxis\VerticalAxis.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Axis\VerticalAxis\VerticalAxis.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\GettingStarted\GettingStarted.xaml.cs">
+		    <Link>LinearGauge\Views\GettingStarted\GettingStarted.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\GettingStarted\GettingStarted.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Pointers\BarPointer\BarPointer.xaml.cs">
+		    <Link>LinearGauge\Views\Pointers\BarPointer\BarPointer.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Pointers\BarPointer\BarPointer.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Pointers\ContentPointer\ContentPointer.xaml.cs">
+		    <Link>LinearGauge\Views\Pointers\ContentPointer\ContentPointer.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Pointers\ContentPointer\ContentPointer.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Pointers\MultiplePointers\MultiplePointers.xaml.cs">
+		    <Link>LinearGauge\Views\Pointers\MultiplePointers\MultiplePointers.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Pointers\MultiplePointers\MultiplePointers.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Range\LinearRange\LinearRange.xaml.cs">
+		    <Link>LinearGauge\Views\Range\LinearRange\LinearRange.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Range\LinearRange\LinearRange.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Range\MultipleRanges\MultipleRanges.xaml.cs">
+		    <Link>LinearGauge\Views\Range\MultipleRanges\MultipleRanges.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Range\MultipleRanges\MultipleRanges.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Range\RangeColorAxis\RangeColorAxis.xaml.cs">
+		    <Link>LinearGauge\Views\Range\RangeColorAxis\RangeColorAxis.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Range\RangeColorAxis\RangeColorAxis.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\Range\VerticalRanges\VerticalRanges.xaml.cs">
+		    <Link>LinearGauge\Views\Range\VerticalRanges\VerticalRanges.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\Range\VerticalRanges\VerticalRanges.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\BatteryDemo\BatteryDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\BatteryDemo\BatteryDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\BatteryDemo\BatteryDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\BulletGraphDemo\BulletGraphDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\BulletGraphDemo\BulletGraphDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\BulletGraphDemo\BulletGraphDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\SleepWatchScore\SleepWatchScore.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\SleepWatchScore\SleepWatchScore.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\SleepWatchScore\SleepWatchScore.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\StepsCounter\StepsCounter.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\StepsCounter\StepsCounter.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\StepsCounter\StepsCounter.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\Thermometer\ThermometerDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\Thermometer\ThermometerDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\Thermometer\ThermometerDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml</DependentUpon>
+	   </Compile>
+	   <Compile Include="..\LinearGauge\Views\ShowCase\WaterLevelIndicator\WaterLevelIndicatorDemo.xaml.cs">
+		    <Link>LinearGauge\Views\ShowCase\WaterLevelIndicator\WaterLevelIndicatorDemo.xaml.cs</Link>
+		   <DependentUpon>..\LinearGauge\Views\ShowCase\WaterLevelIndicator\WaterLevelIndicatorDemo.xaml</DependentUpon>
+	   </Compile>
+  </ItemGroup>
+   <ItemGroup>
+	   <Page Include="..\LinearGauge\Views\Axis\AxisCornerStyle\AxisCornerStyle.xaml">
+		    <Link>LinearGauge\Views\Axis\AxisCornerStyle\AxisCornerStyle.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\DefaultAxis\DefaultAxis.xaml">
+		    <Link>LinearGauge\Views\Axis\DefaultAxis\DefaultAxis.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\InversedAxis\InversedAxis.xaml">
+		    <Link>LinearGauge\Views\Axis\InversedAxis\InversedAxis.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\LabelCustomization\LabelCustomization.xaml">
+		    <Link>LinearGauge\Views\Axis\LabelCustomization\LabelCustomization.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\TextLabel\TextLabel.xaml">
+		    <Link>LinearGauge\Views\Axis\TextLabel\TextLabel.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\TickCustomization\TickCustomization.xaml">
+		    <Link>LinearGauge\Views\Axis\TickCustomization\TickCustomization.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Axis\VerticalAxis\VerticalAxis.xaml">
+		    <Link>LinearGauge\Views\Axis\VerticalAxis\VerticalAxis.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\GettingStarted\GettingStarted.xaml">
+		    <Link>LinearGauge\Views\GettingStarted\GettingStarted.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Pointers\BarPointer\BarPointer.xaml">
+		    <Link>LinearGauge\Views\Pointers\BarPointer\BarPointer.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Pointers\ContentPointer\ContentPointer.xaml">
+		    <Link>LinearGauge\Views\Pointers\ContentPointer\ContentPointer.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Pointers\MultiplePointers\MultiplePointers.xaml">
+		    <Link>LinearGauge\Views\Pointers\MultiplePointers\MultiplePointers.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Range\LinearRange\LinearRange.xaml">
+		    <Link>LinearGauge\Views\Range\LinearRange\LinearRange.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Range\MultipleRanges\MultipleRanges.xaml">
+		    <Link>LinearGauge\Views\Range\MultipleRanges\MultipleRanges.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Range\VerticalRanges\VerticalRanges.xaml">
+		    <Link>LinearGauge\Views\Range\VerticalRanges\VerticalRanges.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\Range\RangeColorAxis\RangeColorAxis.xaml">
+		    <Link>LinearGauge\Views\Range\RangeColorAxis\RangeColorAxis.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\BatteryDemo\BatteryDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\BatteryDemo\BatteryDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\BulletGraphDemo\BulletGraphDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\BulletGraphDemo\BulletGraphDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\SleepWatchScore\SleepWatchScore.xaml">
+		    <Link>LinearGauge\Views\ShowCase\SleepWatchScore\SleepWatchScore.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\StepsCounter\StepsCounter.xaml">
+		    <Link>LinearGauge\Views\ShowCase\StepsCounter\StepsCounter.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\Thermometer\ThermometerDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\Thermometer\ThermometerDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+	   <Page Include="..\LinearGauge\Views\ShowCase\WaterLevelIndicator\WaterLevelIndicatorDemo.xaml">
+		    <Link>LinearGauge\Views\ShowCase\WaterLevelIndicator\WaterLevelIndicatorDemo.xaml</Link>
+		   <SubType>Designer</SubType>
+		   <Generator>MSBuild:Compile</Generator>
+	   </Page>
+   </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\AxisCornerStyle\AxisCornerStyle.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\AxisCornerStyle\AxisCornerStyle.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\DefaultAxis\DefaultAxis.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\DefaultAxis\DefaultAxis.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\InversedAxis\InversedAxis.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\InversedAxis\InversedAxis.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\LabelCustomization\LabelCustomization.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\LabelCustomization\LabelCustomization.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\TextLabel\TextLabel.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\TextLabel\TextLabel.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\TickCustomization\TickCustomization.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\TickCustomization\TickCustomization.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Axis\VerticalAxis\VerticalAxis.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Axis\VerticalAxis\VerticalAxis.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\BarPointer\BarPointer.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\BarPointer\BarPointer.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\BarPointer\CornerStyleBarPointer.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\BarPointer\CornerStyleBarPointer.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\BarPointer\GradientBarPointer.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\BarPointer\GradientBarPointer.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\ContentPointer\ContentPointer.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\ContentPointer\ContentPointer.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\MultiplePointers\MultiplePointers.xaml.cs.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\MultiplePointers\MultiplePointers.xaml.cs.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Pointers\MultiplePointers\MultiplePointers.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Pointers\MultiplePointers\MultiplePointers.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Range\LinearRange.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Range\LinearRange.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Range\MultipleRanges.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Range\MultipleRanges.xaml.txt</Link>
+		</Content>
+		<Content Include="..\LinearGauge\CodeSnippets\Range\VerticalRanges.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Range\VerticalRanges.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\Range\RangeColorAxis.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\Range\RangeColorAxis.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\BatteryDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\BatteryDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\BulletGraphDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\BulletGraphDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.cs.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.cs.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\HeightCalculator\HeightCalculatorDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\ProgressBarDemo\ProgressBarDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\SleepWatchScore\SleepWatchScore.xaml.cs.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\SleepWatchScore\SleepWatchScore.xaml.cs.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\SleepWatchScore\SleepWatchScore.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\SleepWatchScore\SleepWatchScore.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\StepsCounter\StepsCounter.xaml.cs.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\StepsCounter\StepsCounter.xaml.cs.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\StepsCounter\StepsCounter.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\StepsCounter\StepsCounter.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\Thermometer\ThermometerDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\Thermometer\ThermometerDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.cs.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.cs.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\VolumeSettings\VolumeSettingsDemo.xaml.txt</Link>
+		</Content>
+	   <Content Include="..\LinearGauge\CodeSnippets\ShowCase\WaterLevelIndicatorDemo\WaterLevelIndicatorDemo.xaml.txt">
+			 <Link>LinearGauge\CodeSnippets\ShowCase\WaterLevelIndicatorDemo\WaterLevelIndicatorDemo.xaml.txt</Link>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="..\LinearGauge\Assets\LinearGauge\HeightCalculatorImage.png">
+		  <Link>LinearGauge\Assets\LinearGauge\HeightCalculatorImage.png</Link>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+</Project>

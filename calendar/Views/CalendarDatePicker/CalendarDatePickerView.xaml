@@ -1,0 +1,458 @@
+﻿<Page
+    x:Class="Syncfusion.CalendarDemos.WinUI.Views.CalendarDatePicker.CalendarDatePickerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    xmlns:local="using:Syncfusion.CalendarDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:DateFormatToDisplayFormatConverter x:Name="dateFormatToDisplayFormatConverter" />
+    </Page.Resources>
+
+    <Page.DataContext>
+        <local:CalendarViewModel x:Name="viewModel" />
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel x:Name="calendarDatePickerViewPanel">
+            <common:DemoLayout HeaderText="A simple Calendar Date Picker control." 
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/SimpleCalendarDatePicker_xaml.txt,
+                                                                              Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/SimpleCalendarDatePicker_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendarDatePicker
+                        x:Name="calendarDatePicker1"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="EditMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:DateTimeEditMode}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:DateTimeEditMode}, ElementName=calendarDatePicker1, Path=EditMode, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="SelectionShape"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:SelectionShape}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:SelectionShape}, ElementName=calendarDatePicker1, Path=SelectionShape, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="SelectionHighlightMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:SelectionHighlightMode}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:SelectionHighlightMode}, ElementName=calendarDatePicker1, Path=SelectionHighlightMode, Mode=TwoWay}" />
+                        <TextBox
+                            Width="180"
+                            Margin="5"
+                            Header="PlaceholderText"
+                            Text="{Binding ElementName=calendarDatePicker1, Path=PlaceholderText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="FirstDayOfWeek"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:FirstDayOfWeek}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:FirstDayOfWeek}, ElementName=calendarDatePicker1, Path=FirstDayOfWeek, Mode=TwoWay}" />
+                        <Slider
+                            Width="180"
+                            Margin="5"
+                            Header="NumberOfWeeksInView"
+                            Maximum="10"
+                            Minimum="1"
+                            Value="{Binding ElementName=calendarDatePicker1, Path=NumberOfWeeksInView, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="EditMode" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=EditMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="SelectionShape" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=SelectionShape, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="SelectionHighlightMode" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=SelectionHighlightMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="CalendarPlaceholderText" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=PlaceholderText, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="FirstDayOfWeek" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=FirstDayOfWeek, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="NumberOfWeeksInView" SubstitutionValue="{Binding ElementName=calendarDatePicker1, Path=NumberOfWeeksInView, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Date and View Navigation." 
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/Navigation_xaml.txt,
+                                                                              Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/Navigation_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendarDatePicker
+                        x:Name="calendarDatePicker2"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        MinDisplayMode="{Binding MinDisplayMode, Mode=TwoWay}"
+                        MaxDisplayMode="{Binding MaxDisplayMode, Mode=TwoWay}"
+                        MinDate="{Binding MinDate, Mode=TwoWay}"
+                        MaxDate="{Binding MaxDate, Mode=TwoWay}" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <calendar:SfCalendarDatePicker
+                            x:Name="optionDatePicker1"
+                            Width="180"
+                            Margin="5"
+                            AllowNull ="False"
+                            Header="MinimumDate"
+                            MinDate="{Binding MinimumDate, Mode=TwoWay}"
+                            MaxDate="{Binding MaximumDate, Mode=TwoWay}"
+                            SelectedDate="{Binding MinDate, Mode=TwoWay}" />
+                        <calendar:SfCalendarDatePicker
+                            x:Name="optionDatePicker2"
+                            Width="180"
+                            Margin="5"
+                            AllowNull ="False"
+                            Header="MaximumDate"
+                            MinDate="{Binding MinimumDate, Mode=TwoWay}"
+                            MaxDate="{Binding MaximumDate, Mode=TwoWay}"
+                            SelectedDate="{Binding MaxDate, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="MinDisplayMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"
+                            SelectedItem="{Binding MinDisplayMode, Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="MaxDisplayMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"
+                            SelectedItem="{Binding MaxDisplayMode, Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, Mode=TwoWay}" />
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="DisplayMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=calendar:CalendarDisplayMode}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=calendar:CalendarDisplayMode}, ElementName=calendarDatePicker2, Path=DisplayMode, Mode=TwoWay}" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="MinDate" SubstitutionValue="{Binding ElementName=calendarDatePicker2, Path=MinDate, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MaxDate" SubstitutionValue="{Binding ElementName=calendarDatePicker2, Path=MaxDate, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MinDisplayMode" SubstitutionValue="{Binding ElementName=calendarDatePicker2, Path=MinDisplayMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MaxDisplayMode" SubstitutionValue="{Binding ElementName=calendarDatePicker2, Path=MaxDisplayMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="DisplayMode" SubstitutionValue="{Binding ElementName=calendarDatePicker2, Path=DisplayMode, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Different types of Calendar." 
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/CalendarTypes_xaml.txt,
+                                                                              Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/CalendarTypes_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendarDatePicker
+                        x:Name="calendarDatePicker3"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Width="180"
+                            Margin="5"
+                            Header="CalendarIdentifier"
+                            ItemsSource="{Binding Items}"
+                            SelectedItem="{Binding ElementName=calendarDatePicker3, Path=CalendarIdentifier, Mode=TwoWay}" />
+                        <ComboBox
+                            x:Name="languages"
+                            Width="180"
+                            Margin="5"
+                            DisplayMemberPath="Name"
+                            Header="Languages"
+                            ItemsSource="{Binding Languages}"
+                            SelectedIndex="0"
+                            SelectedValuePath="Code"
+                            SelectionChanged="languages_SelectionChanged" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="CalendarIdentifier" SubstitutionValue="{Binding ElementName=calendarDatePicker3, Path=CalendarIdentifier, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="Language" SubstitutionValue="{Binding ElementName=calendarDatePicker3, Path=Language, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Date Formatting." 
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/Formatting_xaml.txt,
+                                                                              Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/Formatting_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendarDatePicker
+                        x:Name="calendarDatePicker4"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        DayFormat="{Binding ElementName=DayFormat, Path=SelectedItem, ConverterParameter='day', Mode=TwoWay, Converter={StaticResource dateFormatToDisplayFormatConverter}}"
+                        DayOfWeekFormat="{Binding ElementName=DayOfWeekFormat, Path=SelectedItem, ConverterParameter='dayofweek', Mode=TwoWay, Converter={StaticResource dateFormatToDisplayFormatConverter}}"
+                        MonthHeaderFormat="{Binding ElementName=MonthHeaderFormat, Path=SelectedItem, ConverterParameter='header', Mode=TwoWay, Converter={StaticResource dateFormatToDisplayFormatConverter}}"
+                        MonthFormat="{Binding ElementName=MonthFormat, Path=SelectedItem, ConverterParameter='month', Mode=TwoWay, Converter={StaticResource dateFormatToDisplayFormatConverter}}" />
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Name="FormatString"
+                            Width="180"
+                            Margin="5"
+                            Header="FormatString"
+                            SelectedItem="{Binding ElementName=calendarDatePicker4, Path=DisplayDateFormat, Mode=TwoWay}">
+                            <x:String>d</x:String>
+                            <x:String>D</x:String>
+                            <x:String>f</x:String>
+                            <x:String>F</x:String>
+                            <x:String>g</x:String>
+                            <x:String>G</x:String>
+                            <x:String>s</x:String>
+                        </ComboBox>
+                        <ComboBox
+                            Name="DayFormat"
+                            Width="180"
+                            Margin="5"
+                            Header="DayFormat"
+                            SelectedIndex="0">
+                            <x:String>Abbreviated</x:String>
+                            <x:String>Full</x:String>
+                        </ComboBox>
+                        <ComboBox
+                            Name="MonthFormat"
+                            Width="180"
+                            Margin="5"
+                            Header="MonthFormat"
+                            SelectedIndex="0">
+                            <x:String>Abbreviated</x:String>
+                            <x:String>Full</x:String>
+                            <x:String>Number</x:String>
+                        </ComboBox>
+                        <ComboBox
+                            Name="DayOfWeekFormat"
+                            Width="180"
+                            Margin="5"
+                            Header="DayOfWeekFormat"
+                            SelectedIndex="0">
+                            <x:String>Abbreviated - 2 char</x:String>
+                            <x:String>Abbreviated - 3 char</x:String>
+                        </ComboBox>
+                        <ComboBox
+                            Name="MonthHeaderFormat"
+                            Width="180"
+                            Margin="5"
+                            Header="MonthHeaderFormat"
+                            SelectedIndex="0">
+                            <x:String>Full</x:String>
+                            <x:String>Abbreviated</x:String>
+                        </ComboBox>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="FormatString" SubstitutionValue="{Binding ElementName=calendarDatePicker4, Path=DisplayDateFormat, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="DayFormat" SubstitutionValue="{Binding ElementName=calendarDatePicker4, Path=DayFormat, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MonthFormat" SubstitutionValue="{Binding ElementName=calendarDatePicker4, Path=MonthFormat, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="DayOfWeekFormat" SubstitutionValue="{Binding ElementName=calendarDatePicker4, Path=DayOfWeekFormat, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="MonthHeaderFormat" SubstitutionValue="{Binding ElementName=calendarDatePicker4, Path=MonthHeaderFormat, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="Blackout specific dates."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/BlackoutDates_xaml.txt,
+                                                               Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/BlackoutDates_xaml.txt}"
+                CSharpSource="{common:ConditionalXAML Individual=Syncfusion.CalendarDemos.WinUI/Views/CalendarDatePicker/Resources/SourceCodes/BlackoutDates_cs.txt,
+                                                                 Common=Calendar/Views/CalendarDatePicker/Resources/SourceCodes/BlackoutDates_cs.txt}">
+                <common:DemoLayout.Example>
+                    <calendar:SfCalendarDatePicker
+                        x:Name="calendarDatePicker5"
+                        BlackoutDates="{Binding BlackoutSpecificDates}"
+                        MinWidth="180"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="CreditCard Bill Payment.">
+                <common:DemoLayout.Example>
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">                         
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.1*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width=".5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock
+                            Text="From Account"
+                            VerticalAlignment="Center"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="10" />
+						<TextBlock
+                            Text=":"
+                            VerticalAlignment="Center"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="10" />
+                        <TextBlock
+                            Text="500100184959"
+                            VerticalAlignment="Center"
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Margin="10" />
+
+                        <TextBlock 
+                            Text="Select Card No"
+                            VerticalAlignment="Center"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10" />
+						<TextBlock
+                            Text=":"
+                            VerticalAlignment="Center"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="10" />
+                        <ComboBox
+                            MinWidth="190"
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            HorizontalAlignment="Left"
+                            Margin="10" >
+                            <ComboBoxItem
+                                Content="8674-9898-XXXX-6373"
+                                IsSelected="True"/>
+                            <ComboBoxItem Content="4384-8347-XXXX-3088"/>
+                        </ComboBox>
+
+                        <TextBlock
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            VerticalAlignment="Center"
+                            Margin="10"
+                            Text="Card Expiry Date :"/>
+						<TextBlock
+                            Text=":"
+                            VerticalAlignment="Center"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="10" />
+                        <calendar:SfCalendarDatePicker
+                            x:Name="cardExpiryDate"
+                            EditMode="Mask"
+                            PlaceholderText="MM/YY"
+                            DisplayDateFormat="{}{month.integer(2)}/{year.abbreviated}"
+                            MinDisplayMode="Year"
+                            MaxDisplayMode="Decade"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center" 
+                            Margin="10" 
+                            Grid.Row="2" 
+                            Grid.Column="3"/>
+
+                        <Grid
+                            HorizontalAlignment="Stretch"
+                            Grid.Row="3"
+                            Grid.ColumnSpan="3"
+                            Grid.Column="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock
+                                Text="Select Payment"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"
+                                Grid.Row="0"
+                                Grid.ColumnSpan="4"
+                                Margin="10" />
+
+                            <RadioButton
+                                Margin="10" 
+                                GroupName="Payment"
+                                Content="Last Statement Bal"
+                                Grid.Row="1"
+                                Grid.Column="0"/>
+							<TextBlock
+                                Text=":"
+                                VerticalAlignment="Center"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="10" />
+								
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                Text="$2845.00" 
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Margin="10" />
+
+                            <RadioButton
+                                Margin="10" 
+                                IsChecked="True" 
+                                GroupName="Payment"
+                                Content="Minimum Amount Due:"
+                                Grid.Row="2"
+                                Grid.Column="0"/>
+							<TextBlock
+								Text=":"
+								VerticalAlignment="Center"
+								Grid.Row="2"
+								Grid.Column="1"
+								Margin="10" />
+                            <TextBlock 
+                                Text="$1.0"
+                                VerticalAlignment="Center"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Margin="10" />
+
+                            <RadioButton
+                                Name="otherAmountButton"
+                                Margin="10"
+                                GroupName="Payment"
+                                Content="Other Amount:"
+                                Grid.Row="3"
+                                Grid.Column="0"/>
+							<TextBlock
+								Text=":"
+								VerticalAlignment="Center"
+								Grid.Row="3"
+								Grid.Column="1"
+								Margin="10" />
+                            <NumberBox
+                                Name="otherDueAmount"
+                                Grid.Row="3"
+                                Minimum="2"
+                                Maximum="2844"
+                                HorizontalAlignment="Left"
+                                Grid.Column="2"
+                                Margin="10" />
+                        </Grid>
+                        
+                        <Button 
+                            Click="OnSubmitButtonClick"
+                            Content="Submit"
+                            Grid.Row="4"
+                            Grid.ColumnSpan="4"
+                            Grid.Column="2"
+                            Margin="10" />
+                    </Grid>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
