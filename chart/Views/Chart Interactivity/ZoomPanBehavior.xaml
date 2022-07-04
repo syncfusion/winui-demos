@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.ZoomPanBehavior"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases zooming behavior, it allow you to take a closer look at the data point plotted in the series.">
+                <common:DemoLayout.DataContext>
+                    <local:LoadDetailViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Header="Server CPU Load"
+                        Height="420"
+                        PaletteBrushes="{StaticResource CustomBrushes}">
+
+                        <chart:SfCartesianChart.ZoomPanBehavior>
+                            <chart:ChartZoomPanBehavior
+                                EnableMouseWheelZooming="True"
+                                EnablePanning="True"
+                                EnablePinchZooming="True"
+                                ZoomMode="XY" />
+                        </chart:SfCartesianChart.ZoomPanBehavior>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:DateTimeAxis
+                                Header="Date"
+                                LabelFormat="MMM, yyyy" />
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Header="CPU Load" />
+                        </chart:SfCartesianChart.YAxes>
+
+
+                        <chart:FastLineSeries
+                            x:Name="fastLineSeries"
+                            EnableAnimation="True"
+                            ItemsSource="{Binding LoadDetails}"
+                            XBindingPath="Date"
+                            YBindingPath="Load" />
+                    </chart:SfCartesianChart>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; 
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.ZoomPanBehavior&gt;
+        &lt;chart:ChartZoomPanBehavior 
+                        EnableMouseWheelZooming=&quot;True&quot; 
+                        EnablePanning=&quot;True&quot; 
+                        EnablePinchZooming=&quot;True&quot; 
+                        EnableSelectionZooming=&quot;False&quot; 
+                        ZoomMode=&quot;XY&quot; /&gt;
+        &lt;/chart:SfCartesianChart.ZoomPanBehavior&gt;
+    
+    &lt;chart:FastLineSeries 
+                        ItemsSource=&quot;{Binding LoadDetails}&quot; 
+                        XBindingPath=&quot;Date&quot; 
+                        YBindingPath=&quot;Load&quot; 
+                        EnableAnimation=&quot;True&quot;  /&gt;
+&lt;/chart:SfCartesianChart&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>
