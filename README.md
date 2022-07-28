@@ -178,6 +178,18 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
     </tr>
     <tr>
         <td colspan="3">
+            <b>MISCELLANEOUS</b>
+        </td>
+    </tr>
+    <tr>
+	    <td>
+            <a href="shadow">Shadow</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">
             <b>FILE FORMATS</b>
         </td>
     </tr>
