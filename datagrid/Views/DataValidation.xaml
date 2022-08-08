@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="DataGrid.DataValidation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:grid="using:Syncfusion.UI.Xaml.Grids"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.Resources>
+        <local:EmployeeViewModel x:Key="employeeViewModel" />
+    </Page.Resources>
+    <Grid DataContext="{StaticResource employeeViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="This sample showcases data validation for cells and displays hints in case the validation does not pass.">
+                <common:DemoLayout.Example>
+                    <Grid Margin="5">
+                        <dataGrid:SfDataGrid x:Name="sfDataGrid"
+                                   Height="510"
+                                   Width="Auto"
+                                   HorizontalAlignment="Left"
+                                   AllowEditing="true"
+                                   VerticalAlignment="Top"
+                                   ColumnWidthMode="Auto"                                
+                                   AutoGenerateColumns="False"
+                                   ItemsSource="{Binding Employees}"
+                                   DataValidationMode="{Binding SelectedValue, Converter={enumextension:StringToEnumValueConverter IsInversed=True,Type=grid:GridValidationMode}, ElementName=ValidationCombo }"
+                                   LiveDataUpdateMode="AllowDataShaping"
+                                   ShowRowHeader="True">
+
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridNumericColumn HeaderText="Employee ID" MappingName="EmployeeID" TextAlignment="Right" />
+                                <dataGrid:GridTextColumn MappingName="Name" />
+                                <dataGrid:GridNumericColumn MappingName="Salary" HeaderText="Salary" NumberFormatter="{Binding SystemCurrency,Source={StaticResource employeeViewModel}}" TextAlignment="Right" />
+                                <dataGrid:GridTextColumn HeaderText="Contact No" MappingName="ContactNo" TextAlignment="Right" />
+                                <dataGrid:GridTextColumn HeaderText="E-Mail ID" MappingName="EMail" />
+                                <dataGrid:GridDateColumn MappingName="HireDate"
+                                    HeaderText="Hire Date"
+                                    TextAlignment="Right" />
+                                <dataGrid:GridDateColumn 
+                                                   MappingName="BirthDate"
+                                                   HeaderText="Birth Date"
+                                                   TextAlignment="Right" />
+                                <dataGrid:GridTextColumn HeaderText="City" MappingName="City" />
+                                <dataGrid:GridTextColumn MappingName="Location" HeaderText="Location" />
+                            </dataGrid:SfDataGrid.Columns>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel Width="205">
+                        <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                        <ComboBox
+                            x:Name="ValidationCombo"
+                            Margin="16,5,5,5"
+                            Header="DataValidationMode"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=grid:GridValidationMode}"
+                            SelectedIndex="0">                          
+                        </ComboBox>
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontWeight="Bold"
+                            Text="Validation Options" />
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="Attribute Validations" />
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="11"                            
+                            Text="ContactNo field has been validated with the String Length Attribute, and it should not exceed the string length of 14."
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="11"
+                            Text="Salary field has a Range attribute, and it can range from 2000 through 5000."
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="INotifyDataErrorInfo Validations" />
+                        <TextBlock
+                            Margin="16,5,5,5"
+                            FontSize="11"                            
+                            Text="Email field has been validated for its format with the Regex format of Email."
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;
+                                   Height=&quot;500&quot;                                   
+                                   Width=&quot;Auto&quot;
+                                   HorizontalAlignment=&quot;Left&quot;
+                                   AllowEditing=&quot;true&quot;
+                                   VerticalAlignment=&quot;Top&quot;
+                                   ColumnWidthMode=&quot;AutoLastColumnFill&quot;                        
+                                   Margin=&quot;5&quot;
+                                   AutoGenerateColumns=&quot;False&quot;
+                                   ItemsSource=&quot;{Binding Employees}&quot;
+                                   DataValidationMode=&quot;$(DataValidationMode)&quot;
+                                   LiveDataUpdateMode=&quot;AllowDataShaping&quot;
+                                   ShowRowHeader=&quot;True&quot; /&gt;                              
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="DataValidationMode"
+                        SubstitutionValue="{x:Bind sfDataGrid.DataValidationMode, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>
+    
