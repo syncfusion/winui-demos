@@ -1,0 +1,255 @@
+<Project>
+    <ItemGroup>
+		<Compile Include="..\Common\Converter\BadgeToStringConverter.cs">
+			<Link>Common\Converter\BadgeToStringConverter.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\Constants.cs">
+			<Link>Common\Helper\Constants.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\DemoFilter.cs">
+			<Link>Common\Helper\DemoFilter.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\EnumValuesExtension.cs">
+			<Link>Common\Helper\EnumValuesExtension.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\ImagePathExtension.cs">
+			<Link>Common\Helper\ImagePathExtension.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\NavigationService.cs">
+			<Link>Common\Helper\NavigationService.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\FilePathExtension.cs">
+			<Link>Common\Helper\FilePathExtension.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Enum\CommonEnums.cs">
+			<Link>Common\Enum\CommonEnums.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\ThemeHelper.cs">
+			<Link>Common\Helper\ThemeHelper.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Model\BrowserModel.cs">
+			<Link>Common\Model\BrowserModel.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Model\ControlInfo.cs">
+			<Link>Common\Model\ControlInfo.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Model\ITileInfo.cs">
+			<Link>Common\Model\ITileInfo.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\NavigationItemTemplateSelector.cs">
+			<Link>Common\Helper\NavigationItemTemplateSelector.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Views\DemoLayout.xaml.cs">
+			<Link>Common\Views\DemoLayout.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\DemoLayout.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\ViewModel\MainViewModel.cs">
+			<Link>Common\ViewModel\MainViewModel.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\DemoHelper.cs">
+			<Link>Common\Helper\DemoHelper.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Model\DemoInfo.cs">
+			<Link>Common\Model\DemoInfo.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Model\DemoInfoDataSource.cs">
+			<Link>Common\Model\DemoInfoDataSource.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Helper\FileLoader.cs">
+			<Link>Common\Helper\FileLoader.cs</Link>
+		</Compile>
+		<Compile Include="..\Common\Views\SettingsPage.xaml.cs">
+			<Link>Common\Views\SettingsPage.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\SettingsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\HeaderTile.xaml.cs">
+			<Link>Common\Views\HeaderTile.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\HeaderTile.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\SectionPage.xaml.cs">
+			<Link>Common\Views\SectionPage.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\SectionPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\DemoPage.xaml.cs">
+			<Link>Common\Views\DemoPage.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\DemoPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\MainPage.xaml.cs">
+			<Link>Common\Views\MainPage.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\MainPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\SectionGroupPage.xaml.cs">
+			<Link>Common\Views\SectionGroupPage.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\SectionGroupPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Common\Views\DemoPageLoadingIndicator.xaml.cs">
+			<Link>Common\Views\DemoPageLoadingIndicator.xaml.cs</Link>
+			<DependentUpon>..\Common\Views\DemoPageLoadingIndicator.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="..\Common\Themes\themeresources.xaml">
+			<Link>Common\Themes\themeresources.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="..\Common\Views\SettingsPage.xaml">
+			<Link>Common\Views\SettingsPage.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Common\Views\HeaderTile.xaml">
+			<Link>Common\Views\HeaderTile.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Common\Views\SectionPage.xaml">
+			<Link>Common\Views\SectionPage.xaml</Link>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="..\Common\Views\DemoPage.xaml">
+			<Link>Common\Views\DemoPage.xaml</Link>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="..\Common\Views\MainPage.xaml">
+			<Link>Common\Views\MainPage.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Common\Views\SectionGroupPage.xaml">
+			<Link>Common\Views\SectionGroupPage.xaml</Link>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="..\Common\Views\DemoLayout.xaml">
+			<Link>Common\Views\DemoLayout.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Common\Views\DemoPageLoadingIndicator.xaml">
+			<Link>Common\Views\DemoPageLoadingIndicator.xaml</Link>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="..\Common\Assets\BannerImageDesktop.png">
+			<Link>Common\Assets\BannerImageDesktop.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Barcode.png">
+			<Link>Common\Assets\Control Images\Barcode.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\RadialGauge.png">
+			<Link>Common\Assets\Control Images\RadialGauge.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\LinearGauge.png">
+			<Link>Common\Assets\Control Images\LinearGauge.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\TreeView.png">
+			<Link>Common\Assets\Control Images\TreeView.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Scheduler.png">
+			<Link>Common\Assets\Control Images\Scheduler.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Calendar.png">
+			<Link>Common\Assets\Control Images\Calendar.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\CalendarDatePicker.png">
+			<Link>Common\Assets\Control Images\CalendarDatePicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\CalendarDateRangePicker.png">
+			<Link>Common\Assets\Control Images\CalendarDateRangePicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Slider.png">
+			<Link>Common\Assets\Control Images\Slider.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Shadow.png">
+			<Link>Common\Assets\Control Images\Shadow.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\RangeSlider.png">
+			<Link>Common\Assets\Control Images\RangeSlider.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Badge.png">
+			<Link>Common\Assets\Control Images\Badge.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\CartesianChart.png">
+			<Link>Common\Assets\Control Images\CartesianChart.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\CircularChart.png">
+			<Link>Common\Assets\Control Images\CircularChart.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\PyramidChart.png">
+			<Link>Common\Assets\Control Images\PyramidChart.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\FunnelChart.png">
+			<Link>Common\Assets\Control Images\FunnelChart.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\PolarChart.png">
+			<Link>Common\Assets\Control Images\PolarChart.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\DataGrid.png">
+			<Link>Common\Assets\Control Images\DataGrid.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\DatePicker.png">
+			<Link>Common\Assets\Control Images\DatePicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\ColorPicker.png">
+			<Link>Common\Assets\Control Images\ColorPicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\DropDownColorPicker.png">
+			<Link>Common\Assets\Control Images\DropDownColorPicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\ColorPalette.png">
+			<Link>Common\Assets\Control Images\ColorPalette.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\DropDownColorPalette.png">
+			<Link>Common\Assets\Control Images\DropDownColorPalette.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\NumberBox.png">
+			<Link>Common\Assets\Control Images\NumberBox.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\ComboBox.png">
+			<Link>Common\Assets\Control Images\ComboBox.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\AutoComplete.png">
+			<Link>Common\Assets\Control Images\AutoComplete.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Ribbon.png">
+			<Link>Common\Assets\Control Images\Ribbon.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\PDF.png">
+			<Link>Common\Assets\Control Images\PDF.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Presentation.png">
+			<Link>Common\Assets\Control Images\Presentation.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\XlsIO.png">
+			<Link>Common\Assets\Control Images\XlsIO.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\TreeGrid.png">
+			<Link>Common\Assets\Control Images\TreeGrid.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\DocIO.png">
+			<Link>Common\Assets\Control Images\DocIO.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\TimePicker.png">
+			<Link>Common\Assets\Control Images\TimePicker.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\SegmentedControl.png">
+			<Link>Common\Assets\Control Images\SegmentedControl.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\BusyIndicator.png">
+			<Link>Common\Assets\Control Images\BusyIndicator.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\Control Images\Rating.png">
+			<Link>Common\Assets\Control Images\Rating.png</Link>
+		</Content>
+		<Content Include="..\Common\Assets\ControlIcons.ttf">
+			<Link>Common\Assets\ControlIcons.ttf</Link>
+		</Content>
+		<Content Include="..\Common\Assets\SBIcons.ttf">
+			<Link>Common\Assets\SBIcons.ttf</Link>
+		</Content>
+	</ItemGroup>
+</Project>

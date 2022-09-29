@@ -1,0 +1,9 @@
+﻿protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+{
+   SfRatingItem RatingItem = item as SfRatingItem;
+   if (RatingItem == null)
+       return null;
+   if (RatingItem.IsSelected)
+       return SelectedTemplate;
+   return UnselectedTemplate;
+}

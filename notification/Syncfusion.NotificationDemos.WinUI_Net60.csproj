@@ -1,0 +1,119 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<AssemblyName>Syncfusion.NotificationDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.NotificationDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+		<NoWarn>CA1416</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;WinUI_Desktop;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+		<None Remove="syncfusion.notificationdemos.winui_TemporaryKey.pfx"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Converters\CustomNumberConverter.cs"/>
+		<Compile Include="Model\MailInfo.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="ViewModel\BadgeViewModel.cs"/>
+		<Compile Include="Views\Badge\BadgeView.xaml.cs">
+			<DependentUpon>BadgeView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\BusyIndicator\GettingStartedView.xaml.cs">
+			<DependentUpon>GettingStartedView.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Notification\avatar.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeAlignments_xaml.txt"/>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeContentTemplate_cs.txt"/>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeContentTemplate_xaml.txt"/>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeCustomAlignments_xaml.txt"/>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeShapes_xaml.txt"/>
+		<Content Include="Views\Badge\Resources\SourceCodes\BadgeWithListView_xaml.txt"/>
+		<Content Include="Views\BusyIndicator\Resources\SourceCodes\BusyIndicatorAnimation_xaml.txt"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml"/>
+		<Page Include="Views\Badge\BadgeView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\BusyIndicator\GettingStartedView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.197"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.3.0.47"/>
+	</ItemGroup>
+</Project>

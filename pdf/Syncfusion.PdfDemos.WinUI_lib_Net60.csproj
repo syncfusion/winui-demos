@@ -1,0 +1,157 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>syncfusion.pdfdemos.winui</RootNamespace>
+		<AssemblyName>syncfusion.pdfdemos.winui</AssemblyName>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+		<PackageId>syncfusion.pdfdemos.winui</PackageId>
+		<Authors>syncfusion.pdfdemos.winui</Authors>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Remove="Assets\**"/>
+		<Content Remove="syncfusion.pdfdemos.winui_net50 %28Package%29\**"/>
+		<None Remove="Properties\PublishProfiles\**"/>
+		<None Remove="syncfusion.pdfdemos.winui_net50 %28Package%29\**"/>
+		<PRIResource Remove="syncfusion.pdfdemos.winui_net50 %28Package%29\**"/>
+		<None Remove="app.manifest"/>
+		<None Remove="App.xaml"/>
+		<None Remove="MainWindow.xaml"/>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Helper\PdfUtil.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="Views\Annotations.xaml.cs"/>
+		<Compile Include="Views\Certificate.xaml.cs"/>
+		<Compile Include="Views\DigitalSignature.xaml.cs"/>
+		<Compile Include="Views\Encryption.xaml.cs"/>
+		<Compile Include="Views\ExtractText.xaml.cs"/>
+		<Compile Include="Views\FindText.xaml.cs"/>
+		<Compile Include="Views\FormFilling.xaml.cs"/>
+		<Compile Include="Views\ImageInsertion.xaml.cs"/>
+		<Compile Include="Views\ImageToPdf.xaml.cs"/>
+		<Compile Include="Views\ImportAndExport.xaml.cs"/>
+		<Compile Include="Views\Invoice.xaml.cs"/>
+		<Compile Include="Views\MergePDF.xaml.cs"/>
+		<Compile Include="Views\PdfConformance.xaml.cs"/>
+		<Compile Include="Views\PdfWatermark.xaml.cs"/>
+		<Compile Include="Views\Redaction.xaml.cs"/>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\AdventureCycle.txt"/>
+		<EmbeddedResource Include="Assets\AdventureWork.png"/>
+		<EmbeddedResource Include="Assets\arial.ttf"/>
+		<EmbeddedResource Include="Assets\certificate.jpg"/>
+		<EmbeddedResource Include="Assets\certificate.pfx"/>
+		<EmbeddedResource Include="Assets\credit_card_statement.pdf"/>
+		<EmbeddedResource Include="Assets\credit_card_statement.xml"/>
+		<EmbeddedResource Include="Assets\digital_signature_template.pdf"/>
+		<EmbeddedResource Include="Assets\export_template.pdf"/>
+		<EmbeddedResource Include="Assets\form_template.pdf"/>
+		<EmbeddedResource Include="Assets\import_data.fdf"/>
+		<EmbeddedResource Include="Assets\import_data.xfdf"/>
+		<EmbeddedResource Include="Assets\import_data.xml"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly.pdf"/>
+		<EmbeddedResource Include="Assets\richmedia.jpg"/>
+		<EmbeddedResource Include="Assets\Video.mp4"/>
+		<EmbeddedResource Include="Assets\signature.png"/>
+		<EmbeddedResource Include="Assets\Xamarin_JPEG.jpg"/>
+		<EmbeddedResource Include="Assets\Xamarin_PNG.png"/>
+		<EmbeddedResource Include="Assets\AdventureCycle.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page1.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page2.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page3.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page4.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page5.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page6.jpg"/>
+		<EmbeddedResource Include="Assets\richmedia_sound.jpg"/>
+		<EmbeddedResource Include="Assets\Sound.mp3"/>
+		<EmbeddedResource Include="Assets\RedactionTemplate.pdf"/>
+		<Content Include="Views\Resources\SourceFiles\Certificate_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\DigitalSignature_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\Encryption_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\ExtractText_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\FindText_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\FormFilling_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\ImageInsertion_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\ImageToPdf_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\ImportAndExport_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceFiles\Invoice_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\MergePDF_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\PdfConformance_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\PdfWatermark_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\Annotations_xaml_cs.txt">
+		</Content>
+		<Content Include="Views\Resources\SourceFiles\Redaction_xaml_cs.txt">
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\Annotations.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Certificate.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\DigitalSignature.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Encryption.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ExtractText.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\FindText.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\FormFilling.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImageInsertion.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImageToPdf.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImportAndExport.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Invoice.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\MergePDF.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\PdfConformance.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\PdfWatermark.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Redaction.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Pdf.Imaging.NET" Version="20.3.0.47"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+//Create a new PDF document.
+PdfDocument document = new PdfDocument();
+//Add a page to the document.
+PdfPage page = document.Pages.Add();
+//Create PDF graphics for the page.
+PdfGraphics graphics = page.Graphics;
+
+//Get the font file stream from assembly. 
+Stream fontStream = GetFontStream("arial.ttf");
+
+//Create PdfTrueTypeFont from stream with different size. 
+PdfTrueTypeFont headerFont = new PdfTrueTypeFont(fontStream, 30, PdfFontStyle.Regular);
+PdfTrueTypeFont arialRegularFont = new PdfTrueTypeFont(fontStream, 18, PdfFontStyle.Regular);
+PdfTrueTypeFont arialBoldFont = new PdfTrueTypeFont(fontStream, 9, PdfFontStyle.Bold);
+
+//Create string format.
+PdfStringFormat format = new PdfStringFormat();
+format.Alignment = PdfTextAlignment.Center;
+format.LineAlignment = PdfVerticalAlignment.Middle;
+
+//Create border pen and draw the border to PDF page. 
+PdfColor borderColor = Color.FromArgb(255, 142, 170, 219);
+PdfPen borderPen = new PdfPen(borderColor, 1f);
+graphics.DrawRectangle(borderPen, new RectangleF(0, 0, pageWidth, pageHeight));
+
+//Create a new PdfGrid 
+PdfGrid grid = new PdfGrid();
+
+//Add five columns to the grid.
+grid.Columns.Add(5);
+
+//Create the header row of the grid.
+PdfGridRow[] headerRow = grid.Headers.Add(1);
+
+//Set style to the header row and set value to the header cells. 
+headerRow[0].Style.BackgroundBrush = new PdfSolidBrush(new PdfColor(68, 114, 196));
+headerRow[0].Style.TextBrush = PdfBrushes.White;
+headerRow[0].Cells[0].Value = "Product ID";
+headerRow[0].Cells[0].StringFormat.Alignment = PdfTextAlignment.Center;
+headerRow[0].Cells[1].Value = "Product Name";
+headerRow[0].Cells[2].Value = "Price ($)";
+headerRow[0].Cells[3].Value = "Quantity";
+headerRow[0].Cells[4].Value = "Total ($)";
+
+//Add products to the grid table.
+AddProducts("CA-1098", "AWC Logo Cap", 8.99, 2, 17.98, grid);
+AddProducts("LJ-0192", "Long-Sleeve Logo Jersey,M", 49.99, 3, 149.97, grid);
+AddProducts("So-B909-M", "Mountain Bike Socks,M", 9.50, 2, 19, grid);
+
+#region Header 
+//Fill the header with light blue brush 
+graphics.DrawRectangle(lightBlueBrush, new RectangleF(0, 0, pageWidth, headerHeight));
+
+//Specificy the bounds for total value. 
+RectangleF headerTotalBounds = new RectangleF(400, 0, pageWidth - 400, headerHeight);
+
+//Measure the string size using font. 
+SizeF textSize = headerFont.MeasureString(title);
+graphics.DrawString("INVOICE", headerFont, whiteBrush, new RectangleF(0, 0, 50, headerHeight), format);
+//Draw rectangle in PDF page. 
+graphics.DrawRectangle(darkBlueBrush, headerTotalBounds);
+
+//Draw text to PDF page with provided font and location. 
+graphics.DrawString("Bill To:", arialRegularFont, PdfBrushes.Black, new PointF(x, y));
+y += arialRegularFont.Height + lineSpace;
+graphics.DrawString("Abraham Swearegin,", arialRegularFont, PdfBrushes.Black, new PointF(x, y));
+y += arialRegularFont.Height + lineSpace;
+graphics.DrawString("United States", arialRegularFont, PdfBrushes.Black, new PointF(x, y));
+y += arialRegularFont.Height + lineSpace;
+graphics.DrawString("9920 Parkway,", arialRegularFont, PdfBrushes.Black, new PointF(x, y));
+y += arialRegularFont.Height + lineSpace;
+graphics.DrawString("9365550136", arialRegularFont, PdfBrushes.Black, new PointF(x, y));
+
+#region Grid
+//Set width to grid columns. 
+grid.Columns[0].Width = 110;
+grid.Columns[1].Width = 150;
+grid.Columns[2].Width = 110;
+grid.Columns[3].Width = 70;
+grid.Columns[4].Width = 100;
+
+//Apply built-in table style to the grid. 
+grid.ApplyBuiltinStyle(PdfGridBuiltinStyle.ListTable4Accent5);
+//Subscribing to begin cell layout event.
+grid.BeginCellLayout += Grid_BeginCellLayout;
+//Draw the PDF grid to PDF page and get the layout result. 
+PdfGridLayoutResult result = grid.Draw(page, new PointF(0, 40));
+
+//Creating the stream object
+using (MemoryStream stream = new MemoryStream())
+{
+    //Save the document into stream
+    document.Save(stream);
+    document.Close();
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save("Invoice.pdf", stream);
+}

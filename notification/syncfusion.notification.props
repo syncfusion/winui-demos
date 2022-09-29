@@ -1,0 +1,64 @@
+<Project>
+ <ItemGroup>
+    <Compile Include="..\Notification\Converters\CustomNumberConverter.cs">
+		<Link>Notification\Converters\CustomNumberConverter.cs</Link>
+	</Compile>
+    <Compile Include="..\Notification\Model\MailInfo.cs">
+		<Link>Notification\Model\MailInfo.cs</Link>
+	</Compile>
+    <Compile Include="..\Notification\SamplesConfiguration.cs">
+		<Link>Notification\SamplesConfiguration.cs</Link>
+	</Compile>
+    <Compile Include="..\Notification\ViewModel\BadgeViewModel.cs">
+		<Link>Notification\ViewModel\BadgeViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Notification\Views\Badge\BadgeView.xaml.cs">
+	  <Link>Notification\Views\Badge\BadgeView.xaml.cs</Link>
+      <DependentUpon>..\Notification\Views\Badge\BadgeView.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Notification\Views\BusyIndicator\GettingStartedView.xaml.cs">
+		<Link>Notification\Views\BusyIndicator\GettingStartedView.xaml.cs</Link>
+		<DependentUpon>..\Notification\Views\BusyIndicator\GettingStartedView.xaml</DependentUpon>
+	</Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Page Include="..\Notification\Views\Badge\BadgeView.xaml">
+	  <Link>Notification\Views\Badge\BadgeView.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Notification\Views\BusyIndicator\GettingStartedView.xaml">
+		<Link>Notification\Views\BusyIndicator\GettingStartedView.xaml</Link>
+		<SubType>Designer</SubType>
+		<Generator>MSBuild:Compile</Generator>
+	</Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Notification\Assets\Notification\avatar.png">
+	  <Link>Notification\Assets\Notification\avatar.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeContentTemplate_cs.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeContentTemplate_cs.txt</Link>
+	</Content>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeContentTemplate_xaml.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeContentTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeWithListView_xaml.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeWithListView_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeCustomAlignments_xaml.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeCustomAlignments_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeAlignments_xaml.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeAlignments_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Notification\Views\Badge\Resources\SourceCodes\BadgeShapes_xaml.txt">
+		<Link>Notification\Views\Badge\Resources\SourceCodes\BadgeShapes_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Notification\Views\BusyIndicator\Resources\SourceCodes\BusyIndicatorAnimation_xaml.txt">
+		<Link>Notification\Views\BusyIndicator\Resources\SourceCodes\BusyIndicatorAnimation_xaml.txt</Link>
+	</Content>
+  </ItemGroup>
+</Project>
