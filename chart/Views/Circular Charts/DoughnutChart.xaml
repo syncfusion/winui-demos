@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.DoughnutChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases doughnut chart which is like pie chart with a hole and the value is specified as the doughnut coefficient. The doughnut chart is best suited for presenting data in proportions.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="2013 State Government Tax Collections" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+                        
+                        <chart:SfCircularChart.DataContext>
+                            <local:DoughnutChartViewModel />
+                        </chart:SfCircularChart.DataContext>
+                        
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend ItemMargin="2"  BorderThickness="1" CornerRadius="0" Placement="Bottom" />
+                        </chart:SfCircularChart.Legend>
+
+                        <chart:DoughnutSeries x:Name="DouughnutSeries" EnableAnimation="True" 
+                        chart:ChartTooltip.EnableAnimation="True" ShowDataLabels="True" PaletteBrushes="{StaticResource CustomBrushes}"
+                        ItemsSource="{Binding Tax}" Label="Tax" XBindingPath="Category" YBindingPath="Percentage">
+                        </chart:DoughnutSeries>
+                    </chart:SfCircularChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;  &gt;  
+                                                  
+    &lt;chart:SfCircularChart.Legend&gt;
+        &lt;chart:ChartLegend 
+                        ItemMargin=&quot;2&quot;  
+                        BorderThickness=&quot;1&quot; 
+                        CornerRadius=&quot;0&quot; 
+                        Placement=&quot;Bottom&quot; /&gt;
+    &lt;/chart:SfCircularChart.Legend&gt;
+
+    &lt;chart:DoughnutSeries 
+                        ItemsSource=&quot;{Binding Tax}&quot; 
+                        XBindingPath=&quot;Category&quot; 
+                        YBindingPath=&quot;Percentage&quot; 
+                        EnableAnimation=&quot;True&quot; 
+                        ShowDataLabels=&quot;True&quot; 
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                        Label=&quot;Tax&quot; &gt;
+    &lt;/chart:DoughnutSeries&gt;
+    
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

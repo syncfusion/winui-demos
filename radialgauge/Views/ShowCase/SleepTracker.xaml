@@ -1,0 +1,179 @@
+﻿<Page x:Class="Syncfusion.RadialGaugeDemos.WinUI.Views.SleepTracker"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI">
+
+    <common:DemoLayout HeaderText="This sample showcases how to design the sleep tracker view using the free rotation of content pointer and ranges features of radial gauge."
+                       XamlSource="{common:ConditionalXAML Individual=Syncfusion.RadialGaugeDemos.WinUI/sourcecodes/showcase/sleeptracker/sleeptracker.xaml.cs.txt,
+                                                                      Common=RadialGauge/sourcecodes/showcase/sleeptracker/sleeptracker.xaml.cs.txt}"
+                       Margin="0,0,0,10">
+        <common:DemoLayout.Example>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <gauge:SfRadialGauge x:Name="sleepTracker">
+                    <gauge:SfRadialGauge.Axes>
+                        <gauge:RadialAxis x:Name="radialAxis"
+                                          StartAngle="270"
+                                          EndAngle="270"
+                                          Minimum="0"
+                                          Maximum="24"
+                                          Interval="6"
+                                          MinorTicksPerInterval="5"
+                                          ShowFirstLabel="False"
+                                          AxisLineFill="#B1E8FF"
+                                          AxisLineWidthUnit="Factor"
+                                          AxisLineWidth="0.03">
+
+                            <gauge:RadialAxis.Pointers>
+
+                                <gauge:ContentPointer x:Name="startPointer"
+                                                            Value="20"
+                                                            IsInteractive="True"
+                                                            ValueChangeStarted="StartPointer_ValueChangeStarted"
+                                                            ValueChanging="StartPointer_ValueChanging"
+                                                            ValueChangeCompleted="StartPointer_ValueChangeCompleted">
+                                    <gauge:ContentPointer.Content>
+                                        <Grid>
+                                            <Ellipse x:Name="StartPtrContentView" 
+                                                         Height="30"
+                                                         Width="30"
+                                                         Fill="#2194f3"
+                                                         Stroke="WhiteSmoke"
+                                                         StrokeThickness="1" />
+                                            <FontIcon HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          FontFamily="Segoe MDL2 Assets"
+                                                          FontWeight="ExtraBold"
+                                                          Glyph="&#xEC46;"
+                                                          FontSize="20"
+                                                          Foreground="White"
+                                                          RenderTransformOrigin="0.5,0.5">
+                                                <FontIcon.RenderTransform>
+                                                    <ScaleTransform ScaleX="-1" />
+                                                </FontIcon.RenderTransform>
+                                            </FontIcon>
+                                        </Grid>
+                                    </gauge:ContentPointer.Content>
+                                </gauge:ContentPointer>
+
+                                <gauge:ContentPointer x:Name="EndPointer"
+                                                     IsInteractive="True"
+                                                     Value="6"
+                                                     ValueChangeStarted="EndPointer_ValueChangeStarted"
+                                                     ValueChanging="EndPointer_ValueChanging"
+                                                     ValueChangeCompleted="EndPointer_ValueChangeCompleted" >
+                                    <gauge:ContentPointer.Content>
+                                        <Grid>
+                                            <Ellipse x:Name="EndPtrContentView" 
+                                                         Height="30"
+                                                         Width="30"
+                                                         Fill="#2194f3"
+                                                         Stroke="WhiteSmoke"
+                                                         StrokeThickness="1" />
+                                            <Path Data="M15.993965,24.811008C16.546965,24.811008,16.993965,25.25801,16.993965,25.81001L16.993965,31.000012C16.993965,31.552012 16.546965,32.000012 15.993965,32.000012 15.440965,32.000012 14.993965,31.552012 14.993965,31.000012L14.993965,25.81001C14.993965,25.25801,15.440965,24.811008,15.993965,24.811008z M22.928505,21.938007C23.184253,21.938008,23.44,22.03552,23.635498,22.230544L25.681476,24.278792C26.071471,24.668839 26.071471,25.301917 25.681476,25.692964 25.486478,25.886987 25.230481,25.985 24.974483,25.985 24.718486,25.985 24.462489,25.886987 24.267491,25.691964L22.221514,23.644715C21.831517,23.253668 21.831517,22.620591 22.221514,22.230544 22.417011,22.03552 22.672758,21.938008 22.928505,21.938007z M9.0601546,21.937025C9.3159222,21.937024 9.5716898,22.034768 9.7667036,22.230255 10.15773,22.62023 10.15773,23.253189 9.7667036,23.643164L7.6555582,25.755027C7.4595448,25.950013 7.2045273,26.048007 6.9485099,26.048007 6.6924922,26.048007 6.4364746,25.950013 6.2414613,25.755027 5.8514345,25.365052 5.8514345,24.732093 6.2414613,24.342118L8.3536061,22.230255C8.5486196,22.034768,8.8043871,21.937024,9.0601546,21.937025z M25.800992,15.000017L30.989001,15.000017C31.542001,15.000017 31.989001,15.447018 31.989001,15.99902 31.989001,16.551022 31.542001,16.999023 30.989001,16.999023L25.800992,16.999023C25.247991,16.999023 24.80099,16.551022 24.80099,15.99902 24.80099,15.447018 25.247991,15.000017 25.800992,15.000017z M0.99999857,15.000017L6.1869898,15.000017C6.7399893,15.000017 7.1869885,15.447018 7.1869882,15.99902 7.1869885,16.551022 6.7399893,16.999023 6.1869898,16.999023L0.99999857,16.999023C0.44699955,16.999023 0,16.551022 0,15.99902 0,15.447018 0.44699955,15.000017 0.99999857,15.000017z M15.994478,10.96201C14.649453,10.96201 13.384445,11.486027 12.43346,12.438022 10.470459,14.402011 10.470459,17.598024 12.43346,19.562013 13.384445,20.514009 14.649453,21.038026 15.994478,21.038026 17.338465,21.038026 18.603473,20.514009 19.554457,19.562013 21.517398,17.598024 21.517398,14.402011 19.554457,12.438022 18.603473,11.486027 17.338465,10.96201 15.994478,10.96201z M15.994478,8.9630176C17.873435,8.9630178 19.639418,9.6950122 20.968451,11.024022 23.710442,13.768009 23.710442,18.232027 20.968451,20.976014 19.639418,22.305023 17.873435,23.037018 15.994478,23.037018 14.114482,23.037018 12.3485,22.305023 11.019467,20.976014 8.2774767,18.232027 8.2774767,13.768009 11.019467,11.024022 12.3485,9.6950122 14.114482,8.9630178 15.994478,8.9630176z M25.017529,5.9729996C25.273278,5.9729993 25.529027,6.070488 25.724526,6.2654653 26.114526,6.6554196 26.114526,7.2883457 25.724526,7.6793L23.635533,9.7690558C23.439534,9.9640332 23.184535,10.062022 22.928535,10.062022 22.672536,10.062022 22.416537,9.9640332 22.221538,9.7700558 21.831539,9.3791015 21.831539,8.7461754 22.221538,8.3562206L24.310532,6.2654653C24.50603,6.070488,24.76178,5.9729993,25.017529,5.9729996z M6.9067872,5.910037C7.1625535,5.9100368,7.4183199,6.0075364,7.6133329,6.2030358L9.7664709,8.3570279C10.156496,8.7470265 10.156496,9.3800243 9.7664709,9.7710228 9.5714582,9.9650221 9.3154418,10.063022 9.059425,10.063022 8.8034089,10.063022 8.5483925,9.9650221 8.3523802,9.7700229L6.2002411,7.6160308C5.8092167,7.2260321 5.8092167,6.5930345 6.2002411,6.2020359 6.3952541,6.0075364 6.6510208,5.9100368 6.9067872,5.910037z M15.993965,0C16.546965,0,16.993965,0.44699955,16.993965,0.99900055L16.993965,6.1890035C16.993965,6.741004 16.546965,7.1890043 15.993965,7.1890043 15.440965,7.1890043 14.993965,6.741004 14.993965,6.1890035L14.993965,0.99900055C14.993965,0.44699955,15.440965,0,15.993965,0z"
+                                                      Stretch="Uniform"
+                                                      Stroke="#FFFFFFFF"
+                                                      Fill="#FFFFFFFF"
+                                                      Width="18"
+                                                      Height="18">
+                                            </Path>
+                                        </Grid>
+                                    </gauge:ContentPointer.Content>
+                                </gauge:ContentPointer>
+
+                            </gauge:RadialAxis.Pointers>
+
+                            <gauge:RadialAxis.Ranges>
+                                <gauge:GaugeRange x:Name="range"
+                                                  StartValue="20"
+                                                  EndValue="6"
+                                                  Background="#2194f3"
+                                                  WidthUnit="Factor"
+                                                  StartWidth="0.03"
+                                                  EndWidth="0.03" />
+                            </gauge:RadialAxis.Ranges>
+
+                            <gauge:RadialAxis.Annotations>
+                                <gauge:GaugeAnnotation x:Name="StartValueAnnotation"
+                                                       DirectionUnit="Angle"
+                                                       DirectionValue="180"
+                                                       PositionFactor="0.4">
+                                    <gauge:GaugeAnnotation.Content>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="4 Apr"
+                                                       FontSize="16"
+                                                       FontWeight="Medium"
+                                                       Foreground="#2194f3"
+                                                       HorizontalAlignment="Center" />
+                                            <TextBlock x:Name="SleepTime"
+                                                       Text="20:00"
+                                                       FontSize="24"
+                                                       Foreground="#2194f3" />
+                                        </StackPanel>
+                                    </gauge:GaugeAnnotation.Content>
+                                </gauge:GaugeAnnotation>
+
+                                <gauge:GaugeAnnotation x:Name="IntermediateAnnotation">
+                                    <gauge:GaugeAnnotation.Content>
+                                        <TextBlock Text="-"
+                                                   Foreground="#2194f3"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="24"
+                                                   FontWeight="SemiBold"
+                                                   Margin="20,0,20,0" />
+                                    </gauge:GaugeAnnotation.Content>
+                                </gauge:GaugeAnnotation>
+
+                                <gauge:GaugeAnnotation x:Name="EndValueAnnotation"
+                                                       DirectionUnit="Angle"
+                                                       DirectionValue="0"
+                                                       PositionFactor="0.4">
+                                    <gauge:GaugeAnnotation.Content>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock x:Name="EndValueAnnotationDate"
+                                                       Text="5 Apr"
+                                                       FontWeight="Medium"
+                                                       FontSize="16"
+                                                       Foreground="#2194f3"
+                                                       HorizontalAlignment="Center" />
+                                            <TextBlock x:Name="WakeUpTime"
+                                                       Text="06:00"
+                                                       FontSize="24"
+                                                       Foreground="#2194f3" />
+                                        </StackPanel>
+                                    </gauge:GaugeAnnotation.Content>
+                                </gauge:GaugeAnnotation>
+                            </gauge:RadialAxis.Annotations>
+                        </gauge:RadialAxis>
+                    </gauge:SfRadialGauge.Axes>
+                </gauge:SfRadialGauge>
+
+                <TextBlock Grid.Row="1"
+                           x:Name="sleepedTime"
+                           Text="10 hrs 00 min"
+                           FontSize="20"
+                           HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="3"
+                           Text="Sleep time"
+                           HorizontalAlignment="Center" />
+            </Grid>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="startPointerValue"
+                                           SubstitutionValue="{x:Bind startPointer.Value, Mode=OneWay}" />
+            <common:DemoLayoutSubstitution Key="endPointerValue"
+                                           SubstitutionValue="{x:Bind EndPointer.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+    </common:DemoLayout>
+</Page>

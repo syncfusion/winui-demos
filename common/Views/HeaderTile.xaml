@@ -1,0 +1,86 @@
+﻿<Page x:Class="Syncfusion.DemosCommon.WinUI.HeaderTile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Syncfusion.DemosCommon.WinUI"
+      NavigationCacheMode="Disabled">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:ThemeResourcesDictionary />
+            </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrush"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                    <StaticResource x:Key="HyperlinkButtonBackground"
+                                    ResourceKey="SystemControlPageBackgroundTransparentBrush" />
+                    <StaticResource x:Key="HyperlinkButtonBackgroundPointerOver"
+                                    ResourceKey="SystemControlPageBackgroundTransparentBrush" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPointerOver"
+                                     Color="{ThemeResource ControlStrokeColorSecondary}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPressed"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushDisabled"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrush"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                    <StaticResource x:Key="HyperlinkButtonBackground"
+                                    ResourceKey="SystemControlPageBackgroundTransparentBrush" />
+                    <StaticResource x:Key="HyperlinkButtonBackgroundPointerOver"
+                                    ResourceKey="SystemControlPageBackgroundTransparentBrush" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPointerOver"
+                                     Color="{ThemeResource ControlStrokeColorSecondary}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPressed"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushDisabled"
+                                     Color="{ThemeResource ControlStrokeColorDefault}" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="HighContrast">
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrush"
+                                     Color="{ThemeResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPointerOver"
+                                     Color="{ThemeResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushPressed"
+                                     Color="{ThemeResource SystemColorButtonTextColor}" />
+                    <SolidColorBrush x:Key="HyperlinkButtonBorderBrushDisabled"
+                                     Color="{ThemeResource SystemColorButtonTextColor}" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <HyperlinkButton MinWidth="180"
+                     Height="52"
+                     NavigateUri="{x:Bind Link, Mode=OneWay}"
+                     HorizontalContentAlignment="Left">
+        <Grid HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Background="{ThemeResource SyncfusionIconBackground}"
+                  Grid.Column="0"
+                  Width="36"
+                  Height="36"
+                  CornerRadius="4">
+                <Viewbox Stretch="Uniform"
+                         Width="28"
+                         Height="28">
+                    <FontIcon FontFamily="{local:SBIcons}"
+                              Glyph="{x:Bind Glyph}" />
+                </Viewbox>
+            </Grid>
+
+            <TextBlock Grid.Column="1"
+                        Text="{x:Bind Title, Mode=OneWay}"
+                        Margin="16,0"
+                        Style="{StaticResource BodyStrongTextBlockStyle}"
+                        Foreground="#005FB8"
+                        VerticalAlignment="Center"
+                        TextWrapping="Wrap" />
+        </Grid>
+    </HyperlinkButton>
+</Page>

@@ -1,0 +1,89 @@
+﻿<gauge:SfRadialGauge>
+    <gauge:SfRadialGauge.Axes>
+        <gauge:RadialAxis ShowAxisLine="False"
+                          ShowLabels="False"
+                          ShowTicks="False"
+                          StartAngle="180"
+                          EndAngle="360"
+                          Minimum="0"
+                          Maximum="120"
+                          RadiusFactor="0.79">
+            <gauge:RadialAxis.Pointers>
+                <gauge:NeedlePointer Value="82"
+                                     NeedleLengthUnit="Factor"
+                                     NeedleLength="0.7"
+                                     NeedleStartWidth="2"
+                                     NeedleEndWidth="20"
+                                     KnobRadius="12.3">
+                </gauge:NeedlePointer>
+            </gauge:RadialAxis.Pointers>
+
+            <gauge:RadialAxis.Ranges>
+                <gauge:GaugeRange StartValue="0"
+                                  EndValue="20"
+                                  StartWidth="0.4"
+                                  EndWidth="0.4"
+                                  WidthUnit="Factor"
+                                  Background="#FFDD3800">
+                </gauge:GaugeRange>
+                <gauge:GaugeRange StartValue="20.5"
+                                  EndValue="40"
+                                  ...
+                                  Background="#FFFF4100">
+                </gauge:GaugeRange>
+                <gauge:GaugeRange StartValue="40.5"
+                                  EndValue="60"
+                                  ...
+                                  Background="#FFFFBA00">
+                </gauge:GaugeRange>
+                <gauge:GaugeRange StartValue="60.5"
+                                  EndValue="80"
+                                  ...
+                                  Background="#FFFFDF10">
+                </gauge:GaugeRange>
+                <gauge:GaugeRange StartValue="80.5"
+                                  EndValue="100"
+                                  ...
+                                  Background="#FF8BE724">
+                </gauge:GaugeRange>
+                <gauge:GaugeRange StartValue="100.5"
+                                  EndValue="120"
+                                  ...
+                                  Background="#FF64BE00">
+                </gauge:GaugeRange>
+            </gauge:RadialAxis.Ranges>
+        </gauge:RadialAxis>
+        <gauge:RadialAxis ShowAxisLine="False"
+                          ShowLabels="False"
+                          ShowTicks="False"
+                          StartAngle="180"
+                          EndAngle="360"
+                          Minimum="0"
+                          Maximum="120"
+                          RadiusFactor="0.85">
+            <gauge:RadialAxis.Pointers>
+                <gauge:ContentPointer Value="20.5"
+                                     FontWeight="SemiBold"
+                                     FontSize="18"
+                                     OffsetUnit="Factor"
+                                     MarkerOffset="-0.1">
+                     <gauge:ContentPointer.Content>
+                         <TextBlock Text="Poor" />
+                     </gauge:ContentPointer.Content>
+                </gauge:ContentPointer>
+                <gauge:ContentPointer Value="60.5"
+                                     ...>
+                     <gauge:ContentPointer.Content>
+                         <TextBlock Text="Average" />
+                     </gauge:ContentPointer.Content>
+                </gauge:ContentPointer>
+                <gauge:ContentPointer Value="100.5"
+                                     ...>
+                     <gauge:ContentPointer.Content>
+                         <TextBlock Text="Good" />
+                     </gauge:ContentPointer.Content>
+                </gauge:ContentPointer>
+            </gauge:RadialAxis.Pointers>
+        </gauge:RadialAxis>
+    </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>
