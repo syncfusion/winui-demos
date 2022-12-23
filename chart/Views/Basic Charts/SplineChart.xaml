@@ -68,41 +68,67 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Average High/Low Temperature&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate1&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot; 
+                         Fill=&quot;{StaticResource SeriesColor1}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate2&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                         Fill=&quot;{StaticResource SeriesColor2}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
     
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis Header=&quot;Months&quot; LabelFormat=&quot;yyyy&quot; PlotOffsetStart=&quot;30&quot; PlotOffsetEnd=&quot;30&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+        &lt;chart:CategoryAxis Header=&quot;Months&quot;
+                            PlotOffsetStart=&quot;30&quot;
+                            PlotOffsetEnd=&quot;30&quot;
+                            ShowMajorGridLines=&quot;False&quot; &gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;yyyy&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis Header=&quot;Temperature (In Fahrenheit)&quot; Interval=&quot;10&quot; LabelFormat=&quot;0°F&quot; Maximum=&quot;80&quot; Minimum=&quot;30&quot; /&gt;
+        &lt;chart:NumericalAxis Header=&quot;Temperature (In Fahrenheit)&quot;
+                             Interval=&quot;10&quot;
+                             Maximum=&quot;80&quot;
+                             Minimum=&quot;30&quot; &gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat="0°F" /&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
     
-   &lt;chart:SplineSeries 
-                        ItemsSource=&quot;{Binding List}&quot; 
-                        XBindingPath=&quot;XValue&quot; 
-                        YBindingPath=&quot;YValue1&quot; 
-                        Label=&quot;India&quot; 
-                        EnableTooltip=&quot;True&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        EnableAnimation=&quot;True&quot;&gt;
+   &lt;chart:SplineSeries ItemsSource=&quot;{Binding List}&quot;
+                       XBindingPath=&quot;XValue&quot;
+                       YBindingPath=&quot;YValue1&quot;
+                       Label=&quot;India&quot;
+                       EnableTooltip=&quot;True&quot;
+                       ShowDataLabels=&quot;True&quot;
+                       EnableAnimation=&quot;True&quot;&gt;
         &lt;chart:SplineSeries.DataLabelSettings&gt;
-            &lt;chart:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt; 
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt; 
         &lt;/chart:SplineSeries.DataLabelSettings&gt;
     &lt;/chart:SplineSeries&gt;
     
-    &lt;chart:SplineSeries 
-                        ItemsSource=&quot;{Binding List}&quot; 
-                        XBindingPath=&quot;XValue&quot; 
-                        YBindingPath=&quot;YValue2&quot; 
-                        Label=&quot;Germany&quot; 
+    &lt;chart:SplineSeries ItemsSource=&quot;{Binding List}&quot;
+                        XBindingPath=&quot;XValue&quot;
+                        YBindingPath=&quot;YValue2&quot;
+                        Label=&quot;Germany&quot;
                         EnableTooltip=&quot;True&quot;
                         ShowDataLabels=&quot;True&quot;
                         EnableAnimation=&quot;True&quot;&gt;
         &lt;chart:SplineSeries.DataLabelSettings&gt;
-            &lt;chart:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt; 
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt; 
             &lt;/chart:SplineSeries.DataLabelSettings&gt;
     &lt;/chart:SplineSeries&gt;
 &lt;/chart:SfCartesianChart&gt;

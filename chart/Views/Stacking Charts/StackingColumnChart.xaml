@@ -80,46 +80,55 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Olympic Games Medal Details&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
-        &lt;chart:StackedColumnSeries
-                        EnableAnimation=&quot;True&quot;
-                        ItemsSource=&quot;{Binding MedalDetails}&quot;
-                        Label=&quot;Gold&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        XBindingPath=&quot;CountryName&quot;
-                        YBindingPath=&quot;GoldMedals&quot;&gt;
-                &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; 
+                            ShowMajorGridLines=&quot;False&quot; Header=&quot;Country&quot; /&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; ShowMajorGridLines=&quot;True&quot;
+                             Header=&quot;Number of Medals&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
                         
-        &lt;chart:StackedColumnSeries
-                         EnableAnimation=&quot;True&quot;
-                         ItemsSource=&quot;{Binding MedalDetails}&quot;
-                         Label=&quot;Silver&quot;
-                         ShowDataLabels=&quot;True&quot;
-                         XBindingPath=&quot;CountryName&quot;
-                         YBindingPath=&quot;SilverMedals&quot;&gt;
-                &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               ItemsSource=&quot;{Binding MedalDetails}&quot;
+                               Label=&quot;Gold&quot;
+                               ShowDataLabels=&quot;True&quot;
+                               XBindingPath=&quot;CountryName&quot;
+                               YBindingPath=&quot;GoldMedals&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
                         
-        &lt;chart:StackedColumnSeries
-                         EnableAnimation=&quot;True&quot;
-                         ItemsSource=&quot;{Binding MedalDetails}&quot;
-                         Label=&quot;Bronze&quot;
-                         ShowDataLabels=&quot;True&quot;
-                         XBindingPath=&quot;CountryName&quot;
-                         YBindingPath=&quot;BronzeMedals&quot;&gt;
-                &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                              ItemsSource=&quot;{Binding MedalDetails}&quot;
+                              Label=&quot;Silver&quot;
+                              ShowDataLabels=&quot;True&quot;
+                              XBindingPath=&quot;CountryName&quot;
+                              YBindingPath=&quot;SilverMedals&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
+                        
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               ItemsSource=&quot;{Binding MedalDetails}&quot;
+                               Label=&quot;Bronze&quot;
+                               ShowDataLabels=&quot;True&quot;
+                               XBindingPath=&quot;CountryName&quot;
+                               YBindingPath=&quot;BronzeMedals&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
                         
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

@@ -64,7 +64,7 @@ namespace Syncfusion.DemosCommon.WinUI
         [Display(Name = "TreeGrid")]
         SfTreeGrid,
         
-        [Display(Name = "Tree View")]
+        [Display(Name = "TreeView")]
         SfTreeView,
         
         [Display(Name = "Cartesian Charts")]
@@ -165,6 +165,9 @@ namespace Syncfusion.DemosCommon.WinUI
 
         [Display(Name = "Rating")]
         SfRating,
+
+        [Display(Name = "MaskedTextBox")]
+        SfMaskedTextBox
     }
 
     /// </summary>

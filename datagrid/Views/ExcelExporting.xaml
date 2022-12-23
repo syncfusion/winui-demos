@@ -121,7 +121,7 @@
                                                x:Name="NoteTextBlock" 
                                                HorizontalAlignment="Left"
                                                Text="Note: This button will be enabled only when the DataGrid rows are selected." 
-                                               TextWrapping="WrapWholeWords" />                                    
+                                               TextWrapping="WrapWholeWords" />
                                 </StackPanel>
                             </StackPanel>
                         </ScrollViewer>

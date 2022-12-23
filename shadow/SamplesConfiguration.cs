@@ -21,6 +21,7 @@ namespace Syncfusion.ShadowDemos.WinUI
                 Category = "Shadow",
                 Description = "Shadow control is used to apply the shadow effects to any framework element to display with a beautiful and attractive UI.",
                 DemoView = typeof(Views.Shadow.ShadowView),
+                DemoType = DemoTypes.Updated,
                 ShowInfoPanel = false,
             };
 
@@ -28,6 +29,7 @@ namespace Syncfusion.ShadowDemos.WinUI
             {
                 Control = DemoControl.SfShadow,
                 ControlCategory = ControlCategory.Miscellaneous,
+                ControlBadge = ControlBadge.Updated,
                 Description = "Shadow control is used to apply the shadow effects to any framework element to display with a beautiful and attractive UI.",
                 Glyph = "\ue722",
                 ImageSource = "Shadow.png",

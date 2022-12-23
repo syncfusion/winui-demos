@@ -29,7 +29,7 @@
                                           Maximum="24"
                                           Interval="6"
                                           MinorTicksPerInterval="5"
-                                          ShowFirstLabel="False"
+                                          ShowLastLabel="False"
                                           AxisLineFill="#B1E8FF"
                                           AxisLineWidthUnit="Factor"
                                           AxisLineWidth="0.03">

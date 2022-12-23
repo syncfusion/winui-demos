@@ -132,6 +132,9 @@
 		<Compile Include="Views\Styling.xaml.cs">
 			<DependentUpon>Styling.xaml</DependentUpon>
 		</Compile>
+		<Compile Include="Views\ExcelExporting.xaml.cs">
+			<DependentUpon>ExcelExporting.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Include="MainWindow.xaml"/>
@@ -207,17 +210,20 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\ExcelExporting.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Grid.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Calendar.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Grid.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Calendar.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.GridExport.WinUI" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\New DS 2\data-xaml\WinUI\Data.WinUI\Src\Syncfusion.Data.WinUI_Net60.csproj"/>
-		<ProjectReference Include="..\..\..\WINUI-2769\datagrid-xaml\WinUI\SfGrid.WinUI\Src\Syncfusion.SfGrid.WinUI_Net60.csproj"/>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>
 	</ItemGroup>
 </Project>

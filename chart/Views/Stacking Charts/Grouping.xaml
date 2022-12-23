@@ -92,64 +92,71 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Comparison of Company's Growth&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
     
-        &lt;chart:StackedColumnSeries
-                        EnableAnimation=&quot;True&quot;
-                        GroupName=&quot;Group1&quot;
-                        ItemsSource=&quot;{Binding AnnualDetails}&quot;
-                        Label=&quot;Quarter 1&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        XBindingPath=&quot;Year&quot;
-                        YBindingPath=&quot;Quarter1&quot;&gt;
-                &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; 
+                            ShowMajorGridLines=&quot;False&quot; Header=&quot;Year&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Header=&quot;Revenue In Millions&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend ItemMargin=&quot;2&quot; BorderThickness=&quot;1&quot; 
+                           CornerRadius=&quot;0&quot; Placement=&quot;Bottom&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
                         
-        &lt;chart:StackedColumnSeries
-                         EnableAnimation=&quot;True&quot;
-                         GroupName=&quot;Group1&quot;
-                         ItemsSource=&quot;{Binding AnnualDetails}&quot;
-                         Label=&quot;Quarter 2&quot;
-                         ShowDataLabels=&quot;True&quot;
-                         XBindingPath=&quot;Year&quot;
-                         YBindingPath=&quot;Quarter2&quot;&gt;
-                 &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                 &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               GroupName=&quot;Group1&quot;
+                               ItemsSource=&quot;{Binding AnnualDetails}&quot;
+                               Label=&quot;Quarter 1&quot;
+                               ShowDataLabels=&quot;True&quot;
+                              XBindingPath=&quot;Year&quot;
+                              YBindingPath=&quot;Quarter1&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+           &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
                         
-        &lt;chart:StackedColumnSeries
-                        EnableAnimation=&quot;True&quot;
-                        GroupName=&quot;Group2&quot;
-                        ItemsSource=&quot;{Binding AnnualDetails}&quot;
-                        Label=&quot;Quarter 3&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        XBindingPath=&quot;Year&quot;
-                        YBindingPath=&quot;Quarter3&quot;&gt;
-                 &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                        &lt;chart:CartesianDataLabelSettings
-                        Position=&quot;Inner&quot;/&gt;
-                 &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               GroupName=&quot;Group1&quot;
+                               ItemsSource=&quot;{Binding AnnualDetails}&quot;
+                               Label=&quot;Quarter 2&quot;
+                               ShowDataLabels=&quot;True&quot;
+                               XBindingPath=&quot;Year&quot;
+                               YBindingPath=&quot;Quarter2&quot;&gt;
+         &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
                         
-        &lt;chart:StackedColumnSeries
-                        EnableAnimation=&quot;True&quot;
-                        GroupName=&quot;Group2&quot;
-                        ItemsSource=&quot;{Binding AnnualDetails}&quot;
-                        Label=&quot;Quarter 4&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        XBindingPath=&quot;Year&quot;
-                        YBindingPath=&quot;Quarter4&quot;&gt;
-                 &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         Position=&quot;Inner&quot;/&gt;
-                 &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
-        &lt;/chart:StackedColumnSeries&gt;
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               GroupName=&quot;Group2&quot;
+                               ItemsSource=&quot;{Binding AnnualDetails}&quot;
+                               Label=&quot;Quarter 3&quot;
+                               ShowDataLabels=&quot;True&quot;
+                               XBindingPath=&quot;Year&quot;
+                               YBindingPath=&quot;Quarter3&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
                         
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot;
+                               GroupName=&quot;Group2&quot;
+                               ItemsSource=&quot;{Binding AnnualDetails}&quot;
+                               Label=&quot;Quarter 4&quot;
+                               ShowDataLabels=&quot;True&quot;
+                               XBindingPath=&quot;Year&quot;
+                               YBindingPath=&quot;Quarter4&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
+
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

@@ -116,66 +116,97 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Monthly expense of a family&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
-        &lt;chart:StackedLine100Series
-                        EnableAnimation=&quot;True&quot;
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate1&quot;&gt;
+                &lt;llipse Height=&quot;13&quot; Width=&quot;13&quot;
+                        Fill=&quot;{StaticResource SeriesColor1}&quot; 
+                        Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate2&quot;&gt;
+                &lt;llipse Height=&quot;13&quot; Width=&quot;13&quot;
+                        Fill=&quot;{StaticResource SeriesColor2}&quot; 
+                        Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate3&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                        Fill=&quot;{StaticResource SeriesColor3}&quot;
+                        Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate4&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot; 
+                        Fill=&quot;{StaticResource SeriesColor4}&quot;
+                        Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+         &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Header=&quot;Expenses&quot;
+                                Interval=&quot;20&quot; RangePadding=&quot;Additional&quot;&gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;$0&quot; /&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
+     &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+    &lt;chart:StackedLine100Series EnableAnimation=&quot;True&quot;
                         ItemsSource=&quot;{Binding MonthlyExpense}&quot;
                         Label=&quot;Daughter&quot;
                         EnableTooltip=&quot;True&quot;
                         ShowDataLabels=&quot;True&quot;
                         XBindingPath=&quot;Name&quot;
                         YBindingPath=&quot;Daughter&quot;>
-                &lt;chart:StackedLine100Series.DataLabelSettings&gt;
-                        &lt;chart:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;&gt;
-                        &lt;/chart:CartesianDataLabelSettings&gt;
-                &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
-        &lt;/chart:StackedLine100Series&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
 
-        &lt;chart:StackedLine100Series
-                        EnableAnimation=&quot;True&quot;
+    &lt;chart:StackedLine100Series  EnableAnimation=&quot;True&quot;
                         ItemsSource=&quot;{Binding MonthlyExpense}&quot;
                         EnableTooltip=&quot;True&quot;
                         ShowDataLabels=&quot;True&quot;
                         Label=&quot;Son&quot;
                         XBindingPath=&quot;Name&quot;
                         YBindingPath=&quot;Son&quot;&gt;
-                &lt;chart:StackedLine100Series.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings
-                         ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;&gt;
-                         &lt;/chart:CartesianDataLabelSettings&gt;
-                &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
-        &lt;/chart:StackedLine100Series&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
 
-        &lt;chart:StackedLine100Series
-                         EnableAnimation=&quot;True&quot;
+    &lt;chart:StackedLine100Series EnableAnimation=&quot;True&quot;
                          ItemsSource=&quot;{Binding MonthlyExpense}&quot;
                          EnableTooltip=&quot;True&quot;
                          ShowDataLabels=&quot;True&quot;
                          Label=&quot;Mother&quot;
                          XBindingPath=&quot;Name&quot;
                          YBindingPath=&quot;Mother&quot;&gt;
-                &lt;chart:StackedLine100Series.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings 
-                         ContentTemplate=&quot;{StaticResource labelTemplate3}&quot;&gt;
-                         &lt;/chart:CartesianDataLabelSettings&gt;
-                &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
-        &lt;/chart:StackedLine100Series&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate3}&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
 
-        &lt;chart:StackedLine100Series
-                         EnableAnimation=&quot;True&quot;
+    &lt;chart:StackedLine100Series EnableAnimation=&quot;True&quot;
                          ItemsSource=&quot;{Binding MonthlyExpense}&quot;
                          EnableTooltip=&quot;True&quot;
                          Label=&quot;Father&quot;
                          XBindingPath=&quot;Name&quot;
                          YBindingPath=&quot;Father&quot;&gt;
-                &lt;chart:StackedLine100Series.DataLabelSettings&gt;
-                         &lt;chart:CartesianDataLabelSettings 
-                         ContentTemplate=&quot;{StaticResource labelTemplate4}&quot;&gt;
-                         &lt;/chart:CartesianDataLabelSettings&gt;
-                &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
-        &lt;/chart:StackedLine100Series&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate4}&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
                         
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

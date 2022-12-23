@@ -58,6 +58,10 @@
 		<Link>DocIO\Views\WordToPDF.xaml.cs</Link>
       <DependentUpon>..\DocIO\Views\WordToPDF.xaml</DependentUpon>
     </Compile>
+	 <Compile Include="..\DocIO\Views\WordToMarkdown.xaml.cs">
+		<Link>DocIO\Views\WordToMarkdown.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\WordToMarkdown.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 <ItemGroup>
    <Page Include="..\DocIO\Views\FindAndReplace.xaml">
@@ -120,6 +124,11 @@
 	    <Generator>MSBuild:Compile</Generator>
 		<SubType>Designer</SubType>
 	  </Page>
+	   <Page Include="..\DocIO\Views\WordToMarkdown.xaml">
+		<Link>DocIO\Views\WordToMarkdown.xaml</Link>
+	    <Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	  </Page>
 	  <Page Include="..\DocIO\Views\FindAndHighlight.xaml">
 	     <Link>DocIO\Views\FindAndHighlight.xaml</Link>
          <Generator>MSBuild:Compile</Generator>
@@ -165,6 +174,9 @@
 	</Content>
 	<Content Include="..\DocIO\Views\Resources\SourceCodes\WordToPDF_cs.txt">
 		<Link>DocIO\Views\Resources\SourceCodes\WordToPDF_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\WordToMarkdown_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\WordToMarkdown_cs.txt</Link>
 	</Content>
   </ItemGroup>
 	<ItemGroup>
@@ -246,6 +258,10 @@
 		</EmbeddedResource>
 		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Mountain300.bmp">
 			<Link>DocIO\Assets\DocIO\Mountain300.bmp</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\WordtoMD.docx">
+			<Link>DocIO\Assets\DocIO\WordtoMD.docx</Link>
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
 	</ItemGroup>

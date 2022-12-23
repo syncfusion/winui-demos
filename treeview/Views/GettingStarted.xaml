@@ -51,7 +51,7 @@
                     </treeView:SfTreeView>
                 </StackPanel>
                 <common:DemoLayout.HeaderText>
-                    A simple Tree View with data binding using ObservableCollection.
+                    A simple TreeView with data binding using ObservableCollection.
                 </common:DemoLayout.HeaderText>
                 <common:DemoLayout.Options>
                     <StackPanel>
@@ -206,7 +206,7 @@
                     </treeView:SfTreeView>
                 </StackPanel>
                 <common:DemoLayout.HeaderText>
-                    Populating the Tree View with nodes manually without using a data source.
+                    Populating the TreeView with nodes manually without using a data source.
                 </common:DemoLayout.HeaderText>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">

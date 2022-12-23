@@ -79,6 +79,9 @@
 		<Compile Include="Views\ContextualTabGroupView.xaml.cs">
 			<DependentUpon>ContextualTabGroupView.xaml</DependentUpon>
 		</Compile>
+		<Compile Include="Views\RibbonCompactSize.xaml.cs">
+			<DependentUpon>RibbonCompactSize.xaml</DependentUpon>
+		</Compile>
 		<Compile Include="Views\RibbonKeyTip.xaml.cs">
 			<DependentUpon>RibbonKeyTip.xaml</DependentUpon>
 		</Compile>
@@ -143,6 +146,7 @@
 		</EmbeddedResource>
 		<Content Include="Views\Resources\SourceCodes\ResizePriority_xaml.txt"/>
 		<Content Include="Views\Resources\SourceCodes\Resize_xaml.txt"/>
+		<Content Include="Views\Resources\SourceCodes\RibbonCompactCode.txt"/>
 		<Content Include="Views\Resources\SourceCodes\Ribbongallerypreview_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\Ribbongallerypreview_xaml.txt"/>
 		<Content Include="Views\Resources\SourceCodes\RibbonKeyTipCode.txt"/>
@@ -154,6 +158,10 @@
 	<ItemGroup>
 		<Page Include="MainWindow.xaml"/>
 		<Page Include="Views\ContextualTabGroupView.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\RibbonCompactSize.xaml">
 			<SubType>Designer</SubType>
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
@@ -198,7 +206,7 @@
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Ribbon.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Ribbon.WinUI" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <StackPanel>
         <common:DemoLayout 
-                HeaderText="This demo shows how to redact a text from a PDF document. Redaction is a process of removing sensitive or unwanted information from PDF documents."
+                HeaderText="This demo shows how to redact a text and an image from a PDF document. Redaction is a process of removing sensitive or unwanted information from PDF documents."
                 CSharpSource="{common:ConditionalXAML Individual=Syncfusion.PdfDemos.WinUI/Views/Resources/SourceFiles/Redaction_xaml_cs.txt,
                                                                  Common=Pdf/Views/Resources/SourceFiles/Redaction_xaml_cs.txt}">
             <common:DemoLayout.Example>

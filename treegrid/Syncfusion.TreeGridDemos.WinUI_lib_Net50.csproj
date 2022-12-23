@@ -149,6 +149,9 @@
 		<Compile Include="Views\Styling.xaml.cs">
 			<DependentUpon>Styling.xaml</DependentUpon>
 		</Compile>
+		<Compile Include="Views\ExcelExporting.xaml.cs">
+			<DependentUpon>ExcelExporting.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Include="Views\AdvancedFiltering.xaml">
@@ -223,12 +226,16 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\ExcelExporting.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Grid.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Calendar.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Grid.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Calendar.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net50.csproj"/>

@@ -10,19 +10,19 @@
     Background="Transparent"
     mc:Ignorable="d">
     <Page.Resources>
-        <local:SalesViewModel x:Key="salesViewModel"/>
+        <local:SalesViewModel x:Key="salesViewModel"/>         
         <local:CustomCellStyleSelector x:Key="cellStyleSelector"/>
         <Style x:Key="darkRedCellStyle" TargetType="dataGrid:GridCell">
-            <Setter Property="Background" Value="#f07d9b"/>
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#f50602"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style x:Key="redCellStyle" TargetType="dataGrid:GridCell">
-            <Setter Property="Background" Value="#fc9fa1"/>
+            <Setter Property="Background" Value="#e37b64"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style x:Key="lightRedCellStyle" TargetType="dataGrid:GridCell">
-            <Setter Property="Background" Value="#f50602"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#f07d9b"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style x:Key="darkYellowCellStyle" TargetType="dataGrid:GridCell">
             <Setter Property="Background" Value="#fcca03"/>
@@ -47,15 +47,15 @@
         <Style x:Key="lightVioletCellStyle" TargetType="dataGrid:GridCell">
             <Setter Property="Background" Value="#e4b4ed"/>
             <Setter Property="Foreground" Value="Black"/>
-        </Style>
+        </Style> 
         <Style x:Key="greenCellStyle" TargetType="dataGrid:GridCell">
             <Setter Property="Background" Value="#50bf65"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style x:Key="lightGreenCellStyle" TargetType="dataGrid:GridCell">
             <Setter Property="Background" Value="#99f2b4"/>
-            <Setter Property="Foreground" Value="Black"/>
-        </Style>
+            <Setter Property="Foreground" Value="Black"/> 
+        </Style> 
     </Page.Resources>
     <StackPanel DataContext="{StaticResource salesViewModel}">
         <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
@@ -71,7 +71,7 @@
                                    ColumnWidthMode="Auto"
                                    CellStyleSelector="{StaticResource cellStyleSelector}"
                                    ItemsSource="{Binding YearlySales}"
-                                   GridLinesVisibility="Both">
+                                   GridLinesVisibility="Both"> 
                         <dataGrid:SfDataGrid.Columns>
                             <dataGrid:GridTextColumn MappingName="Name" />
                             <dataGrid:GridNumericColumn MappingName="QS1" NumberFormatter="{Binding SystemCurrency,Source={StaticResource salesViewModel}}" HeaderText="Sales in Q1" TextAlignment="Right" />
@@ -83,7 +83,7 @@
                         </dataGrid:SfDataGrid.Columns>
                     </dataGrid:SfDataGrid>
                 </common:DemoLayout.Example>
-
+                
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve"> 
      &lt;Page.Resources>&gt; 

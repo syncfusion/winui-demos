@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2022.
-// Copyright Syncfusion Inc. 2001-2022. All rights reserved.
+#region Copyright Syncfusion Inc. 2001-2021.
+// Copyright Syncfusion Inc. 2001-2021. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -179,7 +179,7 @@ namespace Syncfusion.XlsIODemos.WinUI
                 Name = "Import HTML Table",
                 Category = "Import Data",
                 Description = "This example demonstrates how to import data from a table in an HTML file into an Excel workbook.",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 DemoView = typeof(Views.ImportHTMLTable),
                 ShowInfoPanel = true
             };
@@ -364,7 +364,7 @@ namespace Syncfusion.XlsIODemos.WinUI
             {
                 Control = DemoControl.XlsIO,
                 Description = "Syncfusion XlsIO is a .NET class library to create, read, edit and modify Microsoft Excel documents along with conversion of Excel documents to PDF and image.",
-                ControlBadge = ControlBadge.Updated ,
+                ControlBadge = ControlBadge.None ,
                 ControlCategory = ControlCategory.FileFormat,
                 Glyph = "\uE721",
                 ImageSource = "XlsIO.png"

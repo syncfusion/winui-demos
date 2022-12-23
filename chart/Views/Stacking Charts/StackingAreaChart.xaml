@@ -74,31 +74,47 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Road Accident Statistics(2009)&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
-        &lt;chart:StackedAreaSeries
-                EnableAnimation=&quot;True&quot;
-                ItemsSource=&quot;{Binding Accidents}&quot;
-                Label=&quot;Bus&quot;
-                XBindingPath=&quot;Month&quot;
-                YBindingPath=&quot;Bus&quot;&gt;
-        &lt;/chart:StackedAreaSeries&gt;
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot;
+                           ShowMajorGridLines=&quot;False&quot; 
+                           Header=&quot;Month&quot;&gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;MMM&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Header=&quot;Death Counts (Thousands)&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; /&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
                         
-        &lt;chart:StackedAreaSeries
-                EnableAnimation=&quot;True&quot;
-                ItemsSource=&quot;{Binding Accidents}&quot;
-                Label=&quot;Car&quot;
-                XBindingPath=&quot;Month&quot;
-                YBindingPath=&quot;Car&quot;&gt;
-        &lt;/chart:StackedAreaSeries&gt;
+    &lt;chart:StackedAreaSeries EnableAnimation=&quot;True&quot;
+                             ItemsSource=&quot;{Binding Accidents}&quot;
+                             Label=&quot;Bus&quot;
+                             XBindingPath=&quot;Month&quot;
+                             YBindingPath=&quot;Bus&quot;&gt;
+    &lt;/chart:StackedAreaSeries&gt;
                         
-        &lt;chart:StackedAreaSeries
-                EnableAnimation=&quot;True&quot;
-                ItemsSource=&quot;{Binding Accidents}&quot;
-                Label=&quot;Truck&quot;
-                XBindingPath=&quot;Month&quot;
-                YBindingPath=&quot;Truck&quot;&gt;
-        &lt;/chart:StackedAreaSeries&gt;
+    &lt;chart:StackedAreaSeries EnableAnimation=&quot;True&quot;
+                             ItemsSource=&quot;{Binding Accidents}&quot;
+                             Label=&quot;Car&quot;
+                             XBindingPath=&quot;Month&quot;
+                             YBindingPath=&quot;Car&quot;&gt;
+    &lt;/chart:StackedAreaSeries&gt;
+                        
+    &lt;chart:StackedAreaSeries EnableAnimation=&quot;True&quot;
+                             ItemsSource=&quot;{Binding Accidents}&quot;
+                             Label=&quot;Truck&quot;
+                             XBindingPath=&quot;Month&quot;
+                             YBindingPath=&quot;Truck&quot;&gt;
+    &lt;/chart:StackedAreaSeries&gt;
                         
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

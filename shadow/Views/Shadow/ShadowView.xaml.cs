@@ -6,7 +6,9 @@
 // applicable laws. 
 #endregion
 using Microsoft.UI;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using System;
 using Windows.UI;
@@ -40,6 +42,36 @@ namespace Syncfusion.ShadowDemos.WinUI.Views.Shadow
             shape3.Color = (colorPicker3.SelectedBrush as SolidColorBrush).Color;
             shape4.Color = (colorPicker3.SelectedBrush as SolidColorBrush).Color;
             shape5.Color = (colorPicker3.SelectedBrush as SolidColorBrush).Color;
+        }
+
+        private void toggle1_Toggled(object sender, RoutedEventArgs e)
+        {
+            if(toggle1.IsOn == true)
+            {
+                btnShadow.EnableShadow = false;
+                buttonShadow.PointerEntered += ButtonShadow_PointerEntered;
+                buttonShadow.PointerExited += ButtonShadow_PointerExited;
+            }
+            else
+            {
+                btnShadow.EnableShadow = true;
+                buttonShadow.PointerEntered -= ButtonShadow_PointerEntered;
+                buttonShadow.PointerExited -= ButtonShadow_PointerExited;
+                board1.Stop();
+                board2.Stop();
+            }
+        }
+
+        private void ButtonShadow_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            VisualStateManager.GoToState(this, "PointerOver", true);
+            board1.Begin();
+        }
+
+        private void ButtonShadow_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            VisualStateManager.GoToState(this, "PointerExit", true);
+            board2.Begin();
         }
     }
 }

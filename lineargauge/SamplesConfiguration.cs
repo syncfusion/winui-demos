@@ -74,7 +74,7 @@ namespace Syncfusion.LinearGaugeDemos.WinUI
                 Name = "Sleep watch score",
                 Description = "This sample showcases how to design a sleep watch using the linear gauge.",
                 Category = "Showcase",
-                DemoType = DemoTypes.Showcase | DemoTypes.Updated,
+                DemoType = DemoTypes.Showcase | DemoTypes.None,
                 DemoView = typeof(Views.SleepWatchScore)
             };
 
@@ -264,7 +264,7 @@ namespace Syncfusion.LinearGaugeDemos.WinUI
                 Control = DemoControl.SfLinearGauge,
                 Description = "The WinUI Linear Gauge is a data visualization control that can be used to display data on a linear scale in either horizontal or vertical orientation.",
                 ControlCategory = ControlCategory.DataVisualization,
-                ControlBadge = ControlBadge.Updated,
+                ControlBadge = ControlBadge.None,
                 Glyph = "\ue712",
                 ImageSource="LinearGauge.png"
             };

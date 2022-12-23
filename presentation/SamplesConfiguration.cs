@@ -52,7 +52,7 @@ namespace Syncfusion.PresentationDemos.WinUI
             {
                 Name = "PPTX To PDF",
                 Category = "Conversions",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 Description = "This example demonstrates how to convert a PowerPoint presentation file to a PDF file.",
                 DemoView = typeof(EssentialPresentation.PPTXToPDF),
                 ShowInfoPanel = true
@@ -62,6 +62,36 @@ namespace Syncfusion.PresentationDemos.WinUI
                 new Documentation() { Content = "PowerPoint library -  PPTX to PDF conversion", Uri = new Uri("https://help.syncfusion.com/file-formats/presentation/presentation-to-pdf") }
             };
             pptxToPDF.Documentation.AddRange(selectionDocumentations);
+			
+			DemoInfo findAndReplace = new()
+            {
+                Name = "Find and Replace",
+                Category = "Editing",
+                DemoType = DemoTypes.New,
+                Description = "This example demonstrates how to replace a specific text in the PowerPoint presentation file.",
+                DemoView = typeof(EssentialPresentation.FindAndReplace),
+                ShowInfoPanel = true
+            };
+            selectionDocumentations = new List<Documentation>
+            {
+                new Documentation() { Content = "PowerPoint library -  Find and Replace", Uri = new Uri("https://help.syncfusion.com/file-formats/presentation/working-with-find-and-replace") }
+            };
+            findAndReplace.Documentation.AddRange(selectionDocumentations);
+			
+			DemoInfo findAndHighlight = new()
+            {
+                Name = "Find and Highlight",
+                Category = "Editing",
+                DemoType = DemoTypes.New,
+                Description = "This example demonstrates how to find a specific text and highlight it in an existing PowerPoint presentation file.",
+                DemoView = typeof(EssentialPresentation.FindAndHighlight),
+                ShowInfoPanel = true
+            };
+            selectionDocumentations = new List<Documentation>
+            {
+                new Documentation() { Content = "PowerPoint library -  Find and Highlight", Uri = new Uri("https://help.syncfusion.com/file-formats/presentation/working-with-find-and-replace") }
+            };
+            findAndHighlight.Documentation.AddRange(selectionDocumentations);
 
             DemoInfo encryptAndDecrypt = new()
             {
@@ -143,6 +173,8 @@ namespace Syncfusion.PresentationDemos.WinUI
                 helloWorld,
                 pptxToImage,
                 pptxToPDF,
+				findAndReplace,
+				findAndHighlight,
                 chart,
                 slide,
                 table,

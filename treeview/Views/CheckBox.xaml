@@ -48,7 +48,7 @@
                 </treeView:SfTreeView>
             </StackPanel>
             <common:DemoLayout.HeaderText>
-                Treeview customization of nodes with CheckBox using ItemTemplate.
+                TreeView customization of nodes with CheckBox using ItemTemplate.
             </common:DemoLayout.HeaderText>
             <common:DemoLayout.Options>
                 <StackPanel>

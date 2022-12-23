@@ -15,7 +15,6 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using System.Collections.Generic;
 using Windows.Storage.Streams;
-using Windows.UI.Popups;
 
 namespace Syncfusion.XlsIODemos.WinUI.Views
 {
@@ -260,42 +259,21 @@ namespace Syncfusion.XlsIODemos.WinUI.Views
                 StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
                 stFile = await local.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
             }
-            try
+            if (stFile != null)
             {
-                if (stFile != null)
+                using (IRandomAccessStream zipStream = await stFile.OpenAsync(FileAccessMode.ReadWrite))
                 {
-                    using (IRandomAccessStream zipStream = await stFile.OpenAsync(FileAccessMode.ReadWrite))
+                    //Write compressed data from memory to file
+                    using (Stream outstream = zipStream.AsStreamForWrite())
                     {
-                        //Write compressed data from memory to file
-                        using (Stream outstream = zipStream.AsStreamForWrite())
-                        {
-                            outstream.SetLength(0);
-                            byte[] buffer = stream.ToArray();
-                            outstream.Write(buffer, 0, buffer.Length);
-                            outstream.Flush();
-                        }
+                        outstream.SetLength(0);
+                        byte[] buffer = stream.ToArray();
+                        outstream.Write(buffer, 0, buffer.Length);
+                        outstream.Flush();
                     }
-                    //Launch the saved Excel file
-                    await Windows.System.Launcher.LaunchFileAsync(stFile);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                //Gets process windows handle to open the dialog in application process.
-                IntPtr windowHandle = System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle;
-
-                if (ex.Message.Contains("Access is denied."))
-                {
-                    //Creates message dialog box.
-                    MessageDialog msgDialogBox = new("The file cannot be saved in this location due to access being denied." +
-                        " Kindly provide permission to save the file in this location or save the file in another location.", "File Access Denied");
-                    UICommand okCmd = new("Ok");
-                    msgDialogBox.Commands.Add(okCmd);
-                    WinRT.Interop.InitializeWithWindow.Initialize(msgDialogBox, windowHandle);
-                    //Showing a dialog box. 
-                    IUICommand msgCmd = await msgDialogBox.ShowAsync();
-                }
+                //Launch the saved Excel file
+                await Windows.System.Launcher.LaunchFileAsync(stFile);
             }
         }
 

@@ -61,18 +61,34 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
-                                               
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Population growth of various years&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis IntervalType=&quot;Years&quot;
+                            Interval=&quot;5&quot;
+                            ShowMajorGridLines=&quot;False&quot;
+                            ShowTrackballInfo=&quot;True&quot;&gt;
+            &lt;chart:DateTimeAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;yyyy&quot; /&gt;
+            &lt;/chart:DateTimeAxis.LabelStyle&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis TickLineSize=&quot;0&quot;
+                             ShowTrackballInfo=&quot;True&quot; /&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
     &lt;chart:SfCartesianChart.CrosshairBehavior&gt;
-        &lt;chart:ChartCrosshairBehavior 
-                        HorizontalAxisLabelAlignment=&quot;Center&quot; 
-                        VerticalAxisLabelAlignment=&quot;Center&quot; /&gt;
+        &lt;chart:ChartCrosshairBehavior HorizontalAxisLabelAlignment=&quot;Center&quot;
+                                      VerticalAxisLabelAlignment=&quot;Center&quot; /&gt;
     &lt;/chart:SfCartesianChart.CrosshairBehavior&gt;
-                        
+
     &lt;chart:FastLineSeries ItemsSource=&quot;{Binding CurrencyDetails}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;CurrencyValue&quot; 
-                        EnableAnimation=&quot;True&quot;&gt;
+                          XBindingPath=&quot;Date&quot; 
+                          YBindingPath=&quot;CurrencyValue&quot; 
+                          EnableAnimation=&quot;True&quot;&gt;
     &lt;/chart:FastLineSeries&gt;
                         
 &lt;/chart:SfCartesianChart&gt;

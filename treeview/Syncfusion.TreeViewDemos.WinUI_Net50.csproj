@@ -145,7 +145,7 @@
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.TreeView.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.TreeView.WinUI" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net50.csproj"/>

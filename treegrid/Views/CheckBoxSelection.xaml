@@ -20,7 +20,7 @@
                 <common:DemoLayout.Example>
                     <treeGrid:SfTreeGrid
                         x:Name="sfTreeGrid"
-                        Height="520"
+                        Height="460"
                         Width="Auto"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"

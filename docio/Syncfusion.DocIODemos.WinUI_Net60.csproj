@@ -95,6 +95,7 @@
 		<Compile Include="Views\EmployeeReport.xaml.cs"/>
 		<Compile Include="Views\OrdersReport.xaml.cs"/>
 		<Compile Include="Views\WordToPDF.xaml.cs"/>
+		<Compile Include="Views\WordToMarkdown.xaml.cs"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="Views\Resources\SourceCodes\Bookmarks_cs.txt"/>
@@ -110,6 +111,7 @@
 		<Content Include="Views\Resources\SourceCodes\SalesInvoice_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\TableOfContent_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\WordToPDF_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\WordToMarkdown_cs.txt"/>
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="Assets\DocIO\Adventure.docx">
@@ -161,6 +163,9 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
 		<EmbeddedResource Include="Assets\DocIO\WordtoPDF.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\WordtoMD.docx">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
 		<EmbeddedResource Include="Assets\DocIO\AdventureCycle.png">
@@ -225,13 +230,17 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\WordToMarkdown.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 		<Page Include="Views\FindAndHighlight.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>

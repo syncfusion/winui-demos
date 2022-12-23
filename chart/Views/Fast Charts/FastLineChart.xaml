@@ -53,15 +53,30 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;   
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Weather Forecasting&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+     
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis Header=&quot;Date&quot;
+                            IntervalType=&quot;Months&quot; 
+                            Interval=&quot;11&quot;
+                            ShowMajorGridLines=&quot;False&quot;&gt;
+            &lt;chart:DateTimeAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;MMM yyyy&quot; /&gt;
+            &lt;/chart:DateTimeAxis.LabelStyle&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Header=&quot;Temperature(In Fahrenheit)&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
                         
-        &lt;chart:FastLineSeries
-                EnableAnimation=&quot;True&quot;
-                ItemsSource=&quot;{Binding DataCollection}&quot;
-                EnableTooltip=&quot;True&quot;
-                XBindingPath=&quot;Date&quot;
-                YBindingPath=&quot;Value&quot; /&gt;
-                        
+    &lt;chart:FastLineSeries EnableAnimation=&quot;True&quot;
+                          ItemsSource=&quot;{Binding DataCollection}&quot;
+                          EnableTooltip=&quot;True&quot;
+                          XBindingPath=&quot;Date&quot;
+                          YBindingPath=&quot;Value&quot; /&gt;
+
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

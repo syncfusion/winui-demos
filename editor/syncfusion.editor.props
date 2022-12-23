@@ -191,6 +191,18 @@
 		<Link>Editor\Views\Rating\GettingStartedView.xaml.cs</Link>
 	  <DependentUpon>..\Editor\Views\Rating\GettingStartedView.xaml</DependentUpon>
 	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\GettingStartedView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\GettingStartedView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\GettingStartedView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\CultureView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\CultureView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\CultureView.xaml</DependentUpon>
+	</Compile>
 	<EmbeddedResource Include="..\Editor\Assets\NumberBox\Basque.png">
 		<Link>Editor\Assets\NumberBox\Basque.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -581,6 +593,15 @@
 	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\imagetemplateselector_cs.txt">
 	   <Link>Editor\Views\Rating\Resources\SourceCodes\imagetemplateselector_cs.txt</Link>
 	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\gettingstarted_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\gettingstarted_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\literalsandprompt_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\literalsandprompt_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\cultureview_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\cultureview_xaml.txt</Link>
+	</Content>
   </ItemGroup>
   <ItemGroup>
     <Page Include="..\Editor\Views\AutoComplete\Filtering.xaml">
@@ -716,6 +737,21 @@
 	    <Link>Editor\Views\Rating\GettingStartedView.xaml</Link>
 	  <Generator>MSBuild:Compile</Generator>
 	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\GettingStartedView.xaml">
+		<Link>Editor\Views\MaskedTextBox\GettingStartedView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml">
+		<Link>Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\CultureView.xaml">
+		  <Link>Editor\Views\MaskedTextBox\CultureView.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
 	</Page>
   </ItemGroup>
   <ItemGroup>

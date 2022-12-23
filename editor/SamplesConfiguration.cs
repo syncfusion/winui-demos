@@ -261,7 +261,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 Category = "ComboBox",
                 Description = "The ComboBox control provides auto-append support with selection of text as well as text alone as in Windows 11.",
                 DemoView = typeof(Views.ComboBox.AutoAppend),
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 ShowInfoPanel = false,
             };
 
@@ -345,7 +345,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 Category = "AutoComplete",
                 Description = "The AutoComplete control provides auto-append support with selection of text as well as text alone as in Windows 11.",
                 DemoView = typeof(Views.AutoComplete.AutoAppend),
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 ShowInfoPanel = false,
             };
 
@@ -355,7 +355,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 Category = "Rating",
                 Description = "This sample showcases the basic features such as precision, value, items count, item size, and tooltip.",
                 DemoView = typeof(Views.Rating.GettingStartedView),
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.Updated,
                 ShowInfoPanel = false,
             };
 
@@ -365,6 +365,36 @@ namespace Syncfusion.EditorDemos.WinUI
                 Category = "Rating",
                 Description = "Customization of rated and unrated items with styles and templates.",
                 DemoView = typeof(Views.Rating.CustomView),
+                DemoType = DemoTypes.None,
+                ShowInfoPanel = false,
+            };
+
+            DemoInfo maskedTextBoxGettingStarted = new DemoInfo()
+            {
+                Name = "Getting Started",
+                Category = "MaskedTextBox",
+                Description = "This sample showcases the features of masked text box control.",
+                DemoView = typeof(Views.MaskedTextBox.GettingStartedView),
+                DemoType = DemoTypes.New,
+                ShowInfoPanel = false,
+            };
+
+            DemoInfo maskedTextBoxLiteralsAndPrompt = new DemoInfo()
+            {
+                Name = "Literals and Prompt",
+                Category = "MaskedTextBox",
+                Description = "This sample showcases the masked text box with different mask formats.",
+                DemoView = typeof(Views.MaskedTextBox.LiteralsAndPromptView),
+                DemoType = DemoTypes.New,
+                ShowInfoPanel = false,
+            };
+
+            DemoInfo maskedTextBoxCulture = new DemoInfo()
+            {
+                Name = "Culture",
+                Category = "MaskedTextBox",
+                Description = "This sample showcases the masked text box with different cultures.",
+                DemoView = typeof(Views.MaskedTextBox.CultureView),
                 DemoType = DemoTypes.New,
                 ShowInfoPanel = false,
             };
@@ -451,7 +481,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 Description = "The WinUI ComboBox control (drop-down) is a text box component that allows users to type a value or choose an option from a list of predefined options.",
                 Glyph = "\uE71c",
                 ImageSource = "ComboBox.png",
-                IsPreview = true
+                IsPreview = false
             };
             comboBox.Demos.Add(comboboxGettingStartedDemo);
             comboBox.Demos.Add(comboboxEditingDemo);
@@ -471,7 +501,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 Description = "The Segmented Control provides a simple way to choose from a linear set of two or more segments, each of which functions as a mutually exclusive button.",
                 Glyph= "\uE71d",
                 ImageSource = "SegmentedControl.png",
-                IsPreview = true
+                IsPreview = false
             };
             segmentedControl.Demos.Add(segmentedGettingStarted);
             segmentedControl.Demos.Add(segmentedCustomization);
@@ -480,11 +510,11 @@ namespace Syncfusion.EditorDemos.WinUI
             {
                 Control = DemoControl.SfAutoComplete,
                 ControlCategory = ControlCategory.Editors,
-                ControlBadge = ControlBadge.Updated,
+                ControlBadge = ControlBadge.None,
                 Description = "The AutoComplete control is a text box component that allows users to type some characters in the control and the appropriate data will be automatically loaded.",
                 Glyph = "\uE71b",
                 ImageSource = "AutoComplete.png",
-                IsPreview = true
+                IsPreview = false
             };
             autoComplete.Demos.Add(autoCompleteGettingStartedDemo);
             autoComplete.Demos.Add(autoCompleteMultiSelectionDemo);
@@ -498,7 +528,7 @@ namespace Syncfusion.EditorDemos.WinUI
             {
                 Control = DemoControl.SfRating,
                 ControlCategory = ControlCategory.Editors,
-                ControlBadge = ControlBadge.New,
+                ControlBadge = ControlBadge.Updated,
                 Description = "The Rating control is used to provide or view ratings on a scale of count for any service satisfaction, such as contents, movies, applications, or products, etc.",
                 Glyph = "\uE724",
                 ImageSource= "Rating.png",
@@ -506,6 +536,20 @@ namespace Syncfusion.EditorDemos.WinUI
             };
             rating.Demos.Add(gettingStartedDemo);
             rating.Demos.Add(customizationDemo);
+            
+            var maskedTextBox = new ControlInfo()
+            {
+                Control = DemoControl.SfMaskedTextBox,
+                ControlCategory = ControlCategory.Editors,
+                ControlBadge = ControlBadge.New,
+                Description = "The MaskedTextBox control is an enhanced version of a text box that additionally restricts input to conform to a specific structure or mask. ",
+                Glyph = "\uE725",
+                ImageSource = "SfMaskedTextBox.png",
+                IsPreview = true,
+            };
+            maskedTextBox.Demos.Add(maskedTextBoxGettingStarted);
+            maskedTextBox.Demos.Add(maskedTextBoxLiteralsAndPrompt);
+            maskedTextBox.Demos.Add(maskedTextBoxCulture);
 
             var controlInfos = new List<ControlInfo>()
             {
@@ -520,6 +564,7 @@ namespace Syncfusion.EditorDemos.WinUI
                 dropDownColorPalette,
                 numberBox,
                 rating,
+                maskedTextBox,
             };
 
             DemoHelper.ControlInfos.AddRange(controlInfos);

@@ -9,42 +9,51 @@
       "Syncfusion.SampleBrowser.WinUI/1.0.0": {
         "dependencies": {
           "ColorCode.WinUI": "2.0.13",
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
           "PInvoke.User32": "0.7.104",
-          "Syncfusion.Barcode.WinUI": "20.3.0.56",
-          "Syncfusion.Calendar.WinUI": "20.3.0.56",
-          "Syncfusion.Chart.WinUI": "20.3.0.56",
-          "Syncfusion.Core.WinUI": "20.3.0.56",
-          "Syncfusion.DocIORenderer.NET": "20.3.0.56",
-          "Syncfusion.Editors.WinUI": "20.3.0.56",
-          "Syncfusion.Gauge.WinUI": "20.3.0.56",
-          "Syncfusion.Grid.WinUI": "20.3.0.56",
-          "Syncfusion.GridCommon.WinUI": "20.3.0.56",
-          "Syncfusion.GridExport.WinUI": "20.3.0.56",
-          "Syncfusion.Notifications.WinUI": "20.3.0.56",
-          "Syncfusion.Pdf.Imaging.NET": "20.3.0.56",
-          "Syncfusion.PresentationRenderer.NET": "20.3.0.56",
-          "Syncfusion.Ribbon.WinUI": "20.3.0.56",
-          "Syncfusion.Scheduler.WinUI": "20.3.0.56",
-          "Syncfusion.Sliders.WinUI": "20.3.0.56",
-          "Syncfusion.TreeView.WinUI": "20.3.0.56",
-          "Syncfusion.XlsIORenderer.NET": "20.3.0.56",
-          "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.25"
+          "Syncfusion.Barcode.WinUI": "20.4.0.38",
+          "Syncfusion.Calendar.WinUI": "20.4.0.38",
+          "Syncfusion.Chart.WinUI": "20.4.0.38",
+          "Syncfusion.Core.WinUI": "20.4.0.38",
+          "Syncfusion.DocIORenderer.NET": "20.4.0.38",
+          "Syncfusion.Editors.WinUI": "20.4.0.38",
+          "Syncfusion.Gauge.WinUI": "20.4.0.38",
+          "Syncfusion.Grid.WinUI": "20.4.0.38",
+          "Syncfusion.GridCommon.WinUI": "20.4.0.38",
+          "Syncfusion.GridExport.WinUI": "20.4.0.38",
+          "Syncfusion.Licensing": "20.4.0.38",
+          "Syncfusion.Notifications.WinUI": "20.4.0.38",
+          "Syncfusion.Pdf.Imaging.NET": "20.4.0.38",
+          "Syncfusion.PresentationRenderer.NET": "20.4.0.38",
+          "Syncfusion.Ribbon.WinUI": "20.4.0.38",
+          "Syncfusion.Scheduler.WinUI": "20.4.0.38",
+          "Syncfusion.Sliders.WinUI": "20.4.0.38",
+          "Syncfusion.TreeView.WinUI": "20.4.0.38",
+          "Syncfusion.XlsIORenderer.NET": "20.4.0.38",
+          "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.27"
         },
         "runtime": {
           "Syncfusion.SampleBrowser.WinUI.dll": {}
         }
       },
-      "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.25": {
+      "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.27": {
         "runtime": {
           "Microsoft.Windows.SDK.NET.dll": {
             "assemblyVersion": "10.0.19041.24",
-            "fileVersion": "10.0.19041.25"
+            "fileVersion": "10.0.19041.27"
           },
           "WinRT.Runtime.dll": {
-            "assemblyVersion": "1.6.0.0",
-            "fileVersion": "1.6.2.38681"
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.39961"
+          }
+        }
+      },
+      "BitMiracle.LibTiff.NET/2.4.649": {
+        "runtime": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "assemblyVersion": "2.4.649.0",
+            "fileVersion": "2.4.649.0"
           }
         }
       },
@@ -62,7 +71,7 @@
       "ColorCode.WinUI/2.0.13": {
         "dependencies": {
           "ColorCode.Core": "2.0.13",
-          "Microsoft.WindowsAppSDK": "1.1.4"
+          "Microsoft.WindowsAppSDK": "1.2.221116.1"
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/ColorCode.WinUI.dll": {
@@ -80,55 +89,67 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {},
-      "Microsoft.WindowsAppSDK/1.1.4": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {},
+      "Microsoft.WindowsAppSDK/1.2.221116.1": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755"
         },
         "runtime": {
-          "lib/net5.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
+          "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.22621.1006"
+            "fileVersion": "10.0.22622.1030"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
+          "lib/net6.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
             "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.2208"
+            "fileVersion": "3.0.0.2211"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.AppLifecycle.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppLifecycle.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.AppNotifications.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppNotifications.Builder.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppNotifications.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.Resources.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.Resources.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.PushNotifications.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.System.Power.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.PushNotifications.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.Windows.System.Projection.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Security.AccessControl.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           },
-          "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.System.Power.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          },
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.System.Projection.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          },
+          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Widgets.Projection.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net6.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         },
         "runtimeTargets": {
@@ -333,347 +354,348 @@
           }
         }
       },
-      "Syncfusion.Barcode.WinUI/20.3.0.56": {
+      "Syncfusion.Barcode.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Barcode.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Calendar.WinUI/20.3.0.56": {
+      "Syncfusion.Calendar.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56",
-          "Syncfusion.Editors.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38",
+          "Syncfusion.Editors.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Calendar.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Chart.WinUI/20.3.0.56": {
+      "Syncfusion.Chart.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Chart.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Compression.NET/20.3.0.56": {
+      "Syncfusion.Compression.NET/20.4.0.38": {
         "runtime": {
           "lib/net6.0/Syncfusion.Compression.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Core.WinUI/20.3.0.56": {
+      "Syncfusion.Core.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Licensing": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Licensing": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Core.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.DocIO.NET/20.3.0.56": {
+      "Syncfusion.DocIO.NET/20.4.0.38": {
         "dependencies": {
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56",
-          "Syncfusion.OfficeChart.NET": "20.3.0.56",
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Licensing": "20.4.0.38",
+          "Syncfusion.OfficeChart.NET": "20.4.0.38",
           "System.Text.Encoding.CodePages": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.DocIO.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.DocIORenderer.NET/20.3.0.56": {
+      "Syncfusion.DocIORenderer.NET/20.4.0.38": {
         "dependencies": {
           "SkiaSharp": "2.88.2",
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.DocIO.NET": "20.3.0.56",
-          "Syncfusion.OfficeChart.NET": "20.3.0.56",
-          "Syncfusion.Pdf.NET": "20.3.0.56",
-          "Syncfusion.SkiaSharpHelper.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.DocIO.NET": "20.4.0.38",
+          "Syncfusion.OfficeChart.NET": "20.4.0.38",
+          "Syncfusion.Pdf.NET": "20.4.0.38",
+          "Syncfusion.SkiaSharpHelper.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.DocIORenderer.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Editors.WinUI/20.3.0.56": {
+      "Syncfusion.Editors.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Editors.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Gauge.WinUI/20.3.0.56": {
+      "Syncfusion.Gauge.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Gauge.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Grid.WinUI/20.3.0.56": {
+      "Syncfusion.Grid.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Calendar.WinUI": "20.3.0.56",
-          "Syncfusion.Core.WinUI": "20.3.0.56",
-          "Syncfusion.Editors.WinUI": "20.3.0.56",
-          "Syncfusion.GridCommon.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Calendar.WinUI": "20.4.0.38",
+          "Syncfusion.Core.WinUI": "20.4.0.38",
+          "Syncfusion.Editors.WinUI": "20.4.0.38",
+          "Syncfusion.GridCommon.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Data.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           },
           "lib/net6.0-windows10.0/Syncfusion.Grid.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.GridCommon.WinUI/20.3.0.56": {
+      "Syncfusion.GridCommon.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.GridCommon.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.GridExport.WinUI/20.3.0.56": {
+      "Syncfusion.GridExport.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Grid.WinUI": "20.3.0.56",
-          "Syncfusion.XlsIO.NET": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Grid.WinUI": "20.4.0.38",
+          "Syncfusion.XlsIO.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.GridExport.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Licensing/20.3.0.56": {
+      "Syncfusion.Licensing/20.4.0.38": {
         "runtime": {
-          "lib/net6.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "20.3.0.56",
-            "fileVersion": "20.3.0.56"
+          "lib/net6.0-windows7.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Notifications.WinUI/20.3.0.56": {
+      "Syncfusion.Notifications.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Notifications.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.OfficeChart.NET/20.3.0.56": {
+      "Syncfusion.OfficeChart.NET/20.4.0.38": {
         "dependencies": {
-          "Syncfusion.Compression.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.OfficeChart.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Pdf.Imaging.NET/20.3.0.56": {
+      "Syncfusion.Pdf.Imaging.NET/20.4.0.38": {
         "dependencies": {
+          "BitMiracle.LibTiff.NET": "2.4.649",
           "SkiaSharp": "2.88.2",
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Pdf.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Pdf.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Pdf.Imaging.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Pdf.NET/20.3.0.56": {
+      "Syncfusion.Pdf.NET/20.4.0.38": {
         "dependencies": {
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56",
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Licensing": "20.4.0.38",
           "System.Text.Encoding.CodePages": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Pdf.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Presentation.NET/20.3.0.56": {
+      "Syncfusion.Presentation.NET/20.4.0.38": {
         "dependencies": {
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56",
-          "Syncfusion.OfficeChart.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Licensing": "20.4.0.38",
+          "Syncfusion.OfficeChart.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Presentation.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.PresentationRenderer.NET/20.3.0.56": {
+      "Syncfusion.PresentationRenderer.NET/20.4.0.38": {
         "dependencies": {
           "SkiaSharp": "2.88.2",
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.OfficeChart.NET": "20.3.0.56",
-          "Syncfusion.Pdf.NET": "20.3.0.56",
-          "Syncfusion.Presentation.NET": "20.3.0.56",
-          "Syncfusion.SkiaSharpHelper.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.OfficeChart.NET": "20.4.0.38",
+          "Syncfusion.Pdf.NET": "20.4.0.38",
+          "Syncfusion.Presentation.NET": "20.4.0.38",
+          "Syncfusion.SkiaSharpHelper.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.PresentationRenderer.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Ribbon.WinUI/20.3.0.56": {
+      "Syncfusion.Ribbon.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Ribbon.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Scheduler.WinUI/20.3.0.56": {
+      "Syncfusion.Scheduler.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Calendar.WinUI": "20.3.0.56",
-          "Syncfusion.Core.WinUI": "20.3.0.56",
-          "Syncfusion.Editors.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Calendar.WinUI": "20.4.0.38",
+          "Syncfusion.Core.WinUI": "20.4.0.38",
+          "Syncfusion.Editors.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Scheduler.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.SkiaSharpHelper.NET/20.3.0.56": {
+      "Syncfusion.SkiaSharpHelper.NET/20.4.0.38": {
         "dependencies": {
           "SkiaSharp": "2.88.2",
-          "Syncfusion.Compression.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.SkiaSharpHelper.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.Sliders.WinUI/20.3.0.56": {
+      "Syncfusion.Sliders.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.Sliders.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.TreeView.WinUI/20.3.0.56": {
+      "Syncfusion.TreeView.WinUI/20.4.0.38": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.1.4",
-          "Syncfusion.Core.WinUI": "20.3.0.56",
-          "Syncfusion.GridCommon.WinUI": "20.3.0.56"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
+          "Microsoft.WindowsAppSDK": "1.2.221116.1",
+          "Syncfusion.Core.WinUI": "20.4.0.38",
+          "Syncfusion.GridCommon.WinUI": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0-windows10.0/Syncfusion.TreeView.WinUI.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.XlsIO.NET/20.3.0.56": {
+      "Syncfusion.XlsIO.NET/20.4.0.38": {
         "dependencies": {
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Licensing": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.XlsIO.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
-      "Syncfusion.XlsIORenderer.NET/20.3.0.56": {
+      "Syncfusion.XlsIORenderer.NET/20.4.0.38": {
         "dependencies": {
           "SkiaSharp": "2.88.2",
-          "Syncfusion.Compression.NET": "20.3.0.56",
-          "Syncfusion.Pdf.NET": "20.3.0.56",
-          "Syncfusion.SkiaSharpHelper.NET": "20.3.0.56",
-          "Syncfusion.XlsIO.NET": "20.3.0.56"
+          "Syncfusion.Compression.NET": "20.4.0.38",
+          "Syncfusion.Pdf.NET": "20.4.0.38",
+          "Syncfusion.SkiaSharpHelper.NET": "20.4.0.38",
+          "Syncfusion.XlsIO.NET": "20.4.0.38"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.XlsIORenderer.NET.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.4600.0.38",
+            "fileVersion": "20.4600.0.38"
           }
         }
       },
@@ -1255,10 +1277,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.25": {
+    "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.27": {
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
+    },
+    "BitMiracle.LibTiff.NET/2.4.649": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XCEdfCphKo0UAvSg1h/OzOFWtjkIGnPMAziYkNqV7NVrqb/tZJTBxJhxIEX7gpvQwg8GIRYt133SUncfkKfjLA==",
+      "path": "bitmiracle.libtiff.net/2.4.649",
+      "hashPath": "bitmiracle.libtiff.net.2.4.649.nupkg.sha512"
     },
     "ColorCode.Core/2.0.13": {
       "type": "package",
@@ -1295,19 +1324,19 @@
       "path": "microsoft.win32.primitives/4.3.0",
       "hashPath": "microsoft.win32.primitives.4.3.0.nupkg.sha512"
     },
-    "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+    "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4L0P3zqut466SIqT3VBeLTNUQTxCBDOrTRymRuROCRJKazcK7ibLz9yAO1nKWRt50ttCj39oAa2Iuz9ZTDmLlg==",
-      "path": "microsoft.windows.sdk.buildtools/10.0.22000.194",
-      "hashPath": "microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512"
+      "sha512": "sha512-zGXDCZc2/slVjpNtopNETCjnOqH9KiEdo9dPCcjtNWwK5W+EmOcEn7X5Ftj3tOE9kLvroga1s7WwLh2a5jQEEg==",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22621.755",
+      "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.1.4": {
+    "Microsoft.WindowsAppSDK/1.2.221116.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oPoDtk7As7PPDX+R9iloJI2qimYFSE35puWgFxxSnKG1JBOaj/VOA9QJPIxn4jACMjOspSfS47wP8lFBJvlF0Q==",
-      "path": "microsoft.windowsappsdk/1.1.4",
-      "hashPath": "microsoft.windowsappsdk.1.1.4.nupkg.sha512"
+      "sha512": "sha512-FaNcHP6lm79jvNmce7zpEy1SEjA74COwf/gcgRTQ+2pzGP4jf03aBdrajZCpzmGuywMYR7pPQRw7ogVLUDYv9g==",
+      "path": "microsoft.windowsappsdk/1.2.221116.1",
+      "hashPath": "microsoft.windowsappsdk.1.2.221116.1.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",
@@ -1477,187 +1506,187 @@
       "path": "skiasharp.nativeassets.win32/2.88.2",
       "hashPath": "skiasharp.nativeassets.win32.2.88.2.nupkg.sha512"
     },
-    "Syncfusion.Barcode.WinUI/20.3.0.56": {
+    "Syncfusion.Barcode.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ktJn8bWTBiA3Lbv1r5ONk20E5it/a7sIk4yEMzrg0rmrpghMDsg62lxNQwmzgOiB7wr8ma0wnoT2yI1kQynGLw==",
-      "path": "syncfusion.barcode.winui/20.3.0.56",
-      "hashPath": "syncfusion.barcode.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-rWDegleeidFO8mB3imyNOLCgVcCHNFchgXJeLqiMm8RMpagIwizTslnpdaBUnhkpCuKutjaOkaZeRfg7uKe39g==",
+      "path": "syncfusion.barcode.winui/20.4.0.38",
+      "hashPath": "syncfusion.barcode.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Calendar.WinUI/20.3.0.56": {
+    "Syncfusion.Calendar.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-U0Vzb6cMTZ/mCFJfPwWZGXpWpjl8xxsv9QKZCSJRgYafnhFizPSjqyTbrNrtKs9GgrBQdVC6r+rahmU0+W2w2w==",
-      "path": "syncfusion.calendar.winui/20.3.0.56",
-      "hashPath": "syncfusion.calendar.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-oUgwSDCnjiWbbrXK1xfrfXHYuHFD/Iw+ykcmQ+VDui+HGFSFRg2ZJJbiYugVb4c6gopJbQIeZ6f+dtBysTopOw==",
+      "path": "syncfusion.calendar.winui/20.4.0.38",
+      "hashPath": "syncfusion.calendar.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Chart.WinUI/20.3.0.56": {
+    "Syncfusion.Chart.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-F2ojva5MeI4E2ZdwrS1nLf2j8jfES2mIMH7CMXIYkD1Zf1GiyPEeTBbn/SEKP4FrQuiX4Ntq5a7j59z3rlIotg==",
-      "path": "syncfusion.chart.winui/20.3.0.56",
-      "hashPath": "syncfusion.chart.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-2PvAMG28Z4TEwbqqTs6x0QHUk4wyr4A9rr6DzWL++ZjWnk+Q4sDZtDhdOyGlkreckJF2Pz3vJq5PcicOH6qM1w==",
+      "path": "syncfusion.chart.winui/20.4.0.38",
+      "hashPath": "syncfusion.chart.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Compression.NET/20.3.0.56": {
+    "Syncfusion.Compression.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sA185yeOyxLskIV7nz/p0Cz0bjgQ399zRxwigGaLXI9n0CGB1HyXnvM/bd4lYev/qWocJWSDMqB5jZ0VfTEUew==",
-      "path": "syncfusion.compression.net/20.3.0.56",
-      "hashPath": "syncfusion.compression.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-BRZzW1IWDe2UVbeWsLzMtpUdICcJGSskcgYXukk55PRlRe88omvdCyA8Thh6/d6Tq3Y9f9ZAP4Oj5iZTI0dAZw==",
+      "path": "syncfusion.compression.net/20.4.0.38",
+      "hashPath": "syncfusion.compression.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Core.WinUI/20.3.0.56": {
+    "Syncfusion.Core.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TrhJD/+AcEIg12gBPYDOJnyrZ8tBE479ahsG4vuEab7E0vp+00m5yOslq5O6W/nXuJJkAtN2ofBT0ONtfqOTbw==",
-      "path": "syncfusion.core.winui/20.3.0.56",
-      "hashPath": "syncfusion.core.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-v4eJilWh8Zx3zYUN53Z2XbZDcYctLj7Tkd27XMsCYFqk/2ErcCCqoUA+pF5Nn63KY52gXISo7EoOZ7cu+X7N9w==",
+      "path": "syncfusion.core.winui/20.4.0.38",
+      "hashPath": "syncfusion.core.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.DocIO.NET/20.3.0.56": {
+    "Syncfusion.DocIO.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WKjgi6hf252/zc4+VIG4irhQlSa3PcRALiGgwSsgbkVi2+mQaktcLg1sIna2jBIn5DF0AX1J5EzGiTJzBZlqlA==",
-      "path": "syncfusion.docio.net/20.3.0.56",
-      "hashPath": "syncfusion.docio.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-Pxj3xApblqI4uqt4qarzf763UkA//uwAxK3VqTXQkK6yAAzGUwludcIdh1A7kSCDNeLADKck3ucce/Y37knfCQ==",
+      "path": "syncfusion.docio.net/20.4.0.38",
+      "hashPath": "syncfusion.docio.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.DocIORenderer.NET/20.3.0.56": {
+    "Syncfusion.DocIORenderer.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZYxTc6aIHY8HTHhvzObew14hDx9RU72zzsO080rS0hm94DfdA1sMqx7Xt4ucvfMZnwNS+2fikM9xZrE3baiThQ==",
-      "path": "syncfusion.dociorenderer.net/20.3.0.56",
-      "hashPath": "syncfusion.dociorenderer.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-CVS/Cr1Pw0XvtVdP+ztsDvot1OVeIuOeuWBe8DjYGb96/m7RYPeXg0GYcbvEbWRXg7ZhciEJGabpaqkiZ+nqiw==",
+      "path": "syncfusion.dociorenderer.net/20.4.0.38",
+      "hashPath": "syncfusion.dociorenderer.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Editors.WinUI/20.3.0.56": {
+    "Syncfusion.Editors.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vOcok+axyT866bLtcDx9qjd+56LYq5vqwq+m0N5S6IwKlNcHuWHs9vFDBHtMQAn97IjFcenTaICRY/+aIg0zxA==",
-      "path": "syncfusion.editors.winui/20.3.0.56",
-      "hashPath": "syncfusion.editors.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-05BlOk5P3BWoQZIdnMhW6w9LF1OIIUTNP3z954AGhPKxUCVNArtpP7oIP3weIy2/pZ7wgRt0DrLr2IjCjhQ90A==",
+      "path": "syncfusion.editors.winui/20.4.0.38",
+      "hashPath": "syncfusion.editors.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Gauge.WinUI/20.3.0.56": {
+    "Syncfusion.Gauge.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W3YikOaziLwNzA3svlG9q5J+Iiw9r0n3mdQdmmUkcuTLz2yP+FqKtkPkWRYmIZo0H3C+8E7VNTwVseyPpNyd0g==",
-      "path": "syncfusion.gauge.winui/20.3.0.56",
-      "hashPath": "syncfusion.gauge.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-JvyzSB0UNUXM3QTifbX4VcqPKxeXhIzoD8flTW7XIvFzy331B+3dFY1oRjL+mspqaxEFbyxB5c5xZg69tVfLQQ==",
+      "path": "syncfusion.gauge.winui/20.4.0.38",
+      "hashPath": "syncfusion.gauge.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Grid.WinUI/20.3.0.56": {
+    "Syncfusion.Grid.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XIjiov2CQbPUo6QOlu0/djuZ49WtUHbPvvxfO08p1L97webgQMR4CcXrJ0tV5/dArM95JEjVxh93cGwS2Vqv5g==",
-      "path": "syncfusion.grid.winui/20.3.0.56",
-      "hashPath": "syncfusion.grid.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-fvzt1gWcPPmN1XKhHdIGg2kkB/yLUzsfLlWQ9+ZOQoyAoGDS+Hszaq3cRseI0++9y5uaanEVX5XVLAOgocfOfQ==",
+      "path": "syncfusion.grid.winui/20.4.0.38",
+      "hashPath": "syncfusion.grid.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.GridCommon.WinUI/20.3.0.56": {
+    "Syncfusion.GridCommon.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gZiqLIXOidmh+AGR8xfJJLfnf34djzGD9Rks1h8oAMXCxbRrcSAPqL1UrRKtBKipHqFageEfEDWLTPHm2WxPjg==",
-      "path": "syncfusion.gridcommon.winui/20.3.0.56",
-      "hashPath": "syncfusion.gridcommon.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-lme+BnosX3YH/c797nZfyuBcSP55H9sAbnCDhFbDfHYvv/OAe3i54QiZJCmjGodX8tGZJYlvrg8oGb2YkNidRg==",
+      "path": "syncfusion.gridcommon.winui/20.4.0.38",
+      "hashPath": "syncfusion.gridcommon.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.GridExport.WinUI/20.3.0.56": {
+    "Syncfusion.GridExport.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hFr957rsluOYl/skHp7qBHldyKzKzLMM08Gg/nq5nf5/e5a/L8Tzi3eDVtnDC5+FXXixwFOOMLAkCjv01nzuBg==",
-      "path": "syncfusion.gridexport.winui/20.3.0.56",
-      "hashPath": "syncfusion.gridexport.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-LCfeRcsLjK+Gr36DbugB8GlKT7g/hiNEw5W5UL+emPzZtOjCjGAGzy2/3UVt8DmqqXn+RLi4cgb58QYLOqVyvQ==",
+      "path": "syncfusion.gridexport.winui/20.4.0.38",
+      "hashPath": "syncfusion.gridexport.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Licensing/20.3.0.56": {
+    "Syncfusion.Licensing/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tSym/jpNruSOuvDjheCP8dFjBSjKkfcBSvOU6NgTIHma2r597WrJGK94KXxKPX10YVMtirhlw8WO2DOF+G4Z/A==",
-      "path": "syncfusion.licensing/20.3.0.56",
-      "hashPath": "syncfusion.licensing.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-enfiA96dTn750pMkxLKLpnBAuGHFALgrMfAH1heNmU2RDGie1MayImifolX05PdMaF/zgnfGp+Tyefe65hvg+Q==",
+      "path": "syncfusion.licensing/20.4.0.38",
+      "hashPath": "syncfusion.licensing.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Notifications.WinUI/20.3.0.56": {
+    "Syncfusion.Notifications.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WM3fsAJhytg021vezv+fwLHv82l/R5aF1ZmmdLMItCTw3htAiOSfVBb1RJO5D/aQWvBc2I/evhiZbsG3SaHm8g==",
-      "path": "syncfusion.notifications.winui/20.3.0.56",
-      "hashPath": "syncfusion.notifications.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-euIloBkiPe9L6zVmH81NjJ4uLwYe+5EMeNenMBKEcvxkqdGyncPCVzWtH6h13HcuJs0MTgN6HBp3bi3Si/vdnA==",
+      "path": "syncfusion.notifications.winui/20.4.0.38",
+      "hashPath": "syncfusion.notifications.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.OfficeChart.NET/20.3.0.56": {
+    "Syncfusion.OfficeChart.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Sax9mYiwAmpXnhNtiDVVyec/d5TH2OahemeCWJd2udhcWb5p27nC1HgDq91ygr8ZQahOFezn2IVywXHdK14+xw==",
-      "path": "syncfusion.officechart.net/20.3.0.56",
-      "hashPath": "syncfusion.officechart.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-uxcj38vMeZGMzQ13/h3prlEJGDTlXlSbUEshCojFC8bLfVSmzFNhlXeNLVkJpnDOSelMYaUN8a7QIm3iBwSZrA==",
+      "path": "syncfusion.officechart.net/20.4.0.38",
+      "hashPath": "syncfusion.officechart.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Pdf.Imaging.NET/20.3.0.56": {
+    "Syncfusion.Pdf.Imaging.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bCHYuY0bKtKKeWXJim8maeUNF0RsIyBSL7OhfC2nUyEkMzXzu8ezy1OVE3cye+V1Qim1/u/7P+/y++jWN6wFMg==",
-      "path": "syncfusion.pdf.imaging.net/20.3.0.56",
-      "hashPath": "syncfusion.pdf.imaging.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-6WqBCIa5CB2jx0uPk/ddIsJG5yBjTlsXX7/VBM6dYFIEsCtm68rQYx1p+hvGJh6RZIr0R1maf/YfKSYTOdl6gw==",
+      "path": "syncfusion.pdf.imaging.net/20.4.0.38",
+      "hashPath": "syncfusion.pdf.imaging.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Pdf.NET/20.3.0.56": {
+    "Syncfusion.Pdf.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XFHCBj7HSEPHzGnTP4rfpwqPP9cNmCH5bKqxRP+kXX+wScnuxNPoQC2rCcN/j7wvtNbrcIGL7ZecpQ6bZgBFbQ==",
-      "path": "syncfusion.pdf.net/20.3.0.56",
-      "hashPath": "syncfusion.pdf.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-CReeBNcIy4FfHbCchrRlSkvgvWFgjzGg6JiiYyh/SjgOgWNg3NrNsTAEAJPDI7eMVRbRTp9dMCaFo6dBlktyvw==",
+      "path": "syncfusion.pdf.net/20.4.0.38",
+      "hashPath": "syncfusion.pdf.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Presentation.NET/20.3.0.56": {
+    "Syncfusion.Presentation.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Jil5zj42kBjteQd+ees0P299eppePiFOaWW5pKwV2i5j/wRxHcNH2JyBI49jC/xTbYakgDWPz4X6JLGg57VGOw==",
-      "path": "syncfusion.presentation.net/20.3.0.56",
-      "hashPath": "syncfusion.presentation.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-4ZUf0xT9YT9Wo5biQlAAeGNNNERzIp0RicPZAx2MgSLZ6uZrUFmvTLuVlp4L88noQYGoPhiemGLT1MpqgS+0ng==",
+      "path": "syncfusion.presentation.net/20.4.0.38",
+      "hashPath": "syncfusion.presentation.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.PresentationRenderer.NET/20.3.0.56": {
+    "Syncfusion.PresentationRenderer.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HQmkwxTh8e8rkZOeeafcwiBHV8d7gBbZXTd+V24hx6gZ4lLmHBDrDUxQwE6Qq/FslHu+rhsFEd70GNZE0JIneA==",
-      "path": "syncfusion.presentationrenderer.net/20.3.0.56",
-      "hashPath": "syncfusion.presentationrenderer.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-lwxjcS1nJPSkno/txZtEtDRm+Mzl0qtpwhts0nFi7BGUfDFjDl0dqzof/w39wh8Kw3SuHyl3Y4hhfJwHgHSpdQ==",
+      "path": "syncfusion.presentationrenderer.net/20.4.0.38",
+      "hashPath": "syncfusion.presentationrenderer.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Ribbon.WinUI/20.3.0.56": {
+    "Syncfusion.Ribbon.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Fano//xPg4lsEcO+qaW9gl17VCuzb/EJrWK17WYADmNfDMN212qu6a5HE61VWl4mFRDd9Z5qHFqyEfhsSGlspg==",
-      "path": "syncfusion.ribbon.winui/20.3.0.56",
-      "hashPath": "syncfusion.ribbon.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-BCX7TyT53pkUZlXhMWVqwXAaX5437lsh9TUAviMmv0NJhA5fMvsyPeurad3DvUyTBIdwQ9dYar/zGSm6izDsNw==",
+      "path": "syncfusion.ribbon.winui/20.4.0.38",
+      "hashPath": "syncfusion.ribbon.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Scheduler.WinUI/20.3.0.56": {
+    "Syncfusion.Scheduler.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2U8IIXHQkz3nKeJTSe7bBK3kbO4aB4iBfYsoFPhpSYrBaZ2j3KnIrn/WC50I3l2mBWWpZqHp+JV2f/8B1uHLOA==",
-      "path": "syncfusion.scheduler.winui/20.3.0.56",
-      "hashPath": "syncfusion.scheduler.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-C2z3gDG3TlSVNx42uu+ODfjhwIdR1Ewo5hwCBK8fGOoJ51SK20ztfpe593hLPl3RJ8EbGorkkgC4o0rsf41EeQ==",
+      "path": "syncfusion.scheduler.winui/20.4.0.38",
+      "hashPath": "syncfusion.scheduler.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.SkiaSharpHelper.NET/20.3.0.56": {
+    "Syncfusion.SkiaSharpHelper.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mbGBduDiWM9xUMXndph+fBGZPxyv1fpOJs6kFYFrQ13dsaggDDgk/fkxJeFaN3zkW4QMZUSuKzeoKODmOcW+vQ==",
-      "path": "syncfusion.skiasharphelper.net/20.3.0.56",
-      "hashPath": "syncfusion.skiasharphelper.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-btgq/fKyIbV9zbhkfIuuoJtIu+H9Zn+EAcKUTuqhs3gpKEmDVQrYAptvbhkMV33/7Dq85sRPmTNEkWNnYbZX9w==",
+      "path": "syncfusion.skiasharphelper.net/20.4.0.38",
+      "hashPath": "syncfusion.skiasharphelper.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.Sliders.WinUI/20.3.0.56": {
+    "Syncfusion.Sliders.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qMxpxxwmRN70lubbrxfFOQ82o141d9cAd4d98iE02wDH+ZyocJ8UgHesz1yscaFSEhtpALJ1NNSur/3OcAZ1XA==",
-      "path": "syncfusion.sliders.winui/20.3.0.56",
-      "hashPath": "syncfusion.sliders.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-5wclmLw2gyJznsFJtJbjTr/sYlvZNqZLSpa90DihM3L7kjLv1Y+9HUkqIYP8YNmd0u52a+b7vUMpN09I1xNLwA==",
+      "path": "syncfusion.sliders.winui/20.4.0.38",
+      "hashPath": "syncfusion.sliders.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.TreeView.WinUI/20.3.0.56": {
+    "Syncfusion.TreeView.WinUI/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8URnQH7ZnRHSXADe2LGTmOcVh7e5exSj45P4yWhAqJiq04gdqiHYuMKBMQLI0zrAyB46CtAWOen6QQg/xttkTQ==",
-      "path": "syncfusion.treeview.winui/20.3.0.56",
-      "hashPath": "syncfusion.treeview.winui.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-vMnObd112YqyIaZ4RAOjiGBkIvDWpr/aj0SZwVtFXgGmwt8dIoOGssIotdkFzMXp3rHHK4PpwNINnhav53ubBg==",
+      "path": "syncfusion.treeview.winui/20.4.0.38",
+      "hashPath": "syncfusion.treeview.winui.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.XlsIO.NET/20.3.0.56": {
+    "Syncfusion.XlsIO.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Lnn4IGUDZNhACXjHS/XLsKCiJDn8EwzD7GEvjL5K+MTJ+5d+TRNsrspgGLrn0OreXXNq5AIPSnO5DwhfEuNl1A==",
-      "path": "syncfusion.xlsio.net/20.3.0.56",
-      "hashPath": "syncfusion.xlsio.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-7tqYq7H2m5HXbVpr3H1Fnqjk459wnLBZ+BKbGs1lb3xbgvhYu/bzuRn40SKQVuxazlzcaT0vD6MTZkXQ2ghkyA==",
+      "path": "syncfusion.xlsio.net/20.4.0.38",
+      "hashPath": "syncfusion.xlsio.net.20.4.0.38.nupkg.sha512"
     },
-    "Syncfusion.XlsIORenderer.NET/20.3.0.56": {
+    "Syncfusion.XlsIORenderer.NET/20.4.0.38": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2rD/EBXM527hk5k+943I4VuMZ5G0sx0Z36NPSV7M2Xb9FsybuNCnEjWQow6Zke505oY4ZnBAWtYMiYQPAOJdNQ==",
-      "path": "syncfusion.xlsiorenderer.net/20.3.0.56",
-      "hashPath": "syncfusion.xlsiorenderer.net.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-RWTAXbTe3tlSvLPOiQaNoiuN6QvpPIGx8KKkRljCBC2ukiNlAqx8Mw8kRkndOEUXYVpbTYl+Dy6lBdTDNS3IhQ==",
+      "path": "syncfusion.xlsiorenderer.net/20.4.0.38",
+      "hashPath": "syncfusion.xlsiorenderer.net.20.4.0.38.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

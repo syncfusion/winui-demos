@@ -72,6 +72,9 @@
 		<Compile Include="Views\WordToPDF.xaml.cs">
 			<DependentUpon>WordToPDF.xaml</DependentUpon>
 		</Compile>
+		<Compile Include="Views\WordToMarkdown.xaml.cs">
+			<DependentUpon>WordToMarkdown.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Include="Views\FindAndReplace.xaml">
@@ -122,6 +125,10 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\WordToMarkdown.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 		<Page Include="Views\FindAndHighlight.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
@@ -141,6 +148,7 @@
 		<Content Include="Views\Resources\SourceCodes\SalesInvoice_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\TableOfContent_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\WordToPDF_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\WordToMarkdown_cs.txt"/>
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="Assets\DocIO\Adventure.docx">
@@ -194,6 +202,9 @@
 		<EmbeddedResource Include="Assets\DocIO\WordtoPDF.docx">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\WordtoMD.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
 		<EmbeddedResource Include="Assets\DocIO\AdventureCycle.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
@@ -205,7 +216,7 @@
 		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>

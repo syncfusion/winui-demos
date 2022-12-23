@@ -78,23 +78,39 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Margin=&quot;15&quot; AreaBorderThickness=&quot;0&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Climate Graph&quot;&gt;
   
-    &lt;chart:SplineSeries 
-                        ItemsSource=&quot;{Binding}&quot;  
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis Header=&quot;Year 2014&quot;
+                            Interval=&quot;1&quot;
+                            IntervalType=&quot;Months&quot;
+                            PlotOffsetStart=&quot;20&quot;
+                            PlotOffsetEnd=&quot;20&quot;
+                            ShowMajorGridLines=&quot;False&quot;&gt;
+            &lt;chart:DateTimeAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;MMM&quot; /&gt;
+            &lt;/chart:DateTimeAxis.LabelStyle&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Header=&quot;Temperature (in Celsius)&quot;
+                             Interval=&quot;5&quot;
+                             Maximum=&quot;30&quot; Minimum=&quot;-10&quot; /&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:SplineSeries ItemsSource=&quot;{Binding}&quot;
                         XBindingPath=&quot;Month&quot; 
                         YBindingPath=&quot;Value2&quot; 
                         Label=&quot;Mean daily maximum temperature&quot; 
                         LegendIcon=&quot;Diamond&quot; 
-                        Interior=&quot;#FF448DD5&quot;&gt;
+                        Fill=&quot;#FF448DD5&quot;&gt;
         &lt;chart:SplineSeries.CustomTemplate&gt;
             &lt;DataTemplate&gt;
                 &lt;Canvas&gt;
-                    &lt;Path  
-                        Data=&quot;{Binding Data}&quot; 
-                        Stroke=&quot;{Binding Converter={StaticResource SplineValueConverter}}&quot; 
-                        StrokeEndLineCap=&quot;Round&quot; 
-                        StrokeThickness=&quot;3&quot; /&gt;
+                    &lt;Path Data=&quot;{Binding Data}&quot; 
+                          Stroke=&quot;{Binding Converter={StaticResource SplineValueConverter}}&quot; 
+                          StrokeEndLineCap=&quot;Round&quot; 
+                          StrokeThickness=&quot;3&quot; /&gt;
                 &lt;/Canvas&gt;
             &lt;/DataTemplate&gt;
         &lt;/chart:SplineSeries.CustomTemplate&gt;

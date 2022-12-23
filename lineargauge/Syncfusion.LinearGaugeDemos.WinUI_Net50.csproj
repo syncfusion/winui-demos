@@ -250,7 +250,7 @@
 		<EmbeddedResource Include="Assets\LinearGauge\HeightCalculatorImage.png"/>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>

@@ -55,23 +55,33 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; 
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Server CPU Load&quot;
                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
     
+                        &lt;chart:SfCartesianChart.XAxes&gt;
+                            &lt;chart:DateTimeAxis Header=&quot;Date&quot;&gt;
+                                &lt;chart:DateTimeAxis.LabelStyle&gt;
+                                    &lt;chart:LabelStyle LabelFormat=&quot;MMM, yyyy&quot; /&gt;
+                                &lt;/chart:DateTimeAxis.LabelStyle&gt;
+                            &lt;/chart:DateTimeAxis&gt;
+                        &lt;/chart:SfCartesianChart.XAxes&gt;
+
+                        &lt;chart:SfCartesianChart.YAxes&gt;
+                            &lt;chart:NumericalAxis Header=&quot;CPU Load&quot; /&gt;
+                        &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
     &lt;chart:SfCartesianChart.ZoomPanBehavior&gt;
-        &lt;chart:ChartZoomPanBehavior 
-                        EnableMouseWheelZooming=&quot;True&quot; 
-                        EnablePanning=&quot;True&quot; 
-                        EnablePinchZooming=&quot;True&quot; 
-                        EnableSelectionZooming=&quot;False&quot; 
-                        ZoomMode=&quot;XY&quot; /&gt;
+        &lt;chart:ChartZoomPanBehavior EnableMouseWheelZooming=&quot;True&quot; 
+                                    EnablePanning=&quot;True&quot; 
+                                    EnablePinchZooming=&quot;True&quot; 
+                                    EnableSelectionZooming=&quot;False&quot; 
+                                    ZoomMode=&quot;XY&quot; /&gt;
         &lt;/chart:SfCartesianChart.ZoomPanBehavior&gt;
     
-    &lt;chart:FastLineSeries 
-                        ItemsSource=&quot;{Binding LoadDetails}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;Load&quot; 
-                        EnableAnimation=&quot;True&quot;  /&gt;
+    &lt;chart:FastLineSeries ItemsSource=&quot;{Binding LoadDetails}&quot; 
+                          XBindingPath=&quot;Date&quot; 
+                          YBindingPath=&quot;Load&quot; 
+                          EnableAnimation=&quot;True&quot; /&gt;
 &lt;/chart:SfCartesianChart&gt;
                         </x:String>
                 </common:DemoLayout.Xaml>

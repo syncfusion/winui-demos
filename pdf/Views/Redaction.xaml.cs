@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2022.
-// Copyright Syncfusion Inc. 2001-2022. All rights reserved.
+#region Copyright Syncfusion Inc. 2001-2021.
+// Copyright Syncfusion Inc. 2001-2021. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -43,9 +43,12 @@ namespace Syncfusion.PdfDemos.WinUI
             PdfRedaction textRedaction = new PdfRedaction(new Syncfusion.Drawing.RectangleF(477f, 154f, 62.709f, 16.802f), Syncfusion.Drawing.Color.Black);
 
             PdfRedaction textRedaction2 = new PdfRedaction(new Syncfusion.Drawing.RectangleF(70, 240, 65.709f, 16.802f), Syncfusion.Drawing.Color.Black);
+			
+			PdfRedaction imageRedaction = new PdfRedaction(new Syncfusion.Drawing.RectangleF(52.14447f, 712.1465f, 126.10835f, 81.45297f), Syncfusion.Drawing.Color.Black);
 
             lpage.AddRedaction(textRedaction);
             lpage.AddRedaction(textRedaction2);
+			lpage.AddRedaction(imageRedaction);
             loadedDocument.Redact();
 
             //Creating the stream object.

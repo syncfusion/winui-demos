@@ -107,5 +107,13 @@ namespace Syncfusion.EditorDemos.WinUI.Views.Rating
                     break;
             }
         }
+
+        private void orientationCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (orientationCombo.SelectedIndex == 1)
+                DefaultStyle.Orientation = Orientation.Vertical;
+            else
+                DefaultStyle.Orientation = Orientation.Horizontal;
+        }
     }
 }

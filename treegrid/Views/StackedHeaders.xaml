@@ -75,7 +75,7 @@
         &lt;grid:StackedHeaderRow&gt;
             &lt;grid:StackedHeaderRow.StackedColumns&gt;
                 &lt;grid:StackedColumn ChildColumns=&quot;FirstName,LastName&quot; HeaderText=&quot;Employee Name&quot; /&gt;
-                &lt;grid:StackedColumn ChildColumns=&quot;ID,DOJ,City&quot; HeaderText=&quot;Employee Details&quot; /&gt;
+                &lt;grid:StackedColumn ChildColumns=&quot;ID,DateofBirth,City&quot; HeaderText=&quot;Employee Details&quot; /&gt;
                 &lt;grid:StackedColumn ChildColumns=&quot;Salary,Department&quot; HeaderText=&quot;Designation Details&quot; /&gt;
             &lt;/grid:StackedHeaderRow.StackedColumns&gt;
         &lt;/grid:StackedHeaderRow&gt;

@@ -57,15 +57,32 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; IsTransposed=&quot;True&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;   
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Seismograph Comparison Of Two Countries&quot;
+                        IsTransposed=&quot;True&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis x:Name=&quot;axis&quot;
+                            FontFamily=&quot;Segoe UI&quot;
+                            Header=&quot;Time(sec)&quot;
+                            ShowMajorGridLines=&quot;False&quot;&gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;mm:ss&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
 
-    &lt;chart:FastLineSeries 
-                        ItemsSource=&quot;{Binding}&quot; 
-                        XBindingPath=&quot;Time&quot;  
-                        YBindingPath=&quot;Velocity1&quot;  
-                        Label=&quot;Indonesia&quot;
-                        
-                        StrokeThickness=&quot;1&quot; /&gt;
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Header=&quot;Velocity(m/s)&quot; 
+                             Maximum=&quot;15&quot; Minimum=&quot;-15&quot;
+                             ShowMajorGridLines=&quot;False&quot; /&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:FastLineSeries ItemsSource=&quot;{Binding}&quot;
+                          XBindingPath=&quot;Time&quot;
+                          YBindingPath=&quot;Velocity1&quot;
+                          Label=&quot;Indonesia&quot;
+                          StrokeThickness=&quot;1&quot; /&gt;
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

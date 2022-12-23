@@ -9,7 +9,7 @@ using System.IO;
 using Microsoft.UI.Xaml.Controls;
 using Syncfusion.Presentation;
 using System.Reflection;
-using Syncfusion.PresentationToPdfConverter;
+using Syncfusion.PresentationRenderer;
 using Syncfusion.Pdf;
 
 namespace EssentialPresentation

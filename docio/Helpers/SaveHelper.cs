@@ -48,6 +48,13 @@ namespace Syncfusion.DocIODemos.WinUI.Helpers
                     //Saves the file as Doc file.
                     savePicker.FileTypeChoices.Add("DOC", new List<string>() { ".doc" });
                 }
+                else if (extension == ".md")
+                {
+                    savePicker.DefaultFileExtension = ".md";
+                    savePicker.SuggestedFileName = filename;
+                    //Saves the file as markdown file.
+                    savePicker.FileTypeChoices.Add("Markdown", new List<string>() { ".md" });
+                }
                 else if (extension == ".rtf")
                 {
                     savePicker.DefaultFileExtension = ".rtf";
@@ -106,7 +113,7 @@ namespace Syncfusion.DocIODemos.WinUI.Helpers
                     if(ex.Message.Contains("Access is denied."))
                     {
                         //Creates message dialog box.
-                        MessageDialog msgDialogBox = new("Access to the given path is denied. Please enable permission to save the file in that folder or save the file in another location.", "Access Denied");
+                        MessageDialog msgDialogBox = new("Access to the given path is denied. Please enable permission to save the file in that folder or save the file in another location." , "Access Denied");
                         UICommand okCmd = new("Ok");
                         msgDialogBox.Commands.Add(okCmd);
                         WinRT.Interop.InitializeWithWindow.Initialize(msgDialogBox, windowHandle);

@@ -373,7 +373,7 @@ namespace Syncfusion.DataGridDemos.WinUI
             {
                 Name = "Excel Exporting",
                 Category = "Exporting",
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 Description = "This sample showcases the excel exporting capability of DataGrid.",
                 DemoView = typeof(DataGrid.ExcelExporting),
                 ShowInfoPanel = false,
@@ -460,7 +460,7 @@ namespace Syncfusion.DataGridDemos.WinUI
             {
                 Name = "Styling",
                 Category = "Appearance",
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 Description = "This sample showcases the styling capabilities of the DataGrid.",
                 DemoView = typeof(DataGrid.Styling),
                 ShowInfoPanel = true
@@ -482,7 +482,7 @@ namespace Syncfusion.DataGridDemos.WinUI
             {
                 Name = "Conditional Styling",
                 Category = "Appearance",
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 Description = "This sample showcases the cell style customization in the DataGrid via StyleSelector.",
                 DemoView = typeof(DataGrid.Conditionalstyling),
                 ShowInfoPanel = true

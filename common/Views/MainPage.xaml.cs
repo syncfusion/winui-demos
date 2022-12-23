@@ -30,6 +30,7 @@ namespace Syncfusion.DemosCommon.WinUI
 
         public MainPage()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
             this.InitializeComponent();
             NavigationService.Frame = MainFrame;
             this.DataContext = new MainViewModel();

@@ -35,25 +35,28 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
- &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot;&gt;
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;World Country Details&quot;&gt;
     
     &lt;chart:SfCartesianChart.XAxes&gt;
-            &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; Header=&quot;Literacy Rate&quot;  PlotOffsetStart=&quot;35&quot; PlotOffsetEnd=&quot;35&quot;/&gt;
+            &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot;
+                                 Header=&quot;Literacy Rate&quot;
+                                 PlotOffsetStart=&quot;35&quot;
+                                 PlotOffsetEnd=&quot;35&quot;/&gt;
         &lt;/chart:SfCartesianChart.XAxes&gt;
 
         &lt;chart:SfCartesianChart.YAxes&gt;
-                &lt;chart:NumericalAxis Header=&quot;GDP Growth Rate&quot; Minimum=&quot;0&quot; RangePadding=&quot;Additional&quot; /&gt;
+                &lt;chart:NumericalAxis Header=&quot;GDP Growth Rate&quot;
+                                     Minimum=&quot;0&quot;
+                                     RangePadding=&quot;Additional&quot; /&gt;
         &lt;/chart:SfCartesianChart.YAxes&gt;
 
-    &lt;chart:BubbleSeries 
-                        ItemsSource=&quot;{Binding BubbleData}&quot; 
-                        XBindingPath=&quot;Label&quot;  
+    &lt;chart:BubbleSeries ItemsSource=&quot;{Binding BubbleData}&quot;
+                        XBindingPath=&quot;Label&quot;
                         YBindingPath=&quot;Value&quot;
-                        Size=&quot;Size&quot; 
+                        Size=&quot;Size&quot;
                         EnableAnimation=&quot;True&quot;
                         EnableTooltip=&quot;True&quot;
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
-     &lt;/chart:BubbleSeries&gt;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot; /&gt;
     
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

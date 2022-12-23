@@ -39,30 +39,27 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;&gt;
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Internet usage in World&quot; &gt;
 
     &lt;chart:SfCircularChart.Legend&gt;
-        &lt;chart:ChartLegend 
-                        ItemMargin=&quot;2&quot; 
-                        BorderThickness=&quot;1&quot; 
-                        Placement =&quot;Right&quot; /&gt;
+        &lt;chart:ChartLegend ItemMargin=&quot;2&quot; 
+                           BorderThickness=&quot;1&quot; 
+                           Placement =&quot;Right&quot; /&gt;
         &lt;/chart:SfCircularChart.Legend&gt;
     
-        &lt;chart:PieSeries 
-                        ItemsSource=&quot;{Binding Data}&quot; 
-                        XBindingPath=&quot;Country&quot; 
-                        YBindingPath=&quot;Count&quot; 
-                        CircularCoefficient=&quot;0.7&quot; 
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
-                        EnableAnimation=&quot;True&quot; 
-                        ShowDataLabels=&quot;True&quot;
-                        GroupMode=&quot;Value&quot; 
-                        GroupTo=&quot;1000&quot; &gt;
+        &lt;chart:PieSeries ItemsSource=&quot;{Binding Data}&quot; 
+                         XBindingPath=&quot;Country&quot; 
+                         YBindingPath=&quot;Count&quot; 
+                         CircularCoefficient=&quot;0.7&quot; 
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                         EnableAnimation=&quot;True&quot; 
+                         ShowDataLabels=&quot;True&quot;
+                         GroupMode=&quot;Value&quot; 
+                         GroupTo=&quot;1000&quot; &gt;
             &lt;chart:PieSeries.DataLabelSettings&gt;
-                &lt;chart:CircularDataLabelSettings 
-                        ShowConnectorLine=&quot;True&quot; 
-                        ConnectorType=&quot;Line&quot; 
-                        Position=&quot;OutsideExtended&quot;/&gt;
+                &lt;chart:CircularDataLabelSettings ShowConnectorLine=&quot;True&quot; 
+                                                 ConnectorType=&quot;Line&quot; 
+                                                 Position=&quot;OutsideExtended&quot;/&gt;
             &lt;/chart:PieSeries.DataLabelSettings&gt;
     
         &lt;/chart:PieSeries&gt;

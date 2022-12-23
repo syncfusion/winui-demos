@@ -168,13 +168,13 @@
 &lt;Grid&gt;
 
     &lt;chart:SfCartesianChart x:Name=&quot;seriesSelectionChart&quot;
-                Height=&quot;400&quot;
-                Header=&quot;Mobiles Market Share&quot; &gt;
+                            Height=&quot;400&quot;
+                            Header=&quot;Mobiles Market Share&quot; &gt;
 
-        <!--  SelectionBehavior  -->
+               <!--  SelectionBehavior  -->
         &lt;chart:SfCartesianChart.SelectionBehavior&gt;
-            &lt;chart:SeriesSelectionBehavior SelectionChanged=&quot;selection_SelectionChanged&quot;
-                        x:Name=&quot;selection&quot;/&gt;
+            &lt;chart:SeriesSelectionBehavior x:Name=&quot;selection&quot;
+                                           SelectionChanged=&quot;selection_SelectionChanged&quot; /&gt;
         &lt;/chart:SfCartesianChart.SelectionBehavior&gt;
 
         &lt;chart:SfCartesianChart.XAxes&gt;
@@ -196,9 +196,7 @@
                         Label=&quot;2013&quot;
                         SegmentSpacing=&quot;0.1&quot;
                         XBindingPath=&quot;Category&quot;
-                        YBindingPath=&quot;Year2013&quot;&gt;
-           
-        &lt;/chart:ColumnSeries&gt;
+                        YBindingPath=&quot;Year2013&quot;/&gt;
 
         &lt;chart:ColumnSeries Fill=&quot;#00CC6A&quot;
                         x:Name=&quot;column1&quot;
@@ -207,13 +205,12 @@
                         Label=&quot;2014&quot;
                         SegmentSpacing=&quot;0.1&quot;
                         XBindingPath=&quot;Category&quot;
-                        YBindingPath=&quot;Year2014&quot;&gt;
-        &lt;/chart:ColumnSeries&gt;
+                        YBindingPath=&quot;Year2014&quot;/&gt;
 
     &lt;/chart:SfCartesianChart&gt;
 
     &lt;chart:SfCartesianChart x:Name=&quot;dataPointSelectionChart&quot; Height=&quot;400&quot; 
-                               Header=&quot;Daily Activity Monitor&quot;&gt;
+                            Header=&quot;Daily Activity Monitor&quot;&gt;
 
         &lt;chart:SfCartesianChart.XAxes&gt;
             &lt;chart:DateTimeAxis Interval=&quot;1&quot; IntervalType=&quot;Hours&quot; 
@@ -252,8 +249,6 @@
 
 &lt;/Grid&gt;
 
-                        
-                        
                 </x:String>
                 </common:DemoLayout.Xaml>
                 <common:DemoLayout.Substitutions>

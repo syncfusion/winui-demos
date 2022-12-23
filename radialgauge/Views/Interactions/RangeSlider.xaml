@@ -24,26 +24,12 @@
                         <coreconverters:StringFormatConverter x:Name="StringFormatConverter" />
                     </Grid.Resources>
                     <gauge:SfRadialGauge x:Name="gauge">
-                        <gauge:SfRadialGauge.Resources>
-                            <ResourceDictionary>
-                                <ResourceDictionary.ThemeDictionaries>
-                                    <ResourceDictionary x:Key="Light">
-                                        <SolidColorBrush x:Key="SyncfusionRadialGaugeAxisLineFill"
-                                                         Color="#BFD6F5" />
-                                    </ResourceDictionary>
-
-                                    <ResourceDictionary x:Key="Dark">
-                                        <SolidColorBrush x:Key="SyncfusionRadialGaugeAxisLineFill"
-                                                         Color="#153E82" />
-                                    </ResourceDictionary>
-                                </ResourceDictionary.ThemeDictionaries>
-                            </ResourceDictionary>
-                        </gauge:SfRadialGauge.Resources>
                         <gauge:SfRadialGauge.Axes>
                             <gauge:RadialAxis StartAngle="270"
                                               EndAngle="270"
                                               ShowLabels="False"
                                               ShowTicks="False"
+                                              AxisLineFill="#BFD6F5"
                                               AxisLineWidth="8">
                                 <gauge:RadialAxis.Pointers>
                                     <gauge:RangePointer Value="{Binding ElementName=shapePointer, Mode=OneWay, Path=Value}"

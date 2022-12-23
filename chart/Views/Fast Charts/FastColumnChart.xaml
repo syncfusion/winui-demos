@@ -48,13 +48,29 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;   
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Stock Details&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis Header=&quot;Month&quot;
+                            ShowMajorGridLines=&quot;False&quot;
+                            EdgeLabelsDrawingMode=&quot;Fit&quot;
+                            EdgeLabelsVisibilityMode=&quot;AlwaysVisible&quot;&gt;
+            &lt;chart:DateTimeAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;MMM dd&quot;/&gt;
+            &lt;/chart:DateTimeAxis.LabelStyle&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Header=&quot;Stock&quot; /&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
                         
         &lt;chart:FastColumnBitmapSeries
-                ItemsSource=&quot;{Binding Data}&quot;
-                EnableTooltip=&quot;True&quot;
-                XBindingPath=&quot;Date&quot;
-                YBindingPath=&quot;Price&quot; /&gt;
+               ItemsSource=&quot;{Binding Data}&quot;
+               EnableTooltip=&quot;True&quot;
+               XBindingPath=&quot;Date&quot;
+               YBindingPath=&quot;Price&quot; /&gt;
                         
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

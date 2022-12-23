@@ -393,7 +393,7 @@
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.XlsIORenderer.NET" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.XlsIORenderer.NET" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="Views\Resources\SourceCodes\CreateSpreadsheet_cs.txt"/>

@@ -38,13 +38,24 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfPyramidChart x:Name=&quot;Chart&quot; ItemsSource=&quot;{Binding Data}&quot;
-                PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;         
-                XBindingPath=&quot;Category&quot; YBindingPath=&quot;Percentage&quot; ShowDataLabels=&quot;True&quot;&gt;
+&lt;chart:SfPyramidChart x:Name=&quot;Chart&quot; 
+                      Header=&quot;Monthly Comparison of Calories&quot;
+                      ItemsSource=&quot;{Binding Data}&quot;
+                      PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                      XBindingPath=&quot;Category&quot;
+                      YBindingPath=&quot;Percentage&quot;
+                      ShowDataLabels=&quot;True&quot;&gt;
 
-        &lt;chart:SfPyramidChart.Legend&gt;
-                  &lt;chart:ChartLegend Placement=&quot;Bottom&quot;/&gt;
-        &lt;/chart:SfPyramidChart.Legend&gt;
+    &lt;chart:SfPyramidChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;&gt;
+            &lt;chart:ChartLegend.Header&gt;
+                &lt;TextBlock Text=&quot;Comparison Details&quot; 
+                           VerticalAlignment=&quot;Center&quot;
+                           HorizontalAlignment=&quot;Center&quot;
+                           Margin=&quot;8&quot;/&gt;
+            &lt;/chart:ChartLegend.Header&gt;
+        &lt;/chart:ChartLegend&gt;
+    &lt;/chart:SfPyramidChart.Legend&gt;
                    
 &lt;/chart:SfPyramidChart&gt;
 </x:String>

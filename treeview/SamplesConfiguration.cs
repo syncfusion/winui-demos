@@ -23,7 +23,7 @@ namespace Syncfusion.TreeViewDemos.WinUI
             {
                 Name = "Getting Started",
                 Category = "Getting Started",
-                Description = "This sample showcases the basic features of the Tree View with data binding using ObservableCollection, and also populating nodes directly.",
+                Description = "This sample showcases the basic features of the TreeView with data binding using ObservableCollection, and also populating nodes directly.",
                 DemoView = typeof(Syncfusion.TreeViewDemos.WinUI.GettingStartedPage),
                 ShowInfoPanel = true
             };
@@ -46,7 +46,7 @@ namespace Syncfusion.TreeViewDemos.WinUI
             {
                 Name = "Node with Image",
                 Category = "Getting Started",
-                Description = "This sample showcases how to load the text as well as image in each node using the ItemTemplate option from a Tree View.",
+                Description = "This sample showcases how to load the text as well as image in each node using the ItemTemplate option from a TreeView.",
                 DemoView = typeof(Syncfusion.TreeViewDemos.WinUI.NodeWithImagePage),
                 ShowInfoPanel = true
             };
@@ -81,7 +81,7 @@ namespace Syncfusion.TreeViewDemos.WinUI
             {
                 Name = "Performance",
                 Category = "Getting Started",
-                Description = "This sample showcases the loading and scrolling performance of a Tree View with one million nodes.",
+                Description = "This sample showcases the loading and scrolling performance of a TreeView with one million nodes.",
                 DemoView = typeof(Syncfusion.TreeViewDemos.WinUI.PerformancePage),
                 ShowInfoPanel = true
             };
@@ -116,7 +116,7 @@ namespace Syncfusion.TreeViewDemos.WinUI
                 Name = "Editing",
                 Category = "Interactive Features",
                 DemoType = DemoTypes.None,
-                Description = "This sample showcases the editing capability in SfTreeView. You can start editing by navigating to required treeview item and press the F2 key.",
+                Description = "This sample showcases the editing capability in TreeView. You can start editing by navigating to required Treeview item and press the F2 key.",
                 DemoView = typeof(Syncfusion.TreeViewDemos.WinUI.EditingPage),
                 ShowInfoPanel = true
             };
@@ -145,7 +145,7 @@ namespace Syncfusion.TreeViewDemos.WinUI
                 Control = DemoControl.SfTreeView,
                 Glyph = "\uE708",
                 ImageSource="TreeView.png",
-                Description = "The Tree View is a data-oriented control that displays data in a hierarchical structure with nodes that expand and collapse.",
+                Description = "The TreeView is a data-oriented control that displays data in a hierarchical structure with nodes that expand and collapse.",
                 ControlCategory = ControlCategory.Navigation,
             };
 

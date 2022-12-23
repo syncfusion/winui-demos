@@ -97,15 +97,34 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Global Stock Trend&quot; &gt;
       
-    &lt;chart:ScatterSeries 
-                        ItemsSource=&quot;{Binding}&quot;  
-                        XBindingPath=&quot;Year&quot; 
-                        YBindingPath=&quot;Count&quot; 
-                        PointHeight=&quot;50&quot; 
-                        PointWidth=&quot;50&quot;
-                        ShowDataLabels=&quot;True&quot;
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis Header=&quot;Year 2014&quot; Interval=&quot;1&quot;
+                            IntervalType=&quot;Months&quot;
+                            PlotOffsetStart=&quot;30&quot; PlotOffsetEnd=&quot;30&quot;
+                            ShowMajorGridLines=&quot;False&quot;&gt;
+        &lt;chart:DateTimeAxis.LabelStyle&gt;
+            &lt;chart:LabelStyle LabelFormat=&quot;MMM&quot; /&gt;
+        &lt;/chart:DateTimeAxis.LabelStyle&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+         &lt;chart:NumericalAxis Header=&quot;Stock Price&quot;
+                            Interval=&quot;10&quot; Maximum=&quot;80&quot;
+                            Minimum=&quot;10&quot;&gt;
+             &lt;chart:NumericalAxis.LabelStyle&gt;
+                  &lt;chart:LabelStyle LabelFormat=&quot;$0&quot; /&gt;
+             &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
+     &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:ScatterSeries ItemsSource=&quot;{Binding}&quot;
+                         XBindingPath=&quot;Year&quot; 
+                         YBindingPath=&quot;Count&quot; 
+                         PointHeight=&quot;50&quot; 
+                         PointWidth=&quot;50&quot;
+                         ShowDataLabels=&quot;True&quot; &gt;
         &lt;chart:ScatterSeries.CustomTemplate&gt;
             &lt;DataTemplate&gt;
                 &lt;Canvas&gt;
@@ -122,9 +141,8 @@
             &lt;/DataTemplate&gt;
         &lt;/chart:ScatterSeries.CustomTemplate&gt;
         &lt;chart:ScatterSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings 
-                        Context=&quot;DataLabelItem&quot; 
-                        ContentTemplate=&quot;{StaticResource DataLabelTemplate}&quot;/&gt;
+                &lt;chart:CartesianDataLabelSettings Context=&quot;DataLabelItem&quot; 
+                                                  ContentTemplate=&quot;{StaticResource DataLabelTemplate}&quot;/&gt;
         &lt;/chart:ScatterSeries.DataLabelSettings&gt;
     &lt;/chart:ScatterSeries&gt;
     

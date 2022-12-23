@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.MaskedTextBox.CultureView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI.Views.MaskedTextBox"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Editors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+            <common:DemoLayout 
+                HeaderText="This sample showcases the masked text box with different cultures."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Views/MaskedTextBox/Resources/SourceCodes/cultureview_xaml.txt,
+                             Common=Editor/Views/MaskedTextBox/Resources/SourceCodes/cultureview_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <syncfusion:SfMaskedTextBox x:Name="cultureMask" 
+                                                Header="Culture" 
+                                                MaskType="Simple" 
+                                                Mask="$ 0,000.00" 
+                                                Value="435300"
+                                                Width="200"/>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Text="Culture" FontSize="15" Margin="5"/>
+                        <ComboBox x:Name="cultureComboBox" Width="150" SelectedIndex="0" Margin="5" SelectionChanged="CultureComboBox_SelectionChanged">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="United States"/>
+                                <ComboBoxItem Content="Russia"/>
+                                <ComboBoxItem Content="France"/>
+                            </ComboBox.Items>
+                        </ComboBox>
+
+                    </StackPanel>
+                </common:DemoLayout.Options>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

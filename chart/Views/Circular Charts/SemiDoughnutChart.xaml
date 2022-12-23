@@ -56,27 +56,27 @@
                 </common:DemoLayout.Options>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;   &gt;                      
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Application Performance Metrics&quot; &gt;
 
     &lt;chart:DoughnutSeries x:Name=&quot;doughnutSeries&quot; 
-                        ItemsSource=&quot;{Binding Tax}&quot; 
-                        XBindingPath=&quot;Category&quot; 
-                        YBindingPath=&quot;Percentage&quot; 
-                        Radius=&quot;1&quot;  InnerRadius=&quot;0.6&quot; 
-                        EnableAnimation=&quot;True&quot; 
-                        ShowDataLabels=&quot;True&quot;
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
-                        EndAngle=&quot;$(EndAngle)&quot; 
-                        StartAngle=&quot;$(StartAngle)&quot;&gt;
+                          ItemsSource=&quot;{Binding Tax}&quot; 
+                          XBindingPath=&quot;Category&quot; 
+                          YBindingPath=&quot;Percentage&quot; 
+                          Radius=&quot;1&quot; 
+                          InnerRadius=&quot;0.6&quot; 
+                          EnableAnimation=&quot;True&quot; 
+                          ShowDataLabels=&quot;True&quot;
+                          PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                          EndAngle=&quot;$(EndAngle)&quot; 
+                          StartAngle=&quot;$(StartAngle)&quot;&gt;
         &lt;chart:DoughnutSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        ConnectorHeight=&quot;37&quot;  
-                        Context=&quot;Percentage&quot;
-                        Format=&quot;##.#&quot; 
-                        ShowConnectorLine=&quot;True&quot; 
-                        ConnectorType=&quot;Bezier&quot; 
-                        Position=&quot;Outside&quot; /&gt;
-        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;   
+            &lt;chart:CircularDataLabelSettings ConnectorHeight=&quot;37&quot; 
+                                             Context=&quot;Percentage&quot;
+                                             Format=&quot;##.#&quot; 
+                                             ShowConnectorLine=&quot;True&quot; 
+                                             ConnectorType=&quot;Bezier&quot; 
+                                             Position=&quot;Outside&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
     
     &lt;/chart:DoughnutSeries&gt;
     

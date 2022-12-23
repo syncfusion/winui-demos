@@ -10,8 +10,12 @@ PdfRedaction textRedaction = new PdfRedaction(new Syncfusion.Drawing.RectangleF(
 
 PdfRedaction textRedaction2 = new PdfRedaction(new Syncfusion.Drawing.RectangleF(70, 240, 65.709f, 16.802f), Syncfusion.Drawing.Color.Black);
 
+PdfRedaction imageRedaction = new PdfRedaction(new Syncfusion.Drawing.RectangleF(52.14447f, 712.1465f, 126.10835f, 81.45297f), Syncfusion.Drawing.Color.Black);
+
 lpage.AddRedaction(textRedaction);
 lpage.AddRedaction(textRedaction2);
+lpage.AddRedaction(imageRedaction);
+
 loadedDocument.Redact();
 
 //Creating the stream object.

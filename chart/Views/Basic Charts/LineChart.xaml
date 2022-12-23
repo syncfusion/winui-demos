@@ -64,41 +64,60 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
- &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;     
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Efficiency of oil-fired power production&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate1&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                         Fill=&quot;{StaticResource SeriesColor1}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+            &lt;DataTemplate x:Key=&quot;labelTemplate2&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                         Fill=&quot;{StaticResource SeriesColor2}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
+    
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis LabelFormat=&quot;yyyy&quot; LabelPlacement=&quot;BetweenTicks&quot; PlotOffsetStart=&quot;15&quot; PlotOffsetEnd=&quot;15&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot;
+                            PlotOffsetStart=&quot;15&quot;
+                            PlotOffsetEnd=&quot;15&quot;
+                            ShowMajorGridLines=&quot;False&quot; &gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;yyyy&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
         &lt;chart:NumericalAxis RangePadding=&quot;Additional&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
     
-    &lt;chart:LineSeries  
-                        ItemsSource=&quot;{Binding DataPoints}&quot; 
-                        XBindingPath=&quot;Year&quot; 
-                        YBindingPath=&quot;Germany&quot;
-                        EnableTooltip=&quot;True&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        Label=&quot;Germany&quot; 
-                        EnableAnimation=&quot;True&quot;&gt;
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DataPoints}&quot;
+                      XBindingPath=&quot;Year&quot; 
+                      YBindingPath=&quot;Germany&quot;
+                      EnableTooltip=&quot;True&quot;
+                      ShowDataLabels=&quot;True&quot;
+                      Label=&quot;Germany&quot; 
+                      EnableAnimation=&quot;True&quot;&gt;
             &lt;chart:LineSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings
-                        ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;  
+                &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;
             &lt;/chart:LineSeries.DataLabelSettings&gt;
     &lt;/chart:LineSeries&gt;
 
-    &lt;chart:LineSeries 
-                        ItemsSource=&quot;{Binding DataPoints}&quot; 
-                        YBindingPath=&quot;England&quot; 
-                        XBindingPath=&quot;Year&quot;
-                        Label=&quot;England&quot; 
-                        EnableTooltip=&quot;True&quot; 
-                        ShowDataLabels=&quot;True&quot; 
-                        EnableAnimation=&quot;True&quot; &gt;
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DataPoints}&quot;
+                      YBindingPath=&quot;England&quot;
+                      XBindingPath=&quot;Year&quot;
+                      Label=&quot;England&quot;
+                      EnableTooltip=&quot;True&quot;
+                      ShowDataLabels=&quot;True&quot;
+                      EnableAnimation=&quot;True&quot; &gt;
             &lt;chart:LineSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt; 
+                &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt;
             &lt;/chart:LineSeries.DataLabelSettings&gt;
     &lt;/chart:LineSeries&gt;
 &lt;/chart:SfCartesianChart&gt;

@@ -180,6 +180,9 @@
 		<Compile Include="Views\DropDownColorPicker\DropDownColorPickerView.xaml.cs">
 			<DependentUpon>DropDownColorPickerView.xaml</DependentUpon>
 		</Compile>
+		<Compile Include="Views\MaskedTextBox\CultureView.xaml.cs"/>
+		<Compile Include="Views\MaskedTextBox\GettingStartedView.xaml.cs"/>
+		<Compile Include="Views\MaskedTextBox\LiteralsAndPromptView.xaml.cs"/>
 		<Compile Include="Views\Rating\Resources\ImageDataTemplateSelector.cs"/>
 		<Compile Include="Views\Rating\CustomView.xaml.cs"/>
 		<Compile Include="Views\Rating\GettingStartedView.xaml.cs"/>
@@ -266,6 +269,9 @@
 		<Content Include="Views\DropDownColorPicker\Resources\SourceCodes\GradientBrushType_xaml.txt"/>
 		<Content Include="Views\DropDownColorPicker\Resources\SourceCodes\SplitMode_xaml.txt"/>
 		<Content Include="Views\DropDownColorPicker\Resources\SourceCodes\DropDownColorPicker_xaml.txt"/>
+		<Content Include="Views\MaskedTextBox\Resources\SourceCodes\cultureview_xaml.txt"/>
+		<Content Include="Views\MaskedTextBox\Resources\SourceCodes\gettingstarted_xaml.txt"/>
+		<Content Include="Views\MaskedTextBox\Resources\SourceCodes\literalsandprompt_xaml.txt"/>
 		<Content Include="Views\NumberBox\Resources\SourceCodes\Formatting_xaml.txt"/>
 		<Content Include="Views\NumberBox\Resources\SourceCodes\GettingStarted_xaml.txt"/>
 		<Content Include="Views\NumberBox\Resources\SourceCodes\Culture_xaml.txt"/>
@@ -364,6 +370,18 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\MaskedTextBox\CultureView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\MaskedTextBox\GettingStartedView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\MaskedTextBox\LiteralsAndPromptView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 		<Page Include="Views\NumberBox\CultureView.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
@@ -374,9 +392,11 @@
 		</Page>
 		<Page Include="Views\Rating\CustomView.xaml">
 			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
 		</Page>
 		<Page Include="Views\Rating\GettingStartedView.xaml">
 			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
 		</Page>
 		<Page Include="Views\SegmentedControl\Customization.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -396,8 +416,8 @@
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>

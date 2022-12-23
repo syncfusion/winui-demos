@@ -212,7 +212,7 @@
 		<Content Include="SourceCodes\ShowCase\TempMonitor\TempMonitor.xaml.cs.txt"/>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.4.0.38"/>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Include="Views\Animation\Animation.xaml">

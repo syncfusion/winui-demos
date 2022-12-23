@@ -71,8 +71,7 @@ namespace Syncfusion.CalendarDemos.WinUI
                 ControlCategory = ControlCategory.Calendars,
                 Description = "The Calendar control allows user to select a date or dates quickly using built-in month, year, decade, and century views.",
                 Glyph = "\uE710",
-                ImageSource= "Calendar.png",
-                IsPreview = true
+                ImageSource= "Calendar.png"
             };
             calendar.Demos.Add(calendarDemo);
             calendar.Demos.Add(calendarCustomizationDemo);
@@ -118,8 +117,7 @@ namespace Syncfusion.CalendarDemos.WinUI
                 ControlCategory = ControlCategory.Calendars,
                 Description = "The Calendar DatePicker is a drop-down control that is optimized for picking a single date from a Calendar control.",
                 Glyph = "\uE711",
-                ImageSource= "CalendarDatePicker.png",
-                IsPreview = true
+                ImageSource= "CalendarDatePicker.png"
             };
             calendarDatePicker.Demos.Add(calendarDatePickerDemo);
             calendarDatePicker.Demos.Add(calendarDatePickerCustomizationDemo);
@@ -167,8 +165,7 @@ namespace Syncfusion.CalendarDemos.WinUI
                 ControlCategory = ControlCategory.Calendars,
                 Description = "The Calendar DateRangePicker is a drop-down control optimized for selecting a range of dates from a calendar control.",
                 Glyph = "\uE713",
-                ImageSource= "CalendarDateRangePicker.png",
-                IsPreview = true
+                ImageSource= "CalendarDateRangePicker.png"
             };
             calendarDateRangePicker.Demos.Add(calendarDateRangePickerDemo);
             calendarDateRangePicker.Demos.Add(calendarDateRangePickerCustomizationDemo);

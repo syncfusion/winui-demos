@@ -37,7 +37,7 @@ namespace Syncfusion.RibbonDemos.WinUI
                 Name = "Simplified Ribbon",
                 Category = "Ribbon",
                 Description = "Ribbon supports the simplified mode with Ribbon items arranged in single row arrangements and some ribbon items are moved to overflow menu.",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 DemoView = typeof(Views.Ribbon.SimplifiedRibbonView),
                 ShowInfoPanel = true
             };
@@ -95,6 +95,22 @@ namespace Syncfusion.RibbonDemos.WinUI
                 ShowInfoPanel = false
             };
 
+            DemoInfo ribbonCompactSize = new DemoInfo()
+            {
+                Name = "Ribbon Compact Size",
+                Category = "Ribbon",
+                Description = "Compact size allows for dense, information-rich ribbon control groups that are primarily intended to handle pointer input.",
+                DemoType = DemoTypes.New,
+                DemoView = typeof(Views.Ribbon.RibbonCompactSize),
+                ShowInfoPanel = true
+            };
+
+            List<Documentation> ribboncompactsizedocumentations = new List<Documentation>();
+            ribboncompactsizedocumentations.Add(new Documentation() { Content = "Ribbon - API Reference Documentation", Uri = new Uri("https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.Ribbon.html") });
+            ribboncompactsizedocumentations.Add(new Documentation() { Content = "Compact Sizing Documentation", Uri = new Uri("https://help.syncfusion.com/winui/common/compact-sizing") });
+
+            ribbonCompactSize.Documentation.AddRange(ribboncompactsizedocumentations);
+
             var ribbonControlInfo = new ControlInfo()
             {
                 Control = DemoControl.SfRibbon,
@@ -112,6 +128,7 @@ namespace Syncfusion.RibbonDemos.WinUI
             ribbonControlInfo.Demos.Add(ribbonKeyTipDemo);
             ribbonControlInfo.Demos.Add(tabgroupviewDemo);
             ribbonControlInfo.Demos.Add(ribbonResizeViewDemo);
+            ribbonControlInfo.Demos.Add(ribbonCompactSize);
 
             var controlInfos = new List<ControlInfo>()
             {

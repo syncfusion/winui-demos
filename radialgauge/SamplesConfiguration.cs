@@ -171,7 +171,7 @@ namespace Syncfusion.RadialGaugeDemos.WinUI
                 Name = "Shape pointer",
                 Description = "This sample shows the addition of the shape pointer support to the radial gauge.",
                 Category = "Pointers",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 DemoView = typeof(Views.MarkerPointer)
             };
 
@@ -233,7 +233,7 @@ namespace Syncfusion.RadialGaugeDemos.WinUI
                 Name = "Radial slider",
                 Description = "This sample shows how to create a radial slider using the radial gauge with range pointer, shape pointer and drag interaction support.",
                 Category = "Pointer interaction",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 DemoView = typeof(Views.RangeSlider)
             };
 
@@ -242,7 +242,7 @@ namespace Syncfusion.RadialGaugeDemos.WinUI
                 Name = "Radial range slider",
                 Description = "This sample shows how to create a radial range slider using the radial gauge with shape pointer and drag interaction support.",
                 Category = "Pointer interaction",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 DemoView = typeof(Views.RadialRangeSlider)
             };
 
@@ -290,7 +290,7 @@ namespace Syncfusion.RadialGaugeDemos.WinUI
                 Control = DemoControl.SfRadialGauge,
                 Description = "The Radial Gauge is a multi-purpose data visualization control to create modern, interactive and animated gauges.",
                 ControlCategory = ControlCategory.DataVisualization,
-                ControlBadge = ControlBadge.Updated,
+                ControlBadge = ControlBadge.None,
                 Glyph = "\ue703",
                 ImageSource= "RadialGauge.png"
             };

@@ -37,18 +37,23 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Sneakers Sold by Brand for three Months&quot; &gt;
     
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot; Header=&quot;Brand&quot; LabelPlacement=&quot;BetweenTicks&quot; /&gt;
+        &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot;
+                            Header=&quot;Brand&quot;
+                            LabelPlacement=&quot;BetweenTicks&quot; /&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis FontFamily=&quot;Segoe UI&quot; Header=&quot;Number of items sold(in %)&quot; Interval=&quot;5&quot; Maximum=&quot;40&quot; Minimum=&quot;0&quot; /&gt;
+        &lt;chart:NumericalAxis FontFamily=&quot;Segoe UI&quot;
+                             Header=&quot;Number of items sold(in %)&quot;
+                             Interval=&quot;5&quot;
+                             Maximum=&quot;40&quot;
+                             Minimum=&quot;0&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
 
-    &lt;chart:ColumnSeries 
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+    &lt;chart:ColumnSeries PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
                         EnableAnimation=&quot;True&quot; 
                         ShowDataLabels=&quot;True&quot; 
                         ItemsSource=&quot;{Binding SneakersDetail}&quot; 
@@ -56,9 +61,7 @@
                         XBindingPath=&quot;Brand&quot; 
                         YBindingPath=&quot;ItemsCount&quot;&gt;
             &lt;chart:ColumnSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings 
-                        Position=&quot;Inner&quot;&gt;
-                &lt;/chart:CartesianDataLabelSettings&gt;
+                &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
             &lt;/chart:ColumnSeries.DataLabelSettings&gt;
     &lt;/chart:ColumnSeries&gt;
 &lt;/chart:SfCartesianChart&gt;

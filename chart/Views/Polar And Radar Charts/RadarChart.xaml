@@ -94,29 +94,43 @@
                 </common:DemoLayout.Options>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfPolarChart x:Name=&quot;Chart&quot; GridLineType=&quot;$(RadarGridLineType)&quot; StartAngle=&quot;$(RadarStartAngle)&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfPolarChart x:Name=&quot;Chart&quot; 
+                    GridLineType=&quot;$(RadarGridLineType)&quot;
+                    StartAngle=&quot;$(RadarStartAngle)&quot; 
+                    PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
-        &lt;chart:PolarLineSeries
-                IsClosed=&quot;True&quot;
-                ItemsSource=&quot;{Binding PlantDetails}&quot;
-                StrokeThickness=&quot;2&quot;
-                XBindingPath=&quot;Direction&quot;
-                YBindingPath=&quot;Tree&quot; /&gt;
+    &lt;chart:SfPolarChart.PrimaryAxis&gt;
+        &lt;chart:CategoryAxis x:Name=&quot;axis1&quot;
+                            EdgeLabelsDrawingMode=&quot;Fit&quot;
+                            IsHitTestVisible=&quot;False&quot;
+                            TickLineSize=&quot;10&quot; /&gt;
+    &lt;/chart:SfPolarChart.PrimaryAxis&gt;
+
+    &lt;chart:SfPolarChart.SecondaryAxis&gt;
+        &lt;chart:NumericalAxis EdgeLabelsDrawingMode=&quot;Fit&quot;
+                             MinorTickLineSize=&quot;6&quot;
+                             MinorTicksPerInterval=&quot;1&quot;
+                             TickLineSize=&quot;10&quot; /&gt;
+    &lt;/chart:SfPolarChart.SecondaryAxis&gt;
+
+    &lt;chart:PolarLineSeries IsClosed=&quot;True&quot;
+                           ItemsSource=&quot;{Binding PlantDetails}&quot;
+                           StrokeThickness=&quot;2&quot;
+                           XBindingPath=&quot;Direction&quot;
+                           YBindingPath=&quot;Tree&quot; /&gt;
                     
-        &lt;chart:PolarLineSeries
-                IsClosed=&quot;True&quot;
-                ItemsSource=&quot;{Binding PlantDetails}&quot;
-                StrokeThickness=&quot;2&quot;
-                XBindingPath=&quot;Direction&quot;
-                YBindingPath=&quot;Weed&quot; /&gt;
+    &lt;chart:PolarLineSeries IsClosed=&quot;True&quot;
+                           ItemsSource=&quot;{Binding PlantDetails}&quot;
+                           StrokeThickness=&quot;2&quot;
+                           XBindingPath=&quot;Direction&quot;
+                           YBindingPath=&quot;Weed&quot; /&gt;
                     
-        &lt;chart:PolarLineSeries
-                IsClosed=&quot;True&quot;
-                ItemsSource=&quot;{Binding PlantDetails}&quot;
-                StrokeThickness=&quot;2&quot;
-                XBindingPath=&quot;Direction&quot;
-                YBindingPath=&quot;Flower&quot; /&gt;
-                    
+    &lt;chart:PolarLineSeries IsClosed=&quot;True&quot;
+                           ItemsSource=&quot;{Binding PlantDetails}&quot;
+                           StrokeThickness=&quot;2&quot;
+                           XBindingPath=&quot;Direction&quot;
+                           YBindingPath=&quot;Flower&quot; /&gt;
+
 &lt;/chart:SfPolarChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

@@ -47,15 +47,29 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;   
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Faithful Eruptions&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
                         
-        &lt;chart:FastScatterBitmapSeries
-                ItemsSource=&quot;{Binding DataCollection}&quot;
-                EnableTooltip=&quot;True&quot;
-                PointHeight=&quot;7&quot;
-                PointWidth=&quot;7&quot;
-                XBindingPath=&quot;Eruptions&quot;
-                YBindingPath=&quot;WaitingTime&quot; /&gt;
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:NumericalAxis Interval=&quot;0.5&quot;
+                             Maximum=&quot;5.5&quot;
+                             Minimum=&quot;1.5&quot; 
+                             Header=&quot;Eruption Duration(Min)&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Interval=&quot;10&quot; 
+                             Maximum=&quot;100&quot;
+                             Minimum=&quot;40&quot;
+                             Header=&quot;Waiting Time Between Eruptions(Min)&quot;/&gt;
+        &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+    &lt;chart:FastScatterBitmapSeries ItemsSource=&quot;{Binding DataCollection}&quot;
+                                   EnableTooltip=&quot;True&quot;
+                                   PointHeight=&quot;7&quot;
+                                   PointWidth=&quot;7&quot;
+                                   XBindingPath=&quot;Eruptions&quot;
+                                   YBindingPath=&quot;WaitingTime&quot; /&gt;
                         
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

@@ -233,8 +233,8 @@
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.3.0.56"/>
-		<PackageReference Include="Syncfusion.Scheduler.WinUI" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="20.4.0.38"/>
+		<PackageReference Include="Syncfusion.Scheduler.WinUI" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>

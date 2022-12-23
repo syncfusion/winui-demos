@@ -245,6 +245,9 @@
 		<Content Include="..\Common\Assets\Control Images\Rating.png">
 			<Link>Common\Assets\Control Images\Rating.png</Link>
 		</Content>
+		<Content Include="..\Common\Assets\Control Images\SfMaskedTextBox.png">
+			<Link>Common\Assets\Control Images\SfMaskedTextBox.png</Link>
+		</Content>
 		<Content Include="..\Common\Assets\ControlIcons.ttf">
 			<Link>Common\Assets\ControlIcons.ttf</Link>
 		</Content>

@@ -69,44 +69,47 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
- &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;                    
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Server Performance&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
     
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot;
+                            ShowMajorGridLines=&quot;False&quot; /&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis Maximum=&quot;80&quot; Minimum=&quot;0&quot; ShowMajorGridLines=&quot;True&quot; /&gt;
+        &lt;chart:NumericalAxis Maximum=&quot;80&quot;
+                             Minimum=&quot;0&quot;
+                             ShowMajorGridLines=&quot;True&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
                         
     &lt;chart:SfCartesianChart.Legend&gt;
-        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; &gt;
-        &lt;/chart:ChartLegend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; /&gt;
     &lt;/chart:SfCartesianChart.Legend&gt;
                         
-    &lt;chart:SplineAreaSeries 
-                        ItemsSource=&quot;{Binding Performance}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;Automation&quot;
-                        Label=&quot;Automation&quot; 
-                        EnableAnimation=&quot;True&quot; 
-                        EnableTooltip=&quot;True&quot;/&gt;
+    &lt;chart:SplineAreaSeries Opacity=&quot;0.3&quot;
+                            ItemsSource=&quot;{Binding Performance}&quot; 
+                            XBindingPath=&quot;Date&quot; 
+                            YBindingPath=&quot;Automation&quot;
+                            Label=&quot;Automation&quot; 
+                            EnableAnimation=&quot;True&quot; 
+                            EnableTooltip=&quot;True&quot;/&gt;
 
-    &lt;chart:SplineAreaSeries 
-                        ItemsSource=&quot;{Binding Performance}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;Application&quot;
-                        Label=&quot;Application&quot; 
-                        EnableAnimation=&quot;True&quot; 
-                        EnableTooltip=&quot;True&quot;/&gt;
+    &lt;chart:SplineAreaSeries Opacity=&quot;0.3&quot;
+                            ItemsSource=&quot;{Binding Performance}&quot; 
+                            XBindingPath=&quot;Date&quot; 
+                            YBindingPath=&quot;Application&quot;
+                            Label=&quot;Application&quot; 
+                            EnableAnimation=&quot;True&quot; 
+                            EnableTooltip=&quot;True&quot;/&gt;
 
-    &lt;chart:SplineAreaSeries 
-                        ItemsSource=&quot;{Binding Performance}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;Web&quot;
-                        Label=&quot;Web&quot; 
-                        EnableAnimation=&quot;True&quot; 
-                        EnableTooltip=&quot;True&quot;/&gt;
+    &lt;chart:SplineAreaSeries Opacity=&quot;0.3&quot;
+                            ItemsSource=&quot;{Binding Performance}&quot; 
+                            XBindingPath=&quot;Date&quot; 
+                            YBindingPath=&quot;Web&quot;
+                            Label=&quot;Web&quot; 
+                            EnableAnimation=&quot;True&quot; 
+                            EnableTooltip=&quot;True&quot;/&gt;
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

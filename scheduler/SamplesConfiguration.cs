@@ -263,8 +263,7 @@ namespace Syncfusion.SchedulerDemos.WinUI
                 ControlCategory = ControlCategory.Calendars,
                 Description = "The Scheduler control is used to schedule and manage appointments through an intuitive user interface, similar to the Windows calendar",
                 Glyph = "\uE71a",
-                ImageSource = "Scheduler.png",
-                IsPreview = true
+                ImageSource = "Scheduler.png"
             };
 
             controlInfo.Demos.AddRange(demos);

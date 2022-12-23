@@ -14,7 +14,7 @@
      <Platforms>AnyCPU;x86;x64</Platforms>
 	  <RuntimeIdentifiers>win-x86;win-x64;win10-x86</RuntimeIdentifiers>
 	  <UseWinUI>true</UseWinUI>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
@@ -60,13 +60,13 @@
   <ItemGroup>
     <Content Remove="Assets\**" />
     <EmbeddedResource Remove="Assets\**" />
-	<Content Remove="Syncfusion.SampleBrowser.WinUI_net50 %28Package%29\**" />
+	<Content Remove="Syncfusion.SampleBrowser.WinUI_net70 %28Package%29\**" />
 	<Content Remove="Syncfusion.SampleBrowser.WinUI_net60 %28Package%29\**" />
-	<EmbeddedResource Remove="Syncfusion.SampleBrowser.WinUI_net50 %28Package%29\**" />
+	<EmbeddedResource Remove="Syncfusion.SampleBrowser.WinUI_net70 %28Package%29\**" />
 	<EmbeddedResource Remove="Syncfusion.SampleBrowser.WinUI_net60 %28Package%29\**" />
-	<None Remove="Syncfusion.SampleBrowser.WinUI_net50 %28Package%29\**" />
+	<None Remove="Syncfusion.SampleBrowser.WinUI_net70 %28Package%29\**" />
 	<None Remove="Syncfusion.SampleBrowser.WinUI_net60 %28Package%29\**" />
-    <PRIResource Remove="Syncfusion.SampleBrowser.WinUI_net50 %28Package%29\**" />
+    <PRIResource Remove="Syncfusion.SampleBrowser.WinUI_net70 %28Package%29\**" />
     <PRIResource Remove="Syncfusion.SampleBrowser.WinUI_net60 %28Package%29\**" />
     <None Remove="Assets\**" />
     <None Remove="App.ico" />
@@ -87,7 +87,7 @@
     <Content Include="App.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>  
+  </ItemGroup>
  <ItemGroup>
 	 <Page Include="MainWindow.xaml" />   
   </ItemGroup>

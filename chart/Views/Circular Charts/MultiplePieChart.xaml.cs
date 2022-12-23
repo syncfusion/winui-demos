@@ -35,9 +35,6 @@ namespace Syncfusion.ChartDemos.WinUI.Views
         public MultiplePieChart()
         {
             this.InitializeComponent();
-            pieSeries1.PaletteBrushes = viewmodel.CustomBrush1;
-            pieSeries2.PaletteBrushes = viewmodel.CustomBrush2;
-            pieSeries3.PaletteBrushes = viewmodel.CustomBrush3;
         }
 
         public void Dispose()

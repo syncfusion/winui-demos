@@ -72,6 +72,8 @@
 		<None Remove="Views\HelloWorld.xaml"/>
 		<None Remove="Views\PPTXToImage.xaml"/>
 		<None Remove="Views\PPTXToPDF.xaml"/>
+		<None Remove="Views\FindAndReplace.xaml"/>
+		<None Remove="Views\FindAndHighlight.xaml"/>
 		<None Remove="Views\Slide.xaml"/>
 		<None Remove="Views\Table.xaml"/>
 	</ItemGroup>
@@ -102,6 +104,12 @@
 		</Compile>
 		<Compile Include="Views\PPTXToPDF.xaml.cs">
 			<DependentUpon>PPTXToPDF.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FindAndReplace.xaml.cs">
+			<DependentUpon>FindAndReplace.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FindAndHighlight.xaml.cs">
+			<DependentUpon>FindAndHighlight.xaml</DependentUpon>
 		</Compile>
 		<Compile Include="Views\Slide.xaml.cs">
 			<DependentUpon>Slide.xaml</DependentUpon>
@@ -138,6 +146,14 @@
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
 		</Page>
+		<Page Include="Views\FindAndReplace.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\FindAndHighlight.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
 		<Page Include="Views\Slide.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<SubType>Designer</SubType>
@@ -148,7 +164,7 @@
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.PresentationRenderer.NET" Version="20.3.0.56"/>
+		<PackageReference Include="Syncfusion.PresentationRenderer.NET" Version="20.4.0.38"/>
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>
@@ -188,6 +204,9 @@
 		<EmbeddedResource Include="Assets\Presentation\Template.pptx">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Presentation\Input Template.pptx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="Views\Resources\SourceCodes\Chart_xaml_cs.txt"/>
@@ -198,6 +217,8 @@
 		<Content Include="Views\Resources\SourceCodes\PPTXToPDF_xaml_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\Slide_xaml_cs.txt"/>
 		<Content Include="Views\Resources\SourceCodes\Table_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\FindAndReplace_xaml_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\FindAndHighlight_xaml_cs.txt"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>

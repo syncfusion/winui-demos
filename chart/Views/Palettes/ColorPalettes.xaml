@@ -115,7 +115,6 @@
                             </chart:SfCartesianChart>
                         </Grid>
 
-
                         <Grid
                             Grid.Row="2"
                             Grid.Column="0"
@@ -193,81 +192,104 @@
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
 &lt;Grid Grid.Row=&quot;1&quot; Grid.ColumnSpan=&quot;2&quot;
-    Background=&quot;{ThemeResource SystemOnErrorColor}&quot;&gt;
+      Background=&quot;{ThemeResource SystemOnErrorColor}&quot;&gt;
         
-        &lt;chart:SfCartesianChart
-                x:Name=&quot;stackedChart&quot;
-                PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt; 
+    &lt;chart:SfCartesianChart x:Name=&quot;stackedChart&quot;
+                            PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt; 
 
-                &lt;chart:AreaSeries 
-                        ItemsSource=&quot;{Binding Users}&quot;
-                        Label=&quot;2016&quot;
-                        XBindingPath=&quot;SocialSite&quot;
-                        YBindingPath=&quot;Year2015&quot; /&gt; 
+        &lt;chart:SfCartesianChart.XAxes&gt;
+            &lt;chart:CategoryAxis EdgeLabelsDrawingMode=&quot;Fit&quot;
+                                Interval=&quot;1&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+        &lt;/chart:SfCartesianChart.XAxes&gt;
 
-                &lt;chart:AreaSeries 
-                        ItemsSource=&quot;{Binding Users}&quot;
-                        Label=&quot;2015&quot;
-                        XBindingPath=&quot;SocialSite&quot;
-                        YBindingPath=&quot;Year2014&quot; /&gt; 
+        &lt;chart:SfCartesianChart.YAxes&gt;
+            &lt;chart:NumericalAxis /&gt;
+        &lt;/chart:SfCartesianChart.YAxes&gt;
 
-                &lt;chart:AreaSeries 
-                        ItemsSource=&quot;{Binding Users}&quot;
-                        Label=&quot;2014&quot;
-                        XBindingPath=&quot;SocialSite&quot;
-                        YBindingPath=&quot;Year2012&quot; /&gt; 
+        &lt;chart:SfCartesianChart.Legend&gt;
+            &lt;chart:ChartLegend /&gt;
+        &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+        &lt;chart:AreaSeries ItemsSource=&quot;{Binding Users}&quot;
+                          Label=&quot;2016&quot;
+                          XBindingPath=&quot;SocialSite&quot;
+                          YBindingPath=&quot;Year2015&quot; /&gt; 
 
-        &lt;/chart:SfCartesianChart&gt;
+        &lt;chart:AreaSeries ItemsSource=&quot;{Binding Users}&quot;
+                          Label=&quot;2015&quot;
+                          XBindingPath=&quot;SocialSite&quot;
+                          YBindingPath=&quot;Year2014&quot; /&gt; 
+
+        &lt;chart:AreaSeries ItemsSource=&quot;{Binding Users}&quot;
+                          Label=&quot;2014&quot;
+                          XBindingPath=&quot;SocialSite&quot;
+                          YBindingPath=&quot;Year2012&quot; /&gt; 
+
+    &lt;/chart:SfCartesianChart&gt;
  &lt;/Grid&gt; 
 
  &lt;Grid Grid.Row=&quot;2&quot; Background=&quot;{ThemeResource SystemOnErrorColor}&quot;
-    Grid.Column=&quot;0&quot;&gt;
+       Grid.Column=&quot;0&quot;&gt;
     
-        &lt;chart:SfCartesianChart x:Name=&quot;barChart&quot;
-                PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot; &gt;
+    &lt;chart:SfCartesianChart x:Name=&quot;barChart&quot;
+                            PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot; &gt;
 
-                &lt;chart:ColumnSeries x:Name=&quot;barSeries1&quot;
-                        ItemsSource=&quot;{Binding RegisteredUsers}&quot;
-                        Label=&quot;Registered Users&quot;
-                        XBindingPath=&quot;SocialSite&quot;
-                        YBindingPath=&quot;UsersCount&quot; /&gt; 
+        &lt;chart:SfCartesianChart.XAxes&gt;
+            &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; ShowMajorGridLines=&quot;False&quot; /&gt;
+        &lt;/chart:SfCartesianChart.XAxes&gt;
 
-                &lt;chart:ColumnSeries x:Name=&quot;barSeries2&quot;
-                        ItemsSource=&quot;{Binding ActiveUsers}&quot;
-                        Label=&quot;Active Users&quot;
-                        XBindingPath=&quot;SocialSite&quot;
-                        YBindingPath=&quot;UsersCount&quot; /&gt;
+        &lt;chart:SfCartesianChart.YAxes&gt;
+            &lt;chart:NumericalAxis Interval=&quot;300&quot; Minimum=&quot;100&quot; /&gt;
+        &lt;/chart:SfCartesianChart.YAxes&gt;
+
+        &lt;chart:SfCartesianChart.Legend&gt;
+            &lt;chart:ChartLegend /&gt;
+        &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+        &lt;chart:ColumnSeries x:Name=&quot;barSeries1&quot;
+                            ItemsSource=&quot;{Binding RegisteredUsers}&quot;
+                            Label=&quot;Registered Users&quot;
+                            XBindingPath=&quot;SocialSite&quot;
+                            YBindingPath=&quot;UsersCount&quot; /&gt; 
+
+        &lt;chart:ColumnSeries x:Name=&quot;barSeries2&quot;
+                            ItemsSource=&quot;{Binding ActiveUsers}&quot;
+                            Label=&quot;Active Users&quot;
+                            XBindingPath=&quot;SocialSite&quot;
+                            YBindingPath=&quot;UsersCount&quot; /&gt;
         &lt;/chart:SfCartesianChart&gt;
  &lt;/Grid&gt;
 
  
 
- &lt;Grid  Grid.Row=&quot;2&quot;
-    Background=&quot;{ThemeResource SystemOnErrorColor}&quot;
-     Grid.Column=&quot;1&quot;&gt;
+ &lt;Grid Grid.Row=&quot;2&quot;
+       Background=&quot;{ThemeResource SystemOnErrorColor}&quot;
+       Grid.Column=&quot;1&quot;&gt;
     
-        &lt;chart:SfCircularChart x:Name=&quot;doughnutChart&quot;&gt;   
+    &lt;chart:SfCircularChart x:Name=&quot;doughnutChart&quot;&gt;   
     
-            &lt;chart:DoughnutSeries x:Name=&quot;doughnutSeries&quot;
-                        ItemsSource=&quot;{Binding FacebookStatistics}&quot;
-                        XBindingPath=&quot;Country&quot;
-                        YBindingPath=&quot;UsersCount&quot;
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
-                        Radius=&quot;1&quot;
-                        ExplodeIndex=&quot;8&quot;
-                        ExplodeRadius=&quot;8&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        Stroke=&quot;White&quot;
-                        StrokeThickness=&quot;3&quot;&gt;
+        &lt;chart:SfCircularChart.Legend>
+            &lt;chart:ChartLegend Placement="Right" />
+        &lt;/chart:SfCircularChart.Legend>
+                        
+        &lt;chart:DoughnutSeries x:Name=&quot;doughnutSeries&quot;
+                             ItemsSource=&quot;{Binding FacebookStatistics}&quot;
+                             XBindingPath=&quot;Country&quot;
+                             YBindingPath=&quot;UsersCount&quot;
+                             PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                             Radius=&quot;1&quot;
+                             ExplodeIndex=&quot;8&quot;
+                             ExplodeRadius=&quot;8&quot;
+                             ShowDataLabels=&quot;True&quot;
+                             Stroke=&quot;White&quot;
+                             StrokeThickness=&quot;3&quot;&gt;
     
-                        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
-                            &lt;chart:CircularDataLabelSettings 
-                                FontSize=&quot;9&quot;&gt;
-                            &lt;/chart:CircularDataLabelSettings&gt;
-                        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
-    
-             &lt;/chart:DoughnutSeries&gt;
-        &lt;/chart:SfCircularChart&gt;
+            &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+                &lt;chart:CircularDataLabelSettings FontSize=&quot;9&quot;&gt;
+                &lt;/chart:CircularDataLabelSettings&gt;
+            &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+        &lt;/chart:DoughnutSeries&gt;
+    &lt;/chart:SfCircularChart&gt;
  &lt;/Grid&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

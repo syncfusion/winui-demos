@@ -32,25 +32,22 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;  &gt;  
-                                                  
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;2013 State Government Tax Collections&quot; &gt;
     &lt;chart:SfCircularChart.Legend&gt;
-        &lt;chart:ChartLegend 
-                        ItemMargin=&quot;2&quot;  
-                        BorderThickness=&quot;1&quot; 
-                        CornerRadius=&quot;0&quot; 
-                        Placement=&quot;Bottom&quot; /&gt;
+        &lt;chart:ChartLegend ItemMargin=&quot;2&quot;
+                           BorderThickness=&quot;1&quot;
+                           CornerRadius=&quot;0&quot;
+                           Placement=&quot;Bottom&quot; /&gt;
     &lt;/chart:SfCircularChart.Legend&gt;
 
-    &lt;chart:DoughnutSeries 
-                        ItemsSource=&quot;{Binding Tax}&quot; 
-                        XBindingPath=&quot;Category&quot; 
-                        YBindingPath=&quot;Percentage&quot; 
-                        EnableAnimation=&quot;True&quot; 
-                        ShowDataLabels=&quot;True&quot; 
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
-                        Label=&quot;Tax&quot; &gt;
-    &lt;/chart:DoughnutSeries&gt;
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding Tax}&quot;
+                          XBindingPath=&quot;Category&quot;
+                          YBindingPath=&quot;Percentage&quot;
+                          EnableAnimation=&quot;True&quot;
+                          chart:ChartTooltip.EnableAnimation=&quot;True&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                          Label=&quot;Tax&quot; /&gt;
     
 &lt;/chart:SfCircularChart&gt;
 </x:String>

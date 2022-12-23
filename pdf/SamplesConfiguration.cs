@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2022.
-// Copyright Syncfusion Inc. 2001-2022. All rights reserved.
+#region Copyright Syncfusion Inc. 2001-2021.
+// Copyright Syncfusion Inc. 2001-2021. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -168,8 +168,8 @@ namespace Syncfusion.PdfDemos.WinUI
             {
                 Name = "Redaction",
                 Category = "Security",
-                DemoType = DemoTypes.New,
-                Description = "This demo shows how to redact a text from a PDF document. Redaction is a process of removing sensitive or unwanted information from PDF documents.",
+                DemoType = DemoTypes.Updated,
+                Description = "This demo shows how to redact a text and an image from a PDF document. Redaction is a process of removing sensitive or unwanted information from PDF documents.",
                 DemoView = typeof(Redaction),
                 ShowInfoPanel = true
             };

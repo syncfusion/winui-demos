@@ -38,13 +38,23 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfFunnelChart x:Name=&quot;Chart&quot; ItemsSource=&quot;{Binding List}&quot;
-                PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;        
-                XBindingPath=&quot;Category&quot; YBindingPath=&quot;Percentage&quot; ShowDataLabels=&quot;True&quot;&gt;
+&lt;chart:SfFunnelChart x:Name=&quot;Chart&quot;
+                     ItemsSource=&quot;{Binding List}&quot;
+                     PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                     XBindingPath=&quot;Category&quot;
+                     YBindingPath=&quot;Percentage&quot;
+                     ShowDataLabels=&quot;True&quot;&gt;
 
-        &lt;chart:SfFunnelChart.Legend&gt;
-                &lt;chart:ChartLegend Placement=&quot;Left&quot;/&gt;
-        &lt;/chart:SfFunnelChart.Legend&gt;
+    &lt;chart:SfFunnelChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Left&quot;&gt;
+            &lt;chart:ChartLegend.Header&gt;
+                &lt;TextBlock Text=&quot;Metals Details&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           HorizontalAlignment=&quot;Center&quot;
+                           Margin=&quot;8&quot;/&gt;
+            &lt;/chart:ChartLegend.Header&gt;
+        &lt;/chart:ChartLegend&gt;
+    &lt;/chart:SfFunnelChart.Legend&gt;
                     
 &lt;/chart:SfFunnelChart&gt;
 </x:String>

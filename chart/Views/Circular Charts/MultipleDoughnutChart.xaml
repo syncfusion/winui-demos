@@ -52,12 +52,13 @@
                         </chart:SfCircularChart.DataContext>
 
                         <chart:DoughnutSeries
-                        x:Name="pieSeries1"
+                        x:Name="doughnutSeries1"
                         Radius="1" InnerRadius="0.05"
                         ItemsSource="{Binding Population}"
                         Label="Continents"
                         Stroke="White"
-                        ShowDataLabels="True"    
+                        ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush1}"
                         XBindingPath="Continent"
                         YBindingPath="PopulationinContinents">
                             <chart:DoughnutSeries.DataLabelSettings>
@@ -69,12 +70,13 @@
                         </chart:DoughnutSeries>
 
                         <chart:DoughnutSeries
-                        x:Name="pieSeries2"
+                        x:Name="doughnutSeries2"
                         Radius="1" InnerRadius="0.05"
                         ItemsSource="{Binding Population}"
                         Label="Countries"
                         Stroke="White"
-                        ShowDataLabels="True"    
+                        ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush2}"
                         XBindingPath="Countries"
                         YBindingPath="PopulationinCountries">
                             <chart:DoughnutSeries.DataLabelSettings>
@@ -86,12 +88,13 @@
                         </chart:DoughnutSeries>
 
                         <chart:DoughnutSeries 
-                        x:Name="pieSeries3"
+                        x:Name="doughnutSeries3"
                         Radius="1" InnerRadius="0.05"
                         ItemsSource="{Binding Population}"
                         Label="States"
                         Stroke="White"
                         ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush3}"
                         XBindingPath="States"
                         YBindingPath="PopulationinStates">
                             <chart:DoughnutSeries.DataLabelSettings>
@@ -102,63 +105,82 @@
                             </chart:DoughnutSeries.DataLabelSettings>
                         </chart:DoughnutSeries>
 
-
                     </chart:SfCircularChart>
 
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; &gt;
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Most populated continents&quot; &gt;
 
-    &lt;chart:DoughnutSeries 
-                        ItemsSource=&quot;{Binding Population}&quot; 
-                        XBindingPath=&quot;Continent&quot; 
-                        YBindingPath=&quot;PopulationinContinents&quot; 
-                        Label=&quot;Continents&quot;
-                        ShowDataLabels=&quot;True&quot; 
-                        Radius=&quot;1&quot; InnerRadius=&quot;0.05&quot; 
-                        PaletteBrushes=&quot;{Binding CustomBrush1}&quot; 
-                        Stroke=&quot;White&quot;&gt;
+    &lt;chart:SfCircularChart.Resources>
+        &lt;local:PopulationLabelConverter1 x:Key="populationLabelConverter1" />
+        &lt;local:PopulationLabelConverter2 x:Key="populationLabelConverter2" />
+        &lt;local:PopulationLabelConverter3 x:Key="populationLabelConverter3" />
+
+        &lt;DataTemplate x:Key="populationLabelTemplate1">
+            &lt;TextBlock FontSize="10" HighContrastAdjustment="None"    
+                       Foreground="White"
+                       Text="{Binding Converter={StaticResource populationLabelConverter1}}" />
+        &lt;/DataTemplate>
+
+        &lt;DataTemplate x:Key="populationLabelTemplate2">
+            &lt;TextBlock FontSize="10" HighContrastAdjustment="None"
+                       Foreground="White"
+                       Text="{Binding Converter={StaticResource populationLabelConverter2}}" />
+        &lt;/DataTemplate>
+
+        &lt;DataTemplate x:Key="populationLabelTemplate3">
+            &lt;TextBlock FontSize="10" HighContrastAdjustment="None"
+                       Foreground="White" 
+                       Text="{Binding Converter={StaticResource populationLabelConverter3}}" />
+        &lt;/DataTemplate>
+    &lt;/chart:SfCircularChart.Resources>
+
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding Population}&quot;
+                          XBindingPath=&quot;Continent&quot;
+                          YBindingPath=&quot;PopulationinContinents&quot;
+                          Label=&quot;Continents&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          Radius=&quot;1&quot;
+                          InnerRadius=&quot;0.05&quot;
+                          PaletteBrushes=&quot;{Binding CustomBrush1}&quot;
+                          Stroke=&quot;White&quot;&gt;
         &lt;chart:DoughnutSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate1}&quot; 
-                        Context=&quot;DataLabelItem&quot;
-                        UseSeriesPalette=&quot;True&quot; /&gt;
+            &lt;chart:CircularDataLabelSettings ContentTemplate=&quot;{StaticResource populationLabelTemplate1}&quot;
+                                             Context=&quot;DataLabelItem&quot;
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
         &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
-                        
+
+    &lt;/chart:DoughnutSeries&gt;
+
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding Population}&quot; 
+                          XBindingPath=&quot;Countries&quot;  
+                          YBindingPath=&quot;PopulationinCountries&quot;  
+                          Label=&quot;Countries&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          Radius=&quot;1&quot; 
+                          InnerRadius=&quot;0.05&quot; 
+                          PaletteBrushes=&quot;{Binding CustomBrush2}&quot;
+                          Stroke=&quot;White&quot;&gt;
+        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+            &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot;
+                                             ContentTemplate=&quot;{StaticResource populationLabelTemplate2}&quot; 
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
     &lt;/chart:DoughnutSeries&gt;
     
-    &lt;chart:DoughnutSeries 
-                        ItemsSource=&quot;{Binding Population}&quot; 
-                        XBindingPath=&quot;Countries&quot;  
-                        YBindingPath=&quot;PopulationinCountries&quot;  
-                        Label=&quot;Countries&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        Radius=&quot;1&quot;   InnerRadius=&quot;0.05&quot; 
-                        PaletteBrushes=&quot;{Binding CustomBrush2}&quot;
-                        Stroke=&quot;White&quot;&gt;
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding Population}&quot; 
+                          XBindingPath=&quot;States&quot; 
+                          YBindingPath=&quot;PopulationinStates&quot; 
+                          Label=&quot;States&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          Radius=&quot;1&quot; InnerRadius=&quot;0.05&quot; 
+                          PaletteBrushes=&quot;{Binding CustomBrush3}&quot; 
+                          Stroke=&quot;White&quot;&gt;
         &lt;chart:DoughnutSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        Context=&quot;DataLabelItem&quot; 
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate2}&quot; 
-                        UseSeriesPalette=&quot;True&quot; /&gt;
-        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
-    &lt;/chart:DoughnutSeries&gt;
-    
-    &lt;chart:DoughnutSeries 
-                        ItemsSource=&quot;{Binding Population}&quot; 
-                        XBindingPath=&quot;States&quot; 
-                        YBindingPath=&quot;PopulationinStates&quot; 
-                        Label=&quot;States&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        Radius=&quot;1&quot; InnerRadius=&quot;0.05&quot; 
-                        PaletteBrushes=&quot;{Binding CustomBrush3}&quot; 
-                        Stroke=&quot;White&quot;&gt;
-        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings  
-                        Context=&quot;DataLabelItem&quot; 
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate3}&quot;
-                        UseSeriesPalette=&quot;True&quot; /&gt;
+            &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot; 
+                                             ContentTemplate=&quot;{StaticResource populationLabelTemplate3}&quot;
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
         &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
     &lt;/chart:DoughnutSeries&gt;
     

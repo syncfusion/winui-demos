@@ -67,7 +67,8 @@
                         ItemsSource="{Binding Population}"
                         Label="Continents"
                         Stroke="White"
-                        ShowDataLabels="True"    
+                        ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush1}"
                         XBindingPath="Continent"
                         YBindingPath="PopulationinContinents">
                             <chart:PieSeries.DataLabelSettings>
@@ -83,7 +84,8 @@
                         ItemsSource="{Binding Population}"
                         Label="Countries"
                         Stroke="White"
-                        ShowDataLabels="True"    
+                        ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush2}"
                         XBindingPath="Countries"
                         YBindingPath="PopulationinCountries">
                             <chart:PieSeries.DataLabelSettings>
@@ -99,7 +101,8 @@
                         ItemsSource="{Binding Population}"
                         Label="States"
                         Stroke="White"
-                        ShowDataLabels="True"    
+                        ShowDataLabels="True"
+                        PaletteBrushes="{Binding CustomBrush3}"
                         XBindingPath="States"
                         YBindingPath="PopulationinStates">
                             <chart:PieSeries.DataLabelSettings>
@@ -113,58 +116,80 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; &gt;
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Most populated continents&quot; &gt;
 
-    &lt;chart:PieSeries 
-                        ItemsSource=&quot;{Binding Population}&quot;  
-                        XBindingPath=&quot;Continent&quot; 
-                        YBindingPath=&quot;PopulationinContinents&quot; 
-                        Label=&quot;Continents&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        PaletteBrushes=&quot;{Binding CustomBrush1}&quot; 
-                        Stroke=&quot;White&quot;&gt;
+    &lt;chart:SfCircularChart.Resources&gt;
+        &lt;local:PopulationLabelConverter1 x:Key=&quot;populationLabelConverter1&quot; /&gt;
+        &lt;local:PopulationLabelConverter2 x:Key=&quot;populationLabelConverter2&quot; /&gt;
+        &lt;local:PopulationLabelConverter3 x:Key=&quot;populationLabelConverter3&quot; /&gt;
+
+        &lt;DataTemplate x:Key=&quot;populationLabelTemplate1&quot;&gt;
+            &lt;TextBlock Margin=&quot;2&quot; FontSize=&quot;10&quot;
+                       HighContrastAdjustment=&quot;None&quot;
+                       Foreground=&quot;White&quot;
+                       Text=&quot;{Binding Converter={StaticResource populationLabelConverter1}}&quot; /&gt;
+            &lt;/DataTemplate&gt;
+
+            &lt;DataTemplate x:Key=&quot;populationLabelTemplate2&quot;&gt;
+                &lt;TextBlock Margin=&quot;2&quot; FontSize=&quot;10&quot;
+                           HighContrastAdjustment=&quot;None&quot;
+                           Foreground=&quot;White&quot;
+                           Text=&quot;{Binding Converter={StaticResource populationLabelConverter2}}&quot; /&gt;
+                &lt;/DataTemplate&gt;
+
+            &lt;DataTemplate x:Key=&quot;populationLabelTemplate3&quot;&gt;
+                &lt;TextBlock Margin=&quot;2&quot; FontSize=&quot;10&quot;
+                           HighContrastAdjustment=&quot;None&quot;
+                           Foreground=&quot;White&quot;
+                           Text=&quot;{Binding Converter={StaticResource populationLabelConverter3}}&quot; /&gt;
+            &lt;/DataTemplate&gt;
+
+    &lt;/chart:SfCircularChart.Resources&gt;
+
+    &lt;chart:PieSeries ItemsSource=&quot;{Binding Population}&quot;
+                     XBindingPath=&quot;Continent&quot; 
+                     YBindingPath=&quot;PopulationinContinents&quot; 
+                     Label=&quot;Continents&quot;
+                     ShowDataLabels=&quot;True&quot;
+                     PaletteBrushes=&quot;{Binding CustomBrush1}&quot; 
+                     Stroke=&quot;White&quot;&gt;
         &lt;chart:PieSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        Context=&quot;DataLabelItem&quot; 
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate1}&quot; 
-                        UseSeriesPalette=&quot;True&quot; /&gt;
+            &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot; 
+                                             ContentTemplate=&quot;{StaticResource populationLabelTemplate1}&quot; 
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
         &lt;/chart:PieSeries.DataLabelSettings&gt;
-                        
+
     &lt;/chart:PieSeries&gt;
 
-    &lt;chart:PieSeries 
-                        ItemsSource=&quot;{Binding Population}&quot;  
-                        XBindingPath=&quot;Countries&quot; 
-                        YBindingPath=&quot;PopulationinCountries&quot; 
-                        Label=&quot;Countries&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        PaletteBrushes=&quot;{Binding CustomBrush2}&quot; 
-                        Stroke=&quot;White&quot;&gt;
+    &lt;chart:PieSeries ItemsSource=&quot;{Binding Population}&quot;  
+                     XBindingPath=&quot;Countries&quot; 
+                     YBindingPath=&quot;PopulationinCountries&quot; 
+                     Label=&quot;Countries&quot;
+                     ShowDataLabels=&quot;True&quot;
+                     PaletteBrushes=&quot;{Binding CustomBrush2}&quot; 
+                     Stroke=&quot;White&quot;&gt;
         &lt;chart:PieSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        Context=&quot;DataLabelItem&quot;
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate2}&quot; 
-                        UseSeriesPalette=&quot;True&quot; /&gt;
+            &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot;
+                                             ContentTemplate=&quot;{StaticResource populationLabelTemplate2}&quot; 
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
         &lt;/chart:PieSeries.DataLabelSettings&gt;
-                        
+
     &lt;/chart:PieSeries&gt;
 
-    &lt;chart:PieSeries 
-                        ItemsSource=&quot;{Binding Population}&quot; 
-                        XBindingPath=&quot;States&quot; 
-                        YBindingPath=&quot;PopulationinStates&quot; 
-                        Label=&quot;States&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        PaletteBrushes=&quot;{Binding CustomBrush3}&quot; 
-                        Stroke=&quot;White&quot;&gt;
+    &lt;chart:PieSeries ItemsSource=&quot;{Binding Population}&quot; 
+                     XBindingPath=&quot;States&quot; 
+                     YBindingPath=&quot;PopulationinStates&quot; 
+                     Label=&quot;States&quot;
+                     ShowDataLabels=&quot;True&quot;
+                     PaletteBrushes=&quot;{Binding CustomBrush3}&quot; 
+                     Stroke=&quot;White&quot;&gt;
         &lt;chart:PieSeries.DataLabelSettings&gt;
-            &lt;chart:CircularDataLabelSettings 
-                        Context=&quot;DataLabelItem&quot; 
-                        ContentTemplate=&quot;{StaticResource populationLabelTemplate3}&quot; 
-                        UseSeriesPalette=&quot;True&quot; /&gt;
+            &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot; 
+                                             ContentTemplate=&quot;{StaticResource populationLabelTemplate3}&quot; 
+                                             UseSeriesPalette=&quot;True&quot; /&gt;
         &lt;/chart:PieSeries.DataLabelSettings&gt;
     &lt;/chart:PieSeries&gt;
-                
+
 &lt;/chart:SfCircularChart&gt;
     </x:String>
                 </common:DemoLayout.Xaml>

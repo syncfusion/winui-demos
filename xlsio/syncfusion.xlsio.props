@@ -209,6 +209,9 @@
     <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\HTMLToExcel.html">
 		<Link>XlsIO\Assets\XlsIO\HTMLToExcel.html</Link>
 	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\HTMLwithFormulaToExcel.html">
+		<Link>XlsIO\Assets\XlsIO\HTMLwithFormulaToExcel.html</Link>
+	</EmbeddedResource>
 	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\invoice.jpeg">
 		<Link>XlsIO\Assets\XlsIO\invoice.jpeg</Link>
 	</EmbeddedResource>

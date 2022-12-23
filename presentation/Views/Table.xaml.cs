@@ -11,7 +11,7 @@ using System.Reflection;
 using Microsoft.UI.Xaml.Controls;
 using Syncfusion.Pdf;
 using Syncfusion.Presentation;
-using Syncfusion.PresentationToPdfConverter;
+using Syncfusion.PresentationRenderer;
 
 namespace EssentialPresentation
 {

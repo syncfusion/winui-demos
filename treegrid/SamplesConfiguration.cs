@@ -301,7 +301,7 @@ namespace Syncfusion.TreeGridDemos.WinUI
             {
                 Name = "Styling",
                 Category = "Appearance",
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 Description = "This sample showcases the styling capabilities of the TreeGrid.",
                 DemoView = typeof(TreeGrid.Styling),
                 ShowInfoPanel = true
@@ -316,7 +316,7 @@ namespace Syncfusion.TreeGridDemos.WinUI
             {
                 Name = "Conditional Styling",
                 Category = "Appearance",
-                DemoType = DemoTypes.New,
+                DemoType = DemoTypes.None,
                 Description = "This sample showcases the cell style customization in the TreeGrid via StyleSelector.",
                 DemoView = typeof(TreeGrid.ConditionalStyling),
                 ShowInfoPanel = true
@@ -328,6 +328,16 @@ namespace Syncfusion.TreeGridDemos.WinUI
             conditionalstylingDocumentations.Add(new Documentation() { Content = "TreeGrid - Add image to cell", Uri = new Uri("https://help.syncfusion.com/winui/treegrid/conditional-styling#add-image-to-cell") });
 
             conditionalstyling.Documentation.AddRange(conditionalstylingDocumentations);
+
+            DemoInfo excelExporting = new DemoInfo()
+            {
+                Name = "Excel Exporting",
+                Category = "Exporting",
+                DemoType = DemoTypes.New,
+                Description = "This sample showcases the excel exporting capability of TreeGrid.",
+                DemoView = typeof(TreeGrid.ExcelExporting),
+                ShowInfoPanel = false
+            };
 
             var demos = new List<DemoInfo>()
             {
@@ -346,7 +356,8 @@ namespace Syncfusion.TreeGridDemos.WinUI
                 clipboardoperation, 
  				stackedHeaders,
                 styling,
-                conditionalstyling 
+                conditionalstyling,
+                excelExporting 
             };
 
             var controlInfo = new ControlInfo()

@@ -20,6 +20,10 @@
 	  <Link>Ribbon\Views\ContextualTabGroupView.xaml.cs</Link>
 	  <DependentUpon>..\Ribbon\Views\ContextualTabGroupView.xaml</DependentUpon>
 	</Compile>
+	<Compile Include="..\Ribbon\Views\RibbonCompactSize.xaml.cs">
+	  <Link>Ribbon\Views\RibbonCompactSize.xaml.cs</Link>
+	  <DependentUpon>..\Ribbon\Views\RibbonCompactSize.xaml</DependentUpon>
+	</Compile>
 	<Compile Include="..\Ribbon\Views\RibbonKeyTip.xaml.cs">
 		<Link>Ribbon\Views\RibbonKeyTip.xaml.cs</Link>
       <DependentUpon>..\Ribbon\Views\RibbonKeyTip.xaml</DependentUpon>
@@ -101,6 +105,9 @@
 	<Content Include="..\Ribbon\Views\Resources\SourceCodes\ResizePriority_xaml.txt">
 		<Link>Ribbon\Views\Resources\SourceCodes\ResizePriority_xaml.txt</Link>
 	</Content>
+	<Content Include="..\Ribbon\Views\Resources\SourceCodes\RibbonCompactCode.txt">
+	    <Link>Ribbon\Views\Resources\SourceCodes\RibbonCompactCode.txt</Link>
+	</Content>
 	<Content Include="..\Ribbon\Views\Resources\SourceCodes\Resize_xaml.txt">
 		<Link>Ribbon\Views\Resources\SourceCodes\Resize_xaml.txt</Link>
 	</Content>
@@ -130,6 +137,11 @@
   <ItemGroup>
 	  <Page Include="..\Ribbon\Views\ContextualTabGroupView.xaml">
 		  <Link>Ribbon\Views\ContextualTabGroupView.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\Ribbon\Views\RibbonCompactSize.xaml">
+		  <Link>Ribbon\Views\RibbonCompactSize.xaml</Link>
 		  <SubType>Designer</SubType>
 		  <Generator>MSBuild:Compile</Generator>
 	  </Page>
@@ -174,7 +186,7 @@
       <SubType>Designer</SubType>
     </Page>
 	<Page Include="..\Ribbon\Views\Sample4.xaml">
-		<Link>Ribbon\Views\Sample4.xaml</Link>
+	    <Link>Ribbon\Views\Sample4.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

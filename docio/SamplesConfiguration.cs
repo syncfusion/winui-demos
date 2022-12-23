@@ -130,7 +130,7 @@ namespace Syncfusion.DocIODemos.WinUI
             {
                 Name = "Word to PDF",
                 Category = "Conversions",
-                DemoType = DemoTypes.Updated,
+                DemoType = DemoTypes.None,
                 Description = "This example demonstrates how to convert a Word document to a PDF file.",
                 DemoView = typeof(WordToPDF),
                 ShowInfoPanel = true
@@ -140,6 +140,21 @@ namespace Syncfusion.DocIODemos.WinUI
                 new Documentation() { Content = "Word library -  Word document to PDF conversion", Uri = new Uri("https://help.syncfusion.com/file-formats/docio/word-to-pdf") }
             };
             wordToPdf.Documentation.AddRange(selectionDocumentations);
+			
+			 DemoInfo wordToMd = new()
+            {
+                Name = "Word to Markdown",
+                Category = "Conversions",
+                DemoType = DemoTypes.New,
+                Description = "This example demonstrates how to convert the Word document to Markdown file.",
+                DemoView = typeof(WordToMarkdown),
+                ShowInfoPanel = true
+            };
+            selectionDocumentations = new List<Documentation>
+            {
+                new Documentation() { Content = "Word library -  Word document to Markdown conversion", Uri = new Uri("https://help.syncfusion.com/file-formats/docio/convert-word-document-to-markdown-in-csharp") }
+            };
+            wordToMd.Documentation.AddRange(selectionDocumentations);
 
             DemoInfo rtfConversion = new()
             {
@@ -228,6 +243,7 @@ namespace Syncfusion.DocIODemos.WinUI
                 headerAndFooter,
                 imageInsertion,
                 wordToPdf,
+				wordToMd,
                 rtfConversion,
                 tableOfContent,
                 encryptAndDecrypt

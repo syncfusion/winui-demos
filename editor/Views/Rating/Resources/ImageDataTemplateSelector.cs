@@ -30,39 +30,36 @@ namespace Syncfusion.EditorDemos.WinUI
         public DataTemplate HappyUnselectedTemplate { get; set; }
         public DataTemplate NeutralUnselectedTemplate { get; set; }
         public DataTemplate UnhappyUnselectedTemplate { get; set; }
-        public DataTemplate SelectedTemplate { get; set; }
-        public DataTemplate ChildTemplate { get; set; }
-
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            SfRating Rating = container as SfRating;
-            SfRatingItem RatingItem = item as SfRatingItem;
-            if (RatingItem == null)
+            SfRating rating = container as SfRating;
+            SfRatingItem ratingItem = item as SfRatingItem;
+            if (ratingItem == null)
                 return null;
-            if (Rating.Items.IndexOf(RatingItem) + 1 == Rating.Value)
+            if (rating.Items.IndexOf(ratingItem) + 1 == rating.Value)
             {
-                if (Rating.Items.IndexOf(RatingItem) == 0)
+                if (rating.Items.IndexOf(ratingItem) == 0)
                     return SadTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 1)
+                if (rating.Items.IndexOf(ratingItem) == 1)
                     return UnhappyTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 2)
+                if (rating.Items.IndexOf(ratingItem) == 2)
                     return NeutralTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 3)
+                if (rating.Items.IndexOf(ratingItem) == 3)
                     return HappyTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 4)
+                if (rating.Items.IndexOf(ratingItem) == 4)
                     return ExcitedTemplate;
             }
             else
             {
-                if (Rating.Items.IndexOf(RatingItem) == 0)
+                if (rating.Items.IndexOf(ratingItem) == 0)
                     return SadUnselectedTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 1)
+                if (rating.Items.IndexOf(ratingItem) == 1)
                     return UnhappyUnselectedTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 2)
+                if (rating.Items.IndexOf(ratingItem) == 2)
                     return NeutralUnselectedTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 3)
+                if (rating.Items.IndexOf(ratingItem) == 3)
                     return HappyUnselectedTemplate;
-                if (Rating.Items.IndexOf(RatingItem) == 4)
+                if (rating.Items.IndexOf(ratingItem) == 4)
                     return ExcitedUnselectedTemplate;
             }
             return null;

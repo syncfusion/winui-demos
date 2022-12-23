@@ -1,11 +1,11 @@
 ﻿protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
 { 
-   SfRating Rating = container as SfRating; 
-   SfRatingItem RatingItem = item as SfRatingItem; 
-   if(RatingItem == null)
+   SfRating rating = container as SfRating; 
+   SfRatingItem ratingItem = item as SfRatingItem; 
+   if(ratingItem == null)
       return null;
-   if(RatingItem.IsSelected) 
-      if (Rating.Items.IndexOf(RatingItem)+1 == (Rating.Value)) 
+   if(ratingItem.IsSelected) 
+      if (rating.Items.IndexOf(ratingItem)+1 == (rating.Value)) 
           return SadTemplate; 
    return SadUnselectedTemplate; 
 }

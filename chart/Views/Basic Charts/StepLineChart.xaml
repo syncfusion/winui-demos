@@ -43,36 +43,41 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;CO - Intensity Analysis&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis LabelFormat=&quot;yyyy&quot; ShowMajorGridLines=&quot;False&quot; LabelPlacement=&quot;BetweenTicks&quot; /&gt;
+        &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot;
+                            LabelPlacement=&quot;BetweenTicks&quot; &gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;yyyy&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis Interval=&quot;50&quot; Maximum=&quot;600&quot; Minimum=&quot;0&quot; /&gt;
+        &lt;chart:NumericalAxis Interval=&quot;50&quot;
+                             Maximum=&quot;600&quot; Minimum=&quot;0&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
     
     &lt;chart:SfCartesianChart.Legend&gt;
-        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; ItemMargin=&quot;4&quot;  &gt;
-        &lt;/chart:ChartLegend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;
+                           ItemMargin=&quot;4&quot; /&gt;
     &lt;/chart:SfCartesianChart.Legend&gt;
     
-    &lt;chart:StepLineSeries 
-                        EnableAnimation=&quot;True&quot; 
-                        ItemsSource=&quot;{Binding Intensity}&quot; 
-                        XBindingPath=&quot;Year&quot; 
-                        YBindingPath=&quot;UK&quot; 
-                        Label=&quot;London&quot; 
-                        EnableTooltip=&quot;True&quot;/&gt;
+    &lt;chart:StepLineSeries EnableAnimation=&quot;True&quot;
+                          ItemsSource=&quot;{Binding Intensity}&quot;
+                          XBindingPath=&quot;Year&quot;
+                          YBindingPath=&quot;UK&quot;
+                          Label=&quot;London&quot;
+                          EnableTooltip=&quot;True&quot;/&gt;
                         
-    &lt;chart:StepLineSeries 
-                        ItemsSource=&quot;{Binding Intensity}&quot; 
-                        XBindingPath=&quot;Year&quot; 
-                        YBindingPath=&quot;JP&quot; 
-                        Label=&quot;Korea&quot; 
-                        EnableTooltip=&quot;True&quot; 
-                        EnableAnimation=&quot;True&quot;/&gt;
+    &lt;chart:StepLineSeries ItemsSource=&quot;{Binding Intensity}&quot;
+                          XBindingPath=&quot;Year&quot;
+                          YBindingPath=&quot;JP&quot;
+                          Label=&quot;Korea&quot;
+                          EnableTooltip=&quot;True&quot;
+                          EnableAnimation=&quot;True&quot;/&gt;
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

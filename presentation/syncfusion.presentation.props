@@ -38,6 +38,14 @@
 		<Link>Presentation\Views\Table.xaml.cs</Link>
       <DependentUpon>..\Presentation\Views\Table.xaml</DependentUpon>
     </Compile>
+	 <Compile Include="..\Presentation\Views\FindAndReplace.xaml.cs">
+		<Link>Presentation\Views\FindAndReplace.xaml.cs</Link>
+      <DependentUpon>..\Presentation\Views\FindAndReplace.xaml</DependentUpon>
+    </Compile>
+	 <Compile Include="..\Presentation\Views\FindAndHighlight.xaml.cs">
+		<Link>Presentation\Views\FindAndHighlight.xaml.cs</Link>
+      <DependentUpon>..\Presentation\Views\FindAndHighlight.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>  
    <ItemGroup>
      <EmbeddedResource Include="..\Presentation\Assets\Presentation\EmbeddedOleObject.pptx">
@@ -88,6 +96,10 @@
 		 <Link>Presentation\Assets\Presentation\Template.pptx</Link>
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </EmbeddedResource>
+	  <EmbeddedResource Include="..\Presentation\Assets\Presentation\Input Template.pptx">
+		 <Link>Presentation\Assets\Presentation\Input Template.pptx</Link>
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </EmbeddedResource>
    </ItemGroup> 
 
   <ItemGroup>
@@ -131,6 +143,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+	 <Page Include="..\Presentation\Views\FindAndReplace.xaml">
+		<Link>Presentation\Views\FindAndReplace.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+	 <Page Include="..\Presentation\Views\FindAndHighlight.xaml">
+		<Link>Presentation\Views\FindAndHighlight.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup> 
 
   <ItemGroup>
@@ -157,6 +179,12 @@
 	</Content>
     <Content Include="..\Presentation\Views\Resources\SourceCodes\Table_xaml_cs.txt">
 		<Link>Presentation\Views\Resources\SourceCodes\Table_xaml_cs.txt</Link>
+	</Content>
+	 <Content Include="..\Presentation\Views\Resources\SourceCodes\FindAndReplace_xaml_cs.txt">
+		<Link>Presentation\Views\Resources\SourceCodes\FindAndReplace_xaml_cs.txt</Link>
+	</Content>
+	 <Content Include="..\Presentation\Views\Resources\SourceCodes\FindAndHighlight_xaml_cs.txt">
+		<Link>Presentation\Views\Resources\SourceCodes\FindAndHighlight_xaml_cs.txt</Link>
 	</Content>
   </ItemGroup>
 </Project>

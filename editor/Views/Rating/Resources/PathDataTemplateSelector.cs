@@ -23,10 +23,10 @@ namespace Syncfusion.EditorDemos.WinUI
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            SfRatingItem RatingItem = item as SfRatingItem;
-            if (RatingItem == null)
+            SfRatingItem ratingItem = item as SfRatingItem;
+            if (ratingItem == null)
                 return null;
-            if (RatingItem.IsSelected)
+            if (ratingItem.IsSelected)
                 return SelectedTemplate;
             return UnselectedTemplate;
         }

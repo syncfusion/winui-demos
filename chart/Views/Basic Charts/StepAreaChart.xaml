@@ -20,7 +20,7 @@
                     <chart:SfCartesianChart x:Name="Chart" Header="Sneakers sold by brand" Height="420" PaletteBrushes="{StaticResource CustomBrushes}" VerticalAlignment="Bottom">
 
                         <chart:SfCartesianChart.Legend>
-                            <chart:ChartLegend  ItemMargin="2"  BorderThickness="1" CornerRadius="0" Placement="Bottom"/>
+                            <chart:ChartLegend  ItemMargin="2" BorderThickness="1" CornerRadius="0" Placement="Bottom"/>
                         </chart:SfCartesianChart.Legend>
 
                         <chart:SfCartesianChart.XAxes>
@@ -40,37 +40,43 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
- &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Sneakers sold by brand&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
     
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot; Header=&quot;Brand&quot; PlotOffsetStart=&quot;20&quot;
+        &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot;
+                            Header=&quot;Brand&quot; PlotOffsetStart=&quot;20&quot;
                             PlotOffsetEnd=&quot;20&quot; /&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis Header=&quot;Number of items sold&quot; Maximum=&quot;600&quot; Minimum=&quot;0&quot; /&gt;
+        &lt;chart:NumericalAxis Header=&quot;Number of items sold&quot;
+                             Maximum=&quot;600&quot;
+                             Minimum=&quot;0&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
     
      &lt;chart:SfCartesianChart.Legend&gt;
-        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; ItemMargin=&quot;2&quot;  &gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;
+                           ItemMargin=&quot;2&quot;
+                           BorderThickness=&quot;1&quot; CornerRadius=&quot;0&quot;&gt;
         &lt;/chart:ChartLegend&gt;
     &lt;/chart:SfCartesianChart.Legend&gt;
     
-    &lt;chart:StepAreaSeries  
-                        ItemsSource=&quot;{Binding SneakersDetail}&quot; 
-                        XBindingPath=&quot;Brand&quot; 
-                        YBindingPath=&quot;ItemsCount&quot;
-                        Label=&quot;Germany&quot; 
-                        EnableTooltip=&quot;True&quot;
-                        EnableAnimation=&quot;True&quot; /&gt;
+    &lt;chart:StepAreaSeries Opacity=&quot;0.8&quot;
+                          ItemsSource=&quot;{Binding SneakersDetail}&quot;
+                          XBindingPath=&quot;Brand&quot;
+                          YBindingPath=&quot;ItemsCount&quot;
+                          Label=&quot;Germany&quot;
+                          EnableTooltip=&quot;True&quot;
+                          EnableAnimation=&quot;True&quot; /&gt;
 
-    &lt;chart:StepAreaSeries  
-                        ItemsSource=&quot;{Binding SneakersDetail}&quot; 
-                        XBindingPath=&quot;Brand&quot; 
-                        YBindingPath=&quot;ItemsCount1&quot;  
-                        Label=&quot;India&quot; 
-                        EnableTooltip=&quot;True&quot;
-                        EnableAnimation=&quot;True&quot; /&gt;
+    &lt;chart:StepAreaSeries Opacity=&quot;0.8&quot;
+                          ItemsSource=&quot;{Binding SneakersDetail}&quot;
+                          XBindingPath=&quot;Brand&quot;
+                          YBindingPath=&quot;ItemsCount1&quot;
+                          Label=&quot;India&quot;
+                          EnableTooltip=&quot;True&quot;
+                          EnableAnimation=&quot;True&quot; /&gt;
  &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

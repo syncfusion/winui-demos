@@ -10,8 +10,8 @@
     Background="Transparent"
     mc:Ignorable="d">
     <Page.Resources>
-        <local:EmployeeViewModel x:Key="employeeViewModel" />
-        <local:CellStyleSelector x:Key="styleSelector" />
+        <local:EmployeeViewModel x:Key="employeeViewModel" />  
+        <local:CellStyleSelector x:Key="styleSelector" /> 
         <Style x:Key="darkRedCellStyle" TargetType="treeGrid:TreeGridCell">
             <Setter Property="Background" Value="#f50602"/>
             <Setter Property="Foreground" Value="White"/>
@@ -23,7 +23,7 @@
         <Style x:Key="lightRedCellStyle" TargetType="treeGrid:TreeGridCell">
             <Setter Property="Background" Value="#f07d9b"/>
             <Setter Property="Foreground" Value="Black"/>
-        </Style>
+        </Style> 
         <Style x:Key="darkVioletCellStyle" TargetType="treeGrid:TreeGridCell">
             <Setter Property="Background" Value="#6f0e82"/>
             <Setter Property="Foreground" Value="White"/>
@@ -35,7 +35,7 @@
         <Style x:Key="lightVioletCellStyle" TargetType="treeGrid:TreeGridCell">
             <Setter Property="Background" Value="#e4b4ed"/>
             <Setter Property="Foreground" Value="Black"/>
-        </Style>
+        </Style> 
     </Page.Resources>
     <Grid DataContext="{StaticResource employeeViewModel}">
         <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
@@ -61,9 +61,9 @@
                                 <treeGrid:TreeGridTextColumn HeaderText="First Name" MappingName="FirstName" />
                                 <treeGrid:TreeGridTextColumn HeaderText="Last Name" MappingName="LastName"   />
                                 <treeGrid:TreeGridNumericColumn HeaderText="Employee ID" TextAlignment="Right" MappingName="ID" />
-                                <treeGrid:TreeGridTextColumn MappingName="Title"  />
+                                <treeGrid:TreeGridTextColumn MappingName="Title"  /> 
                                 <treeGrid:TreeGridNumericColumn MappingName="Salary" NumberFormatter="{Binding SystemCurrency,Source={StaticResource employeeViewModel}}" TextAlignment="Right"/>
-                                <treeGrid:TreeGridDateColumn HeaderText="Date of Joining" MappingName="DOJ" TextAlignment="Right" />
+                                <treeGrid:TreeGridDateColumn HeaderText="Date of Joining" MappingName="DOJ" TextAlignment="Right" /> 
                                 <treeGrid:TreeGridNumericColumn HeaderText="Reports To" MappingName="ReportsTo" TextAlignment="Right" />
                             </treeGrid:SfTreeGrid.Columns>
                         </treeGrid:SfTreeGrid>

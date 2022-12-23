@@ -96,6 +96,10 @@
 		<Link>TreeGrid\Views\Styling.xaml.cs</Link>
 	  <DependentUpon>..\TreeGrid\Views\Styling.xaml</DependentUpon>
 	</Compile>
+	<Compile Include="..\TreeGrid\Views\ExcelExporting.xaml.cs">
+		<Link>TreeGrid\Views\ExcelExporting.xaml.cs</Link>
+	  <DependentUpon>..\TreeGrid\Views\ExcelExporting.xaml</DependentUpon>
+	</Compile>
   </ItemGroup>
    <ItemGroup>
     <Page Include="..\TreeGrid\Views\AdvancedFiltering.xaml">
@@ -185,6 +189,11 @@
     </Page>
 	<Page Include="..\TreeGrid\Views\Styling.xaml">
 	    <Link>TreeGrid\Views\Styling.xaml</Link>
+	  <SubType>Designer</SubType>
+	  <Generator>MSBuild:Compile</Generator>
+	</Page>
+	<Page Include="..\TreeGrid\Views\ExcelExporting.xaml">
+	    <Link>TreeGrid\Views\ExcelExporting.xaml</Link>
 	  <SubType>Designer</SubType>
 	  <Generator>MSBuild:Compile</Generator>
 	</Page>

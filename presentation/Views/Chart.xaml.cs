@@ -10,7 +10,7 @@ using Microsoft.UI.Xaml.Controls;
 using Syncfusion.Presentation;
 using Syncfusion.OfficeChart;
 using Syncfusion.Drawing;
-using Syncfusion.PresentationToPdfConverter;
+using Syncfusion.PresentationRenderer;
 using Syncfusion.Pdf;
 
 namespace EssentialPresentation

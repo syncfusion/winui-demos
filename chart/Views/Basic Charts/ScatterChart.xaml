@@ -34,25 +34,31 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
 <x:String xml:space="preserve">
-&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot;&gt;                      
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Faithful Eruptions&quot;&gt;
 
     &lt;chart:SfCartesianChart.XAxes&gt;
-        &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; Header=&quot;Eruption Duration(Min)&quot; Interval=&quot;0.5&quot; Maximum=&quot;5.5&quot; Minimum=&quot;1.5&quot; /&gt;
+        &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; 
+                             Header=&quot;Eruption Duration(Min)&quot;
+                             Interval=&quot;0.5&quot;
+                             Maximum=&quot;5.5&quot;
+                             Minimum=&quot;1.5&quot; /&gt;
     &lt;/chart:SfCartesianChart.XAxes&gt;
 
     &lt;chart:SfCartesianChart.YAxes&gt;
-        &lt;chart:NumericalAxis Interval=&quot;10&quot; Maximum=&quot;100&quot; Minimum=&quot;40&quot; Header=&quot;Waiting Time Between Eruptions(Min)&quot; /&gt;
+        &lt;chart:NumericalAxis Interval=&quot;10&quot;
+                             Maximum=&quot;100&quot;
+                             Minimum=&quot;40&quot;
+                             Header=&quot;Waiting Time Between Eruptions(Min)&quot; /&gt;
     &lt;/chart:SfCartesianChart.YAxes&gt;
     
-    &lt;chart:ScatterSeries  
-                        XBindingPath=&quot;Eruptions&quot; 
-                        YBindingPath=&quot;WaitingTime&quot; 
-                        ItemsSource=&quot;{Binding DataPoints}&quot; 
-                        PointHeight=&quot;9&quot; 
-                        PointWidth=&quot;9&quot;
-                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
-                        EnableTooltip=&quot;True&quot;
-                        EnableAnimation=&quot;True&quot;/&gt;
+    &lt;chart:ScatterSeries XBindingPath=&quot;Eruptions&quot; 
+                         YBindingPath=&quot;WaitingTime&quot; 
+                         ItemsSource=&quot;{Binding DataPoints}&quot; 
+                         PointHeight=&quot;9&quot; 
+                         PointWidth=&quot;9&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                         EnableTooltip=&quot;True&quot;
+                         EnableAnimation=&quot;True&quot;/&gt;
 &lt;/chart:SfCartesianChart&gt;
 </x:String>
                 </common:DemoLayout.Xaml>

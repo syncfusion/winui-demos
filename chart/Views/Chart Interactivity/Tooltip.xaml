@@ -41,8 +41,8 @@
 
                                 <DataTemplate x:Key="toolTipTemplate1">
                                     <StackPanel Background="{ThemeResource TooltipFill}" >
-                                        <TextBlock Text="Germany" HorizontalTextAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12" Grid.Row="0" />
-                                        <Rectangle Grid.Row="1" Fill="{ThemeResource TooltipForeground}" Height="0.75" Margin="0,3,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                        <TextBlock Text="Germany" HorizontalTextAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12" />
+                                        <Rectangle Fill="{ThemeResource TooltipForeground}" Height="0.75" Margin="0,3,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
                                         <StackPanel Background="{ThemeResource TooltipFill}" Orientation="Horizontal" Spacing="0" Padding="3" Margin="0">
                                             <TextBlock Text="{Binding Item.Year}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"  />
                                             <TextBlock Text=":" Margin="3,0,3,0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"  />
@@ -54,8 +54,8 @@
 
                                 <DataTemplate x:Key="toolTipTemplate2">
                                     <StackPanel Background="{ThemeResource TooltipFill}">
-                                        <TextBlock Text="England" HorizontalTextAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12" Grid.Row="0" />
-                                        <Rectangle Grid.Row="1" Fill="{ThemeResource TooltipForeground}" Opacity="0.8" Margin="0,3,0,0" Height="0.75"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                                        <TextBlock Text="England" HorizontalTextAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12" />
+                                        <Rectangle Fill="{ThemeResource TooltipForeground}" Opacity="0.8" Margin="0,3,0,0" Height="0.75"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
                                         <StackPanel Background="{ThemeResource TooltipFill}" Orientation="Horizontal" Spacing="0" Padding="3" Margin="0">
                                             <TextBlock Text="{Binding Item.Year}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"  />
                                             <TextBlock Text=":" Margin="3,0,3,0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"  />
@@ -110,34 +110,122 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
- &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;     
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Efficiency of oil-fired power production&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
 
-    &lt;chart:LineSeries  
-                        ItemsSource=&quot;{Binding DataPoints}&quot; 
-                        XBindingPath=&quot;Year&quot; 
-                        YBindingPath=&quot;Germany&quot;
-                        EnableTooltip=&quot;True&quot;
-                        ShowDataLabels=&quot;True&quot;
-                        Label=&quot;Germany&quot; 
-                        EnableAnimation=&quot;True&quot;&gt;
-            &lt;chart:LineSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings
-                        ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;  
-            &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+
+            &lt;ResourceDictionary.ThemeDictionaries&gt;
+                &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipFill&quot; Color=&quot;{StaticResource SystemBaseHighColor}&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipForeground&quot; Color=&quot;{StaticResource SystemAltHighColor}&quot;/&gt;
+                &lt;/ResourceDictionary&gt;
+
+                &lt;ResourceDictionary x:Key=&quot;Dark&quot;&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipFill&quot; Color=&quot;{StaticResource SystemBaseHighColor}&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipForeground&quot; Color=&quot;{StaticResource SystemAltHighColor}&quot;/&gt;
+                &lt;/ResourceDictionary&gt;
+
+                &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipFill&quot; Color=&quot;{ThemeResource SystemColorWindowColor}&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;TooltipForeground&quot; Color=&quot;{ThemeResource SystemColorWindowTextColor}&quot;/&gt;
+                &lt;/ResourceDictionary&gt;
+            &lt;/ResourceDictionary.ThemeDictionaries&gt;
+
+            &lt;DataTemplate x:Key=&quot;toolTipTemplate1&quot;&gt;
+                &lt;StackPanel Background=&quot;{ThemeResource TooltipFill}&quot; &gt;
+                    &lt;TextBlock Text=&quot;Germany&quot; HorizontalTextAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; 
+                        Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                    &lt;Rectangle Fill="{ThemeResource TooltipForeground}&quot; Height=&quot;0.75&quot; Margin=&quot;0,3,0,0&quot; VerticalAlignment=&quot;Stretch&quot; HorizontalAlignment=&quot;Stretch&quot; /&gt;
+                    &lt;StackPanel Background=&quot;{ThemeResource TooltipFill}&quot; Orientation=&quot;Horizontal&quot; Spacing=&quot;0&quot; Padding=&quot;3&quot; Margin=&quot;0&quot;&gt;
+                        &lt;TextBlock Text=&quot;{Binding Item.Year}&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Left&quot;
+                        Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=":" Margin=&quot;3,0,3,0&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Center&quot; 
+                        Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=&quot;{Binding Item.Germany}&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Right&quot;
+                        Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=&quot;%&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Right&quot;
+                                   Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/StackPanel&gt;
+            &lt;/DataTemplate&gt;
+
+            &lt;DataTemplate x:Key=&quot;toolTipTemplate2&quot;&gt;
+                &lt;StackPanel Background=&quot;{ThemeResource TooltipFill}&quot;&gt;
+                    &lt;TextBlock Text=&quot;England&quot; HorizontalTextAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; 
+                               Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;Rectangle Fill=&quot;{ThemeResource TooltipForeground}&quot; Opacity=&quot;0.8&quot; Margin=&quot;0,3,0,0&quot; Height=&quot;0.75&quot;
+                                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" /&gt;
+                        &lt;StackPanel Background=&quot;{ThemeResource TooltipFill}&quot; Orientation=&quot;Horizontal&quot; Spacing=&quot;0&quot; Padding=&quot;3&quot; Margin=&quot;0&quot;&gt;
+                        &lt;TextBlock Text=&quot;{Binding Item.Year}&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Left&quot; 
+                                   Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=&quot;:&quot; Margin=&quot;3,0,3,0&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Center&quot;
+                                   Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=&quot;{Binding Item.England}&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Right&quot;
+                                   Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                        &lt;TextBlock Text=&quot;%&quot; VerticalAlignment=&quot;Center&quot; HorizontalAlignment=&quot;Right&quot; 
+                                   Foreground=&quot;{ThemeResource TooltipForeground}&quot; FontWeight=&quot;Bold&quot; FontFamily=&quot;Helvetica&quot; FontSize=&quot;12&quot; /&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/StackPanel&gt;
+            &lt;/DataTemplate&gt;
+
+            &lt;DataTemplate x:Key=&quot;labelTemplate1&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                         Fill=&quot;{StaticResource SeriesColor1}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+                                
+            &lt;DataTemplate x:Key=&quot;labelTemplate2&quot;&gt;
+                &lt;Ellipse Height=&quot;13&quot; Width=&quot;13&quot;
+                         Fill=&quot;{StaticResource SeriesColor2}&quot;
+                         Stroke=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
+                        
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot;
+                            PlotOffsetStart=&quot;15&quot; PlotOffsetEnd=&quot;15&quot;
+                            ShowMajorGridLines=&quot;False&quot;/>
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis RangePadding=&quot;Additional&quot;
+                             Minimum=&quot;0&quot; Maximum=&quot;100&quot;&gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;0'%'&quot; /&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DataPoints}&quot; 
+                      XBindingPath=&quot;Year&quot; 
+                      YBindingPath=&quot;Germany&quot;
+                      EnableTooltip=&quot;True&quot;
+                      ShowDataLabels=&quot;True&quot;
+                      Label=&quot;Germany&quot; 
+                      EnableAnimation=&quot;True&quot;&gt;
+        &lt;chart:LineSeries.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;  
+        &lt;/chart:LineSeries.DataLabelSettings&gt;
     &lt;/chart:LineSeries&gt;
 
-    &lt;chart:LineSeries 
-                        ItemsSource=&quot;{Binding DataPoints}&quot; 
-                        YBindingPath=&quot;England&quot; 
-                        XBindingPath=&quot;Year&quot;
-                        Label=&quot;England&quot; 
-                        EnableTooltip=&quot;True&quot; 
-                        ShowDataLabels=&quot;True&quot; 
-                        EnableAnimation=&quot;True&quot; &gt;
-            &lt;chart:LineSeries.DataLabelSettings&gt;
-                &lt;chart:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt; 
-            &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DataPoints}&quot; 
+                      YBindingPath=&quot;England&quot; 
+                      XBindingPath=&quot;Year&quot;
+                      Label=&quot;England&quot; 
+                      EnableTooltip=&quot;True&quot; 
+                      ShowDataLabels=&quot;True&quot; 
+                      EnableAnimation=&quot;True&quot; &gt;
+        &lt;chart:LineSeries.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt; 
+        &lt;/chart:LineSeries.DataLabelSettings&gt;
     &lt;/chart:LineSeries&gt;
 &lt;/chart:SfCartesianChart&gt;
 </x:String>

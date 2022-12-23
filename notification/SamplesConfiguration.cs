@@ -49,7 +49,7 @@ namespace Syncfusion.NotificationDemos.WinUI
                 Description = "This sample showcases the basic features such as animation types, duration factor, size factor, busy content, content position and indicator color.",
                 DemoView = typeof(Views.BusyIndicator.GettingStartedView),
                 ShowInfoPanel = false,
-                DemoType = DemoTypes.New
+                DemoType = DemoTypes.None
             };
 
 
@@ -57,7 +57,7 @@ namespace Syncfusion.NotificationDemos.WinUI
             {
                 Control = DemoControl.SfBusyIndicator,
                 ControlCategory = ControlCategory.Notification,
-                ControlBadge = ControlBadge.New, 
+                ControlBadge = ControlBadge.None, 
                 Description = "The Busy Indicator control is used to display a predefined built-in animation when an operation runs in the background of your application to await completion.",
                 Glyph = "\uE723",
                 ImageSource= "BusyIndicator.png",

@@ -101,47 +101,55 @@
                 </common:DemoLayout.Example>
                 <common:DemoLayout.Xaml>
                     <x:String xml:space="preserve">
-&lt;Syncfusion:SfCartesianChart x:Name=&quot;Chart&quot; PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot; &gt;
-                                               
+&lt;Syncfusion:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Average sales per person&quot;
+                             PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot; &gt;
+
     &lt;Syncfusion:SfCartesianChart.TrackballBehavior&gt;
-        &lt;Syncfusion:ChartTrackballBehavior 
-                        UseSeriesPalette=&quot;True&quot; /&gt;
-    &lt;/Syncfusion:SfCartesianChart.TrackballBehavior&gt;    
+        &lt;Syncfusion:ChartTrackballBehavior UseSeriesPalette=&quot;True&quot; /&gt;
+    &lt;/Syncfusion:SfCartesianChart.TrackballBehavior&gt;
 
-     &lt;Syncfusion:LineSeries  
-                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;YValue2&quot; 
-                        EnableAnimation=&quot;True&quot;  
-                        ShowDataLabels=&quot;True&quot;&gt;
-                &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
-                    &lt;Syncfusion:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;
-                &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
+    &lt;Syncfusion:SfCartesianChart.XAxes&gt;
+        &lt;Syncfusion:CategoryAxis ShowMajorGridLines=&quot;False&quot;
+                                 ShowTrackballInfo=&quot;True&quot;
+                                 PlotOffsetStart=&quot;20&quot;
+                                 PlotOffsetEnd=&quot;20&quot; /&gt;
+    &lt;/Syncfusion:SfCartesianChart.XAxes&gt;
+
+    &lt;Syncfusion:SfCartesianChart.YAxes&gt;
+        &lt;Syncfusion:NumericalAxis Interval=&quot;10&quot;
+                                  Minimum=&quot;0&quot;
+                                  RangePadding=&quot;Additional&quot;
+                                  ShowTrackballInfo=&quot;True&quot; /&gt;
+    &lt;/Syncfusion:SfCartesianChart.YAxes&gt;
+
+     &lt;Syncfusion:LineSeries ItemsSource=&quot;{Binding CommodityDetails}&quot;
+                            XBindingPath=&quot;Date&quot;
+                            YBindingPath=&quot;YValue2&quot;
+                            EnableAnimation=&quot;True&quot;
+                            ShowDataLabels=&quot;True&quot;&gt;
+        &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
+            &lt;Syncfusion:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate1}&quot;/&gt;
+        &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
     &lt;/Syncfusion:LineSeries&gt;
 
-    &lt;Syncfusion:LineSeries 
-                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
-                        XBindingPath=&quot;Date&quot;  
-                        EnableAnimation=&quot;True&quot; 
-                        YBindingPath=&quot;YValue3&quot;
-                        ShowDataLabels=&quot;True&quot;&gt;
-                &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
-                    &lt;Syncfusion:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt;
-                &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
+    &lt;Syncfusion:LineSeries ItemsSource=&quot;{Binding CommodityDetails}&quot;
+                           XBindingPath=&quot;Date&quot;
+                           EnableAnimation=&quot;True&quot;
+                           YBindingPath=&quot;YValue3&quot;
+                           ShowDataLabels=&quot;True&quot;&gt;
+        &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
+            &lt;Syncfusion:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate2}&quot;/&gt;
+        &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
     &lt;/Syncfusion:LineSeries&gt;
 
-    &lt;Syncfusion:LineSeries  
-                        ItemsSource=&quot;{Binding CommodityDetails}&quot; 
-                        XBindingPath=&quot;Date&quot; 
-                        YBindingPath=&quot;YValue1&quot; 
-                        EnableAnimation=&quot;True&quot;
-                        ShowDataLabels=&quot;True&quot;&gt;
-                &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
-                    &lt;Syncfusion:CartesianDataLabelSettings 
-                        ContentTemplate=&quot;{StaticResource labelTemplate3}&quot;/&gt;
-                &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
+    &lt;Syncfusion:LineSeries ItemsSource=&quot;{Binding CommodityDetails}&quot;
+                           XBindingPath=&quot;Date&quot;
+                           YBindingPath=&quot;YValue1&quot;
+                           EnableAnimation=&quot;True&quot;
+                           ShowDataLabels=&quot;True&quot;&gt;
+        &lt;Syncfusion:LineSeries.DataLabelSettings&gt;
+            &lt;Syncfusion:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate3}&quot;/&gt;
+        &lt;/Syncfusion:LineSeries.DataLabelSettings&gt;
     &lt;/Syncfusion:LineSeries&gt;
 
 &lt;/Syncfusion:SfCartesianChart&gt;
