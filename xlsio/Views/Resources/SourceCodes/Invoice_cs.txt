@@ -1,0 +1,25 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  IWorkbook workbook = application.Workbooks.Create(1);
+  IWorksheet sheet = workbook.Worksheets[0];
+  sheet.EnableSheetCalculations();
+
+  sheet.Range["B4"].Text = "INVOICE";
+  sheet.Range["B8"].Text = "BILL TO:";               
+  sheet.Range["B9"].Text = "Abraham Swearegin";               
+  sheet.Range["B10"].Text = "United States, California, San Mateo,";             
+  sheet.Range["B11"].Text = "9920 BridgePointe Parkway,";             
+  sheet.Range["B12"].Number = 9365550136;
+              
+  Stream input = GetExcelStream("invoice.jpeg");
+  sheet.Pictures.AddPicture(3, 4, 7, 8, input); 
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}

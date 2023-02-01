@@ -1,0 +1,34 @@
+//Get the template PDF file stream from assembly. 
+Stream documentStream = GetPdfStream("Input.pdf");
+//Load the PDF document from stream.
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(documentStream);
+//Create a new font instance.
+PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 36f);
+//Adding a watermark text to all the PDF pages. 
+foreach (PdfPageBase loadedPage in loadedDocument.Pages)
+{
+    //Get the PDF page graphics.
+    PdfGraphics graphics = loadedPage.Graphics;
+    //Save the current graphics state. 
+    PdfGraphicsState state = graphics.Save();
+    //Set transparency to add a watermark text. 
+    graphics.SetTransparency(0.25f);
+    //Rotate the graphics to add a watermark text with 40 degree. 
+    graphics.RotateTransform(-40);
+    //Draw a watermark text to PDF page graphics. 
+    graphics.DrawString("CONFIDENTIAL", font, PdfPens.Red, PdfBrushes.Red, new PointF(-150, 450));
+    //Restore the graphics state. 
+    graphics.Restore(state);
+}
+
+//Creating the stream object.
+using (MemoryStream stream = new MemoryStream())
+{
+    //Save the document into stream.
+    loadedDocument.Save(stream);
+    loadedDocument.Close();
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save("PdfWatermark.pdf", stream);
+}

@@ -1,0 +1,268 @@
+<Project>
+<ItemGroup>
+	<Compile Include="..\DocIO\Helpers\SaveHelper.cs">
+		<Link>DocIO\Helpers\SaveHelper.cs</Link>
+	</Compile>
+    <Compile Include="..\DocIO\SamplesConfiguration.cs">
+		<Link>DocIO\SamplesConfiguration.cs</Link>
+	</Compile>
+    <Compile Include="..\DocIO\Views\FindAndHighlight.xaml.cs">
+		<Link>DocIO\Views\FindAndHighlight.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\FindAndHighlight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\FindAndReplace.xaml.cs">
+		<Link>DocIO\Views\FindAndReplace.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\FindAndReplace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\HelloWorld.xaml.cs">
+		<Link>DocIO\Views\HelloWorld.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\HelloWorld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\Bookmarks.xaml.cs">
+		<Link>DocIO\Views\Bookmarks.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\Bookmarks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\HeaderAndFooter.xaml.cs">
+		<Link>DocIO\Views\HeaderAndFooter.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\HeaderAndFooter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\ImageInsertion.xaml.cs">
+		<Link>DocIO\Views\ImageInsertion.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\ImageInsertion.xaml</DependentUpon>
+    </Compile>  
+    <Compile Include="..\DocIO\Views\RTFConversion.xaml.cs">
+		<Link>DocIO\Views\RTFConversion.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\RTFConversion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\SalesInvoice.xaml.cs">
+		<Link>DocIO\Views\SalesInvoice.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\SalesInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\TableOfContent.xaml.cs">
+		<Link>DocIO\Views\TableOfContent.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\TableOfContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\EncryptAndDecrypt.xaml.cs">
+		<Link>DocIO\Views\EncryptAndDecrypt.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\EncryptAndDecrypt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\EmployeeReport.xaml.cs">
+		<Link>DocIO\Views\EmployeeReport.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\EmployeeReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\OrdersReport.xaml.cs">
+		<Link>DocIO\Views\OrdersReport.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\OrdersReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DocIO\Views\WordToPDF.xaml.cs">
+		<Link>DocIO\Views\WordToPDF.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\WordToPDF.xaml</DependentUpon>
+    </Compile>
+	 <Compile Include="..\DocIO\Views\WordToMarkdown.xaml.cs">
+		<Link>DocIO\Views\WordToMarkdown.xaml.cs</Link>
+      <DependentUpon>..\DocIO\Views\WordToMarkdown.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+<ItemGroup>
+   <Page Include="..\DocIO\Views\FindAndReplace.xaml">
+	   <Link>DocIO\Views\FindAndReplace.xaml</Link>
+     <Generator>MSBuild:Compile</Generator>
+	 <SubType>Designer</SubType>
+   </Page>
+   <Page Include="..\DocIO\Views\HelloWorld.xaml">
+	   <Link>DocIO\Views\HelloWorld.xaml</Link>
+     <Generator>MSBuild:Compile</Generator>
+	 <SubType>Designer</SubType>
+   </Page>
+   <Page Include="..\DocIO\Views\Bookmarks.xaml">
+	   <Link>DocIO\Views\Bookmarks.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
+   </Page>
+   <Page Include="..\DocIO\Views\HeaderAndFooter.xaml">
+	   <Link>DocIO\Views\HeaderAndFooter.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
+   </Page>
+   <Page Include="..\DocIO\Views\ImageInsertion.xaml">
+	   <Link>DocIO\Views\ImageInsertion.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
+   </Page>
+	  <Page Include="..\DocIO\Views\RTFConversion.xaml">
+		  <Link>DocIO\Views\RTFConversion.xaml</Link>
+	    <Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\SalesInvoice.xaml">
+		  <Link>DocIO\Views\SalesInvoice.xaml</Link>
+	    <Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\TableOfContent.xaml">
+		  <Link>DocIO\Views\TableOfContent.xaml</Link>
+		  <Generator>MSBuild:Compile</Generator>
+		  <SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\EncryptAndDecrypt.xaml">
+		  <Link>DocIO\Views\EncryptAndDecrypt.xaml</Link>
+		  <Generator>MSBuild:Compile</Generator>
+		  <SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\EmployeeReport.xaml">
+		  <Link>DocIO\Views\EmployeeReport.xaml</Link>
+		  <Generator>MSBuild:Compile</Generator>
+		  <SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\OrdersReport.xaml">
+		  <Link>DocIO\Views\OrdersReport.xaml</Link>
+		  <Generator>MSBuild:Compile</Generator>
+		  <SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\WordToPDF.xaml">
+		<Link>DocIO\Views\WordToPDF.xaml</Link>
+	    <Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	  </Page>
+	   <Page Include="..\DocIO\Views\WordToMarkdown.xaml">
+		<Link>DocIO\Views\WordToMarkdown.xaml</Link>
+	    <Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	  </Page>
+	  <Page Include="..\DocIO\Views\FindAndHighlight.xaml">
+	     <Link>DocIO\Views\FindAndHighlight.xaml</Link>
+         <Generator>MSBuild:Compile</Generator>
+	     <SubType>Designer</SubType>
+      </Page>
+  </ItemGroup>
+<ItemGroup>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\Bookmarks_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\Bookmarks_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\EmployeeReport_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\EmployeeReport_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\EncryptAndDecrypt_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\EncryptAndDecrypt_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\FindAndHighlight_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\FindAndHighlight_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\FindAndReplace_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\FindAndReplace_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\HeaderAndFooter_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\HeaderAndFooter_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\HelloWorld_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\HelloWorld_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\ImageInsertion_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\ImageInsertion_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\OrdersReport_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\OrdersReport_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\RTFConversion_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\RTFConversion_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\SalesInvoice_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\SalesInvoice_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\TableOfContent_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\TableOfContent_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\WordToPDF_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\WordToPDF_cs.txt</Link>
+	</Content>
+	<Content Include="..\DocIO\Views\Resources\SourceCodes\WordToMarkdown_cs.txt">
+		<Link>DocIO\Views\Resources\SourceCodes\WordToMarkdown_cs.txt</Link>
+	</Content>
+  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Adventure.docx">
+			<Link>DocIO\Assets\DocIO\Adventure.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\OrderTotals.xml">
+			<Link>DocIO\Assets\DocIO\OrderTotals.xml</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\RTFtoWord.rtf">
+			<Link>DocIO\Assets\DocIO\RTFtoWord.rtf</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Employees.xml">
+			<Link>DocIO\Assets\DocIO\Employees.xml</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\EmployeesList.xml">
+			<Link>DocIO\Assets\DocIO\EmployeesList.xml</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\EmployeesReportDemo.docx">
+			<Link>DocIO\Assets\DocIO\EmployeesReportDemo.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Mountain200.jpg">
+			<Link>DocIO\Assets\DocIO\Mountain200.jpg</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Mountain300.jpg">
+			<Link>DocIO\Assets\DocIO\Mountain300.jpg</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Northwindlogo.png">
+			<Link>DocIO\Assets\DocIO\Northwindlogo.png</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Road550W.jpg">
+			<Link>DocIO\Assets\DocIO\Road550W.jpg</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\SalesInvoiceDemo.docx">
+			<Link>DocIO\Assets\DocIO\SalesInvoiceDemo.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Decrypt.docx">
+			<Link>DocIO\Assets\DocIO\Decrypt.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\TemplateLetter.docx">
+			<Link>DocIO\Assets\DocIO\TemplateLetter.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\TestOrder.xml">
+			<Link>DocIO\Assets\DocIO\TestOrder.xml</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\TestOrderDetails.xml">
+			<Link>DocIO\Assets\DocIO\TestOrderDetails.xml</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\HeaderFooterTemplate.docx">
+			<Link>DocIO\Assets\DocIO\HeaderFooterTemplate.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\WordtoPDF.docx">
+			<Link>DocIO\Assets\DocIO\WordtoPDF.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\AdventureCycle.png">
+			<Link>DocIO\Assets\DocIO\AdventureCycle.png</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\HeaderImage.png">
+			<Link>DocIO\Assets\DocIO\HeaderImage.png</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\Mountain300.bmp">
+			<Link>DocIO\Assets\DocIO\Mountain300.bmp</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\DocIO\Assets\DocIO\WordtoMD.docx">
+			<Link>DocIO\Assets\DocIO\WordtoMD.docx</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

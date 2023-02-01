@@ -1,0 +1,3 @@
+<editors:SfAutoComplete ItemsSource="{Binding Countries}"
+				AppendType="Text">
+</editors:SfAutoComplete>

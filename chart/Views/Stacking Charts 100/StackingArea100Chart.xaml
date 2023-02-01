@@ -1,0 +1,124 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.StackingArea100Chart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:StackingAreaChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample showcases 100% area chart which is similar to regular area charts except that the y-values stack on top of each other in the order of the series specified.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Header="Road Accident Statistics(2009)"
+                        Height="420"
+                        PaletteBrushes="{StaticResource CustomBrushes}"
+                        HorizontalAlignment="Center">
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False" Header="Month">
+                                <chart:CategoryAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="MMM" />
+                                </chart:CategoryAxis.LabelStyle>
+                            </chart:CategoryAxis>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis
+                                Minimum="0"
+                                Header="Death Counts (Thousands)"/>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend Placement="Bottom"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Bus"
+                EnableTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Bus">
+                        </chart:StackedArea100Series>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Car"
+                EnableTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Car">
+                        </chart:StackedArea100Series>
+
+                        <chart:StackedArea100Series
+                EnableAnimation="True"
+                ItemsSource="{Binding Accidents}"
+                Label="Truck"
+                EnableTooltip="True"
+                XBindingPath="Month"
+                YBindingPath="Truck">
+                        </chart:StackedArea100Series>
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Road Accident Statistics(2009)&quot;
+                        PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; 
+                        ShowMajorGridLines=&quot;False&quot; Header=&quot;Month&quot;&gt;
+            &lt;chart:CategoryAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;MMM&quot; /&gt;
+            &lt;/chart:CategoryAxis.LabelStyle&gt;
+        &lt;/chart:CategoryAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Header=&quot;Death Counts (Thousands)&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+    &lt;chart:StackedArea100Series EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Bus&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Bus&quot;&gt;
+    &lt;/chart:StackedArea100Series&gt;
+                        
+    &lt;chart:StackedArea100Series EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Car&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Car&quot;&gt;
+    &lt;/chart:StackedArea100Series&gt;
+                        
+    &lt;chart:StackedArea100Series EnableAnimation=&quot;True&quot;
+                ItemsSource=&quot;{Binding Accidents}&quot;
+                Label=&quot;Truck&quot;
+                XBindingPath=&quot;Month&quot;
+                YBindingPath=&quot;Truck&quot;&gt;
+    &lt;/chart:StackedArea100Series&gt;
+                        
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

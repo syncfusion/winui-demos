@@ -1,0 +1,12 @@
+﻿private void StyleWeekEndDatesOnDateFieldItemPrepared(object sender, Syncfusion.UI.Xaml.Editors.DateTimeFieldItemPreparedEventArgs e)
+{
+    if ( e.ItemInfo.Field== Syncfusion.UI.Xaml.Editors.DateTimeField.Day)
+    {
+       var dateTime = (sender as DateTimeSpinnerBase).SelectedDateTime;
+       if (dateTime.Value.Date != e.ItemInfo.DateTime.Value.Date && (e.ItemInfo.DateTime.Value.DayOfWeek == DayOfWeek.Saturday || e.ItemInfo.DateTime.Value.DayOfWeek == DayOfWeek.Sunday))
+       {
+           e.Element.Style = this.Resources["SpinnerItemStyle"] as Style;
+           e.ItemInfo.DisplayText = e.ItemInfo.DateTime.Value.ToString("ddd dd", System.Globalization.CultureInfo.CurrentUICulture);
+       }                                                      
+    }
+}

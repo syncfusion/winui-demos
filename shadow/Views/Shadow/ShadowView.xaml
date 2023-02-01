@@ -1,0 +1,350 @@
+﻿<Page
+    x:Class="Syncfusion.ShadowDemos.WinUI.Views.Shadow.ShadowView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ShadowDemos.WinUI.Views.Shadow"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Core" 
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <common:DemoLayout HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HeaderText="Shadow customization in button control."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.ShadowDemos.WinUI/Views/Shadow/Resources/SourceCodes/ShadowButton_xaml.txt,
+                                                    Common=Shadow/Views/Shadow/Resources/SourceCodes/ShadowButton_xaml.txt}">
+                    <common:DemoLayout.Example>
+                        <Grid HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                            <Syncfusion:SfShadow x:Name="btnShadow" BlurRadius="{Binding ElementName=blurSlider,Path=Value}" 
+                                                 OffsetX="{Binding ElementName=offsetX,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY,Path=Value}">
+                                <Button x:Name="buttonShadow" Height="50" Width="100" Content="Button"
+                                        Background="{ThemeResource ButtonBackground}" CornerRadius="5">
+                                    <Button.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#ffffff"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#ffffff"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#ffffff"/>
+                                                </ResourceDictionary>
+                                                <ResourceDictionary x:Key="Dark">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#2a2a2a"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#2a2a2a"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#2a2a2a"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </Button.Resources>
+                                </Button>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard x:Name="board1">
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="EnableShadow" Storyboard.TargetName="btnShadow">
+                                                    <DiscreteObjectKeyFrame Value="True"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="PointerExit">
+                                            <Storyboard x:Name="board2">
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="EnableShadow" Storyboard.TargetName="btnShadow">
+                                                    <DiscreteObjectKeyFrame Value="False"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Syncfusion:SfShadow>
+                        </Grid>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Options>
+                        <Grid Width="270">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="OffsetX" Grid.Row="0" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="1"
+                            x:Name="offsetX"                           
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="OffsetY" Grid.Row="2" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="3"
+                            x:Name="offsetY"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="BlurRadius" Grid.Row="4" FontWeight="SemiBold" />
+                            <Slider 
+                            Grid.Row="5"
+                            x:Name="blurSlider"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="0"
+                            Maximum="20"
+                            Value="8"/>
+                            <TextBlock Grid.Row="6" Text="EnableShadow On MouseHover" FontWeight="SemiBold" Margin="0,10,0,0"/>
+                            <ToggleSwitch Grid.Row="7" x:Name="toggle1" IsOn="False" Margin="25,0,0,0" Toggled="toggle1_Toggled"/>
+                            <TextBlock Text="Color" Grid.Row="8" FontWeight="SemiBold" Margin="0,5,0,0"/>
+                            <Viewbox Height="270" Width="270" Grid.Row="9" Margin="5">
+                                <editors:SfColorPicker x:Name="colorPicker1" SelectedBrush="#40000000" SelectedBrushChanged="ColorPicker1_SelectedBrushChanged"  ColorEditorsVisibilityMode="Collapsed" BrushTypeOptions="SolidColorBrush"/>
+                            </Viewbox>
+                        </Grid>
+                    </common:DemoLayout.Options>
+                    <common:DemoLayout.Substitutions>
+                        <common:DemoLayoutSubstitution                        
+                        Key="OffsetX"
+                        SubstitutionValue="{x:Bind offsetX.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="OffsetY"
+                        SubstitutionValue="{x:Bind offsetY.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution 
+                        Key="Blur"
+                        SubstitutionValue="{x:Bind blurSlider.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="Color"
+                        SubstitutionValue="{x:Bind colorPicker1.SelectedBrush, Mode=OneWay}"/>
+
+                    </common:DemoLayout.Substitutions>
+                </common:DemoLayout>
+
+                
+                <common:DemoLayout HorizontalContentAlignment="Center"
+                HeaderText="Shadow effect for image"               
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.ShadowDemos.WinUI/Views/Shadow/Resources/SourceCodes/ShadowImage_xaml.txt,
+                                                               Common=Shadow/Views/Shadow/Resources/SourceCodes/ShadowImage_xaml.txt}">
+                    <common:DemoLayout.Example>
+                        <Grid HorizontalAlignment="Center"
+                                VerticalAlignment="center">
+                            <Syncfusion:SfShadow x:Name="imageShadow" BlurRadius="{Binding ElementName=blurSlider2,Path=Value}"  
+                                                 OffsetX="{Binding ElementName=offsetX2,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY2,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle2,Path=IsOn}">
+                                <Image Height="200" Width="250"
+                                    Source="{common:ImagePathExtension Individual=Syncfusion.ShadowDemos.WinUI/Assets/Shadow/Ellipse_Shadow.png,
+                                                    Common=Shadow/Assets/Shadow/Ellipse_Shadow.png}"/>
+                            </Syncfusion:SfShadow>
+                        </Grid>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Options>
+                        <Grid Width="270">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="OffsetX" Grid.Row="0" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="1"
+                            x:Name="offsetX2"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"                            
+                            Width="180"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="OffsetY" Grid.Row="2" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="3"
+                            x:Name="offsetY2"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="BlurRadius" Grid.Row="4" FontWeight="SemiBold" />
+                            <Slider 
+                            Grid.Row="5"
+                            x:Name="blurSlider2"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="0"
+                            Maximum="20"
+                            Value="8"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="6">
+                                <TextBlock Text="EnableShadow" FontWeight="SemiBold" Margin="0,10,0,0"/>
+                                <ToggleSwitch x:Name="toggle2" IsOn="True" Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="Color" Grid.Row="7" FontWeight="SemiBold" Margin="0,5,0,0"/>
+                            <Viewbox Height="270" Width="270" Grid.Row="8" Margin="5">
+                                <editors:SfColorPicker x:Name="colorPicker2" SelectedBrush="#40000000" SelectedBrushChanged="ColorPicker2_SelectedBrushChanged"  ColorEditorsVisibilityMode="Collapsed" BrushTypeOptions="SolidColorBrush"/>
+                            </Viewbox>
+                        </Grid>
+                    </common:DemoLayout.Options>
+                    <common:DemoLayout.Substitutions>
+                        <common:DemoLayoutSubstitution
+                        Key="OffsetX"
+                        SubstitutionValue="{x:Bind offsetX2.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="OffsetY"
+                        SubstitutionValue="{x:Bind offsetY2.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="Blur"
+                        SubstitutionValue="{x:Bind blurSlider2.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="Color"
+                        SubstitutionValue="{x:Bind colorPicker2.SelectedBrush, Mode=OneWay}"/>
+
+                    </common:DemoLayout.Substitutions>
+                </common:DemoLayout>
+                
+                <common:DemoLayout HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                HeaderText="Shadow effect for star shape"                                  
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.ShadowDemos.WinUI/Views/Shadow/Resources/SourceCodes/ShadowShape_xaml.txt,
+                                                               Common=Shadow/Views/Shadow/Resources/SourceCodes/ShadowShape_xaml.txt}">
+                    <common:DemoLayout.Example>
+                        <Viewbox Height="300" Width="300">
+                            <StackPanel Orientation="Horizontal">
+                                <Syncfusion:SfShadow x:Name="shape1" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}"                                                 
+                                                 OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY3,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle3,Path=IsOn}">
+                                    <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+                                </Syncfusion:SfShadow>
+                                <Syncfusion:SfShadow  x:Name="shape2" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}"                                                   
+                                                 OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY3,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle3,Path=IsOn}">
+                                    <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+                                </Syncfusion:SfShadow>
+                                <Syncfusion:SfShadow x:Name="shape3" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}"                                                  
+                                                 OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY3,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle3,Path=IsOn}">
+                                    <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+                                </Syncfusion:SfShadow>
+                                <Syncfusion:SfShadow x:Name="shape4" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}"                                                
+                                                 OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY3,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle3,Path=IsOn}">
+                                    <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+                                </Syncfusion:SfShadow>
+                                <Syncfusion:SfShadow x:Name="shape5"  BlurRadius="{Binding ElementName=blurSlider3,Path=Value}"                                                 
+                                                 OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+                                                 OffsetY="{Binding ElementName=offsetY3,Path=Value}"
+                                                 EnableShadow="{Binding ElementName=toggle3,Path=IsOn}">
+                                    <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+                                </Syncfusion:SfShadow>
+                            </StackPanel>
+                        </Viewbox>
+                    </common:DemoLayout.Example>
+                    
+                    <common:DemoLayout.Options>
+                        <Grid Width="270">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="OffsetX" Grid.Row="0" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="1"
+                            x:Name="offsetX3"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="OffsetY" Grid.Row="2" FontWeight="SemiBold"/>
+                            <Slider 
+                            Grid.Row="3"
+                            x:Name="offsetY3"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="-20"
+                            Maximum="20"
+                            Value="4"/>
+                            <TextBlock Text="BlurRadius" Grid.Row="4" FontWeight="SemiBold" />
+                            <Slider 
+                            Grid.Row="5"
+                            x:Name="blurSlider3"
+                            HorizontalAlignment="Left"
+                            Margin="25,0,0,0"
+                            Width="180"
+                            Minimum="0"
+                            Maximum="20"
+                            Value="8"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="6">
+                                <TextBlock Text="EnableShadow" FontWeight="SemiBold" Margin="0,10,0,0"/>
+                                <ToggleSwitch x:Name="toggle3" IsOn="True" Margin="20,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="Color" Grid.Row="7" FontWeight="SemiBold" Margin="0,5,0,0"/>
+                            <Viewbox Height="270" Width="270" Grid.Row="8" Margin="5">
+                                <editors:SfColorPicker x:Name="colorPicker3" SelectedBrush="#40000000" SelectedBrushChanged="ColorPicker3_SelectedBrushChanged" ColorEditorsVisibilityMode="Collapsed" BrushTypeOptions="SolidColorBrush"/>
+                            </Viewbox>
+                        </Grid>
+                    </common:DemoLayout.Options>
+                    <common:DemoLayout.Substitutions>
+                        <common:DemoLayoutSubstitution
+                        Key="OffsetX"
+                        SubstitutionValue="{x:Bind offsetX3.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="OffsetY"
+                        SubstitutionValue="{x:Bind offsetY3.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="Blur"
+                        SubstitutionValue="{x:Bind blurSlider3.Value, Mode=OneWay}"/>
+
+                        <common:DemoLayoutSubstitution
+                        Key="Color"
+                        SubstitutionValue="{x:Bind colorPicker3.SelectedBrush, Mode=OneWay}"/>
+
+                    </common:DemoLayout.Substitutions>
+                </common:DemoLayout>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

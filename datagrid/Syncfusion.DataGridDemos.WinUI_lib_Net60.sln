@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.DataGridDemos.WinUI_lib_Net60", "Syncfusion.DataGridDemos.WinUI_lib_Net60.csproj", "{0F0AEFA9-3857-43A0-B649-DC30982F6041}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F0AEFA9-3857-43A0-B649-DC30982F6041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0AEFA9-3857-43A0-B649-DC30982F6041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0AEFA9-3857-43A0-B649-DC30982F6041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0AEFA9-3857-43A0-B649-DC30982F6041}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F19B03A-C85F-450A-90E7-241E7474D404}
+	EndGlobalSection
+EndGlobal

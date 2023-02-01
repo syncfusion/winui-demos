@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.SemiDoughnutChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the different shapes of doughnut chart. It can be drawn in different shapes such as semicircular or quarter circular series by using custom StartAngle and EndAngle properties">
+                <common:DemoLayout.DataContext>
+                    <local:DoughnutChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="Application Performance Metrics"  Height="400" HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+
+                        <chart:DoughnutSeries x:Name="doughnutSeries" Radius="1" InnerRadius="0.6" EnableAnimation="True"
+                         ShowDataLabels="True" ItemsSource="{Binding Tax}" PaletteBrushes="{StaticResource CustomBrushes}"
+                         EndAngle="{Binding EndAngle}" StartAngle="{Binding StartAngle}" XBindingPath="Category" YBindingPath="Percentage">
+                            <chart:DoughnutSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings ConnectorHeight="37"
+                                ConnectorType="Bezier" Position="Outside"
+                                Context="Percentage" Format="##.#" ShowConnectorLine="True"
+                               />
+                            </chart:DoughnutSeries.DataLabelSettings>
+                        </chart:DoughnutSeries>
+                    </chart:SfCircularChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                        <StackPanel Margin="5">
+                                <Slider
+                                    x:Name="StartSlider"
+                                    Header="StartAngle"
+                                    Width="120"
+                                    Padding="0,5,0,0"
+                                    Maximum="360"
+                                    Minimum="0"
+                                    Value="{Binding StartAngle, Mode=TwoWay}" 
+			            ValueChanged="StartSlider_ValueChanged"/>
+                                <Slider
+                                    x:Name="EndSlider"
+                                    Header="EndAngle"
+                                    Width="120"
+                                    Padding="0,5,0,0"
+                                    Maximum="360"
+                                    Minimum="0"
+                                    Value="{Binding EndAngle, Mode=TwoWay}" 
+				    ValueChanged="EndSlider_ValueChanged"/>
+                        </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Application Performance Metrics&quot; &gt;
+
+    &lt;chart:DoughnutSeries x:Name=&quot;doughnutSeries&quot; 
+                          ItemsSource=&quot;{Binding Tax}&quot; 
+                          XBindingPath=&quot;Category&quot; 
+                          YBindingPath=&quot;Percentage&quot; 
+                          Radius=&quot;1&quot; 
+                          InnerRadius=&quot;0.6&quot; 
+                          EnableAnimation=&quot;True&quot; 
+                          ShowDataLabels=&quot;True&quot;
+                          PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                          EndAngle=&quot;$(EndAngle)&quot; 
+                          StartAngle=&quot;$(StartAngle)&quot;&gt;
+        &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+            &lt;chart:CircularDataLabelSettings ConnectorHeight=&quot;37&quot; 
+                                             Context=&quot;Percentage&quot;
+                                             Format=&quot;##.#&quot; 
+                                             ShowConnectorLine=&quot;True&quot; 
+                                             ConnectorType=&quot;Bezier&quot; 
+                                             Position=&quot;Outside&quot; /&gt;
+        &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+    
+    &lt;/chart:DoughnutSeries&gt;
+    
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="StartAngle"
+                        SubstitutionValue="{x:Bind doughnutSeries.StartAngle, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="EndAngle"
+                        SubstitutionValue="{x:Bind doughnutSeries.EndAngle, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,76 @@
+﻿<Page x:Class="Syncfusion.DemosCommon.WinUI.DemoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:converters="using:Syncfusion.UI.Xaml.Core"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      NavigationCacheMode="Disabled">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <local:ThemeResourcesDictionary/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="Header" Text="{Binding Header, Mode=TwoWay}" Margin="24,24,0,20" Grid.Row="0"
+                   Style="{StaticResource TitleTextBlockStyle}" Visibility="Collapsed"/>
+
+        <local:DemoPageLoadingIndicator x:Name="loadingIndicator"
+                                        VerticalAlignment="Center" Grid.Row="1"
+                                        Loaded="DemoPageLoadingIndicatorLoaded" />
+        <ScrollViewer x:Name="scollViewerPanel" Grid.Row="1"
+                  VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+            <Grid x:Name="contentRoot"
+              Visibility="Collapsed"
+              
+              Padding="24,0,24,24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition x:Name="infoRow"
+                               Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Frame x:Name="demoFrame" Grid.Row="0"
+                   IsNavigationStackEnabled="False">
+                </Frame>
+                <StackPanel x:Name="DocumentationPanel" 
+                                Grid.Row="1"
+                                Margin="0,20,24,24"
+                                Visibility="{Binding DemoInfo.ShowInfoPanel, Converter={StaticResource boolToVisibilityConverter}}">
+                    <TextBlock x:Name="docHeader"
+                               Text="Documentation"
+                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <ItemsControl x:Name="DocsList"
+                                  Margin="0,12,0,0"
+                                  IsTabStop="False"
+                                  ItemsSource="{Binding DemoInfo.Documentation}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton NavigateUri="{Binding Uri}"
+                                                 ToolTipService.ToolTip="{Binding Uri}">
+                                    <TextBlock Text="{Binding Content}" />
+                                </HyperlinkButton>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

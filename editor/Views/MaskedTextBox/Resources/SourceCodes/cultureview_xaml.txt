@@ -1,0 +1,6 @@
+﻿<syncfusion:SfMaskedTextBox 
+    Header="Culture" 
+    MaskType="Simple" 
+    Mask="$ 0,000.00"
+    Value="435300"
+    Width="200"/>

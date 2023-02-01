@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.PyramidChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases pyramid chart is similar to the funnel chart. It is often used for geographical purposes. This type of chart is a single chart representing the data as portions of 100%, and this chart does not use any axes.">
+                <common:DemoLayout.Example>
+                    <chart:SfPyramidChart x:Name="Chart" Header="Monthly Comparison of Calories"  HorizontalAlignment="Center" Height="400" Width="500" 
+                                   ItemsSource="{Binding Data}"
+                PaletteBrushes="{StaticResource CustomBrushes}"            
+                XBindingPath="Category"
+                YBindingPath="Percentage"
+                ShowDataLabels="True">
+
+                        <chart:SfPyramidChart.DataContext>
+                            <local:PyramidChartViewModel />
+                        </chart:SfPyramidChart.DataContext>
+
+                        <chart:SfPyramidChart.Legend>
+                            <chart:ChartLegend Placement="Bottom">
+                                <chart:ChartLegend.Header>
+                                    <TextBlock Text="Comparison Details" VerticalAlignment="Center"  
+                           HorizontalAlignment="Center" Margin="8"/>
+                                </chart:ChartLegend.Header>
+                            </chart:ChartLegend>
+                        </chart:SfPyramidChart.Legend>
+
+                    </chart:SfPyramidChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfPyramidChart x:Name=&quot;Chart&quot; 
+                      Header=&quot;Monthly Comparison of Calories&quot;
+                      ItemsSource=&quot;{Binding Data}&quot;
+                      PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                      XBindingPath=&quot;Category&quot;
+                      YBindingPath=&quot;Percentage&quot;
+                      ShowDataLabels=&quot;True&quot;&gt;
+
+    &lt;chart:SfPyramidChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot;&gt;
+            &lt;chart:ChartLegend.Header&gt;
+                &lt;TextBlock Text=&quot;Comparison Details&quot; 
+                           VerticalAlignment=&quot;Center&quot;
+                           HorizontalAlignment=&quot;Center&quot;
+                           Margin=&quot;8&quot;/&gt;
+            &lt;/chart:ChartLegend.Header&gt;
+        &lt;/chart:ChartLegend&gt;
+    &lt;/chart:SfPyramidChart.Legend&gt;
+                   
+&lt;/chart:SfPyramidChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

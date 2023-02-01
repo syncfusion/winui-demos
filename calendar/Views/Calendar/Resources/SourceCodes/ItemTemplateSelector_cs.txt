@@ -1,0 +1,39 @@
+﻿public class CustomCalendarItemTemplateSelector : DataTemplateSelector
+{
+    public CustomCalendarItemTemplateSelector()
+    {
+        SpecialDates = new Dictionary<DateTimeOffset, string>();
+        SpecialDates.Add(DateTimeOffset.Now.AddMonths(-1).AddDays(1), "SingleEvent_1");
+        SpecialDates.Add(DateTimeOffset.Now.AddMonths(-1).AddDays(5), "DoubleEvent_1");
+        ...
+    }
+
+    private Dictionary<DateTimeOffset, string> SpecialDates { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+    {
+        if (item != null)
+        {
+            DateTimeOffset calendarItem = (DateTimeOffset)item;
+            DateTimeOffset dateTimeOffset = SpecialDates.Keys.FirstOrDefault(x => x.Date == calendarItem.Date);
+
+            if (dateTimeOffset != DateTimeOffset.MinValue)
+            {
+                string template = this.SpecialDates[dateTimeOffset];
+
+                switch (template)
+                {
+                    case "SingleEvent_1":
+                        return Application.Current.Resources["singleEventTemplate_1"] as DataTemplate;
+                    case "DoubleEvent_1":
+                        return Application.Current.Resources["doubleEventTemplate_1"] as DataTemplate;
+                    ...
+                }
+            }
+
+            return Application.Current.Resources["defaultTemplate"] as DataTemplate;
+        }
+
+        return base.SelectTemplateCore(item, container);
+    }
+}
