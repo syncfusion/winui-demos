@@ -1,1 +1,0 @@
-C:\Samples_20.4.0.38\WinUI\samplebrowser\Syncfusion.SampleBrowser.WinUI_Net60 (Package)\Syncfusion.SampleBrowser.WinUI_Net60 (Package).wapproj;x86

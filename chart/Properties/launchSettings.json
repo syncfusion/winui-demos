@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.ChartDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
