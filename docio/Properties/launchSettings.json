@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.DocIODemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

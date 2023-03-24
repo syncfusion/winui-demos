@@ -1,0 +1,55 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.DemosCommon.WinUI">
+    
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{StaticResource SolidBackgroundFillColorTertiary}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{StaticResource SystemAccentColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{StaticResource TextOnAccentFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{StaticResource TextFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{StaticResource TextFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{StaticResource SystemFillColorSolidNeutralBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{StaticResource ControlStrokeColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{StaticResource SystemFillColorSolidAttentionBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{StaticResource SystemFillColorSolidAttentionBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemAccentColorDark1}"/>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{StaticResource SolidBackgroundFillColorTertiary}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{StaticResource SystemAccentColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{StaticResource TextOnAccentFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{StaticResource TextFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{StaticResource TextFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{StaticResource SystemFillColorSolidNeutralBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{StaticResource ControlStrokeColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{StaticResource ControlAltFillColorQuarternary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{StaticResource ControlAltFillColorQuarternary}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemAccentColorLight2}"/>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="HighContrast">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{ThemeResource SystemColorHighlightColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>
