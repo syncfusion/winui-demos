@@ -1,0 +1,1 @@
+C:\Samples_21.2.3\WinUI\samplebrowser\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\AppPackages\Syncfusion.SampleBrowser.WinUI_Net70 (Package)_1.0.0.0_x86_Test\Syncfusion.SampleBrowser.WinUI_Net70 (Package)_1.0.0.0_x86.msix

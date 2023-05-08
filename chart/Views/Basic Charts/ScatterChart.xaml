@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.ScatterChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases scatter chart which displays the relationships between the two set of data. It represents each data point as circle with fixed dimension.">
+                <common:DemoLayout.DataContext>
+                    <local:ScatterChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart x:Name="Chart" Header="Faithful Eruptions" Height="420" >
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:NumericalAxis ShowMajorGridLines="False" Header="Eruption Duration(Min)" Interval="0.5" Maximum="5.5" Minimum="1.5"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Interval="10" Maximum="100" Minimum="40" Header="Waiting Time Between Eruptions(Min)"/>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:ScatterSeries PaletteBrushes="{StaticResource CustomBrushes}" EnableAnimation="True" ItemsSource="{Binding DataPoints}" PointHeight="9" PointWidth="9"
+                          XBindingPath="Eruptions" YBindingPath="WaitingTime" EnableTooltip="True" />
+                    </chart:SfCartesianChart>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Faithful Eruptions&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; 
+                             Header=&quot;Eruption Duration(Min)&quot;
+                             Interval=&quot;0.5&quot;
+                             Maximum=&quot;5.5&quot;
+                             Minimum=&quot;1.5&quot; /&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Interval=&quot;10&quot;
+                             Maximum=&quot;100&quot;
+                             Minimum=&quot;40&quot;
+                             Header=&quot;Waiting Time Between Eruptions(Min)&quot; /&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:ScatterSeries XBindingPath=&quot;Eruptions&quot; 
+                         YBindingPath=&quot;WaitingTime&quot; 
+                         ItemsSource=&quot;{Binding DataPoints}&quot; 
+                         PointHeight=&quot;9&quot; 
+                         PointWidth=&quot;9&quot;
+                         PaletteBrushes=&quot;{StaticResource CustomBrushes}&quot;
+                         EnableTooltip=&quot;True&quot;
+                         EnableAnimation=&quot;True&quot;/&gt;
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

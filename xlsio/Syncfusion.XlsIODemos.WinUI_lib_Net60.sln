@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.XlsIODemos.WinUI_lib_Net60", "Syncfusion.XlsIODemos.WinUI_lib_Net60.csproj", "{C10EDAE7-05CB-4AAA-AFB2-B88803DB5D47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C10EDAE7-05CB-4AAA-AFB2-B88803DB5D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10EDAE7-05CB-4AAA-AFB2-B88803DB5D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10EDAE7-05CB-4AAA-AFB2-B88803DB5D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10EDAE7-05CB-4AAA-AFB2-B88803DB5D47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D89E9EF0-0676-49FF-8492-B2B6CA576340}
+	EndGlobalSection
+EndGlobal

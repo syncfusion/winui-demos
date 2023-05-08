@@ -1,0 +1,5 @@
+﻿<editors:SfDatePicker
+	MinItemWidth="$(MinItemWidth)"
+	MaxItemWidth="$(MaxItemWidth)"
+	ItemWidth="$(ItemWidth)"
+	ItemHeight="$(ItemHeight)"/>

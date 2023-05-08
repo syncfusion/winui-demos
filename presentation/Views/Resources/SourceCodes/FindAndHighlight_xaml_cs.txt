@@ -1,0 +1,33 @@
+﻿//Gets the input PowerPoint Presentation file.
+using Stream fileStream = GetPowerPointStream("Input Template.pptx");
+//Opens an existing PowerPoint Presentation file.
+using IPresentation presentation = Syncfusion.Presentation.Presentation.Open(fileStream);
+//Highlight only the first occurrence of the text
+if (HighlightFirst)
+{
+    //Finds the first occurrence of a particular text
+    ITextSelection textSelection = presentation.Find(HighlightText, MatchCase, MatchWholeWord);
+    //Gets the found text containing text parts
+    foreach (ITextPart textPart in textSelection.GetTextParts())
+    {
+        //Sets highlight color
+        textPart.Font.HighlightColor = ColorObject.Yellow;
+    }
+}
+else
+{
+     //Finds all the occurrences of a particular text
+     ITextSelection[] textSelections = presentation.FindAll(HighlightText, MatchCase, MatchWholeWord);
+     foreach (ITextSelection textSelection in textSelections)
+     {
+         //Gets the found text containing text parts
+         foreach (ITextPart textPart in textSelection.GetTextParts())
+         {
+            //Sets highlight color
+            textPart.Font.HighlightColor = ColorObject.Yellow;
+         }
+     }
+}			
+using MemoryStream ms = new();
+//Saves the presentation to the memory stream.
+presentation.Save(ms);

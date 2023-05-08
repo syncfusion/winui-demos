@@ -1,0 +1,23 @@
+﻿//Get template PDF file stream from assembly.
+Stream firstDocumentStream = GetPdfStream("FirstDocument.pdf");
+
+//Get template PDF file stream from assembly.
+Stream secondDocumentStream = GetPdfStream("SecondDocument.pdf");
+
+//Load the PDF document from stream.
+PdfLoadedDocument loadedDocument = new PdfLoadedDocument(firstDocumentStream);
+
+//Load and merge the pdf documents.
+PdfDocument.Merge(loadedDocument, new PdfLoadedDocument(secondDocumentStream));
+
+//Creating the stream object.
+using (MemoryStream stream = new MemoryStream())
+{
+    //Save and close the document.
+    loadedDocument.Save(stream);
+    loadedDocument.Close();
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save("MergePDF.pdf", stream);
+}
