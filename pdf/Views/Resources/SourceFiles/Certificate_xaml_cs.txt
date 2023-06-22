@@ -1,0 +1,56 @@
+//Create a new PDF document.
+PdfDocument document = new PdfDocument();
+//Set PDF landscape page orientiation. 
+document.PageSettings.Orientation = PdfPageOrientation.Landscape;
+//Set page margins. 
+document.PageSettings.Margins.All = 0;
+//Add page to the PDF document. 
+PdfPage page = document.Pages.Add();
+//Get the page size to draw the contents to PDF page. 
+SizeF pageSize = page.GetClientSize();
+
+//Get the image file stream from assembly.
+Stream imageStream = GetImageStream("certificate.jpg");
+//Load the PDF document from stream.
+PdfBitmap bitmapImage = new PdfBitmap(imageStream);
+//Draw the PDF bitmap image to PDF page with provided size. 
+page.Graphics.DrawImage(bitmapImage, new RectangleF(0, 0, pageSize.Width, pageSize.Height));
+
+//Create font with different size. 
+PdfFont nameFont = new PdfStandardFont(PdfFontFamily.Helvetica, 22);
+PdfFont controlFont = new PdfStandardFont(PdfFontFamily.Helvetica, 19);
+PdfFont dateFont = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
+PdfBrush textBrush = new PdfSolidBrush(new PdfColor(20, 58, 86));
+
+//Find the X position based on text and font size. 
+float x = calculateXPosition(name.Text, nameFont, pageSize.Width);
+//Draw the string to specified location. 
+page.Graphics.DrawString(name.Text, nameFont, textBrush, new RectangleF(x, 253, 0, 0));
+
+//Find the X position based on text and font size. 
+x = calculateXPosition(courseName.Text, controlFont, pageSize.Width);
+//Draw the string to specified location. 
+page.Graphics.DrawString(courseName.Text, controlFont, textBrush, new RectangleF(x, 340, 0, 0));
+
+//Get date value from date picker field. 
+var dateTimeOffset = date.Date;
+DateTime time = dateTimeOffset.Value.DateTime;
+//Get the formatted Date to add in PDF page. 
+string formatedDate = "on " + time.ToString("MMMM d, yyyy");
+
+//Find the X position based on text and font size. 
+x = calculateXPosition(formatedDate, dateFont, pageSize.Width);
+//Draw the string to specified location. 
+page.Graphics.DrawString(formatedDate, dateFont, textBrush, new RectangleF(x, 385, 0, 0));
+
+//Creating the stream object.
+using (MemoryStream stream = new MemoryStream())
+{
+    //Save and close the document.
+    document.Save(stream);
+    document.Close(true);
+
+    stream.Position = 0;
+    //Save the output stream as a file using file picker.
+    PdfUtil.Save("Certificate.pdf", stream);
+}

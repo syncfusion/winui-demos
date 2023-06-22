@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.StackingColumnChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:StackedChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Line" x:Name="axisStyle">
+                    <Setter Property="StrokeThickness" Value="0"/>
+                    <Setter Property="Stroke" Value="Transparent"/>
+                </Style>
+                <Style TargetType="Line" x:Name="majorAxisStyle">
+                    <Setter Property="StrokeThickness" Value="10"/>
+                    <Setter Property="Stroke" Value="Transparent"/>
+                </Style>
+                
+                <DataTemplate x:Key="headerTemplate">
+                    <TextBlock Text="Sales" Padding="0,0,0,10"/>
+                </DataTemplate>
+            </ResourceDictionary>
+        </Grid.Resources>
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This stacked column chart demonstrates the mobile game market by country from 2013 to 2017.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart 
+                        x:Name="Chart"
+                        Header="Mobile Game Market by Country"
+                        Height="420"
+                        HorizontalAlignment="Center">
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False" MajorTickStyle="{StaticResource axisStyle}"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis  Minimum="0" Interval="100" Maximum="500" AxisLineStyle="{StaticResource axisStyle}" MajorTickStyle="{StaticResource axisStyle}"
+                                                    HeaderTemplate="{StaticResource headerTemplate}">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="0'B" FontSize="12"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend IconWidth="13" IconHeight="13" Padding="0,0,65,0"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:StackedColumnSeries EnableAnimation="True" ItemsSource="{Binding StackedColumndData}" Label="UK"
+                                                  ShowDataLabels="True" XBindingPath="Year" YBindingPath="UK" LegendIcon="Circle"
+                                                   Fill="{ThemeResource SeriesBrush5}">
+                            <chart:StackedColumnSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings Position="Inner"/>
+                            </chart:StackedColumnSeries.DataLabelSettings>
+                        </chart:StackedColumnSeries>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  ItemsSource="{Binding StackedColumndData}" Label="Germany"
+                                                  ShowDataLabels="True" XBindingPath="Year" YBindingPath="Germany" LegendIcon="Circle"
+                                                   Fill="{ThemeResource SeriesBrush4}">
+                            <chart:StackedColumnSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings Position="Inner" />
+                            </chart:StackedColumnSeries.DataLabelSettings>
+                        </chart:StackedColumnSeries>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  ItemsSource="{Binding StackedColumndData}" Label="France"
+                                                  ShowDataLabels="True" XBindingPath="Year" YBindingPath="France" LegendIcon="Circle" 
+                                                   Fill="{ThemeResource SeriesBrush6}">
+                            <chart:StackedColumnSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings Position="Inner"  />
+                            </chart:StackedColumnSeries.DataLabelSettings>
+                        </chart:StackedColumnSeries>
+
+                        <chart:StackedColumnSeries EnableAnimation="True" ItemsSource="{Binding StackedColumndData}" Label="Italy"
+                                                  ShowDataLabels="True" XBindingPath="Year" YBindingPath="Italy" LegendIcon="Circle" 
+                                                   Fill="{ThemeResource SeriesBrush7}">
+                            <chart:StackedColumnSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings Position="Inner" Margin="0,0,0,3" />
+                            </chart:StackedColumnSeries.DataLabelSettings>
+                        </chart:StackedColumnSeries>
+
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Mobile Game Market by Country&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; ShowMajorGridLines=&quot;False&quot; 
+                        MajorTickStyle=&quot;{StaticResource axisStyle}&quot;&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+  
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Maximum=&quot;500&quot; Minimum=&quot;0&quot; Interval=&quot;100&quot; 
+                   AxisLineStyle=&quot;{StaticResource axisStyle}&quot; MajorTickStyle=&quot;{StaticResource axisStyle}&quot;
+                   HeaderTemplate=&quot;{StaticResource headerTemplate}&quot;&gt;
+        &lt;chart:NumericalAxis.LabelStyle&gt;
+            &lt;chart:LabelStyle LabelFormat=&quot;0'B&quot; FontSize=&quot;12&quot;/&gt;
+        &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;chart:NumericalAxis/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend IconWidth=&quot;13&quot; IconHeight=&quot;13&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot; ItemsSource=&quot;{Binding StackedColumndData}&quot;
+                   XBindingPath=&quot;Year&quot; YBindingPath=&quot;UK&quot; Label=&quot;UK&quot;
+                   ShowDataLabels=&quot;True&quot; LegendIcon=&quot;Circle&quot; Fill=&quot;{ThemeResource SeriesBrush5}&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
+                        
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot; ItemsSource=&quot;{Binding StackedColumndData}&quot;
+                   XBindingPath=&quot;Year&quot; YBindingPath=&quot;Germany&quot; Label=&quot;Germany&quot;
+                   ShowDataLabels=&quot;True&quot; LegendIcon=&quot;Circle&quot; Fill=&quot;{ThemeResource SeriesBrush4}&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
+                        
+    &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot; ItemsSource=&quot;{Binding StackedColumndData}&quot;
+                   XBindingPath=&quot;Year&quot; YBindingPath=&quot;France&quot; Label=&quot;France&quot;
+                   ShowDataLabels=&quot;True&quot; LegendIcon=&quot;Circle&quot;  Fill=&quot;{ThemeResource SeriesBrush6}&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;
+                        
+   &lt;chart:StackedColumnSeries EnableAnimation=&quot;True&quot; ItemsSource=&quot;{Binding StackedColumndData}&quot;
+                   XBindingPath=&quot;Year&quot; YBindingPath=&quot;Italy&quot; Label=&quot;Italy&quot;
+                   ShowDataLabels=&quot;True&quot; LegendIcon=&quot;Circle&quot; Fill=&quot;{ThemeResource SeriesBrush7}&quot;&gt;
+        &lt;chart:StackedColumnSeries.DataLabelSettings&gt;
+             &lt;chart:CartesianDataLabelSettings Position=&quot;Inner&quot; Margin=&quot;0,0,0,3&quot;/&gt;
+        &lt;/chart:StackedColumnSeries.DataLabelSettings&gt;
+    &lt;/chart:StackedColumnSeries&gt;                      
+                        
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

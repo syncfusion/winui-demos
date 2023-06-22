@@ -1,0 +1,31 @@
+﻿//Gets the input PowerPoint Presentation file.
+using Stream fileStream = GetPowerPointStream(HelloWorld.pptx);
+//Opens an existing PowerPoint Presentation file.
+using IPresentation presentation = Syncfusion.Presentation.Presentation.Open(fileStream);
+//Creates slides in PowerPoint Presentation file.
+//Retrieves the first slide of the presentation.
+ISlide slide1 = presentation.Slides[0];
+//Retrieves the first shape of the slide.
+IShape titleShape = slide1.Shapes[0] as IShape;
+
+//Retrieves the text body of the shape.
+ITextBody textFrame1 = (slide1.Shapes[0] as IShape).TextBody;
+IParagraphs paragraphs1 = textFrame1.Paragraphs;
+//Adds a new paragraph.
+IParagraph paragraph = paragraphs1.Add();
+//Sets the horizontal alignment type for the paragraph.
+paragraph.HorizontalAlignment = HorizontalAlignmentType.Center;
+//Adds a text part.
+ITextPart textPart1 = paragraph.AddTextPart();
+//Adds text to the text part.
+textPart1.Text = "Essential Presentation";
+//Sets the font properties for the text part.
+textPart1.Font.CapsType = TextCapsType.All;
+textPart1.Font.FontName = "Adobe Garamond Pro";
+textPart1.Font.Bold = true;
+textPart1.Font.FontSize = 40;
+
+//Saves the presentation to the memory stream.
+using MemoryStream stream = new MemoryStream();
+presentation.Save(stream);
+        

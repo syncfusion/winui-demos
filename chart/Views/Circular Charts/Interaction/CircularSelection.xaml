@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.CircularSelection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.Resources>
+
+            <DataTemplate x:Key="dataLabelTemplate">
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding Item.Name}"  FontSize="13"
+                               Foreground="White"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock Text=":" Margin="3,0,3,0" FontSize="13"
+                               Foreground="White"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Value}"
+                               FontSize="13"
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample visualizes age distribution across various countries with the added functionality of selection support, which highlights specific segments upon tapping.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="Age Distribution by Country" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+
+                        <chart:SfCircularChart.DataContext>
+                            <local:InteractionViewModel x:Name="model"/>
+                        </chart:SfCircularChart.DataContext>
+
+                        <chart:SfCircularChart.Series>
+                            <chart:DoughnutSeries x:Name="selection" Stroke="White" StrokeWidth="2" Radius="0.9"  ShowDataLabels="True"
+                                ItemsSource="{Binding SelectionData}" XBindingPath="Name" YBindingPath="Value" PaletteBrushes="{StaticResource ChartCustomPalette}"> 
+
+                                <chart:DoughnutSeries.SelectionBehavior>
+                                    <chart:DataPointSelectionBehavior  x:Name="dataPointSelection" Type="SingleDeselect" SelectionChanging="dataPointSelection_SelectionChanging"/>
+                                </chart:DoughnutSeries.SelectionBehavior>
+
+                                <chart:DoughnutSeries.DataLabelSettings>
+                                    <chart:CircularDataLabelSettings Context="DataLabelItem" ContentTemplate="{StaticResource dataLabelTemplate}"/>
+                                </chart:DoughnutSeries.DataLabelSettings>
+                            </chart:DoughnutSeries>
+                        </chart:SfCircularChart.Series>
+                    </chart:SfCircularChart>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Age Distribution by Country&quot;&gt;
+
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding SelectionData}&quot;
+                          XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Value&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          Stroke=&quot;White&quot;
+                          StrokeWidth=&quot;2&quot;
+                          Radius=&quot;0.9&quot;
+                          PaletteBrushes=&quot;{StaticResource ChartCustomPalette}&quot;&gt;
+    
+    &lt;chart:DoughnutSeries.SelectionBehavior&gt;
+          &lt;chart:DataPointSelectionBehavior x:Name=&quot;dataPointSelection&quot; Type=&quot;SingleDeselect&quot; 
+                           SelectionChanging=&quot;dataPointSelection_SelectionChanged&quot;/&gt;
+    &lt;/chart:DoughnutSeries.SelectionBehavior&gt;
+    
+    &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+          &lt;chart:CircularDataLabelSettings Context=&quot;DataLabelItem&quot; 
+                ContentTemplate=&quot;{StaticResource dataLabelTemplate}&quot;/&gt;
+    &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+    &lt;/chart:DoughnutSeries&gt;
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

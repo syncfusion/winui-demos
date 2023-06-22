@@ -1,0 +1,22 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Open the existing Excel document with data.
+  Stream input = GetExcelStream("CreateMacro.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic);
+
+  //Create macro.
+  IVbaProject vbaProject = workbook.VbaProject;
+  IVbaModule vbaModule = vbaProject.Modules.Add("Module1", VbaModuleType.StdModule);
+
+  //Get the Vba code as string through GetVbaCode private method.
+  vbaModule.Code = GetVbaCode();
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream, ExcelSaveType.SaveAsMacroTemplate);
+}

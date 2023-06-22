@@ -1,0 +1,17 @@
+WordDocument document = null;
+if (rdEncrypt.IsChecked.Value)
+{
+    //Loads an existing Word document.
+    document = new WordDocument(GetWordStream("Adventure.docx"), FormatType.Docx);
+    //Encrypts the document by giving password.
+    document.EncryptDocument("syncfusion");
+}
+else
+{
+    //Loads an encrypted Word document.
+    document = new WordDocument(GetWordStream("Decrypt.docx"), FormatType.Docx, "syncfusion");
+}
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);
+document.Close();

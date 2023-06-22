@@ -1,0 +1,6 @@
+﻿public MultiSelection()
+{
+   this.InitializeComponent();
+   this.customMultipleSelectionBox.SelectedItems.Add(comboBoxViewModel.VegetablesList[1]);
+   this.customMultipleSelectionBox.SelectedItems.Add(comboBoxViewModel.VegetablesList[2]);
+}

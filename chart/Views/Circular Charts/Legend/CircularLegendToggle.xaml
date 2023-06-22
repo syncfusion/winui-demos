@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.CircularLegendToggle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample represents the percentage of website usage by internet browser with toggle support that enables or disables the segments by tapping the legend.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+                        
+                        <chart:SfCircularChart.DataContext>
+                            <local:InteractionViewModel />
+                        </chart:SfCircularChart.DataContext>
+                        
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend IconWidth="14" IconHeight="14" ToggleSeriesVisibility="True" Placement="Right" ItemMargin="2">
+                                <chart:ChartLegend.Header>
+                                    <TextBlock Text="Website Usage by Browser" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" />
+                                </chart:ChartLegend.Header>
+                            </chart:ChartLegend>
+                        </chart:SfCircularChart.Legend>
+
+                        <chart:DoughnutSeries x:Name="DouughnutSeries" LegendIcon="Circle" 
+                          ShowDataLabels="True" PaletteBrushes="{ThemeResource ChartPalette}" StrokeWidth="1" Stroke="White"
+                        ItemsSource="{Binding LegendToggleData}" XBindingPath="Name" YBindingPath="Value" Radius="0.8" >
+
+                            <chart:DoughnutSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings Position="OutsideExtended" Format="0.0'%" ShowConnectorLine="True"
+                                                            Background="Transparent" Foreground="{ThemeResource SyncfusionBodyTextForeground}"/>
+                            </chart:DoughnutSeries.DataLabelSettings>
+                        </chart:DoughnutSeries>
+                        
+                    </chart:SfCircularChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot;&gt;
+    &lt;chart:SfCircularChart.Legend&gt;
+      &lt;chart:ChartLegend IconWidth=&quot;14&quot; ToggleSeriesVisibility=&quot;True&quot; 
+                    IconHeight=&quot;14&quot; ItemMargin=&quot;2&quot; Placement=&quot;Right&quot;&gt;
+      &lt;chart:ChartLegend.Header&gt;
+        &lt;TextBlock Text=&quot;Website Usage by Browser&quot; HorizontalAlignment=&quot;Center&quot;
+                     FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt; 
+      &lt;/chart:ChartLegend.Header&gt;
+      &lt;/chart:ChartLegend&gt;
+    &lt;/chart:SfCircularChart.Legend&gt;
+
+    &lt;chart:DoughnutSeries ItemsSource=&quot;{Binding LegendToggleData}&quot;
+                          XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Value&quot;
+                          ShowDataLabels=&quot;True&quot;
+                          Stroke=&quot;White&quot;
+                          StrokeWidth=&quot;1&quot;
+                          Radius=&quot;0.8&quot;
+                          LegendIcon=&quot;Circle&quot;
+                          PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+    
+     &lt;chart:DoughnutSeries.DataLabelSettings&gt;
+          &lt;chart:CircularDataLabelSettings Format=&quot;0'%&quot; ShowConnectorLine=&quot;True&quot;
+                      Position=&quot;OutsideExtended&quot; Background=&quot;Transparent&quot; 
+                      Foreground=&quot;{ThemeResource SyncfusionBodyTextForeground}&quot;/&gt;
+    &lt;/chart:DoughnutSeries.DataLabelSettings&gt;
+    &lt;/chart:DoughnutSeries&gt;
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

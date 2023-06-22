@@ -1,0 +1,27 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //A new workbook is created.[Equivalent to creating a new workbook in MS Excel]
+  IWorkbook workbook = application.Workbooks.Create(1);
+  //The first worksheet object in the worksheets collection is accessed.
+  IWorksheet sheet = workbook.Worksheets[0];
+
+  sheet.Range["A2"].Text = "Array formulas";
+  sheet.Range["B2:E2"].FormulaArray = "{10,20,30,40}";
+  sheet.Names.Add("ArrayRange", sheet.Range["B2:E2"]);
+  sheet.Range["B3:E3"].FormulaArray = "ArrayRange+100";  
+
+  sheet.Range["A7"].Text = "ABS(ABS(-B3))";
+  sheet.Range["B7"].Formula = "ABS(ABS(-B3))";
+  
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);                
+}
+
+
+                    

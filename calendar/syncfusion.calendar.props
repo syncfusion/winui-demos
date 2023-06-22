@@ -1,0 +1,173 @@
+<Project>
+    <ItemGroup>
+		<Compile Include="..\Calendar\Converter\DateFormatToDisplayFormatConverter.cs">
+			<Link>Calendar\Converter\DateFormatToDisplayFormatConverter.cs</Link>
+		</Compile>
+		<Compile Include="..\Calendar\ViewModel\CalendarViewModel.cs">
+			<Link>Calendar\ViewModel\CalendarViewModel.cs</Link>
+		</Compile>
+		<Compile Include="..\Calendar\Views\CalendarDatePicker\CalendarDatePickerView.xaml.cs">
+			<Link>Calendar\Views\CalendarDatePicker\CalendarDatePickerView.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\CalendarDatePicker\CalendarDatePickerView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\CalendarDatePicker\Customization.xaml.cs">
+			<Link>Calendar\Views\CalendarDatePicker\Customization.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\CalendarDatePicker\Customization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml.cs">
+			<Link>Calendar\Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\CalendarDateRangePicker\Customization.xaml.cs">
+			<Link>Calendar\Views\CalendarDateRangePicker\Customization.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\CalendarDateRangePicker\Customization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\Calendar\CalendarView.xaml.cs">
+			<Link>Calendar\Views\Calendar\CalendarView.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\Calendar\CalendarView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\Calendar\StylesAndTemplates.xaml.cs">
+			<Link>Calendar\Views\Calendar\StylesAndTemplates.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\Calendar\StylesAndTemplates.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\Calendar\Customization.xaml.cs">
+			<Link>Calendar\Views\Calendar\Customization.xaml.cs</Link>
+			<DependentUpon>..\Calendar\Views\Calendar\Customization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="..\Calendar\Views\Calendar\Resources\CustomCalendarItemTemplateSelector.cs">
+			<Link>Calendar\Views\Calendar\Resources\CustomCalendarItemTemplateSelector.cs</Link>
+		</Compile>
+		<Compile Include="..\Calendar\SamplesConfiguration.cs">
+			<Link>Calendar\SamplesConfiguration.cs</Link>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_cs.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\BlackoutDates_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\CalendarTypes_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\CalendarTypes_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\Formatting_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\Formatting_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\Navigation_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\Navigation_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\SimpleCalendarDatePicker_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\SimpleCalendarDatePicker_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt">
+			<Link>Calendar\Views\CalendarDatePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_cs.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\BlackoutDates_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\CalendarTypes_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\CalendarTypes_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Formatting_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Formatting_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\RangeSelection_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\RangeSelection_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Navigation_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Navigation_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Preset_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\Preset_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\DateRangePicker_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\DateRangePicker_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt">
+			<Link>Calendar\Views\CalendarDateRangePicker\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\BlackoutDates_cs.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\BlackoutDates_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\BlackoutDates_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\BlackoutDates_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\CalendarTypes_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\CalendarTypes_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\DateNavigation_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\DateNavigation_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\WeekNumber_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\WeekNumber_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\Formatting_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\Formatting_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_cs.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_cs.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\ItemTemplateSelector_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\SimpleCalendar_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\SimpleCalendar_xaml.txt</Link>
+		</Content>
+		<Content Include="..\Calendar\Views\Calendar\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt">
+			<Link>Calendar\Views\Calendar\Resources\SourceCodes\ThemeKeyCustomization_xaml.txt</Link>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="..\Calendar\Views\CalendarDatePicker\CalendarDatePickerView.xaml">
+			<Link>Calendar\Views\CalendarDatePicker\CalendarDatePickerView.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Calendar\Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml">
+			<Link>Calendar\Views\CalendarDateRangePicker\CalendarDateRangePickerView.xaml</Link>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="..\Calendar\Views\CalendarDateRangePicker\Customization.xaml">
+			<Link>Calendar\Views\CalendarDateRangePicker\Customization.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Calendar\Views\CalendarDatePicker\Customization.xaml">
+			<Link>Calendar\Views\CalendarDatePicker\Customization.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Calendar\Views\Calendar\CalendarView.xaml">
+			<Link>Calendar\Views\Calendar\CalendarView.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Calendar\Views\Calendar\StylesAndTemplates.xaml">
+			<Link>Calendar\Views\Calendar\StylesAndTemplates.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="..\Calendar\Views\Calendar\Customization.xaml">
+			<Link>Calendar\Views\Calendar\Customization.xaml</Link>
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+</Project>

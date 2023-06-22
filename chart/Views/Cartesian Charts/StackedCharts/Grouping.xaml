@@ -1,0 +1,135 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.Grouping"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:StackedChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample demonstrates the comparison between actual data and forecasted values across different categories using a cluster-stacked column.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Height="420"
+                        HorizontalAlignment="Center">
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis ShowMajorGridLines="False" ShowMinorGridLines="False"
+                                Header="Dollar (USD)" Interval="30">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="0'B"  FontSize="13"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend Placement="Right" ItemMargin="1">
+                                <chart:ChartLegend.Header>
+                                    <TextBlock Text="Actual Vs Forecast" HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                                </chart:ChartLegend.Header>
+                            </chart:ChartLegend>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  
+                                   ItemsSource="{Binding CostData1}"  Label="Forecast Labor Cost" EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Value"  Fill="#444583" GroupName="Group1" SegmentSpacing="0.2"/>
+
+                        <chart:StackedColumnSeries EnableAnimation="True" 
+                                   ItemsSource="{Binding CostData}"  Label="Forecast Material Cost" EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Value"    Fill="#8889C7" GroupName="Group1" SegmentSpacing="0.2"/>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  
+                                   ItemsSource="{Binding CostData2}"  Label="Forecast Misc Cost" EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Value"  Fill="#CCCDFB" GroupName="Group1" SegmentSpacing="0.2"/>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  
+                                   ItemsSource="{Binding CostData1}"  Label="Actual Labor Cost"  EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Size" Fill="#D65F45" GroupName="Group2" SegmentSpacing="0.2"/>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  
+                                   ItemsSource="{Binding CostData}"  Label="Actual Material Cost" EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Size" Fill="#DE896E"   GroupName="Group2" SegmentSpacing="0.2"/>
+
+                        <chart:StackedColumnSeries EnableAnimation="True"  
+                                   ItemsSource="{Binding CostData2}"  Label="Actual Misc Cost" EnableTooltip="True"            
+                                   XBindingPath="Name" YBindingPath="Size" Fill="#EFC4B7"  GroupName="Group2" SegmentSpacing="0.2"/>
+
+
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis  Header=&quot;Dollar (USD)&quot; ShowMajorGridLines=&quot;False&quot; 
+                        ShowMinorGridLines=&quot;False&quot; Interval=&quot;30&quot;&gt;
+                &lt;chart:NumericalAxis.LabelStyle&gt; 
+                     &lt;chart:LabelStyle LabelFormat=&quot;0'B&quot; FontSize=&quot;13&quot;&gt;
+                &lt;/chart:NumericalAxis.LabelStyle&gt;         
+        &lt;/chart:NumericalAxis&gt;     
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend Placement=&quot;Right&quot; ItemMargin=&quot;1&quot;/&gt;
+              &lt;chart:ChartLegend.Header&gt;
+                  &lt;TextBlock Text=&quot;Actual Vs Forecast&quot; HorizontalAlignment=&quot;Center&quot; 
+                        FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+        &lt;/chart:ChartLegend.Header&gt; &lt;chart:ChartLegend&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+    &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData1}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Value&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group1&quot;
+                          Label=&quot;Forecast Labor Cost&quot; EnableTooltip=&quot;True&quot; 
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#444583&quot;/&gt;
+                           
+     &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Value&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group1&quot;
+                          Label=&quot;Forecast Material Cost&quot; EnableTooltip=&quot;True&quot;
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#8889C7&quot;/&gt;                         
+       
+    &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData2}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Value&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group1&quot;
+                          Label=&quot;Forecast Misc Cost&quot; EnableTooltip=&quot;True&quot;
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#CCCDFB&quot;/&gt;      
+                        
+    &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData1}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Size&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group2&quot;
+                          Label=&quot;Actual Labor Cost&quot; EnableTooltip=&quot;True&quot;
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#D65F45&quot;/&gt;
+                        
+    &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Size&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group2&quot;
+                          Label=&quot;Actual Material Cost&quot; EnableTooltip=&quot;True&quot;
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#DE896E&quot;/&gt;             
+                        
+    &lt;chart:StackedColumnSeries ItemsSource=&quot;{Binding CostData2}&quot; XBindingPath=&quot;Name&quot;
+                          YBindingPath=&quot;Size&quot; EnableAnimation=&quot;True&quot; GroupName=&quot;Group2&quot;
+                          Label=&quot;Actual Misc Cost&quot; EnableTooltip=&quot;True&quot;
+                          SegmentSpacing=&quot;0.2&quot; Fill=&quot;#EFC4B7&quot;/&gt;                     
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

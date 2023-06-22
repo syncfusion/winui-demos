@@ -1,0 +1,305 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<AssemblyName>Syncfusion.DataGridDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.DataGridDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+		<None Remove="syncfusion.datagriddemos.winui_TemporaryKey.pfx"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Helpers\Selector.cs"/>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Helpers\Comparer.cs"/>
+		<Compile Include="Helpers\Converters.cs"/>
+		<Compile Include="Model\Employee.cs"/>
+		<Compile Include="Model\OrderInfo.cs"/>
+		<Compile Include="Model\Person.cs"/>
+		<Compile Include="Model\Sales.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<compile Include="ViewModel\DataBindingViewModel.cs"/>
+		<Compile Include="ViewModel\EmployeeViewModel.cs"/>
+		<Compile Include="ViewModel\OrderInfoViewModel.cs"/>
+		<Compile Include="ViewModel\PersonViewModel.cs"/>
+		<Compile Include="ViewModel\SalesViewModel.cs"/>
+		<Compile Include="Views\AdvanceFilter.xaml.cs">
+			<DependentUpon>AdvanceFilter.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ClipboardOperation.xaml.cs">
+			<DependentUpon>ClipboardOperation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ColumnSizer.xaml.cs">
+			<DependentUpon>ColumnSizer.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ConditionalStyling.xaml.cs">
+			<DependentUpon>ConditionalStyling.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ContextFlyout.xaml.cs">
+			<DependentUpon>ContextFlyout.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\CustomGrouping.xaml.cs">
+			<DependentUpon>CustomGrouping.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\CustomValidation.xaml.cs">
+			<DependentUpon>CustomValidation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\DataBinding.xaml.cs">
+			<DependentUpon>DataBinding.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\DataValidation.xaml.cs">
+			<DependentUpon>DataValidation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\DynamicObjectsBinding.xaml.cs">
+			<DependentUpon>DynamicObjectsBinding.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Editing.xaml.cs">
+			<DependentUpon>Editing.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Filtering.xaml.cs">
+			<DependentUpon>Filtering.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FilterRow.xaml.cs">
+			<DependentUpon>FilterRow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FreezePanes.xaml.cs">
+			<DependentUpon>FreezePanes.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\GettingStarted.xaml.cs">
+			<DependentUpon>GettingStarted.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Grouping.xaml.cs">
+			<DependentUpon>Grouping.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ListBinding.xaml.cs">
+			<DependentUpon>ListBinding.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\MasterDetailsView.xaml.cs">
+			<DependentUpon>MasterDetailsView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ObservableCollectionBinding.xaml.cs">
+			<DependentUpon>ObservableCollectionBinding.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Printing.xaml.cs">
+			<DependentUpon>Printing.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\RowDragDrop.xaml.cs">
+			<DependentUpon>RowDragDrop.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ExcelExporting.xaml.cs">
+			<DependentUpon>ExcelExporting.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Selection.xaml.cs">
+			<DependentUpon>Selection.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Serialization.xaml.cs">
+			<DependentUpon>Serialization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Sorting.xaml.cs">
+			<DependentUpon>Sorting.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\StackedHeader.xaml.cs">
+			<DependentUpon>StackedHeader.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Styling.xaml.cs">
+			<DependentUpon>Styling.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Summaries.xaml.cs">
+			<DependentUpon>Summaries.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\UnboundRows.xaml.cs">
+			<DependentUpon>UnboundRows.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml"/>
+		<Page Include="Views\AdvanceFilter.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\ClipboardOperation.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ColumnSizer.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ConditionalStyling.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ContextFlyout.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\CustomGrouping.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\CustomValidation.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\DataBinding.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\DataValidation.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\DynamicObjectsBinding.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Editing.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Filtering.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\FilterRow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\FreezePanes.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\GettingStarted.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Grouping.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\ListBinding.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\MasterDetailsView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\ObservableCollectionBinding.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Printing.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\RowDragDrop.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ExcelExporting.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Selection.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Serialization.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Sorting.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\StackedHeader.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Styling.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Summaries.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\UnboundRows.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Grid.WinUI" Version="22.1.34"/>
+		<PackageReference Include="Syncfusion.GridCommon.WinUI" Version="22.1.34"/>
+		<PackageReference Include="Syncfusion.Calendar.WinUI" Version="22.1.34"/>
+		<PackageReference Include="Syncfusion.Editors.WinUI" Version="22.1.34"/>
+		<PackageReference Include="Syncfusion.GridExport.WinUI" Version="22.1.34"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net50.csproj"/>
+	</ItemGroup>
+</Project>

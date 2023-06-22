@@ -1,0 +1,13 @@
+﻿<editors:SfDropDownColorPicker/>
+
+<!-- Custom Template -->
+<editors:SfDropDownColorPicker>
+    <editors:SfDropDownColorPicker.ContentTemplate>
+        <DataTemplate>
+            <StackPanel>
+                <Path Data="{StaticResource paint}"/>
+                <Rectangle Fill="{Binding}"/>
+            </StackPanel>
+        </DataTemplate>
+    </editors:SfDropDownColorPicker.ContentTemplate>
+</editors:SfDropDownColorPicker>

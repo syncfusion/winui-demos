@@ -1,0 +1,8 @@
+﻿<syncfusion:SfRating 
+        Value="$(Value)"
+        ItemsCount="$(Count)" 
+        ItemSize="$(Size)"  
+        IsReadOnly="$(DefaultCheck)"
+        EnableToolTip="$(ToolTip)">
+</syncfusion:SfRating>
+            

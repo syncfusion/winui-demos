@@ -1,0 +1,32 @@
+//Creates a new Word document instance.
+using WordDocument document = new();
+//Opens an existing Word document.
+document.Open(GetWordStream("TemplateLetter.docx"), FormatType.Doc);
+
+//Inserts page break at last paragraph, to populate each employee details in new page.
+Break pageBreak = new(document, BreakType.PageBreak);
+document.LastParagraph.ChildEntities.Insert(0, pageBreak);
+
+MailMergeDataSet dataSet = GetMailMergeDataSet(basePath);
+List<DictionaryEntry> commands = new();
+//DictionaryEntry contain "Source table" (KEY) and "Command" (VALUE)
+DictionaryEntry entry = new("Employees", string.Empty);
+commands.Add(entry);
+
+//Retrives customer details.
+entry = new DictionaryEntry("Customers", "EmployeeID = %Employees.EmployeeID%");
+commands.Add(entry);
+
+//Retrives order details.
+entry = new DictionaryEntry("Orders", "CustomerID = %Customers.CustomerID%");
+commands.Add(entry);
+
+//Executes nested Mail merge using explicit relational data.
+document.MailMerge.ExecuteNestedGroup(dataSet, commands);
+
+//Clears the items (Page break) in last paragraph to remove empty page after execution.
+document.LastParagraph.ChildEntities.Clear();
+
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);

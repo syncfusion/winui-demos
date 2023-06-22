@@ -1,0 +1,7 @@
+﻿private void shapePointer_ValueChanging(object sender, ValueChangingEventArgs e)
+{
+    if (e.NewValue < 50)
+    {
+        e.Cancel = true;
+    }
+}

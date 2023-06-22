@@ -1,0 +1,42 @@
+//Instantiate the spreadsheet creation engine.      
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  IWorkbook workbook = application.Workbooks.Create(1);
+  IWorksheet sheet1 = workbook.Worksheets[0];
+  sheet1.EnableSheetCalculations();               
+  sheet1.Range["A18:D18"].NumberFormat = "$#,###";
+
+  sheet1.Range[10, 1].Text = "Category";
+  sheet1.Range[10, 2].Text = "Expected cost";
+  sheet1.Range[10, 3].Text = "Actual Cost";
+  sheet1.Range[10, 4].Text = "Difference";
+  sheet1.Range[11, 1].Text = "Venue";
+  sheet1.Range[12, 1].Text = "Seating & Decor";
+  sheet1.Range[13, 1].Text = "Technical team";
+                
+  sheet1.Range["B11"].Number = 16250;
+  sheet1.Range["B12"].Number = 1600;
+  sheet1.Range["B13"].Number = 1000;
+   
+  sheet1.Range["C11"].Number = 17500;
+  sheet1.Range["C12"].Number = 1828;
+  sheet1.Range["C13"].Number = 800;
+  
+  sheet1.Range["D11"].Formula = "=IF(C11>B11,C11-B11,B11-C11)";
+  sheet1.Range["D12"].Formula = "=IF(C12>B12,C12-B12,B12-C12)";
+  sheet1.Range["D13"].Formula = "=IF(C13>B13,C13-B13,B13-C13)";
+ 
+  IChartShape chart = sheet1.Charts.Add();
+  chart.ChartType = ExcelChartType.Pie;
+  chart.DataRange = sheet1.Range["A11:B13"];
+  chart.IsSeriesInRows = false;
+  chart.ChartTitle = "Event Expenses";
+                                     
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);               
+}
