@@ -1,0 +1,22 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object.
+  IApplication application = excelEngine.Excel;
+
+  //Load the existing HTML document with table.
+  Stream input = GetStream("ImportHTMLTable.html");
+
+  //Create an Excel workbook with one worksheet.
+  IWorkbook workbook = application.Workbooks.Create(1);
+
+  //Access the first worksheet.
+  IWorksheet worksheet = workbook.Worksheets[0];
+
+  //Import HTML table into worksheet
+  worksheet.ImportHtmlTable(input, 1, 1);
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}

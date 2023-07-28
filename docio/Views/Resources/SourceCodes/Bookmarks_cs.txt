@@ -1,0 +1,31 @@
+//Creates a new Word document.
+using WordDocument document = new();
+//Adds one section and paragraph.
+document.EnsureMinimal();
+//Adds a new paragraph to the section.
+IWParagraph paragraph = document.LastParagraph;
+
+//Appends BookmarkStart.
+paragraph.AppendBookmarkStart("Bookmark");
+//Appends text.
+paragraph.AppendText("Bookmark Text");
+//Appends BookmarkEnd.
+paragraph.AppendBookmarkEnd("Bookmark");
+
+//Appends nested bookmarks.
+paragraph = document.LastSection.AddParagraph();
+paragraph.AppendBookmarkStart("Main");
+paragraph.AppendText(" Main data ");
+paragraph.AppendBookmarkStart("Nested");
+paragraph.AppendText(" Nested data ");
+paragraph.AppendBookmarkStart("NestedNested");
+paragraph.AppendText(" Nested Nested ");
+paragraph.AppendBookmarkEnd("NestedNested");
+paragraph.AppendText(" data Nested ");
+paragraph.AppendBookmarkEnd("Nested");
+paragraph.AppendText(" Data Main ");
+paragraph.AppendBookmarkEnd("Main");
+
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);

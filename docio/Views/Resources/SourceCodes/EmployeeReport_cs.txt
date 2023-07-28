@@ -1,0 +1,17 @@
+//Gets the input Word document.
+using Stream fileStream = GetWordStream("EmployeesReportDemo.docx");
+//Creates a new Word document instance.
+using WordDocument document = new();
+//Opens an existing Word document.
+document.Open(fileStream, FormatType.Doc);
+
+//Uses the mail merge events handler for image fields.
+document.MailMerge.MergeImageField += new MergeImageFieldEventHandler(MergeField_EmployeeImage);
+//Creates MailMergeDataTable.
+MailMergeDataTable mailMergeDataTable = GetMailMergeDataTableEmployee();
+//Executes Mail Merge with groups. 
+document.MailMerge.ExecuteGroup(mailMergeDataTable);
+
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);

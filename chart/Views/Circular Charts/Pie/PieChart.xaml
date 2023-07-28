@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.PieChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+
+    <Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This pie chart illustrates the sales percentage of each individual.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="Sales by a Salesperson" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+
+                        <chart:SfCircularChart.DataContext>
+                            <local:PieChartViewModel />
+                        </chart:SfCircularChart.DataContext>
+
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend IconHeight="15" IconWidth="15"/>
+                        </chart:SfCircularChart.Legend>
+
+                        <chart:SfCircularChart.Series>
+                        <chart:PieSeries x:Name="pieSeries" 
+                                EnableAnimation="True" ShowDataLabels="True" Stroke="White" StrokeWidth="2" 
+                                ItemsSource="{Binding PieSeriesData}" XBindingPath="Name" LegendIcon="Circle"
+                                YBindingPath="Value" PaletteBrushes="{ThemeResource ChartPalette}">
+                         <chart:PieSeries.DataLabelSettings>
+                                    <chart:CircularDataLabelSettings Format="0.0'%" Margin="2.5" Position="OutsideExtended" ShowConnectorLine="True"
+                                                                     Background="Transparent" Foreground="{ThemeResource SyncfusionBodyTextForeground}"/>
+                          </chart:PieSeries.DataLabelSettings>
+                         </chart:PieSeries>
+                        </chart:SfCircularChart.Series>
+                    </chart:SfCircularChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Sales by a Salesperson&quot;&gt;
+    &lt;chart:SfCircularChart.Legend&gt;
+        &lt;chart:ChartLegend IconWidth=&quot;15&quot; IconHeight=&quot;15&quot;/&gt;
+        &lt;/chart:SfCircularChart.Legend&gt;
+    
+         &lt;chart:PieSeries ItemsSource=&quot;{Binding PieSeriesData}&quot; 
+                          XBindingPath=&quot;Name&quot; 
+                          YBindingPath=&quot;Value&quot; 
+                          PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;
+                          EnableAnimation=&quot;True&quot; 
+                          ShowDataLabels=&quot;True&quot;
+                          Stroke=&quot;White&quot;
+                          StrokeWidth=&quot;2&quot;
+                          LegendIcon=&quot;Circle&quot;&gt;
+    
+            &lt;chart:PieSeries.DataLabelSettings&gt;
+                &lt;chart:CircularDataLabelSettings ShowConnectorLine=&quot;True&quot; Format=&quot;0.0'%&quot; 
+                                       Position=&quot;OutsideExtended&quot; Background=&quot;Transparent&quot; 
+                                       Foreground=&quot;{ThemeResource SyncfusionBodyTextForeground}&quot;/&gt;
+            &lt;/chart:PieSeries.DataLabelSettings&gt;
+        &lt;/chart:PieSeries&gt;
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

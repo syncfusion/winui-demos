@@ -1,0 +1,34 @@
+﻿//Gets the input Markdown document.
+using Stream fileStream = GetWordStream("MarkdownToWord.md");
+//Creates a new Word document instance.
+using WordDocument document = new();
+//Opens an existing Markdown document.
+document.Open(fileStream, FormatType.Markdown);
+using MemoryStream ms = new();
+//Saves as .docx format.
+if (worddocx.IsChecked == true)
+{
+    filename = "MarkdownToWord.docx";
+    //Saves the Word document to the memory stream.
+    document.Save(ms, FormatType.Docx);
+}
+//Saves as Html format.
+else if (wordhtml.IsChecked == true)
+{
+    filename = "MarkdownToWord.html";
+    //Saves the Word document to the memory stream.
+    document.Save(ms, FormatType.Html);
+}
+//Saves as .pdf format.
+else if (pdf.IsChecked == true)
+{
+    filename = "MarkdownToWord.pdf";
+    //Creates a new DocIORenderer instance.
+    using DocIORenderer renderer = new();
+    //Converts Word document into PDF.
+    using PdfDocument pdfDoc = renderer.ConvertToPDF(document);
+    //Saves the PDF document to the memory stream.
+    pdfDoc.Save(ms);
+}
+PdfDocument.ClearFontCache();
+ms.Position = 0;

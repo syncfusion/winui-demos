@@ -1,0 +1,51 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object.
+  IApplication application = excelEngine.Excel;
+
+  //A new workbook is created.[Equivalent to creating a new workbook in MS Excel]
+  application.EnableIncrementalFormula = true;
+  aplication.DefaultVersion = ExcelVersion.Xlsx;
+  IWorkbook workbook = application.Workbooks.Create(1);
+  IWorksheet worksheet = workbook.Worksheets[0];
+
+  CreateHeaderRow(worksheet);//Format header row
+  FillAttendanceDetails(worksheet);               
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);               
+}            
+//Used to fill the attendance details
+private void FillAttendanceDetails(IWorksheet worksheet)
+{
+  int rowIndex = 2;
+  foreach (EmployeeDetails empDetails in _employeeAttendanceList)
+  {
+    worksheet["A" + rowIndex].Text = empDetails.Name;
+    worksheet["B" + rowIndex].Text = empDetails.Supervisor;
+    for (int colIndex = 0; colIndex < empDetails.Attendances.Count; colIndex++)
+    {
+      worksheet[rowIndex, colIndex + 8].Text = empDetails.Attendances[colIndex];
+    }
+    rowIndex++;
+  }        
+}
+//Used to create the header row
+private void CreateHeaderRow(IWorksheet worksheet)
+{
+  for (int i = 0; i < _columnNames.Length; i++)
+  {
+    worksheet[1, i + 1].Text = _columnNames[i];
+  }
+  worksheet["H1"].DateTime = new DateTime(2019, 1, 1);
+  worksheet["I1:AL1"].Formula = "=H1+1";
+  worksheet["H1:AL1"].NumberFormat = "d";
+}
+
+
+
+
+
+

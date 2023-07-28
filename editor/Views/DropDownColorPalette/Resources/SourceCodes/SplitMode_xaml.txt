@@ -1,0 +1,1 @@
+﻿<editors:SfDropDownColorPalette DropDownMode="Split"/>

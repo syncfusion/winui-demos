@@ -1,0 +1,41 @@
+﻿Fahrenheit NumberBox:
+
+<editors:SfNumberBox
+    Header="Fahrenheit (°F)"
+    AllowNull="$(AllowNull)"
+    PlaceholderText="$(NumberBoxPlaceholderText)"
+    Minimum="$(Minimum)"
+    Maximum="$(Maximum)"
+    SmallChange="$(SmallChange)"
+    LargeChange="$(LargeChange)"
+    UpDownPlacementMode="$(UpDownPlacementMode)"
+    CustomFormat="$(CustomFormat)"
+    IsEditable="$(IsEditable)"
+    Value="$(Value)"/>
+
+
+Celsius NumberBox:
+
+<editors:SfNumberBox
+    Header="Celsius (°C)"
+    CustomFormat="$(CelsiusCustomFormat)"
+    ....
+    Value="$(CelsiusValue)"/>
+
+
+Kelvin NumberBox:
+
+<editors:SfNumberBox
+    Header="Kelvin (K)"
+    CustomFormat="$(KelvinCustomFormat)"
+    ....
+    Value="$(KelvinValue)"/>
+
+
+Rankine NumberBox:
+
+<editors:SfNumberBox
+    Header="Rankine (°R)"
+    CustomFormat="$(RankineCustomFormat)"
+    ....
+    Value="$(RankineValue)"/>

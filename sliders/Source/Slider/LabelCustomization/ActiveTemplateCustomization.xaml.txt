@@ -1,0 +1,18 @@
+﻿<slider:SfSlider Value="$(activeLabelTemplateSliderValueSubstitute)"
+                 ShowLabels="True"
+                 ToolTipFormat="N0"
+                 LabelOffset="10"
+                 ...
+                 >
+
+    <slider:SfSlider.ActiveLabelTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding Text}"
+                       Foreground="#AC32FB" />
+        </DataTemplate>
+    </slider:SfSlider.ActiveLabelTemplate>
+
+    <slider:SfSlider.ToolTipStyle>
+        ...
+    </slider:SfSlider.ToolTipStyle>
+</slider:SfSlider>

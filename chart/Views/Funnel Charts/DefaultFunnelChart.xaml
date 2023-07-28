@@ -1,0 +1,94 @@
+
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.DefaultFunnelChart"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                    </ResourceDictionary>
+
+                    <ResourceDictionary x:Key="Dark">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                    </ResourceDictionary>
+
+                    <ResourceDictionary x:Key="HighContrast">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{ThemeResource SystemColorWindowColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{ThemeResource SystemColorWindowTextColor}"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+                <DataTemplate x:Key="tooltipTemplate" >
+                    <StackPanel Orientation="Horizontal" Background="{ThemeResource TooltipFill}">
+                        <TextBlock Text="{Binding Item.Category}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{ThemeResource TooltipForeground}"  FontFamily="Helvetica" FontSize="14"  />
+                        <TextBlock Text=":" Margin="3,0,3,0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{ThemeResource TooltipForeground}" FontFamily="Helvetica" FontSize="14"  />
+                        <TextBlock Text="{Binding Item.Percentage}" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{ThemeResource TooltipForeground}"  FontFamily="Helvetica" FontSize="14" />
+                        <TextBlock Text="%" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{ThemeResource TooltipForeground}"  FontFamily="Helvetica" FontSize="14" />
+                    </StackPanel>
+                </DataTemplate>
+                
+            </ResourceDictionary>
+        </Grid.Resources>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the percentage of website conversion rates and effectiveness in converting visitors into customers.">
+                <common:DemoLayout.Example>
+                    <chart:SfFunnelChart x:Name="Chart" Header="Website Conversion Rate"  HorizontalAlignment="Center" Height="420" Width="650" 
+                                         ItemsSource="{Binding DefaultData}"
+                                         XBindingPath="Category"
+                                         YBindingPath="Percentage"
+                                         GapRatio="0.01"
+                                         PaletteBrushes="{ThemeResource ChartPalette}"  
+                                         ShowDataLabels="True" 
+                                         EnableTooltip="True"
+                                         TooltipTemplate="{StaticResource tooltipTemplate}">
+
+                        <chart:SfFunnelChart.DataContext>
+                            <local:FunnelChartViewModel />
+                        </chart:SfFunnelChart.DataContext>
+
+                        <chart:SfFunnelChart.DataLabelSettings>
+                            <chart:FunnelDataLabelSettings UseSeriesPalette="False" Format="0'%" FontSize="13" Foreground="White" Margin="0.5" />
+                        </chart:SfFunnelChart.DataLabelSettings>
+
+                    </chart:SfFunnelChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfFunnelChart x:Name=&quot;Chart&quot; 
+                      Header=&quot;Website Conversion Rate&quot;
+                      ItemsSource=&quot;{Binding Data}&quot;
+                      XBindingPath=&quot;Category&quot;
+                      YBindingPath=&quot;Percentage&quot;
+                      PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;
+                      TooltipTemplate=&quot;{StaticResource tooltipTemplate}&quot;
+                      EnableTooltip=&quot;True&quot;
+                      GapRatio=&quot;0.01&quot;
+                      ShowDataLabels=&quot;True&quot;&gt;
+     
+    &lt;chart:SfFunnelChart.DataLabelSettings&gt; 
+            &lt;chart:FunnelDataLabelSettings UseSeriesPalette=&quot;False&quot; Margin=&quot;0.5&quot; 
+                     Format=&quot;0'%&quot; Foreground=&quot;White&quot; FontSize=&quot;13&quot;/&gt; 
+    &lt;/chart:SfFunnelChart.DataLabelSettings&gt; 
+&lt;/chart:SfFunnelChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+
+        </ScrollViewer>
+
+    </Grid>
+   
+</Page>

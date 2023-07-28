@@ -1,0 +1,20 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Create a new Excel workbook with one worksheet.
+  IWorkbook workbook = application.Workbooks.Create(1);
+
+  //Access the first worksheet.
+  IWorksheet worksheet = workbook.Worksheets[0];
+
+  //Add an auto shape.
+  worksheet.Shapes.AddAutoShapes(AutoShapeType.RoundedRectangle, 2, 7, 60, 192);
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}
