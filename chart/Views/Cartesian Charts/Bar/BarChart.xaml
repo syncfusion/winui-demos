@@ -36,7 +36,7 @@
                             <chart:NumericalAxis Minimum="0" Interval="10" Visibility="Collapsed" ShowMajorGridLines="false" ShowMinorGridLines="false"/>
                         </chart:SfCartesianChart.YAxes>
 
-                            <chart:ColumnSeries EnableAnimation="True" ItemsSource="{Binding DefaultBarData}"
+                            <chart:ColumnSeries ItemsSource="{Binding DefaultBarData}"
                         XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True">
                             <chart:ColumnSeries.DataLabelSettings>
                                 <chart:CartesianDataLabelSettings Position="Inner" Format="0.00'%"/>

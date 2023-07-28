@@ -1,0 +1,301 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\\Syncfusion.SampleBrowser.WinUI_Net70 (Package).wapproj": {}
+  },
+  "projects": {
+    "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\\Syncfusion.SampleBrowser.WinUI_Net70 (Package).wapproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\\Syncfusion.SampleBrowser.WinUI_Net70 (Package).wapproj",
+        "projectName": "Syncfusion.SampleBrowser.WinUI_Net70 (Package)",
+        "projectPath": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\\Syncfusion.SampleBrowser.WinUI_Net70 (Package).wapproj",
+        "packagesPath": "C:\\Users\\syncfusion\\.nuget\\packages\\",
+        "outputPath": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\syncfusion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net451"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17763": {
+            "targetAlias": "net451",
+            "projectReferences": {
+              "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70.csproj": {
+                "projectPath": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17763": {
+          "targetAlias": "net451",
+          "dependencies": {
+            "Microsoft.Windows.SDK.BuildTools": {
+              "target": "Package",
+              "version": "[10.0.22621.756, )"
+            },
+            "Microsoft.WindowsAppSDK": {
+              "target": "Package",
+              "version": "[1.3.230502000, )"
+            }
+          },
+          "imports": [
+            "net7.0-windows10.0.19041",
+            "netcoreapp3.1",
+            "netcoreapp3.0",
+            "netcoreapp2.0",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net7.0-windows10.0.19041",
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70.csproj",
+        "projectName": "Syncfusion.SampleBrowser.WinUI",
+        "projectPath": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\Syncfusion.SampleBrowser.WinUI_Net70.csproj",
+        "packagesPath": "C:\\Users\\syncfusion\\.nuget\\packages\\",
+        "outputPath": "C:\\Samples_22.2.5\\WinUI\\samplebrowser\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\syncfusion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows10.0.19041.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows10.0.19041": {
+            "targetAlias": "net7.0-windows10.0.19041.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows10.0.19041": {
+          "targetAlias": "net7.0-windows10.0.19041.0",
+          "dependencies": {
+            "ColorCode.WinUI": {
+              "target": "Package",
+              "version": "[2.0.13, )"
+            },
+            "Microsoft.Windows.SDK.BuildTools": {
+              "target": "Package",
+              "version": "[10.0.22621.756, )"
+            },
+            "Microsoft.WindowsAppSDK": {
+              "target": "Package",
+              "version": "[1.3.230502000, )"
+            },
+            "PInvoke.User32": {
+              "target": "Package",
+              "version": "[0.7.104, )"
+            },
+            "Syncfusion.Barcode.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Calendar.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Chart.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Core.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.DocIORenderer.NET": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Editors.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Gauge.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Grid.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.GridCommon.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.GridExport.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Notifications.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Pdf.Imaging.NET": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.PresentationRenderer.NET": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Ribbon.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Scheduler.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.Sliders.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.TreeView.WinUI": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "Syncfusion.XlsIORenderer.NET": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[7.0.7, 7.0.7]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[7.0.7, 7.0.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[7.0.7, 7.0.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[7.0.7, 7.0.7]"
+            },
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.19041.28, 10.0.19041.28]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[7.0.7, 7.0.7]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[7.0.7, 7.0.7]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -175,6 +175,10 @@
                                         </StackPanel>
                                     </Grid>
                                 </DataTemplate>
+                                <DataTemplate x:Key="dataLabel">
+                                    <Border Height="11" Width="11" CornerRadius="5.5" BorderBrush="{Binding Fill}" BorderThickness="2"
+                                            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                                </DataTemplate>
                             </ResourceDictionary>
                             </chart:SfCartesianChart.Resources>
 
@@ -198,7 +202,7 @@
                         </chart:SfCartesianChart.YAxes>
 
                         <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LegendData1}"  Label="Truck" Fill="{ThemeResource SeriesBrush1}"
-                               XBindingPath="Name" YBindingPath="Value" >
+                               XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True">
                             <chart:LineSeries.LegendIconTemplate>
                                 <DataTemplate>
                                     <Canvas>
@@ -211,13 +215,14 @@
                                     </Canvas>
                                 </DataTemplate>
                             </chart:LineSeries.LegendIconTemplate>
-                            </chart:LineSeries>
-                        <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LegendData1}" EnableTooltip="True" IsVisibleOnLegend="False" TooltipTemplate="{StaticResource tooltipTemplate}"
-                            XBindingPath="Name" YBindingPath="Value" Stroke="{ThemeResource SeriesBrush1}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11">
-                        </chart:ScatterSeries>
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                  Context="DataLabelItem" Position="Center"/>
+                            </chart:LineSeries.DataLabelSettings>
+                        </chart:LineSeries>
 
                         <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LegendData2}"  Label="Car" Fill="{ThemeResource SeriesBrush2}"
-                               XBindingPath="Name" YBindingPath="Value" >
+                               XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True">
                             <chart:LineSeries.LegendIconTemplate>
                                 <DataTemplate>
                                     <Canvas >
@@ -230,13 +235,14 @@
                                     </Canvas>
                                 </DataTemplate>
                             </chart:LineSeries.LegendIconTemplate>
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                  Context="DataLabelItem" Position="Center"/>
+                            </chart:LineSeries.DataLabelSettings>
                         </chart:LineSeries>
-                        <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LegendData2}" EnableTooltip="True" IsVisibleOnLegend="False" TooltipTemplate="{StaticResource tooltipTemplate1}"
-                            XBindingPath="Name" YBindingPath="Value" Stroke="{ThemeResource SeriesBrush2}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11">
-                        </chart:ScatterSeries>
 
                         <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LegendData3}"  Label="Bus" Fill="{ThemeResource SeriesBrush3}"
-                               XBindingPath="Name" YBindingPath="Value" >
+                               XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True">
                             <chart:LineSeries.LegendIconTemplate>
                                 <DataTemplate>
                                     <Canvas>
@@ -249,13 +255,14 @@
                                     </Canvas>
                                 </DataTemplate>
                             </chart:LineSeries.LegendIconTemplate>
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                  Context="DataLabelItem" Position="Center"/>
+                            </chart:LineSeries.DataLabelSettings>
                         </chart:LineSeries>
-                        <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LegendData3}" EnableTooltip="True" IsVisibleOnLegend="False" TooltipTemplate="{StaticResource tooltipTemplate2}"
-                            XBindingPath="Name" YBindingPath="Value" Stroke="{ThemeResource SeriesBrush3}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11">
-                        </chart:ScatterSeries>
 
                         <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LegendData4}"   Label="Motorcycle" Fill="{ThemeResource SeriesBrush4}"
-                             XBindingPath="Name" YBindingPath="Value" >
+                             XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True">
                             <chart:LineSeries.LegendIconTemplate>
                                 <DataTemplate >
                                         <Canvas  Grid.Column="0">
@@ -268,10 +275,11 @@
                                         </Canvas>
                                 </DataTemplate>
                             </chart:LineSeries.LegendIconTemplate>
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                  Context="DataLabelItem" Position="Center"/>
+                            </chart:LineSeries.DataLabelSettings>
                         </chart:LineSeries>
-                        <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LegendData4}" EnableTooltip="True" IsVisibleOnLegend="False" TooltipTemplate="{StaticResource tooltipTemplate3}"
-                            XBindingPath="Name" YBindingPath="Value" Stroke="{ThemeResource SeriesBrush4}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11">
-                        </chart:ScatterSeries>
 
                     </chart:SfCartesianChart>
                 </common:DemoLayout.Example>

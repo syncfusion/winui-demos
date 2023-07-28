@@ -36,8 +36,8 @@
                             </chart:SfCartesianChart.YAxes>
 
                             <chart:SfCartesianChart.Series>
-                            <chart:ColumnSeries Label="% Remote(Sept 2021)" EnableAnimation="True" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2021" Fill="{ThemeResource SeriesBrush1}"/>
-                            <chart:ColumnSeries Label="% Remote(Sept 2020)" EnableAnimation="True" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2020"  Fill="{ThemeResource SeriesBrush7}"/>
+                            <chart:ColumnSeries Label="% Remote(Sept 2021)" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2021" Fill="{ThemeResource SeriesBrush1}"/>
+                            <chart:ColumnSeries Label="% Remote(Sept 2020)" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2020"  Fill="{ThemeResource SeriesBrush7}"/>
                             </chart:SfCartesianChart.Series>
 
                         </chart:SfCartesianChart>

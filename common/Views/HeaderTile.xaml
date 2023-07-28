@@ -77,8 +77,7 @@
             <TextBlock Grid.Column="1"
                         Text="{x:Bind Title, Mode=OneWay}"
                         Margin="16,0"
-                        Style="{StaticResource BodyStrongTextBlockStyle}"
-                        Foreground="#005FB8"
+                        Style="{StaticResource BodyStrongTextBlockStyle}"                        
                         VerticalAlignment="Center"
                         TextWrapping="Wrap" />
         </Grid>

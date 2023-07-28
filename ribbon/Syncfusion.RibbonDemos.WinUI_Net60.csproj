@@ -206,7 +206,7 @@
 		<Manifest Include="$(ApplicationManifest)"/>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Ribbon.WinUI" Version="22.1.34"/>
+		<PackageReference Include="Syncfusion.Ribbon.WinUI" Version="22.2.5"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>

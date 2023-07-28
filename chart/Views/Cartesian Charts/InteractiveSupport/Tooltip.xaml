@@ -123,6 +123,10 @@
                                         <Setter Property="StrokeThickness" Value="10"/>
                                         <Setter Property="Stroke" Value="Transparent"/>
                                     </Style>
+                                    <DataTemplate x:Key="dataLabel">
+                                        <Border Height="11" Width="11" CornerRadius="5.5" BorderBrush="{Binding Fill}" BorderThickness="2"
+                                                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                                    </DataTemplate>
                                 </ResourceDictionary>
                             </chart:SfCartesianChart.Resources>
 
@@ -144,21 +148,22 @@
                             </chart:SfCartesianChart.YAxes>
 
                             <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LabourForceData}" Label="Germany" 
-                              XBindingPath="Year" YBindingPath="Germany" LegendIcon="Circle" Fill="{ThemeResource SeriesBrush1}">
+                                   XBindingPath="Year" YBindingPath="Germany" LegendIcon="Circle" Fill="{ThemeResource SeriesBrush1}"
+                                   ShowDataLabels="True" TooltipTemplate="{StaticResource tooltipTemplate}" EnableTooltip="True">
+                                <chart:LineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                           Context="DataLabelItem" Position="Center"/>
+                                </chart:LineSeries.DataLabelSettings>
                             </chart:LineSeries>
-                            <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LabourForceData}" EnableTooltip="True" IsVisibleOnLegend="False"
-                            XBindingPath="Year" YBindingPath="Germany" Stroke="{ThemeResource SeriesBrush1}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11"
-                                                  TooltipTemplate="{StaticResource tooltipTemplate}">
-                            </chart:ScatterSeries>
-
 
                             <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding LabourForceData}" Label="Mexico" 
-                               XBindingPath="Year" YBindingPath="Mexico" LegendIcon="Circle" Fill="{ThemeResource SeriesBrush2}">
+                                   XBindingPath="Year" YBindingPath="Mexico" LegendIcon="Circle" Fill="{ThemeResource SeriesBrush2}"
+                                   ShowDataLabels="True" TooltipTemplate="{StaticResource tooltipTemplate1}" EnableTooltip="True">
+                                <chart:LineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                           Context="DataLabelItem" Position="Center"/>
+                                </chart:LineSeries.DataLabelSettings>
                             </chart:LineSeries>
-                            <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding LabourForceData}" EnableTooltip="True" IsVisibleOnLegend="False"
-                             XBindingPath="Year" YBindingPath="Mexico" Stroke="{ThemeResource SeriesBrush2}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="11" PointWidth="11"
-                                          TooltipTemplate="{StaticResource tooltipTemplate1}">
-                            </chart:ScatterSeries>
 
                         </chart:SfCartesianChart>
 

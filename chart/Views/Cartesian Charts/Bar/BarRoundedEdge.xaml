@@ -38,7 +38,7 @@
                             <chart:NumericalAxis Visibility="Collapsed"/>
                         </chart:SfCartesianChart.YAxes>
 
-                        <chart:ColumnSeries EnableAnimation="True" ItemsSource="{Binding RoundedBarData}" SegmentSpacing="0.3"
+                        <chart:ColumnSeries ItemsSource="{Binding RoundedBarData}" SegmentSpacing="0.3"
                         XBindingPath="Name" YBindingPath="Value" ShowDataLabels="True" PaletteBrushes="{ThemeResource ChartPalette}">
                             <chart:ColumnSeries.CustomTemplate>
                                 <DataTemplate>

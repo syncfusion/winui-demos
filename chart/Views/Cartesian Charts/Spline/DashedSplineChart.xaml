@@ -25,6 +25,10 @@
                 <x:Double>3</x:Double>
                 <x:Double>3</x:Double>
             </DoubleCollection>
+            <DataTemplate x:Key="dataLabel">
+                <Border Height="9" Width="9" CornerRadius="4.5" BorderBrush="{Binding Fill}" BorderThickness="2"
+                        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+            </DataTemplate>
         </Grid.Resources>
         <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
             <common:DemoLayout HeaderText="This sample showcases the percentage of GDP invested using a dashed curve.">
@@ -56,26 +60,32 @@
                             </chart:SfCartesianChart.Legend>
 
                             <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Brazil" Fill="{ThemeResource SeriesBrush1}"
-                        XBindingPath="Name" YBindingPath="Brazil" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75">
+                        XBindingPath="Name" YBindingPath="Brazil" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                                ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                      Context="DataLabelItem" Position="Center"/>
+                                </chart:SplineSeries.DataLabelSettings>
                             </chart:SplineSeries>
-                            <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" EnableTooltip="True" IsVisibleOnLegend="False"
-                            XBindingPath="Name" YBindingPath="Brazil" Stroke="{ThemeResource SeriesBrush1}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="9" PointWidth="9">
-                            </chart:ScatterSeries>
 
                             <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Sweden" Fill="{ThemeResource SeriesBrush2}"
-                       XBindingPath="Name" YBindingPath="Sweden" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75">
+                       XBindingPath="Name" YBindingPath="Sweden" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                                ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                      Context="DataLabelItem" Position="Center"/>
+                                </chart:SplineSeries.DataLabelSettings>
                             </chart:SplineSeries>
-                            <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" EnableTooltip="True" IsVisibleOnLegend="False"
-                            XBindingPath="Name" YBindingPath="Sweden" Stroke="{ThemeResource SeriesBrush2}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="9" PointWidth="9">
-                            </chart:ScatterSeries>
 
                             <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Greece" Fill="{ThemeResource SeriesBrush3}"
-                        XBindingPath="Name" YBindingPath="Greece" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75">
+                        XBindingPath="Name" YBindingPath="Greece" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                                ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}"
+                                                                      Context="DataLabelItem" Position="Center"/>
+                                </chart:SplineSeries.DataLabelSettings>
                             </chart:SplineSeries>
-                            <chart:ScatterSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" EnableTooltip="True" IsVisibleOnLegend="False"
-                            XBindingPath="Name" YBindingPath="Greece" Stroke="{ThemeResource SeriesBrush3}" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointHeight="9" PointWidth="9">
-                            </chart:ScatterSeries>
-                            
+
                         </chart:SfCartesianChart>
 
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
