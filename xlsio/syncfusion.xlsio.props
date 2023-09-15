@@ -1,0 +1,868 @@
+<Project>
+
+ <ItemGroup>
+	 <Compile Include="..\XlsIO\SamplesConfiguration.cs">
+		 <Link>XlsIO\SamplesConfiguration.cs</Link>
+	 </Compile>
+	  <Compile Include="..\XlsIO\Views\CreateSpreadsheet.xaml.cs">
+		  <Link>XlsIO\Views\CreateSpreadsheet.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\CreateSpreadsheet.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\AttendanceTracker.xaml.cs">
+		  <Link>XlsIO\Views\AttendanceTracker.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\AttendanceTracker.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Customer.cs">
+		  <Link>XlsIO\Views\Customer.cs</Link>
+      </Compile>
+	  <Compile Include="..\XlsIO\Views\FormatCells.xaml.cs">
+		  <Link>XlsIO\Views\FormatCells.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\FormatCells.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\ConditionalFormatting.xaml.cs">
+		  <Link>XlsIO\Views\ConditionalFormatting.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ConditionalFormatting.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Formula.xaml.cs">
+		  <Link>XlsIO\Views\Formula.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Formula.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Sunburst.xaml.cs">
+		  <Link>XlsIO\Views\Sunburst.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Sunburst.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\BoxAndWhisker.xaml.cs">
+		  <Link>XlsIO\Views\BoxAndWhisker.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\BoxAndWhisker.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Treemap.xaml.cs">
+		  <Link>XlsIO\Views\Treemap.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Treemap.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\InputTemplate.cs">
+		  <Link>XlsIO\Views\InputTemplate.cs</Link>
+	  </Compile>
+      <Compile Include="..\XlsIO\Views\Sparklines.xaml.cs">
+		  <Link>XlsIO\Views\Sparklines.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Sparklines.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\DataValidation.xaml.cs">
+		  <Link>XlsIO\Views\DataValidation.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\DataValidation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Sorting.xaml.cs">
+		  <Link>XlsIO\Views\Sorting.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Sorting.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\TemplateMarker.xaml.cs">
+		  <Link>XlsIO\Views\TemplateMarker.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\TemplateMarker.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\ImportHTMLTable.xaml.cs">
+		  <Link>XlsIO\Views\ImportHTMLTable.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ImportHTMLTable.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\ExcelToPDF.xaml.cs">
+		  <Link>XlsIO\Views\ExcelToPDF.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ExcelToPDF.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\WorksheetToImage.xaml.cs">
+		  <Link>XlsIO\Views\WorksheetToImage.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\WorksheetToImage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\ExcelToJSON.xaml.cs">
+		  <Link>XlsIO\Views\ExcelToJSON.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ExcelToJSON.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\EncryptAndDecrypt.xaml.cs">
+		  <Link>XlsIO\Views\EncryptAndDecrypt.xaml.cs</Link>
+	      <DependentUpon>..\XlsIO\Views\EncryptAndDecrypt.xaml</DependentUpon>
+	  </Compile>	    	  	  
+	  <Compile Include="..\XlsIO\Views\Tables.xaml.cs">
+		  <Link>XlsIO\Views\Tables.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Tables.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\AutoShape.xaml.cs">
+		  <Link>XlsIO\Views\AutoShape.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\AutoShape.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\GroupShape.xaml.cs">
+		  <Link>XlsIO\Views\GroupShape.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\GroupShape.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\CreateMacro.xaml.cs">
+		  <Link>XlsIO\Views\CreateMacro.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\CreateMacro.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\EditMacro.xaml.cs">
+		  <Link>XlsIO\Views\EditMacro.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\EditMacro.xaml</DependentUpon>
+	  </Compile>	  
+	  <Compile Include="..\XlsIO\Views\YearlySales.xaml.cs">
+		  <Link>XlsIO\Views\YearlySales.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\YearlySales.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Invoice.xaml.cs">
+		  <Link>XlsIO\Views\Invoice.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Invoice.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\ExpensesReport.xaml.cs">
+		  <Link>XlsIO\Views\ExpensesReport.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ExpensesReport.xaml</DependentUpon>
+	  </Compile>
+      <Compile Include="..\XlsIO\Views\ColumnChart.xaml.cs">	
+		  <Link>XlsIO\Views\ColumnChart.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\ColumnChart.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Include="..\XlsIO\Views\Slicer.xaml.cs">
+		  <Link>XlsIO\Views\Slicer.xaml.cs</Link>
+		  <DependentUpon>..\XlsIO\Views\Slicer.xaml</DependentUpon>
+	  </Compile>
+    <Compile Include="..\XlsIO\Views\WhatIfAnalysis.xaml.cs">
+      <Link>XlsIO\Views\WhatIfAnalysis.xaml.cs</Link>
+      <DependentUpon>..\XlsIO\Views\WhatIfAnalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\XlsIO\Views\Comments.xaml.cs">
+      <Link>XlsIO\Views\Comments.xaml.cs</Link>
+      <DependentUpon>..\XlsIO\Views\Comments.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\XlsIO\Assets\Tiles\LargeTile.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\LargeTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\LargeTile.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\LargeTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\LargeTile.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\LargeTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SmallTile.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\SmallTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SmallTile.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\SmallTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SmallTile.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\SmallTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SplashScreen.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\SplashScreen.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SplashScreen.scale-125.png">
+		<Link>XlsIO\Assets\Tiles\SplashScreen.scale-125.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SplashScreen.scale-150.png">
+		<Link>XlsIO\Assets\Tiles\SplashScreen.scale-150.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SplashScreen.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\SplashScreen.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\SplashScreen.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\SplashScreen.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square150x150Logo.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\Square150x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square150x150Logo.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\Square150x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square150x150Logo.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\Square150x150Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square44x44Logo.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\Square44x44Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square44x44Logo.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\Square44x44Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Square44x44Logo.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\Square44x44Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\StoreLogo.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\StoreLogo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\StoreLogo.scale-125.png">
+		<Link>XlsIO\Assets\Tiles\StoreLogo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\StoreLogo.scale-150.png">
+		<Link>XlsIO\Assets\Tiles\StoreLogo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\StoreLogo.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\StoreLogo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\StoreLogo.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\StoreLogo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Wide310x150Logo.scale-100.png">
+		<Link>XlsIO\Assets\Tiles\Wide310x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Wide310x150Logo.scale-200.png">
+		<Link>XlsIO\Assets\Tiles\Wide310x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\Tiles\Wide310x150Logo.scale-400.png">
+		<Link>XlsIO\Assets\Tiles\Wide310x150Logo.scale-400.png</Link>
+    </Content>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\contact_sales.gif">
+		<Link>XlsIO\Assets\XlsIO\contact_sales.gif</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\customers.xml">
+		<Link>XlsIO\Assets\XlsIO\customers.xml</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\EMPID1.png">
+		<Link>XlsIO\Assets\XlsIO\EMPID1.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExportData.xml">
+		<Link>XlsIO\Assets\XlsIO\ExportData.xml</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\header.gif">
+		<Link>XlsIO\Assets\XlsIO\header.gif</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\HTMLToExcel.html">
+		<Link>XlsIO\Assets\XlsIO\HTMLToExcel.html</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\HTMLwithFormulaToExcel.html">
+		<Link>XlsIO\Assets\XlsIO\HTMLwithFormulaToExcel.html</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\invoice.jpeg">
+		<Link>XlsIO\Assets\XlsIO\invoice.jpeg</Link>
+	</EmbeddedResource>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_GreenCheckSymbol.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_GreenCheckSymbol.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_GreenUpArrow.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_GreenUpArrow.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_RedCrossSymbol.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_RedCrossSymbol.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_RedDownArrow.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_RedDownArrow.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_SignalWithFourFillBars.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_SignalWithFourFillBars.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_SignalWithOneFillBar.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_SignalWithOneFillBar.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_SignalWithThreeFillBars.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_SignalWithThreeFillBars.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_SignalWithTwoFillBars.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_SignalWithTwoFillBars.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_YellowDownInclineArrow.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_YellowDownInclineArrow.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_YellowExclamationSymbol.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_YellowExclamationSymbol.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_YellowSideArrow.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_YellowSideArrow.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\CF_IS_YellowUpInclineArrow.png">
+		<Link>XlsIO\Assets\XlsIO\image\CF_IS_YellowUpInclineArrow.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\image\NoIcon.png">
+		<Link>XlsIO\Assets\XlsIO\image\NoIcon.png</Link>
+    </Content>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\logo.jpg">
+		<Link>XlsIO\Assets\XlsIO\logo.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Orders.xml">
+		<Link>XlsIO\Assets\XlsIO\Orders.xml</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\pdfIcon.jpg">
+		<Link>XlsIO\Assets\XlsIO\pdfIcon.jpg</Link>
+	</EmbeddedResource>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man1.jpg" >
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man1.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man10.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man10.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man11.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man11.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man12.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man12.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man13.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man13.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man14.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man14.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man15.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man15.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man16.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man16.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man17.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man17.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man18.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man18.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man2.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man2.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man3.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man3.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man4.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man4.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man5.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man5.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man6.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man6.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man7.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man7.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man8.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man8.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man9.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man9.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman1.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman1.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman10.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman10.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman11.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman11.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman12.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman12.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman13.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman13.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman14.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman14.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman2.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman2.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman3.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman3.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman4.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman4.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman5.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman5.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman6.png" >
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman6.png</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman7.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman7.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman8.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman8.jpg</Link>
+    </Content>
+    <Content Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman9.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman9.jpg</Link>
+    </Content>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\wordIcon.jpg">
+		<Link>XlsIO\Assets\XlsIO\wordIcon.jpg</Link>
+	</EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\MacroTemplate.xltm" >
+		<Link>XlsIO\Assets\XlsIO\MacroTemplate.xltm</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExcelTopdfwithChart.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ExcelTopdfwithChart.xlsx</Link>
+	</EmbeddedResource>
+  	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Fonts\bahnschrift.ttf">
+		<Link>XlsIO\Assets\XlsIO\Fonts\bahnschrift.ttf</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\EditMacroTemplate.xltm">
+		<Link>XlsIO\Assets\XlsIO\EditMacroTemplate.xltm</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\GroupShapes.xlsx">
+		<Link>XlsIO\Assets\XlsIO\GroupShapes.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExcelToJSON.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ExcelToJSON.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\AdvancedFilterData.xlsx">
+		<Link>XlsIO\Assets\XlsIO\AdvancedFilterData.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\BoxAndWhiskerTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\BoxAndWhiskerTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\BudgetPlanner.xls">
+		<Link>XlsIO\Assets\XlsIO\BudgetPlanner.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CalendarTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\CalendarTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CallCenterTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\CallCenterTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CFTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\CFTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CreateMacroTemplate.xlsx" >
+		<Link>XlsIO\Assets\XlsIO\CreateMacroTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\EmbeddedChart.xls">
+		<Link>XlsIO\Assets\XlsIO\EmbeddedChart.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\EmbeddedChart.xlsx">
+		<Link>XlsIO\Assets\XlsIO\EmbeddedChart.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Encrypt.xlsx">
+		<Link>XlsIO\Assets\XlsIO\Encrypt.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\EncryptedSpreadsheet.xlsx">
+		<Link>XlsIO\Assets\XlsIO\EncryptedSpreadsheet.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExcelToODS.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ExcelToODS.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExportData.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ExportData.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\External_Input.xlsx">
+		<Link>XlsIO\Assets\XlsIO\External_Input.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FaxOrderForm.doc">
+		<Link>XlsIO\Assets\XlsIO\FaxOrderForm.doc</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FaxOrderForm.pdf">
+		<Link>XlsIO\Assets\XlsIO\FaxOrderForm.pdf</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FilterData.xlsx">
+		<Link>XlsIO\Assets\XlsIO\FilterData.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FilterData_Color.xlsx">
+		<Link>XlsIO\Assets\XlsIO\FilterData_Color.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FindAndExtract.xls">
+		<Link>XlsIO\Assets\XlsIO\FindAndExtract.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FormulaTemplate.xls">
+		<Link>XlsIO\Assets\XlsIO\FormulaTemplate.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\FunnelChartTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\FunnelChartTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\IconFilterData.xlsx">
+		<Link>XlsIO\Assets\XlsIO\IconFilterData.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Input.xls">
+		<Link>XlsIO\Assets\XlsIO\Input.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\InvoiceTemplate.xlsx" >
+		<Link>XlsIO\Assets\XlsIO\InvoiceTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\LockedWorksheet.xls">
+		<Link>XlsIO\Assets\XlsIO\LockedWorksheet.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\monthly_sales.xls">
+		<Link>XlsIO\Assets\XlsIO\monthly_sales.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\NorthwindDataTemplate.xls">
+		<Link>XlsIO\Assets\XlsIO\NorthwindDataTemplate.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\NorthwindTemplate.xls">
+		<Link>XlsIO\Assets\XlsIO\NorthwindTemplate.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ProtectedWorkbook.xls" >
+		<Link>XlsIO\Assets\XlsIO\ProtectedWorkbook.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\RangeManipulation.xls">
+		<Link>XlsIO\Assets\XlsIO\RangeManipulation.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ReplaceOptions.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ReplaceOptions.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\SortingData.xlsx">
+		<Link>XlsIO\Assets\XlsIO\SortingData.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\SourceWorkbookTemplate.xls" >
+		<Link>XlsIO\Assets\XlsIO\SourceWorkbookTemplate.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\SourceWorkbookTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\SourceWorkbookTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Sparkline.xlsx">
+		<Link>XlsIO\Assets\XlsIO\Sparkline.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\SunburstTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\SunburstTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\TimelogTemplate.xls">
+		<Link>XlsIO\Assets\XlsIO\TimelogTemplate.xls</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\TreemapTemplate.xlsx">
+		<Link>XlsIO\Assets\XlsIO\TreemapTemplate.xlsx</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\WorkSheetToImage.xlsx">
+		<Link>XlsIO\Assets\XlsIO\WorkSheetToImage.xlsx</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\ExpenseReport.xlsx">
+		<Link>XlsIO\Assets\XlsIO\ExpenseReport.xlsx</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CLRObjects.xml">
+		<Link>XlsIO\Assets\XlsIO\CLRObjects.xml</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\TemplateMarker.xlsx">
+		<Link>XlsIO\Assets\XlsIO\TemplateMarker.xlsx</Link>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\XlsIO\Assets\XlsIO\TableSlicer.xlsx">
+		<Link>XlsIO\Assets\XlsIO\TableSlicer.xlsx</Link>
+	</EmbeddedResource>
+  <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\WhatIfAnalysisTemplate.xlsx">
+    <Link>XlsIO\Assets\XlsIO\WhatIfAnalysisTemplate.xlsx</Link>
+  </EmbeddedResource>
+  <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\CommentsTemplate.xlsx">
+    <Link>XlsIO\Assets\XlsIO\CommentsTemplate.xlsx</Link>
+  </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man10.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man10.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man11.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man11.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man12.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man12.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man13.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man13.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man14.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man14.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man15.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man15.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man16.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man16.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man17.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man17.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man18.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man18.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man2.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man2.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man3.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man3.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man4.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man4.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man5.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man5.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man6.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man6.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man7.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man7.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man8.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man8.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man9.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man9.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman1.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman1.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman10.jpg" >
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman10.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman11.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman11.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman12.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman12.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman13.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman13.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman14.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman14.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman2.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman2.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman3.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman3.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman4.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman4.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman5.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman5.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman6.png">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman6.png</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman7.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman7.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman8.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman8.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Woman9.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Woman9.jpg</Link>
+	</EmbeddedResource>
+    <EmbeddedResource Include="..\XlsIO\Assets\XlsIO\Template_Marker_Images\Man1.jpg">
+		<Link>XlsIO\Assets\XlsIO\Template_Marker_Images\Man1.jpg</Link>
+	</EmbeddedResource>
+  </ItemGroup>  
+  <ItemGroup>
+	  <Page Include="..\XlsIO\Views\CreateSpreadsheet.xaml">
+		  <Link>XlsIO\Views\CreateSpreadsheet.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\AttendanceTracker.xaml">
+		  <Link>XlsIO\Views\AttendanceTracker.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\FormatCells.xaml">
+		  <Link>XlsIO\Views\FormatCells.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\ConditionalFormatting.xaml">
+		  <Link>XlsIO\Views\ConditionalFormatting.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Formula.xaml">
+		  <Link>XlsIO\Views\Formula.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Sunburst.xaml">
+		  <Link>XlsIO\Views\Sunburst.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\BoxAndWhisker.xaml">
+		  <Link>XlsIO\Views\BoxAndWhisker.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Treemap.xaml">
+		  <Link>XlsIO\Views\Treemap.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+      <Page Include="..\XlsIO\Views\Sparklines.xaml">
+		  <Link>XlsIO\Views\Sparklines.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>	  
+	  <Page Include="..\XlsIO\Views\DataValidation.xaml">
+		  <Link>XlsIO\Views\DataValidation.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Sorting.xaml">
+		  <Link>XlsIO\Views\Sorting.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\TemplateMarker.xaml">
+		  <Link>XlsIO\Views\TemplateMarker.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>	 
+	  <Page Include="..\XlsIO\Views\ImportHTMLTable.xaml">
+		  <Link>XlsIO\Views\ImportHTMLTable.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\ExcelToPDF.xaml">
+		  <Link>XlsIO\Views\ExcelToPDF.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\WorksheetToImage.xaml">
+		  <Link>XlsIO\Views\WorksheetToImage.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\ExcelToJSON.xaml">
+		  <Link>XlsIO\Views\ExcelToJSON.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\EncryptAndDecrypt.xaml">
+		  <Link>XlsIO\Views\EncryptAndDecrypt.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Tables.xaml">
+		  <Link>XlsIO\Views\Tables.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\AutoShape.xaml">
+		  <Link>XlsIO\Views\AutoShape.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\GroupShape.xaml">
+		  <Link>XlsIO\Views\GroupShape.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\CreateMacro.xaml">
+		  <Link>XlsIO\Views\CreateMacro.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\EditMacro.xaml">
+		  <Link>XlsIO\Views\EditMacro.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\YearlySales.xaml">
+		  <Link>XlsIO\Views\YearlySales.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Invoice.xaml">
+		  <Link>XlsIO\Views\Invoice.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\ExpensesReport.xaml">
+		  <Link>XlsIO\Views\ExpensesReport.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+      <Page Include="..\XlsIO\Views\ColumnChart.xaml">
+		  <Link>XlsIO\Views\ColumnChart.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\XlsIO\Views\Slicer.xaml">
+		  <Link>XlsIO\Views\Slicer.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+    <Page Include="..\XlsIO\Views\WhatIfAnalysis.xaml">
+      <Link>XlsIO\Views\WhatIfAnalysis.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\XlsIO\Views\Comments.xaml">
+      <Link>XlsIO\Views\Comments.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\CreateSpreadsheet_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\CreateSpreadsheet_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ImportHTMLTable_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\ImportHTMLTable_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ExcelToPDF_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\ExcelToPDF_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\WorksheetToImage_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\WorksheetToImage_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ExcelToJSON_cs.txt" >
+		<Link>XlsIO\Views\Resources\SourceCodes\ExcelToJSON_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\AutoShape_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\AutoShape_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\GroupShape_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\GroupShape_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\CreateMacro_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\CreateMacro_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\EditMacro_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\EditMacro_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\AttendanceTracker_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\AttendanceTracker_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\BoxAndWhisker_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\BoxAndWhisker_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ConditionalFormatting_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\ConditionalFormatting_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ColumnChart_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\ColumnChart_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\EncryptAndDecrypt_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\EncryptAndDecrypt_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\ExpensesReport_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\ExpensesReport_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\FormatCells_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\FormatCells_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Formula_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Formula_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Invoice_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Invoice_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Sparklines_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Sparklines_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Sunburst_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Sunburst_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Tables_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Tables_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\TemplateMarker_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\TemplateMarker_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Treemap_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Treemap_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\YearlySales_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\YearlySales_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\DataValidation_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\DataValidation_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Sorting_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Sorting_cs.txt</Link>
+	</Content>
+	<Content Include="..\XlsIO\Views\Resources\SourceCodes\Slicer_cs.txt">
+		<Link>XlsIO\Views\Resources\SourceCodes\Slicer_cs.txt</Link>
+	</Content>
+  <Content Include="..\XlsIO\Views\Resources\SourceCodes\WhatIfAnalysis_cs.txt">
+    <Link>XlsIO\Views\Resources\SourceCodes\WhatIfAnalysis_cs.txt</Link>
+  </Content>
+  <Content Include="..\XlsIO\Views\Resources\SourceCodes\Comments_cs.txt">
+    <Link>XlsIO\Views\Resources\SourceCodes\Comments_cs.txt</Link>
+  </Content>
+  </ItemGroup>
+</Project>
