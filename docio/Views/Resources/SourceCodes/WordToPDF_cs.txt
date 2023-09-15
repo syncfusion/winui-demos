@@ -1,0 +1,22 @@
+﻿//Gets the input Word document.
+using Stream fileStream = GetWordStream("WordtoPDF.docx");
+//Loads an existing Word document.
+using WordDocument document = new(fileStream, FormatType.Automatic);
+//Creates a new DocIORenderer instance.
+using DocIORenderer render = new();
+//Enables a flag to preserve document structured tags in the converted tagged PDF.
+render.Settings.AutoTag = true;
+//Enables a flag to preserve the Word document form field as editable PDF form field in PDF document.
+render.Settings.PreserveFormFields = true;
+//Sets ExportBookmarks for preserving Word document headings as PDF bookmarks.
+render.Settings.ExportBookmarks = Syncfusion.DocIO.ExportBookmarkType.Headings;
+//Enables to show the revision marks in the generated PDF for tracked changes or revisions in the Word document.
+document.RevisionOptions.ShowMarkup = RevisionType.Deletions | RevisionType.Formatting | RevisionType.Insertions;
+//Sets ShowInBalloons to render a document comments in converted PDF document.
+document.RevisionOptions.CommentDisplayMode = CommentDisplayMode.ShowInBalloons;
+//Converts Word document into PDF.
+using PdfDocument pdfDocument = render.ConvertToPDF(document);
+using MemoryStream ms = new();
+//Saves the converted PDF document to the memory stream.
+pdfDocument.Save(ms);
+PdfDocument.ClearFontCache();

@@ -1,0 +1,305 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>syncfusion.dociodemos.winui</RootNamespace>
+		<AssemblyName>syncfusion.dociodemos.winui</AssemblyName>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Remove="Assets\**"/>
+		<Content Remove="syncfusion.dociodemos.winui_net50 %28Package%29\**"/>
+		<EmbeddedResource Remove="Assets\**"/>
+		<EmbeddedResource Remove="Properties\PublishProfiles\**"/>
+		<EmbeddedResource Remove="syncfusion.dociodemos.winui_net50 %28Package%29\**"/>
+		<None Remove="Assets\**"/>
+		<None Remove="Properties\PublishProfiles\**"/>
+		<None Remove="syncfusion.dociodemos.winui_net50 %28Package%29\**"/>
+		<PRIResource Remove="syncfusion.dociodemos.winui_net50 %28Package%29\**"/>
+		<None Remove="app.manifest"/>
+		<None Remove="App.xaml"/>
+		<None Remove="MainWindow.xaml"/>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+		<None Remove="syncfusion.dociodemos.winui_TemporaryKey.pfx"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Helpers\SaveHelper.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="Views\FindAndHighlight.xaml.cs">
+			<DependentUpon>FindAndHighlight.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\FindAndReplace.xaml.cs">
+			<DependentUpon>FindAndReplace.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\HelloWorld.xaml.cs">
+			<DependentUpon>HelloWorld.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Bookmarks.xaml.cs">
+			<DependentUpon>Bookmarks.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\HeaderAndFooter.xaml.cs">
+			<DependentUpon>HeaderAndFooter.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ImageInsertion.xaml.cs">
+			<DependentUpon>ImageInsertion.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\RTFConversion.xaml.cs">
+			<DependentUpon>RTFConversion.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\SalesInvoice.xaml.cs">
+			<DependentUpon>SalesInvoice.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\TableOfContent.xaml.cs">
+			<DependentUpon>TableOfContent.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\EncryptAndDecrypt.xaml.cs">
+			<DependentUpon>EncryptAndDecrypt.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\EmployeeReport.xaml.cs">
+			<DependentUpon>EmployeeReport.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\OrdersReport.xaml.cs">
+			<DependentUpon>OrdersReport.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\WordToPDF.xaml.cs">
+			<DependentUpon>WordToPDF.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\WordToMarkdown.xaml.cs">
+			<DependentUpon>WordToMarkdown.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\MarkdownToWord.xaml.cs">
+			<DependentUpon>MarkdownToWord.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\CompareDocuments.xaml.cs">
+			<DependentUpon>CompareDocuments.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\FindAndReplace.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\HelloWorld.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Bookmarks.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\HeaderAndFooter.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\ImageInsertion.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\RTFConversion.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\SalesInvoice.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\TableOfContent.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\EncryptAndDecrypt.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\EmployeeReport.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\OrdersReport.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\WordToPDF.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\WordToMarkdown.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\MarkdownToWord.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\FindAndHighlight.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\CompareDocuments.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Views\Resources\SourceCodes\Bookmarks_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\EmployeeReport_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\EncryptAndDecrypt_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\FindAndHighlight_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\FindAndReplace_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\HeaderAndFooter_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\HelloWorld_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\ImageInsertion_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\OrdersReport_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\RTFConversion_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\SalesInvoice_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\TableOfContent_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\WordToPDF_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\WordToMarkdown_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\MarkdownToWord_cs.txt"/>
+		<Content Include="Views\Resources\SourceCodes\CompareDocuments_cs.txt"/>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\DocIO\Adventure.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\OrderTotals.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\RTFtoWord.rtf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Employees.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\EmployeesList.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\EmployeesReportDemo.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Mountain200.jpg">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Mountain300.jpg">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Northwindlogo.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Road550W.jpg">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\SalesInvoiceDemo.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Decrypt.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\TemplateLetter.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\TestOrder.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\TestOrderDetails.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\HeaderFooterTemplate.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\WordtoPDF.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\WordtoMD.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\MarkdownToWord.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\AdventureCycle.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\HeaderImage.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\Mountain300.bmp">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\OriginalDocument.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\DocIO\RevisedDocument.docx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="23.1.36"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net50.csproj"/>
+	</ItemGroup>
+</Project>
