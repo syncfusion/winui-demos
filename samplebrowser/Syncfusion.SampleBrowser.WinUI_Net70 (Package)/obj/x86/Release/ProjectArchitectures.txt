@@ -1,1 +1,0 @@
-C:\Samples_23.1.36\WinUI\samplebrowser\Syncfusion.SampleBrowser.WinUI_Net70 (Package)\Syncfusion.SampleBrowser.WinUI_Net70 (Package).wapproj;x86
