@@ -1,0 +1,778 @@
+<Project>
+<ItemGroup>
+	<Compile Include="..\Editor\Converters\FormatToStringConverter.cs">
+		<Link>Editor\Converters\FormatToStringConverter.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Converters\StringToPathConverter.cs">
+		<Link>Editor\Converters\StringToPathConverter.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Converters\StringToEnumConverter.cs">
+		<Link>Editor\Converters\StringToEnumConverter.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Converters\TemperatureConverter.cs">
+		<Link>Editor\Converters\TemperatureConverter.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Converters\VisiblityConverter.cs">
+		<Link>Editor\Converters\VisiblityConverter.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Model\ListModel.cs">
+		<Link>Editor\Model\ListModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Model\NumberBoxModel.cs">
+		<Link>Editor\Model\NumberBoxModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Model\SegmentedModel.cs">
+		<Link>Editor\Model\SegmentedModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\ListViewModel.cs">
+		<Link>Editor\ViewModel\ListViewModel.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\ViewModel\NumberBoxViewModel.cs">
+		<Link>Editor\ViewModel\NumberBoxViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\ColorPaletteViewModel.cs">
+		<Link>Editor\ViewModel\ColorPaletteViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\ColorPickerViewModel.cs">
+		<Link>Editor\ViewModel\ColorPickerViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\DatePickerViewModel.cs">
+		<Link>Editor\ViewModel\DatePickerViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\DropDownColorPaletteViewModel.cs">
+		<Link>Editor\ViewModel\DropDownColorPaletteViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\DropDownColorPickerViewModel.cs">
+		<Link>Editor\ViewModel\DropDownColorPickerViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\SegmentedViewModel.cs">
+		<Link>Editor\ViewModel\SegmentedViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\ViewModel\TimePickerViewModel.cs">
+		<Link>Editor\ViewModel\TimePickerViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\Resources\CapitalCitySearchingBehavior.cs">
+		<Link>Editor\Views\AutoComplete\Resources\CapitalCitySearchingBehavior.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\Resources\CustomFilter.cs">
+		<Link>Editor\Views\AutoComplete\Resources\CustomFilter.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\AutoComplete\Resources\CustomAsyncFilter.cs">
+		<Link>Editor\Views\AutoComplete\Resources\CustomAsyncFilter.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\Resources\CustomGroupFilter.cs">
+		<Link>Editor\Views\AutoComplete\Resources\CustomGroupFilter.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\AutoComplete\Resources\CustomSearch.cs">
+		<Link>Editor\Views\AutoComplete\Resources\CustomSearch.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\Filtering.xaml.cs">
+		<Link>Editor\Views\AutoComplete\Filtering.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\GettingStarted.xaml.cs">
+		<Link>Editor\Views\AutoComplete\GettingStarted.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\AutoComplete\Highlighting.xaml.cs">
+		<Link>Editor\Views\AutoComplete\Highlighting.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\AutoComplete\LeadingAndTrailingView.xaml.cs">
+		<Link>Editor\Views\AutoComplete\LeadingAndTrailingView.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\AutoComplete\AutoAppend.xaml.cs">
+		<Link>Editor\Views\AutoComplete\AutoAppend.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\Grouping.xaml.cs">
+		<Link>Editor\Views\AutoComplete\Grouping.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\AutoComplete\MultiSelection.xaml.cs">
+		<Link>Editor\Views\AutoComplete\MultiSelection.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ColorPalette\ColorPaletteView.xaml.cs">
+		<Link>Editor\Views\ColorPalette\ColorPaletteView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\ColorPalette\ColorPaletteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\ColorPicker\ColorPickerView.xaml.cs">
+		<Link>Editor\Views\ColorPicker\ColorPickerView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\ColorPicker\ColorPickerView.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Editor\Views\ComboBox\Editing.xaml.cs">
+		<Link>Editor\Views\ComboBox\Editing.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ComboBox\Filtering.xaml.cs">
+		<Link>Editor\Views\ComboBox\Filtering.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ComboBox\GettingStarted.xaml.cs">
+		<Link>Editor\Views\ComboBox\GettingStarted.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ComboBox\Grouping.xaml.cs">
+		<Link>Editor\Views\ComboBox\Grouping.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\ComboBox\Highlighting.xaml.cs">
+		<Link>Editor\Views\ComboBox\Highlighting.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\ComboBox\AutoAppend.xaml.cs">
+		<Link>Editor\Views\ComboBox\AutoAppend.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\ComboBox\LeadingAndTrailingView.xaml.cs">
+		<Link>Editor\Views\ComboBox\LeadingAndTrailingView.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ComboBox\MultiSelection.xaml.cs">
+		<Link>Editor\Views\ComboBox\MultiSelection.xaml.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\ComboBox\Resources\CityFilteringBehavior.cs">
+		<Link>Editor\Views\ComboBox\Resources\CityFilteringBehavior.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\ComboBox\Resources\CitySearchingBehavior.cs">
+		<Link>Editor\Views\ComboBox\Resources\CitySearchingBehavior.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\ComboBox\Searching.xaml.cs">
+		<Link>Editor\Views\ComboBox\Searching.xaml.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\SamplesConfiguration.cs">
+		<Link>Editor\SamplesConfiguration.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\DatePicker\Customization.xaml.cs">
+		<Link>Editor\Views\DatePicker\Customization.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\DatePicker\Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\DatePicker\DatePickerView.xaml.cs">
+		<Link>Editor\Views\DatePicker\DatePickerView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\DatePicker\DatePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\DatePicker\Resources\DateItemTemplateSelector.cs">
+		<Link>Editor\Views\DatePicker\Resources\DateItemTemplateSelector.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\DropDownColorPalette\DropDownColorPaletteView.xaml.cs">
+		<Link>Editor\Views\DropDownColorPalette\DropDownColorPaletteView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\DropDownColorPalette\DropDownColorPaletteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\DropDownColorPicker\DropDownColorPickerView.xaml.cs">
+		<Link>Editor\Views\DropDownColorPicker\DropDownColorPickerView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\DropDownColorPicker\DropDownColorPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\SegmentedControl\Customization.xaml.cs">
+		<Link>Editor\Views\SegmentedControl\Customization.xaml.cs</Link>
+	   <DependentUpon>..\Editor\Views\SegmentedControl\Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\SegmentedControl\GettingStarted.xaml.cs">
+		<Link>Editor\Views\SegmentedControl\GettingStarted.xaml.cs</Link>
+	   <DependentUpon>..\Editor\Views\SegmentedControl\GettingStarted.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\TimePicker\Customization.xaml.cs">
+		<Link>Editor\Views\TimePicker\Customization.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\TimePicker\Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\TimePicker\Resources\TimeItemTemplateSelector.cs">
+		<Link>Editor\Views\TimePicker\Resources\TimeItemTemplateSelector.cs</Link>
+	</Compile>
+    <Compile Include="..\Editor\Views\TimePicker\TimePickerView.xaml.cs">
+		<Link>Editor\Views\TimePicker\TimePickerView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\TimePicker\TimePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\NumberBox\CultureView.xaml.cs">
+		<Link>Editor\Views\NumberBox\CultureView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\NumberBox\CultureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\Editor\Views\NumberBox\GettingStartedView.xaml.cs">
+		<Link>Editor\Views\NumberBox\GettingStartedView.xaml.cs</Link>
+      <DependentUpon>..\Editor\Views\NumberBox\GettingStartedView.xaml</DependentUpon>
+    </Compile>
+	<Compile Include="..\Editor\Views\Rating\Resources\ImageDataTemplateSelector.cs">
+		<Link>Editor\Views\Rating\Resources\ImageDataTemplateSelector.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\Rating\Resources\PathDataTemplateSelector.cs">
+		<Link>Editor\Views\Rating\Resources\PathDataTemplateSelector.cs</Link>
+	</Compile>
+	<Compile Include="..\Editor\Views\Rating\CustomView.xaml.cs">
+		<Link>Editor\Views\Rating\CustomView.xaml.cs</Link>
+	  <DependentUpon>..\Editor\Views\Rating\CustomView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\Rating\GettingStartedView.xaml.cs">
+		<Link>Editor\Views\Rating\GettingStartedView.xaml.cs</Link>
+	  <DependentUpon>..\Editor\Views\Rating\GettingStartedView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\GettingStartedView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\GettingStartedView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\GettingStartedView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\CultureView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\CultureView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\CultureView.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="..\Editor\Views\MaskedTextBox\InputValidationView.xaml.cs">
+		<Link>Editor\Views\MaskedTextBox\InputValidationView.xaml.cs</Link>
+		<DependentUpon>..\Editor\Views\MaskedTextBox\InputValidationView.xaml</DependentUpon>
+	</Compile>
+	<EmbeddedResource Include="..\Editor\Assets\NumberBox\Basque.png">
+		<Link>Editor\Assets\NumberBox\Basque.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\china.png">
+		<Link>Editor\Assets\NumberBox\china.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\france.png">
+		<Link>Editor\Assets\NumberBox\france.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\India.png">
+		<Link>Editor\Assets\NumberBox\India.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\Mexico.png">
+		<Link>Editor\Assets\NumberBox\Mexico.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\Portugal.png">
+		<Link>Editor\Assets\NumberBox\Portugal.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\Russia.png">
+		<Link>Editor\Assets\NumberBox\Russia.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\turkey.png">
+		<Link>Editor\Assets\NumberBox\turkey.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\UnitedKingdom.png">
+		<Link>Editor\Assets\NumberBox\UnitedKingdom.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\NumberBox\UnitedStates.png">
+		<Link>Editor\Assets\NumberBox\UnitedStates.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee1.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee1.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee10.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee10.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee2.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee2.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee3.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee3.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee4.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee4.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee5.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee5.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee6.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee6.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee7.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee7.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee8.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee8.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\Employee9.png">
+		<Link>Editor\Assets\ComboBox\Employees\Employee9.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Editor\Assets\ComboBox\Employees\NewEmployee.png">
+		<Link>Editor\Assets\ComboBox\Employees\NewEmployee.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\SadSelected.png">
+		<Link>Editor\Assets\Rating\SadSelected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\SadUnselected.png">
+		<Link>Editor\Assets\Rating\SadUnselected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\ExcitedSelected.png">
+		<Link>Editor\Assets\Rating\ExcitedSelected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\ExcitedUnselected.png">
+		<Link>Editor\Assets\Rating\ExcitedUnselected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\HappySelected.png">
+		<Link>Editor\Assets\Rating\HappySelected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\HappyUnselected.png">
+		<Link>Editor\Assets\Rating\HappyUnselected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\NeutralSelected.png">
+		<Link>Editor\Assets\Rating\NeutralSelected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\NeutralUnselected.png">
+		<Link>Editor\Assets\Rating\NeutralUnselected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\UnhappySelected.png">
+		<Link>Editor\Assets\Rating\UnhappySelected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="..\Editor\Assets\Rating\UnhappyUnselected.png">
+		<Link>Editor\Assets\Rating\UnhappyUnselected.png</Link>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+	<Content Include="..\Editor\Assets\ComboBox\Employees\NewEmployee.png">
+		<Link>Editor\Assets\ComboBox\Employees\NewEmployee.png</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\GettingStarted_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\GettingStarted_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\Customization_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\Customization_xaml.txt</Link>
+	</Content>
+ 	<Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelection_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelection_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\Highlighting_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\Highlighting_xaml.txt</Link>
+	</Content>
+	  <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\AutoAppend_xaml.txt">
+		  <Link>Editor\Views\AutoComplete\Resources\SourceCodes\AutoAppend_xaml.txt</Link>
+	  </Content>
+	  <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\TrailingView_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\TrailingView_xaml.txt</Link>
+	</Content>
+	  <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\LeadingView_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\LeadingView_xaml.txt</Link>
+	</Content>
+	  <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\LeadingAndTrailingView_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\LeadingAndTrailingView_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelectionTokenTemplate_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelectionTokenTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomFilter_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomFilter_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomFilter_cs.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomFilter_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomAsyncFilter_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomAsyncFilter_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomAsyncFilter_cs.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomAsyncFilter_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomSearch_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomSearch_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\CustomSearch_cs.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\CustomSearch_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\StandardFiltering_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\StandardFiltering_xaml.txt</Link>
+	</Content>
+   <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\Grouping_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\Grouping_xaml.txt</Link>
+	</Content>
+   <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\Grouping_cs.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\Grouping_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ColorPalette\Resources\SourceCodes\PaletteProperties_xaml.txt">
+		<Link>Editor\Views\ColorPalette\Resources\SourceCodes\PaletteProperties_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ColorPalette\Resources\SourceCodes\SimpleColorPalette_xaml.txt">
+		<Link>Editor\Views\ColorPalette\Resources\SourceCodes\SimpleColorPalette_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ColorPalette\Resources\SourceCodes\StandardProperties_xaml.txt">
+		<Link>Editor\Views\ColorPalette\Resources\SourceCodes\StandardProperties_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ColorPicker\Resources\SourceCodes\SolidColorPicker_xaml.txt">
+		<Link>Editor\Views\ColorPicker\Resources\SourceCodes\SolidColorPicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ColorPicker\Resources\SourceCodes\ColorPickerModes_xaml.txt">
+		<Link>Editor\Views\ColorPicker\Resources\SourceCodes\ColorPickerModes_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\BlackoutDateTemplate_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\BlackoutDateTemplate_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\BlackoutDateTemplate_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\BlackoutDateTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Cascading_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Cascading_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\CityFilteringBehavior_cs.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\CityFilteringBehavior_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\TokenCustomization_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\TokenCustomization_xaml.txt</Link>
+	</Content>	  
+	<Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Customization_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Customization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\CustomFiltering_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\CustomFiltering_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Grouping_cs.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Grouping_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\LeadingView_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\LeadingView_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\LeadingAndTrailingView_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\LeadingAndTrailingView_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\TrailingView_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\TrailingView_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Grouping_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Grouping_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Filtering_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Filtering_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Highlighting_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Highlighting_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\AutoAppend_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\AutoAppend_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Searching_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Searching_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\Editing_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\Editing_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\MultiSelection_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\MultiSelection_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelection_xaml.txt">
+		<Link>Editor\Views\AutoComplete\Resources\SourceCodes\MultiSelection_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\GettingStarted_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\GettingStarted_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\SelectionBoxItemTemplate_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\SelectionBoxItemTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\MultiSelectionBoxItemTemplate_xaml.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\MultiSelectionBoxItemTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\ComboBox\Resources\SourceCodes\MultiSelectionBoxItemTemplate_cs.txt">
+		<Link>Editor\Views\ComboBox\Resources\SourceCodes\MultiSelectionBoxItemTemplate_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\CustomFormatString_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\CustomFormatString_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\CustomFormatString_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\CustomFormatString_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\DateTimeFormatting_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\DateTimeFormatting_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\DropdownHeaderTemplate_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\DropdownHeaderTemplate_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ExcludeWeekEndDates_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ExcludeWeekEndDates_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ExcludeWeekEndDates_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ExcludeWeekEndDates_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ItemContainerStyle_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ItemContainerStyle_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ItemContainerStyle_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ItemContainerStyle_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ItemCustomization_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ItemCustomization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\SimpleDatePicker_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\SimpleDatePicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\ViewCustomization_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\ViewCustomization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DropDownColorPalette\Resources\SourceCodes\DropDownColorPalette_xaml.txt">
+		<Link>Editor\Views\DropDownColorPalette\Resources\SourceCodes\DropDownColorPalette_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DropDownColorPalette\Resources\SourceCodes\SplitMode_xaml.txt">
+		<Link>Editor\Views\DropDownColorPalette\Resources\SourceCodes\SplitMode_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DropDownColorPicker\Resources\SourceCodes\DropDownColorPicker_xaml.txt">
+		<Link>Editor\Views\DropDownColorPicker\Resources\SourceCodes\DropDownColorPicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DropDownColorPicker\Resources\SourceCodes\GradientBrushType_xaml.txt">
+		<Link>Editor\Views\DropDownColorPicker\Resources\SourceCodes\GradientBrushType_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DropDownColorPicker\Resources\SourceCodes\SplitMode_xaml.txt">
+		<Link>Editor\Views\DropDownColorPicker\Resources\SourceCodes\SplitMode_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\NumberBox\Resources\SourceCodes\Formatting_xaml.txt">
+		<Link>Editor\Views\NumberBox\Resources\SourceCodes\Formatting_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\NumberBox\Resources\SourceCodes\GettingStarted_xaml.txt">
+		<Link>Editor\Views\NumberBox\Resources\SourceCodes\GettingStarted_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\NumberBox\Resources\SourceCodes\Culture_xaml.txt">
+		<Link>Editor\Views\NumberBox\Resources\SourceCodes\Culture_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\NumberBox\Resources\SourceCodes\TextBoxVisibility_xaml.txt">
+		<Link>Editor\Views\NumberBox\Resources\SourceCodes\TextBoxVisibility_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\SegmentedControl\Resources\SourceCodes\defaultsegmented_xaml.txt">
+		<Link>Editor\Views\SegmentedControl\Resources\SourceCodes\defaultsegmented_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\SegmentedControl\Resources\SourceCodes\imagewithtext_xaml.txt">
+		<Link>Editor\Views\SegmentedControl\Resources\SourceCodes\imagewithtext_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\SegmentedControl\Resources\SourceCodes\topborder_xaml.txt">
+		<Link>Editor\Views\SegmentedControl\Resources\SourceCodes\topborder_xaml.txt</Link>
+	</Content>
+  <Content Include="..\Editor\Views\SegmentedControl\Resources\SourceCodes\customization_xaml.txt">
+    <Link>Editor\Views\SegmentedControl\Resources\SourceCodes\customization_xaml.txt</Link>
+  </Content>  
+  <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\DropdownHeaderTemplate_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\DropdownHeaderTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\ItemCustomization_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\ItemCustomization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\ItemTemplateSelector_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\ItemTemplateSelector_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\FlightBookingOnline_cs.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\FlightBookingOnline_cs.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\DatePicker\Resources\SourceCodes\FlightBookingOnline_xaml.txt">
+		<Link>Editor\Views\DatePicker\Resources\SourceCodes\FlightBookingOnline_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\SimpleTimePicker_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\SimpleTimePicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\TimeFormatting_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\TimeFormatting_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\TimePickerMinutesInterval_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\TimePickerMinutesInterval_xaml.txt</Link>
+	</Content>
+    <Content Include="..\Editor\Views\TimePicker\Resources\SourceCodes\ViewCustomization_xaml.txt">
+		<Link>Editor\Views\TimePicker\Resources\SourceCodes\ViewCustomization_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\custompath_xaml.txt">
+	   <Link>Editor\Views\Rating\Resources\SourceCodes\custompath_xaml.txt</Link>
+    </Content>
+	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\customimage_xaml.txt">
+	   <Link>Editor\Views\Rating\Resources\SourceCodes\customimage_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\defaultstyle_xaml.txt">
+	   <Link>Editor\Views\Rating\Resources\SourceCodes\defaultstyle_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\pathtemplateselector_cs.txt">
+	   <Link>Editor\Views\Rating\Resources\SourceCodes\pathtemplateselector_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\Rating\Resources\SourceCodes\imagetemplateselector_cs.txt">
+	   <Link>Editor\Views\Rating\Resources\SourceCodes\imagetemplateselector_cs.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\gettingstarted_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\gettingstarted_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\literalsandprompt_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\literalsandprompt_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\cultureview_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\cultureview_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\inputvalidation_xaml.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\inputvalidation_xaml.txt</Link>
+	</Content>
+	<Content Include="..\Editor\Views\MaskedTextBox\Resources\SourceCodes\inputvalidation_xaml_cs.txt">
+	   <Link>Editor\Views\MaskedTextBox\Resources\SourceCodes\inputvalidation_xaml_cs.txt</Link>
+	</Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\Editor\Views\AutoComplete\Filtering.xaml">
+		<Link>Editor\Views\AutoComplete\Filtering.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+   <Page Include="..\Editor\Views\AutoComplete\Grouping.xaml">
+	   <Link>Editor\Views\AutoComplete\Grouping.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\AutoComplete\GettingStarted.xaml">
+		<Link>Editor\Views\AutoComplete\GettingStarted.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Editor\Views\AutoComplete\Highlighting.xaml">
+	 <Link>Editor\Views\AutoComplete\Highlighting.xaml</Link>
+	 <Generator>MSBuild:Compile</Generator>
+	</Page>
+	<Page Include="..\Editor\Views\AutoComplete\LeadingAndTrailingView.xaml">
+	 <Link>Editor\Views\AutoComplete\LeadingAndTrailingView.xaml</Link>
+	 <Generator>MSBuild:Compile</Generator>
+	</Page>
+	  <Page Include="..\Editor\Views\AutoComplete\AutoAppend.xaml">
+	 <Link>Editor\Views\AutoComplete\AutoAppend.xaml</Link>
+	 <Generator>MSBuild:Compile</Generator>
+	</Page>
+    <Page Include="..\Editor\Views\AutoComplete\MultiSelection.xaml">
+		<Link>Editor\Views\AutoComplete\MultiSelection.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ColorPalette\ColorPaletteView.xaml">
+		<Link>Editor\Views\ColorPalette\ColorPaletteView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\ColorPicker\ColorPickerView.xaml">
+		<Link>Editor\Views\ColorPicker\ColorPickerView.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\GettingStarted.xaml">
+		<Link>Editor\Views\ComboBox\GettingStarted.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Editor\Views\ComboBox\Editing.xaml">
+		<Link>Editor\Views\ComboBox\Editing.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\Filtering.xaml">
+		<Link>Editor\Views\ComboBox\Filtering.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\Grouping.xaml">
+		<Link>Editor\Views\ComboBox\Grouping.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Editor\Views\ComboBox\Highlighting.xaml">
+		<Link>Editor\Views\ComboBox\Highlighting.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\AutoAppend.xaml">
+        <Link>Editor\Views\ComboBox\AutoAppend.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	<Page Include="..\Editor\Views\ComboBox\LeadingAndTrailingView.xaml">
+		<Link>Editor\Views\ComboBox\LeadingAndTrailingView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\MultiSelection.xaml">
+		<Link>Editor\Views\ComboBox\MultiSelection.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\ComboBox\Searching.xaml">
+		<Link>Editor\Views\ComboBox\Searching.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\DatePicker\Customization.xaml">
+		<Link>Editor\Views\DatePicker\Customization.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\DatePicker\DatePickerView.xaml">
+		<Link>Editor\Views\DatePicker\DatePickerView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\DropDownColorPalette\DropDownColorPaletteView.xaml">
+		<Link>Editor\Views\DropDownColorPalette\DropDownColorPaletteView.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\Editor\Views\DropDownColorPicker\DropDownColorPickerView.xaml">
+		<Link>Editor\Views\DropDownColorPicker\DropDownColorPickerView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\TimePicker\Customization.xaml">
+		<Link>Editor\Views\TimePicker\Customization.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\TimePicker\TimePickerView.xaml">
+		<Link>Editor\Views\TimePicker\TimePickerView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\NumberBox\CultureView.xaml">
+		<Link>Editor\Views\NumberBox\CultureView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Editor\Views\NumberBox\GettingStartedView.xaml">
+		<Link>Editor\Views\NumberBox\GettingStartedView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+	<Page Include="..\Editor\Views\SegmentedControl\Customization.xaml">
+		<Link>Editor\Views\SegmentedControl\Customization.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+    </Page>
+	<Page Include="..\Editor\Views\SegmentedControl\GettingStarted.xaml">
+		<Link>Editor\Views\SegmentedControl\GettingStarted.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+	<Page Include="..\Editor\Views\Rating\CustomView.xaml">
+		<Link>Editor\Views\Rating\CustomView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\Rating\GettingStartedView.xaml">
+	    <Link>Editor\Views\Rating\GettingStartedView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\GettingStartedView.xaml">
+		<Link>Editor\Views\MaskedTextBox\GettingStartedView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml">
+		<Link>Editor\Views\MaskedTextBox\LiteralsAndPromptView.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\CultureView.xaml">
+		  <Link>Editor\Views\MaskedTextBox\CultureView.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
+	</Page>
+	<Page Include="..\Editor\Views\MaskedTextBox\InputValidationView.xaml">
+		  <Link>Editor\Views\MaskedTextBox\InputValidationView.xaml</Link>
+	   <Generator>MSBuild:Compile</Generator>
+	   <SubType>Designer</SubType>
+	</Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="..\Editor\Views\AutoComplete\Grouping.xaml">
+		<Link>Editor\Views\AutoComplete\Grouping.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

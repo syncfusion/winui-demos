@@ -1,0 +1,53 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.InversedAxis"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI">
+
+    <common:DemoLayout HeaderText="This sample shows the inversed support in linear gauge."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/codesnippets/axis/inversedaxis/inversedaxis.xaml.txt,
+                                                                          Common=LinearGauge/codesnippets/axis/inversedaxis/inversedaxis.xaml.txt}">
+        <common:DemoLayout.Example>
+            <Grid VerticalAlignment="Center"
+                      Height="250">
+                <gauge:SfLinearGauge x:Name="gauge"
+                                         Width="550"
+                                         IsInversed="True">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis Interval="10"
+                                              MinorTicksPerInterval="4">
+                            <gauge:LinearAxis.BarPointers>
+                                <gauge:BarPointer Value="{Binding ElementName=shapePointer, Path=Value, Mode=OneWay}"
+                                                      EnableAnimation="True">
+                                    <gauge:BarPointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:BarPointer.AnimationEasingFunction>
+                                </gauge:BarPointer>
+                            </gauge:LinearAxis.BarPointers>
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="shapePointer"
+                                                        Value="40"
+                                                        IsInteractive="True"
+                                                        OffsetPoint="0,-14"
+                                                        EnableAnimation="True">
+                                    <gauge:LinearShapePointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:LinearShapePointer.AnimationEasingFunction>
+                                </gauge:LinearShapePointer>
+                            </gauge:LinearAxis.MarkerPointers>
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+            </Grid>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="isInversedAxisShapePointerValue"
+                                               SubstitutionValue="{x:Bind shapePointer.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+    </common:DemoLayout>
+</Page>
