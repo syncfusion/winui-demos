@@ -1,0 +1,103 @@
+﻿<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.ComboBox.LeadingAndTrailingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="Transparent">
+    <Page.DataContext>
+        <local:ListViewModel x:Name="listviewmodel"/>
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+            <common:DemoLayout HeaderText="ComboBox control with leading view."
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/ComboBox/LeadingView_xaml.txt,
+                                                                   Common=Editor/Assets/ComboBox/LeadingView_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <editors:SfComboBox Header="ComboBox with Leading View"
+                                        Width="250"
+                                        IsEditable="True"
+                                        ItemsSource="{Binding Countries}"
+                                        PlaceholderText="Search a country"
+                                        HorizontalAlignment="Center"
+                                        PreviewKeyDown="OnEditingComboBoxPreviewKeyDown">
+                        <editors:SfComboBox.LeadingView>
+                            <Viewbox Height="16"
+                                     Width="16"
+                                     Margin="4,0,0,0">
+                                <SymbolIcon Symbol="Find" />
+                            </Viewbox>
+                        </editors:SfComboBox.LeadingView>
+                    </editors:SfComboBox>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="ComboBox control with trailing view."
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/ComboBox/TrailingView_xaml.txt,
+                                                                   Common=Editor/Assets/ComboBox/TrailingView_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <editors:SfComboBox Header="ComboBox with Trailing View"
+                                        Width="250"
+                                        IsEditable="True"
+                                        SelectionChangeTrigger="Always"
+                                        ItemsSource="{Binding Countries}"
+                                        PlaceholderText="Search a country"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        PreviewKeyDown="OnEditingComboBoxPreviewKeyDown">
+                        <editors:SfComboBox.TrailingView>
+                            <Button Style="{ThemeResource AlternateCloseButtonStyle}"
+                                    Height="30">
+                                <Viewbox Height="16"
+                                         Width="16">
+                                    <FontIcon Glyph="&#xEBE7;" />
+                                </Viewbox>
+                            </Button>
+                        </editors:SfComboBox.TrailingView>
+                    </editors:SfComboBox>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+            <common:DemoLayout HeaderText="ComboBox control with leading and trailing views."
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/ComboBox/LeadingAndTrailingView_xaml.txt,
+                                                                   Common=Editor/Assets/ComboBox/LeadingAndTrailingView_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <editors:SfComboBox Header="ComboBox with Leading and Trailing View"
+                                        Width="400"
+                                        ItemsSource="{Binding FilteredCountryList}"
+                                        IsEditable="True"
+                                        SelectionChangeTrigger="Always"
+                                        TextMemberPath="Country"
+                                        DisplayMemberPath="Country"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        PreviewKeyDown="OnEditingComboBoxPreviewKeyDown">
+                        <editors:SfComboBox.LeadingView>
+                            <editors:SfComboBox VerticalAlignment="Center"
+                                                Margin="0,4,0,4"
+                                                SelectedIndex="{Binding SelectedContinentIndex, Mode=TwoWay}">
+                                <editors:SfComboBoxItem Content="Asia" />
+                                <editors:SfComboBoxItem Content="Africa" />
+                                <editors:SfComboBoxItem Content="North America"/>
+                                <editors:SfComboBoxItem Content="South America" />
+                                <editors:SfComboBoxItem Content="Europe" />
+                                <editors:SfComboBoxItem Content="All Countries"
+                                                        IsSelected="True"/>
+                            </editors:SfComboBox>
+                        </editors:SfComboBox.LeadingView>
+                        <editors:SfComboBox.TrailingView>
+                            <Viewbox Height="16"
+                                     Width="16"
+                                     Margin="0,0,8,0">
+                                <SymbolIcon Symbol="Find" />
+                            </Viewbox>
+                        </editors:SfComboBox.TrailingView>
+                    </editors:SfComboBox>
+                </common:DemoLayout.Example>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
