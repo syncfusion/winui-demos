@@ -1,0 +1,19 @@
+﻿<editors:SfAutoComplete ItemsSource="{Binding FilteredCountryList}">
+                        <editors:SfAutoComplete.LeadingView>
+                            <editors:SfComboBox>
+                                <editors:SfComboBoxItem Content="Asia" />
+                                <editors:SfComboBoxItem Content="Africa" />
+                                <editors:SfComboBoxItem Content="North America"/>
+                                <editors:SfComboBoxItem Content="South America" />
+                                <editors:SfComboBoxItem Content="Europe" />
+                                <editors:SfComboBoxItem Content="All Countries"
+                                                        IsSelected="True"/>
+                            </editors:SfComboBox>
+                        </editors:SfAutoComplete.LeadingView>
+                       <editors:SfAutoComplete.TrailingView>
+                             <Viewbox Height="16"
+                                     Width="16">
+                                <SymbolIcon Symbol="Find" />
+                            </Viewbox>
+                        </editors:SfAutoComplete.TrailingView>
+</editors:SfAutoComplete>

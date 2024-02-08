@@ -1,0 +1,292 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.StackingLine100Chart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:Stacking100ChartViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample demonstrates the monthly expenses of a family using a 100% stacked line chart.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Header="Monthly Expenses of a Family"
+                        Height="420"
+                        PaletteBrushes="{ThemeResource ChartPalette}"
+                        HorizontalAlignment="Center">
+
+                        <chart:SfCartesianChart.Resources>
+                            <ResourceDictionary>
+
+                                <ResourceDictionary.ThemeDictionaries>
+                                    <ResourceDictionary x:Key="Light">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                                    </ResourceDictionary>
+
+                                    <ResourceDictionary x:Key="Dark">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                                    </ResourceDictionary>
+
+                                    <ResourceDictionary x:Key="HighContrast">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{ThemeResource SystemColorWindowColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{ThemeResource SystemColorWindowTextColor}"/>
+                                    </ResourceDictionary>
+                                </ResourceDictionary.ThemeDictionaries>
+                                
+                                <DataTemplate x:Key="labelTemplate">
+                                    <Ellipse Height="11" Width="11" Stroke="{Binding Fill}" StrokeThickness="2" Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                                </DataTemplate>
+
+                            <DataTemplate x:Key="tooltipTemplate1">
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="Father"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                                    <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Ellipse Height="11" Width="11" Fill="{ThemeResource SeriesBrush1}" />
+                                            <TextBlock Text="{Binding Item.Name}"  FontSize="11"  Margin="3,0,0,0"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Father}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="tooltipTemplate2">
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="Mother"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                                    <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Ellipse Height="11" Width="11" Fill="{ThemeResource SeriesBrush2}" />
+                                            <TextBlock Text="{Binding Item.Name}"  FontSize="11" Margin="3,0,0,0"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Mother}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="tooltipTemplate3">
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="Son"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                                    <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Ellipse Height="11" Width="11" Fill="{ThemeResource SeriesBrush3}"/>
+                                            <TextBlock Text="{Binding Item.Name}"  FontSize="11" Margin="3,0,0,0"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Son}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="tooltipTemplate4">
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="Daughter"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                                    <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Ellipse Height="11" Width="11" Fill="{ThemeResource SeriesBrush4}" />
+                                            <TextBlock Text="{Binding Item.Name}"  FontSize="11" Margin="3,0,0,0"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                                        <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Daughter}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                            </ResourceDictionary>
+                        </chart:SfCartesianChart.Resources>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False" LabelRotation="320"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Minimum="0"  Interval="20" PlotOffsetEnd="30">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="0'%" FontSize="12.5"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend IconHeight="13" IconWidth="13" Padding="0,0,50,0"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:StackedLine100Series  EnableAnimation="True" ItemsSource="{Binding MonthlyExpense}"  EnableTooltip="True"
+                           Label="Father"  ShowDataLabels="True" XBindingPath="Name"  YBindingPath="Father" LegendIcon="Circle" TooltipTemplate="{StaticResource tooltipTemplate1}">
+                            <chart:StackedLine100Series.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource labelTemplate}" Context="DataLabelItem"/>
+                            </chart:StackedLine100Series.DataLabelSettings>
+                        </chart:StackedLine100Series>
+
+                        <chart:StackedLine100Series x:Name="columnseries2" EnableAnimation="True" ItemsSource="{Binding MonthlyExpense}"
+                            EnableTooltip="True" Label="Mother" ShowDataLabels="True" XBindingPath="Name" YBindingPath="Mother" LegendIcon="Circle" TooltipTemplate="{StaticResource tooltipTemplate2}">
+                            <chart:StackedLine100Series.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource labelTemplate}" Context="DataLabelItem"/>
+                            </chart:StackedLine100Series.DataLabelSettings>
+                        </chart:StackedLine100Series>
+
+                        <chart:StackedLine100Series EnableAnimation="True" ItemsSource="{Binding MonthlyExpense}"
+                                 EnableTooltip="True"  Label="Son"  ShowDataLabels="True"  XBindingPath="Name"  YBindingPath="Son" LegendIcon="Circle" TooltipTemplate="{StaticResource tooltipTemplate3}">
+                            <chart:StackedLine100Series.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource labelTemplate}" Context="DataLabelItem"/>
+                            </chart:StackedLine100Series.DataLabelSettings>
+                        </chart:StackedLine100Series>
+
+                        <chart:StackedLine100Series EnableAnimation="True" ItemsSource="{Binding MonthlyExpense}" EnableTooltip="True"
+                                        ShowDataLabels="True" XBindingPath="Name" YBindingPath="Daughter" LegendIcon="Circle" Label="Daughter" TooltipTemplate="{StaticResource tooltipTemplate4}">
+                            <chart:StackedLine100Series.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource labelTemplate}" Context="DataLabelItem"/>
+                            </chart:StackedLine100Series.DataLabelSettings>
+                        </chart:StackedLine100Series>
+                       
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Monthly Expenses of a Family&quot;
+                        PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+         &lt;chart:CategoryAxis LabelPlacement=&quot;BetweenTicks&quot; ShowMajorGridLines=&quot;False&quot; 
+                        LabelRotation=&quot;320&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Interval=&quot;20&quot; PlotOffsetEnd=&quot;30&quot;&gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;0'%&quot; FontSize=&quot;12.5&quot;/&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
+     &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend IconWidth=&quot;13&quot; IconHeight=&quot;13&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+   
+    &lt;chart:StackedLine100Series ItemsSource=&quot;{Binding MonthlyExpense}&quot; XBindingPath=&quot;Name&quot;
+                        EnableAnimation=&quot;True&quot; YBindingPath=&quot;Father&quot; EnableTooltip=&quot;True&quot;
+                        Label=&quot;Father&quot; LegendIcon=&quot;Circle&quot; 
+                        TooltipTemplate=&quot;{StaticResource tooltipTemplate1}&quot;&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate}&quot;
+                        Context=&quot;DataLabelItem&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;                     
+  
+    &lt;chart:StackedLine100Series ItemsSource=&quot;{Binding MonthlyExpense}&quot;  XBindingPath=&quot;Name&quot;
+                         YBindingPath=&quot;Mother&quot; EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot;
+                         ShowDataLabels=&quot;True&quot; Label=&quot;Mother&quot; LegendIcon=&quot;Circle&quot;
+                         TooltipTemplate=&quot;{StaticResource tooltipTemplate2}&quot;&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate}&quot;
+                        Context=&quot;DataLabelItem&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
+   
+    &lt;chart:StackedLine100Series ItemsSource=&quot;{Binding MonthlyExpense}&quot; XBindingPath=&quot;Name&quot;
+                        YBindingPath=&quot;Son&quot; EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot;
+                        ShowDataLabels=&quot;True&quot; Label=&quot;Son&quot; LegendIcon=&quot;Circle&quot;
+                        TooltipTemplate=&quot;{StaticResource tooltipTemplate3}&quot;&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate}&quot;
+                          Context=&quot;DataLabelItem&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;                      
+                        
+    &lt;chart:StackedLine100Series  ItemsSource=&quot;{Binding MonthlyExpense}&quot; XBindingPath=&quot;Name&quot; 
+                        EnableAnimation=&quot;True&quot; YBindingPath=&quot;Daughter&quot; Label=&quot;Daughter&quot;
+                        EnableTooltip=&quot;True&quot;  ShowDataLabels=&quot;True&quot; LegendIcon=&quot;Circle&quot;
+                        TooltipTemplate=&quot;{StaticResource tooltipTemplate4}&quot;&gt;
+        &lt;chart:StackedLine100Series.DataLabelSettings&gt;
+            &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource labelTemplate}&quot;
+                          Context=&quot;DataLabelItem&quot;/&gt;
+        &lt;/chart:StackedLine100Series.DataLabelSettings&gt;
+    &lt;/chart:StackedLine100Series&gt;
+                        
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

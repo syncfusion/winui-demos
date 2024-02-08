@@ -1,0 +1,165 @@
+﻿<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.ColorPicker.ColorPickerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    HighContrastAdjustment="Auto"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:ColorPickerViewModel/>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <local:StringToEnumConverter x:Key="stringToEnumConverter"/>
+    </Page.Resources>
+    
+    <ScrollViewer>
+        <StackPanel x:Name="colorPickerViewPanel">
+            <common:DemoLayout 
+                HeaderText="Color Picker in solid color mode."
+                HorizontalContentAlignment="Left"
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/ColorPicker/SolidColorPicker_xaml.txt,
+                                                               Common=Editor/Assets/ColorPicker/SolidColorPicker_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <editors:SfColorPicker
+                        x:Name="sfColorPicker1"
+                        BrushTypeOptions="SolidColorBrush"
+                        IsHexInputVisible="{Binding ElementName=IsHexInputVisible, Path=IsChecked}"
+                        AlphaInputOptions="{Binding Path=AlphaInputOptions, Mode=TwoWay}"
+                        ColorChannelInputOptions="{Binding Path=ColorChannelInputOptions, Mode=TwoWay}"
+                        ColorChannelOptions="{Binding Path=ColorChannelOptions, Converter={StaticResource stringToEnumConverter}}"
+                        ColorEditorsVisibilityMode="{Binding Path=ColorEditorsVisibilityMode}"
+                        SelectedBrush="{Binding Path=SelectedBrush, Mode=TwoWay}"
+                        Width="318"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="AlphaInputOptions"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:ColorInputOptions}, Path=AlphaInputOptions, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:ColorInputOptions}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="ColorChannelInputOptions"
+                            SelectedItem="{Binding  Converter={enumextension:StringToEnumValueConverter Type=editors:ColorInputOptions}, Path=ColorChannelInputOptions, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:ColorInputOptions}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="ColorChannelOptions"
+                            SelectedItem="{Binding Path=ColorChannelOptions, Mode=TwoWay}">
+                            <x:String>RGB</x:String>
+                            <x:String>RGB &amp; CMYK</x:String>
+                            <x:String>HSV &amp; HSL</x:String>
+                            <x:String>All</x:String>
+                        </ComboBox>
+                        <ComboBox 
+                            Margin="5"
+                            Width="180"
+                            Header="ColorEditorsVisibilityMode"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:ColorEditorsVisibilityMode}, Path=ColorEditorsVisibilityMode, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:ColorEditorsVisibilityMode}"/>
+                        <CheckBox
+                            x:Name="IsHexInputVisible"
+                            Margin="5"
+                            Content="IsHexInputVisible"
+                            IsChecked="True"/>
+                        <Rectangle
+                            Margin="5"
+                            Width="180"
+                            Height="60"
+                            Fill="{Binding Path=SelectedBrush}"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="ColorChannelInputOptions"
+                        SubstitutionValue="{x:Bind sfColorPicker1.ColorChannelInputOptions, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="ColorChannelOptions"
+                        SubstitutionValue="{x:Bind sfColorPicker1.ColorChannelOptions, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="ColorEditorsVisibilityMode"
+                        SubstitutionValue="{x:Bind sfColorPicker1.ColorEditorsVisibilityMode, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="IsHexInputVisible"
+                        SubstitutionValue="{x:Bind sfColorPicker1.IsHexInputVisible, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout 
+                HeaderText="Color Picker in various color modes."
+                HorizontalContentAlignment="Left"
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/ColorPicker/ColorPickerModes_xaml.txt,
+                                                               Common=Editor/Assets/ColorPicker/ColorPickerModes_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <editors:SfColorPicker
+                        x:Name="sfColorPicker2"
+                        BrushTypeOptions="{Binding Path=BrushTypeOptions}"
+                        ColorSpectrumComponents="{Binding Path=ColorSpectrumComponents}"
+                        ColorSpectrumShape="{Binding Path=ColorSpectrumShape}"
+                        AxisInputOption="{Binding Path=AxisInputOption}"
+                        SelectedBrush="{Binding Path=SelectedColor, Mode=TwoWay}"/>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            Header="BrushTypeOptions"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:BrushTypeOptions}, Path=BrushTypeOptions, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:BrushTypeOptions}"/>
+                        <ComboBox 
+                            Margin="5"
+                            Width="180"
+                            Header="ColorSpectrumComponents"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=ColorSpectrumComponents}, Path=ColorSpectrumComponents, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=ColorSpectrumComponents}"/>
+                        <ComboBox 
+                            Margin="5"
+                            Width="180"
+                            Header="ColorSpectrumShape"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=ColorSpectrumShape}, Path=ColorSpectrumShape, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=ColorSpectrumShape}"/>
+                        <ComboBox 
+                            Margin="5"
+                            Width="180"
+                            Header="AxisInputOption"
+                            IsEnabled="{Binding EnableAxisInputOption}"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:AxisInputOption}, Path=AxisInputOption, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:AxisInputOption}"/>
+                        <Rectangle
+                            Margin="5"
+                            Width="180"
+                            Height="60"
+                            Fill="{Binding Path=SelectedColor}"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="BrushTypeOptions"
+                        SubstitutionValue="{x:Bind sfColorPicker2.BrushTypeOptions, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="ColorSpectrumComponents"
+                        SubstitutionValue="{x:Bind sfColorPicker2.ColorSpectrumComponents, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="ColorSpectrumShape"
+                        SubstitutionValue="{x:Bind sfColorPicker2.ColorSpectrumShape, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution
+                        Key="AxisInputOption"
+                        SubstitutionValue="{x:Bind sfColorPicker2.AxisInputOption, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+    
+</Page>
