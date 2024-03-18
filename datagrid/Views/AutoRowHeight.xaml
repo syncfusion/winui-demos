@@ -1,0 +1,132 @@
+<Page
+    x:Class="DataGrid.AutoRowHeight"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI" 
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.Resources>
+        <local:PersonViewModel x:Key="personViewModel"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource personViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="The DataGrid supports the auto row height feature, which improves the readability of the content and occurs on-demand. It provides support to change the height of the row based on its content on-demand, for all columns or certain columns of the DataGrid.">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <dataGrid:SfDataGrid
+                            x:Name="sfDataGrid"
+                            Height="520"
+                            Width="Auto"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            AutoGenerateColumns="False"
+                            ColumnWidthMode="None"
+                            SelectionMode="Extended"
+                            AllowEditing="True"
+                            NavigationMode="Cell"
+                            ShowRowHeader="True"
+                            AllowResizingColumns="True"
+                            GridLinesVisibility="Horizontal"
+                            ItemsSource="{Binding Persons}">
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridTextColumn HeaderText="Employee Name" 
+                                                 MappingName="EmployeeName"
+                                                 TextWrapping="Wrap"/>
+                                <dataGrid:GridTextColumn HeaderText="Designation" 
+                                                 MappingName="Designation" 
+                                                 TextWrapping="Wrap" />
+                                <dataGrid:GridTextColumn HeaderText="Address" 
+                                                 MappingName="Address" 
+                                                 TextWrapping="Wrap"/>
+                                <dataGrid:GridComboBoxColumn HeaderText="Status" 
+                                                 MappingName="Status" 
+                                                 TextWrapping="Wrap" 
+                                                 ColumnWidthMode="Auto"
+                                                 ItemsSource="{Binding Status, Source={StaticResource personViewModel}}"/>
+                                <dataGrid:GridNumericColumn HeaderText="Salary" 
+                                                 MappingName="Salary" 
+                                                 TextWrapping="Wrap" 
+                                                 ColumnWidthMode="Auto"
+                                                 NumberFormatter="{Binding SystemCurrency, Source={StaticResource personViewModel}}"/>
+                                <dataGrid:GridComboBoxColumn HeaderText="Trustworthiness" 
+                                                 MappingName="Trustworthiness" 
+                                                 TextWrapping="Wrap" 
+                                                 ColumnWidthMode="Auto"
+                                                 ItemsSource="{Binding Trustworthiness, Source={StaticResource personViewModel}}"/>
+                                <dataGrid:GridTextColumn HeaderText="Mail" 
+                                                 MappingName="Mail"
+                                                 ColumnWidthMode="Auto"
+                                                 TextWrapping="Wrap" />
+                                <dataGrid:GridTextColumn HeaderText="Location" 
+                                                 MappingName="Location" 
+                                                 ColumnWidthMode="Auto"
+                                                 TextWrapping="Wrap"/>
+                                <dataGrid:GridNumericColumn HeaderText="Rating" 
+                                                 MappingName="Rating" 
+                                                 ColumnWidthMode="Auto"
+                                                 TextWrapping="Wrap"/>
+                            </dataGrid:SfDataGrid.Columns>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+    &lt;dataGrid:SfDataGrid 
+                        x:Name=&quot;sfDataGrid&quot;
+                        Height=&quot;520&quot;
+                        Width=&quot;Auto&quot;
+                        HorizontalAlignment=&quot;Left&quot;
+                        AutoGenerateColumns=&quot;False&quot;
+                        ColumnWidthMode=&quot;None&quot;
+                        SelectionMode=&quot;Extended&quot;
+                        AllowEditing=&quot;True&quot;
+                        NavigationMode=&quot;Cell&quot;
+                        ShowRowHeader=&quot;True&quot;
+                        AllowResizingColumns=&quot;True&quot;
+                        GridLinesVisibility=&quot;Horizontal&quot;
+                        ItemSource=&quot;{Binding Persons}&quot;&gt;
+                    &lt;dataGrid.SfDataGrid.Columns&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Employee Name&quot; MappingName=&quot;EmployeeName&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Designation&quot; MappingName=&quot;Designation&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Address&quot; MappingName=&quot;Address&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+                        &lt;dataGrid:GridComboBoxColumn HeaderText=&quot;Status&quot; MappingName=&quot;Status&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; ItemSource=&quot;{Binding Status, Source={StaticResource personViewModel}}&quot; /&gt;
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Salary&quot; MappingName=&quot;Salary&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; NumberFormatter=&quot;{Binding SystemCurrency, Source={StaticResource personViewModel}}&quot; /&gt;
+                        &lt;dataGrid:GridComboBoxColumn HeaderText=&quot;Trustworthiness&quot; MappingName=&quot;Trustworthiness&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; ItemSource=&quot;{Binding Trustworthiness, Source={StaticResource personViewModel}}&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Mail&quot; MappingName=&quot;Mail&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Location&quot; MappingName=&quot;Location&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; /&gt;                       
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Rating&quot; MappingName=&quot;Rating&quot; ColumnWidthMode=&quot;Auto&quot; TextWrapping=&quot;Wrap&quot; /&gt;                      
+                    &lt;/dataGrid.SfDataGrid.Columns&gt;
+    &lt;/dataGrid:SfDataGrid&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.CSharp>
+                    <x:String xml:space="preserve">
+        C# Code behind
+                        
+        GridRowSizingOptions gridRowResizingOptions = new GridRowSizingOptions();
+        double autoHeight = double.NaN;
+        this.sfDataGrid.QueryRowHeight += SfDataGrid_QueryRowHeight;
+                        
+        private void SfDataGrid_QueryRowHeight(object sender, QueryRowHeightEventArgs e)
+        {
+            if (this.sfDataGrid.ColumnSizer.GetAutoRowHeight(e.RowIndex, gridRowResizingOptions, out autoHeight))
+            {
+                if (autoHeight > 32)
+                {
+                    e.Height = autoHeight;
+                    e.Handled = true;
+                }
+            }
+        }
+                    </x:String>
+                </common:DemoLayout.CSharp>
+            </common:DemoLayout>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
