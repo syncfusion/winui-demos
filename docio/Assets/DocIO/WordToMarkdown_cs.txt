@@ -1,8 +1,0 @@
-﻿//Gets the input Word document.
-using Stream fileStream = GetWordStream("WordtoMD.docx");
-//Loads an existing Word document.
-using WordDocument document = new(fileStream, FormatType.Automatic);
-using MemoryStream ms = new();
-//Saves the Markdown document to the memory stream.
-document.Save(ms, FormatType.Markdown);
-ms.Position = 0;
