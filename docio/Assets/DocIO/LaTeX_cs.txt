@@ -1,0 +1,25 @@
+﻿//Creates a new Word document.
+using WordDocument document = new();
+//Adds new section to the document.
+IWSection section = document.AddSection();
+
+//Set page margins
+section.PageSetup.Margins.All = 72;
+//Add new paragraph to the section
+IWParagraph paragraph = section.AddParagraph();
+
+//Append text to paragraph
+IWTextRange textRange = paragraph.AppendText("Mathematical equation");
+textRange.CharacterFormat.FontSize = 28;
+paragraph.ParagraphFormat.HorizontalAlignment = Syncfusion.DocIO.DLS.HorizontalAlignment.Center;
+paragraph.ParagraphFormat.AfterSpacing = 12;
+
+//Add new paragraph to the section.
+paragraph = section.AddParagraph();
+//Append mathematical equation using LaTeX.
+if (!string.IsNullOrEmpty(this.laTeXText.Text))
+    paragraph.AppendMath(this.laTeXText.Text);
+
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);
