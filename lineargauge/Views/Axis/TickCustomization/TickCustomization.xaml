@@ -1,0 +1,102 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.TickCustomization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI">
+
+    <common:DemoLayout HeaderText="This sample shows the major and minor tick customization of the linear gauge."
+                       XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/tickcustomization.xaml.txt,
+                                                                      Common=LinearGauge/Assets/LinearGauge/tickcustomization.xaml.txt}">
+        <common:DemoLayout.Example>
+            <Grid VerticalAlignment="Center"
+                  Height="250">
+                <Grid.Resources>
+                    <Style x:Key="AxisMajorTickStyle"
+                           TargetType="Line">
+                        <Setter Property="Stroke"
+                                Value="Red"></Setter>
+                        <Setter Property="StrokeThickness"
+                                Value="2"></Setter>
+                        <Setter Property="StrokeDashArray"
+                                Value="2,1"></Setter>
+                    </Style>
+
+                    <Style x:Key="AxisMinorTickStyle"
+                           TargetType="Line">
+                        <Setter Property="Stroke"
+                                Value="Pink"></Setter>
+                        <Setter Property="StrokeThickness"
+                                Value="2"></Setter>
+                        <Setter Property="StrokeDashArray"
+                                Value="2,1"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <gauge:SfLinearGauge x:Name="gauge"
+                                     Width="550">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis x:Name="axis"
+                                          Interval="10"
+                                          MajorTickStyle="{StaticResource AxisMajorTickStyle}"
+                                          MinorTickStyle="{StaticResource AxisMinorTickStyle}"
+                                          MajorTickLength="20"
+                                          MinorTickLength="10"
+                                          MinorTicksPerInterval="4">
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="shapePointer"
+                                                    Value="40"
+                                                    IsInteractive="True"
+                                                    Fill="Gray"
+                                                    Stroke="Gray"
+                                                    OffsetPoint="0,-10"
+                                                    EnableAnimation="True">
+                                    <gauge:LinearShapePointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:LinearShapePointer.AnimationEasingFunction>
+                                </gauge:LinearShapePointer>
+                            </gauge:LinearAxis.MarkerPointers>
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+            </Grid>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Options>
+            <Grid Width="200">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <ComboBox x:Name="TickPositionComboBox"
+                          Header="TickPosition"
+                          ItemsSource="{enumextension:EnumToStringValuesExtension Type=gauge:GaugeElementPosition}"
+                          SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=gauge:GaugeElementPosition}, ElementName=axis, Path=TickPosition, Mode=TwoWay}"
+                          HorizontalAlignment="Stretch"
+                          SelectionChanged="TickPositionComboBox_SelectionChanged" />
+
+                <Slider x:Name="TickOffsetSlider"
+                        Grid.Row="1"
+                        Margin="0,5,0,0"
+                        Header="TickOffset"
+                        Minimum="0"
+                        Maximum="50"
+                        Value="{Binding ElementName=axis, Path=TickOffset, Mode=TwoWay}" />
+            </Grid>
+        </common:DemoLayout.Options>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="axisTickPosition"
+                                           SubstitutionValue="{x:Bind axis.TickPosition, Mode=OneWay}" />
+            <common:DemoLayoutSubstitution Key="axisTickOffset"
+                                           SubstitutionValue="{x:Bind axis.TickOffset, Mode=OneWay}" />
+            <common:DemoLayoutSubstitution Key="tickCustomizationShapePointerValue"
+                                           SubstitutionValue="{x:Bind shapePointer.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+    </common:DemoLayout>
+</Page>

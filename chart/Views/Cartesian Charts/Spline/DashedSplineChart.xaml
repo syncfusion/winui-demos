@@ -1,0 +1,167 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.DashedSplineChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Line" x:Name="axisStyle">
+                <Setter Property="StrokeThickness" Value="0"/>
+                <Setter Property="Stroke" Value="Transparent"/>
+            </Style>
+            <DoubleCollection x:Key="dashArray">
+                <x:Double>6</x:Double>
+                <x:Double>3</x:Double>
+                <x:Double>3</x:Double>
+                <x:Double>3</x:Double>
+            </DoubleCollection>
+            <DataTemplate x:Key="dataLabel">
+                <Ellipse Height="9" Width="9" Stroke="{Binding Fill}" StrokeThickness="2"
+                            Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the percentage of GDP invested using a dashed curve.">
+                <common:DemoLayout.DataContext>
+                    <local:SplineChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <chart:SfCartesianChart x:Name="Chart" Header="Total Investment (% of GDP)" Height="420" PaletteBrushes="{ThemeResource ChartPalette}">
+
+                            <chart:SfCartesianChart.XAxes>
+                                <chart:CategoryAxis PlotOffsetStart="10" PlotOffsetEnd="10" ShowMajorGridLines="False" AxisLineOffset="10"/>
+                            </chart:SfCartesianChart.XAxes>
+
+                            <chart:SfCartesianChart.YAxes>
+                                <chart:NumericalAxis Interval="4"  AxisLineStyle="{StaticResource axisStyle}" MajorTickStyle="{StaticResource axisStyle}">
+                                    <chart:NumericalAxis.LabelStyle>
+                                        <chart:LabelStyle LabelFormat="0'%" FontSize="12"/>
+                                    </chart:NumericalAxis.LabelStyle>
+                                </chart:NumericalAxis>
+                            </chart:SfCartesianChart.YAxes>
+
+                            <chart:SfCartesianChart.Legend>
+                                <chart:ChartLegend IconHeight="13" IconWidth="13" Padding="0,0,40,0"/>
+                            </chart:SfCartesianChart.Legend>
+
+                            <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Brazil" 
+                                     XBindingPath="Name" YBindingPath="Brazil" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                      EnableTooltip="True" ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                                </chart:SplineSeries.DataLabelSettings>
+                            </chart:SplineSeries>
+                          
+                            <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Sweden" 
+                                         XBindingPath="Name" YBindingPath="Sweden" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                         EnableTooltip="True" ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                                </chart:SplineSeries.DataLabelSettings>
+                            </chart:SplineSeries>
+
+                            <chart:SplineSeries EnableAnimation="True" ItemsSource="{Binding DashedSplineData}" Label="Greece" 
+                                        XBindingPath="Name" YBindingPath="Greece" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                                        EnableTooltip="True" ShowDataLabels="True">
+                                <chart:SplineSeries.DataLabelSettings>
+                                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                                </chart:SplineSeries.DataLabelSettings>
+                            </chart:SplineSeries>
+                            
+                        </chart:SfCartesianChart>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
+                            <TextBlock Text="Source: "/>
+                            <TextBlock TextWrapping="WrapWholeWords" Margin="3,0,0,0">
+                         <Hyperlink NavigateUri="https://tcdata360.worldbank.org/indicators/inv.all.pct?country=BRA&amp;indicator=345&amp;countries=GRC,SWE&amp;viz=line_chart&amp;years=1997,2004" FontStyle="Italic" UnderlineStyle="None">The World Bank Group</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Total Investment (% of GDP)&quot;
+                         PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend IconHeight=&quot;13&quot; IconWidth=&quot;13&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+    
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;DoubleCollection x:Key=&quot;dashArray&quot;&gt;
+                &lt;x:Double&gt;6 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+            &lt;/DoubleCollection&gt;                
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
+    
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis PlotOffsetStart=&quot;10&quot; PlotOffsetEnd=&quot;10&quot;
+                       AxisLineOffset=&quot;10&quot; ShowMajorGridLines=&quot;False&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Interval=&quot;4&quot; AxisLineStyle=&quot;{StaticResource axisStyle}&quot; 
+         MajorTickStyle=&quot;{StaticResource axisStyle}&quot;&gt;
+       &lt;chart:NumericalAxis.LabelStyle&gt;
+               &lt;chart:LabelStyle LabelFormat="0'%" FontSize=&quot;12&quot;/&gt;
+       &lt;/chart:NumericalAxis.LabelStyle&gt; &lt;/chart:NumericalAxis&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+   &lt;chart:SplineSeries ItemsSource=&quot;{Binding DashedSplineData}&quot; XBindingPath=&quot;Name&quot; StrokeWidth=&quot;1.75&quot;
+                    YBindingPath=&quot;Brazil&quot; Label=&quot;Brazil&quot; LegendIcon=&quot;Circle&quot; 
+                    StrokeDashArray=&quot;{StaticResource dashArray}&quot; EnableAnimation=&quot;True&quot; 
+                    EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;&gt;
+      &lt;chart:SplineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:SplineSeries.DataLabelSettings&gt;
+   &lt;/chart:SplineSeries&gt;               
+    
+    &lt;chart:SplineSeries ItemsSource=&quot;{Binding DashedSplineData}&quot; XBindingPath=&quot;Name&quot; StrokeWidth=&quot;1.75&quot;
+                     YBindingPath=&quot;Sweden&quot; Label=&quot;Sweden&quot; LegendIcon=&quot;Circle&quot; 
+                     StrokeDashArray=&quot;{StaticResource dashArray}&quot; EnableAnimation=&quot;True&quot; 
+                     EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;&gt;
+      &lt;chart:SplineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:SplineSeries.DataLabelSettings&gt;
+   &lt;/chart:SplineSeries&gt;               
+                        
+    &lt;chart:SplineSeries ItemsSource=&quot;{Binding DashedSplineData}&quot; XBindingPath=&quot;Name&quot; StrokeWidth=&quot;1.75&quot;
+                     YBindingPath=&quot;Greece&quot; Label=&quot;Greece&quot; LegendIcon=&quot;Circle&quot; 
+                     StrokeDashArray=&quot;{StaticResource dashArray}&quot; EnableAnimation=&quot;True&quot; 
+                     EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;&gt;
+       &lt;chart:SplineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:SplineSeries.DataLabelSettings&gt;
+   &lt;/chart:SplineSeries&gt;                   
+       
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿/* Customized segmented control for full cloth selection */
+
+<syncfusion:SfSegmentedControl 
+    x:Name="colors" Grid.Row="1"
+    Margin="-2,35,0,0"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center" 
+    MinHeight="28"
+    BorderThickness="0"
+    Background="Transparent"
+    SelectedItem="{Binding SelectedBackground, Mode=TwoWay}"
+    ItemBorderThickness="0" 
+    SelectionAnimationType="None"
+    SelectedSegmentStyle="{StaticResource circleStyle}"
+    ItemsSource="{Binding Colors}" >
+    <syncfusion:SfSegmentedControl.ItemContainerStyle>
+        <Style TargetType="syncfusion:SfSegmentedItem">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="4,0,4,0"/>
+        </Style>
+   </syncfusion:SfSegmentedControl.ItemContainerStyle>
+   <syncfusion:SfSegmentedControl.ItemTemplate>
+        <DataTemplate>
+            <Border Width="20" Height="20" Background="{Binding Background}" CornerRadius="10"/>
+        </DataTemplate>
+   </syncfusion:SfSegmentedControl.ItemTemplate>
+</syncfusion:SfSegmentedControl>
