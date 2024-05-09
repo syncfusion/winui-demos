@@ -1,6 +1,0 @@
-﻿<editors:SfComboBox ItemsSource="{Binding Countries}"
-                    HighlightedTextFontSize="14"
-                    HighlightedTextFontStyle="Normal"
-                    HighlightedTextForeground="Red"
-                    HighlightedTextFontWeight="Bold">
-</editors:SfComboBox>
