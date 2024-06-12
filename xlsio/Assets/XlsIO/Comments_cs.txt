@@ -1,0 +1,28 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Open the existing Excel document with data.
+  Stream input = GetExcelStream("CommentsTemplate.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic);
+
+  //Access the first worksheet.
+  IWorksheet sheet = workbook.Worksheets[0];
+
+  //Add Comments (Notes).
+  IComment comment = sheet.Range["H1"].AddComment();
+  comment.Text = "This Total column comment will be printed at the end of sheet.";
+  comment.IsVisible = true;
+
+  //Add Threaded Comments.
+  IThreadedComment threadedComment = sheet.Range["H16"].AddThreadedComment("What is the reason for the higher total amount of \"desk\"  in the west region?", "User1", DateTime.Now);
+  threadedComment.AddReply("The unit cost of desk is higher compared to other items in the west region. As a result, the total amount is elevated.", "User2", DateTime.Now);
+  threadedComment.AddReply("Additionally, Wilson sold 31 desks in the west region, which is also a contributing factor to the increased total amount.", "User3", DateTime.Now);
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}

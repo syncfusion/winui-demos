@@ -1,0 +1,26 @@
+﻿<syncfusion:SfShimmer>
+    <syncfusion:SfShimmer.CustomLayout>
+        <Grid  Width="680" Margin="-48,-5,48,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="435"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="115"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="275"/>
+                <ColumnDefinition Width="190"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="LightGray" Grid.Row="0" Margin="40,40,40,40" Grid.Column="0" Grid.ColumnSpan="4" RadiusX="7" RadiusY="7"/>
+            <Rectangle Fill="LightGray" Grid.Row="1" Margin="40,40,160,13" Grid.Column="0" Grid.ColumnSpan="4" RadiusX="7" RadiusY="7"/>
+            <Rectangle Fill="LightGray" Grid.Row="2" Margin="40,0,160,15" Grid.Column="0" Grid.ColumnSpan="4" RadiusX="7" RadiusY="7"/>
+            <Rectangle Fill="LightGray" Grid.Row="3" Margin="40,0,400,15" Grid.Column="0" Grid.ColumnSpan="4" RadiusX="7" RadiusY="7"/>
+            <Rectangle Fill="LightGray" Grid.Row="4" Margin="40,37,20,45" Grid.Column="0" RadiusX="7" RadiusY="7"/>
+            <Rectangle Fill="LightGray" Grid.Row="4" Margin="0,37,0,45" Grid.Column="1"/>
+            <Rectangle Fill="LightGray" Grid.Row="4" Margin="20,37,30,45" Grid.Column="2" RadiusX="7" RadiusY="7"/>
+        </Grid>
+    </syncfusion:SfShimmer.CustomLayout>
+</syncfusion:SfShimmer>
