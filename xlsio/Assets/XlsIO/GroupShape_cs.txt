@@ -1,0 +1,27 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+
+  //Open the existing Excel document with shapes.
+  Stream input = GetExcelStream("GroupShape.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic);
+
+  //Group shapes.
+  IShapes shapes = worksheet.Shapes;
+  IShape[] groupItems = new IShape[] { shapes[0], shapes[1], shapes[2], shapes[3], shapes[4] };
+  shapes.Group(groupItems);
+
+  //Ungroup shapes.
+  shapes = worksheet.Shapes;
+  shapes.Ungroup(shapes[0] as IGroupShape);
+
+  //Ungroup all shapes.
+  shapes = worksheet.Shapes;
+  shapes.Ungroup(shapes[0] as IGroupShape, true);
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}

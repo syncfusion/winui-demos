@@ -1,0 +1,26 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object.
+  IApplication application = excelEngine.Excel;
+
+  Stream input = GetExcelStream("CFTemplate.xlsx");
+  IWorkbook myWorkbook = application.Workbooks.Open(input);
+  myWorkbook.Version = ExcelVersion.Xlsx;
+  IWorksheet sheet = myWorkbook.Worksheets[0];
+                
+  //Add condition for the range
+  IConditionalFormats formats = sheet.Range["C7:C46"].ConditionalFormats;
+  IConditionalFormat format = formats.AddCondition();
+                
+  //Set the format type
+  format.FormatType = ExcelCFType.DataBar;
+  IDataBar dataBar = format.DataBar;
+
+  //Set color for Bar
+  dataBar.BarColor = Syncfusion.Drawing.Color.FromArgb(156, 208, 243);
+                
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  myWorkbook.SaveAs(stream);  
+}

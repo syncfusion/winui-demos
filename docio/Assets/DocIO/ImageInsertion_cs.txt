@@ -1,0 +1,15 @@
+//Creates a new Word document.
+using WordDocument document = new();
+//Adds one section and paragraph.
+document.EnsureMinimal();
+//Gets the image.
+Stream imageStream = GetImageStream("AdventureCycle.png");
+//Inserts .png image.
+WPicture picture = (WPicture)document.LastParagraph.AppendPicture(imageStream);
+//Adds image caption.
+picture.AddCaption("Figure", CaptionNumberingFormat.Roman, CaptionPosition.AfterImage);
+//Updates the fields in Word document.
+document.UpdateDocumentFields();
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);

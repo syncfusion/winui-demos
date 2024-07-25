@@ -1,0 +1,42 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;                
+  //A new workbook is created.[Equivalent to creating a new workbook in MS Excel]
+  IWorkbook workbook = application.Workbooks.Create(1);                
+  IWorksheet sheet = workbook.Worksheets[0];
+                
+  //Insert Rich Text
+  IRange range = sheet.Range["D3"];
+  range.Text = "Employee Report";
+  IRichTextString rtf = range.RichText;
+
+  //Formatting the text
+  IFont redFont = workbook.CreateFont();
+  redFont.Size = 16;                
+  redFont.RGBColor = Syncfusion.Drawing.Color.FromArgb(0x82, 0x2e, 0x1b);
+  rtf.SetFont(0, 14, redFont);
+  
+  sheet.Range["H14"].NumberFormat = "dd/mm/yyyy";
+  sheet.Range["H14"].DateTime = DateTime.Parse(" 8/3/1963", CultureInfo.InvariantCulture);
+  sheet.Range["H16"].NumberFormat = "mm/dd/yyyy";
+  sheet.Range["H16"].DateTime = DateTime.Parse(" 4/1/1992", CultureInfo.InvariantCulture);
+          
+  sheet.Range["F10"].Text = "Name";
+  sheet.Range["F12"].Text = "Title";
+  sheet.Range["F14"].Text = "Birth Date";
+  sheet.Range["F16"].Text = "Hire date";
+  sheet.Range["F18"].Text = "Home phone";              
+  sheet.Range["H10"].Text = "Antony Jose";
+  sheet.Range["H12"].Text = "Sales Manager";
+  sheet.Range["H18"].Text = "(206) 555-3412";
+                 
+  Stream input = GetStream("EMPID1.png");
+  sheet.Pictures.AddPicture(11, 4, input, 55, 65);
+  
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);                 
+}      

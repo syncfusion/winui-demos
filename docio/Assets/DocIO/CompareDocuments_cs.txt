@@ -1,0 +1,29 @@
+﻿//Loads the original document.
+using(FileStream originalDocumentStreamPath = new FileStream(orignalDocumentPath, FileMode.Open, FileAccess.Read))
+{
+     using(WordDocument originalDocument = new WordDocument(originalDocumentStreamPath, FormatType.Docx))
+     {
+          //Loads the revised document.
+          using(FileStream revisedDocumentStreamPath = new FileStream(revisedDocumentPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+          {
+                using(WordDocument revisedDocument = new WordDocument(revisedDocumentStreamPath, FormatType.Automatic))
+                {
+                      if(checkBox.IsChecked.Value)
+                      {
+                          //Compares the original document with revised document
+                          originalDocument.Compare(revisedDocument, "Nancy Davolio", DateTime.Now.AddDays(-1));
+                      }
+                      else
+                      {
+	                      //Disable the flag to ignore the formatting changes while comparing the documents
+	                      ComparisonOptions comparisonOptions = new ComparisonOptions();
+	                      comparisonOptions.DetectFormatChanges = false;
+	                      originalDocument.Compare(revisedDocument, "Nancy Davolio", DateTime.Now.AddDays(-1), comparisonOptions);
+	                  }
+                }
+          }
+          using MemoryStream ms = new();
+          //Saves the document to the memory stream.
+          originalDocument.Save(ms, FormatType.Docx);
+     }
+} 

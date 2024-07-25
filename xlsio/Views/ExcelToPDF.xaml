@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Syncfusion.XlsIODemos.WinUI.Views.ExcelToPDF"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="200"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel>
+    <common:DemoLayout 
+        HeaderText="This example demonstrates how to convert an Excel workbook to PDF along with its charts, shapes, cell styles, etc."
+        CSharpSource="{common:ConditionalXAML Individual=Syncfusion.XlsIODemos.WinUI/Assets/XlsIO/ExcelToPDF_cs.txt,
+                                                         Common=XlsIO/Assets/XlsIO/ExcelToPDF_cs.txt}">
+        <common:DemoLayout.Example>
+            <ContentControl>
+                <Grid x:Name="Conversions" Margin="5,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>                   
+                    <TextBlock x:Name="textBlock2" Grid.Row="1" Grid.ColumnSpan="4"/>
+                    <TextBlock x:Name="textBlock3" Grid.Row="2" Grid.ColumnSpan="4" TextWrapping="Wrap" Text="Click the &quot;Input Template&quot; button to view the input Excel document. Please note that Excel compatible viewer is required to open and view the Excel document." />
+                    <TextBlock x:Name="textBlock4" Grid.Row="3" Grid.ColumnSpan="4" TextWrapping="Wrap" Text="Click the &quot;Convert to PDF&quot; button will convert the Excel document to PDF. PDF viewer is needed to view the converted PDF document." Padding="0,10,10,10" />
+                    <TextBlock x:Name="textBlock5" Grid.Row="4" Grid.ColumnSpan="4"/>
+                    <TextBlock x:Name="pagesetupoption" Grid.Row="5" Grid.ColumnSpan="4" TextWrapping="Wrap" Text="PDF Page Setup Options" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock6" Grid.Row="6" Grid.ColumnSpan="4"/>
+                    <RadioButton  GroupName="pagesetup" Content="No scaling" x:Name="rdbtnNoScaling" Grid.Row="7" Grid.ColumnSpan="1" Margin="10,0,0,0" />
+                    <RadioButton GroupName="pagesetup" Content="Fit all rows on one page" x:Name="rdbtnFitAllRows" Grid.Row="7" Grid.ColumnSpan="2" Margin="220,0,0,0" />
+                    <RadioButton  GroupName="pagesetup" Content="Fit all columns on one page" x:Name="rdbtnFitAllCols" Grid.Row="8" Grid.ColumnSpan="1" Margin="10,0,0,0"/>
+                    <RadioButton GroupName="pagesetup" Content="Fit sheet on one page" x:Name="rdbtnFitSheet" Grid.Row="8" Grid.ColumnSpan="2" Margin="220,0,0,0" IsChecked="True"/>                                       
+                    <Button x:Name="btnInput" Grid.Row="10" Grid.ColumnSpan="1" Content="Input Template" HorizontalAlignment="Left" Click="btnInput_Click" Height="Auto" Width="160" Padding="10,10,10,10" Margin="0,10" />
+                    <Button x:Name="btnConvertToPdf" Grid.Row="10" Grid.ColumnSpan="2" Content="Convert To PDF" HorizontalAlignment="Left" Click="btnConvertToPDF_Click" Height="Auto" Width="160" Padding="10,10,10,10" Margin="185,10,10,10" />
+                </Grid>
+            </ContentControl>
+        </common:DemoLayout.Example>
+    </common:DemoLayout>
+    </StackPanel>
+</Page>
