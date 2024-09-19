@@ -1,0 +1,9 @@
+﻿//Gets the input HTML file.
+using Stream fileStream = GetWordStream("HTMLToWord.html");
+//Loads an existing HTML file.
+using WordDocument document = new(fileStream, FormatType.Html);
+//Saves the Word document to the memory stream.
+MemoryStream stream = new MemoryStream();
+document.Save(stream, FormatType.Docx);
+//Closes the Word document.
+document.Close();

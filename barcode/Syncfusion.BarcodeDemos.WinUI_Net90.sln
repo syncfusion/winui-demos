@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.BarcodeDemos.WinUI_Net90", "Syncfusion.BarcodeDemos.WinUI_Net90.csproj", "{86A26EA9-2975-41D6-B675-72DF4D96877A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.DemosCommon.WinUI_lib_Net90", "..\common\Syncfusion.DemosCommon.WinUI_lib_Net90.csproj", "{47411333-4885-4A74-855C-26FF5F33DFF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Debug|x64.ActiveCfg = Debug|x64
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Debug|x64.Build.0 = Debug|x64
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Debug|x64.Deploy.0 = Debug|x64
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Debug|x86.ActiveCfg = Debug|x86
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Debug|x86.Build.0 = Debug|x86
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Release|x64.ActiveCfg = Release|x64
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Release|x64.Build.0 = Release|x64
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Release|x86.ActiveCfg = Release|x86
+		{86A26EA9-2975-41D6-B675-72DF4D96877A}.Release|x86.Build.0 = Release|x86
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Debug|x64.Build.0 = Debug|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Debug|x86.Build.0 = Debug|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Release|x64.ActiveCfg = Release|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Release|x64.Build.0 = Release|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Release|x86.ActiveCfg = Release|Any CPU
+		{47411333-4885-4A74-855C-26FF5F33DFF8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22A9DA21-AC5B-44E5-89B7-A3CD0E48ECAE}
+	EndGlobalSection
+EndGlobal
