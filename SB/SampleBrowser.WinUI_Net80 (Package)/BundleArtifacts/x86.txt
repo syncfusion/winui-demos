@@ -1,0 +1,6 @@
+MainPackage=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x86\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_x86.msix
+SymbolPackage=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\obj\x86\Release\Symbols\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_x86.appxsym
+ResourcePack=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x86\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-100.msix
+ResourcePack=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x86\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-125.msix
+ResourcePack=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x86\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-150.msix
+ResourcePack=C:\Samples_27.2.2\WinUI\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x86\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-400.msix
