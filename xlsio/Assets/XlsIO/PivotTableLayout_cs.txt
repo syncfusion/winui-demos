@@ -1,0 +1,38 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Open the existing Excel document with data.
+  Stream input = GetExcelStream("PivotTableLayout.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic); 
+  IWorksheet sheet = workbook.Worksheets[0];
+
+  //Access the sheet to draw pivot table.
+  IWorksheet pivotSheet = workbook.Worksheets[1];
+  pivotSheet.Activate();
+
+  //Select the data to add in cache
+  IPivotCache cache = workbook.PivotCaches.Add(sheet["A1:G20"]);
+
+  //Insert the pivot table. 
+  IPivotTable pivotTable = pivotSheet.PivotTables.Add("PivotTable1", pivotSheet["A1"], cache);
+  pivotTable.Fields[0].Axis = PivotAxisTypes.Row;
+  pivotTable.Fields[1].Axis = PivotAxisTypes.Row;
+  pivotTable.Fields[2].Axis = PivotAxisTypes.Row;
+  IPivotField field1 = pivotSheet.PivotTables[0].Fields[5];
+  pivotTable.DataFields.Add(field1, "Sum of Land Area", PivotSubtotalTypes.Sum);
+  IPivotField field2 = pivotSheet.PivotTables[0].Fields[6];
+  pivotTable.DataFields.Add(field2, "Sum of Water Area", PivotSubtotalTypes.Sum);
+
+  //Add pivot table layout
+  pivotTable.Options.RowLayout = PivotTableRowLayout.Outline;
+  pivotTable.Layout();
+  
+  // Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}
+           

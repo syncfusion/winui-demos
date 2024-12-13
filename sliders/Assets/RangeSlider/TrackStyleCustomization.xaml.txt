@@ -1,0 +1,37 @@
+﻿<x:Double x:Key="SyncfusionSliderInactiveTrackCornerRadius">2.5</x:Double>
+
+<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver"
+                 Color="{ThemeResource SystemAccentColor}" />
+<SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed"
+                 Color="{ThemeResource SystemAccentColor}" />
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver"
+                 Color="{ThemeResource SystemAltHighColor}" />
+<SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed"
+                 Color="{ThemeResource SystemAltHighColor}" />
+
+<Style x:Name="SliderTrackStyle"
+       TargetType="Rectangle">
+    <Setter Property="Stroke"
+            Value="{ThemeResource SystemAccentColor}" />
+    <Setter Property="StrokeThickness"
+            Value="2" />
+</Style>
+...
+
+<slider:SfRangeSlider RangeStart="$(trackStyleRangeSliderRangeStartSubstitute)"
+                      RangeEnd="$(trackStyleRangeSliderRangeEndSubstitute)"
+                      ActiveTrackHeight="15"
+                      InactiveTrackHeight="10"
+                      Minimum="-50"
+                      Maximum="50"
+                      Interval="25"
+                      ShowLabels="True"
+                      ToolTipFormat="N0"
+                      ThumbOverlayRadius="10"
+                      ActiveTrackStyle="{StaticResource SliderTrackStyle}"
+                      InactiveTrackStyle="{StaticResource SliderTrackStyle}">
+    ...
+    <slider:SfRangeSlider.ThumbStyle>
+        ...
+    </slider:SfRangeSlider.ThumbStyle>
+</slider:SfRangeSlider>

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.PdfDemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

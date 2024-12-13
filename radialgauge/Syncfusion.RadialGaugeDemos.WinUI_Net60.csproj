@@ -1,0 +1,323 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<AssemblyName>Syncfusion.RadialGaugeDemos.WinUI</AssemblyName>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>Syncfusion.RadialGaugeDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WinUI</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+		<None Remove="SourceCodes\ShowCase\SleepTracker\SleepTracker.xaml.cs.txt"/>
+		<None Remove="syncfusion.radialgaugedemos.winui_TemporaryKey.pfx"/>
+		<None Remove="Views\ShowCase\SleepTracker.xaml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="ViewModel\RadialRangeSliderViewModel.cs"/>
+		<Compile Include="Views\Animation\Animation.xaml.cs">
+			<DependentUpon>Animation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Annotations\DirectionCompass.xaml.cs">
+			<DependentUpon>DirectionCompass.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Annotations\TempTracker.xaml.cs">
+			<DependentUpon>TempTracker.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Annotations\TextAnnotation.xaml.cs">
+			<DependentUpon>TextAnnotation.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\BackgroundContent.xaml.cs">
+			<DependentUpon>BackgroundContent.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\CustomLabels.xaml.cs">
+			<DependentUpon>CustomLabels.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\CustomScale.xaml.cs">
+			<DependentUpon>CustomScale.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\DefaultView.xaml.cs">
+			<DependentUpon>DefaultView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\LabelCustomization.xaml.cs">
+			<DependentUpon>LabelCustomization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\MultipleAxis.xaml.cs">
+			<DependentUpon>MultipleAxis.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\RangeColorForAxis.xaml.cs">
+			<DependentUpon>RangeColorForAxis.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Axis\TickCustomization.xaml.cs">
+			<DependentUpon>TickCustomization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\GettingStarted\GettingStarted.xaml.cs">
+			<DependentUpon>GettingStarted.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Interactions\RadialRangeSlider.xaml.cs">
+			<DependentUpon>RadialRangeSlider.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Interactions\RangeSlider.xaml.cs">
+			<DependentUpon>RangeSlider.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pointers\MarkerPointer.xaml.cs">
+			<DependentUpon>MarkerPointer.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pointers\MultipleNeedle.xaml.cs">
+			<DependentUpon>MultipleNeedle.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pointers\TextPointer.xaml.cs">
+			<DependentUpon>TextPointer.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pointers\RangePointer.xaml.cs">
+			<DependentUpon>RangePointer.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Range\MultipleRanges.xaml.cs">
+			<DependentUpon>MultipleRanges.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Range\RangeLabel.xaml.cs">
+			<DependentUpon>RangeLabel.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Range\RangeThickness.xaml.cs">
+			<DependentUpon>RangeThickness.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ShowCase\CarDashboard.xaml.cs">
+			<DependentUpon>CarDashboard.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ShowCase\Clock.xaml.cs">
+			<DependentUpon>Clock.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ShowCase\DistanceTracker.xaml.cs">
+			<DependentUpon>DistanceTracker.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\ShowCase\SleepTracker.xaml.cs"/>
+		<Compile Include="Views\ShowCase\TempMonitor.xaml.cs">
+			<DependentUpon>TempMonitor.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="App.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\RadialGauge\ball.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\RadialGauge\shotput.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\RadialGauge\sun.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\RadialGauge\AxisBackground.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<Content Include="Assets\RadialGauge\AnimationCustomization.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\DirectionCompass.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\TempTracker.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\TextAnnotation.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\BackgroundContent.cs.txt"/>
+		<Content Include="Assets\RadialGauge\BackgroundContent.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\CustomLabels.cs.txt"/>
+		<Content Include="Assets\RadialGauge\CustomLabels.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\CustomScale.cs.txt"/>
+		<Content Include="Assets\RadialGauge\CustomScale.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\DefaultView.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\LabelCustomization.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\MultipleAxis.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RangeColorForAxis.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\TickCustomization.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RadialRangeSlider.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RangeSlider.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\MarkerPointer.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\MultipleNeedle.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RangePointer.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\TextPointer.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\MultipleRanges.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RangeLabel.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\RangeThickness.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\Clock.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\DistanceTracker.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\SleepTracker.xaml.cs.txt"/>
+		<Content Include="Assets\RadialGauge\TempMonitor.xaml.cs.txt"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml"/>
+		<Page Include="Views\Animation\Animation.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Annotations\DirectionCompass.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Annotations\TempTracker.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Annotations\TextAnnotation.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\BackgroundContent.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Include="Views\Axis\CustomLabels.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\CustomScale.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\DefaultView.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\LabelCustomization.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\MultipleAxis.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\RangeColorForAxis.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Axis\TickCustomization.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\GettingStarted\GettingStarted.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Interactions\RadialRangeSlider.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Interactions\RangeSlider.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Pointers\MarkerPointer.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Pointers\MultipleNeedle.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Pointers\TextPointer.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Pointers\RangePointer.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Range\MultipleRanges.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Range\RangeLabel.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Range\RangeThickness.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ShowCase\CarDashboard.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ShowCase\Clock.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ShowCase\DistanceTracker.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ShowCase\SleepTracker.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ShowCase\TempMonitor.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Gauge.WinUI" Version="28.1.33"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net60.csproj"/>
+	</ItemGroup>
+</Project>
