@@ -1,6 +1,0 @@
-MainPackage=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x64\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_x64.msix
-SymbolPackage=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\obj\x64\Release\Symbols\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_x64.appxsym
-ResourcePack=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x64\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-100.msix
-ResourcePack=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x64\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-125.msix
-ResourcePack=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x64\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-150.msix
-ResourcePack=C:\Git\RP\samplebrowser-winui\SB\SampleBrowser.WinUI_Net80 (Package)\bin\x64\Release\SampleBrowser.WinUI_Net80 (Package)_1.0.0.0_scale-400.msix
