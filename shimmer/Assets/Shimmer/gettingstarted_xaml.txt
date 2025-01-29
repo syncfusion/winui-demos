@@ -1,0 +1,6 @@
+﻿<syncfusion:SfShimmer WaveColor="LightGray"
+                      WaveDuration="1000"
+                      WaveWidth="300"
+                      RepeatCount="1"
+                      Type="Article"
+                      IsActive="True"/>

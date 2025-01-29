@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="DataGrid.RowDragDrop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:grid="using:Syncfusion.UI.Xaml.Grids"
+    Background="Transparent"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <local:PersonViewModel x:Key="personViewModel" />
+    </Page.Resources>
+    
+    <Grid DataContext="{StaticResource personViewModel}" >
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <StackPanel>
+                <common:DemoLayout x:Name="Example1" HeaderText="This sample showcases the rows drag-and-drop feature in the DataGrid control.">
+                    <common:DemoLayout.Example>
+                        <dataGrid:SfDataGrid
+                        x:Name="sfDataGrid"
+                        Height="520"
+                        Width="Auto"
+                        HorizontalAlignment="Left"
+                        ColumnWidthMode="Auto"
+                        VerticalAlignment="Top"
+                        AllowRowDragDrop="True"
+                        AllowDrop ="True"
+                        AutoGenerateColumns="False"
+                        ItemsSource="{Binding Persons}"
+                        SelectionMode="Multiple">
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" />
+                                <dataGrid:GridTextColumn HeaderText="Designation" MappingName="Designation" />
+                                <dataGrid:GridTextColumn HeaderText="Mail" MappingName="Mail" />
+                                <dataGrid:GridTextColumn HeaderText="Location" MappingName="Location" />
+                                <dataGrid:GridComboBoxColumn HeaderText="Status" MappingName="Status"  ItemsSource="{Binding Status, Source={StaticResource personViewModel}}"/>
+                                <dataGrid:GridTextColumn HeaderText="Trust" MappingName="Trustworthiness" />
+                                <dataGrid:GridNumericColumn MappingName="Salary" HeaderText="Salary" TextAlignment="Right" NumberFormatter="{Binding SystemCurrency,Source={StaticResource personViewModel}}" />
+                                <dataGrid:GridTextColumn HeaderText="Address" MappingName="Address"/>
+                            </dataGrid:SfDataGrid.Columns>
+                        </dataGrid:SfDataGrid>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Xaml>
+                        <x:String xml:space="preserve">
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;
+                              Height=&quot;500&quot;                                 
+                              Width=&quot;Auto&quot;
+                              HorizontalAlignment=&quot;Left&quot;
+                              AllowRowDragDrop=&quot;True&quot;
+                              ColumnWidthMode=&quot;AutoLastColumnFill&quot;
+                              AllowDrop=&quot;True&quot;
+                              AutoGenerateColumns=&quot;False&quot;
+                              ItemsSource=&quot;{Binding Persons}&quot;
+                              SelectionMode=&quot;Multiple&quot; &gt; 
+                        &lt;dataGrid:SfDataGrid.Columns&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" /&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Designation" MappingName="Designation" /&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Mail" MappingName="Mail" /&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Location" MappingName="Location" /&gt;
+                            &lt;dataGrid:GridComboBoxColumn HeaderText="Status" MappingName="Status"  ItemsSource="{Binding Status, Source={StaticResource personViewModel}}" /&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Trust" MappingName="Trustworthiness" /&gt;
+                            &lt;dataGrid:GridNumericColumn MappingName="Salary" HeaderText="Salary" TextAlignment="Right" NumberFormatter="{Binding SystemCurrency,Source={StaticResource personViewModel}}" /&gt;
+                            &lt;dataGrid:GridTextColumn HeaderText="Address" MappingName="Address"/&gt;
+                        &lt;/dataGrid:SfDataGrid.Columns&gt;
+                    &lt;/dataGrid:SfDataGrid&gt;
+                    </x:String>
+                    </common:DemoLayout.Xaml>
+                </common:DemoLayout>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

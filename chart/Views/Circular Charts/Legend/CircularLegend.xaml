@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.CircularLegend"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample represents the monthly expenditure of an individual with a customized legend that provides additional information about the expenses.">
+                <common:DemoLayout.Example>
+                    <chart:SfCircularChart x:Name="Chart" Header="Monthly Expenditure of an Individual" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Margin="10">
+                        
+                        <chart:SfCircularChart.DataContext>
+                            <local:InteractionViewModel />
+                        </chart:SfCircularChart.DataContext>
+
+                        <chart:PieSeries x:Name="Series" 
+                          ShowDataLabels="True" PaletteBrushes="{ThemeResource ChartPalette}" StrokeWidth="1" Stroke="White" EnableAnimation="True"
+                        ItemsSource="{Binding LegendData}" XBindingPath="Name" YBindingPath="Value" Radius="0.9" >
+                            
+                            <chart:PieSeries.DataLabelSettings>
+                                <chart:CircularDataLabelSettings Format="0'%"/>
+                            </chart:PieSeries.DataLabelSettings>
+                        </chart:PieSeries>
+
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend Placement="Bottom" ItemMargin="2">
+                                <chart:ChartLegend.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="4">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="33"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Path Data="{Binding Item.PathData}" Fill="{Binding IconBrush}" Grid.Column="0">
+                                                <Path.RenderTransform>
+                                                    <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+                                                </Path.RenderTransform>
+                                            </Path>
+                                            <TextBlock Text="{Binding Item.Name}" Margin="-4,5,0,0" Grid.Column="1"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </chart:ChartLegend.ItemTemplate>
+                            </chart:ChartLegend>
+                        </chart:SfCircularChart.Legend>
+
+                    </chart:SfCircularChart>
+              
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCircularChart x:Name=&quot;Chart&quot; Header=&quot;Monthly Expenditure of an Individual&quot;&gt;
+    &lt;chart:PieSeries ItemsSource=&quot;{Binding LegendData}&quot;
+                     XBindingPath=&quot;Name&quot;
+                     YBindingPath=&quot;Value&quot;
+                     ShowDataLabels=&quot;True&quot;
+                     Stroke=&quot;White&quot;
+                     StrokeWidth=&quot;1&quot;
+                     Radius=&quot;0.9&quot;
+                     PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+    
+    &lt;chart:PieSeries.DataLabelSettings&gt;
+          &lt;chart:CircularDataLabelSettings Format=&quot;0'%&quot;/&gt; 
+    &lt;/chart:PieSeries.DataLabelSettings&gt;
+    &lt;/chart:PieSeries&gt;
+    
+    &lt;chart:SfCircularChart.Legend>
+        &lt;chart:ChartLegend Placement=&quot;Bottom&quot; ItemMargin=&quot;2&quot;&gt;
+            &lt;chart:ChartLegend.ItemTemplate&gt;
+                &lt;DataTemplate&gt;
+                 &lt;Grid Margin=&quot;4&quot; &gt;
+                    &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;33&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+                    &lt;/Grid.ColumnDefinitions&gt;
+                 &lt;Path Data=&quot;{Binding Item.PathData}&quot; Fill=&quot;{Binding IconBrush}&quot; Grid.Column=&quot;0&quot;&gt;
+                    &lt;Path.RenderTransform&gt;
+                        &lt;ScaleTransform ScaleX=&quot;0.75&quot; ScaleY=&quot;0.75&quot;/&gt;
+                    &lt;/Path.RenderTransform&gt;
+                 &lt;Path&gt; 
+                 &lt;TextBlock Text=&quot;{Binding Item.Name}&quot; Margin=&quot;-4,5,0,0&quot; Grid.Column=&quot;1&quot;/&gt;
+                 &lt;/Grid&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/chart:ChartLegend.ItemTemplate&gt;
+        &lt;/chart:ChartLegend&gt;
+    &lt;/chart:SfCircularChart.Legend&gt;
+&lt;/chart:SfCircularChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

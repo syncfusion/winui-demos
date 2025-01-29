@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Syncfusion.KanbanDemos.WinUI.GettingStarted"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:local="using:Syncfusion.KanbanDemos.WinUI"
+      xmlns:kanban="using:Syncfusion.UI.Xaml.Kanban"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Page.DataContext>
+        <local:GettingStartedViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample demonstrates the capabilities of the Kanban board to display and organize tasks based on their statuses, categories, or priorities. Kanban allows users to manage tasks visually through columns that represent stages in a workflow, enabling easy tracking and updating of task progress.">
+                <common:DemoLayout.Example>
+                    <Grid Height="480" 
+                          Margin="0,0,-10,0"
+                          VerticalAlignment="Center">
+                        <kanban:SfKanban x:Name="kanban"
+                                         AutoGenerateColumns="False"
+                                         ItemsSource="{Binding TaskDetails}">
+                            <kanban:SfKanban.IndicatorColorPalette>
+                                <kanban:KanbanColorMapping Key="Low" Color="#0F7B0F"/>
+                                <kanban:KanbanColorMapping Key="Normal" Color="#FFB900"/>
+                                <kanban:KanbanColorMapping Key="High" Color="#C42B1C"/>
+                            </kanban:SfKanban.IndicatorColorPalette>
+                            <kanban:KanbanColumn HeaderText="To Do" Categories="Open,Postponed" />
+                            <kanban:KanbanColumn HeaderText="In Progress"
+                                                 Categories="In Progress"
+                                                 MinimumCount="2">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings MaximumValidationColor="Red" MinimumValidationColor="Yellow" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+
+                            <kanban:KanbanColumn HeaderText="For Review"
+                                                 Categories="Review"
+                                                 MaximumCount="5">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings MaximumValidationColor="Red" MinimumValidationColor="Yellow" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+
+                            <kanban:KanbanColumn HeaderText="Done"
+                                                 Categories="Closed,Closed No Changes,Won't Fix"
+                                                 MinimumCount="2"
+                                                 MaximumCount="10">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings MaximumValidationColor="Red" MinimumValidationColor="Yellow" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+                        </kanban:SfKanban>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+                        &lt;kanban:SfKanban
+                                x:Name=&quot;Kanban&quot;
+                                AutoGenerateColumns=&quot;False&quot;
+                                ItemsSource=&quot;{Binding Tasks}&quot;&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;To Do&quot;
+                                Categories=&quot;Open,Postponed&quot; /&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;In Progress&quot;
+                                Categories=&quot;In Progress&quot;
+                                IsExpanded=&quot;True&quot;
+                                MinimumCount=&quot;2&quot;&gt;
+                            &lt;kanban:KanbanColumn.ErrorBarSettings&gt;
+                                &lt;kanban:KanbanErrorBarSettings
+                                    MaximumValidationColor=&quot;Red&quot;
+                                    MinimumValidationColor=&quot;Yellow&quot; /&gt;
+                                &lt;/kanban:KanbanColumn.ErrorBarSettings&gt;
+                            &lt;/kanban:KanbanColumn&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;For Review&quot;
+                                Categories=&quot;Review&quot;
+                                MaximumCount=&quot;5&quot;&gt;
+                                &lt;kanban:KanbanColumn.ErrorBarSettings&gt;
+                                    &lt;kanban:KanbanErrorBarSettings
+                                        MaximumValidationColor=&quot;Red&quot;
+                                        MinimumValidationColor=&quot;Yellow&quot; /&gt;
+                                &lt;/kanban:KanbanColumn.ErrorBarSettings&gt;
+                            &lt;/kanban:KanbanColumn&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;Done&quot;
+                                AllowDrag=&quot;False&quot;
+                                Categories=&quot;Closed,Closed NoChanges,Won&apos;t Fix&quot;
+                                MinimumCount=&quot;10&quot;
+                                MaximumCount=&quot;2&quot;&gt;
+                                &lt;kanban:KanbanColumn.ErrorBarSettings&gt;
+                                    &lt;kanban:KanbanErrorBarSettings
+                                        MaximumValidationColor=&quot;Red&quot;
+                                        MinimumValidationColor=&quot;Yellow&quot; /&gt;
+                                &lt;/kanban:KanbanColumn.ErrorBarSettings&gt;
+                            &lt;/kanban:KanbanColumn&gt;
+                        &lt;/kanban:SfKanban&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

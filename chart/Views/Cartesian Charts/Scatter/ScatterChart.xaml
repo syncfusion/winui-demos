@@ -1,0 +1,227 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.ScatterChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                    </ResourceDictionary>
+
+                    <ResourceDictionary x:Key="Dark">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                    </ResourceDictionary>
+
+                    <ResourceDictionary x:Key="HighContrast">
+                        <SolidColorBrush x:Key="TooltipFill" Color="{ThemeResource SystemColorWindowColor}"/>
+                        <SolidColorBrush x:Key="TooltipForeground" Color="{ThemeResource SystemColorWindowTextColor}"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+
+                <DataTemplate x:Key="tooltipTemplate">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                        <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Male"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                        <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="  Height"  FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Value}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text=" cm"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Weight"  FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Size}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text=" kg"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+
+                <DataTemplate x:Key="tooltipTemplate1">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                        <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Female"  FontSize="12" FontWeight="Bold"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1"/>
+                        <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="  Height"  FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Value}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text=" cm"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Weight"  FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Text=":" Margin="3,0,3,0" FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}"
+                               HorizontalAlignment="Center" HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text="{Binding Item.Size}"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                            <TextBlock  HorizontalTextAlignment="Center"
+                               Text=" kg"
+                               FontSize="11"
+                               Foreground="{ThemeResource TooltipForeground}" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+
+                <DataTemplate x:Key="headerTemplate">
+                    <TextBlock Text="Weight in kilogram" Padding="0,0,0,10"/>
+                </DataTemplate>
+
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This scatter chart illustrates the correlation between height and weight for both males and females, with each data point depicted as a circle of equal size.">
+                <common:DemoLayout.DataContext>
+                    <local:ScatterChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart x:Name="Chart" Height="420">
+                        <chart:SfCartesianChart.Header>
+                            <TextBlock FontSize="18" Text="Height vs Weight" />
+                        </chart:SfCartesianChart.Header>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend Padding="0,0,60,0"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:NumericalAxis ShowMajorGridLines="False" EdgeLabelsDrawingMode="Shift" Minimum="100" Maximum="220" Interval="20" Header="Height in centimeter"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis ShowMajorGridLines="False" Minimum="50" Maximum="80" Interval="5"  HeaderTemplate="{StaticResource headerTemplate}"/>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:ScatterSeries  EnableAnimation="True" ItemsSource="{Binding MaleData}" PointHeight="8" PointWidth="8"
+                          XBindingPath="Value" YBindingPath="Size" EnableTooltip="True" Label="Male" Fill="{ThemeResource SeriesBrush2}" LegendIcon="Circle" TooltipTemplate="{StaticResource tooltipTemplate}"/>
+
+                        <chart:ScatterSeries  EnableAnimation="True" ItemsSource="{Binding FemaleData}" PointHeight="8" PointWidth="8"
+                          XBindingPath="Value" YBindingPath="Size" EnableTooltip="True"  Label="Female" Fill="{ThemeResource SeriesBrush1}" LegendIcon="Circle" TooltipTemplate="{StaticResource tooltipTemplate1}"/>
+                        
+                    </chart:SfCartesianChart>
+                    
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+<x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Height vs Weight&quot;&gt;
+                
+    &lt;chart:SfCartesianChart.Legend&gt;
+      &lt;chart:ChartLegend/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt; 
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; EdgeLabelsDrawingMode=&quot;Shift&quot; Minimum=&quot;100&quot; 
+                          Header=&quot;Height in centimeter&quot; Interval=&quot;20&quot; Maximum=&quot;220&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Interval=&quot;5&quot; ShowMajorGridLines=&quot;False&quot; Maximum=&quot;80&quot;
+                             Minimum=&quot;50&quot; HeaderTemplate=&quot;{StaticResource headerTemplate}&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:ScatterSeries ItemsSource=&quot;{Binding MaleData}&quot; YBindingPath=&quot;Size&quot; 
+                     XBindingPath=&quot;Value&quot; PointHeight=&quot;8&quot; Fill=&quot;{ThemeResource SeriesBrush2}&quot; 
+                     PointWidth=&quot;8&quot; EnableTooltip=&quot;True&quot; Label=&quot;Male&quot; EnableAnimation=&quot;True&quot;
+                     LegendIcon=&quot;Circle&quot; TooltipTemplate=&quot;{StaticResource tooltipTemplate}&quot;/&gt;
+    
+    &lt;chart:ScatterSeries ItemsSource=&quot;{Binding FemaleData}&quot; XBindingPath=&quot;Value&quot; 
+                     YBindingPath=&quot;Size&quot;  PointHeight=&quot;8&quot; Fill=&quot;{ThemeResource SeriesBrush1}&quot; 
+                     PointWidth=&quot;8&quot; EnableTooltip=&quot;True&quot; Label=&quot;Female&quot; EnableAnimation=&quot;True&quot; 
+                     LegendIcon=&quot;Circle&quot; TooltipTemplate=&quot;{StaticResource tooltipTemplate1}&quot;/&gt;
+    
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

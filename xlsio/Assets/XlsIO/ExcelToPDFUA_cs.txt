@@ -1,0 +1,26 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object.
+  IApplication application = excelEngine.Excel;
+
+  //Open the existing Excel document with data.
+  Stream input = GetExcelStream("ExcelToPDF.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic);
+
+  //Initialize XlsIO renderer.
+  XlsIORenderer renderer = new XlsIORenderer();
+
+  //Intialize the XlsIORendererSettings
+  XlsIORendererSettings settings = new XlsIORendererSettings();
+
+  //Enable the tagged PDF conversion settings.
+  settings.AutoTag = true;
+
+  //Convert Excel document into PDF document.
+  PdfDocument pdfDocument = renderer.ConvertToPDF(workbook, settings);
+
+  //Saving the PDF document as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  pdfDocument.Save(stream);
+}
