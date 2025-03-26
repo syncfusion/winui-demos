@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.KanbanDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
