@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="EssentialPresentation.PPTXToPDF"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:EssentialPresentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <StackPanel>
+        <common:DemoLayout HeaderText="This example demonstrates how to convert a PowerPoint presentation file to a PDF file."
+                CSharpSource="{common:ConditionalXAML Individual=Syncfusion.PresentationDemos.WinUI/Assets/Presentation/PPTXToPDF_xaml_cs.txt,
+                                                                 Common=Presentation/Assets/Presentation/PPTXToPDF_xaml_cs.txt}">
+            <common:DemoLayout.Example>
+                <Grid x:Name="Conversion" Margin="5,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="description1" Grid.Row="1" Grid.ColumnSpan="4" TextWrapping="Wrap" Text="Click the &quot;View Template&quot; button to view the input PowerPoint presentation file. Please note that a PowerPoint-compatible viewer is required to open and view the PowerPoint presentation file."/>
+                    <TextBlock x:Name="text2" Grid.Row="2" Grid.ColumnSpan="4"/>
+                    <TextBlock x:Name="description2" Grid.Row="3" Grid.ColumnSpan="4" TextWrapping="Wrap" Text="Click the &quot;Convert To PDF&quot; button to view the converted PDF file. Please note that a PDF-compatible viewer is required to open and view the PDF document."/>
+                    <TextBlock x:Name="text3" Grid.Row="5" Grid.ColumnSpan="4"/>
+                    <TextBlock Grid.Row="6" TextWrapping="Wrap" Text="PDF Options :" x:Name="pdfoptions" FontWeight="Bold"/>
+                    <CheckBox x:Name="checkBox1" Grid.Row="7" Grid.ColumnSpan="6" Content="Preserve form fields by converting shapes with names starting with 'FormField_' into editable text form fields in the PDF." IsChecked="True"/>
+                    <Button x:Name="button1" Grid.Row="8" Grid.ColumnSpan="1" Content="View Template" HorizontalAlignment="Left" Click="Open_BtnClick" Height="Auto" Width="130" Padding="10,10,10,10" Margin="0,10" />
+                    <Button x:Name="button2" Grid.Row="8" Grid.ColumnSpan="2" Content="Convert To PDF" HorizontalAlignment="Left" Click="Convert_BtnClick" VerticalAlignment="Top" Height="Auto" Width="150" Padding="10,10,10,10" Margin="158,10,0,0" />
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </StackPanel>
+</Page>

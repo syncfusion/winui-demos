@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.ChatDemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

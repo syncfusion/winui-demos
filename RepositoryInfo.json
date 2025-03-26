@@ -1,0 +1,16 @@
+{
+	"Name": "samplebrowser-winui",
+	"Platforms": [{
+		"Name": "WinUI",
+		"IsPublishWinUISampleBrowser": true,
+		"Assemblies": [
+			{
+				"Name": "samplebrowser.winui",
+				"EnableFxCopAnalyzer": false,
+				"TreatWarningsAsErrors": false,
+				"IsBuildWinUISampleBrowser": true,
+				"IsNetStandardAssembly": true
+			}
+		]
+	}]
+}

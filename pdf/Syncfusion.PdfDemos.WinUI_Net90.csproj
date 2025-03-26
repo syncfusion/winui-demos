@@ -1,0 +1,237 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<AssemblyName>Syncfusion.PdfDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.PdfDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+		<UseRidGraph>true</UseRidGraph>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Remove="Helpers\**"/>
+		<EmbeddedResource Remove="Model\**"/>
+		<EmbeddedResource Remove="ViewModel\**"/>
+		<None Remove="Helpers\**"/>
+		<None Remove="Model\**"/>
+		<None Remove="ViewModel\**"/>
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="Images\LockScreenLogo.scale-200.png"/>
+		<None Remove="Images\SplashScreen.scale-200.png"/>
+		<None Remove="Images\Square150x150Logo.scale-200.png"/>
+		<None Remove="Images\Square44x44Logo.scale-200.png"/>
+		<None Remove="Images\Square44x44Logo.targetsize-24_altform-unplated.png"/>
+		<None Remove="Images\StoreLogo.png"/>
+		<None Remove="Images\Wide310x150Logo.scale-200.png"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Helper\PdfUtil.cs"/>
+		<Compile Include="MainWindow.xaml.cs">
+			<DependentUpon>MainWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="Views\Certificate.xaml.cs"/>
+		<Compile Include="Views\Encryption.xaml.cs"/>
+		<Compile Include="Views\ExtractText.xaml.cs"/>
+		<Compile Include="Views\FindText.xaml.cs"/>
+		<Compile Include="Views\ImageInsertion.xaml.cs"/>
+		<Compile Include="Views\ImageToPdf.xaml.cs"/>
+		<Compile Include="Views\ImportAndExport.xaml.cs"/>
+		<Compile Include="Views\MergePDF.xaml.cs"/>
+		<Compile Include="Views\DigitalSignature.xaml.cs"/>
+		<Compile Include="Views\Annotations.xaml.cs"/>
+		<Compile Include="Views\FormFilling.xaml.cs"/>
+		<Compile Include="Views\Invoice.xaml.cs"/>
+		<Compile Include="Views\PdfConformance.xaml.cs"/>
+		<Compile Include="Views\PdfWatermark.xaml.cs"/>
+		<Compile Include="Views\Redaction.xaml.cs"/>
+		<Compile Include="Views\TiffToPdf.xaml.cs"/>
+		<Compile Include="Views\XpsToPdf.xaml.cs"/>
+		<EmbeddedResource Include="Assets\AdventureCycle.txt"/>
+		<EmbeddedResource Include="Assets\AdventureWork.png"/>
+		<EmbeddedResource Include="Assets\arial.ttf"/>
+		<EmbeddedResource Include="Assets\certificate.jpg"/>
+		<EmbeddedResource Include="Assets\certificate.pfx"/>
+		<EmbeddedResource Include="Assets\credit_card_statement.pdf"/>
+		<EmbeddedResource Include="Assets\credit_card_statement.xml"/>
+		<EmbeddedResource Include="Assets\digital_signature_template.pdf"/>
+		<EmbeddedResource Include="Assets\export_template.pdf"/>
+		<EmbeddedResource Include="Assets\form_template.pdf"/>
+		<EmbeddedResource Include="Assets\import_data.fdf"/>
+		<EmbeddedResource Include="Assets\import_data.xfdf"/>
+		<EmbeddedResource Include="Assets\import_data.xml"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly.pdf"/>
+		<EmbeddedResource Include="Assets\AdventureCycle.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page1.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page2.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page3.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page4.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page5.jpg"/>
+		<EmbeddedResource Include="Assets\pdf_succinctly_page6.jpg"/>
+		<EmbeddedResource Include="Assets\richmedia_sound.jpg"/>
+		<EmbeddedResource Include="Assets\Sound.mp3"/>
+		<EmbeddedResource Include="Assets\signature.png"/>
+		<EmbeddedResource Include="Assets\richmedia.jpg"/>
+		<EmbeddedResource Include="Assets\Video.mp4"/>
+		<EmbeddedResource Include="Assets\Xamarin_JPEG.jpg"/>
+		<EmbeddedResource Include="Assets\Xamarin_PNG.png"/>
+		<EmbeddedResource Include="Assets\RedactionTemplate.pdf"/>
+		<EmbeddedResource Include="Assets\image.tiff"/>
+		<EmbeddedResource Include="Assets\XPSToPDF.xps"/>
+		<Page Include="Views\Certificate.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\DigitalSignature.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImageInsertion.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImageToPdf.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Encryption.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ExtractText.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\FindText.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\ImportAndExport.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\MergePDF.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\PdfConformance.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\PdfWatermark.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Annotations.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\FormFilling.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Invoice.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\Redaction.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\TiffToPdf.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Views\XpsToPdf.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Pdf.Imaging.NET" Version="29.1.33"/>
+		<PackageReference Include="Syncfusion.XpsToPdfConverter.NET" Version="29.1.33"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Images\LockScreenLogo.scale-200.png"/>
+		<Content Include="Images\SplashScreen.scale-200.png"/>
+		<Content Include="Images\Square150x150Logo.scale-200.png"/>
+		<Content Include="Images\Square44x44Logo.scale-200.png"/>
+		<Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png"/>
+		<Content Include="Images\StoreLogo.png"/>
+		<Content Include="Images\Wide310x150Logo.scale-200.png"/>
+		<Content Include="Assets\Pdf\Annotations_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\Certificate_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\DigitalSignature_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\Encryption_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\ExtractText_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\FindText_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\FormFilling_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\ImageInsertion_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\ImageToPdf_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\ImportAndExport_xaml_cs.txt"/>
+		<Content Include="Assets\Pdf\Invoice_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\MergePDF_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\PdfConformance_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\PdfWatermark_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\Redaction_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\TiffToPdf_xaml_cs.txt">
+		</Content>
+		<Content Include="Assets\Pdf\XPSToPDF_xaml_cs.txt">
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net90.csproj"/>
+	</ItemGroup>
+</Project>
