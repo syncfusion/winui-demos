@@ -1,0 +1,100 @@
+<Page
+    x:Class="DataGrid.UnboundColumns"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI" 
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.Resources>
+        <local:OrderInfoViewModel x:Key="orderInfoViewModel"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource orderInfoViewModel}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="The DataGrid control supports the addition of extra columns to the datagrid that are not bound to data objects from the underlying data source.">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <dataGrid:SfDataGrid
+                            x:Name="sfDataGrid"
+                            Height="520"
+                            Width="Auto"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            AutoGenerateColumns="False"
+                            ColumnWidthMode="Auto"
+                            SelectionMode="Extended"
+                            AllowEditing="True"
+                            NavigationMode="Cell"
+                            ItemsSource="{Binding OrdersDetails}">
+                            <dataGrid:SfDataGrid.Columns>
+                                <dataGrid:GridNumericColumn HeaderText="Order ID" 
+                                                            MappingName="OrderID" 
+                                                            TextAlignment="Right"/>
+                                <dataGrid:GridTextColumn HeaderText="Product Name" 
+                                                         MappingName="ProductName" />
+                                <dataGrid:GridNumericColumn HeaderText="Unit Price" 
+                                                            MappingName="UnitPrice" 
+                                                            NumberFormatter="{Binding SystemCurrency, Source={StaticResource orderInfoViewModel}}"
+                                                            TextAlignment="Right"/>
+                                <dataGrid:GridNumericColumn HeaderText="Quantity" 
+                                                            MappingName="Quantity" 
+                                                            TextAlignment="Right"/>
+                                <dataGrid:GridNumericColumn HeaderText="Discount"  
+                                                            MappingName="Discount" 
+                                                            TextAlignment="Right" 
+                                                            DisplayNumberFormat="P" />
+                                <dataGrid:GridUnboundColumn Expression="UnitPrice*Discount"
+                                                            HeaderText="Discount Price"
+                                                            TextAlignment="Right"
+                                                            MappingName="DiscountPrice"
+                                                            Format="{}{0:c}"
+                                                            AllowEditing="False"/>
+                                <dataGrid:GridUnboundColumn Expression="UnitPrice*Quantity"
+                                                            HeaderText="Grand Total" 
+                                                            MappingName="GrandTotal"
+                                                            TextAlignment="Right"
+                                                            Format="{}{0:c}"
+                                                            AllowEditing="False"/>
+                                <dataGrid:GridUnboundColumn HeaderText="Ship Country" 
+                                                            MappingName="ShipAddress"
+                                                            Format="'{OrderID} shipped to {ShipAddress}'"
+                                                            AllowEditing="False"/>
+                                <dataGrid:GridTextColumn HeaderText="Ship City" 
+                                                         MappingName="ShipCity" />
+                            </dataGrid:SfDataGrid.Columns>
+                        </dataGrid:SfDataGrid>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+    &lt;dataGrid:SfDataGrid 
+                        x:Name=&quot;sfDataGrid&quot;
+                        Height=&quot;520&quot;
+                        Width=&quot;Auto&quot;
+                        HorizontalAlignment=&quot;Right&quot;
+                        AutoGenerateColumns=&quot;False&quot;
+                        ColumnWidthMode=&quot;Auto&quot;
+                        SelectionMode=&quot;Extended&quot;
+                        AllowEditing=&quot;True&quot;
+                        NavigationMode=&quot;Cell&quot;
+                        ItemSource=&quot;{Binding OrderDetails}&quot;&gt;
+                    &lt;dataGrid.SfDataGrid.Columns&gt;
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Order ID&quot; MappingName=&quot;OrderID&quot; TextAlignment=&quot;Right&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Product Name&quot; MappingName=&quot;ProductName&quot; /&gt;
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Unit Price&quot; MappingName=&quot;UnitPrice&quot; NumberFormatter=&quot;{Binding SystemCurrency, Source={StaticResource orderInfoViewModel}}&quot; TextAlignment=&quot;Right&quot; /&gt;
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Quantity&quot; MappingName=&quot;Quantity&quot; TextAlignment=&quot;Right&quot; /&gt;
+                        &lt;dataGrid:GridNumericColumn HeaderText=&quot;Discount&quot; MappingName=&quot;Discount&quot; TextAlignment=&quot;Right&quot; DisplayNumberFormat=&quot;P&quot; /&gt;
+                        &lt;dataGrid:GridUnboundColumn Expression=&quot;UnitPrice*Discount&quot; HeaderText=&quot;Discount Price&quot; MappingName=&quot;DiscountPrice&quot; TextAlignment=&quot;Right&quot; Format=&quot;{}{0:c}&quot; AllowEditing=&quot;False&quot; /&gt;
+                        &lt;dataGrid:GridUnboundColumn Expression=&quot;UnitPrice*Quantity&quot; HeaderText=&quot;Grand Total&quot; MappingName=&quot;GrandTotal&quot; TextAlignment=&quot;Right&quot; Format=&quot;{}{0:c}&quot; AllowEditing=&quot;False&quot; /&gt;
+                        &lt;dataGrid:GridUnboundColumn HeaderText=&quot;Ship Country&quot; MappingName=&quot;ShipAddress&quot; Format=&quot;"'{OrderID} shipped to {ShipAddress}'"&quot; AllowEditing=&quot;False&quot; /&gt;
+                        &lt;dataGrid:GridTextColumn HeaderText=&quot;Ship City&quot; MappingName=&quot;ShipCity&quot; /&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

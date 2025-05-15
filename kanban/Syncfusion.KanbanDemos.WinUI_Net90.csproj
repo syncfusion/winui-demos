@@ -1,0 +1,208 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<AssemblyName>Syncfusion.KanbanDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.KanbanDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<UseRidGraph>true</UseRidGraph>
+		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;</DefineConstants>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<Prefer32Bit>true</Prefer32Bit>
+		<UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Kanban\Bucolicpie.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\Bumpercrop.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\MexicanGreenWave.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\Saladdaze.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\Spiceoflife.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\Verynicoise.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\Margherita.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\DoubleCheeseMargherita.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle1.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle2.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle3.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle4.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle5.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle6.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle7.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle8.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle9.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle10.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle11.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle12.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle13.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle14.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle17.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle23.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle31.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\Kanban\People_Circle35.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<None Remove="app.manifest"/>
+		<None Remove="App.xaml"/>
+		<None Remove="MainWindow.xaml"/>
+		<None Remove="Package.appxmanifest"/>
+		<None Remove="Properties\Default.rd.xml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="ViewModel\CustomizationViewModel.cs"/>
+		<Compile Include="ViewModel\GettingStartedViewModel.cs"/>
+		<Compile Include="ViewModel\SwimlaneViewModel.cs"/>
+		<Compile Include="MainWindow.xaml.cs"/>
+		<Compile Include="SamplesConfiguration.cs"/>
+		<Compile Include="Views\Customization.xaml.cs">
+			<DependentUpon>Customization.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Swimlane.xaml.cs">
+			<DependentUpon>Swimlane.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\DialogEditing.xaml.cs">
+			<DependentUpon>DialogEditing.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\GettingStarted.xaml.cs">
+			<DependentUpon>GettingStarted.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="MainWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\Swimlane.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\Customization.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\GettingStarted.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="Views\DialogEditing.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+		<PackageReference Include="Syncfusion.Kanban.WinUI" Version="29.2.4"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib_Net90.csproj"/>
+	</ItemGroup>
+</Project>

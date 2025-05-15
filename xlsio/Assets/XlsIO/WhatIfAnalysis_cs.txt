@@ -1,0 +1,25 @@
+//Instantiate the ExcelEngine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Open the existing Excel document with data.
+  Stream input = GetExcelStream("WhatIfAnalysisTemplate.xlsx");
+  IWorkbook workbook = application.Workbooks.Open(input, ExcelOpenType.Automatic);
+
+  //Access the first worksheet.
+  IWorksheet sheet = workbook.Worksheets[0];
+
+  //Initailize list object with different values for scenario
+  List<object> currentChange_Values = new List<object> { 0.23, 0.8, 1.1, 0.5, 0.35, 0.2, 0.4, 0.37, 1.1, 1, 0.94, 0.75 };
+
+  //Add scenarios in the worksheet
+  IScenarios scenarios = worksheet.Scenarios;
+  scenarios.Add("Current % of Change", worksheet.Range["F5:F16"], currentChange_Values);
+
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);
+}

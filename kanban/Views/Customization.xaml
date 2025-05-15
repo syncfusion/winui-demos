@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Syncfusion.KanbanDemos.WinUI.Customization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="using:Syncfusion.KanbanDemos.WinUI"
+      xmlns:kanban="using:Syncfusion.UI.Xaml.Kanban"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Page.DataContext>
+        <local:CustomizationViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="SyncfusionKanbanPlaceholderBackground" Color="#FFFBC7AB" />
+        <SolidColorBrush x:Key="SyncfusionKanbanPlaceholderSelectedBackground" Color="#FFFBC7AB" />
+    </Page.Resources>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This Kanban board is designed to organize and track hotel service and delivery tasks through ordered, in-service, and completed stages. It demonstrates Kanban view customization, where a data template was used to customize the display of tasks, enabling clear visual distinctions across the different stages and enhancing task management efficiency.">
+                <common:DemoLayout.Resources>
+                    <DataTemplate x:Key="columnHeaderTemplate">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*" />
+                                <RowDefinition Height="4*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="Header"
+                                           Text="{Binding HeaderText}"
+                                           VerticalAlignment="Center"
+                                           FontSize="12"
+                                           FontWeight="SemiBold"
+                                           TextWrapping="NoWrap"
+                                           Foreground="{ThemeResource SystemBaseHighColor}"
+                                           Grid.Row="0"
+                                           Margin="10,5,0,2"
+                                           Grid.ColumnSpan="1" />
+                            <StackPanel x:Name="WIPPanel"
+			       	                    Grid.Row="1"
+                                        Grid.Column="0"
+                                        Orientation="Horizontal">
+                                <TextBlock 
+                                        Text="Items Count - "
+                                        Margin="10,2,0,5"
+                                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                                        VerticalAlignment="Center"
+                                        FontSize="10"
+                                        FontFamily="SegoeUI"
+                                        FontWeight="Normal"/>
+                                <TextBlock 
+                                        Text="{Binding CardsCount}"
+                                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                                        Margin="5,2,0,5"
+                                        FontFamily="SegoeUI"
+                                        VerticalAlignment="Center"
+                                        FontSize="10"
+                                        FontWeight="Normal"/>
+                            </StackPanel>
+                            <Border x:Name="PART_CollapsedIconBorder"
+                                    Background="Transparent"
+                                    Grid.Column="1"
+                                    Grid.Row="1">
+                                <Path x:Name="PART_CollapsedIconPath"  
+                                      Data="M6.66406 1.33594C6.66406 1.51823 6.59896 1.67448 6.46875 1.80469L2.27344 6L6.46875 10.1953C6.59896 10.3255 6.66406 10.4818 6.66406 10.6641C6.66406 10.8464 6.60156 11.0026 6.47656 11.1328C6.34635 11.2682 6.1875 11.3359 6 11.3359C5.81771 11.3359 5.66146 11.2708 5.53125 11.1406L0.859375 6.46875C0.729166 6.33854 0.664062 6.18229 0.664062 6C0.664062 5.81771 0.729166 5.66146 0.859374 5.53125L5.53125 0.859375C5.66146 0.729167 5.81771 0.664063 6 0.664063C6.1875 0.664063 6.34635 0.729167 6.47656 0.859375C6.60156 0.994792 6.66406 1.15365 6.66406 1.33594Z"
+                                    Stretch="Fill"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,0,8,10"
+                                    Fill="{ThemeResource SystemBaseHighColor}"
+                                    Opacity="0.75"
+                                    IsHitTestVisible="False"
+                                    UseLayoutRounding="True"
+                                    Width="7"
+                                    Height="12">
+                                </Path>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                    <DataTemplate x:Key="cardTemplate">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.2*" />
+                                    <ColumnDefinition Width="4*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="1"
+                                            Margin="8,2,2,0"
+                                            Orientation="Vertical">
+                                    <TextBlock Text="{Binding Title}"
+                                               FontWeight="SemiBold"
+                                               Foreground="{ThemeResource SystemBaseHighColor}"
+                                               FontSize="13"
+                                               FontFamily="Segoe UI"
+                                               TextWrapping="NoWrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               Margin="2,6,2,4"/>
+                                    <TextBlock Text="{Binding Description}"
+                                               Foreground="{ThemeResource SystemBaseMediumColor }"
+                                               FontSize="12"
+                                               FontFamily="Segoe UI"
+                                               TextWrapping="Wrap"
+                                               MaxHeight="50"
+                                               TextTrimming="CharacterEllipsis"
+                                               Margin="2,2,2,10"/>
+                                    <ItemsControl ItemsSource="{Binding Tags}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" Margin="0" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border CornerRadius="4"
+                                                        Padding="6,2"
+                                                        Background="{ThemeResource SystemChromeMediumLowColor}"
+                                                        Margin="2,0,3,9">
+                                                    <TextBlock Text="{Binding}"
+                                                               Foreground="{ThemeResource SystemBaseHighColor}"
+                                                               FontSize="11"
+                                                               FontFamily="Segoe UI"
+                                                               HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                                <Border Grid.Column="0"
+                                        Height="50"
+                                        Width="50"
+                                        CornerRadius="50"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        BorderBrush="#E0E0E0"
+                                        BorderThickness="1">
+                                    <Image Source="{Binding Image.Source}" 
+                                            Stretch="Fill"/>
+                                </Border>
+                            </Grid>
+                    </DataTemplate>
+                </common:DemoLayout.Resources>
+                <common:DemoLayout.Example>
+                    <Grid Height="480" 
+                          VerticalAlignment="Center"
+                          Margin="0,0,-10,0">
+                        <kanban:SfKanban x:Name="kanban"
+                                         AutoGenerateColumns="False"
+                                         CardDragStarting="OnKanbanCardDragStarting"
+                                         ColumnHeaderTemplate="{StaticResource columnHeaderTemplate}"
+                                         CardTemplate="{StaticResource cardTemplate}"
+                                         CardDrop="OnKanbanCardDrop"
+                                         ItemsSource="{Binding MenuItems}">
+                            <kanban:KanbanColumn HeaderText="Menu" Categories="Menu" />
+                            <kanban:KanbanColumn HeaderText="Order" Categories="Dining,Delivery" />
+                            <kanban:KanbanColumn HeaderText="Ready to Serve" AllowDrag="False" Categories="Ready to Serve" />
+                            <kanban:KanbanColumn HeaderText="Ready to Delivery" AllowDrag="False" Categories="Ready to Delivery" />
+                        </kanban:SfKanban>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+                        &lt;kanban:SfKanban
+                                x:Name=&quot;kanban&quot;
+                                AutoGenerateColumns=&quot;False&quot;
+                                ItemsSource=&quot;{Binding MenuItems}&quot;&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;Menu&quot;
+                                Categories=&quot;Menu&quot; /&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;Order&quot;
+                                Categories=&quot;Dining,Delivery&quot; /&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;Ready to Serve&quot;
+                                AllowDrag=&quot;False&quot;
+                                Categories=&quot;Ready to Serve&quot; /&gt;
+                            &lt;kanban:KanbanColumn
+                                HeaderText=&quot;Ready to Delivery&quot;
+                                AllowDrag=&quot;False&quot;
+                                Categories=&quot;Ready to Delivery&quot; /&gt;
+                        &lt;/kanban:SfKanban&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>
