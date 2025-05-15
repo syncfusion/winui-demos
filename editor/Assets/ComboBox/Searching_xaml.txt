@@ -1,5 +1,0 @@
-﻿<editors:SfComboBox
-    IsTextSearchEnabled="$(IsTextSearchEnabled)"
-    TextSearchMode="$(TextSearchMode)"
-    SelectionChangeTrigger="$(SelectionChangeTrigger)"
-    ItemsSource="{Binding Countries}"/>
