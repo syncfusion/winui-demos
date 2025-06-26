@@ -228,4 +228,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2025 Syncfusion®, Inc. Updated on 2025-05-15 at precisely 05:51:01 EST.</p> 
+<p>Copyright © 2001-2025 Syncfusion®, Inc. Updated on 2025-06-26 at precisely 07:31:36 EST.</p> 

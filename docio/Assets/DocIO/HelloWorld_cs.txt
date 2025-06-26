@@ -1,0 +1,30 @@
+﻿//Creates a new Word document.
+using WordDocument document = new();
+//Adds new section to the document.
+IWSection section = document.AddSection();
+
+//Adds new paragraph to the section.
+IWParagraph paragraph = section.AddParagraph();
+//Adds new text to the paragraph.
+paragraph.AppendText("Adding new paragraph to the document");
+
+//Adds new paragraph to the section.
+paragraph = section.AddParagraph();
+//Adds image to  the paragraph
+IWPicture picture = paragraph.AppendPicture(GetImageStream("Mountain200.jpg"));
+//Sets height and width for the image.
+picture.Height = 100;
+picture.Width = 100;
+
+//Adds a new table into Word document
+IWTable table = section.AddTable();
+//Specifies the total number of rows & columns
+table.ResetCells(3, 2);
+//Accesses the instance of the cell (first row, first cell) and adds the content into cell
+textRange = table[0, 0].AddParagraph().AppendText("Item");
+//Accesses the instance of the cell (first row, second cell) and adds the content into cell
+textRange = table[0, 1].AddParagraph().AppendText("Price($)");
+
+using MemoryStream ms = new();
+//Saves the Word document to the memory stream.
+document.Save(ms, FormatType.Docx);

@@ -1,0 +1,81 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.BarWidthCustomization"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid x:Name="grid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample demonstrates the growth percentage of remote work with customized segment width.">
+                <common:DemoLayout.DataContext>
+                    <local:BarChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+               
+                        <chart:SfCartesianChart x:Name="Chart" Header="Remote Work Growth" Height="420" VerticalAlignment="Bottom" IsTransposed="True">
+
+                            <chart:SfCartesianChart.Legend>
+                                <chart:ChartLegend Padding="0,0,80,0"/>
+                            </chart:SfCartesianChart.Legend>
+
+                            <chart:SfCartesianChart.XAxes>
+                                <chart:CategoryAxis ShowMajorGridLines="False" EdgeLabelsDrawingMode="Shift" />
+                            </chart:SfCartesianChart.XAxes>
+
+                            <chart:SfCartesianChart.YAxes>
+                                <chart:NumericalAxis ShowMajorGridLines="False" ShowMinorGridLines="False" Header="Growth[%]" EdgeLabelsDrawingMode="Shift" />
+                            </chart:SfCartesianChart.YAxes>
+
+                            <chart:SfCartesianChart.Series>
+                            <chart:ColumnSeries Label="% Remote(Sept 2021)" EnableAnimation="True" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2021" Fill="{ThemeResource SeriesBrush1}"/>
+                            <chart:ColumnSeries Label="% Remote(Sept 2020)" EnableAnimation="True" EnableTooltip="True" SegmentSpacing="0.1" ItemsSource="{Binding BarWidthData}" XBindingPath="Name" YBindingPath="September2020"  Fill="{ThemeResource SeriesBrush7}"/>
+                            </chart:SfCartesianChart.Series>
+
+                        </chart:SfCartesianChart>
+                   
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Remote Work Growth&quot;&gt;
+                        
+ &lt;chart:SfCartesianChart.Legend&gt;
+      &lt;chart:ChartLegend/&gt;
+ &lt;/chart:SfCartesianChart.Legend&gt;                       
+    
+ &lt;chart:SfCartesianChart.XAxes&gt;
+    &lt;chart:CategoryAxis ShowMajorGridLines=&quot;False&quot; EdgeLabelsDrawingMode=&quot;Shift&quot;/&gt; 
+ &lt;/chart:SfCartesianChart.XAxes&gt;
+
+ &lt;chart:SfCartesianChart.YAxes&gt; 
+    &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; ShowMinorGridLines=&quot;False&quot; Header=&quot;Growth[%]&quot;
+                        EdgeLabelsDrawingMode=&quot;Shift&quot;/&gt;
+ &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+&lt;chart:SfCartesianChart.Series&gt;
+    &lt;chart:ColumnSeries ItemsSource=&quot;{Binding BarWidthData}&quot; XBindingPath=&quot;Name&quot; 
+                       YBindingPath=&quot;September2021&quot; Label=&quot;% Remote(Sept 2021)&quot; EnableTooltip=&quot;True&quot;  
+                       SegmentSpacing=&quot;0.1&quot; EnableAnimation=&quot;True&quot; Fill=&quot;{ThemeResource SeriesBrush1}&quot;/&gt;
+
+    &lt;chart:ColumnSeries ItemsSource=&quot;{Binding BarWidthData}&quot; XBindingPath=&quot;Name&quot; 
+                        YBindingPath=&quot;September2020&quot; Label=&quot;% Remote(Sept 2020)&quot; EnableTooltip=&quot;True&quot;   
+                        SegmentSpacing=&quot;0.1&quot; EnableAnimation=&quot;True&quot; Fill=&quot;{ThemeResource SeriesBrush7}&quot;/&gt;
+&lt;/chart:SfCartesianChart.Series&gt;                        
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+    
+</Page>

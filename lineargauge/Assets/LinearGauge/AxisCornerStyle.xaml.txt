@@ -1,0 +1,18 @@
+﻿<gauge:SfLinearGauge>
+    <gauge:SfLinearGauge.Axis>
+        <gauge:LinearAxis x:Name="axis"
+                          Interval="10"
+                          ShowTicks="False"
+                          AxisLineStrokeThickness="8"
+                          CornerStyle="$(axisCornerStyle)">
+
+            <gauge:LinearAxis.BarPointers>
+                <gauge:BarPointer Value="50"
+                                  PointerSize="8"
+                                  Background="Green"
+                                  CornerStyle="{Binding ElementName=axis, Path=CornerStyle, Mode=OneWay}"
+                                  EnableAnimation="True" />
+            </gauge:LinearAxis.BarPointers>
+        </gauge:LinearAxis>
+    </gauge:SfLinearGauge.Axis>
+</gauge:SfLinearGauge>

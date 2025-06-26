@@ -1,0 +1,28 @@
+//Instantiate the spreadsheet creation engine.
+using (ExcelEngine excelEngine = new ExcelEngine())
+{
+  //Instantiate the excel application object and set DefaultVersion as Xlsx.
+  IApplication application = excelEngine.Excel;
+  application.DefaultVersion = ExcelVersion.Xlsx;
+
+  //Create a workbook
+  IWorkbook workbook = application.Workbooks.Create(1);
+  IWorksheet sheet = workbook.Worksheets[0];
+  IWorksheet sheet2 = workbook.Worksheets.Create("Data");
+
+  sheet2.Range["A1"].Text = "Months";
+  sheet2.Range["B1"].Text = "Internet Sales Amount";
+ 
+  sheet2.Range["A2"].Text = "Jan";
+  sheet2.Range["A3"].Text = "Feb";         
+  sheet2.Range["B2"].Number = 226170;
+  sheet2.Range["B3"].Number = 212259;             
+
+  IChartShape chart1 = sheet.Charts.Add();
+  chart1.ChartType = ExcelChartType.Column_Stacked; 
+  chart1.DataRange = sheet2.Range["A1:B3"];
+  
+  //Saving the workbook as stream.
+  using(MemoryStream stream = new MemoryStream() )
+  workbook.SaveAs(stream);          
+}
