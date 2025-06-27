@@ -1,6 +1,6 @@
 ﻿# Syncfusion® WinUI Desktop Controls Demos 
 
-This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos App](https://install.appcenter.ms/users/syncfusion-demos/apps/winui-demos/distribution_groups/release), in which you can browse the demos for all the controls.
+This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos Store App](https://apps.microsoft.com/detail/9N0FP16DDC06?hl=en-us&gl=US&ocid=pdpshare), in which you can browse the demos for all the controls.
 
 This section guides you to use the Syncfusion WinUI demos in your applications.
 
@@ -13,15 +13,15 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
-* Ensure that your development computer has Windows 10 April 2018 Update (version 1803 - build 17134) or newer installed.
-* Requires Visual Studio 2019 (with update 16.7.2 or later) or Visual Studio 2019 Preview.
+* Make sure your development PC is running with Windows 11 and Windows 10 OS version 1809 (build 17763) or a later version.
+* Requires Visual Studio 2022 (with update 17.13 or later) with Windows App SDK [Extension](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/release-notes-archive/stable-channel-1.6#version-16)
+* Need a [.Net80](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and [.Net90](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) requirements for running the demos.
 
 ## <a name="how-to-run-the-demos"></a>How to run the demos ##
 
  * Clone or download this repository.
- * Open `syncfusion.samplebrowser.winui_net50.sln` file present under **samplebrowser** folder in Visual Studio.
- * Restore nugets for all the demo projects.
- * Set `syncfusion.samplebrowser.winui_net50 (Package).wapproj` as start up project and run.
+ * Open `syncfusion.samplebrowser.winui_net80.sln` file present under **SB** folder in Visual Studio as start up project.
+ * Restore nugets for all the demo projects and run.
 
 **Notes:** While downloading the zip file, follow below steps
 * Before you unzip the archive, right-click it, select **Properties**, and then select **Unblock**.
@@ -97,6 +97,12 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         <td>
             <a href="notification">Badge</a>
         </td>
+    </tr>
+    <tr>
+       <td>
+            <a href="notification">BusyIndicator</a>
+        </td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -174,7 +180,9 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         <td>
             <a href="editor">Segmented Control</a>
         </td>
-        <td></td>
+        <td>
+           <a href="editor">Rating</a>
+        </td>
     </tr>
     <tr>
         <td colspan="3">
@@ -185,7 +193,9 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 	    <td>
             <a href="shadow">Shadow</a>
         </td>
-        <td></td>
+        <td>
+            <a href="avatarview">AvatarView</a>
+        </td>
         <td></td>
     </tr>
     <tr>
@@ -226,6 +236,8 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident?utm_source=github&utm_medium=listing) or post the queries through the [community forums](https://www.syncfusion.com/forums?utm_source=github&utm_medium=listing).
 
-* Contact our sales team at <salessupport@syncfusion.com>.
+* To renew the subscription, click [here](https://www.syncfusion.com/sales/products) or contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2025 Syncfusion®, Inc. Updated on 2025-06-26 at precisely 07:31:36 EST.</p> 
+* Don't see what you need? Please request it in our [Feedback portal](https://www.syncfusion.com/feedback/winui).
+
+<p>Copyright © 2001-2025 Syncfusion, Inc. Updated on 2025-01-29 at precisely 16:57:20 EST.</p> 
