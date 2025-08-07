@@ -1,0 +1,44 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.KanbanDemos.WinUI", "Syncfusion.KanbanDemos.WinUI.csproj", "{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.DemosCommon.WinUI_lib", "..\common\Syncfusion.DemosCommon.WinUI_lib.csproj", "{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x64.ActiveCfg = Debug|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x64.Build.0 = Debug|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x64.Deploy.0 = Debug|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x86.ActiveCfg = Debug|x86
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x86.Build.0 = Debug|x86
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Debug|x86.Deploy.0 = Debug|x86
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x64.ActiveCfg = Release|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x64.Build.0 = Release|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x64.Deploy.0 = Release|x64
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x86.ActiveCfg = Release|x86
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x86.Build.0 = Release|x86
+		{B47C639E-F7B6-49A5-9B0F-CE54BD1B2F7B}.Release|x86.Deploy.0 = Release|x86
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Debug|x64.Build.0 = Debug|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Debug|x86.Build.0 = Debug|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Release|x64.ActiveCfg = Release|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Release|x64.Build.0 = Release|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Release|x86.ActiveCfg = Release|Any CPU
+		{5CC58253-B3E8-4C42-BDCE-9EE03EAA8C65}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF35A628-6213-4316-8477-51F827E053AB}
+	EndGlobalSection
+EndGlobal

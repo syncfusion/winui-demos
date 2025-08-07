@@ -1,0 +1,7 @@
+*/obj/
+*/bin/
+*/.vs/
+samplebrowser/AppPackages/
+*.user
+editor/syncfusion.editordemos.winui_net50 (Package)/
+calendar/syncfusion.calendardemos.winui_net50 (Package)/
