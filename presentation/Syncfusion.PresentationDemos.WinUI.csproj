@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\syncfusion.common.desktop.props"/>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<AssemblyName>Syncfusion.PresentationDemos.WinUI</AssemblyName>
+		<RootNamespace>Syncfusion.PresentationDemos.WinUI</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Remove="ViewModel\**"/>
+		<None Remove="ViewModel\**"/>
+		<None Remove="Views\Chart.xaml"/>
+		<None Remove="Views\EncryptAndDecrypt.xaml"/>
+		<None Remove="Views\HeaderAndFooter.xaml"/>
+		<None Remove="Views\HelloWorld.xaml"/>
+		<None Remove="Views\PPTXToImage.xaml"/>
+		<None Remove="Views\PPTXToPDF.xaml"/>
+		<None Remove="Views\FindAndReplace.xaml"/>
+		<None Remove="Views\FindAndHighlight.xaml"/>
+		<None Remove="Views\Slide.xaml"/>
+		<None Remove="Views\Table.xaml"/>
+		<None Remove="Views\Image.xaml"/>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.PresentationRenderer.NET" Version="31.1.17"/>
+		<PackageReference Include="Syncfusion.Pdf.Imaging.NET" Version="31.1.17"/>
+		<PackageReference Include="Syncfusion.MetafileRenderer.NET" Version="31.1.17"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Presentation\*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Syncfusion.DemosCommon.WinUI_lib.csproj"/>
+	</ItemGroup>
+	<Import Project="..\targets\MultiTargeting.targets"/>
+</Project>
