@@ -1,9 +1,0 @@
-﻿//Gets the input RTF document.
-using Stream fileStream = GetWordStream("RTFtoWord.rtf");
-//Creates a new Word document instance.
-using WordDocument document = new();
-//Opens an existing RTF document.
-document.Open(fileStream, FormatType.Rtf);
-using MemoryStream ms = new();
-//Saves the Word document to the memory stream.
-document.Save(ms, FormatType.Docx);
