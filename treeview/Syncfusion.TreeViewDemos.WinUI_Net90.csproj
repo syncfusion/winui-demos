@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.TreeViewDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.TreeViewDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.treeviewdemos.winui_TemporaryKey.pfx" />
+    <Compile Remove="Model\DragAndDropModel.cs" />
+    <Compile Remove="ViewModel\DragAndDropViewModel.cs" />
+    <Compile Remove="Views\DragAndDrop.xaml.cs" />
+    <Page Remove="Views\DragAndDrop.xaml" />
+    <None Remove="Views\DragAndDrop.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.TreeView.WinUI" Version="32.1.19" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net90.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net90.targets" />
+</Project>

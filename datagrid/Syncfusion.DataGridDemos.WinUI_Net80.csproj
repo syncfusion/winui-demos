@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.DataGridDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.DataGridDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.datagriddemos.winui_TemporaryKey.pfx" />
+    <Compile Remove="Views\Resources\SearchControl.cs" />
+    <Compile Remove="Views\SearchPanel.xaml.cs" />
+    <Page Remove="Views\SearchPanel.xaml" />
+    <Page Remove="Views\Resources\Search.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Grid.WinUI" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.GridCommon.WinUI" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Calendar.WinUI" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.GridExport.WinUI" Version="32.1.19" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net80.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net80.targets" />
+</Project>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.RibbonDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.RibbonDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="Assets\Ribbon\Ribbongallerypreview_cs.txt" />
+    <None Remove="Assets\Ribbon\Ribbongallerypreview_xaml.txt" />
+    <None Include="syncfusion.samplebrowser.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Ribbon\Employees\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Ribbon.WinUI" Version="32.1.19" />
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net80.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net80.targets" />
+</Project>

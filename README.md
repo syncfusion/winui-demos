@@ -240,4 +240,4 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * Don't see what you need? Please request it in our [Feedback portal](https://www.syncfusion.com/feedback/winui).
 
-<p>Copyright © 2001-2025 Syncfusion, Inc. Updated on 2025-11-19 at precisely 05:26:37 EST.</p> 
+<p>Copyright © 2001-2025 Syncfusion, Inc. Updated on 2025-12-16 at precisely 14:40:15 EST.</p> 

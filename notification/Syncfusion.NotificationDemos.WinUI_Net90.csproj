@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.NotificationDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.NotificationDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.notificationdemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Notification\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.197" />
+    <PackageReference Include="Syncfusion.Editors.WinUI" Version="32.1.19" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net90.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net90.targets" />
+</Project>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.SliderDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.SliderDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.sliderdemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Sliders.WinUI" Version="32.1.19" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net10.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net10.targets" />
+</Project>

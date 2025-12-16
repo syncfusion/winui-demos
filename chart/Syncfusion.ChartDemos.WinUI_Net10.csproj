@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.ChartDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.ChartDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Converter\*" />
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.chartdemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\ScatterAdornmentConverter.cs" />
+    <Compile Include="Converter\ScatterAdornmentForegroundConverter.cs" />
+    <Compile Include="Converter\ScatterAngleConverter.cs" />
+    <Compile Include="Converter\ScatterInteriorConverter.cs" />
+    <Compile Include="Converter\SplineValueConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Chart\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="32.1.19" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net10.csproj" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net10.targets" />
+</Project>
