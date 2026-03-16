@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="syncfusion.samplebrowser.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.SampleBrowser.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.SampleBrowser.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <DefineConstants>Main_SB;UISuiteSDK;</DefineConstants>
+    <AppxPackageDir>AppxPackages\$(TargetFramework)</AppxPackageDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="SampleBrowser.WinUI_net90 %28Package%29\**" />
+    <Content Remove="SampleBrowser.WinUI_net80 %28Package%29\**" />
+    <Content Remove="SampleBrowser.WinUI_net70 %28Package%29\**" />
+    <Content Remove="SampleBrowser.WinUI_net60 %28Package%29\**" />
+    <EmbeddedResource Remove="SampleBrowser.WinUI_net90 %28Package%29\**" />
+    <EmbeddedResource Remove="SampleBrowser.WinUI_net80 %28Package%29\**" />
+    <EmbeddedResource Remove="SampleBrowser.WinUI_net70 %28Package%29\**" />
+    <EmbeddedResource Remove="SampleBrowser.WinUI_net60 %28Package%29\**" />
+    <None Remove="SampleBrowser.WinUI_net90 %28Package%29\**" />
+    <None Remove="SampleBrowser.WinUI_net80 %28Package%29\**" />
+    <None Remove="SampleBrowser.WinUI_net70 %28Package%29\**" />
+    <None Remove="SampleBrowser.WinUI_net60 %28Package%29\**" />
+    <PRIResource Remove="SampleBrowser.WinUI_net90 %28Package%29\**" />
+    <PRIResource Remove="SampleBrowser.WinUI_net80 %28Package%29\**" />
+    <PRIResource Remove="SampleBrowser.WinUI_net70 %28Package%29\**" />
+    <PRIResource Remove="SampleBrowser.WinUI_net60 %28Package%29\**" />
+    <None Remove="App.ico" />
+    <None Remove="MainPage.xaml" />
+    <None Remove="Products.xml" />
+    <None Remove="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net80.targets" />
+</Project>

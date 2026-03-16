@@ -1,0 +1,29 @@
+﻿<Grid VerticalAlignment="Center" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <md:MarkdownTextBlock 
+                            Padding="6"
+                            Text="{Binding AIGeneratedContent}"
+                            TextWrapping="Wrap"/>
+                        
+                        <syncfusion:SfAIAssistView 
+                            Grid.Column="1"
+                            x:Name="chat"     
+                            Height="480"
+                            Suggestions="{Binding Suggestion}"
+                            SuggestionSelected="chat_SuggestionSelected"                                         
+                            CurrentUser="{Binding CurrentUser}"  
+                            Messages="{Binding Chats}"
+                            ShowTypingIndicator="{Binding ShowTypingIndicator}"
+                            ViewTemplateSelector="{StaticResource viewTS}">
+                            <syncfusion:SfAIAssistView.TypingIndicator>
+                                <syncfusion:TypingIndicator Text="">
+                                    <syncfusion:TypingIndicator.Author>
+                                        <syncfusion:Author Name="AI"/>
+                                    </syncfusion:TypingIndicator.Author>
+                                </syncfusion:TypingIndicator>
+                            </syncfusion:SfAIAssistView.TypingIndicator>
+                        </syncfusion:SfAIAssistView>
+</Grid>

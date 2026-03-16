@@ -1,0 +1,23 @@
+﻿<editors:SfDatePicker ShowDropDownHeader="True" 
+                         ShowColumnHeaders="False">
+	<editors:SfDatePicker.DropDownHeaderTemplate>
+		<DataTemplate>
+                <StackPanel>
+                   <TextBlock
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                       Text="Choose a Travel Date" />
+                   <Path
+                       Width="32"
+                       Height="32"
+                       Margin="5,5,5,10"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Data="{StaticResource train}"
+                       Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                       Stretch="Uniform" />
+               </StackPanel>
+           </DataTemplate>
+	</editors:SfDatePicker.DropDownHeaderTemplate>
+</editors:SfDatePicker>

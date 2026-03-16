@@ -1,0 +1,4 @@
+﻿<editors:SfDatePicker HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         EditMode="None"
+                         DateFieldPrepared="ExcludeWeekEndDatesOnDateFieldPrepared" />

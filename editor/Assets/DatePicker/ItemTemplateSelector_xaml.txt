@@ -1,0 +1,26 @@
+﻿<local:SpecialDaysItemTemplateSelector x:Key="selector"
+                                       NewYearTemplate="{StaticResource NewYearTemplate}"
+                                       ArmyDayTemplate="{StaticResource ArmyDayTemplate}"
+                                       ..... 
+                                       />
+
+<DataTemplate x:Key="NewYearTemplate">
+    <Grid ToolTipService.ToolTip="NewYear">
+          <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="{Binding DisplayText}" />
+          <Path
+                    Width="18"
+                    Height="18"
+                    Margin="3"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Data="{StaticResource newYear}"
+                    Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                    Stretch="Uniform" />
+    </Grid>                   
+</DataTemplate>
+...
+
+<editors:SfDatePicker ItemTemplateSelector="{StaticResource selector}"/>

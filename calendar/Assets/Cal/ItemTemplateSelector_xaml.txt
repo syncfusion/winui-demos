@@ -1,0 +1,22 @@
+﻿<calendar:SfCalendar
+    DayOfWeekFormat="{}{dayofweek.abbreviated(3)}">
+    <calendar:SfCalendar.Resources>
+        <local:CustomCalendarItemTemplateSelector x:Key="selector" />
+        <Style TargetType="calendar:CalendarItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <ContentControl Content="{Binding DisplayText}"/>
+                            <ContentControl 
+                                Content="{Binding Date}" 
+                                ContentTemplateSelector="{StaticResource selector}"/>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </calendar:SfCalendar.Resources>
+</calendar:SfCalendar>

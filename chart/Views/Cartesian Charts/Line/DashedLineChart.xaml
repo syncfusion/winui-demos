@@ -1,0 +1,156 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.DashedLineChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid x:Name="grid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample demonstrates the proportion of capital investment in relation to exports over a specific time period using a dashed line.">
+                <common:DemoLayout.DataContext>
+                    <local:LineChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart x:Name="Chart" Header="Capital Investment as a Share of Exports" Height="420" PaletteBrushes="{ThemeResource ChartPalette}">
+
+                        <chart:SfCartesianChart.Resources>
+                            <ResourceDictionary>
+                                <Style TargetType="Line" x:Name="axisStyle">
+                                    <Setter Property="StrokeThickness" Value="0"/>
+                                    <Setter Property="Stroke" Value="Transparent"/>
+                                </Style>
+                                <DoubleCollection x:Key="dashArray">
+                                    <x:Double>6</x:Double>
+                                    <x:Double>3</x:Double>
+                                    <x:Double>3</x:Double>
+                                    <x:Double>3</x:Double>
+                                </DoubleCollection>
+                                <DataTemplate x:Key="dataLabel">
+                                    <Ellipse Height="9" Width="9" Stroke="{Binding Fill}" StrokeThickness="2"
+                                                Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                                </DataTemplate>
+                            </ResourceDictionary>
+                        </chart:SfCartesianChart.Resources>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend IconHeight="13" IconWidth="13" Padding="0,0,45,0"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis Interval="2"  ShowMajorGridLines=" false" PlotOffsetEnd=" 10" PlotOffsetStart="10" AxisLineOffset="10"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Maximum="21" Minimum="3" Interval="3" AxisLineStyle="{StaticResource axisStyle}" MajorTickStyle="{StaticResource axisStyle}">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="0'%" FontSize="13"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding DashedLine}" Label="Singapore" 
+                              XBindingPath="Name" YBindingPath="Singapore" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                              ShowDataLabels="True" EnableTooltip="True">
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                            </chart:LineSeries.DataLabelSettings>
+                        </chart:LineSeries>
+
+                        <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding DashedLine}" Label="Saudi Arabia"
+                               XBindingPath="Name" YBindingPath="SaudiArabia" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                               ShowDataLabels="True" EnableTooltip="True">
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                            </chart:LineSeries.DataLabelSettings>
+                        </chart:LineSeries>
+
+                        <chart:LineSeries EnableAnimation="True" ItemsSource="{Binding DashedLine}" Label="Spain" 
+                               XBindingPath="Name" YBindingPath="Spain" LegendIcon="Circle" StrokeDashArray="{StaticResource dashArray}" StrokeWidth="1.75"
+                               ShowDataLabels="True" EnableTooltip="True">
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabel}" Context="DataLabelItem"/>
+                            </chart:LineSeries.DataLabelSettings>
+                        </chart:LineSeries>
+
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+  &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Capital Investment as a Share of Exports&quot;
+                         PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+                        
+ &lt;chart:SfCartesianChart.Legend&gt;
+      &lt;chart:ChartLegend IconWidth=&quot;13&quot; IconHeight=&quot;13&quot;/&gt;
+ &lt;/chart:SfCartesianChart.Legend&gt; 
+
+    &lt;chart:SfCartesianChart.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;DoubleCollection x:Key=&quot;dashArray&quot;&gt;
+                &lt;x:Double&gt;6 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+                &lt;x:Double&gt;3 &lt;/x:Double&gt;
+            &lt;/DoubleCollection&gt;           
+        &lt;/ResourceDictionary&gt;
+    &lt;/chart:SfCartesianChart.Resources&gt;
+    
+    &lt;chart:SfCartesianChart.XAxes&gt;
+         &lt;chart:CategoryAxis Interval=&quot;2&quot; ShowMajorGridLines=&quot;false&quot; PlotOffsetEnd=&quot;10&quot; 
+                       PlotOffsetStart=&quot;10&quot; AxisLineOffset=&quot;10&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Maximum=&quot;21&quot; Minimum=&quot;3&quot; Interval=&quot;3&quot;
+                   AxisLineStyle=&quot;{StaticResource axisStyle}&quot; MajorTickStyle=&quot;{StaticResource axisStyle}&quot;&gt;
+        &lt;chart:NumericalAxis.LabelStyle&gt;
+            &lt;chart:LabelStyle LabelFormat=&quot;0'%&quot; FontSize=&quot;13&quot;/&gt;
+        &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;chart:NumericalAxis/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+    
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DashedLine}&quot; YBindingPath=&quot;Singapore&quot;
+                      XBindingPath=&quot;Name&quot; Label=&quot;Singapore&quot; LegendIcon=&quot;Circle&quot; StrokeWidth=&quot;1.75&quot;
+                      StrokeDashArray=&quot;{StaticResource dashArray}&quot; EnableAnimation=&quot;True&quot; 
+                      EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;&gt;
+        &lt;chart:LineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;/chart:LineSeries&gt;
+
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DashedLine}&quot; YBindingPath=&quot;SaudiArabia&quot;
+                      XBindingPath=&quot;Name&quot; Label=&quot;Saudi Arabia&quot; LegendIcon=&quot;Circle&quot; StrokeWidth=&quot;1.75&quot;
+                      StrokeDashArray=&quot;{StaticResource dashArray}&quot; EnableAnimation=&quot;True&quot; 
+                      EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;&gt;
+        &lt;chart:LineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;/chart:LineSeries&gt;
+                        
+    &lt;chart:LineSeries ItemsSource=&quot;{Binding DashedLine}&quot; YBindingPath=&quot;Spain&quot; StrokeWidth=&quot;1.75&quot;
+                      XBindingPath=&quot;Name&quot; Label=&quot;Spain&quot; StrokeDashArray=&quot;{StaticResource dashArray}&quot; 
+                      EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;
+                      LegendIcon=&quot;Circle&quot;&gt;
+        &lt;chart:LineSeries.DataLabelSettings&gt;
+        &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabel}&quot;
+                    Context=&quot;DataLabelItem&quot;/&gt;
+      &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;/chart:LineSeries&gt;                 
+                
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,22 @@
+﻿    public class CustomNumberConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            if (int.TryParse(value.ToString(), out int number))
+            {
+                if (number <= 99)
+                {
+                    return value;
+                }
+                else if (number <= 999)
+                {
+                    return "99+";
+                }
+                else if(number < 99999)
+                {
+                    return (number / 1000).ToString("0.#") + "K";
+                }
+                ...
+            }
+        }
+    }

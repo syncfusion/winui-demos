@@ -1,0 +1,40 @@
+﻿<gauge:SfRadialGauge>
+        <gauge:SfRadialGauge.Axes>
+            <gauge:RadialAxis ShowAxisLine="False"
+                              TickPosition="Outside"
+                              LabelPosition="Outside"
+                              StartAngle="270"
+                              EndAngle="270"
+                              UseRangeColorForAxis="$(useRangeColorForAxis)"
+                              RadiusFactor="0.95"
+                              Interval="10"
+                              ShowFirstLabel="False"
+                              IsInversed="True"
+                              TickLengthUnit="Factor"
+                              MajorTickLength="0.15"
+                              MinorTickLength="0.04"
+                              MinorTicksPerInterval="4">
+                <gauge:RadialAxis.Ranges>
+                    <gauge:GaugeRange WidthUnit="Factor"
+                                      OffsetUnit="Factor"
+                                      RangeOffset="0.36"
+                                      StartWidth="0.05"
+                                      EndWidth="0.25"
+                                      StartValue="0"
+                                      EndValue="35"
+                                      Background="#FFBC5A34">
+                    </gauge:GaugeRange>
+                    <gauge:GaugeRange ...
+                                      StartValue="35"
+                                      EndValue="70"
+                                      Background="#FF3F7BAB">
+                    </gauge:GaugeRange>
+                    <gauge:GaugeRange ...
+                                      StartValue="70"
+                                      EndValue="100"
+                                      Background="#FFB75772">
+                    </gauge:GaugeRange>
+                </gauge:RadialAxis.Ranges>
+            </gauge:RadialAxis>
+        </gauge:SfRadialGauge.Axes>
+</gauge:SfRadialGauge>

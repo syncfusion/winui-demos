@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.TreeGridDemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

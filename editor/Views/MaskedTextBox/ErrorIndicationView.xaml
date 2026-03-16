@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.MaskedTextBox.ErrorIndicationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI.Views.MaskedTextBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="Transparent">
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+            <common:DemoLayout
+            HeaderText="This sample showcases the masked text box with error indication support."
+            XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/MaskedTextBox/errortype_xaml.txt,
+                         Common=Editor/Assets/MaskedTextBox/errortype_xaml.txt}"
+            CSharpSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/MaskedTextBox/errortype_xaml_cs.txt,
+                         Common=Editor/Assets/MaskedTextBox/errortype_xaml_cs.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">
+                        <syncfusion:SfMaskedTextBox x:Name="errorTypeMaskTextBox" 
+                            Header="Email" 
+                            MaskType="RegEx" 
+                            Mask="[a-z0-9._%-]+@[a-z0-9]+\.[a-z]{2,3}" 
+                            Margin="0,10,0,0"
+                            Width="200"
+                            ValueChanging="errorTypeMaskTextBox_ValueChanging"
+                            ErrorContent = "Caps not allowed in the mail id"
+                            ErrorType="None"/>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Text="Error Type" FontSize="15" Margin="5" Width="180"/>
+                        <RadioButton x:Name="noneRadioButton" IsChecked="True" Content="None" Click="noneRadioButton_Click"/>
+                        <RadioButton x:Name="defaultRadioButton" Content="Default" Click="defaultRadioButton_Click"/>
+                        <RadioButton x:Name="informationRadioButton" Content="Information" Click="informationRadioButton_Click"/>
+                        <RadioButton x:Name="criticalRadioButton" Content="Critical" Click="criticalRadioButton_Click"/>
+                        <RadioButton x:Name="warningRadioButton" Content="Warning" Click="warningRadioButton_Click"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+            </common:DemoLayout>
+            <common:DemoLayout
+                HeaderText="This sample showcases the masked text box with custom error type support."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/MaskedTextBox/customerrortype_xaml.txt,
+                Common=Editor/Assets/MaskedTextBox/customerrortype_xaml.txt}"
+                CSharpSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/MaskedTextBox/errortype_xaml_cs.txt,
+                Common=Editor/Assets/MaskedTextBox/errortype_xaml_cs.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">
+                        <syncfusion:SfMaskedTextBox x:Name="customErrorTypeMaskTextBox" 
+                            Header="Email" 
+                            MaskType="RegEx" 
+                            Mask="[a-z0-9._%-]+@[a-z0-9]+\.[a-z]{2,3}" 
+                            Margin="0,10,0,0"
+                            Width="200"
+                            ErrorType="Custom"
+                            ValueChanging="customErrorTypeMaskTextBox_ValueChanging"
+                            CustomErrorIcon="{common:ImagePathExtension Individual=Syncfusion.EditorDemos.WinUI/Assets/MaskedTextBox/CustomIcon.png, Common=Editor/Assets/MaskedTextBox/CustomIcon.png}"
+                            ErrorContent="Caps not allowed in the mail id"/>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Text="Custom Error Border Brush" FontSize="15" Margin="5" Width="180"/>
+                        <syncfusion:SfDropDownColorPalette SelectedBrush="Red"
+                            SelectedBrushChanged="SfDropDownColorPalette_SelectedBrushChanged"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
