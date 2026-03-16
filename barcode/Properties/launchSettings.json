@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.BarcodeDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

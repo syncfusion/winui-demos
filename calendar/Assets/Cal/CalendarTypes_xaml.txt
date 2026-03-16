@@ -1,3 +1,0 @@
-﻿<calendar:SfCalendar
-    CalendarIdentifier="$(CalendarIdentifier)"
-    Language="$(Language)"/>
