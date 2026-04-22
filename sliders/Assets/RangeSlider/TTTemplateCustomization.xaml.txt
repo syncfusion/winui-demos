@@ -1,0 +1,18 @@
+﻿<slider:SfRangeSlider RangeStart="$(templateCustomizationRangeSliderRangeStartSubstitute)"
+                      RangeEnd="$(templateCustomizationRangeSliderRangeEndSubstitute)"
+                      ToolTipFormat="N0"
+                      ToolTipOption="ActiveThumb">
+    <slider:SfRangeSlider.ToolTipTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding RangeStartValue,
+                                          Converter={StaticResource FormatStringConverter},
+                                          ConverterParameter='N0'}" />
+                <TextBlock Text="-" Margin="5,0,5,0" />
+                <TextBlock Text="{Binding RangeEndValue,
+                                          Converter={StaticResource FormatStringConverter},
+                                          ConverterParameter='N0'}" />
+            </StackPanel>
+        </DataTemplate>
+    </slider:SfRangeSlider.ToolTipTemplate>
+</slider:SfRangeSlider>

@@ -1,0 +1,6 @@
+<editors:SfAutoComplete ItemsSource="{Binding Countries}"
+                        HighlightedTextFontSize="14"
+                        HighlightedTextFontStyle="Normal"
+                        HighlightedTextForeground="Red"
+                        HighlightedTextFontWeight="Bold">
+</editors:SfAutoComplete>

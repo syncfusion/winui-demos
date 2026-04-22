@@ -1,0 +1,151 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.DemosCommon.WinUI">
+    
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{StaticResource SolidBackgroundFillColorTertiary}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{StaticResource SystemAccentColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{StaticResource TextOnAccentFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{StaticResource TextFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{StaticResource TextFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{StaticResource CardStrokeColorDefault}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{StaticResource ControlStrokeColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{StaticResource SystemFillColorSolidAttentionBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{StaticResource SystemFillColorSolidAttentionBackground}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemAccentColorDark1}"/>
+            <SolidColorBrush x:Key="SubDemoButtonPressedBackground" Color="{StaticResource SubtleFillColorSecondary}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedBackground" Color="{ThemeResource SystemAccentColor}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedForeground" Color="{ThemeResource TextOnAccentFillColorPrimary}" />
+            <SolidColorBrush x:Key="SubDemoButtonPointerOverBackground" Color="{StaticResource CardStrokeColorDefaultSolid}" />
+            <SolidColorBrush x:Key="SubDemoButtonBackground" Color="{StaticResource SolidBackgroundFillColorBase}" />
+            <SolidColorBrush x:Key="TileBorderBrush" Color="{StaticResource DividerStrokeColorDefault}" />
+            <SolidColorBrush x:Key="SyncfusionScrollButtonBackground" Color="{StaticResource ControlAltFillColorTertiary}"/>
+            <SolidColorBrush x:Key="PreviewBadgeBackground" Color="#FAE41C" />
+            <SolidColorBrush x:Key="UpdateBadgeBackground" Color="#0A70BE" />
+            <SolidColorBrush x:Key="NewBadgeBackground" Color="#059013" />
+
+            <BrushCollection x:Key="ChartPalette">
+                <SolidColorBrush Color="#1060DC"/>
+                <SolidColorBrush Color="#00B553"/>
+                <SolidColorBrush Color="#DA6902"/>
+                <SolidColorBrush Color="#C71969"/>
+                <SolidColorBrush Color="#8AC114"/>
+                <SolidColorBrush Color="#2632A7"/>
+                <SolidColorBrush Color="#0090AF"/>
+                <SolidColorBrush Color="#8419C7"/>
+                <SolidColorBrush Color="#B91D1D"/>
+                <SolidColorBrush Color="#E9C401"/>
+            </BrushCollection>
+
+            <SolidColorBrush x:Key="SeriesBrush1" Color="#1060DC"/>
+            <SolidColorBrush x:Key="SeriesBrush2" Color="#00B553"/>
+            <SolidColorBrush x:Key="SeriesBrush3" Color="#DA6902"/>
+            <SolidColorBrush x:Key="SeriesBrush4" Color="#C71969"/>
+            <SolidColorBrush x:Key="SeriesBrush5" Color="#0090AF"/>
+            <SolidColorBrush x:Key="SeriesBrush6" Color="#8419C7"/>
+            <SolidColorBrush x:Key="SeriesBrush7" Color="#8AC114"/>
+
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{StaticResource SolidBackgroundFillColorTertiary}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{StaticResource SystemAccentColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{StaticResource TextOnAccentFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{StaticResource TextFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{StaticResource TextFillColorPrimary}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{StaticResource CardStrokeColorDefault}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{StaticResource ControlOnImageFillColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{StaticResource ControlStrokeColorSecondary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{StaticResource ControlAltFillColorQuarternary}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{StaticResource ControlAltFillColorQuarternary}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemAccentColorLight2}"/>
+            <SolidColorBrush x:Key="SubDemoButtonPressedBackground" Color="{StaticResource ControlFillColorTertiary}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedBackground" Color="{ThemeResource SystemAccentColorLight2}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedForeground" Color="{ThemeResource TextOnAccentFillColorPrimary}" />
+            <SolidColorBrush x:Key="SubDemoButtonPointerOverBackground" Color="{StaticResource ControlFillColorSecondary}" />
+            <SolidColorBrush x:Key="SubDemoButtonBackground" Color="{StaticResource SolidBackgroundFillColorBase}" />
+            <SolidColorBrush x:Key="TileBorderBrush" Color="{StaticResource ControlSolidFillColorDefault}" />
+            <SolidColorBrush x:Key="SyncfusionScrollButtonBackground" Color="{StaticResource TextOnAccentFillColorSecondary}"/>
+            <SolidColorBrush x:Key="PreviewBadgeBackground" Color="#EEDC39" />
+            <SolidColorBrush x:Key="UpdateBadgeBackground" Color="#569FF4" />
+            <SolidColorBrush x:Key="NewBadgeBackground" Color="#39EE6B" />
+
+            <BrushCollection x:Key="ChartPalette">
+                <SolidColorBrush Color="#307AEC"/>
+                <SolidColorBrush Color="#1DE077"/>
+                <SolidColorBrush Color="#E4842B"/>
+                <SolidColorBrush Color="#E12C7F"/>
+                <SolidColorBrush Color="#AEE23D"/>
+                <SolidColorBrush Color="#4D5BD8"/>
+                <SolidColorBrush Color="#1CC0E3"/>
+                <SolidColorBrush Color="#A13DDF"/>
+                <SolidColorBrush Color="#E44444"/>
+                <SolidColorBrush Color="#EFD02B"/>
+            </BrushCollection>
+
+            <SolidColorBrush x:Key="SeriesBrush1" Color="#307AEC"/>
+            <SolidColorBrush x:Key="SeriesBrush2" Color="#1DE077"/>
+            <SolidColorBrush x:Key="SeriesBrush3" Color="#E4842B"/>
+            <SolidColorBrush x:Key="SeriesBrush4" Color="#E12C7F"/>
+            <SolidColorBrush x:Key="SeriesBrush5" Color="#1CC0E3"/>
+            <SolidColorBrush x:Key="SeriesBrush6" Color="#A13DDF"/>
+            <SolidColorBrush x:Key="SeriesBrush7" Color="#AEE23D"/>
+
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="HighContrast">
+            <SolidColorBrush x:Key="SyncfusionNavigationViewBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionBackground" Color="{ThemeResource SystemColorHighlightColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSelectionForeground" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionBodyTextForeground" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionSubtitleForeground" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionIconBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionDemoBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionHeaderSeparatorBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBackground" Color="{ThemeResource SystemColorWindowColor}"/>
+            <SolidColorBrush x:Key="SyncfusionOptionsBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}"/>
+            <SolidColorBrush x:Key="SyncfusionAllControlsButtonForeground" Color="{ThemeResource SystemColorHighlightTextColor}"/>
+            <SolidColorBrush x:Key="SubDemoButtonPressedBackground" Color="{ThemeResource SystemColorButtonFaceColor}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedBackground" Color="{ThemeResource SystemColorHighlightColor}" />
+            <SolidColorBrush x:Key="SubDemoButtonSelectedForeground" Color="{ThemeResource SystemColorHighlightTextColor}" /> 
+            <SolidColorBrush x:Key="SubDemoButtonPointerOverBackground" Color="{ThemeResource SystemColorHighlightTextColorBrush}" />
+            <SolidColorBrush x:Key="SubDemoButtonBackground" Color="{ThemeResource SystemColorWindowColor}" />
+            <SolidColorBrush x:Key="TileBorderBrush" Color="{ThemeResource SystemColorButtonTextColor}" />
+            <SolidColorBrush x:Key="SyncfusionScrollButtonBackground" Color="{ThemeResource SystemColorButtonFaceColor}"/>
+            <SolidColorBrush x:Key="PreviewBadgeBackground" Color="#EEDC39" />
+            <SolidColorBrush x:Key="UpdateBadgeBackground" Color="#569FF4" />
+            <SolidColorBrush x:Key="NewBadgeBackground" Color="#39EE6B" />
+
+            <BrushCollection x:Key="ChartPalette">
+                <SolidColorBrush Color="#307AEC"/>
+                <SolidColorBrush Color="#1DE077"/>
+                <SolidColorBrush Color="#E4842B"/>
+                <SolidColorBrush Color="#E12C7F"/>
+                <SolidColorBrush Color="#AEE23D"/>
+                <SolidColorBrush Color="#4D5BD8"/>
+                <SolidColorBrush Color="#1CC0E3"/>
+                <SolidColorBrush Color="#A13DDF"/>
+                <SolidColorBrush Color="#E44444"/>
+                <SolidColorBrush Color="#EFD02B"/>
+            </BrushCollection>
+
+            <SolidColorBrush x:Key="SeriesBrush1" Color="#307AEC"/>
+            <SolidColorBrush x:Key="SeriesBrush2" Color="#1DE077"/>
+            <SolidColorBrush x:Key="SeriesBrush3" Color="#E4842B"/>
+            <SolidColorBrush x:Key="SeriesBrush4" Color="#E12C7F"/>
+            <SolidColorBrush x:Key="SeriesBrush5" Color="#1CC0E3"/>
+            <SolidColorBrush x:Key="SeriesBrush6" Color="#A13DDF"/>
+            <SolidColorBrush x:Key="SeriesBrush7" Color="#AEE23D"/>
+
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

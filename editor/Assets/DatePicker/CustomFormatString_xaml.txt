@@ -1,0 +1,6 @@
+﻿<editors:SfDatePicker
+                        FormatString="MM/dd/yyyy"
+                        DateFieldPrepared="OnDateFieldPrepared"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+</editors:SfDatePicker>

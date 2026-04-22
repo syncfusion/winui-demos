@@ -1,0 +1,44 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35323.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.CalendarDemos.WinUI_Net10", "Syncfusion.CalendarDemos.WinUI_Net10.csproj", "{1FE280A9-39A3-445F-A5A6-761081E30991}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.DemosCommon.WinUI_lib_Net10", "../common/Syncfusion.DemosCommon.WinUI_lib_Net10.csproj", "{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x64.ActiveCfg = Debug|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x64.Build.0 = Debug|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x64.Deploy.0 = Debug|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x86.ActiveCfg = Debug|x86
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x86.Build.0 = Debug|x86
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Debug|x86.Deploy.0 = Debug|x86
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x64.ActiveCfg = Release|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x64.Build.0 = Release|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x64.Deploy.0 = Release|x64
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x86.ActiveCfg = Release|x86
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x86.Build.0 = Release|x86
+		{1FE280A9-39A3-445F-A5A6-761081E30991}.Release|x86.Deploy.0 = Release|x86
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Debug|x64.Build.0 = Debug|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Debug|x86.Build.0 = Debug|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Release|x64.ActiveCfg = Release|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Release|x64.Build.0 = Release|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Release|x86.ActiveCfg = Release|Any CPU
+		{453F5862-BF8C-4F7D-BFC6-7DC247FD1339}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C053C8B-907D-43A1-A8E7-B642A12A3660}
+	EndGlobalSection
+EndGlobal

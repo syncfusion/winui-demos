@@ -1,0 +1,9 @@
+<editors:SfAutoComplete HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        PlaceholderText="Search something"
+                        Description="Needs internet"
+                        TextSearchMode="Contains" >
+              <editors:SfAutoComplete.FilterBehavior>
+                   <local:CustomSearch/>
+              </editors:SfAutoComplete.FilterBehavior>
+</editors:SfAutoComplete>

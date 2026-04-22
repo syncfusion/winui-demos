@@ -1,0 +1,9 @@
+﻿<gauge:LinearAxis ...>
+    <gauge:LinearAxis.BarPointers>
+        <gauge:BarPointer Value="70"
+                          PointerSize="12"
+                          Offset="11"
+                          Background="DarkSlateGray"
+                          EnableAnimation="True" />
+    </gauge:LinearAxis.BarPointers>
+</gauge:LinearAxis>

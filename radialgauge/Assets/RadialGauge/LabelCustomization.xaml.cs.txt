@@ -1,0 +1,31 @@
+﻿<gauge:SfRadialGauge>
+        <gauge:SfRadialGauge.Axes>
+            <gauge:RadialAxis StartAngle="180"
+                              EndAngle="360"
+                              Interval="10"
+                              RadiusFactor="0.95"
+                              LabelPosition="Outside"
+                              MajorTickLength="0.1"
+                              MinorTickLength="0.05"
+                              TickLengthUnit="Factor"
+                              MinorTicksPerInterval="5"
+                              FontWeight="SemiBold"
+                              AxisLineWidth="8"
+                              AxisLineFill="#FF00A8B5"
+                              LabelTemplate="{StaticResource LabelTemplate}">
+                <gauge:RadialAxis.Pointers>
+                    <gauge:NeedlePointer Value="70"
+                                         NeedleStartWidth="2"
+                                         NeedleEndWidth="10"
+                                         NeedleLengthUnit="Factor"
+                                         NeedleLength="0.85"
+                                         KnobRadius="12"
+                                         KnobSizeUnit="Pixel"
+                                         TailLength="28"
+                                         TailLengthUnit="Pixel"
+                                         TailWidth="10">
+                    </gauge:NeedlePointer>
+                </gauge:RadialAxis.Pointers>
+            </gauge:RadialAxis>
+        </gauge:SfRadialGauge.Axes>
+ </gauge:SfRadialGauge>

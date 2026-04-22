@@ -1,0 +1,18 @@
+<ribbon:SfRibbon>
+    <ribbon:SfRibbon.Tabs>
+        <ribbon:RibbonTab Header="Home">
+            <ribbon:RibbonGroup Header="Clipboard">
+                <ribbon:RibbonSplitButton Content="Paste" Icon="Paste" AllowedSizeModes="Large" />
+                <ribbon:RibbonButton Content="Cut" Icon="Cut"/>
+                <ribbon:RibbonButton Content="Copy" Icon="Copy"/>
+                <ribbon:RibbonButton Content="Format Painter">
+                    <ribbon:RibbonButton.Icon>
+                        <FontIcon Glyph="&#xF0E3;" />
+                    </ribbon:RibbonButton.Icon>
+                </ribbon:RibbonButton>
+            </ribbon:RibbonGroup>
+            ...
+        </ribbon:RibbonTab>
+        ...
+    </ribbon:SfRibbon.Tabs>
+</ribbon:SfRibbon>

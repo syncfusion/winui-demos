@@ -1,0 +1,8 @@
+﻿<ListView ItemsSource="{Binding ListViewCollection}">
+    <syncfusion:SfAvatarView ContentType="Group" 
+                             InitialsMemberPath="Name"  
+                             GroupSource="{Binding PeopleCollection}" 
+                             BackgroundColorMemberPath="BackgroundColor"
+                             InitialsColorMemberPath="InitialColor"
+                             ImageSourceMemberPath="ImagePath"/>
+</ListView>
