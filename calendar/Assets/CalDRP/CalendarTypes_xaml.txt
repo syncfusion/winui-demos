@@ -1,3 +1,0 @@
-﻿<calendar:SfCalendarDateRangePicker
-    CalendarIdentifier="$(CalendarIdentifier)"
-    Language="$(Language)"/>

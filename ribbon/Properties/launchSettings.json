@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.RibbonDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.LinearGaugeDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

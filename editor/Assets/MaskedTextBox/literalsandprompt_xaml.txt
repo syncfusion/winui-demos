@@ -1,4 +1,0 @@
-﻿<syncfusion:SfMaskedTextBox  
-    Header="Product Key" 
-    MaskType="Simple" 
-    Mask="AAAAA-AAAAA-AAAAA-AAAAA"/>

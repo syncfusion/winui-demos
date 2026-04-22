@@ -1,8 +1,0 @@
-﻿<editors:SfComboBox ItemsSource="{Binding Countries}">
-                    <editors:SfComboBox.LeadingView>
-                         <Viewbox Height="16"
-                                  Width="16">
-                                <SymbolIcon Symbol="Find" />
-                            </Viewbox>
-                    </editors:SfComboBox.LeadingView>
-</editors:SfComboBox>

@@ -1,9 +1,0 @@
-﻿<syncfusion:SfMaskedTextBox x:Name="errorTypeMaskTextBox" 
-    Header="Email" 
-    MaskType="RegEx" 
-    Mask="[a-z0-9._%-]+@[a-z0-9]+\.[a-z]{2,3}" 
-    Margin="0,10,0,0"
-    Width="200"
-    ValueChanging="errorTypeMaskTextBox_ValueChanging"
-    ErrorContent = "Caps not allowed in the mail id"
-    ErrorType="None"/>
