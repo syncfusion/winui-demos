@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.ShimmerDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

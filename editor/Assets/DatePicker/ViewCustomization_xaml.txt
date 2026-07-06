@@ -1,9 +1,0 @@
-﻿<editors:SfDatePicker
-	ShowDropDownButton="$(ShowDropDownButton)"
-	ShowDropDownHeader="$(ShowDropDownHeader)"
-	ShowColumnHeaders="$(ShowColumnHeaders)"
-	ShowSubmitButtons="$(ShowSubmitButtons)">
-	<editors:SfDatePicker.DropDownHeader>
-		<TextBlock Text="Date Picker"/>
-	</editors:SfDatePicker.DropDownHeader>
-</editors:SfDatePicker>

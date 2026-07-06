@@ -1,4 +1,0 @@
-﻿<calendar:SfCalendar
-    ShowWeekNumbers="True"
-    WeekNumberRule="$(WeekNumberRule)"
-    WeekNumberFormat="$(WeekNumberFormat)"/>

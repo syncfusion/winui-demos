@@ -1,3 +1,0 @@
-﻿<editors:SfComboBox ItemsSource="{Binding Countries}"
-			AutoAppendType="Text">
-</editors:SfComboBox>

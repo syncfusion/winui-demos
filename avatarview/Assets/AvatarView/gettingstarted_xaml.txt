@@ -1,5 +1,0 @@
-﻿<syncfusion:SfAvatarView ContentType="Initials" 
-                         InitialsType="DoubleCharacter"
-                         AvatarName="Alex Davis" 
-                         AvatarShape="Circle"
-                         AvatarSize="Large"/>

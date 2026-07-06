@@ -1,5 +1,0 @@
-﻿<editors:SfComboBox
-    IsEditable="True"
-    IsFilteringEnabled="$(IsFilteringEnabled)"
-    TextSearchMode="$(TextSearchMode)"
-    ItemsSource="{Binding Countries}"/>

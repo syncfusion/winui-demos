@@ -1,6 +1,0 @@
-﻿<calendar:SfCalendar
-    SelectionMode="$(SelectionMode)"
-    SelectionShape="$(SelectionShape)"
-    SelectionHighlightMode="$(SelectionHighlightMode)"
-    FirstDayOfWeek="$(FirstDayOfWeek)"
-    NumberOfWeeksInView="$(NumberOfWeeksInView)"/>

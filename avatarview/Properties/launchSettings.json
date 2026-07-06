@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.AvatarViewDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

@@ -1,9 +1,0 @@
-﻿<editors:SfTimePicker
-	ShowDropDownButton="$(ShowDropDownButton)"
-	ShowDropDownHeader="$(ShowDropDownHeader)"
-	ShowColumnHeaders="$(ShowColumnHeaders)"
-	ShowSubmitButtons="$(ShowSubmitButtons)">
-    <editors:SfTimePicker.DropDownHeader>
-		<TextBlock Text="Time Picker"/>
-	</editors:SfTimePicker.DropDownHeader>
-</editors:SfTimePicker>
