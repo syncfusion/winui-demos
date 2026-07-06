@@ -1,0 +1,19 @@
+﻿public class TimeItemTemplateSelector : DataTemplateSelector
+{
+    protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+    {
+        if(dateTimeField.Field==DateTimeField.Hour12)
+        {
+            switch (dateTimeField.DateTime.Value.Hour)
+            {
+                case 2:
+                    return Application.Current.Resources["groupMeetingTemplate"] as DataTemplate;
+                case 5:
+                    return Application.Current.Resources["alarmTemplate"] as DataTemplate;
+                ...
+            }
+        }
+    }
+
+    return base.SelectTemplateCore(item, container);
+}

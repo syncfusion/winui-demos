@@ -1,0 +1,21 @@
+﻿<slider:SfSlider Value="$(activeTickSliderValueSubstitute)"
+                 Interval="5"
+                 ToolTipFormat="N0"
+                 ShowTicks="True">
+
+    <slider:SfSlider.ActiveMajorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="{ThemeResource SystemAccentColor}" />
+            <Setter Property="StrokeThickness"
+                    Value="1.5" />
+        </Style>
+    </slider:SfSlider.ActiveMajorTickStyle>
+    
+    <slider:SfSlider.ActiveMinorTickStyle>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="{ThemeResource SystemAccentColor}" />
+        </Style>
+    </slider:SfSlider.ActiveMinorTickStyle>
+</slider:SfSlider>

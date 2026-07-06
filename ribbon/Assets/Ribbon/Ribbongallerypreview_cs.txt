@@ -1,0 +1,18 @@
+private void OnItemPointerEnter(object sender, RibbonRoutedEventArgs e)
+ {      
+    RibbonGalleryItem selecteditem = (e.Source) as RibbonGalleryItem;
+    if (selecteditem != null)
+      {
+        viewModel.FontSize = selecteditem.FontSize;
+        viewModel.FontWeight = selecteditem.FontWeight;
+      }
+ }
+private void OnItemPointerExit(object sender, RibbonRoutedEventArgs e)
+ {
+   RibbonGalleryItem selecteditem = (RibbonGalleryItem)(sender as RibbonGallery).SelectedItem;
+   if (selecteditem != null)
+     {
+        viewModel.FontSize = selecteditem.FontSize;
+        viewModel.FontWeight = selecteditem.FontWeight;
+     }
+ }

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.RadialGaugeDemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

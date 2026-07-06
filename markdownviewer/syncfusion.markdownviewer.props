@@ -1,0 +1,36 @@
+<Project>
+ <ItemGroup>
+    <Compile Include="..\markdownviewer\SamplesConfiguration.cs">
+		<Link>Chat\SamplesConfiguration.cs</Link>
+	</Compile>
+	 <Compile Include="..\markdownviewer\Views\Overview.xaml.cs">
+		 <Link>markdownviewer\Views\Overview.xaml.cs</Link>
+		 <DependentUpon>..\markdownviewer\Views\Overview.xaml</DependentUpon>
+	 </Compile>
+	 <Compile Include="..\markdownviewer\Views\Customization.xaml.cs">
+		 <Link>markdownviewer\Views\Customization.xaml.cs</Link>
+		 <DependentUpon>..\markdownviewer\Views\Customization.xaml</DependentUpon>
+	 </Compile>	 
+  </ItemGroup>
+
+  <ItemGroup>	
+	  <Page Include="..\markdownviewer\Views\Overview.xaml">
+		  <Link>markdownviewer\Views\Overview.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	  <Page Include="..\markdownviewer\Views\Customization.xaml">
+		  <Link>markdownviewer\Views\Customization.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+  </ItemGroup>
+  <ItemGroup>
+	  <Content Include="..\markdownviewer\Assets\markdownviewer\overview_xaml.txt">
+	   <Link>markdownviewer\Assets\markdownviewer\overview_xaml.txt</Link>
+	</Content>
+	  <Content Include="..\markdownviewer\Assets\markdownviewer\customization_xaml.txt">
+		  <Link>markdownviewer\Assets\markdownviewer\customization_xaml.txt</Link>
+	  </Content>
+  </ItemGroup>
+</Project>

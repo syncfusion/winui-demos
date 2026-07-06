@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Syncfusion.ChartDemos.WinUI.Views.HiLoOpenCloseChart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Grid x:Name="MainGrid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This open-high-low-close chart visualizes Nvidia’s stock performance for the last 3-month and 6-month periods of 2025.">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <chart:SfCartesianChart x:Name="Chart" Header="Nvidia (NVDA) Stock Performance" Height="450">
+
+                            <chart:SfCartesianChart.DataContext>
+                                <local:FinancialViewModel x:Name="viewModel"/>
+                            </chart:SfCartesianChart.DataContext>
+
+                            <chart:SfCartesianChart.XAxes>
+                                <chart:DateTimeAxis AutoScrollingDelta="{Binding ScrollingDelta}" 
+                                                    AutoScrollingDeltaType="Months"
+                                                    ShowMajorGridLines="False" 
+                                                    EdgeLabelsVisibilityMode="AlwaysVisible"
+                                                    EdgeLabelsDrawingMode="Shift"
+                                                    FontSize="13"
+                                                    LabelCreated="DateTimeAxis_LabelCreated">
+                                </chart:DateTimeAxis>
+                            </chart:SfCartesianChart.XAxes>
+
+                            <chart:SfCartesianChart.YAxes>
+                                <chart:NumericalAxis PlotOffsetEnd="15" 
+                                                     RangePadding="Round"
+                                                     FontSize="13"
+                                                     EdgeLabelsVisibilityMode="AlwaysVisible">
+                                    <chart:NumericalAxis.AxisLineStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="StrokeThickness" Value="0"/>
+                                        </Style>
+                                    </chart:NumericalAxis.AxisLineStyle>
+                                    <chart:NumericalAxis.MajorTickStyle>
+                                        <Style TargetType="Line">
+                                            <Setter Property="StrokeThickness" Value="0"/>
+                                        </Style>
+                                    </chart:NumericalAxis.MajorTickStyle>
+                                    <chart:NumericalAxis.LabelStyle>
+                                        <chart:LabelStyle LabelFormat="$0"/>
+                                    </chart:NumericalAxis.LabelStyle>
+                                </chart:NumericalAxis>
+                            </chart:SfCartesianChart.YAxes>
+
+                            <chart:SfCartesianChart.TooltipBehavior>
+                                <chart:ChartTooltipBehavior EnableAnimation="False" />
+                            </chart:SfCartesianChart.TooltipBehavior>
+
+                            <chart:HiLoOpenCloseSeries ItemsSource="{Binding NvdaStockData}"                                      
+                                                       XBindingPath="Date"
+                                                       Open="Open"
+                                                       High="High"    
+                                                       Low="Low"
+                                                       Close="Close"     
+                                                       SegmentSpacing="0.1"
+                                                       SegmentWidth="0.97"
+                                                       EnableTooltip="True"
+                                                       BullishBrush="#43C94C"
+                                                       BearishBrush="#FF3343"/>
+
+                        </chart:SfCartesianChart>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Spacing="5">
+                            <ToggleButton x:Name="ThreeMonthsButton" Content="3 Months" FontSize="13" IsChecked="True" Checked="RangeButton_Checked" BorderBrush="LightGray" BorderThickness="1.5" />
+                            <ToggleButton x:Name="SixMonthsButton" Content="6 Months" FontSize="13" Checked="RangeButton_Checked" BorderBrush="LightGray" BorderThickness="1.5" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
+                            <TextBlock Text="Source: "/>
+                            <TextBlock TextWrapping="WrapWholeWords" Margin="3,0,0,0">
+                                <Hyperlink NavigateUri="https://www.marketwatch.com/investing/stock/nvda/download-data?startDate=7/1/2025&amp;endDate=12/31/2025" FontStyle="Italic" UnderlineStyle="None">MarketWatch</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name="Chart" Header="Nvidia (NVDA) Stock Performance"&gt;
+
+    &lt;chart:SfCartesianChart.DataContext&gt;
+        &lt;local:FinancialViewModel x:Name="viewModel"/&gt;
+    &lt;/chart:SfCartesianChart.DataContext&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis AutoScrollingDelta="{Binding ScrollingDelta}" 
+                            AutoScrollingDeltaType="Months"
+                            ShowMajorGridLines="False" 
+                            EdgeLabelsVisibilityMode="AlwaysVisible"
+                            EdgeLabelsDrawingMode="Shift"
+                            FontSize="13"
+                            LabelCreated="DateTimeAxis_LabelCreated"&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis PlotOffsetEnd="15" 
+                             RangePadding="Round"
+                             FontSize="13"
+                             EdgeLabelsVisibilityMode="AlwaysVisible"&gt;
+            &lt;chart:NumericalAxis.AxisLineStyle&gt;
+                &lt;Style TargetType="Line"&gt;
+                    &lt;Setter Property="StrokeThickness" Value="0"/&gt;
+                &lt;/Style&gt;
+            &lt;/chart:NumericalAxis.AxisLineStyle&gt;
+            &lt;chart:NumericalAxis.MajorTickStyle&gt;
+                &lt;Style TargetType="Line"&gt;
+                    &lt;Setter Property="StrokeThickness" Value="0"/&gt;
+                &lt;/Style&gt;
+            &lt;/chart:NumericalAxis.MajorTickStyle&gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat="$0"/&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:SfCartesianChart.TooltipBehavior&gt;
+        &lt;chart:ChartTooltipBehavior EnableAnimation="False" /&gt;
+    &lt;/chart:SfCartesianChart.TooltipBehavior&gt;
+
+    &lt;chart:HiLoOpenCloseSeries ItemsSource="{Binding NvdaStockData}"                                      
+                               XBindingPath="Date"
+                               Open="Open"
+                               High="High"    
+                               Low="Low"
+                               Close="Close"     
+                               SegmentSpacing="0.1"
+                               SegmentWidth="0.97"
+                               EnableTooltip="True"
+                               BullishBrush="#43C94C"
+                               BearishBrush="#FF3343"/&gt;
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

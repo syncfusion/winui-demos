@@ -1,0 +1,3 @@
+<editors:SfAutoComplete PlaceholderText="$(AutoCompletePlaceholderText)"
+                        MaxDropDownHeight="$(AutoCompleteMaxDropDownHeight)">
+</editors:SfAutoComplete>

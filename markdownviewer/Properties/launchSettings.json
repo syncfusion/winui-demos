@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Syncfusion.MarkdownViewerDemos.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

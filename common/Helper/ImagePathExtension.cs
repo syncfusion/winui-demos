@@ -1,0 +1,43 @@
+﻿using Microsoft.UI.Xaml.Markup;
+using Microsoft.UI.Xaml.Media.Imaging;
+using System;
+using System.Linq;
+using System.Reflection;
+
+namespace Syncfusion.DemosCommon.WinUI
+{
+    /// <summary>
+    /// A markup extension that returns a ImageSource
+    /// </summary>
+    [MarkupExtensionReturnType(ReturnType = typeof(BitmapImage))]
+    public class ImagePathExtension : MarkupExtension
+    {
+        /// <summary>
+        /// Gets or sets the ImagePath for common sample browser.
+        /// </summary>
+        public string Common { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ImagePath for individual sample browser.
+        /// </summary>
+        public string Individual { get; set; }
+
+        /// <inheritdoc/>
+        protected override object ProvideValue()
+        {
+            string imagePath;
+#if Main_SB
+            imagePath = Common;
+#else
+            imagePath = string.Join("/", Individual.Split('/').Skip(1).ToArray());
+#endif
+
+            if (string.IsNullOrEmpty(imagePath))
+            {
+                throw new ArgumentException("Provide valid resource name on ImagePath");
+            }
+
+            return new BitmapImage() { UriSource = new Uri($"ms-appx:///{imagePath}", UriKind.Absolute) };
+        }
+    }
+}

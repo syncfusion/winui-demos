@@ -1,0 +1,32 @@
+﻿<slider:SfSlider Value="$(dividerTemplateSliderValueSubstitute)"
+                 ShowDividers="True"
+                 DividerHeight="10"
+                 ToolTipFormat="N0"
+                 DividerWidth="10"
+                 DividerStroke="#FF5722"
+                 DividerStrokeThickness="2"
+                 ...
+                 Interval="20"
+                 ThumbOverlayRadius="10"
+                 StepFrequency="20"
+                 ActiveTrackHeight="5"
+                 InactiveTrackHeight="5">
+
+    <slider:SfSlider.DividerTemplate>
+        <DataTemplate>
+            <Rectangle Height="{Binding DividerHeight}"
+                       Width="{Binding DividerWidth}"
+                       Fill="{ThemeResource SystemAltHighColor}"
+                       Stroke="{Binding DividerStroke}"
+                       StrokeThickness="{Binding DividerStrokeThickness}" />
+        </DataTemplate>
+    </slider:SfSlider.DividerTemplate>
+    
+    <slider:SfSlider.ThumbStyle>
+        ...
+    </slider:SfSlider.ThumbStyle>
+
+    <slider:SfSlider.ToolTipStyle>
+        ...
+    </slider:SfSlider.ToolTipStyle>
+</slider:SfSlider>

@@ -1,0 +1,20 @@
+﻿<editors:SfComboBox
+    PlaceholderText="Select an employee"
+    TextMemberPath="Name"
+    ItemsSource="{Binding Employees}">
+    <editors:SfComboBox.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding ProfilePicture}" />
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="{Binding Designation}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </editors:SfComboBox.ItemTemplate>
+</editors:SfComboBox>

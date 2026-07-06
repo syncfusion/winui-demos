@@ -1,0 +1,106 @@
+﻿<Page x:Class="Syncfusion.RadialGaugeDemos.WinUI.Views.DirectionCompass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Syncfusion.RadialGaugeDemos.WinUI.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI">
+
+    <ScrollViewer>
+        <common:DemoLayout HeaderText="This sample shows the direction in a compass using the radial gauge annotations support."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.RadialGaugeDemos.WinUI/Assets/RadialGauge/directioncompass.xaml.cs.txt,
+                                                                          Common=RadialGauge/Assets/RadialGauge/directioncompass.xaml.cs.txt}">
+            <common:DemoLayout.Example>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <gauge:SfRadialGauge x:Name="gauge">
+                        <gauge:SfRadialGauge.Axes>
+                            <gauge:RadialAxis ShowAxisLine="False"
+                                              TickPosition="Outside"
+                                              LabelPosition="Outside"
+                                              StartAngle="320"
+                                              EndAngle="320"
+                                              MinorTicksPerInterval="10"
+                                              Minimum="0"
+                                              Maximum="360"
+                                              ShowLastLabel="False"
+                                              Interval="30"
+                                              TickLengthUnit="Factor"
+                                              MajorTickLength="0.16"
+                                              MinorTickLength="0.16"
+                                              OffsetUnit="Factor"
+                                              LabelOffset="-0.2"
+                                              RadiusFactor="0.75">
+                                <gauge:RadialAxis.Pointers>
+                                    <gauge:ShapePointer Value="90"
+                                                         ShapeType="Triangle" />
+                                    <gauge:NeedlePointer Value="310"
+                                                         NeedleLengthUnit="Factor"
+                                                         NeedleLength="0.7"
+                                                         NeedleStartWidth="1"
+                                                         NeedleEndWidth="1"
+                                                         NeedleFill="#FFC4C4C4"
+                                                         KnobRadius="0"
+                                                         TailLengthUnit="Factor"
+                                                         TailLength="0.7"
+                                                         TailWidth="1"
+                                                         TailFill="#FFC4C4C4">
+                                    </gauge:NeedlePointer>
+                                    <gauge:NeedlePointer Value="221"
+                                                         NeedleLengthUnit="Factor"
+                                                         NeedleLength="0.7"
+                                                         NeedleStartWidth="1"
+                                                         NeedleEndWidth="1"
+                                                         NeedleFill="#FFC4C4C4"
+                                                         KnobRadius="0"
+                                                         TailLengthUnit="Factor"
+                                                         TailLength="0.7"
+                                                         TailWidth="1"
+                                                         TailFill="#FFC4C4C4">
+                                    </gauge:NeedlePointer>
+                                </gauge:RadialAxis.Pointers>
+
+                                <gauge:RadialAxis.Annotations>
+                                    <gauge:GaugeAnnotation DirectionValue="230"
+                                                           PositionFactor="0.5">
+                                        <gauge:GaugeAnnotation.Content>
+                                            <TextBlock Text="W"
+                                                       FontWeight="Bold"
+                                                       FontSize="18" />
+                                        </gauge:GaugeAnnotation.Content>
+                                    </gauge:GaugeAnnotation>
+                                    <gauge:GaugeAnnotation DirectionValue="310"
+                                                           PositionFactor="0.5">
+                                        <gauge:GaugeAnnotation.Content>
+                                            <TextBlock Text="N"
+                                                       FontWeight="Bold"
+                                                       FontSize="18" />
+                                        </gauge:GaugeAnnotation.Content>
+                                    </gauge:GaugeAnnotation>
+                                    <gauge:GaugeAnnotation DirectionValue="129"
+                                                           PositionFactor="0.5">
+                                        <gauge:GaugeAnnotation.Content>
+                                            <TextBlock Text="S"
+                                                       FontWeight="Bold"
+                                                       FontSize="18" />
+                                        </gauge:GaugeAnnotation.Content>
+                                    </gauge:GaugeAnnotation>
+                                    <gauge:GaugeAnnotation DirectionValue="50"
+                                                           PositionFactor="0.5">
+                                        <gauge:GaugeAnnotation.Content>
+                                            <TextBlock Text="E"
+                                                       FontWeight="Bold"
+                                                       FontSize="18" />
+                                        </gauge:GaugeAnnotation.Content>
+                                    </gauge:GaugeAnnotation>
+                                </gauge:RadialAxis.Annotations>
+                            </gauge:RadialAxis>
+                        </gauge:SfRadialGauge.Axes>
+                    </gauge:SfRadialGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>

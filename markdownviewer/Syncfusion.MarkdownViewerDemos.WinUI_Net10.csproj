@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Syncfusion.MarkdownViewerDemos.WinUI</AssemblyName>
+    <RootNamespace>Syncfusion.MarkdownViewerDemos.WinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
+    <None Remove="syncfusion.MarkdownViewerDemos.winui_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../common/Syncfusion.DemosCommon.WinUI_lib_Net10.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.MarkdownViewer.WinUI" Version="34.1.29" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net10.targets" />
+</Project>

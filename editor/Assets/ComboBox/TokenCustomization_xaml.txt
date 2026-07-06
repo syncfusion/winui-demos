@@ -1,0 +1,25 @@
+﻿<editors:SfComboBox
+    SelectionMode="Multiple"
+    MultiSelectionDisplayMode="Token"                        
+    DisplayMemberPath="CountryName"
+    ItemsSource="{Binding SelectionBoxCountryList}">
+    <editors:SfComboBox.TokenItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="{Binding FlagImage}" 
+                       Width="36" Height="20"
+                       Stretch="Uniform"/>
+    
+                <TextBlock Margin="8,0,0,0"
+                           Grid.Column="1" 
+                           HorizontalAlignment="Left"
+                           Text="{Binding CountryName}"/>
+            </Grid>
+        </DataTemplate>
+    </editors:SfComboBox.TokenItemTemplate>
+</editors:SfComboBox>

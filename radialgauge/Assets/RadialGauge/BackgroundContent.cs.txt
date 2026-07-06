@@ -1,0 +1,26 @@
+﻿private void RadialAxis_LabelPrepared(object sender, LabelPreparedEventArgs e)
+{
+    if (e.LabelText == "90")
+    {
+        e.LabelText = "E";
+    }
+    else if (e.LabelText == "360")
+    {
+        e.LabelText = string.Empty;
+    }
+    else
+    {
+        if (e.LabelText == "0")
+        {
+            e.LabelText = "N";
+        }
+        else if (e.LabelText == "180")
+        {
+            e.LabelText = "S";
+        }
+        else if (e.LabelText == "270")
+        {
+            e.LabelText = "W";
+        }
+    }
+}

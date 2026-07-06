@@ -1,0 +1,13 @@
+<editors:SfAutoComplete TextMemberPath="CityName"
+                        DisplayMemberPath="CityName"
+                        Header="Enter a country name"
+                        PlaceholderText="Enter a city"
+                        Description="e.g., USA, India, Canada, England"
+                        ItemsSource="{Binding Cities}">
+                        <editors:SfAutoComplete.FilterBehavior>
+                            <local:CustomFilter/>
+                        </editors:SfAutoComplete.FilterBehavior>
+                        <editors:SfAutoComplete.SearchBehavior>
+                            <local:CapitalCitySearchingBehavior/>
+                        </editors:SfAutoComplete.SearchBehavior>
+</editors:SfAutoComplete>

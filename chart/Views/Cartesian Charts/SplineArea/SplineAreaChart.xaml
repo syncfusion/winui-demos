@@ -1,0 +1,120 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.SplineAreaChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid x:Name="grid">
+        <Grid.Resources>
+            <Style TargetType="Line" x:Name="axisStyle">
+                <Setter Property="StrokeThickness" Value="0"/>
+                <Setter Property="Stroke" Value="Transparent"/>
+            </Style>
+        </Grid.Resources>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the percentage of inflation rates among different years using a smooth spline curve.">
+                <common:DemoLayout.DataContext>
+                    <local:SplineAreaChartViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <chart:SfCartesianChart 
+                        x:Name="Chart"
+                        Header="Inflation Consumer Prices in Percentage"
+                        Height="420"
+                        HorizontalAlignment="Center">
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis Interval="2" EdgeLabelsDrawingMode="Shift" ShowMajorGridLines="false" />
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis
+                              Maximum="12" Minimum="0" Interval="2" AxisLineStyle="{StaticResource axisStyle}"
+                                ShowMajorGridLines="True" MajorTickStyle="{StaticResource axisStyle}">
+                                <chart:NumericalAxis.LabelStyle>
+                                        <chart:LabelStyle LabelFormat="0'%" FontSize="13"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend IconHeight="13" IconWidth="13" Padding="0,0,60,0"/>
+                        </chart:SfCartesianChart.Legend>
+
+                            <chart:SplineAreaSeries Fill="{ThemeResource SeriesBrush6}" 
+                            EnableAnimation="True"
+                            ItemsSource="{Binding SplineAreaData}"
+                            Label="India"
+                            LegendIcon="Circle"
+                            EnableTooltip="True"
+                            XBindingPath="Year"
+                            YBindingPath="India" />
+
+                            <chart:SplineAreaSeries Fill="{ThemeResource SeriesBrush4}" 
+                            EnableAnimation="True"
+                            ItemsSource="{Binding SplineAreaData}"
+                            Label="China"
+                            LegendIcon="Circle"
+                            EnableTooltip="True"
+                            XBindingPath="Year"
+                            YBindingPath="China" />
+                        
+                    </chart:SfCartesianChart>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
+                            <TextBlock Text="Source: "/>
+                            <TextBlock TextWrapping="WrapWholeWords" Margin="3,0,0,0">
+                         <Hyperlink NavigateUri="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?end=2018&amp;locations=CN-IN&amp;start=2010" FontStyle="Italic" UnderlineStyle="None">The World Bank Group</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+ &lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Inflation Consumer Prices in Percentage&quot;&gt;
+    
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis EdgeLabelsDrawingMode=&quot;Shift&quot; Interval=&quot;2&quot;
+                            ShowMajorGridLines=&quot;False&quot; /&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Maximum=&quot;12&quot; Interval=&quot;2&quot; Minimum=&quot;0&quot; ShowMajorGridLines=&quot;True&quot;
+                  AxisLineStyle=&quot;{StaticResource axisStyle}&quot; MajorTickStyle=&quot;{StaticResource axisStyle}&quot;&gt;
+            &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;0'%&quot; FontSize=&quot;13&quot;/&gt;
+           &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;chart:NumericalAxis/&gt;              
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+    &lt;chart:SfCartesianChart.Legend&gt;
+        &lt;chart:ChartLegend IconHeight=&quot;13&quot; IconWidth=&quot;13&quot;/&gt;
+    &lt;/chart:SfCartesianChart.Legend&gt;
+                        
+    &lt;chart:SplineAreaSeries ItemsSource=&quot;{Binding SplineAreaData}&quot; XBindingPath=&quot;Year&quot; 
+                          YBindingPath=&quot;India&quot; LegendIcon=&quot;Circle&quot; Fill=&quot;{ThemeResource SeriesBrush6}&quot;
+                          Label=&quot;India&quot; EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot;/&gt;
+
+    &lt;chart:SplineAreaSeries ItemsSource=&quot;{Binding SplineAreaData}&quot; XBindingPath=&quot;Year&quot; 
+                           YBindingPath=&quot;China&quot; LegendIcon=&quot;Circle&quot; Fill=&quot;{ThemeResource SeriesBrush4}&quot; 
+                           Label=&quot;China&quot; EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot;/&gt;
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

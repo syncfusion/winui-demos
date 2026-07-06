@@ -1,0 +1,19 @@
+﻿/// <summary>
+/// Helps to estimate the cost based on pick up and drop off time.
+/// </summary>
+private void OnDateChanged(object sender, SelectedDateTimeChangedEventArgs e)
+{
+    if (DepartDatePicker.SelectedDate != null && ReturnDatePicker.SelectedDate != null &&
+        ReturnDatePicker.SelectedDate < DepartDatePicker.SelectedDate)
+    {
+        ReturnDatePicker.SelectedDate = DepartDatePicker.SelectedDate;
+        ReturnDatePicker.MinDate = DepartDatePicker.SelectedDate.Value;
+    }
+
+    if (((oneWayRadioButton.IsChecked == true && DepartDatePicker.SelectedDate != null) || 
+        (roundTripRadioButton.IsChecked == true && ReturnDatePicker.SelectedDate != null)) &&
+        DepartComboBox.SelectedItem != null && DropOffComboBox.SelectedItem != null)
+    {
+        EstimatedCostNumberBox.Value = passengers.Value * 10000;
+    }
+}

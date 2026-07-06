@@ -1,0 +1,38 @@
+﻿
+// To learn more about WinUI, the WinUI project structure,
+// and more about our project templates, see: http://aka.ms/winui-project-info.
+
+namespace Syncfusion.SliderDemos.WinUI.Views.Slider
+{
+    using Microsoft.UI.Xaml.Controls;
+    using System;
+
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class ThumbCustomization : Page, IDisposable
+    {
+        public ThumbCustomization()
+        {
+            this.InitializeComponent();
+        }
+
+        /// <summary>
+        /// Dispose all the allocated resources.
+        /// </summary>
+        public void Dispose()
+        {
+            if (this.textViewSlider != null)
+            {
+                this.textViewSlider.Dispose();
+                this.textViewSlider = null;
+            }
+
+            if (this.thumbColorSlider != null)
+            {
+                this.thumbColorSlider.Dispose();
+                this.thumbColorSlider = null;
+            }
+        }
+    }
+}

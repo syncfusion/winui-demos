@@ -1,0 +1,282 @@
+﻿<Page x:Class="Syncfusion.SliderDemos.WinUI.Views.Slider.GettingStarted"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:slider="using:Syncfusion.UI.Xaml.Sliders">
+
+    <ScrollViewer>
+        <StackPanel>
+            <common:DemoLayout HeaderText="Simple slider">
+                <common:DemoLayout.Example>
+                    <Grid HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="simpleSlider"
+                                         VerticalAlignment="Center"
+                                         Value="50"
+                                         Width="500" />
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Width="500"
+                 Value="$(simpleSliderValueSubstitute)"
+                 ShowToolTip="$(simpleSliderShowTooltipSubstitute)"
+                 IsEnabled="$(simpleSliderDisableSubstitute)" /&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Slider x:Name="valueSlider"
+                                Header="Value"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="{Binding ElementName=simpleSlider, Path=Value, Mode=TwoWay}" />
+                        <CheckBox x:Name="showToolTipCheckBox"
+                                  Grid.Row="1"
+                                  Content="ShowToolTip"
+                                  IsChecked="{Binding ElementName=simpleSlider, Path=ShowToolTip, Mode=TwoWay}" />
+                        <CheckBox x:Name="disableCheckBox"
+                                  Grid.Row="2"
+                                  Content="IsEnabled"
+                                  IsChecked="{Binding ElementName=simpleSlider, Path=IsEnabled, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="simpleSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind valueSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="simpleSliderDisableSubstitute"
+                                                   SubstitutionValue="{x:Bind disableCheckBox.IsChecked, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="simpleSliderShowTooltipSubstitute"
+                                                   SubstitutionValue="{x:Bind showToolTipCheckBox.IsChecked, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Slider with the inclusion of scale labels and ticks">
+                <common:DemoLayout.Example>
+                    <Grid HorizontalAlignment="Stretch">
+                        <slider:SfSlider x:Name="scaleSlider"
+                                         VerticalAlignment="Center"
+                                         Width="500"
+                                         Minimum="10"
+                                         Maximum="150"
+                                         Value="50"
+                                         ShowTicks="True"
+                                         MinorTicksPerInterval="1"
+                                         TickOffset="2"
+                                         LabelOffset="0"
+                                         ToolTipFormat="N0"
+                                         ShowLabels="True" />
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Width="500" 
+                 Minimum="$(scaleSliderMinimumSubstitute)"
+                 Maximum="$(scaleSliderMaximumSubstitute)"
+                 Value="$(scaleSliderValueSubstitute)"
+                 ShowTicks="$(scaleSliderShowTicksSubstitute)"
+                 MinorTicksPerInterval="1"
+                 TickOffset="2"
+                 ToolTipFormat="N0"
+                 ShowLabels="$(scaleSliderShowLabelsSubstitute)"
+                 IsInversed="$(scaleSliderIsInversedSubstitute)" /&gt;
+                     </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Slider x:Name="minimumSlider"
+                                Header="Minimum"
+                                StepFrequency="10"
+                                Minimum="0"
+                                Maximum="20"
+                                Value="{Binding ElementName=scaleSlider, Path=Minimum, Mode=TwoWay}" />
+                        <Slider x:Name="maximumSlider"
+                                Grid.Row="1"
+                                StepFrequency="10"
+                                Header="Maximum"
+                                Minimum="130"
+                                Maximum="150"
+                                Value="{Binding ElementName=scaleSlider, Path=Maximum, Mode=TwoWay}" />
+                        <Slider x:Name="valueScaleSlider"
+                                Grid.Row="2"
+                                Header="Value"
+                                Minimum="0"
+                                Maximum="150"
+                                Value="{Binding ElementName=scaleSlider, Path=Value, Mode=TwoWay}" />
+                        <CheckBox x:Name="showTicksCheckBox"
+                                  Grid.Row="3"
+                                  Content="ShowTicks"
+                                  IsChecked="{Binding ElementName=scaleSlider, Path=ShowTicks, Mode=TwoWay}" />
+                        <CheckBox x:Name="showLabelsCheckBox"
+                                  Grid.Row="4"
+                                  Content="ShowLabels"
+                                  IsChecked="{Binding ElementName=scaleSlider, Path=ShowLabels, Mode=TwoWay}" />
+                        <CheckBox x:Name="isInversedCheckBox"
+                                  Grid.Row="5"
+                                  Content="IsInversed"
+                                  IsChecked="{Binding ElementName=scaleSlider, Path=IsInversed, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="scaleSliderMinimumSubstitute"
+                                                   SubstitutionValue="{x:Bind minimumSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="scaleSliderMaximumSubstitute"
+                                                   SubstitutionValue="{x:Bind maximumSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="scaleSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind valueScaleSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="scaleSliderShowTicksSubstitute"
+                                                   SubstitutionValue="{x:Bind showTicksCheckBox.IsChecked, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="scaleSliderShowLabelsSubstitute"
+                                                   SubstitutionValue="{x:Bind showLabelsCheckBox.IsChecked, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="scaleSliderIsInversedSubstitute"
+                                                   SubstitutionValue="{x:Bind isInversedCheckBox.IsChecked, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Slider with the inclusion of step frequency">
+                <common:DemoLayout.Example>
+                    <Grid HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="frequencySlider"
+                                         VerticalAlignment="Center"
+                                         Width="500"
+                                         StepFrequency="10"
+                                         ToolTipFormat="N0"
+                                         Interval="10"
+                                         ShowLabels="True" />
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Width="500"
+                 ToolTipFormat="N0"
+                 Value="$(frequencySliderValueSubstituteFrequencySlider)"
+                 StepFrequency="$(frequencySliderStepFrequencySubstitute)" /&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Slider x:Name="stepFrequencySlider"
+                                Header="StepFrequency"
+                                StepFrequency="5"
+                                Minimum="0"
+                                Maximum="20"
+                                Value="{Binding ElementName=frequencySlider, Path=StepFrequency, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="frequencySliderValueSubstituteFrequencySlider"
+                                                   SubstitutionValue="{x:Bind frequencySlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="frequencySliderStepFrequencySubstitute"
+                                                   SubstitutionValue="{x:Bind stepFrequencySlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Slider with the inclusion of divider">
+                <common:DemoLayout.Example>
+                    <Grid HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="dividerSlider"
+                                         Width="500"
+                                         ToolTipFormat="N0"
+                                         VerticalAlignment="Center"
+                                         Value="30"
+                                         Interval="10"
+                                         StepFrequency="10"
+                                         ShowLabels="True"
+                                         ShowDividers="True" />
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Width="500"
+                 Value="$(dividerSliderValueSubstitute)"
+                 ShowLabels="True"
+                 ToolTipFormat="N0"
+                 ShowDividers="$(dividerSliderShowDividersSubstitute)"
+                 Interval="$(dividerSliderIntervalSubstitute)"
+                 StepFrequency="$(dividerSliderDividerStepFrequencySubstitute)" /&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox x:Name="showDividersCheckBox"
+                                  Content="ShowDividers"
+                                  IsChecked="{Binding ElementName=dividerSlider, Path=ShowDividers, Mode=TwoWay}" />
+                        <Slider x:Name="intervalSlider"
+                                Grid.Row="1"
+                                Header="Interval"
+                                StepFrequency="5"
+                                Minimum="10"
+                                Maximum="20"
+                                Value="{Binding ElementName=dividerSlider, Path=Interval, Mode=TwoWay}" />
+
+                        <Slider x:Name="dividerStepFrequencySlider"
+                                Grid.Row="2"
+                                Header="StepFrequency"
+                                StepFrequency="5"
+                                Minimum="10"
+                                Maximum="20"
+                                Value="{Binding ElementName=dividerSlider, Path=StepFrequency, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="dividerSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind dividerSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="dividerSliderShowDividersSubstitute"
+                                                   SubstitutionValue="{x:Bind showDividersCheckBox.IsChecked, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="dividerSliderIntervalSubstitute"
+                                                   SubstitutionValue="{x:Bind intervalSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="dividerSliderDividerStepFrequencySubstitute"
+                                                   SubstitutionValue="{x:Bind dividerStepFrequencySlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

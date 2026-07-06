@@ -1,0 +1,4 @@
+﻿private void errorTypeMaskTextBox_ValueChanging(object sender, MaskedTextBoxValueChangingEventArgs e)
+{
+    errorTypeMaskTextBox.ErrorType = e.IsValid ? ErrorType.Success : errorType;
+}

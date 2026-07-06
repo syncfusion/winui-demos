@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.ZoomPanBehavior"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+
+    <Grid x:Name="grid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases a summary of activity with zooming behavior. It allows you to take a closer look at the data points plotted in the series.">
+                <common:DemoLayout.DataContext>
+                    <local:ZoomingViewModel />
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart
+                        x:Name="Chart"
+                        Header="Activity Summary"
+                        Height="420">
+
+                        <chart:SfCartesianChart.Resources>
+                            <Style TargetType="Line" x:Name="lineStyle">
+                                <Setter Property="StrokeThickness" Value="0"/>
+                            </Style>
+
+                            <Style TargetType="Line" x:Name="tickLineStyle">
+                                <Setter Property="StrokeThickness" Value="0"/>
+                                <Setter Property="Stroke" Value="Transparent"/>
+                            </Style>
+                            
+                            <DataTemplate x:Key="headerTemplate">
+                                <TextBlock Text="Month" Padding="0,10,0,0"/>
+                            </DataTemplate>
+                        </chart:SfCartesianChart.Resources>
+
+                        <chart:SfCartesianChart.ZoomPanBehavior>
+                            <chart:ChartZoomPanBehavior/>
+                        </chart:SfCartesianChart.ZoomPanBehavior>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:DateTimeAxis ShowMajorGridLines="False" MajorTickStyle="{StaticResource tickLineStyle}" 
+                                                    AxisLineStyle="{StaticResource lineStyle}" HeaderTemplate="{StaticResource headerTemplate}">
+                            </chart:DateTimeAxis>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Minimum="0" Maximum="100" EdgeLabelsDrawingMode="Shift" AxisLineStyle="{StaticResource lineStyle}" 
+                                                 MajorTickStyle="{StaticResource lineStyle}"/>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:AreaSeries ItemsSource="{Binding ZoomData}" XBindingPath="Date" YBindingPath="Value">
+                            <chart:AreaSeries.Fill>
+                                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                    <GradientStop Color="#1060DC" Offset="1.0"/>
+                                    <GradientStop Color="#c6e1f5" Offset="0.0"/>
+                                </LinearGradientBrush>
+                            </chart:AreaSeries.Fill>
+                        </chart:AreaSeries>
+                        
+                    </chart:SfCartesianChart>
+
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Activity Summary&quot;&gt;
+    
+     &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis MajorTickStyle=&quot;{StaticResource tickLineStyle}&quot;
+                     AxisLineStyle=&quot;{StaticResource lineStyle}&quot; ShowMajorGridLines=&quot;False&quot;
+                     HeaderTemplate=&quot;{StaticResource headerTemplate}&quot;&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Minimum=&quot;0&quot; Maximum=&quot;100&quot; EdgeLabelsDrawingMode=&quot;Shift&quot;
+              AxisLineStyle=&quot;{StaticResource lineStyle}&quot; MajorTickStyle=&quot;{StaticResource lineStyle}&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+    &lt;chart:SfCartesianChart.ZoomPanBehavior&gt;
+        &lt;chart:ChartZoomPanBehavior/&gt;
+        &lt;/chart:SfCartesianChart.ZoomPanBehavior&gt;
+    
+    &lt;chart:AreaSeries ItemsSource=&quot;{Binding ZoomData}&quot; XBindingPath=&quot;Date&quot; YBindingPath=&quot;Value&quot;&gt;
+        &lt;chart:AreaSeries.Fill&gt;
+           &lt;LinearGradientBrush EndPoint=&quot;0.5,0&quot; StartPoint=&quot;0.5,1&quot;&gt;
+                &lt;GradientStop Color=&quot;#1060DC&quot; Offset=&quot;1.0&quot;/&gt;
+                &lt;GradientStop Color=&quot;#c6e1f5&quot; Offset=&quot;0.0&quot;/&gt;
+           &lt;/LinearGradientBrush&gt;
+        &lt;/chart:AreaSeries.Fill&gt;
+    &lt;/chart:AreaSeries&gt;
+                        
+&lt;/chart:SfCartesianChart&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

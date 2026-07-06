@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.Rating.GettingStartedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Editors" 
+    mc:Ignorable="d"
+    Background="Transparent">
+     
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+            <common:DemoLayout 
+                HeaderText="This sample showcases the basic features such as precision, value, items count, item size, read-only, and tooltip."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/Rating/defaultstyle_xaml.txt,
+                             Common=Editor/Assets/Rating/defaultstyle_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <syncfusion:SfRating x:Name="DefaultStyle" 
+                             Value="{Binding ElementName=valueSlider,Path=Value,Mode=TwoWay}"                             
+                             ItemsCount="{Binding ElementName=countSlider,Path=Value}"
+                             ItemSize="{Binding ElementName=sizeSlider,Path=Value}"
+                             IsReadOnly="{Binding ElementName=check,Path=IsChecked}"
+                             EnableToolTip="True"
+                             IsClearEnabled="{Binding ElementName=clearCheck,Path=IsChecked}"
+                             />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                            <TextBlock Text="Rating:  " FontSize="14" />
+                            <TextBlock x:Name="RatingText" FontSize="14"/>
+                        </StackPanel>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <TextBlock Text="Precision" FontSize="15" Margin="5"/>
+                        <ComboBox x:Name="precisionCombo" Width="150" SelectedIndex="0" SelectionChanged="PrecisionCombo_SelectionChanged" Margin="5">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="Full"/>
+                                <ComboBoxItem Content="Half"/>
+                                <ComboBoxItem Content="Exact"/>
+                            </ComboBox.Items>
+                        </ComboBox>
+                        <Slider x:Name="countSlider" Header="ItemsCount" Width="150" Value="5" Minimum="1" Maximum="10" FontSize="15" Margin="-70,5,0,0" ValueChanged="ratingCount_ValueChanged"/>
+                        <Slider x:Name="valueSlider" Header="Value" Value="2"  Width="150" ValueChanged="RatingValue_ValueChanged" Margin="-70,5,0,0"  Minimum="0" Maximum="{Binding ElementName=DefaultStyle,Path=ItemsCount}" FontSize="15"/>
+                        <Slider x:Name="sizeSlider" Value="25" Width="150" Minimum="20" Maximum="40" Margin="-70,5,0,0" StepFrequency="5"  Header="ItemSize" FontSize="15"/>
+                        <TextBlock Text="ToolTipFormat" FontSize="15" Margin="5"/>
+                        <ComboBox x:Name="tooltipFormat" Width="150" SelectedIndex="2" SelectionChanged="tooltipFormat_SelectionChanged" Margin="5">
+                            <ComboBoxItem Content="0.000"/>
+                            <ComboBoxItem Content="0.00"/>
+                            <ComboBoxItem Content="0.##"/>
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="IsReadOnly" FontSize="15" Margin="5"/>
+                            <CheckBox x:Name="check" IsChecked="False" Margin="28,0,0,0"/>
+                        </StackPanel>
+                        <TextBlock Text="Orientation" FontSize="15" Margin="5"/>
+                        <ComboBox x:Name="orientationCombo" Width="150" Margin="5" SelectedIndex="0" SelectionChanged="orientationCombo_SelectionChanged">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="Horizontal"/>
+                                <ComboBoxItem Content="Vertical"/>
+                            </ComboBox.Items>
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="IsClearEnabled" FontSize="15" Margin="5" />
+                            <CheckBox x:Name="clearCheck" IsChecked="False" Margin="5,0,0,0" />
+                        </StackPanel>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution 
+                        Key="Count"
+                        SubstitutionValue="{x:Bind countSlider.Value, Mode=OneWay}"/>
+
+                    <common:DemoLayoutSubstitution
+                        Key="Value"
+                        SubstitutionValue="{x:Bind valueSlider.Value, Mode=OneWay}"/>
+
+                    <common:DemoLayoutSubstitution
+                        Key="Size"
+                        SubstitutionValue="{x:Bind sizeSlider.Value, Mode=OneWay}"/>
+
+                    <common:DemoLayoutSubstitution
+                        Key="ToolTip"
+                        SubstitutionValue="{x:Bind DefaultStyle.EnableToolTip, Mode=OneWay}"/>
+
+                    <common:DemoLayoutSubstitution
+                        Key="DefaultCheck"
+                        SubstitutionValue="{x:Bind DefaultStyle.IsReadOnly, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,29 @@
+﻿public class CityFilteringBehavior : IComboBoxFilterBehavior
+{
+    public List<int> GetMatchingIndexes(SfComboBox source, ComboBoxFilterInfo filterInfo)
+    {
+        List<int> filteredlist = new List<int>();
+        List<CityInfo> CityItems = source.Items.OfType<CityInfo>().ToList(); 
+
+        filteredlist.AddRange(from CityInfo item in CityItems
+                        where item.CountryName.StartsWith(filterInfo.Text, StringComparison.CurrentCultureIgnoreCase) ||
+                                   item.CityName.StartsWith(filterInfo.Text, StringComparison.CurrentCultureIgnoreCase)
+                             select CityItems.IndexOf(item));
+        return filteredlist;
+    }                                       
+}
+
+
+public class CitySearchingBehavior : IComboBoxSearchBehavior
+{
+    public int GetHighlightIndex(SfComboBox source, ComboBoxSearchInfo searchInfo)
+    {
+        var filteredCapitals = from CityInfo cityInfo in searchInfo.FilteredItems
+                               where cityInfo.IsCapital
+                               select searchInfo.FilteredItems.IndexOf(cityInfo);
+        if (filteredCapitals.Count() > 0)
+            return filteredCapitals.FirstOrDefault();
+
+        return 0;
+    }
+}

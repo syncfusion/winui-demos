@@ -1,0 +1,32 @@
+﻿<gauge:SfLinearGauge>
+    <gauge:SfLinearGauge.Axis>
+        <gauge:LinearAxis FontWeight="Bold"
+                          ShowAxisLine="False"
+                          Interval="10"
+                          MinorTicksPerInterval="0"
+                          LabelPosition="Outside"
+                          TickPosition="Outside"
+                          UseRangeColorForAxis="$(UseRangeColorForAxisSubstitution)">
+
+            <gauge:LinearAxis.Ranges>
+                <gauge:LinearGaugeRange EndValue="33"
+                                        Background="#FFBC5A34"
+                                        StartWidth="40"
+                                        EndWidth="40"
+                                        RangePosition="Inside" />
+                <gauge:LinearGaugeRange StartValue="33"
+                                        EndValue="66"
+                                        Background="#FF3F7BAB"
+                                        StartWidth="40"
+                                        EndWidth="40"
+                                        RangePosition="Inside" />
+                <gauge:LinearGaugeRange StartValue="66"
+                                        EndValue="100"
+                                        Background="#FFB75772"
+                                        StartWidth="40"
+                                        EndWidth="40"
+                                        RangePosition="Inside" />
+            </gauge:LinearAxis.Ranges>
+        </gauge:LinearAxis>
+    </gauge:SfLinearGauge.Axis>
+</gauge:SfLinearGauge>

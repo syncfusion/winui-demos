@@ -1,0 +1,335 @@
+﻿<Page
+    x:Class="Syncfusion.EditorDemos.WinUI.Views.NumberBox.GettingStartedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.EditorDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors" xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges" 
+    xmlns:converters="using:Syncfusion.UI.Xaml.Core"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:NumberBoxViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <local:TemperatureConverter x:Key="temperatureConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Page.Resources>
+
+    <ScrollViewer>
+        <StackPanel IsTabStop="True">
+            <common:DemoLayout 
+                HeaderText="NumberBox with basic features."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/NumberBox/GettingStarted_xaml.txt,
+                                                               Common=Editor/Assets/NumberBox/GettingStarted_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel>
+                        <editors:SfNumberBox
+                            x:Name="fahrenheitNumberBox"
+                            Margin="20" 
+                            Width="240"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Header="Fahrenheit (°F)"
+                            CustomFormat="#0.00°F"
+                            Value="{Binding FahrenheitValue, Mode=TwoWay}"
+                            AllowNull="{Binding AllowNull, Mode=TwoWay}"
+                            PlaceholderText="{Binding PlaceholderText, Mode=TwoWay, 
+                                                      UpdateSourceTrigger=PropertyChanged}"
+                            Minimum="{Binding Minimum, Mode=TwoWay}"
+                            Maximum="{Binding Maximum, Mode=TwoWay}"
+                            SmallChange="{Binding SmallChange, Mode=TwoWay}"
+                            LargeChange="{Binding LargeChange, Mode=TwoWay}"
+                            UpDownPlacementMode="{Binding UpDownPlacementMode, Mode=TwoWay}"
+                            IsEditable="{Binding IsEditable, Mode=TwoWay}"/>
+
+                        <editors:SfNumberBox
+                            x:Name="celsiusNumberBox"
+                            Margin="20"
+                            Width="240"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Header="Celsius (°C)"
+                            CustomFormat="#0.00°C"
+                            Value="{Binding CelsiusValue, Mode=TwoWay}"
+                            IsEnabled="False"/>
+
+                        <editors:SfNumberBox
+                            x:Name="kelvinNumberBox"
+                            Margin="20"
+                            Width="240"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Header="Kelvin (K)"
+                            CustomFormat="#0.00K"
+                            Value="{Binding KelvinValue, Mode=TwoWay}"
+                            IsEnabled="False"/>
+
+                        <editors:SfNumberBox
+                            x:Name="rankineNumberBox"
+                            Margin="20" 
+                            Width="240"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Header="Rankine (°R)"
+                            CustomFormat="#0.00°R"
+                            Value="{Binding RankineValue, Mode=TwoWay}"
+                            IsEnabled="False"/>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <CheckBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Content="AllowNull"
+                            IsChecked="{Binding AllowNull, Mode=TwoWay}"/>
+                        <TextBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="PlaceholderText"
+                            IsEnabled="{Binding AllowNull, Mode=TwoWay}"
+                            Text="{Binding PlaceholderText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <NumberBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="Minimum"
+                            Value="{Binding Minimum, Mode=TwoWay}"/>
+                        <NumberBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="Maximum"
+                            Value="{Binding Maximum, Mode=TwoWay}"/>
+                        <editors:SfNumberBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="SmallChange"
+                            Minimum="1"
+                            AllowNull="False"
+                            CustomFormat="0"
+                            Value="{Binding SmallChange, Mode=TwoWay}"/>
+                        <editors:SfNumberBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="LargeChange"
+                            Minimum="1"
+                            AllowNull="False"
+                            CustomFormat="0"
+                            Value="{Binding LargeChange, Mode=TwoWay}"/>
+                        <ComboBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Header="UpDownPlacementMode"
+                            SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=editors:NumberBoxUpDownPlacementMode}, Path=UpDownPlacementMode, Mode=TwoWay}"
+                            ItemsSource="{enumextension:EnumToStringValuesExtension Type=editors:NumberBoxUpDownPlacementMode}"/>
+                        <CheckBox
+                            Margin="5"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            Content="IsEditable"
+                            IsChecked="{Binding IsEditable, Mode=TwoWay}"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="Minimum" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.Minimum, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="Maximum" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.Maximum, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="AllowNull" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.AllowNull, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="IsEditable" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.IsEditable, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="NumberBoxPlaceholderText" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.PlaceholderText, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="Value" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.Value, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="SmallChange" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.SmallChange, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="LargeChange" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.LargeChange, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="UpDownPlacementMode" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.UpDownPlacementMode, Mode=OneWay}"/>   
+                    <common:DemoLayoutSubstitution
+                        Key="CustomFormat" 
+                        SubstitutionValue="{x:Bind fahrenheitNumberBox.CustomFormat, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="KelvinValue" 
+                        SubstitutionValue="{x:Bind kelvinNumberBox.Value, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="CelsiusValue" 
+                        SubstitutionValue="{x:Bind celsiusNumberBox.Value, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="RankineValue" 
+                        SubstitutionValue="{x:Bind rankineNumberBox.Value, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="KelvinCustomFormat" 
+                        SubstitutionValue="{x:Bind kelvinNumberBox.CustomFormat, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="CelsiusCustomFormat" 
+                        SubstitutionValue="{x:Bind celsiusNumberBox.CustomFormat, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="RankineCustomFormat" 
+                        SubstitutionValue="{x:Bind rankineNumberBox.CustomFormat, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout 
+                HeaderText="NumberBox with formatting."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/NumberBox/Formatting_xaml.txt,
+                                                               Common=Editor/Assets/NumberBox/Formatting_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <editors:SfNumberBox
+                            x:Name="customNumberBox"
+                            Width="200"
+                            Value="1234.5678"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            AllowNull="True"
+                            CustomFormat="{Binding CustomFormat, Mode=TwoWay}"
+                            PlaceholderText="Enter double value"/>
+                    </StackPanel>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <NumberBox
+                            Name="minimumIntegerNumberBox"
+                            Margin="5"
+                            Width="180"
+                            Minimum="0"
+                            HorizontalAlignment="Left"
+                            Header="Minimum integer digits"
+                            Value="{Binding MinimumIntegerDigits, Mode=TwoWay}"/>
+                        <NumberBox
+                            Name="minimumFractionNumberBox"
+                            Margin="5"
+                            Width="180"
+                            Minimum="0"
+                            HorizontalAlignment="Left"
+                            Header="Minimum fraction digits"
+                            Value="{Binding MinimumFractionDigits, Mode=TwoWay}"/>
+                        <NumberBox
+                            Name="maximumFractionNumberBox"
+                            Margin="5"
+                            Width="180"
+                            Minimum="{Binding MinimumFractionDigits, Mode=TwoWay}"
+                            HorizontalAlignment="Left"
+                            Header="Maximum fraction digits"
+                            Value="{Binding MaximumFractionDigits, Mode=TwoWay}"/>
+                        <ComboBox
+                            Name="customFormatComboBox"
+                            Margin="5"
+                            Width="180"
+                            ItemsSource="{Binding UnitCollection}"
+                            SelectedValuePath="Value"
+                            SelectedIndex="0"   
+                            SelectedValue="{Binding SelectedUnitValue, Mode=TwoWay}"
+                            HorizontalAlignment="Left"
+                            Header="Unit">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock 
+                                            TextAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center" 
+                                            Text="{Binding Name}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <CheckBox
+                            Name="showGroupSeparator"
+                            Content="ShowGroupSeparator"
+                            Margin="5"
+                            IsChecked="{Binding ShowGroupSeparator, Mode=TwoWay}"
+                            HorizontalAlignment="Left"
+                            Width="180"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="FormatAllowNull" 
+                        SubstitutionValue="{x:Bind customNumberBox.AllowNull, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="FormatPlaceholderText" 
+                        SubstitutionValue="{x:Bind customNumberBox.PlaceholderText, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="FormatCustomFormat" 
+                        SubstitutionValue="{x:Bind customNumberBox.CustomFormat, Mode=OneWay}"/>
+                    <common:DemoLayoutSubstitution
+                        Key="FormatValue" 
+                        SubstitutionValue="{x:Bind customNumberBox.Value, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+            <common:DemoLayout 
+                HeaderText="NumberBox with TextBoxVisibility."
+                XamlSource="{common:ConditionalXAML Individual=Syncfusion.EditorDemos.WinUI/Assets/NumberBox/TextBoxVisibility_xaml.txt,
+                                                               Common=Editor/Assets/NumberBox/TextBoxVisibility_xaml.txt}">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <gauge:SfRadialGauge x:Name="radialGauge" HorizontalAlignment="Center" Grid.Row="0">
+                            <gauge:SfRadialGauge.Axes>
+                                <gauge:RadialAxis Maximum="150"
+                          Interval="10">
+                                    <gauge:RadialAxis.Pointers>
+                                        <gauge:NeedlePointer Value="{Binding ElementName=textBoxVisibility, Path=Value}"/>
+                                    </gauge:RadialAxis.Pointers>
+                                </gauge:RadialAxis>
+                            </gauge:SfRadialGauge.Axes>
+                        </gauge:SfRadialGauge>
+                        <editors:SfNumberBox 
+                            Grid.Row="1"
+                            CustomFormat="0"
+                            x:Name="textBoxVisibility" 
+                            Minimum="0"
+                            Maximum="150"
+                            AllowNull="False"
+                            TextBoxVisibility="{Binding ElementName=checkBox, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}" 
+                            Margin="30"
+                            HorizontalAlignment="Center"
+                            UpDownPlacementMode="Inline"/>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel>
+                        <CheckBox 
+                            x:Name="checkBox" 
+                            Content="IsTextBoxVisible" 
+                            VerticalAlignment="Top"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution
+                        Key="NumerBoxTextBoxVisibility" 
+                        SubstitutionValue="{x:Bind textBoxVisibility.TextBoxVisibility, Mode=OneWay}"/>
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

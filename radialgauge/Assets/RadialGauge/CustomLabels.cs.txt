@@ -1,0 +1,12 @@
+﻿private void RadialAxis_LabelPrepared(object sender, LabelPreparedEventArgs e)
+{
+    if (e.LabelText == "80" || e.LabelText == "0")
+    {
+        e.LabelText = "N";
+    }
+    ...
+    else if (e.LabelText == "70")
+    {
+        e.LabelText = "NW";
+    }
+}

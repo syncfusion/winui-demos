@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Syncfusion.KanbanDemos.WinUI.Sorting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:local="using:Syncfusion.KanbanDemos.WinUI"
+      xmlns:kanban="using:Syncfusion.UI.Xaml.Kanban"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Page.DataContext>
+        <local:SortingViewModel/>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <local:StrokeBrushConverter x:Key="StrokeBrushConverter"/>
+        <local:PathDataConverter x:Key="PathDataConverter"/>
+
+        <SolidColorBrush x:Key="SyncfusionKanbanCardItemBackground" Color="Transparent" />
+        <SolidColorBrush x:Key="SyncfusionKanbanCardItemBorderBrush" Color="Transparent" />
+        <Thickness x:Key="SyncfusionKanbanColumnsMargin">0</Thickness>
+        
+        <DataTemplate x:Key="ColumnHeaderTemplate">
+            <Grid Background="Transparent" Width="244" HorizontalAlignment="Center">
+                <Border BorderBrush="{Binding HeaderText, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=HeaderIcon}"
+                        BorderThickness="1"
+                        Background="Transparent"
+                        CornerRadius="12">
+                    <StackPanel Orientation="Horizontal" Padding="8">
+                        <Border Grid.Column="0" Height="20" Width="20" Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Viewbox Height="12" Width="12" VerticalAlignment="Center">
+                                <Path Data="{ Binding Path=HeaderText , Converter={StaticResource PathDataConverter}, ConverterParameter=HeaderIcon}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="0.1" Stroke="{Binding HeaderText, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=HeaderIcon}"
+                                      Fill="{Binding HeaderText, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=HeaderIcon}">
+                                </Path>
+                            </Viewbox>
+                        </Border>
+
+                        <TextBlock Text="{Binding HeaderText}" Margin="2" FontSize="12" FontWeight="Bold" FontFamily="Roboto-Medium"
+                                   Foreground="{Binding HeaderText, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=HeaderIcon}" VerticalAlignment="Center"/>
+                        <TextBlock Text="-" Margin="2" FontSize="12" FontFamily="Roboto-Medium"
+                                   Foreground="{Binding HeaderText, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=HeaderIcon}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CardsCount}" Margin="2" FontSize="12" FontFamily="Roboto-Medium"
+                                   Foreground="{ThemeResource SystemBaseMediumColor}" VerticalAlignment="Center"/>
+                        <TextBlock Text="Items" Margin="2" FontSize="12" FontFamily="Roboto-Medium" Foreground="{ThemeResource SystemBaseMediumColor}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DoneCardTemplate">
+            <Border BorderBrush="Transparent" Padding="8" CornerRadius="12">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.00" Color="#263C8B8E"/>
+                        <GradientStop Offset="0.15" Color="#26026B6E"/>
+                        <GradientStop Offset="1.00" Color="{ThemeResource ControlOnImageFillColorSecondary}"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Height="22" Padding="8,4" Margin="0,0,0,6" Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="{ThemeResource ControlOnImageFillColorSecondary}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Width="5" Height="5" Grid.Column="0" Stretch="Fill"  HorizontalAlignment="Left" VerticalAlignment="Center"
+                              Fill="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure StartPoint="2,0" 
+                                                IsClosed="True">
+                                        <ArcSegment Point="2,4"                        
+                                                    Size="2,2"                                        
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"                                          
+                                                    SweepDirection="Clockwise"/>
+                                        <ArcSegment Point="2,0"                       
+                                                    Size="2,2"
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"
+                                                    SweepDirection="Clockwise"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <TextBlock Text="{Binding Priority}" Grid.Column="1" FontSize="11" FontFamily="Roboto-Regular"
+                                   Foreground="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right"
+                                Grid.Row="0">
+                        <TextBlock Text="Rank #" FontSize="12" LineHeight="20" FontFamily="Roboto-Regular" VerticalAlignment="Center"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" />
+                        <TextBlock Text="{Binding Index}" FontSize="12" LineHeight="20"  FontFamily="Roboto-Regular" VerticalAlignment="Center"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}"/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Title}" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="12" FontFamily="Roboto-Regular"
+                               LineHeight="20" Foreground="{ThemeResource TextFillColorPrimary}"/>
+
+                    <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="12"
+                               LineHeight="20" Foreground="{ThemeResource TextFillColorPrimary}" FontFamily="Roboto-Regular" />
+
+                    <ItemsControl ItemsSource="{Binding Tags}" Grid.Row="3" Grid.ColumnSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Spacing="10"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}"
+                                        HorizontalAlignment="Left" CornerRadius="12">
+                                    <TextBlock Text="{Binding}" Foreground="{ThemeResource TextFillColorPrimary}"
+                                               FontSize="11" Padding="5,4" HorizontalAlignment="Center" />
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ProgressBar Height="2" Maximum="10" Value="10" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom"
+                                 Foreground="{ThemeResource SystemFillColorSuccessBrush}" Margin="-8" Background="Transparent"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ReviewCardTemplate">
+            <Border BorderBrush="Transparent" Padding="8" CornerRadius="12">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.00" Color="#26D3453F"/>
+                        <GradientStop Offset="0.15" Color="#26B3261E"/>
+                        <GradientStop Offset="1.00" Color="{ThemeResource ControlOnImageFillColorSecondary}"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Height="22" Padding="8,4" Margin="0,0,0,6" Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="{ThemeResource ControlOnImageFillColorSecondary}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Width="5" Height="5" Grid.Column="0" Stretch="Fill"  HorizontalAlignment="Left" VerticalAlignment="Center"
+                              Fill="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure StartPoint="2,0" 
+                                                IsClosed="True">
+                                        <ArcSegment Point="2,4"                        
+                                                    Size="2,2"                                        
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"                                          
+                                                    SweepDirection="Clockwise"/>
+                                        <ArcSegment Point="2,0"                       
+                                                    Size="2,2"
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"
+                                                    SweepDirection="Clockwise"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <TextBlock Text="{Binding Priority}" Grid.Column="1" FontSize="11" VerticalAlignment="Center"
+                                   Foreground="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}" FontFamily="Roboto-Regular" />
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="0">
+                        <TextBlock Text="Rank #" FontSize="12" LineHeight="20"  FontFamily="Roboto-Regular"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Index}" FontSize="12" LineHeight="20" FontFamily="Roboto-Regular"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Title}" Grid.Row="1" FontWeight="Bold" FontSize="12" FontFamily="Roboto-Regular"
+                               Foreground="{ThemeResource TextFillColorPrimary}" LineHeight="20" Grid.ColumnSpan="2"/>
+
+                    <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.ColumnSpan="2" LineHeight="20"  TextWrapping="Wrap"
+                               Foreground="{ThemeResource TextFillColorPrimary}"  FontFamily="Roboto-Regular" FontSize="12"/>
+
+                    <ItemsControl ItemsSource="{Binding Tags}" Grid.Row="3" Grid.ColumnSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Spacing="10"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" HorizontalAlignment="Left" CornerRadius="12">
+                                    <TextBlock Text="{Binding}" FontSize="11" Padding="5,4" HorizontalAlignment="Center"
+                                               Foreground="{ThemeResource TextFillColorPrimary}"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ProgressBar Height="2" Minimum="1" Maximum="100" Grid.ColumnSpan="2"
+                                 Value="{Binding Progress}" Foreground="{ThemeResource SystemErrorTextColor}"
+                                 Grid.Row="4" VerticalAlignment="Bottom" Margin="-8" Background="Transparent" />
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="InProgressCardTemplate">
+            <Border BorderBrush="Transparent" Padding="8" CornerRadius="12">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.00" Color="#26B06A1F"/>
+                        <GradientStop Offset="0.15" Color="#26914C00"/>
+                        <GradientStop Offset="1.00" Color="{ThemeResource ControlOnImageFillColorSecondary}"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Height="22" Padding="8,4" Margin="0,0,0,6" Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="{ThemeResource ControlOnImageFillColorSecondary}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Width="5" Height="5" Grid.Column="0" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"
+                              Fill="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure StartPoint="2,0" 
+                                                IsClosed="True">
+                                        <ArcSegment Point="2,4"                        
+                                                    Size="2,2"                                        
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"                                          
+                                                    SweepDirection="Clockwise"/>
+                                        <ArcSegment Point="2,0"                       
+                                                    Size="2,2"
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"
+                                                    SweepDirection="Clockwise"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <TextBlock Text="{Binding Priority}" Grid.Column="1" FontSize="11" FontFamily="Roboto-Regular"
+                                   Foreground="{Binding Priority, Converter={StaticResource StrokeBrushConverter}, ConverterParameter=IndicatorColorKey}" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="0">
+                        <TextBlock Text="Rank #" Foreground="{ThemeResource HyperlinkForegroundThemeBrush}"
+                                   FontSize="12" LineHeight="20" FontFamily="Roboto-Regular" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Index}" FontSize="12" LineHeight="20" FontFamily="Roboto-Regular"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="12" FontFamily="Roboto-Regular" Grid.Row="1"
+                               Foreground="{ThemeResource TextFillColorPrimary}" LineHeight="20" Grid.ColumnSpan="2"/>
+
+                    <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.ColumnSpan="2" LineHeight="20" TextWrapping="Wrap"
+                               Foreground="{ThemeResource TextFillColorPrimary}" FontFamily="Roboto-Regular" FontSize="12"/>
+                    <ItemsControl ItemsSource="{Binding Tags}" Grid.Row="3" Grid.ColumnSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Spacing="10"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}"
+                                        Opacity="5" HorizontalAlignment="Left" CornerRadius="12">
+                                    <TextBlock Text="{Binding}" Foreground="{ThemeResource TextFillColorPrimary}"
+                                               FontSize="11" Padding="5,4" HorizontalAlignment="Center"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ProgressBar Height="2" Minimum="1" Maximum="100" Grid.ColumnSpan="2"
+                                 Value="{Binding Progress}" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                                 Grid.Row="4" VerticalAlignment="Bottom" Margin="-8" Background="Transparent" />
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ToDoCardTemplate">
+            <Border BorderBrush="Transparent" Padding="8" CornerRadius="12">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.00" Color="#33856EC2"/>
+                        <GradientStop Offset="0.15" Color="#336750A4"/>
+                        <GradientStop Offset="1.00" Color="{ThemeResource ControlOnImageFillColorSecondary}"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Height="22" Padding="8,4" Margin="0,0,0,6" Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="{ThemeResource ControlOnImageFillColorSecondary}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Width="5" Height="5" Grid.Column="0" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"
+                              Fill="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure StartPoint="2,0" 
+                                                IsClosed="True">
+                                        <ArcSegment Point="2,4"                        
+                                                    Size="2,2"                                        
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"                                          
+                                                    SweepDirection="Clockwise"/>
+                                        <ArcSegment Point="2,0"                       
+                                                    Size="2,2"
+                                                    RotationAngle="0"
+                                                    IsLargeArc="True"
+                                                    SweepDirection="Clockwise"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <TextBlock Text="{Binding Priority}" Grid.Column="1" FontSize="11" FontFamily="Roboto-Regular"
+                                   Foreground="{Binding Priority, Converter={StaticResource StrokeBrushConverter},ConverterParameter=IndicatorColorKey}" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="0">
+                        <TextBlock Text="Rank #" FontSize="12" LineHeight="20" FontFamily="Roboto-Regular"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Index}" FontSize="12" LineHeight="20"  FontFamily="Roboto-Regular"
+                                   Foreground="{ThemeResource HyperlinkForegroundThemeBrush}" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="12" FontFamily="Roboto-Regular" Grid.Row="1"
+                               Foreground="{ThemeResource TextFillColorPrimary}" LineHeight="20" Grid.ColumnSpan="2"/>
+
+                    <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.ColumnSpan="2" LineHeight="20"
+                               Foreground="{ThemeResource TextFillColorPrimary}" TextWrapping="Wrap" FontFamily="Roboto-Regular" FontSize="12"/>
+
+                    <ItemsControl ItemsSource="{Binding Tags}" Grid.Row="3" Grid.ColumnSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Spacing="10"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}"
+                                        HorizontalAlignment="Left" CornerRadius="12">
+                                    <TextBlock Text="{Binding}" Foreground="{ThemeResource TextFillColorPrimary}"
+                                               FontSize="11" Padding="5,4" HorizontalAlignment="Center"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <local:CardTemplateSelector x:Key="CardTemplateSelector"
+                                    ToDoTemplate="{StaticResource ToDoCardTemplate}"
+                                    InProgressTemplate="{StaticResource InProgressCardTemplate}" 
+                                    ReviewTemplate="{StaticResource ReviewCardTemplate}"
+                                    DoneTemplate="{StaticResource DoneCardTemplate}"/>
+
+    </Page.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the sorting behavior of the Kanban board using the sort by, custom field, and sort order properties. It supports sorting by item source order, index, or custom field mapping, allowing cards to be arranged and repositioned dynamically or based on predefined values. The sort order property controls whether cards are aligned in ascending or descending order.">
+                <common:DemoLayout.Example>
+                    <Grid Height="480" 
+                          Margin="0,0,-10,0"
+                          VerticalAlignment="Center">
+                        <kanban:SfKanban x:Name="kanban"
+                                         Background="Transparent"
+                                         AutoGenerateColumns="False"
+                                         ColumnMappingPath="Category"
+                                         ColumnWidth="260"
+                                         SortingMappingPath="Index"
+                                         ColumnHeaderTemplate="{StaticResource ColumnHeaderTemplate}"
+                                         ItemsSource="{Binding Cards}"
+                                         CardDragStarting="OnKanbanCardDragStarting"
+                                         CardDrop="OnKanbanCardDrop"
+                                         CardTemplateSelector="{StaticResource CardTemplateSelector}">
+                            <kanban:KanbanColumn HeaderText="To do" 
+                                                 Categories="Open" 
+                                                 Background="Transparent">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings Height="0" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+
+                            <kanban:KanbanColumn HeaderText="In progress"
+                                                 Categories="In Progress"
+                                                 Background="Transparent">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings Height="0" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+
+                            <kanban:KanbanColumn HeaderText="Code Review"
+                                                 Categories="Code Review"
+                                                 Background="{ThemeResource ControlOnImageFillColorSecondary}">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings Height="0" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+
+                            <kanban:KanbanColumn HeaderText="Done"
+                                                 Categories="Done"
+                                                 Background="Transparent">
+                                <kanban:KanbanColumn.ErrorBarSettings>
+                                    <kanban:KanbanErrorBarSettings Height="0" />
+                                </kanban:KanbanColumn.ErrorBarSettings>
+                            </kanban:KanbanColumn>
+                        </kanban:SfKanban>
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Options>
+                    <StackPanel Orientation="Vertical" 
+                                VerticalAlignment="Top" >
+                        <TextBlock Text="SortBy:"
+                                   FontWeight="SemiBold"
+                                   FontFamily="Roboto-Regular"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Width="100"
+                                   Margin="5,8,0,0"
+                                   HorizontalAlignment="Left"/>
+                        <ComboBox SelectedIndex="0"
+                                  ItemsSource="{Binding SortOptions}"
+                                  Margin="5,8,0,0"
+                                  FontSize="12"
+                                  x:Name="sortBySelection"
+                                  SelectionChanged="OnSortByComboBoxSelectionChanged"
+                                  Width="150"/>
+                        <TextBlock Text="Sorting Order :"
+                                   FontWeight="SemiBold"
+                                   FontFamily="Roboto-Regular"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Width="100"
+                                   Margin="5,8,0,0"
+                                   HorizontalAlignment="Left"/>
+                        <ComboBox SelectedIndex="0"
+                                  ItemsSource="{Binding SortOrder}"
+                                  Margin="5,8,0,0"
+                                  FontSize="12"
+                                  x:Name="sortOrderComboBox"
+                                  Width="150"
+                                  SelectionChanged="OnSortingOrderComboBoxSelectionChanged"/>
+                        <TextBlock Text="Sorting Mapping Path :"
+                                   FontWeight="SemiBold"
+                                   FontSize="12"
+                                   FontFamily="Roboto-Regular"
+                                   TextWrapping="Wrap"
+                                   Width="150"
+                                   Margin="5,8,0,0"
+                                   HorizontalAlignment="Left"/>
+                        <ComboBox SelectedIndex="1"
+                                  ItemsSource="{Binding SortMappingPath}"
+                                  IsEnabled="False"
+                                  Margin="5,8,0,0"
+                                  FontSize="12"
+                                  FontFamily="Roboto-Regular"
+                                  Width="150"
+                                  x:Name="mappingPathComboBox"
+                                  SelectionChanged="OnSortMappingPathSelectionChanged"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

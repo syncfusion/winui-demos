@@ -1,0 +1,15 @@
+﻿<editors:SfComboBox SelectionMode="Multiple"
+                    DisplayMemberPath="Name"
+                    ItemsSource="{Binding VegetablesList}">
+   <editors:SfComboBox.SelectionBoxItemTemplate>
+      <DataTemplate>
+         <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="12,5,0,6" 
+                       Text="Selected Vegetables Count:" />
+
+            <TextBlock Margin="2,0,0,0"
+                       Text="{Binding ElementName=customMultipleSelectionBox, Path=SelectedItems.Count}" />
+         </StackPanel>
+      </DataTemplate>
+   </editors:SfComboBox.SelectionBoxItemTemplate>
+</editors:SfComboBox>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\syncfusion.common.desktop.props" />
+  <PropertyGroup>
+    <RootNamespace>Syncfusion.DemosCommon.WinUI</RootNamespace>
+    <AssemblyName>Syncfusion.DemosCommon.WinUI</AssemblyName>
+    <NoWarn>CS8305;CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ColorCode.WinUI" Version="2.0.15" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\NavigationMenuItemTemplateSelector.cs" />
+  </ItemGroup>
+  <Import Project="..\targets\MultiTargeting_Net10.targets" />
+</Project>

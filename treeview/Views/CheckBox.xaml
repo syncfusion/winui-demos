@@ -1,0 +1,100 @@
+﻿<Page x:Class="Syncfusion.TreeViewDemos.WinUI.CheckBoxPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:local="using:Syncfusion.TreeViewDemos.WinUI"
+      xmlns:treeView="using:Syncfusion.UI.Xaml.TreeView"
+      mc:Ignorable="d"
+      Background="Transparent"
+      NavigationCacheMode="Disabled">
+
+    <Page.DataContext>
+        <local:CheckBoxView />
+    </Page.DataContext>
+    <Page.Resources>
+        <SolidColorBrush x:Key="SyncfusionTreeViewItemSelectionIndicatorFill" Color="Transparent"/>
+    </Page.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Auto">
+        <common:DemoLayout>
+            <StackPanel Orientation="Horizontal">
+                <treeView:SfTreeView x:Name="treeView"
+                                       Width="400"
+                                       Height="500"
+                                       AutoExpandMode="AllNodes"
+                                       BorderBrush="LightGray"
+                                       BorderThickness="1"
+                                       CheckBoxMode="Recursive"
+                                       CheckedItems="{Binding CheckedItems}"
+                                       ChildPropertyName="Models"
+                                       ExpandActionTrigger="Expander"
+                                       IsAnimationEnabled="True"
+                                       ItemTemplateDataContextType="Node"
+                                       ItemsSource="{Binding Items}"
+                                       NodePopulationMode="Instant">
+                    <treeView:SfTreeView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <CheckBox x:Name="checkBox"
+                                          Content="{Binding Content.State}"
+                                          local:NullableTreeCheckbox.IsEnabled="true"
+                                          local:NullableTreeCheckbox.IsChecked="{Binding IsChecked, Mode=TwoWay}" />
+                            </Grid>
+                        </DataTemplate>
+                    </treeView:SfTreeView.ItemTemplate>
+                </treeView:SfTreeView>
+            </StackPanel>
+            <common:DemoLayout.HeaderText>
+                TreeView customization of nodes with CheckBox using ItemTemplate.
+            </common:DemoLayout.HeaderText>
+            <common:DemoLayout.Options>
+                <StackPanel>
+                    <ComboBox x:Name="checkBox1"
+                              Width="150"
+                              SelectedIndex="2"
+                              Header="CheckBoxMode"
+                              Margin="0,10,0,0"
+                              ItemsSource="{enumextension:EnumToStringValuesExtension Type=treeView:CheckBoxMode}"
+                              SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=treeView:CheckBoxMode}, ElementName=treeView, Path=CheckBoxMode, Mode=TwoWay}">                       
+                    </ComboBox>
+                </StackPanel>
+            </common:DemoLayout.Options>
+            <common:DemoLayout.Xaml>
+                <x:String xml:space="preserve">
+&lt;treeView:SfTreeView CheckBoxMode="$(CheckBoxMode)"
+                       CheckedItems="{Binding CheckedItems}"
+                       ChildPropertyName="Models"
+                       ItemsSource="{Binding Items}"
+                       ExpandActionTrigger="Node"
+                       AutoExpandMode="AllNodes"
+                       BorderBrush="LightGray"  
+                       BorderThickness="1" 
+                       IsAnimationEnabled="True"
+                       ItemTemplateDataContextType="Node"
+                       NodePopulationMode="Instant"&gt;                        
+      &lt;treeView:SfTreeView.ItemTemplate&gt;
+          &lt;DataTemplate&gt;
+              &lt;Grid&gt;
+                  &lt;CheckBox Content="{Binding Content.State}"
+                            local:NullableTreeCheckbox.IsEnabled="true"
+                            local:NullableTreeCheckbox.IsChecked="{Binding IsChecked, Mode=TwoWay}" /&gt;
+              &lt;/Grid&gt;
+          &lt;/DataTemplate&gt;
+      &lt;/treeView:SfTreeView.ItemTemplate&gt;                            
+&lt;/treeView:SfTreeView&gt;    
+</x:String>
+            </common:DemoLayout.Xaml>
+            <common:DemoLayout.Substitutions>
+                <common:DemoLayoutSubstitution Key="CheckBoxMode"
+                                               SubstitutionValue="{x:Bind checkBox1.SelectedItem, Mode=OneWay}" />
+            </common:DemoLayout.Substitutions>
+        </common:DemoLayout>
+    </ScrollViewer>
+</Page>
+    
+    
+    
+
