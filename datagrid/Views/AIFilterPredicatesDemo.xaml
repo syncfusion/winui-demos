@@ -1,0 +1,173 @@
+<Page
+    x:Class="DataGrid.AIFilterPredicatesDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:indicator="using:Syncfusion.UI.Xaml.Notifications"
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:EmployeeInfoViewModel x:Key="employeeInfoViewModel"/>
+    </Page.Resources>
+    <Grid x:Name="Root_Grid" DataContext="{StaticResource employeeInfoViewModel}">
+        <ScrollViewer Grid.Row="1"
+            VerticalScrollBarVisibility="Auto"
+            VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="Example1" HeaderText="This sample demonstrates how to implement dynamic filtering in the DataGrid by utilizing AI-generated column names and filter predicates.Below are some example queries you can use:&#x0a;1. Show me all the employees who earn more than $2,500.&#x0a;2. Show the male employees whose rating is greater than 5.&#x0a;&#x0a; Note:This demo is exclusively for applying filtering-related queries. ">
+                <common:DemoLayout.Example>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <editors:SfAutoComplete
+                                x:Name="queryTextBox" 
+                                Margin="5,0,5,10" 
+                                PlaceholderText="Ask AI to apply filter to the DataGrid?" 
+                                PlaceholderForeground="Gray" 
+                                Width="600" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                ItemsSource="{Binding Queries}"/>
+                            <Button
+                                x:Name="executePromptButton"
+                                Width="150"
+                                Height="32"
+                                Margin="5,0,5,10"
+                                HorizontalAlignment="Left"
+                                Content="Execute Prompt"/>
+                            <Button
+                                x:Name="resetButton"
+                                Width="150"
+                                Height="32"
+                                Margin="5,0,5,10"
+                                HorizontalAlignment="Left"
+                                Content="Reset" />
+                        </StackPanel>
+                        <syncfusion:SfDataGrid
+                                    AllowGrouping="True"
+                                    x:Name="dataGrid" Height="520"
+                                    ColumnWidthMode="Auto"
+                                    Width="Auto"
+                                    AllowFiltering="True"
+                                    Grid.Row="1" ShowBusyIndicator="True"
+                                    AutoGenerateColumns="False"
+                                    ItemsSource="{Binding EmployeeDetails}">
+                            <syncfusion:SfDataGrid.Columns>
+                                <syncfusion:GridNumericColumn HeaderText="Employee ID" MappingName="EmployeeID" />
+                                <syncfusion:GridTextColumn MappingName="Name" MinimumWidth="140" />
+                                <syncfusion:GridTextColumn MappingName="Title" MinimumWidth="180" />
+                                <syncfusion:GridTextColumn MappingName="Rating" TextAlignment="Right" />
+                                <syncfusion:GridTextColumn HeaderText="Contact ID" MappingName="ContactID" TextAlignment="Right" />
+                                <syncfusion:GridDateColumn DisplayBinding="{Binding Path=BirthDate}" MinimumWidth="100" HeaderText="Birth Date" TextAlignment="Right" />
+                                <syncfusion:GridTextColumn MappingName="Gender" />
+                                <syncfusion:GridTextColumn HeaderText="Sick Leave Hours" MappingName="SickLeaveHours" TextAlignment="Right" MinimumWidth="120" />
+                                <syncfusion:GridTextColumn MappingName="Salary" />
+                            </syncfusion:SfDataGrid.Columns>
+                        </syncfusion:SfDataGrid>
+                        <indicator:SfBusyIndicator x:Name="busyIndicator" Grid.Row="1" Visibility="Collapsed"/>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+                        &lt;syncfusion:SfDataGrid
+                                    AllowGrouping=&quot;True&quot;
+                                    x:Name=&quot;dataGrid&quot; Height=&quot;520&quot;
+                                    ColumnWidthMode=&quot;Auto&quot;
+                                    Width=&quot;Auto&quot;
+                                    AllowFiltering=&quot;True&quot;
+                                    Grid.Row=&quot;1&quot; ShowBusyIndicator=&quot;True&quot;
+                                    AutoGenerateColumns=&quot;False&quot;
+                                    ItemsSource=&quot;{Binding EmployeeDetails}&quot;&gt;
+                            &lt;syncfusion:SfDataGrid.Columns&gt;
+                                &lt;syncfusion:GridNumericColumn HeaderText=&quot;Employee ID&quot; MappingName=&quot;EmployeeID&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn MappingName=&quot;Name&quot; MinimumWidth=&quot;140&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn MappingName=&quot;Title&quot; MinimumWidth=&quot;180&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn MappingName=&quot;Rating&quot; TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn HeaderText=&quot;Contact ID&quot; MappingName=&quot;ContactID&quot; TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;syncfusion:GridDateColumn DisplayBinding=&quot;{Binding Path=BirthDate}&quot; MinimumWidth=&quot;100&quot; HeaderText=&quot;Birth Date&quot; TextAlignment=&quot;Right&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn MappingName=&quot;Gender&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn HeaderText=&quot;Sick Leave Hours&quot; MappingName=&quot;SickLeaveHours&quot; TextAlignment=&quot;Right&quot; MinimumWidth=&quot;120&quot; /&gt;
+                                &lt;syncfusion:GridTextColumn MappingName=&quot;Salary&quot; /&gt;
+                            &lt;/syncfusion:SfDataGrid.Columns&gt;
+                        &lt;/syncfusion:SfDataGrid&gt;
+                </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.CSharp>
+                    <x:String xml:space="preserve">
+                        // C# Code behind
+
+                         private async void ApplyFiltersBasedOnAIQuery()
+                         {
+                             if (!string.IsNullOrEmpty(queryTextBox.Text))
+                             {
+                                 var gridReportJson = GetSerializedGridReport(new EmployeeInfo());
+                                 string userInput = ValidateAndGeneratePrompt(schema, queryTextBox.Text, gridReportJson);
+                                 if (userInput != null &amp;&amp; semanticKernelAIService.IsCredentialsValid())
+                                 {
+                                     busyIndicator.Visibility = Visibility.Visible;
+                                     result = await semanticKernelAIService.GetResponseFromGPT(userInput);
+                                     if (result != null)
+                                     {
+                                         try
+                                         {
+                                             result = result.Replace("json", "").Replace("```", "").Replace("\n", "");
+                                             string[] datas = result.Split(new char[] { ';' });
+                                             List &lt;AIFilterPredicate&gt; FilterPredicates = new List &lt;AIFilterPredicate&gt;();
+                                             foreach (var data in datas)
+                                             {
+                                                 if (!string.IsNullOrEmpty(data))
+                                                 {
+                                                     try
+                                                     {
+                                                         FilterPredicates.Add(GetDeserializedFilterPredicate(data));
+                                                     }
+                                                     catch 
+                                                     {
+                                                         semanticKernelAIService.ShowErrorMessage("Error occurred while processing the AI response.");
+                                                         busyIndicator.Visibility = Visibility.Collapsed;
+                                                         return;
+                                                     }
+                                                 }
+                                             }
+                                             for (int i = 0; i &lt;; FilterPredicates.Count; i++)
+                                             {
+                                                 if (FilterPredicates[i].ColumnName != null &amp;&amp; dataGrid.Columns.Any(x => x.MappingName == FilterPredicates[i].ColumnName) &amp;&amp; FilterPredicates[i].FilterPredicate != null)
+                                                     dataGrid.Columns[FilterPredicates[i].ColumnName].FilterPredicates.Add(FilterPredicates[i].FilterPredicate);
+                                                 else
+                                                 {
+                                                     semanticKernelAIService.ShowErrorMessage("Invalid ColumnName / FilterPredicates. Kindly provide a proper query.");
+                                                     busyIndicator.Visibility = Visibility.Collapsed;
+                                                     return;
+                                                 }
+                                             }
+                                             busyIndicator.Visibility = Visibility.Collapsed;
+
+                                         }
+                                         catch (Exception ex)
+                                         {
+                                             busyIndicator.Visibility = Visibility.Collapsed;
+                                             throw ex;
+                                         }
+                                     }
+                                     else
+                                     {
+                                         busyIndicator.Visibility = Visibility.Collapsed;
+                                     }
+                                 }
+                             }
+                         }
+                    </x:String>
+                </common:DemoLayout.CSharp>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

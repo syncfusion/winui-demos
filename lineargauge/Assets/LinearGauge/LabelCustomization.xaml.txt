@@ -1,0 +1,51 @@
+﻿<gauge:SfLinearGauge>
+    <gauge:SfLinearGauge.Axis>
+        <gauge:LinearAxis ...
+                          Minimum="-40"
+                          Maximum="100"
+                          Interval="20"
+                          MinorTicksPerInterval="4"
+                          AxisLineStrokeThickness="2"
+                          TickPosition="Outside"
+                          LabelPosition="$(axisLabelPosition)"
+                          LabelOffset="$(axisLabelOffset)">
+
+            <gauge:LinearAxis.LabelTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text, 
+                               Converter={StaticResource StringFormatConverter},
+                               ConverterParameter='{}{0}°F'}" />
+                </DataTemplate>
+            </gauge:LinearAxis.LabelTemplate>
+            
+            <gauge:LinearAxis.BarPointers>
+                <gauge:BarPointer PointerSize="20"
+                                  Value="$(labelCustomizationBarPointerValue)"
+                                  Offset="15">
+                    <gauge:BarPointer.GradientStops>
+                        <gauge:GaugeGradientStop Value="-12"
+                                                 Color="Red" />
+                        <gauge:GaugeGradientStop Value="16"
+                                                 Color="Orange" />
+                        <gauge:GaugeGradientStop Value="44"
+                                                 Color="Yellow" />
+                        <gauge:GaugeGradientStop Value="72"
+                                                 Color="LightGreen" />
+                        <gauge:GaugeGradientStop Value="100"
+                                                 Color="Green" />
+                    </gauge:BarPointer.GradientStops>
+                </gauge:BarPointer>
+            </gauge:LinearAxis.BarPointers>
+            <gauge:LinearAxis.MarkerPointers>
+                <gauge:LinearShapePointer Value="$(labelCustomizationShapePointerValue)"
+                                    IsInteractive="True"
+                                    OffsetPoint="0,16"
+                                    ShapeHeight="15"
+                                    ShapeWidth="20"
+                                    ShapeType="Triangle"
+                                    Fill="#2996cc"
+                                    Stroke="#2996cc" />
+            </gauge:LinearAxis.MarkerPointers>
+        </gauge:LinearAxis>
+    </gauge:SfLinearGauge.Axis>
+</gauge:SfLinearGauge>

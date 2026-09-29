@@ -1,0 +1,217 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.VolumeSettingsDemo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:coreconverters="using:Syncfusion.UI.Xaml.Core">
+
+    <common:DemoLayout HeaderText="This sample showcases how to design a volume controller using the linear gauge."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/volumesettingsdemo.xaml.txt,
+                                                                          Common=LinearGauge/Assets/LinearGauge/volumesettingsdemo.xaml.txt}"
+                           CSharpSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/volumesettingsdemo.xaml.cs.txt,
+                                                                            Common=LinearGauge/Assets/LinearGauge/volumesettingsdemo.xaml.cs.txt}">
+        <common:DemoLayout.Example>
+            <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal"
+                            Height="300"
+                            Margin="0,40,0,20">
+                <StackPanel.Resources>
+                    <coreconverters:FormatStringConverter x:Key="FormatStringConverter" />
+                </StackPanel.Resources>
+
+                <gauge:SfLinearGauge x:Name="musicGauge"
+                                         Orientation="Vertical"
+                                         Height="180">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis Minimum="-18"
+                                              ShowTicks="False"
+                                              ShowLabels="False"
+                                              AxisLineStrokeThickness="34"
+                                              CornerStyle="BothCurve">
+
+                            <gauge:LinearAxis.BarPointers>
+                                <gauge:BarPointer Value="{Binding ElementName=musicShapePointer, Path=Value, Mode=OneWay}"
+                                                      Background="#2194f3"
+                                                      PointerSize="34"
+                                                      CornerStyle="BothCurve" />
+                            </gauge:LinearAxis.BarPointers>
+
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="musicShapePointer"
+                                                        Value="100"
+                                                        ShapeType="Circle"
+                                                        Fill="Transparent"
+                                                        StrokeThickness="0"
+                                                        IsInteractive="True"
+                                                        VerticalAnchor="Start"
+                                                        ValueChanging="musicShapePointer_ValueChanging" />
+
+                                <gauge:LinearContentPointer Value="100"
+                                                          OffsetPoint="0,-10">
+                                    <gauge:LinearContentPointer.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ElementName=musicShapePointer,
+                                                               Path=Value,
+                                                               Mode=OneWay,
+                                                               Converter={StaticResource FormatStringConverter},
+                                                               ConverterParameter='N0'}" />
+                                            <TextBlock Text="%" />
+                                        </StackPanel>
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+
+                                <gauge:LinearContentPointer IsHitTestVisible="False"
+                                                          Value="-18"
+                                                          OffsetPoint="0,-8"
+                                                          VerticalAnchor="End">
+                                    <gauge:LinearContentPointer.Content>
+                                        <FontIcon x:Name="musicFontIcon"
+                                                      FontFamily="Segoe MDL2 Assets"
+                                                      FontWeight="Medium"
+                                                      Foreground="White"
+                                                      FontSize="15"
+                                                      Glyph="&#xED33;" />
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+                            </gauge:LinearAxis.MarkerPointers>
+
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+
+                <gauge:SfLinearGauge x:Name="volumeGauge"
+                                         Orientation="Vertical"
+                                         Height="180"
+                                         Margin="16,0,0,0">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis Minimum="-18"
+                                              ShowTicks="False"
+                                              ShowLabels="False"
+                                              AxisLineStrokeThickness="34"
+                                              CornerStyle="BothCurve">
+
+                            <gauge:LinearAxis.BarPointers>
+                                <gauge:BarPointer Value="{Binding ElementName=volumeShapePointer, Path=Value, Mode=OneWay}"
+                                                      Background="#2194f3"
+                                                      PointerSize="34"
+                                                      CornerStyle="BothCurve" />
+                            </gauge:LinearAxis.BarPointers>
+
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="volumeShapePointer"
+                                                        Value="85"
+                                                        ShapeType="Circle"
+                                                        Fill="Transparent"
+                                                        StrokeThickness="0"
+                                                        IsInteractive="True"
+                                                        VerticalAnchor="Start"
+                                                        ValueChanging="volumeShapePointer_ValueChanging" />
+
+                                <gauge:LinearContentPointer Value="100"
+                                                          OffsetPoint="0,-10">
+                                    <gauge:LinearContentPointer.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ElementName=volumeShapePointer,
+                                                               Path=Value,
+                                                               Mode=OneWay,
+                                                               Converter={StaticResource FormatStringConverter},
+                                                               ConverterParameter='N0'}" />
+                                            <TextBlock Text="%" />
+                                        </StackPanel>
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+
+                                <gauge:LinearContentPointer IsHitTestVisible="False"
+                                                          Value="-18"
+                                                          OffsetPoint="0,-8"
+                                                          VerticalAnchor="End">
+                                    <gauge:LinearContentPointer.Content>
+                                        <FontIcon x:Name="volumeFontIcon"
+                                                      FontFamily="Segoe MDL2 Assets"
+                                                      FontWeight="Medium"
+                                                      Foreground="White"
+                                                      FontSize="15"
+                                                      Glyph="&#xE767;" />
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+                            </gauge:LinearAxis.MarkerPointers>
+
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+
+                <gauge:SfLinearGauge x:Name="alarmGauge"
+                                         Orientation="Vertical"
+                                         Height="180"
+                                         Margin="16,0,0,0">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis Minimum="-18"
+                                              ShowTicks="False"
+                                              ShowLabels="False"
+                                              AxisLineStrokeThickness="34"
+                                              CornerStyle="BothCurve">
+
+                            <gauge:LinearAxis.BarPointers>
+                                <gauge:BarPointer Value="{Binding ElementName=alarmShapePointer, Path=Value, Mode=OneWay}"
+                                                      Background="#2194f3"
+                                                      PointerSize="34"
+                                                      CornerStyle="BothCurve" />
+                            </gauge:LinearAxis.BarPointers>
+
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="alarmShapePointer"
+                                                        Value="65"
+                                                        ShapeType="Circle"
+                                                        Fill="Transparent"
+                                                        StrokeThickness="0"
+                                                        IsInteractive="True"
+                                                        VerticalAnchor="Start"
+                                                        ValueChanging="alarmShapePointer_ValueChanging" />
+
+                                <gauge:LinearContentPointer Value="100"
+                                                          OffsetPoint="0,-10">
+                                    <gauge:LinearContentPointer.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ElementName=alarmShapePointer,
+                                                               Path=Value,
+                                                               Mode=OneWay,
+                                                               Converter={StaticResource FormatStringConverter},
+                                                               ConverterParameter='N0'}" />
+                                            <TextBlock Text="%" />
+                                        </StackPanel>
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+
+                                <gauge:LinearContentPointer IsHitTestVisible="False"
+                                                          Value="-18"
+                                                          OffsetPoint="0,-8"
+                                                          VerticalAnchor="End">
+                                    <gauge:LinearContentPointer.Content>
+                                        <FontIcon x:Name="alarmFontIcon"
+                                                      FontFamily="Segoe MDL2 Assets"
+                                                      FontWeight="Medium"
+                                                      Foreground="White"
+                                                      FontSize="15"
+                                                      Glyph="&#xEA8F;" />
+                                    </gauge:LinearContentPointer.Content>
+                                </gauge:LinearContentPointer>
+                            </gauge:LinearAxis.MarkerPointers>
+
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+            </StackPanel>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="volumeShapePointerValue"
+                                               SubstitutionValue="{x:Bind volumeShapePointer.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+    </common:DemoLayout>
+
+</Page>

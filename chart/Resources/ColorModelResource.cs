@@ -1,0 +1,25 @@
+﻿using Microsoft.UI.Xaml;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Syncfusion.ChartDemos.WinUI.Resources
+{
+    public static class ColorModelResource
+    {
+        public static ResourceDictionary Resource
+        {
+            get
+            {
+#if Main_SB
+                return new ResourceDictionary { Source = new Uri("ms-appx:///Chart/Resources/ColorModel.xaml", UriKind.RelativeOrAbsolute) };
+#else
+                return new ResourceDictionary { Source = new Uri("ms-appx:///Resources/ColorModel.xaml", UriKind.RelativeOrAbsolute) };
+#endif
+            }
+        }
+    }
+}

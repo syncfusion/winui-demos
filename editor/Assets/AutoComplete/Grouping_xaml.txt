@@ -1,0 +1,25 @@
+<editors:SfAutoComplete PlaceholderText="Enter a country"
+                        TextMemberPath="Country"
+                        DisplayMemberPath="Country"
+                        ItemsSource="{Binding ContinentList}">
+                        <editors:SfAutoComplete.FilterBehavior>
+                            <local:CustomGroupFilter/>
+                        </editors:SfAutoComplete.FilterBehavior>
+                        <editors:SfAutoComplete.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <FontIcon Glyph="&#xE774;"/>
+                                            <TextBlock Text="{Binding Key}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                            </GroupStyle>
+                        </editors:SfAutoComplete.GroupStyle>
+  </editors:SfAutoComplete>

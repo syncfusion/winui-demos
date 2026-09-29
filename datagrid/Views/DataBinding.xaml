@@ -1,0 +1,107 @@
+﻿<Page
+    x:Class="DataGrid.DataBinding"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGrid"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <StackPanel>
+                <common:DemoLayout x:Name="Example1" HeaderText="The DataGrid control supports data binding with different data sources such as BindingList, ObservableCollections and DynamicObjects.">
+                    <common:DemoLayout.Example>
+                        <Frame x:Name="dataBindArea">
+                            <Frame.Content>
+                                <local:ObservableCollectionBinding/>
+                            </Frame.Content>
+                        </Frame>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Options>
+                        <StackPanel >
+                            <TextBlock Margin="16,5,5,5" FontWeight="Bold" Text="Options" />
+                            <ComboBox
+                            x:Name="dataBindingComboBox"
+                            Margin="16,5,5,5"
+                            Header="Data Binding"
+                            HorizontalAlignment="Left"
+                            Width="230"
+                            SelectedIndex="1">
+                                <ComboBoxItem Content="Binding List" />
+                                <ComboBoxItem Content="Observable Collection" />
+                                <ComboBoxItem Content="Collection of ExpandoObject" />
+                            </ComboBox>
+                        </StackPanel>
+                    </common:DemoLayout.Options>
+                    <common:DemoLayout.Xaml>
+                        <x:String xml:space="preserve">
+                        
+    &lt;!--Data Binding with Binding List--&gt;                        
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;                                 
+                            AllowFiltering=&quot;true&quot;
+                            ColumnWidthMode=&quot;AutoLastColumnFill&quot;                        
+                            AutoGenerateColumns=&quot;True&quot;
+                            ItemsSource=&quot;{Binding OrderListDetails}&quot; &gt;  
+     &lt;/dataGrid:SfDataGrid&gt;
+                        
+                        
+    &lt;!--Data Binding with Dynamic Objects--&gt;
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;                                 
+                            AllowFiltering=&quot;true&quot;
+                            ColumnWidthMode=&quot;AutoLastColumnFill&quot;                        
+                            AutoGenerateColumns=&quot;True&quot;
+                            ItemsSource=&quot;{Binding DynamicOrders}&quot; &gt;   
+    &lt;/dataGrid:SfDataGrid&gt;
+                        
+                        
+    &lt;!--Data Binding with Observable Collection--&gt;
+    &lt;dataGrid:SfDataGrid x:Name=&quot;sfDataGrid&quot;                                 
+                            AllowFiltering=&quot;true&quot;
+                            ColumnWidthMode=&quot;AutoLastColumnFill&quot;                        
+                            AutoGenerateColumns=&quot;True&quot;
+                            ItemsSource=&quot;{Binding EmployeeDetails}&quot; &gt;   
+    &lt;/dataGrid:SfDataGrid&gt;                       
+                    </x:String>
+                    </common:DemoLayout.Xaml>
+                    <common:DemoLayout.CSharp>
+                        <x:String xml:space="preserve"> 
+                    
+    //C# code behind
+                        
+     //Data Binding with Binding List
+     private BindingList&lt;OrderInfo&gt; _ordersListDetails;
+
+     public BindingList&lt;OrderInfo&gt; OrdersListDetails
+     {
+      get { return _ordersListDetails; }
+      set { _ordersListDetails = value; }
+     }
+                        
+     //Data Binding with Dynamic Objects
+     private  ObservableCollection&lt;dynamic&gt; _dynamicOrders;
+                        
+     public ObservableCollection&lt;dynamic&gt; DynamicOrders
+     {
+        get { return _dynamicOrders; }
+        set { _dynamicOrders = value; }
+     }
+                        
+     //Data Binding with Observable Collection
+     private ObservableCollection&lt;Employee&gt; _employeeDetails;
+                        
+     public ObservableCollection&lt;Employee&gt; EmployeeDetails
+     {
+        get { return _employeeDetails; }
+        set { _employeeDetails = value; }
+     }                        
+                    </x:String>
+                    </common:DemoLayout.CSharp>
+                </common:DemoLayout>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+    

@@ -1,0 +1,10 @@
+﻿<editors:SfColorPalette ActivePalette="$(ActivePalette)">
+    <editors:SfColorPalette.PaletteColors>
+        <editors:ColorPaletteModel
+            ShowHeader="$(ShowPaletteColorsHeader)"
+            ShowColors="$(ShowPaletteColors)"
+            ShowColorShades="$(ShowPaletteColorsShades)"
+            Header="$(PaletteColorsHeader)"
+            ColorShadesSpacing="$(PaletteColorsShadesSpacing)"/>
+    </editors:SfColorPalette.PaletteColors>
+</editors:SfColorPalette>

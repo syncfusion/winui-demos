@@ -1,0 +1,7 @@
+﻿<editors:SfDropDownColorPicker>
+    <editors:SfDropDownColorPicker.DropDownContentTemplate>
+        <DataTemplate>
+            <editors:SfColorPicker BrushTypeOptions="Gradient"/>
+        </DataTemplate>
+    </editors:SfDropDownColorPicker.DropDownContentTemplate>
+</editors:SfDropDownColorPicker>

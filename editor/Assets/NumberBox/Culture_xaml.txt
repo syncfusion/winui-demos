@@ -1,0 +1,25 @@
+﻿Currency NumberBox:
+
+<editors:SfNumberBox
+    Header="Currency NumberBox"
+    AllowNull="$(CurrencyAllowNull)"
+    PlaceholderText="$(CurrencyPlaceholderText)"
+    Value="$(CurrencyValue)"/>
+
+
+Decimal NumberBox:
+
+<editors:SfNumberBox
+    Header="Decimal NumberBox"
+    AllowNull="$(DecimalAllowNull)"
+    PlaceholderText="$(DecimalPlaceholderText)"
+    Value="$(DecimalValue)"/>
+
+
+Percent NumberBox:
+
+<editors:SfNumberBox
+    Header="Percent NumberBox"
+    AllowNull="$(PercentAllowNull)"
+    PlaceholderText="$(PercentPlaceholderText)"
+    Value="$(PercentValue)"/>

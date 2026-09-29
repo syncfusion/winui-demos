@@ -1,0 +1,164 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.MultiplePointers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:coreconverters="using:Syncfusion.UI.Xaml.Core">
+
+    <common:DemoLayout HeaderText="This demo shows how to add multiple pointer in linear gauge."
+                       XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/multiplepointers.xaml.txt,
+                                                                      Common=LinearGauge/Assets/LinearGauge/multiplepointers.xaml.txt}"
+                       CSharpSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/multiplepointers.xaml.cs.txt,
+                                                                        Common=LinearGauge/Assets/LinearGauge/multiplepointers.xaml.cs.txt}">
+        <common:DemoLayout.Example>
+            <Grid VerticalAlignment="Center"
+                  Height="250">
+                <Grid.Resources>
+                    <coreconverters:StringFormatConverter x:Key="StringFormatConverter" />
+                    <Style x:Key="AxisTickStyle"
+                           TargetType="Line">
+                        <Setter Property="Stroke"
+                                Value="#FF00A8B5"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <gauge:SfLinearGauge x:Name="gauge"
+                                     Width="550">
+                    <gauge:SfLinearGauge.Axis>
+                        <gauge:LinearAxis MinorTickLength="10"
+                                          MajorTickStyle="{StaticResource AxisTickStyle}"
+                                          MinorTickStyle="{StaticResource AxisTickStyle}"
+                                          MajorTickLength="20"
+                                          LabelPosition="Outside"
+                                          TickPosition="Outside"
+                                          MinorTicksPerInterval="1"
+                                          AxisLineStrokeThickness="2"
+                                          AxisLineStroke="#FF00A8B5">
+
+                            <gauge:LinearAxis.LabelTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Text, 
+                                                       Converter={StaticResource StringFormatConverter},
+                                                       ConverterParameter='{}{0}$'}"
+                                               Foreground="#FF00A8B5" />
+                                </DataTemplate>
+                            </gauge:LinearAxis.LabelTemplate>
+
+                            <gauge:LinearAxis.BarPointers>
+                                <gauge:BarPointer x:Name="barPointer1"
+                                                  Value="{Binding ElementName=shapePointer1, Path=Value}"
+                                                  PointerSize="15"
+                                                  Offset="8"
+                                                  Background="#2a934d"
+                                                  CornerStyle="EndCurve"
+                                                  EnableAnimation="True">
+                                    <gauge:BarPointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:BarPointer.AnimationEasingFunction>
+                                </gauge:BarPointer>
+                                <gauge:BarPointer x:Name="barPointer2"
+                                                  Value="{Binding ElementName=shapePointer2, Path=Value}"
+                                                  PointerSize="15"
+                                                  Offset="23"
+                                                  Background="#ffb900"
+                                                  CornerStyle="EndCurve"
+                                                  EnableAnimation="True">
+                                    <gauge:BarPointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:BarPointer.AnimationEasingFunction>
+                                </gauge:BarPointer>
+                                <gauge:BarPointer x:Name="barPointer3"
+                                                  Value="{Binding ElementName=shapePointer3, Path=Value}"
+                                                  PointerSize="15"
+                                                  Offset="38"
+                                                  Background="#e05405"
+                                                  CornerStyle="EndCurve"
+                                                  EnableAnimation="True">
+                                    <gauge:BarPointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:BarPointer.AnimationEasingFunction>
+                                </gauge:BarPointer>
+                            </gauge:LinearAxis.BarPointers>
+
+                            <gauge:LinearAxis.MarkerPointers>
+                                <gauge:LinearShapePointer x:Name="shapePointer1"
+                                                    Value="43"
+                                                    ShapeType="Circle"
+                                                    ShapeHeight="9"
+                                                    ShapeWidth="9"
+                                                    HorizontalAnchor="End"
+                                                    OffsetPoint="-1,8"
+                                                    Fill="WhiteSmoke"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="3"
+                                                    IsInteractive="True"
+                                                    ValueChanging="shapePointer1_ValueChanging"
+                                                    EnableAnimation="True">
+                                    <gauge:LinearShapePointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:LinearShapePointer.AnimationEasingFunction>
+                                </gauge:LinearShapePointer>
+                                <gauge:LinearShapePointer x:Name="shapePointer2"
+                                                    Value="63"
+                                                    ShapeType="Circle"
+                                                    ShapeHeight="9"
+                                                    ShapeWidth="9"
+                                                    HorizontalAnchor="End"
+                                                    OffsetPoint="-1,23"
+                                                    Fill="WhiteSmoke"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="3"
+                                                    IsInteractive="True"
+                                                    ValueChanging="shapePointer1_ValueChanging"
+                                                    EnableAnimation="True">
+                                    <gauge:LinearShapePointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:LinearShapePointer.AnimationEasingFunction>
+                                </gauge:LinearShapePointer>
+                                <gauge:LinearShapePointer x:Name="shapePointer3"
+                                                    Value="93"
+                                                    ShapeType="Circle"
+                                                    ShapeHeight="9"
+                                                    ShapeWidth="9"
+                                                    HorizontalAnchor="End"
+                                                    OffsetPoint="-1,38"
+                                                    Fill="WhiteSmoke"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="3"
+                                                    IsInteractive="True"
+                                                    ValueChanging="shapePointer1_ValueChanging"
+                                                    EnableAnimation="True">
+                                    <gauge:LinearShapePointer.AnimationEasingFunction>
+                                        <CircleEase EasingMode="EaseOut" />
+                                    </gauge:LinearShapePointer.AnimationEasingFunction>
+                                </gauge:LinearShapePointer>
+                            </gauge:LinearAxis.MarkerPointers>
+
+                            <gauge:LinearAxis.Ranges>
+                                <gauge:LinearGaugeRange EndValue="100"
+                                                        Background="#44808080"
+                                                        RangePosition="Inside"
+                                                        StartWidth="45"
+                                                        EndWidth="45" />
+                            </gauge:LinearAxis.Ranges>
+                        </gauge:LinearAxis>
+                    </gauge:SfLinearGauge.Axis>
+                </gauge:SfLinearGauge>
+            </Grid>
+        </common:DemoLayout.Example>
+
+        <common:DemoLayout.Substitutions>
+            <common:DemoLayoutSubstitution Key="shapePointer1Substitution"
+                                           SubstitutionValue="{x:Bind shapePointer1.Value, Mode=OneWay}" />
+            <common:DemoLayoutSubstitution Key="shapePointer2Substitution"
+                                           SubstitutionValue="{x:Bind shapePointer2.Value, Mode=OneWay}" />
+            <common:DemoLayoutSubstitution Key="shapePointer3Substitution"
+                                           SubstitutionValue="{x:Bind shapePointer3.Value, Mode=OneWay}" />
+        </common:DemoLayout.Substitutions>
+
+    </common:DemoLayout>
+</Page>

@@ -1,0 +1,82 @@
+<Page
+    x:Class="Syncfusion.DockingManagerDemos.WinUI.Views.DockingManager.GettingStartedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Syncfusion.DockingManagerDemos.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    xmlns:docking="using:Syncfusion.UI.Xaml.Docking"
+    mc:Ignorable="d">
+
+    <!-- DockingManager getting started sample implementation. -->
+
+    <common:DemoLayout HeaderText="This sample showcases the DockingManager control with basic functionalities." 
+                       XamlSource="{common:ConditionalXAML Individual=Syncfusion.DockingManagerDemos.WinUI/Assets/DockingManager/GettingStarted_xaml.txt,
+           Common=DockingManager/Assets/DockingManager/GettingStarted_xaml.txt}">
+        <Grid>
+            <docking:SfDockingManager x:Name="DockManager" Height="560" >
+                <docking:DockPane x:Name="ToolboxPane" Header="Toolbox" 
+                                      DockDirection="Left" DesiredDockSize="170" DockState="Docked">
+                    <TextBlock Text="Toolbox - Dock Window" HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                </docking:DockPane>
+                <docking:DockPane x:Name="StartPagePane" Header="Start Page" 
+                                      DockState="Document" DockDirection="Left">
+                    <Grid>
+                        <TextBlock Text="Start Page - Document Window" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" TextAlignment="Center"/>
+                    </Grid>
+                </docking:DockPane>
+                <docking:DockPane Header="MainWindow.xaml" DockState="Document"
+                  DockDirection="Center">
+                    <Grid>
+                        <TextBlock Text="Document Window" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   TextAlignment="Center"/>
+                    </Grid>
+                </docking:DockPane>
+                <docking:DockPane Header="MainWindow.xaml.cs" DockState="Document"
+                                      DockDirection="Center">
+                    <Grid>
+                        <TextBlock Text="Document Window" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       TextAlignment="Center"/>
+                    </Grid>
+                </docking:DockPane>
+                <docking:DockPane Header="Solution Explorer" x:Name="SolutionPane" DockDirection="Right" 
+                                      DesiredDockSize="220">
+                    <TextBlock Text="Solution Explorer Window" HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                </docking:DockPane>
+                <docking:DockPane Header="Properties" TargetNameInDockedState="SolutionPane" 
+                                      DockDirection="Bottom" DesiredDockSize="220">
+                    <TextBlock Text="Properties Window" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                </docking:DockPane>
+                <docking:DockPane Header="Live Visual Tree" DockState="AutoHidden" DockDirection="Right"
+                                      DesiredDockSize="200">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Live Visual Tree" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        <TextBlock Text="(AutoHidden Window)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </docking:DockPane>
+                <docking:DockPane Header="Server Explorer" DockState="AutoHidden" DockDirection="Right" 
+                                      DesiredDockSize="200">
+                    <TextBlock  Text="Server Explorer"  HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                </docking:DockPane>
+                <docking:DockPane x:Name="OutputPane" Header="Output" DockDirection="Bottom"
+                                      DesiredDockSize="220">
+                    <TextBlock Text="Output - Tabbed Window" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                </docking:DockPane>
+                <docking:DockPane Header="Call Stack" DockDirection="Bottom" DockState="Tabbed"
+                                      TargetNameInTabbedState="OutputPane">
+                    <TextBlock Text="Call Stack Window" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                </docking:DockPane>
+            </docking:SfDockingManager>
+        </Grid>
+    </common:DemoLayout>
+</Page>

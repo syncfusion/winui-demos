@@ -1,0 +1,139 @@
+<Project>
+<ItemGroup>
+	<Compile Include="..\DateTime\Converters\FormatToStringConverter.cs">
+		<Link>DateTime\Converters\FormatToStringConverter.cs</Link>
+	</Compile>
+    <Compile Include="..\DateTime\ViewModel\DatePickerViewModel.cs">
+		<Link>DateTime\ViewModel\DatePickerViewModel.cs</Link>
+	</Compile>
+    <Compile Include="..\DateTime\ViewModel\TimePickerViewModel.cs">
+		<Link>DateTime\ViewModel\TimePickerViewModel.cs</Link>
+	</Compile>
+	    <Compile Include="..\DateTime\SamplesConfiguration.cs">
+		<Link>DateTime\SamplesConfiguration.cs</Link>
+	</Compile>
+    <Compile Include="..\DateTime\Views\DatePicker\Customization.xaml.cs">
+		<Link>DateTime\Views\DatePicker\Customization.xaml.cs</Link>
+      <DependentUpon>..\DateTime\Views\DatePicker\Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DateTime\Views\DatePicker\DatePickerView.xaml.cs">
+		<Link>DateTime\Views\DatePicker\DatePickerView.xaml.cs</Link>
+      <DependentUpon>..\DateTime\Views\DatePicker\DatePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DateTime\Views\DatePicker\Resources\DateItemTemplateSelector.cs">
+		<Link>DateTime\Views\DatePicker\Resources\DateItemTemplateSelector.cs</Link>
+	</Compile>
+    <Compile Include="..\DateTime\Views\TimePicker\Customization.xaml.cs">
+		<Link>DateTime\Views\TimePicker\Customization.xaml.cs</Link>
+      <DependentUpon>..\DateTime\Views\TimePicker\Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\DateTime\Views\TimePicker\Resources\TimeItemTemplateSelector.cs">
+		<Link>DateTime\Views\TimePicker\Resources\TimeItemTemplateSelector.cs</Link>
+	</Compile>
+    <Compile Include="..\DateTime\Views\TimePicker\TimePickerView.xaml.cs">
+		<Link>DateTime\Views\TimePicker\TimePickerView.xaml.cs</Link>
+      <DependentUpon>..\DateTime\Views\TimePicker\TimePickerView.xaml</DependentUpon>
+    </Compile>
+</ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\DateTime\Assets\DatePicker\BlackoutDateTemplate_cs.txt">
+		<Link>DateTime\Assets\DatePicker\BlackoutDateTemplate_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\BlackoutDateTemplate_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\BlackoutDateTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\CustomFormatString_cs.txt">
+		<Link>DateTime\Assets\DatePicker\CustomFormatString_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\CustomFormatString_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\CustomFormatString_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\DateTimeFormatting_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\DateTimeFormatting_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\DropdownHeaderTemplate_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\DropdownHeaderTemplate_xaml.txt</Link>
+	</Content>
+	<Content Include="..\DateTime\Assets\DatePicker\ExcludeWeekEndDates_cs.txt">
+		<Link>DateTime\Assets\DatePicker\ExcludeWeekEndDates_cs.txt</Link>
+	</Content>
+	<Content Include="..\DateTime\Assets\DatePicker\ExcludeWeekEndDates_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\ExcludeWeekEndDates_xaml.txt</Link>
+	</Content>
+	<Content Include="..\DateTime\Assets\DatePicker\ItemContainerStyle_cs.txt">
+		<Link>DateTime\Assets\DatePicker\ItemContainerStyle_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\ItemContainerStyle_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\ItemContainerStyle_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\ItemCustomization_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\ItemCustomization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\ItemTemplateSelector_cs.txt">
+		<Link>DateTime\Assets\DatePicker\ItemTemplateSelector_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\ItemTemplateSelector_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\ItemTemplateSelector_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\SimpleDatePicker_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\SimpleDatePicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\ViewCustomization_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\ViewCustomization_xaml.txt</Link>
+	</Content>
+  	<Content Include="..\DateTime\Assets\TimePicker\DropdownHeaderTemplate_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\DropdownHeaderTemplate_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\ItemCustomization_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\ItemCustomization_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\ItemTemplateSelector_cs.txt">
+		<Link>DateTime\Assets\TimePicker\ItemTemplateSelector_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\ItemTemplateSelector_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\ItemTemplateSelector_xaml.txt</Link>
+	</Content>
+	<Content Include="..\DateTime\Assets\DatePicker\FlightBookingOnline_cs.txt">
+		<Link>DateTime\Assets\DatePicker\FlightBookingOnline_cs.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\DatePicker\FlightBookingOnline_xaml.txt">
+		<Link>DateTime\Assets\DatePicker\FlightBookingOnline_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\SimpleTimePicker_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\SimpleTimePicker_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\TimeFormatting_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\TimeFormatting_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\TimePickerMinutesInterval_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\TimePickerMinutesInterval_xaml.txt</Link>
+	</Content>
+    <Content Include="..\DateTime\Assets\TimePicker\ViewCustomization_xaml.txt">
+		<Link>DateTime\Assets\TimePicker\ViewCustomization_xaml.txt</Link>
+	</Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="..\DateTime\Views\DatePicker\Customization.xaml">
+		<Link>DateTime\Views\DatePicker\Customization.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\DateTime\Views\DatePicker\DatePickerView.xaml">
+		<Link>DateTime\Views\DatePicker\DatePickerView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\DateTime\Views\TimePicker\Customization.xaml">
+		<Link>DateTime\Views\TimePicker\Customization.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\DateTime\Views\TimePicker\TimePickerView.xaml">
+		<Link>DateTime\Views\TimePicker\TimePickerView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

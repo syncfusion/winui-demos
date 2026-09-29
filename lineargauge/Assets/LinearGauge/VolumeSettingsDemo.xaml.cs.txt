@@ -1,0 +1,20 @@
+﻿...
+private void musicShapePointer_ValueChanging(object sender, ValueChangingEventArgs e)
+{
+    string glyph;
+    if (e.NewValue <= 0)
+    {
+        glyph = "\uED30";
+        e.Cancel = true;
+    }
+    else
+    {
+        glyph = "\uED33";
+    }
+
+    if (this.musicFontIcon.Glyph != glyph)
+    {
+        this.musicFontIcon.Glyph = glyph;
+    }
+}
+...

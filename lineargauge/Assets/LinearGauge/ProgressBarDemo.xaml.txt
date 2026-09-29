@@ -1,0 +1,28 @@
+﻿<gauge:SfLinearGauge>
+    <gauge:SfLinearGauge.Axis>
+        <gauge:LinearAxis ShowLabels="False"
+                          ShowTicks="False"
+                          CornerStyle="BothCurve"
+                          AxisLineStrokeThickness="30">
+
+            <gauge:LinearAxis.BarPointers>
+                <gauge:BarPointer Value="41.47"
+                                  PointerSize="30"
+                                  Background="#683ab7"
+                                  CornerStyle="BothCurve"
+                                  EnableAnimation="True">
+                    <gauge:BarPointer.AnimationEasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </gauge:BarPointer.AnimationEasingFunction>
+                    <gauge:BarPointer.Child>
+                        <TextBlock Text="41.47%"
+                                   Foreground="White"
+                                   Margin="15,0,0,0"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left" />
+                    </gauge:BarPointer.Child>
+                </gauge:BarPointer>
+            </gauge:LinearAxis.BarPointers>
+        </gauge:LinearAxis>
+    </gauge:SfLinearGauge.Axis>
+</gauge:SfLinearGauge>

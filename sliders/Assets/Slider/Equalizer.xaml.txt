@@ -1,0 +1,77 @@
+﻿<Grid HorizontalAlignment="Center">
+    <Grid.Resources>
+        <x:Double x:Key="SyncfusionSliderActiveTrackCornerRadius">4</x:Double>
+        <x:Double x:Key="SyncfusionSliderInactiveTrackCornerRadius">4</x:Double>
+
+        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#2b8fa8</SolidColorBrush>
+        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#662b8fa8</SolidColorBrush>
+        <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#2b8fa8</SolidColorBrush>
+
+        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#2b8fa8</SolidColorBrush>
+        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#662b8fa8</SolidColorBrush>
+        <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#2b8fa8</SolidColorBrush>
+
+        <Style x:Name="ThumbStyle"
+               TargetType="Thumb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Ellipse Fill="{ThemeResource SystemAltHighColor}"
+                                 Height="{TemplateBinding Height}"
+                                 Width="{TemplateBinding Width}"
+                                 Stroke="{TemplateBinding Background}"
+                                 StrokeThickness="4" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Grid.Resources>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="60" />
+        <ColumnDefinition Width="60" />
+        <ColumnDefinition Width="60" />
+        <ColumnDefinition Width="60" />
+        <ColumnDefinition Width="60" />
+    </Grid.ColumnDefinitions>
+
+    <Grid Margin="0,35,-8,35">
+        <TextBlock Text="+12 dB"
+                   VerticalAlignment="Top"
+                   TextAlignment="Right" />
+        <TextBlock Text="0 dB"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right" />
+        <TextBlock Text="-12 dB"
+                   VerticalAlignment="Bottom"
+                   TextAlignment="Right" />
+    </Grid>
+    
+    <StackPanel Grid.Column="1">
+        <TextBlock Text="32 Hz"
+                   HorizontalAlignment="Center" />
+        <slider:SfSlider x:Name="slider32"
+                         Height="300"
+                         Orientation="Vertical"
+                         ActiveTrackHeight="6"
+                         InactiveTrackHeight="6"
+                         ThumbOverlayRadius="10"
+                         ActiveTrackFill="#2b8fa8"
+                         InactiveTrackFill="#662b8fa8"
+                         ThumbBackground="#2b8fa8"
+                         ThumbHeight="24"
+                         ThumbWidth="24"
+                         Value="$(slider32ValueSubstitute)"
+                         Minimum="-12"
+                         Maximum="12"
+                         ShowToolTip="False"
+                         StepFrequency="1"
+                         ThumbStyle="{StaticResource ThumbStyle}" />
+         <TextBlock Text="{Binding ElementName=slider32, Path=Value, Mode=OneWay}"
+                    Foreground="#2b8fa8"
+                    FontWeight="SemiBold"
+                    HorizontalAlignment="Center" />
+    </StackPanel>
+    ...
+</Grid>

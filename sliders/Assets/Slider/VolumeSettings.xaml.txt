@@ -1,0 +1,30 @@
+﻿<StackPanel ...>
+...
+    <Grid>
+        ...
+        <TextBlock Text="Volume"
+                   Grid.ColumnSpan="2" />
+        <FontIcon x:Name="volumeFontIcon"
+                  HorizontalAlignment="Center"
+                  FontFamily="Segoe MDL2 Assets"
+                  FontSize="20"
+                  Grid.Row="1" />
+        <slider:SfSlider x:Name="volumeSlider"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         ToolTipFormat="N0"
+                         Value="$(volumeSliderValueSubstitute)"
+                         StepFrequency="1"
+                         ValueChanged="volumeSlider_ValueChanged" />
+        <TextBlock Grid.Column="2"
+                   Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Text="{Binding ElementName=volumeSlider,
+                                  Path=Value,
+                                  Mode=OneWay,
+                                  Converter={StaticResource FormatStringConverter},
+                                  ConverterParameter='N0'}" />
+    </Grid>
+...
+</StackPanel>

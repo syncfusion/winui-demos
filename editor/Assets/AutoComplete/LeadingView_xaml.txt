@@ -1,0 +1,8 @@
+﻿<editors:SfAutoComplete ItemsSource="{Binding Countries}">
+                        <editors:SfAutoComplete.LeadingView>
+                            <Viewbox Height="16"
+                                     Width="16">
+                                <SymbolIcon Symbol="Find" />
+                            </Viewbox>
+                        </editors:SfAutoComplete.LeadingView>
+</editors:SfAutoComplete>

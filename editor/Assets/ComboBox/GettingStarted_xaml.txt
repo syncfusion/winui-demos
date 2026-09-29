@@ -1,0 +1,10 @@
+﻿<editors:SfComboBox
+    PlaceholderText="$(PlaceholderText)"
+    MaxDropDownHeight="$(MaxDropDownHeight)">
+    <editors:SfComboBoxItem Content="American Football"/>
+    <editors:SfComboBoxItem Content="Badminton"/>
+    <editors:SfComboBoxItem Content="Basketball"/>
+    <editors:SfComboBoxItem Content="Cricket"/>
+    <editors:SfComboBoxItem Content="Football"/>
+    ...
+</editors:SfComboBox>

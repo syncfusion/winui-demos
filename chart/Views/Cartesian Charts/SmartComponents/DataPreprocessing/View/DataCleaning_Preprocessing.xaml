@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.DataCleaning_Preprocessing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:notification="using:Syncfusion.UI.Xaml.Notifications"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:DataPreprocessingViewModel x:Name="viewModel"/>
+    </Page.DataContext>
+
+    <Grid x:Name="parentGrid">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This chart demonstrates AI-driven data cleaning, detecting and handling missing values, duplicates, and inconsistencies to enhance accuracy.">
+                <common:DemoLayout.Example>
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <chart:SfCartesianChart Grid.Row="0" x:Name="Chart" Height="400" PaletteBrushes="{Binding PaletteBrushes}">
+
+                            <chart:SfCartesianChart.Header>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="E-Commerce Website Traffic Data" FontSize="18" FontWeight="Bold" HorizontalTextAlignment="Center"/>
+                                    <TextBlock Text="AI-powered data cleaning and preprocessing every hour, tracking hourly website visitors" HorizontalTextAlignment="Center" FontSize="14"/>
+                                </StackPanel>
+                            </chart:SfCartesianChart.Header>
+
+                            <chart:SfCartesianChart.XAxes>
+                                <chart:DateTimeAxis ShowMajorGridLines="False" EdgeLabelsDrawingMode="Shift">
+                                    <chart:DateTimeAxis.LabelStyle>
+                                        <chart:LabelStyle LabelFormat="hh tt"/>
+                                    </chart:DateTimeAxis.LabelStyle>
+                                </chart:DateTimeAxis>
+                            </chart:SfCartesianChart.XAxes>
+
+                            <chart:SfCartesianChart.YAxes>
+                                <chart:NumericalAxis ShowMajorGridLines="False" Minimum="140" Interval="30" Maximum="320"/>
+                            </chart:SfCartesianChart.YAxes>
+
+                            <chart:LineSeries x:Name="CleanedDataSeries" ItemsSource="{Binding CleanedData}" XBindingPath="DateTime" 
+                                        YBindingPath="Visitors" StrokeWidth="2" EnableTooltip="True"/>
+
+                            <chart:LineSeries x:Name="RawDataSeries" ItemsSource="{Binding RawData}" XBindingPath="DateTime" 
+                                        YBindingPath="Visitors" StrokeWidth="2" EnableTooltip="True"/>
+
+                        </chart:SfCartesianChart>
+
+                        <notification:SfBusyIndicator Grid.Row="0" Visibility="{Binding IsVisible}" IsActive="{Binding IsBusy}" AnimationType="DottedCircle" SizeFactor="0.9"/>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart PaletteBrushes=&quot;{Binding PaletteBrushes}&quot;&gt;
+ 
+ &lt;chart:SfCartesianChart.Header&gt;
+    &lt;StackPanel Orientation=&quot;Vertical&quot;&gt;
+        &lt;TextBlock Text=&quot;E-Commerce Website Traffic Data&quot; FontSize=&quot;18&quot; FontWeight=&quot;Bold&quot; HorizontalTextAlignment=&quot;Center&quot;/&gt;
+        &lt;TextBlock Text=&quot;AI-powered data cleaning and preprocessing every hour, tracking hourly website visitors&quot; HorizontalTextAlignment=&quot;Center&quot; FontSize=&quot;14&quot;/&gt;
+    &lt;/StackPanel&gt;
+ &lt;/chart:SfCartesianChart.Header&gt;
+    
+ &lt;chart:SfCartesianChart.XAxes&gt;
+    &lt;chart:DateTimeAxis ShowMajorGridLines=&quot;False&quot; EdgeLabelsDrawingMode=&quot;Shift&quot;&gt;
+        &lt;chart:DateTimeAxis.LabelStyle&gt;
+            &lt;chart:LabelStyle LabelFormat=&quot;hh tt&quot;/&gt;
+        &lt;/chart:DateTimeAxis.LabelStyle&gt;
+    &lt;/chart:DateTimeAxis&gt;
+ &lt;/chart:SfCartesianChart.XAxes&gt;
+
+ &lt;chart:SfCartesianChart.YAxes&gt;
+    &lt;chart:NumericalAxis ShowMajorGridLines=&quot;False&quot; Minimum=&quot;140&quot; Interval=&quot;30&quot; Maximum=&quot;320&quot;/&gt;
+ &lt;/chart:SfCartesianChart.YAxes&gt;
+
+ &lt;chart:LineSeries x:Name=&quot;CleanedDataSeries&quot; 
+                      ItemsSource=&quot;{Binding CleanedData}&quot;
+                      XBindingPath=&quot;DateTime&quot; 
+                      YBindingPath=&quot;Visitors&quot; 
+                      StrokeWidth=&quot;2&quot;
+                      EnableTooltip=&quot;True&quot;/&gt;
+
+ &lt;chart:LineSeries x:Name=&quot;RawDataSeries&quot; 
+                      ItemsSource=&quot;{Binding RawData}&quot; 
+                      XBindingPath=&quot;DateTime&quot; 
+                      YBindingPath=&quot;Visitors&quot; 
+                      StrokeWidth=&quot;2&quot;
+                      EnableTooltip=&quot;True&quot;/&gt;
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+
+</Page>

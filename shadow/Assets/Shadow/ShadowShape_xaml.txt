@@ -1,0 +1,29 @@
+﻿<Viewbox>
+      <StackPanel Orientation="Horizontal">
+         <Syncfusion:SfShadow x:Name="shape1" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}" 
+           OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+           OffsetY="{Binding ElementName=offsetY3,Path=Value}">
+               <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+         </Syncfusion:SfShadow>
+         <Syncfusion:SfShadow x:Name="shape2" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}" 
+           OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+           OffsetY="{Binding ElementName=offsetY3,Path=Value}">
+               <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+         </Syncfusion:SfShadow>  
+         <Syncfusion:SfShadow x:Name="shape3" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}" 
+           OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+           OffsetY="{Binding ElementName=offsetY3,Path=Value}">
+               <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+         </Syncfusion:SfShadow>
+         <Syncfusion:SfShadow x:Name="shape4" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}" 
+           OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+           OffsetY="{Binding ElementName=offsetY3,Path=Value}">
+               <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+         </Syncfusion:SfShadow>
+          <Syncfusion:SfShadow x:Name="shape5" BlurRadius="{Binding ElementName=blurSlider3,Path=Value}" 
+           OffsetX="{Binding ElementName=offsetX3,Path=Value}" 
+           OffsetY="{Binding ElementName=offsetY3,Path=Value}">
+               <Path Data="M44.5 4L54.0608 33.4114H85L59.9696 51.5886L69.5304 81L44.5 62.8228L19.4696 81L29.0304 51.5886L4 33.4114H34.9392L44.5 4Z" Fill="#FFD700"/>
+         </Syncfusion:SfShadow>
+      </StackPanel>
+</Viewbox>

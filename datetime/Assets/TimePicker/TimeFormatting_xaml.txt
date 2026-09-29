@@ -1,0 +1,4 @@
+﻿<editors:SfTimePicker
+	FormatString="$(FormatString)"
+	ClockIdentifier="$(ClockIdentifier)"
+	Language="$(Language)"/>

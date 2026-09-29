@@ -1,0 +1,145 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.BarPointer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:enumextension="using:Syncfusion.DemosCommon.WinUI">
+
+    <StackPanel>
+        <common:DemoLayout HeaderText="This demo shows the capabilities of bar pointer in linear gauge control."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/barpointer.xaml.txt,
+                                                                          Common=LinearGauge/Assets/LinearGauge/barpointer.xaml.txt}">
+            <common:DemoLayout.Example>
+                <Grid VerticalAlignment="Center"
+                      Height="250">
+                    <gauge:SfLinearGauge x:Name="gauge"
+                                         Width="550">
+                        <gauge:SfLinearGauge.Axis>
+                            <gauge:LinearAxis Maximum="160"
+                                              Interval="20"
+                                              LabelPosition="Outside"
+                                              TickPosition="Outside"
+                                              MinorTicksPerInterval="4"
+                                              AxisLineStrokeThickness="2">
+
+                                <gauge:LinearAxis.BarPointers>
+                                    <gauge:BarPointer Value="70"
+                                                      PointerSize="8"
+                                                      Offset="8"
+                                                      Background="DarkSlateGray"
+                                                      EnableAnimation="True">
+                                        <gauge:BarPointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:BarPointer.AnimationEasingFunction>
+                                    </gauge:BarPointer>
+                                </gauge:LinearAxis.BarPointers>
+                            </gauge:LinearAxis>
+                        </gauge:SfLinearGauge.Axis>
+                    </gauge:SfLinearGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+
+        <common:DemoLayout HeaderText="This demo shows the gradient support capabilities of bar pointer."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/gradientbarpointer.xaml.txt,
+                                                                          Common=LinearGauge/Assets/LinearGauge/gradientbarpointer.xaml.txt}">
+            <common:DemoLayout.Example>
+                <Grid VerticalAlignment="Center"
+                      Height="200">
+                    <gauge:SfLinearGauge x:Name="gaugeWithGradient" Width="550">
+                        <gauge:SfLinearGauge.Axis>
+                            <gauge:LinearAxis Interval="10"
+                                              MinorTicksPerInterval="4">
+
+                                <gauge:LinearAxis.BarPointers>
+                                    <gauge:BarPointer Value="70"
+                                                      PointerSize="8"
+                                                      Offset="-8"
+                                                      CornerStyle="BothCurve"
+                                                      EnableAnimation="True">
+                                        <gauge:BarPointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:BarPointer.AnimationEasingFunction>
+                                        <gauge:BarPointer.GradientStops>
+                                            <gauge:GaugeGradientStop Value="10"
+                                                                     Color="LightGreen" />
+                                            <gauge:GaugeGradientStop Value="70"
+                                                                     Color="CornflowerBlue" />
+                                        </gauge:BarPointer.GradientStops>
+                                    </gauge:BarPointer>
+                                </gauge:LinearAxis.BarPointers>
+                            </gauge:LinearAxis>
+                        </gauge:SfLinearGauge.Axis>
+                    </gauge:SfLinearGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+        </common:DemoLayout>
+
+        <common:DemoLayout HeaderText="This demo shows the corner style support of bar pointer."
+                           XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/cornerstylebarpointer.xaml.txt,
+                                                                          Common=LinearGauge/Assets/LinearGauge/cornerstylebarpointer.xaml.txt}">
+            <common:DemoLayout.Example>
+                <Grid VerticalAlignment="Center"
+                      Height="250">
+                    <gauge:SfLinearGauge x:Name="gaugeWithCornerRadius"
+                                         Width="550">
+                        <gauge:SfLinearGauge.Axis>
+                            <gauge:LinearAxis x:Name="axis"
+                                              Minimum="100"
+                                              Maximum="200"
+                                              Interval="10"
+                                              MinorTicksPerInterval="4"
+                                              AxisLineStrokeThickness="20"
+                                              CornerStyle="BothCurve">
+
+                                <gauge:LinearAxis.BarPointers>
+                                    <gauge:BarPointer x:Name="barPointer"
+                                                      Value="150"
+                                                      PointerSize="20"
+                                                      CornerStyle="{Binding ElementName=axis, Path=CornerStyle, Mode=OneWay}"
+                                                      EnableAnimation="True">
+                                        <gauge:BarPointer.AnimationEasingFunction>
+                                            <CircleEase EasingMode="EaseOut" />
+                                        </gauge:BarPointer.AnimationEasingFunction>
+                                        <gauge:BarPointer.GradientStops>
+                                            <gauge:GaugeGradientStop Value="115"
+                                                                     Color="#FF6A6EF6" />
+                                            <gauge:GaugeGradientStop Value="150"
+                                                                     Color="#FFDB82F5" />
+                                        </gauge:BarPointer.GradientStops>
+
+                                    </gauge:BarPointer>
+                                </gauge:LinearAxis.BarPointers>
+                            </gauge:LinearAxis>
+                        </gauge:SfLinearGauge.Axis>
+                    </gauge:SfLinearGauge>
+                </Grid>
+            </common:DemoLayout.Example>
+
+            <common:DemoLayout.Options>
+                <Grid Width="200">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ComboBox Header="CornerStyle"
+                              Grid.Row="3"
+                              ItemsSource="{enumextension:EnumToStringValuesExtension Type=gauge:CornerStyle}"
+                              SelectedItem="{Binding Converter={enumextension:StringToEnumValueConverter Type=gauge:CornerStyle}, ElementName=axis, Path=CornerStyle, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch">
+                    </ComboBox>
+
+                </Grid>
+            </common:DemoLayout.Options>
+
+            <common:DemoLayout.Substitutions>
+                <common:DemoLayoutSubstitution Key="cornerStyleSubstitution"
+                                               SubstitutionValue="{x:Bind barPointer.CornerStyle, Mode=OneWay}" />
+            </common:DemoLayout.Substitutions>
+        </common:DemoLayout>
+    </StackPanel>
+</Page>

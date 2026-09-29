@@ -1,0 +1,41 @@
+
+   <local:ViewTemplateSelector x:Key="viewTemplateSelector">
+            <local:ViewTemplateSelector.AITemplate>
+                <DataTemplate>
+                    <Border>
+                        <TextBlock
+                    Text="{Binding Solution}"
+                    TextWrapping="Wrap"/>
+                    </Border>
+                </DataTemplate>
+            </local:ViewTemplateSelector.AITemplate>
+   </local:ViewTemplateSelector>
+
+
+   <syncfusion:SfAIAssistView x:Name="chat"
+                              Height="550"
+                              Conversations="{Binding Conversations}"
+                              ShowNavigationView="True"
+                              CurrentUser="{Binding CurrentUser}"
+                              Messages="{Binding Chats}"
+                              ShowTypingIndicator="{Binding ShowTypingIndicator}"
+                              ViewTemplateSelector="{StaticResource viewTemplateSelector}"
+                              EnableStopResponding="True">
+                              <syncfusion:SfAIAssistView.EmptyViewTemplate>
+                                <DataTemplate>
+                                    <StackPanel
+                                        Orientation="Vertical"
+                                        Spacing="10">
+                                        <TextBlock Text="AI Assist" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
+                                        <TextBlock Text="Your best AI Companion" HorizontalAlignment="Center" FontSize="16" Opacity="0.7"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </syncfusion:SfAIAssistView.EmptyViewTemplate>
+                              <syncfusion:SfAIAssistView.TypingIndicator>
+                                <syncfusion:TypingIndicator Text="">
+                                    <syncfusion:TypingIndicator.Author>
+                                        <syncfusion:Author Name="AI"/>
+                                    </syncfusion:TypingIndicator.Author>
+                                </syncfusion:TypingIndicator>
+                              </syncfusion:SfAIAssistView.TypingIndicator>
+    </syncfusion:SfAIAssistView>
