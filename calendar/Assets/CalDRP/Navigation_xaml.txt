@@ -1,5 +1,0 @@
-﻿<calendar:SfCalendarDateRangePicker
-    MinDate="$(MinDate)"
-    MaxDate="$(MaxDate)"
-    MinDisplayMode="$(MinDisplayMode)"
-    MaxDisplayMode="$(MaxDisplayMode)"/>

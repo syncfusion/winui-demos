@@ -1,5 +1,0 @@
-﻿<editors:SfNumberBox
-	AllowNull="$(FormatAllowNull)"
-	PlaceholderText="$(FormatPlaceholderText)"
-	CustomFormat="$(FormatCustomFormat)"
-	Value="$(FormatValue)"/>

@@ -1,7 +1,0 @@
-﻿<editors:SfDatePicker
-	FormatString="$(FormatString)"
-	DayFormat="$(DayFormat)"
-	MonthFormat="$(MonthFormat)"
-	YearFormat="$(YearFormat)"
-	CalendarIdentifier="$(CalendarIdentifier)"
-	Language="$(Language)"/>

@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Syncfusion.NotificationDemos.WinUI": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

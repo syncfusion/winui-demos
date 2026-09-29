@@ -1,4 +1,0 @@
-﻿<Style x:Key="SpinnerItemStyle" TargetType="editors:SpinnerItem">
-    <Setter Property="Foreground" Value="Red"/>
-    <Setter Property="FontStyle" Value="Italic"/>
-</Style>

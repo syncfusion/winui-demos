@@ -1,5 +1,0 @@
-<editors:SfAutoComplete PlaceholderText="Enter a country"
-                        DisplayMemberPath="Name" 
-                        TextMemberPath="Name"
-                        TextSearchMode="Startswith"
-                        ItemsSource="{Binding Countries}"/>
