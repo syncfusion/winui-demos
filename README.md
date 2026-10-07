@@ -1,4 +1,4 @@
-﻿# Syncfusion® WinUI Desktop Controls Demos 
+﻿# Syncfusion WinUI Desktop Controls Demos 
 
 This repository contains the demos of [Syncfusion WinUI controls](https://www.syncfusion.com/winui-controls). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing our [Syncfusion WinUI Demos Store App](https://apps.microsoft.com/detail/9N0FP16DDC06?hl=en-us&gl=US&ocid=pdpshare), in which you can browse the demos for all the controls.
 
@@ -15,12 +15,12 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 
 * Make sure your development PC is running with Windows 11 and Windows 10 OS version 1809 (build 17763) or a later version.
 * Requires Visual Studio 2022 (with update 17.13 or later) with Windows App SDK [Extension](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/release-notes-archive/stable-channel-1.6#version-16)
-* Need a [.Net80](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and [.Net90](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) requirements for running the demos.
+* Need a [.Net80](https://dotnet.microsoft.com/en-us/download/dotnet/8.0), [.Net90](https://dotnet.microsoft.com/en-us/download/dotnet/9.0), and [.Net10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) runtime for running the demos.
 
 ## <a name="how-to-run-the-demos"></a>How to run the demos ##
 
  * Clone or download this repository.
- * Open `syncfusion.samplebrowser.winui_net80.sln` file present under **SB** folder in Visual Studio as start up project.
+ * Open `SampleBrowser.WinUI.sln` file present under **SB** folder in Visual Studio as start up project.
  * Restore nugets for all the demo projects and run.
 
 **Notes:** While downloading the zip file, follow below steps
@@ -44,7 +44,9 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         <td>
             <a href="treegrid">Tree Grid</a>
         </td>
-        <td></td>
+        <td>
+            <a href="kanban">Kanban</a>
+        </td>
     </tr>
     <tr>
         <td colspan="3">
@@ -95,14 +97,16 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
             <a href="treeview">Tree View</a>
         </td>
         <td>
-            <a href="notification">Badge</a>
+            <a href="dockingmanager">Docking Manager</a>
         </td>
     </tr>
     <tr>
+        <td>
+            <a href="notification">Badge</a>
+        </td>
        <td>
             <a href="notification">BusyIndicator</a>
         </td>
-        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -118,15 +122,15 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
             <a href="calendar">Calendar Date Picker</a>
         </td>
         <td>
-            <a href="calendar">Calendar  Date Range Picker</a>
+            <a href="calendar">Calendar Date Range Picker</a>
         </td>
     </tr>
     <tr>
     <td>
-        <a href="editor">Date Picker</a>
+        <a href="datetime">Date Picker</a>
     </td>
     <td>
-        <a href="editor">Time Picker</a>
+        <a href="datetime">Time Picker</a>
     </td>
     <td>
         <a href="scheduler">Scheduler</a>
@@ -185,6 +189,13 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         </td>
     </tr>
     <tr>
+        <td>
+            <a href="editor">MaskedTextBox</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
         <td colspan="3">
             <b>MISCELLANEOUS</b>
         </td>
@@ -195,6 +206,16 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         </td>
         <td>
             <a href="avatarview">AvatarView</a>
+        </td>
+        <td>
+            <a href="shimmer">Shimmer</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="chat">Chat</a>
+        </td>
+        <td>
         </td>
         <td></td>
     </tr>
@@ -218,8 +239,12 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 	    <td>
             <a href="presentation">PowerPoint</a>
         </td>
-        <td></td>
-        <td></td>
+        <td>
+            <a href="markdown">Markdown</a>
+        </td>
+        <td>
+            <a href="markdownviewer">Markdown Viewer</a>
+        </td>
     </tr>
 </table>
 
