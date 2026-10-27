@@ -14,7 +14,7 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
 * Make sure your development PC is running with Windows 11 and Windows 10 OS version 1809 (build 17763) or a later version.
-* Requires Visual Studio 2022 (with update 17.13 or later) with Windows App SDK [Extension](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/release-notes-archive/stable-channel-1.6#version-16)
+* Requires Visual Studio 2022 (with update 17.13 or later) with Windows App SDK [Extension](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-2-0?pivots=preview)
 * Need a [.Net80](https://dotnet.microsoft.com/en-us/download/dotnet/8.0), [.Net90](https://dotnet.microsoft.com/en-us/download/dotnet/9.0), and [.Net10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) runtime for running the demos.
 
 ## <a name="how-to-run-the-demos"></a>How to run the demos ##
@@ -218,33 +218,6 @@ This section guides you to use the Syncfusion WinUI demos in your applications.
         <td>
         </td>
         <td></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <b>FILE FORMATS</b>
-        </td>
-    </tr>
-    <tr>
-	    <td>
-            <a href="xlsio">Excel</a>
-        </td>
-	    <td>
-            <a href="pdf">PDF</a>
-        </td>
-        <td>
-            <a href="docio">Word</a>
-        </td>   
-    </tr>
-    <tr>
-	    <td>
-            <a href="presentation">PowerPoint</a>
-        </td>
-        <td>
-            <a href="markdown">Markdown</a>
-        </td>
-        <td>
-            <a href="markdownviewer">Markdown Viewer</a>
-        </td>
     </tr>
 </table>
 
