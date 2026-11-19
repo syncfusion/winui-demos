@@ -1,5 +1,0 @@
-﻿<editors:SfTimePicker
-	MinItemWidth="$(MinItemWidth)"
-	MaxItemWidth="$(MaxItemWidth)"
-	ItemWidth="$(ItemWidth)"
-	ItemHeight="$(ItemHeight)"/>

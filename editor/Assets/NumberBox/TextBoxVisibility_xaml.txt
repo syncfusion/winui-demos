@@ -1,7 +1,0 @@
-﻿<editors:SfNumberBox
-    CustomFormat="0"
-    AllowNull="False"
-    Minimum="0"
-    Maximum="150"
-    TextBoxVisibility="{Binding ElementName=checkBox, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}"
-    UpDownPlacementMode="Inline"/>

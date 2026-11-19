@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<SampleBrowser>
-<Assemblies QualifiedInfo="Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-				ConfigurationFile="SamplesConfiguration">
-	<Assembly Name="syncfusion.samplebrowser.winui" />
-</Assemblies>
-</SampleBrowser>

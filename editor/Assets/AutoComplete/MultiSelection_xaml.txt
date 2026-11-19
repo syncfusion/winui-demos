@@ -1,2 +1,0 @@
-<editors:SfAutoComplete SelectionMode="Multiple"
-                        ItemsSource="{Binding Persons}"/>

@@ -1,6 +1,0 @@
-﻿<Syncfusion:SfShadow x:Name="imageShadow" BlurRadius="{Binding ElementName=blurSlider2,Path=Value}" 
-         OffsetX="{Binding ElementName=offsetX2,Path=Value}" 
-         OffsetY="{Binding ElementName=offsetY2,Path=Value}">
-  <Image Height="200" Width="250" 
-  Source="{common:ImagePathExtension Individual=Syncfusion.ShadowDemos.WinUI/Assets/Shadow/Ellipse_Shadow.png, Common=Shadow/Assets/Shadow/Ellipse_Shadow.png}"/>
-</Syncfusion:SfShadow>
