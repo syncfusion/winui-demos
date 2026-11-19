@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.FastColumnChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.DataContext>
+        <local:FastColumnChartViewModel />
+    </Page.DataContext>
+
+    <Grid x:Name="grid">
+        <Grid.Resources>
+            <DataTemplate x:Key="headerTemplate">
+                <TextBlock Text="Month" Padding="0,10,0,0"/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout x:Name="demo" HeaderText="This sample demonstrates the details of the stock market using the fast column series, which enables the rendering of vast collections of data points in a fraction of a millisecond.">
+                <common:DemoLayout.Example>
+                    <chart:SfCartesianChart 
+                        x:Name="Chart"
+                        Height="420"
+                        PaletteBrushes="{ThemeResource ChartPalette}"
+                        HorizontalAlignment="Center"
+                        Header="Stock Details">
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:DateTimeAxis ShowMajorGridLines="False" HeaderTemplate="{StaticResource headerTemplate}"
+                                     EdgeLabelsDrawingMode="Shift" PlotOffsetEnd="20">
+                            </chart:DateTimeAxis>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Header="Stock" PlotOffsetEnd="20">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:LabelStyle LabelFormat="0'%" />
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:FastColumnBitmapSeries ItemsSource="{Binding Data}"
+                             EnableTooltip="True" XBindingPath="Date"  YBindingPath="Price"/>
+
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Header=&quot;Stock Details&quot;
+                        PaletteBrushes=&quot;{ThemeResource ChartPalette}&quot;&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:DateTimeAxis ShowMajorGridLines=&quot;False&quot; PlotOffsetEnd=&quot;20&quot;
+                  EdgeLabelsDrawingMode=&quot;Shift&quot; HeaderTemplate=&quot;{StaticResource headerTemplate}&quot;&gt;
+        &lt;/chart:DateTimeAxis&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:NumericalAxis Header=&quot;Stock&quot; PlotOffsetEnd=&quot;20&quot;&gt;
+             &lt;chart:NumericalAxis.LabelStyle&gt;
+                &lt;chart:LabelStyle LabelFormat=&quot;0'%&quot;/&gt;
+            &lt;/chart:NumericalAxis.LabelStyle&gt;
+        &lt;/chart:NumericalAxis&gt;             
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+                        
+        &lt;chart:FastColumnBitmapSeries ItemsSource=&quot;{Binding Data}&quot; XBindingPath=&quot;Date&quot;
+                YBindingPath=&quot;Price&quot; EnableTooltip=&quot;True&quot;/&gt;
+                        
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

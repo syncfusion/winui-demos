@@ -1,0 +1,19 @@
+﻿<gauge:LinearAxis ...>
+    ...
+    <gauge:LinearAxis.MarkerPointers>
+        <gauge:LinearShapePointer x:Name="shapePointer1"
+                            Value="$(shapePointerSubstitution)"
+                            EnableAnimation="True">
+            <gauge:LinearShapePointer.AnimationEasingFunction>
+                <CircleEase EasingMode="EaseOut" />
+            </gauge:LinearShapePointer.AnimationEasingFunction>
+        </gauge:LinearShapePointer>
+        <gauge:LinearContentPointer Value="12.5"
+                              OffsetPoint="0,-15">
+            <gauge:LinearContentPointer.Content>
+                <TextBlock Text="Low"... />
+            ...
+        </gauge:LinearContentPointer>
+        ...
+    </gauge:LinearAxis.MarkerPointers>
+</gauge:LinearAxis>

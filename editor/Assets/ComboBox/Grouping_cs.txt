@@ -1,0 +1,30 @@
+﻿// View Model
+
+public class ComboBoxViewModel : NotificationObject
+{
+    public ComboBoxViewModel()
+    {
+        this.PopulateVegetablesData();
+    }
+
+    public object Vegetables { get; set; }
+
+    private void PopulateVegetablesData()
+    {
+        var vegetables = new ObservableCollection<Vegetable>();
+        vegetables.Add(new Vegetable
+        {
+            Name = "Cabbage",
+            Category = "Leafy and Salad",
+        });
+        vegetables.Add(new Vegetable
+        {
+            Name = "Chickpea",
+            Category = "Beans",
+        });
+
+        ...
+
+        this.Vegetables = vegetables.GroupBy(item => item.Category);
+    }
+}

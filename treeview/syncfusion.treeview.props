@@ -1,0 +1,111 @@
+<Project>
+ <ItemGroup>
+    <Compile Include="..\TreeView\Assets\IconResource.cs">
+		<Link>TreeView\Assets\IconResource.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Converters\EnumToItemsSourceConverter.cs">
+		<Link>TreeView\Converters\EnumToItemsSourceConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\CheckBoxModel.cs">
+		<Link>TreeView\Model\CheckBoxModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\EditingModel.cs">
+		<Link>TreeView\Model\EditingModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\PerformanceModel.cs">
+		<Link>TreeView\Model\PerformanceModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\GettingStartedModel.cs">
+		<Link>TreeView\Model\GettingStartedModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\LoadOnDemandModel.cs">
+		<Link>TreeView\Model\LoadOnDemandModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Model\NodeWithImageModel.cs">
+		<Link>TreeView\Model\NodeWithImageModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\SamplesConfiguration.cs">
+		<Link>TreeView\SamplesConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\CheckBoxViewModel.cs">
+		<Link>TreeView\ViewModel\CheckBoxViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\EditingViewModel.cs">
+		<Link>TreeView\ViewModel\EditingViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\PerformanceViewModel.cs">
+		<Link>TreeView\ViewModel\PerformanceViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\GettingStartedViewModel.cs">
+		<Link>TreeView\ViewModel\GettingStartedViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\LoadOnDemandViewModel.cs">
+		<Link>TreeView\ViewModel\LoadOnDemandViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\ViewModel\NodeWithImageViewModel.cs">
+		<Link>TreeView\ViewModel\NodeWithImageViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\TreeView\Views\CheckBox.xaml.cs">
+		<Link>TreeView\Views\CheckBox.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\CheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\TreeView\Views\Editing.xaml.cs">
+		<Link>TreeView\Views\Editing.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\Editing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\TreeView\Views\GettingStarted.xaml.cs">
+		<Link>TreeView\Views\GettingStarted.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\GettingStarted.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\TreeView\Views\NodeWithImage.xaml.cs">
+		<Link>TreeView\Views\NodeWithImage.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\NodeWithImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\TreeView\Views\LoadOnDemand.xaml.cs">
+		<Link>TreeView\Views\LoadOnDemand.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\LoadOnDemand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\TreeView\Views\Performance.xaml.cs">
+		<Link>TreeView\Views\Performance.xaml.cs</Link>
+      <DependentUpon>..\TreeView\Views\Performance.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+ <ItemGroup>
+    <Page Include="..\TreeView\Assets\PathIcon.xaml">
+		<Link>TreeView\Assets\PathIcon.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\TreeView\Views\CheckBox.xaml">
+		<Link>TreeView\Views\CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\TreeView\Views\Editing.xaml">
+		<Link>TreeView\Views\Editing.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\TreeView\Views\GettingStarted.xaml">
+		<Link>TreeView\Views\GettingStarted.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\TreeView\Views\NodeWithImage.xaml">
+		<Link>TreeView\Views\NodeWithImage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\TreeView\Views\LoadOnDemand.xaml">
+		<Link>TreeView\Views\LoadOnDemand.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\TreeView\Views\Performance.xaml">
+		<Link>TreeView\Views\Performance.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+ 
+</Project>

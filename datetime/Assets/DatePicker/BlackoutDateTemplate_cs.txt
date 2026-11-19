@@ -1,0 +1,14 @@
+﻿private void OnDateFieldItemPrepared(object sender, Syncfusion.UI.Xaml.Editors.DateTimeFieldItemPreparedEventArgs e)
+{
+    if (this.BlackoutPicker == null)
+    {
+        return;
+    }        
+
+    var blackoutDates = this.BlackoutPicker.BlackoutDates;
+    if (blackoutDates != null && e.ItemInfo != null && e.ItemInfo.Field == Syncfusion.UI.Xaml.Editors.DateTimeField.Day &&
+        e.ItemInfo.DateTime.Value != null &&  blackoutDates.Any() && blackoutDates.Contains(e.ItemInfo.DateTime.Value.Date))
+    {
+        e.Element.ContentTemplate = this.Resources["BlackoutWeekendTemplate"] as DataTemplate;
+    }        
+}        

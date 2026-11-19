@@ -1,0 +1,35 @@
+﻿<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#00bedb</SolidColorBrush>
+<SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#00abc4</SolidColorBrush>
+...
+
+<slider:SfSlider Value="$(thumbColorSliderValueSubstitute)"
+                 ThumbBackground="#00b3ce"
+                 ToolTipFormat="N0"
+                 ThumbOverlayRadius="10"
+                 ThumbOverlayFill="#00c4ce"
+                 ...>
+    <slider:SfSlider.ThumbStyle>
+        <Style TargetType="Thumb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <Ellipse Height="{TemplateBinding Height}"
+                                     Width="{TemplateBinding Width}"
+                                     Fill="WhiteSmoke"
+                                     Stroke="{TemplateBinding Background}"
+                                     StrokeThickness="2" />
+                            <Ellipse Height="12"
+                                     Width="12"
+                                     Fill="{TemplateBinding Background}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </slider:SfSlider.ThumbStyle>
+
+    <slider:SfSlider.ToolTipStyle>
+        ...
+    </slider:SfSlider.ToolTipStyle>
+</slider:SfSlider>

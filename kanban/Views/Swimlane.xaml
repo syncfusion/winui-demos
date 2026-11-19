@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Syncfusion.KanbanDemos.WinUI.Swimlane"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="using:Syncfusion.KanbanDemos.WinUI"
+      xmlns:kanban="using:Syncfusion.UI.Xaml.Kanban"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Page.DataContext>
+        <local:SwimlaneViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                          VerticalScrollMode="Auto">
+                <common:DemoLayout HeaderText="This example demonstrates the swimlane functionality of the Kanban control, allowing for drag-and-drop task management across swimlanes. You can expand or collapse swimlane rows, flexibly categorizing your workflow by projects, teams, users, or other criteria, so you can keep tasks organized and workflows visible.">
+                    <common:DemoLayout.Example>
+                        <Grid Height="480" 
+                              Margin="0,0,-10,0"
+                              VerticalAlignment="Center">
+                            <kanban:SfKanban x:Name="kanban" 
+                                             ItemsSource="{Binding TaskDetails}">
+                                <kanban:SfKanban.IndicatorColorPalette>
+                                    <kanban:KanbanColorMapping Key="Low" Color="#0F7B0F"/>
+                                    <kanban:KanbanColorMapping Key="Normal" Color="#FFB900"/>
+                                    <kanban:KanbanColorMapping Key="High" Color="#C42B1C"/>
+                                </kanban:SfKanban.IndicatorColorPalette>
+                                <kanban:KanbanColumn HeaderText="To Do" 
+                                                     Categories="Open" 
+                                                     AllowDrag ="True" />
+                                <kanban:KanbanColumn HeaderText="In Progress"
+                                                     Categories="In Progress"
+                                                     IsExpanded="True"
+                                                     MinimumCount="2"
+												     AllowDrag ="True">
+                                    <kanban:KanbanColumn.ErrorBarSettings>
+                                        <kanban:KanbanErrorBarSettings MaximumValidationColor="Red"
+                                                                       MinimumValidationColor="Yellow" />
+                                    </kanban:KanbanColumn.ErrorBarSettings>
+                                </kanban:KanbanColumn>
+                                <kanban:KanbanColumn HeaderText="For Review"
+                                                     Categories="Review"
+                                                     MaximumCount="5"
+                                                     AllowDrag="True">
+                                    <kanban:KanbanColumn.ErrorBarSettings>
+                                        <kanban:KanbanErrorBarSettings MaximumValidationColor="Red"
+                                                                       MinimumValidationColor="Yellow" />
+                                    </kanban:KanbanColumn.ErrorBarSettings>
+                                </kanban:KanbanColumn>
+                                <kanban:KanbanColumn HeaderText="Done"
+                                                     AllowDrag="True"
+                                                     Categories="Closed" 
+                                                     MinimumCount="2"
+                                                     MaximumCount="10">
+                                    <kanban:KanbanColumn.ErrorBarSettings>
+                                        <kanban:KanbanErrorBarSettings MaximumValidationColor="Red" 
+                                                                       MinimumValidationColor="Yellow" />
+                                    </kanban:KanbanColumn.ErrorBarSettings>
+                                </kanban:KanbanColumn>
+                            </kanban:SfKanban>
+                        </Grid>
+                    </common:DemoLayout.Example>
+                    <common:DemoLayout.Xaml>
+                        <x:String xml:space="preserve">
+                            &lt;kanban:SfKanban
+                                    x:Name=&quot;Kanban&quot;
+                                    ItemsSource=&quot;{Binding Tasks}&quot;&gt;
+                                &lt;kanban:SfKanban.IndicatorColorPalette&gt;
+                                    &lt;kanban:KanbanColorMapping
+                                        Key=&quot;Normal&quot;
+                                        Color=&quot;#FF5187C6&quot; /&gt;
+                                &lt;/kanban:SfKanban.IndicatorColorPalette&gt;
+                            &lt;/kanban:SfKanban&gt;
+                        </x:String>
+                    </common:DemoLayout.Xaml>
+                </common:DemoLayout>
+            </ScrollViewer >
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,38 @@
+﻿namespace Syncfusion.ChartDemos.WinUI
+{
+    /// <summary>
+    /// Represents a data model for column chart visualization.
+    /// Contains a category name, a primary value, and optional medal counts
+    /// (Gold, Silver, Bronze) for comparative charting.
+    /// </summary>
+    public class ColumnChartModel
+    {
+        /// <summary>
+        /// Gets or sets the category or label name associated with the chart column.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the primary numeric value represented by the chart column.
+        /// </summary>
+        public double Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of gold medals or gold-level achievements
+        /// associated with this category.
+        /// </summary>
+        public double Gold { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of silver medals or silver-level achievements
+        /// associated with this category.
+        /// </summary>
+        public double Silver { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of bronze medals or bronze-level achievements
+        /// associated with this category.
+        /// </summary>
+        public double Bronze { get; set; }
+    }
+}

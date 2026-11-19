@@ -1,0 +1,141 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="Syncfusion.ChartDemos.WinUI.Views.LogarithmicAxis"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Syncfusion.ChartDemos.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="yAxisHeaderTemplate">
+                <TextBlock Text="No. of Internet Users (in Millions)" FontSize="16" Padding="0,0,0,10"/>
+            </DataTemplate>
+
+            <DataTemplate x:Key="dataLabelTemplate">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Ellipse Width="10" Height="10"
+                             Fill="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                             Stroke="{Binding Fill}" StrokeThickness="2"/>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample demonstrates the growth of internet users over time, using a logarithmic scale to effectively represent the rapidly increasing trend.">
+                <common:DemoLayout.DataContext>
+                    <local:LogarithmicAxisViewModel/>
+                </common:DemoLayout.DataContext>
+                <common:DemoLayout.Example>
+
+                    <chart:SfCartesianChart x:Name="Chart" Height="420">
+                        <chart:SfCartesianChart.Header>
+                            <TextBlock Text="Worldwide Growth of Internet Users" Margin="0, 0, 0, 8" FontSize="18" />
+                        </chart:SfCartesianChart.Header>
+                        <chart:SfCartesianChart.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.ThemeDictionaries>
+                                    <ResourceDictionary x:Key="Light">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                                    </ResourceDictionary>
+
+                                    <ResourceDictionary x:Key="Dark">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{StaticResource SystemBaseHighColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{StaticResource SystemAltHighColor}"/>
+                                    </ResourceDictionary>
+
+                                    <ResourceDictionary x:Key="HighContrast">
+                                        <SolidColorBrush x:Key="TooltipFill" Color="{ThemeResource SystemColorWindowColor}"/>
+                                        <SolidColorBrush x:Key="TooltipForeground" Color="{ThemeResource SystemColorWindowTextColor}"/>
+                                    </ResourceDictionary>
+                                </ResourceDictionary.ThemeDictionaries>
+
+                                <DataTemplate x:Key="tooltipTemplate">
+                                    <Grid RowDefinitions="Auto,Auto,Auto">
+                                        <StackPanel Grid.Row="0" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Text="Internet users"  FontSize="14" FontWeight="Bold" Foreground="{ThemeResource TooltipForeground}"
+                                                       HorizontalTextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <Rectangle  Grid.Row="1" Height="1.5" Fill="{ThemeResource TooltipForeground}" Margin="1, 1.5, 1, 2"/>
+                                        <StackPanel Grid.Row="2" Background="{ThemeResource TooltipFill}" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Ellipse Height="11" Margin="0,0,4,0" Width="11" Fill="#2A72DC" />
+                                            <TextBlock Text="{Binding Item.Year}"  FontSize="12"
+                                                       Foreground="{ThemeResource TooltipForeground}"
+                                                       HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+
+                                            <TextBlock Text=":" Margin="3,0,3,0" FontSize="12"
+                                                       Foreground="{ThemeResource TooltipForeground}"
+                                                       HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+
+                                            <TextBlock  Text="{Binding Item.Users}" FontSize="12"
+                                                        Foreground="{ThemeResource TooltipForeground}" 
+                                                        HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"/>
+
+                                            <TextBlock  Text=" M" FontSize="12" 
+                                                        Foreground="{ThemeResource TooltipForeground}" 
+                                                        HorizontalTextAlignment="Center" HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ResourceDictionary>
+                        </chart:SfCartesianChart.Resources>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis FontSize="14" PlotOffsetStart="80" PlotOffsetEnd="20"/>
+                        </chart:SfCartesianChart.XAxes>
+
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:LogarithmicAxis HeaderTemplate="{StaticResource yAxisHeaderTemplate}" MinorTicksPerInterval="4"/>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:LineSeries XBindingPath="Year" YBindingPath="Users" EnableAnimation="True" EnableTooltip="True" ShowDataLabels="True" ItemsSource="{Binding LogarithmicData}"
+                                          StrokeWidth="3" PaletteBrushes="{Binding CustomBrushes}" TooltipTemplate="{StaticResource tooltipTemplate}">
+                            <chart:LineSeries.DataLabelSettings>
+                                <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabelTemplate}" Context="DataLabelItem"/>
+                            </chart:LineSeries.DataLabelSettings>
+                        </chart:LineSeries>
+                    </chart:SfCartesianChart>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;chart:SfCartesianChart x:Name=&quot;Chart&quot; Height=&quot;420&quot;&gt;
+                        
+    &lt;chart:SfCartesianChart.Header&gt;
+        &lt;TextBlock Text=&quot;Worldwide Growth of Internet Users&quot; Margin=&quot;0, 0, 0, 8&quot; FontSize=&quot;18&quot; /&gt;
+    &lt;/chart:SfCartesianChart.Header&gt;
+
+    &lt;chart:SfCartesianChart.XAxes&gt;
+        &lt;chart:CategoryAxis FontSize=&quot;14&quot; PlotOffsetStart=&quot;80&quot; PlotOffsetEnd=&quot;20&quot;/&gt;
+    &lt;/chart:SfCartesianChart.XAxes&gt;
+
+    &lt;chart:SfCartesianChart.YAxes&gt;
+        &lt;chart:LogarithmicAxis HeaderTemplate=&quot;{StaticResource yAxisHeaderTemplate}&quot; MinorTicksPerInterval=&quot;4&quot;/&gt;
+    &lt;/chart:SfCartesianChart.YAxes&gt;
+
+    &lt;chart:LineSeries XBindingPath=&quot;Year&quot; YBindingPath=&quot;Users&quot; EnableAnimation=&quot;True&quot; EnableTooltip=&quot;True&quot; ShowDataLabels=&quot;True&quot;
+                      ItemsSource=&quot;{Binding LogarithmicData}&quot; StrokeWidth=&quot;3&quot; 
+                      PaletteBrushes=&quot;{Binding CustomBrushes}&quot; TooltipTemplate=&quot;{StaticResource tooltipTemplate}&quot;&gt;
+                &lt;chart:LineSeries.DataLabelSettings&gt;
+                    &lt;chart:CartesianDataLabelSettings ContentTemplate=&quot;{StaticResource dataLabelTemplate}&quot; Context=&quot;DataLabelItem&quot;/&gt;
+                &lt;/chart:LineSeries.DataLabelSettings&gt;
+    &lt;/chart:LineSeries&gt;
+
+&lt;/chart:SfCartesianChart&gt;
+</x:String>
+                </common:DemoLayout.Xaml>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

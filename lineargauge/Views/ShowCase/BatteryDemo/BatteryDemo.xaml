@@ -1,0 +1,93 @@
+﻿<Page x:Class="Syncfusion.LinearGaugeDemos.WinUI.Views.BatteryDemo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI">
+
+    <common:DemoLayout HeaderText="This sample showcases how to design a battery indicator using the linear gauge."
+                       XamlSource="{common:ConditionalXAML Individual=Syncfusion.LinearGaugeDemos.WinUI/Assets/LinearGauge/batterydemo.xaml.txt,
+                                                                      Common=LinearGauge/Assets/LinearGauge/batterydemo.xaml.txt}">
+        <common:DemoLayout.Example>
+            <Grid VerticalAlignment="Center"
+                  Height="250">
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Charged: 75%"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               HorizontalAlignment="Center"
+                               Margin="-15,0,0,0" />
+                    <Grid HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="0,16,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <gauge:SfLinearGauge x:Name="gauge"
+                                             Width="150"
+                                             BorderBrush="DarkGray"
+                                             BorderThickness="4"
+                                             CornerRadius="10">
+                            <gauge:SfLinearGauge.Axis>
+                                <gauge:LinearAxis ShowLabels="False"
+                                                  ShowTicks="False"
+                                                  AxisLineStrokeThickness="70"
+                                                  AxisLineStroke="Transparent">
+
+                                    <gauge:LinearAxis.Ranges>
+                                        <gauge:LinearGaugeRange StartValue="3"
+                                                                EndValue="23"
+                                                                StartWidth="62"
+                                                                EndWidth="62"
+                                                                RangePosition="Cross"
+                                                                Background="Transparent">
+                                            <gauge:LinearGaugeRange.Child>
+                                                <Border Background="#4caf4f"
+                                                        CornerRadius="7,0.1,0.1,7"/>
+                                            </gauge:LinearGaugeRange.Child>
+                                        </gauge:LinearGaugeRange>
+                                        <gauge:LinearGaugeRange StartValue="27"
+                                                                EndValue="48"
+                                                                StartWidth="62"
+                                                                EndWidth="62"
+                                                                RangePosition="Cross"
+                                                                Background="Transparent">
+                                            <gauge:LinearGaugeRange.Child>
+                                                <Border Background="#4caf4f" />
+                                            </gauge:LinearGaugeRange.Child>
+                                        </gauge:LinearGaugeRange>
+                                        <gauge:LinearGaugeRange StartValue="52"
+                                                                EndValue="74"
+                                                                StartWidth="62"
+                                                                EndWidth="62"
+                                                                RangePosition="Cross"
+                                                                Background="Transparent">
+                                            <gauge:LinearGaugeRange.Child>
+                                                <Border Background="#4caf4f" />
+                                            </gauge:LinearGaugeRange.Child>
+                                        </gauge:LinearGaugeRange>
+                                    </gauge:LinearAxis.Ranges>
+                                </gauge:LinearAxis>
+                            </gauge:SfLinearGauge.Axis>
+                        </gauge:SfLinearGauge>
+                        <Border Grid.Column="1"
+                                Margin="1,0,0,0"
+                                VerticalAlignment="Center"
+                                Height="48"
+                                Width="16"
+                                CornerRadius="0,4,4,0"
+                                BorderBrush="DarkGray"
+                                BorderThickness="4"
+                                Background="Transparent" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </common:DemoLayout.Example>
+    </common:DemoLayout>
+</Page>

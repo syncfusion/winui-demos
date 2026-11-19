@@ -1,0 +1,28 @@
+<Project>
+  <ItemGroup>
+    <Compile Include="..\DockingManager\SamplesConfiguration.cs">
+		<Link>DockingManager\SamplesConfiguration.cs</Link>
+	</Compile>
+    <Compile Include="..\DockingManager\ViewModel\GettingStartedViewModel.cs">
+		<Link>DockingManager\ViewModel\GettingStartedViewModel.cs</Link>
+	</Compile>
+	<Compile Include="..\DockingManager\Views\DockingManager\GettingStartedView.xaml.cs">
+	  <Link>DockingManager\Views\DockingManager\GettingStartedView.xaml.cs</Link>
+	  <DependentUpon>..\DockingManager\Views\DockingManager\GettingStartedView.xaml</DependentUpon>
+	</Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Page Include="..\DockingManager\Views\DockingManager\GettingStartedView.xaml">
+		  <Link>DockingManager\Views\DockingManager\GettingStartedView.xaml</Link>
+		  <SubType>Designer</SubType>
+		  <Generator>MSBuild:Compile</Generator>
+	  </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Content Include="..\DockingManager\Assets\DockingManager\GettingStarted_xaml.txt">
+		  <Link>DockingManager\Assets\DockingManager\GettingStarted_xaml.txt</Link>
+	  </Content>
+  </ItemGroup>
+</Project>

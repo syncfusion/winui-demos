@@ -1,0 +1,269 @@
+﻿<Page x:Class="Syncfusion.SliderDemos.WinUI.Views.Slider.TrackCustomization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent"
+      xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+      xmlns:slider="using:Syncfusion.UI.Xaml.Sliders">
+
+    <ScrollViewer>
+        <StackPanel>
+            <common:DemoLayout HeaderText="Active and inactive track height">
+                <common:DemoLayout.Example>
+                    <Grid VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="trackSizeSlider"
+                                     Width="500"
+                                     VerticalAlignment="Center"
+                                     Maximum="40"
+                                     Value="20"
+                                     Interval="2"
+                                     TickOffset="10"
+                                     ThumbWidth="12"
+                                     ActiveTrackHeight="8"
+                                     ToolTipFormat="N0"
+                                     InactiveTrackHeight="8"
+                                     ShowTicks="True"
+                                     ThumbOverlayRadius="10"
+                                     MinorTicksPerInterval="0">
+
+                            <slider:SfSlider.ThumbStyle>
+                                <Style TargetType="Thumb">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Grid>
+                                                    <Rectangle RadiusX="2"
+                                                           RadiusY="2"
+                                                           Height="{TemplateBinding Height}"
+                                                           Width="{TemplateBinding Width}"
+                                                           Fill="{TemplateBinding Background}" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </slider:SfSlider.ThumbStyle>
+                        </slider:SfSlider>
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;slider:SfSlider Value="$(trackSizeSliderValueSubstitute)"
+                 Maximum="40"
+                 Interval="2"
+                 TickOffset="10"
+                 ToolTipFormat="N0"
+                 ThumbWidth="12"
+                 ShowTicks="True"
+                 MinorTicksPerInterval="0"
+                 ThumbOverlayRadius="10"
+                 ActiveTrackHeight="$(trackSizeSliderActiveTrackHeightSubstitute)"
+                 InactiveTrackHeight="$(trackSizeSliderInactiveTrackHeightSubstitute)" &gt;
+                        
+         &lt;slider:SfSlider.ThumbStyle>
+             ...
+         &lt;/slider:SfSlider.ThumbStyle>
+&lt;/slider:SfSlider>
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Options>
+                    <Grid Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Slider Header="ActiveTrackHeight"
+                                Minimum="0"
+                                Maximum="20"
+                                Value="{Binding ElementName=trackSizeSlider, Path=ActiveTrackHeight, Mode=TwoWay}" />
+                        <Slider Header="InactiveTrackHeight"
+                                Grid.Row="1"
+                                Minimum="0"
+                                Maximum="15"
+                                Value="{Binding ElementName=trackSizeSlider, Path=InactiveTrackHeight, Mode=TwoWay}" />
+                    </Grid>
+                </common:DemoLayout.Options>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="trackSizeSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind trackSizeSlider.Value, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="trackSizeSliderActiveTrackHeightSubstitute"
+                                                   SubstitutionValue="{x:Bind trackSizeSlider.ActiveTrackHeight, Mode=OneWay}" />
+                    <common:DemoLayoutSubstitution Key="trackSizeSliderInactiveTrackHeightSubstitute"
+                                                   SubstitutionValue="{x:Bind trackSizeSlider.InactiveTrackHeight, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Active and inactive track color">
+                <common:DemoLayout.ExternalResourceDictionary>
+                    <ResourceDictionary>
+                        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#33b35c</SolidColorBrush>
+                        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#6633b35c</SolidColorBrush>
+                        <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#33b35c</SolidColorBrush>
+
+                        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#288e49</SolidColorBrush>
+                        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#6623783f</SolidColorBrush>
+                        <SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#288e49</SolidColorBrush>
+                    </ResourceDictionary>
+                </common:DemoLayout.ExternalResourceDictionary>
+                <common:DemoLayout.Example>
+                    <Grid VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="trackColorSlider"
+                                     Width="500"
+                                     VerticalAlignment="Center"
+                                     Minimum="-20"
+                                     Maximum="20"
+                                     Interval="10"
+                                     ToolTipFormat="N0"
+                                     ActiveTrackHeight="6"
+                                     ActiveTrackFill="#2A934D"
+                                     ThumbBackground="#2A934D"
+                                     ThumbOverlayFill="#288e49"
+                                     InactiveTrackHeight="4"
+                                     InactiveTrackFill="#662A934D"
+                                     ShowLabels="True"
+                                     ShowTicks="True"
+                                     MinorTicksPerInterval="0">
+
+                            <slider:SfSlider.ToolTipStyle>
+                                <Style TargetType="slider:SliderToolTip">
+                                    <Setter Property="Background"
+                                        Value="#288e49" />
+                                    <Setter Property="Foreground"
+                                        Value="White" />
+                                </Style>
+                            </slider:SfSlider.ToolTipStyle>
+
+                        </slider:SfSlider>
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+&lt;SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver">#33b35c&lt;/SolidColorBrush>
+&lt;SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver">#6633b35c&lt;/SolidColorBrush>
+&lt;SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPointerOver">#33b35c&lt;/SolidColorBrush>
+
+&lt;SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed">#288e49&lt;/SolidColorBrush>
+&lt;SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed">#6623783f&lt;/SolidColorBrush>
+&lt;SolidColorBrush x:Key="SyncfusionSliderThumbBackgroundPressed">#288e49&lt;/SolidColorBrush>
+...
+&lt;slider:SfSlider Value="$(trackColorSliderValueSubstitute)"
+                 Minimum="-20"
+                 Maximum="20"
+                 Interval="10"
+                 ActiveTrackHeight="6"
+                 ToolTipFormat="N0"
+                 ActiveTrackFill="#2A934D"
+                 ThumbBackground="#2A934D"
+                 ThumbOverlayFill="#288e49"
+                 InactiveTrackHeight="4"
+                 InactiveTrackFill="#662A934D"
+                 ShowLabels="True"
+                 ShowTicks="True"
+                 MinorTicksPerInterval="0" &gt;
+                        
+            &lt;slider:SfSlider.ToolTipStyle>
+                ...
+            &lt;/slider:SfSlider.ToolTipStyle>
+                        
+&lt;/slider:SfSlider&gt;
+                        </x:String>
+                </common:DemoLayout.Xaml>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="trackColorSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind trackColorSlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+
+            <common:DemoLayout HeaderText="Active and inactive track style"
+                               XamlSource="{common:ConditionalXAML Individual=Syncfusion.SliderDemos.WinUI/Assets/slider/trackstylecustomization.xaml.txt,
+                                                                              Common=Sliders/Assets/slider/trackstylecustomization.xaml.txt}">
+                <common:DemoLayout.ExternalResourceDictionary>
+                    <ResourceDictionary>
+                        <x:Double x:Key="SyncfusionSliderActiveTrackCornerRadius">5</x:Double>
+                        <x:Double x:Key="SyncfusionSliderInactiveTrackCornerRadius">2.5</x:Double>
+
+                        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPointerOver"
+                                     Color="{ThemeResource SystemAccentColor}" />
+                        <SolidColorBrush x:Key="SyncfusionSliderActiveTrackFillPressed"
+                                     Color="{ThemeResource SystemAccentColor}" />
+                        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPointerOver"
+                                     Color="{ThemeResource SystemAltHighColor}" />
+                        <SolidColorBrush x:Key="SyncfusionSliderInactiveTrackFillPressed"
+                                     Color="{ThemeResource SystemAltHighColor}" />
+
+                        <Style x:Name="SliderTrackStyle"
+                           TargetType="Rectangle">
+                            <Setter Property="Stroke"
+                                Value="{ThemeResource SystemAccentColor}" />
+                            <Setter Property="StrokeThickness"
+                                Value="2" />
+                        </Style>
+                    </ResourceDictionary>
+                </common:DemoLayout.ExternalResourceDictionary>
+                <common:DemoLayout.Example>
+                    <Grid VerticalAlignment="Center"
+                          Height="250">
+                        <slider:SfSlider x:Name="trackStyleSlider"
+                                     Width="500"
+                                     VerticalAlignment="Center"
+                                     Minimum="-20"
+                                     Maximum="20"
+                                     Interval="10"
+                                     ToolTipFormat="N0"
+                                     ActiveTrackHeight="15"
+                                     InactiveTrackHeight="10"
+                                     ShowLabels="True"
+                                     ShowTicks="True"
+                                     MinorTicksPerInterval="0"
+                                     ThumbOverlayRadius="10"
+                                     ActiveTrackStyle="{StaticResource SliderTrackStyle}"
+                                     InactiveTrackStyle="{StaticResource SliderTrackStyle}">
+
+                            <slider:SfSlider.ActiveTrackFill>
+                                <SolidColorBrush Color="{ThemeResource SystemAccentColor}" />
+                            </slider:SfSlider.ActiveTrackFill>
+
+                            <slider:SfSlider.InactiveTrackFill>
+                                <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
+                            </slider:SfSlider.InactiveTrackFill>
+
+                            <slider:SfSlider.ThumbStyle>
+                                <Style TargetType="Thumb">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Grid>
+                                                    <Ellipse Height="{TemplateBinding Height}"
+                                                         Width="{TemplateBinding Width}"
+                                                         Fill="{ThemeResource SystemAltHighColor}"
+                                                         Stroke="{TemplateBinding Background}"
+                                                         StrokeThickness="2" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </slider:SfSlider.ThumbStyle>
+
+                        </slider:SfSlider>
+                    </Grid>
+                </common:DemoLayout.Example>
+
+                <common:DemoLayout.Substitutions>
+                    <common:DemoLayoutSubstitution Key="trackStyleSliderValueSubstitute"
+                                                   SubstitutionValue="{x:Bind trackStyleSlider.Value, Mode=OneWay}" />
+                </common:DemoLayout.Substitutions>
+            </common:DemoLayout>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,61 @@
+﻿public class RadialAxisExt : RadialAxis
+{
+    public override List<AxisLabelData> GenerateVisibleLabels()
+    {
+        List<AxisLabelData> customLabels = new List<AxisLabelData>();
+        for (int i = 0; i < 9; i++)
+        {
+            double value = CalculateLabelValue(i);
+            AxisLabelData label = new AxisLabelData
+            {
+                Value = value,
+                Text = value.ToString()
+            };
+            customLabels.Add(label);
+        }
+
+        return customLabels;
+    }
+
+    public override double ValueToCoefficient(double value)
+    {
+        if (value >= 0 && value <= 2)
+        {
+            return (value * 0.125) / 2;
+        }
+        else if (value > 2 && value <= 5)
+        {
+            return (((value - 2) * 0.125) / (5 - 2)) + (1 * 0.125);
+        }
+        ...
+        else if (value > 100 && value <= 150)
+        {
+            return (((value - 100) * 0.125) / (150 - 100)) + (7 * 0.125);
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+    double CalculateLabelValue(double value)
+    {
+        if (value == 0)
+        {
+            return 0;
+        }
+        else if (value == 1)
+        {
+            return 2;
+        }
+        else if (value == 2)
+        {
+            return 5;
+        }
+        ...
+        else
+        {
+            return 150;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="Syncfusion.SchedulerDemos.WinUI.ICSExportImport"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:scheduler="using:Syncfusion.UI.Xaml.Scheduler"
+    xmlns:common="using:Syncfusion.DemosCommon.WinUI"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                VerticalScrollMode="Auto">
+            <common:DemoLayout HeaderText="This sample showcases the ability to export scheduler appointments to an iCalendar (.ics) file and import external ICS events into the scheduler.">
+                <common:DemoLayout.Example>
+                    <Grid Height="440"
+                            VerticalAlignment="Center">
+                        <scheduler:SfScheduler x:Name="scheduler"
+                                               ViewType="Week"
+                                               AllowedViewTypes="Day,Week,WorkWeek,Month">
+                            <scheduler:SfScheduler.AppointmentMapping>
+                                <scheduler:AppointmentMapping
+                                    Subject="EventName"
+                                    StartTime="From"
+                                    EndTime="To"
+                                    AppointmentBackground="Color"
+                                    Foreground="ForegroundColor"
+                                    IsAllDay="IsAllDay"
+                                    StartTimeZone="StartTimeZone"
+                                    EndTimeZone="EndTimeZone"
+                                    RecurrenceExceptionDates="RecurrenceExceptions"
+                                    RecurrenceRule="RecurrenceRule"
+                                    RecurrenceId="RecurrenceId"
+                                    Id="Id"/>
+                            </scheduler:SfScheduler.AppointmentMapping>
+                        </scheduler:SfScheduler>
+                    </Grid>
+                </common:DemoLayout.Example>
+                <common:DemoLayout.Options>
+                    <StackPanel Orientation="Vertical">
+                        <Button Click="OnExportClicked"
+                                Content="Export to iCalendar"
+                                Margin="5,10,0,0"
+                                VerticalAlignment="Center"/>
+                        <Button Click="OnImportClicked"
+                                Content="Choose iCalendar file"
+                                Margin="5,10,0,0"
+                                VerticalAlignment="Center"/>
+                    </StackPanel>
+                </common:DemoLayout.Options>
+                <common:DemoLayout.Xaml>
+                    <x:String xml:space="preserve">
+    &lt;scheduler:SfScheduler x:Name=&quot;scheduler&quot;
+                              ItemsSource=&quot;{Binding Appointments}&quot;
+                              ViewType=&quot;Week&quot;/&gt;
+                    </x:String>
+                </common:DemoLayout.Xaml>
+                <common:DemoLayout.CSharp>
+                    <x:String xml:space="preserve">         
+// C# code Behind
+            ScheduleAppointmentCollection Events = new ScheduleAppointmentCollection()
+            ScheduleAppointment event = new ScheduleAppointment
+            {
+                Subject = "General meeting",
+                StartTime = new DateTime(2021, 3, 1, 10, 0, 0),
+                EndTime = new DateTime(2021, 3, 1, 11, 0, 0),
+                AppointmentBackground = new SolidColorBrush((Color.FromArgb(255, 191, 235, 97))),
+            };
+
+            Appointments.Add(event);
+
+            private async void ExportPressed(object sender, RoutedEventArgs e)
+            {
+                await scheduler.ExportToICalendar();
+            }
+
+            private async void ImportPressed(object sender, RoutedEventArgs e)
+            {
+                await scheduler.ImportICalendar();
+            }
+                    </x:String>
+                </common:DemoLayout.CSharp>
+            </common:DemoLayout>
+        </ScrollViewer>
+    </Grid>
+</Page>

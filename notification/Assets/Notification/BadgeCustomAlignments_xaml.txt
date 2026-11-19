@@ -1,0 +1,17 @@
+﻿<syncfusion:BadgeContainer>
+    <syncfusion:BadgeContainer.Content>
+        <PersonPicture/>
+    </syncfusion:BadgeContainer.Content>
+    <syncfusion:BadgeContainer.Badge>
+        <syncfusion:SfBadge 
+            HorizontalPosition="$(HorizontalPosition)" 
+            VerticalPosition="$(VerticalPosition)" 
+            HorizontalAnchorPosition="$(HorizontalAnchorPosition)" 
+            VerticalAnchorPosition="$(VerticalAnchorPosition)">
+            <Grid>
+                <Ellipse Fill="LimeGreen"/>
+                <TextBlock FontFamily="{StaticResource SymbolThemeFontFamily}" Text="&#xE930;"/>
+            </Grid>
+        </syncfusion:SfBadge>
+    </syncfusion:BadgeContainer.Badge>
+</syncfusion:BadgeContainer>
